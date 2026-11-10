@@ -1,6 +1,8 @@
 # Executable Multimodal Work Environments for Agent Learning
 
-当前研究数据工程阶段：**[Stage 1 · Occupation-grounded Work Seed Construction](work-seeds/STAGE1.md)**。在已完成的 [O*NET 原始目录](work-seeds/README.md) 上增加数字候选筛选、职业证据检索、模型 Seed 补充和覆盖采样；与以下早期 W001/P001 演示独立。当前不继续构造工作空间或训练数据。
+当前研究数据工程阶段：**[Stage 2 · Intent-first Information Planning](work-plans/README.md)**。读取 [Stage 1 职业 Seed](work-seeds/STAGE1.md) 已采样的 4 条记录，用 GLM-5.2 规划工作目标、专业交付物和信息依赖，分别进行结构检查与模型语义审核。Stage 1 的 O*NET 目录、数字候选筛选、职业证据和采样数据保持不变；当前不构造具体案例、工作空间或训练数据。
+
+研究流水线与以下早期 W001/P001 演示独立。Stage 2 已实际生成 4 条计划，额外复核后准入 2 条、拒绝 2 条；全部计划和中文依赖图见 [Stage 2 说明](work-plans/README.md)，准入结果见 [Work Plans](work-plans/data/pilot/work_plans.jsonl)，检查记录见 [运行报告](work-plans/data/pilot/planning_report.json)。
 
 Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
 

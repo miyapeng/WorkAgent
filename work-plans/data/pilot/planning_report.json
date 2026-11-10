@@ -1,0 +1,740 @@
+{
+  "audit_rejections": {
+    "seed_c651450be087dfe86854b1ab": {
+      "plan_sha256": "886d1a70bea329c4113f208c5d6a1dc015cce0d322019acf27d4c137bac70c2e",
+      "reason": "Repository audit: i6 explicitly compares program budget performance, but its only parent is i5 (current-request cost-benefit analysis). Historical records i2 and their analysis i7 have no path into i6. The graph therefore omits a premise required by the node's own description."
+    },
+    "seed_f72f218a6cef34260ae1bd01": {
+      "plan_sha256": "40fe43a68412fbdffa537335a2e88f680ab87d720969d69800f4744d45a2f688",
+      "reason": "Repository audit: i3 and i4 require observed supplier data and comparative supplier analysis although the seed asks for procurement selection guidelines. This adds an unnecessary supplier evaluation objective; retain the generated plan for inspection but do not admit it."
+    }
+  },
+  "audit_rejections_sha256": "28e06fe8216c38ec173c1dfb9419afe2b99b04740a66c1cc794ed26aaae73e7d",
+  "averages_over_accepted_plans": {
+    "dependencies": 10.0,
+    "information_nodes": 7.5
+  },
+  "averages_over_generated_plans": {
+    "dependencies": 9.5,
+    "information_nodes": 7.0
+  },
+  "counts": {
+    "errors": 0,
+    "generated_plans": 4,
+    "input_sampled_seeds": 4,
+    "pending": 0,
+    "processed": 4,
+    "rejected": 2,
+    "selected_for_this_run": 4,
+    "successful": 2
+  },
+  "failure_reasons": {
+    "audit:Repository audit: i3 and i4 require observed supplier data and comparative supplier analysis although the seed asks for procurement selection guidelines. This adds an unnecessary supplier evaluation objective; retain the generated plan for inspection but do not admit it.": 1,
+    "audit:Repository audit: i6 explicitly compares program budget performance, but its only parent is i5 (current-request cost-benefit analysis). Historical records i2 and their analysis i7 have no path into i6. The graph therefore omits a premise required by the node's own description.": 1
+  },
+  "implementation_sha256": "2f658c53c7d3600226c35d40273fa4bc248f065e9f31d449ea776479612e179c",
+  "input_sampled_seeds": 4,
+  "input_sha256": {
+    "candidate_seeds.jsonl": "432d1449faa881b927348d891ea6c23b1242506f8a6613a726bda530b962ad5d",
+    "occupational_evidence.jsonl": "d2bb8043d49b2d3ff7243759d45145c7f96c517a003108f92bfadfd50dd78f6b",
+    "sampled_seed_ids.jsonl": "8ef14a03f8e397605284c18f20e8b28ee1746c9e6b2e1bbd99c42d8d66f9e1b9"
+  },
+  "limitations": [
+    "Schema and graph checks are deterministic; lexical case/answer guards are incomplete heuristics.",
+    "Semantic alignment and edge rationales are separate LLM judgments, not factual guarantees.",
+    "Information nodes are requirements, not retrieved case facts or existing artifacts.",
+    "No carrier assignment, workspace construction, verifier, probe, repair or training data."
+  ],
+  "llm": {
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "model": "GLM_ka48dn",
+    "parameters": {
+      "max_tokens": 4096,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_seconds": 60
+  },
+  "parameters": {
+    "limit": 4
+  },
+  "planner_prompt_version": "intent-information-planning-v3",
+  "review_prompt_version": "intent-information-review-v4",
+  "run_fingerprint": "4ac787b4972cbe018182259d1930a5b8984ee414056bc0883b3d3d7897d119df",
+  "schema_sha256": "9e5c42ee69588479c06244e07fe90697b97f0f041ef57dcbaab1ba95cb355b8a",
+  "seeds": {
+    "seed_557eec0637616419be8bbe23": {
+      "checkpoint_sha256": "9ee07f15301a9de6fcf271a3032206dea1c48630ba42e8f2d2af0313a3012435",
+      "deterministic": {
+        "checks": {
+          "all_information_serves_deliverables": true,
+          "deliverables_are_sinks": true,
+          "deliverables_have_information_inputs": true,
+          "derived_and_judgment_have_inputs": true,
+          "directed_acyclic_graph": true,
+          "external_input_exists": true,
+          "external_inputs_are_roots": true,
+          "no_input_carrier_assignment": true,
+          "no_numeric_case_literals": true,
+          "no_obvious_filled_answer_markers": true,
+          "no_source_urls_or_company_suffixes": true,
+          "schema": true,
+          "seed_is_sampled": true,
+          "seed_matches_request": true,
+          "unique_node_ids": true,
+          "valid_edge_references": true
+        },
+        "issues": [],
+        "passed": true
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:54:26.639576+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-planning-v3",
+          "request_sha256": "931a4d5f54745caf39a5f5f8f31c79fcdbe53c3da3cc24ae7bd9f4c53ce4faf9"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:57:33.688028+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-review-v4",
+          "request_sha256": "e14756bda48d4bfb47d92df3c169605ad2ea3f81cdb4b86fd3e8027590ba9a09"
+        }
+      ],
+      "reasons": [],
+      "semantic": {
+        "review": {
+          "checks": {
+            "carrier_neutrality": {
+              "passed": true,
+              "reason": "The plan does not specify or require any particular data format, tool, or carrier. Inputs are described conceptually (figures, records, rules), not tied to specific systems."
+            },
+            "case_neutrality": {
+              "passed": true,
+              "reason": "The plan describes information to obtain later without inventing companies, people, dates, values, citations, final calculations, or decisions. i3 and i7 are necessary case-neutral constraints, not new occupational objectives."
+            },
+            "dependency_logic": {
+              "passed": true,
+              "reason": "All edges represent genuine information dependencies: budget and spending data feed variance computation; variance and explanations with rules feed reconciliation judgment; all feed the written report. No topical similarity masquerading as dependency."
+            },
+            "information_roles": {
+              "passed": true,
+              "reason": "External inputs (i1 approved budget, i2 actual spending, i3 reconciliation rules, i5 explanations, i7 audience requirements) are facts/rules/requirements. i4 (computed variances) is correctly derived. i6 (reconciliation action assessment) is correctly a professional judgment."
+            },
+            "information_sufficiency": {
+              "passed": true,
+              "reason": "The variance computation (i4) requires and receives both budget and spending data. The reconciliation judgment (i6) requires variances, rules, and explanations, all present. The report (out1) requires variance analysis, judgment, and audience requirements, all present. Every judgment has its premises."
+            },
+            "minimality": {
+              "passed": true,
+              "reason": "The plan contains one deliverable and seven information nodes, all of which are necessary: budget figures, spending records, reconciliation rules, computed variances, explanatory context, reconciliation judgment, and audience requirements. No unnecessary complexity or extra deliverables."
+            },
+            "no_precomputed_answers": {
+              "passed": true,
+              "reason": "The plan does not pretend to possess case records or contain final calculations. i4 is described as 'computed' information to be derived, and i6 is described as an 'assessment' to be made, not a pre-existing answer."
+            },
+            "objective_alignment": {
+              "passed": true,
+              "reason": "The work_demand is to advise officials on recommended changes to reconcile differences between an approved budget and actual spending, communicated in a written report. The work_objective preserves every essential operation: variance analysis, reconciliation recommendations, written report, and official audience. No new professional problem is introduced."
+            },
+            "occupational_plausibility": {
+              "passed": true,
+              "reason": "The evidence describes budget analysts communicating variance explanations and reconciliation recommendations to officials in a written report, consistent with the plan's scope and occupational role."
+            }
+          },
+          "edge_reviews": [
+            {
+              "from": "i1",
+              "reason": "Approved budget figures are a necessary input for computing variances between approved budget and actual spending.",
+              "to": "i4",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "Actual spending records are the other necessary input for computing variances against the approved budget.",
+              "to": "i4",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "The computed variances, including their magnitude, direction, and relative contribution, provide the factual basis for assessing which variances require reconciliation action.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i3",
+              "reason": "Organizational rules and reconciliation criteria govern what adjustments are permissible, directly informing the professional judgment about appropriate changes.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i5",
+              "reason": "Explanations and operational context for spending differences help determine the nature of variances and thus what reconciliation actions are appropriate.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i1",
+              "reason": "Approved budget figures are required content for the variance analysis report comparing approved budget to actual spending.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "Actual spending records are required content for the variance analysis report.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "The computed variance analysis is the core analytical content of the report.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i6",
+              "reason": "The assessment of appropriate reconciliation changes constitutes the recommended changes the report must communicate.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i7",
+              "reason": "The audience requirements determine the level of detail, focus, and decision support in the written report addressed to officials.",
+              "to": "out1",
+              "valid": true
+            }
+          ]
+        },
+        "status": "reviewed"
+      },
+      "status": "accepted"
+    },
+    "seed_c651450be087dfe86854b1ab": {
+      "audit": {
+        "decision": "reject",
+        "plan_sha256": "886d1a70bea329c4113f208c5d6a1dc015cce0d322019acf27d4c137bac70c2e",
+        "reason": "Repository audit: i6 explicitly compares program budget performance, but its only parent is i5 (current-request cost-benefit analysis). Historical records i2 and their analysis i7 have no path into i6. The graph therefore omits a premise required by the node's own description."
+      },
+      "checkpoint_sha256": "c091a3e55198760dcef22a8e78246c66ae913994c3552acf4a6f3a9ac9015840",
+      "deterministic": {
+        "checks": {
+          "all_information_serves_deliverables": true,
+          "deliverables_are_sinks": true,
+          "deliverables_have_information_inputs": true,
+          "derived_and_judgment_have_inputs": true,
+          "directed_acyclic_graph": true,
+          "external_input_exists": true,
+          "external_inputs_are_roots": true,
+          "no_input_carrier_assignment": true,
+          "no_numeric_case_literals": true,
+          "no_obvious_filled_answer_markers": true,
+          "no_source_urls_or_company_suffixes": true,
+          "schema": true,
+          "seed_is_sampled": true,
+          "seed_matches_request": true,
+          "unique_node_ids": true,
+          "valid_edge_references": true
+        },
+        "issues": [],
+        "passed": true
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:55:31.031128+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-planning-v3",
+          "request_sha256": "4a8e8dfe90514c88198008f4e60b309f9e784c48b42c4afa8c2fe5da78daaaca"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:59:19.669917+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-review-v4",
+          "request_sha256": "0a298a8710a314fec4a7539a5a471dd3ca8f672a74ef30eb29a61e6a58f28597"
+        }
+      ],
+      "reasons": [
+        "audit:Repository audit: i6 explicitly compares program budget performance, but its only parent is i5 (current-request cost-benefit analysis). Historical records i2 and their analysis i7 have no path into i6. The graph therefore omits a premise required by the node's own description."
+      ],
+      "semantic": {
+        "review": {
+          "checks": {
+            "carrier_neutrality": {
+              "passed": true,
+              "reason": "External inputs describe information content (financial requests, historical records, program objectives, constraints) without mandating specific file formats or carriers. The input_file_families hint is optional and not binding."
+            },
+            "case_neutrality": {
+              "passed": true,
+              "reason": "No node pre-populates case-specific values, dates, entities, or final conclusions. External inputs describe categories of data to obtain. Derived and judgment nodes leave results open. Necessary case-neutral constraints (i4) are appropriately external."
+            },
+            "dependency_logic": {
+              "passed": true,
+              "reason": "Each edge contributes specific information: i1 and i3 supply cost and benefit inputs to i5; i5 supplies cost-benefit results to i6; i2 supplies historical data to i7; i4-i7 supply constraints, cost-benefit, tradeoff, and historical findings to i8; i6 and i8 supply analysis and judgment to out1. No edges rely on topical similarity alone."
+            },
+            "information_roles": {
+              "passed": true,
+              "reason": "External inputs (i1-i4) are case data and constraints to be retrieved. Derived nodes (i5-i7) perform computations/comparisons. The judgment node (i8) applies professional assessment. Roles are correctly assigned."
+            },
+            "information_sufficiency": {
+              "passed": true,
+              "reason": "i5 (cost-benefit) receives financial requests (i1) and program objectives/benefits (i3). i7 (past budget comparison) receives historical records (i2). i6 (tradeoffs) receives cost-benefit results (i5). i8 (judgment) receives i4-i7. All premises needed for each reasoning step are present via incoming edges."
+            },
+            "minimality": {
+              "passed": true,
+              "reason": "There is a single deliverable. The information nodes each correspond to a distinct required input or reasoning step in the work_demand. No unnecessary extra deliverables, generic framing nodes, or unrequested analyses are present."
+            },
+            "no_precomputed_answers": {
+              "passed": true,
+              "reason": "The plan does not invent final recommendations, calculations, or outcomes. i8 describes the assessment to be performed, not a pre-decided result. No fabricated citations, values, or decisions appear."
+            },
+            "objective_alignment": {
+              "passed": true,
+              "reason": "The deliverable and information nodes cover all essential operations in the work_demand: cost-benefit analysis of financial requests, program tradeoffs, past budgets, and recommendations on cutting spending or redistributing funds. No extra objectives are introduced."
+            },
+            "occupational_plausibility": {
+              "passed": true,
+              "reason": "The evidence describes budget analysts using cost-benefit analyses to review financial requests, assess program tradeoffs, examine past budgets, and recommend spending cuts or fund redistribution. The plan's nodes and deliverable map directly to these documented duties."
+            }
+          },
+          "edge_reviews": [
+            {
+              "from": "i1",
+              "reason": "Financial requests (i1) provide the cost side—requested amounts and justifications—needed for the cost-benefit comparison in i5.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i3",
+              "reason": "Program objectives and expected outcomes (i3) provide the benefit side required for the cost-benefit comparison in i5.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i5",
+              "reason": "Cost-benefit results per program (i5) are a necessary input for the cross-program tradeoff analysis in i6, which contrasts programs on a consistent basis.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "Historical budget records (i2) supply the prior-period allocations and actual expenditures that i7 compares to identify spending patterns and variances.",
+              "to": "i7",
+              "valid": true
+            },
+            {
+              "from": "i5",
+              "reason": "Cost-benefit findings (i5) inform the judgment in i8 about which programs warrant cuts or redistribution.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i6",
+              "reason": "Tradeoff analysis (i6) provides the comparative basis across programs that i8 needs to prioritize cuts and redistribution.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i7",
+              "reason": "Past budget performance comparison (i7) supplies historical spending patterns and variances that i8 uses alongside cost-benefit and tradeoff findings.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "Organizational constraints and criteria (i4)—available funds, mandatory obligations, priorities—bound the judgment in i8 about feasible cuts and redistribution.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i6",
+              "reason": "The tradeoff analysis (i6) provides the comparative program evidence that the decision memo (out1) must cite to support its recommendations.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i8",
+              "reason": "The professional judgment on cuts and redistribution (i8) is the core recommendation content that the decision memo (out1) communicates.",
+              "to": "out1",
+              "valid": true
+            }
+          ]
+        },
+        "status": "reviewed"
+      },
+      "status": "audit_rejected",
+      "status_before_audit": "accepted"
+    },
+    "seed_f72f218a6cef34260ae1bd01": {
+      "audit": {
+        "decision": "reject",
+        "plan_sha256": "40fe43a68412fbdffa537335a2e88f680ab87d720969d69800f4744d45a2f688",
+        "reason": "Repository audit: i3 and i4 require observed supplier data and comparative supplier analysis although the seed asks for procurement selection guidelines. This adds an unnecessary supplier evaluation objective; retain the generated plan for inspection but do not admit it."
+      },
+      "checkpoint_sha256": "6a2da6503fd33f0cdc1828176362faad269c298cb2f10fc7c2cf84b6100beac2",
+      "deterministic": {
+        "checks": {
+          "all_information_serves_deliverables": true,
+          "deliverables_are_sinks": true,
+          "deliverables_have_information_inputs": true,
+          "derived_and_judgment_have_inputs": true,
+          "directed_acyclic_graph": true,
+          "external_input_exists": true,
+          "external_inputs_are_roots": true,
+          "no_input_carrier_assignment": true,
+          "no_numeric_case_literals": true,
+          "no_obvious_filled_answer_markers": true,
+          "no_source_urls_or_company_suffixes": true,
+          "schema": true,
+          "seed_is_sampled": true,
+          "seed_matches_request": true,
+          "unique_node_ids": true,
+          "valid_edge_references": true
+        },
+        "issues": [],
+        "passed": true
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:55:09.887016+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-planning-v3",
+          "request_sha256": "c9130171a1472c83980f2b76c70a99ca2f483e78f7b62ed871327f9ff9055337"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T16:01:14.232539+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-review-v4",
+          "request_sha256": "c97d802c2fe5d155271610a8fbff963f8d557cdd2de08944c1d4199cb6ab75e2"
+        }
+      ],
+      "reasons": [
+        "audit:Repository audit: i3 and i4 require observed supplier data and comparative supplier analysis although the seed asks for procurement selection guidelines. This adds an unnecessary supplier evaluation objective; retain the generated plan for inspection but do not admit it."
+      ],
+      "semantic": {
+        "review": {
+          "checks": {
+            "carrier_neutrality": {
+              "passed": true,
+              "reason": "The deliverable is typed only as 'guidelines' with a content description; no document format, template, system, or filing carrier is mandated, and the input families in the seed are not converted into required artifact formats."
+            },
+            "case_neutrality": {
+              "passed": true,
+              "reason": "No named company, person, date, price, score, citation, threshold, or final criterion weighting appears; i3 and i4 describe the kind of data to be obtained and the comparison to be performed, not invented values. Necessary sector-neutral constraints (organizational policy, goods specifications) are appropriately framed as external inputs rather than a new objective."
+            },
+            "dependency_logic": {
+              "passed": true,
+              "reason": "The graph is coherent and acyclic: external facts (i1, i2, i3) feed a derived comparison (i4), which feeds a judgment node (i5), and both external constraints and both analytic/judgment nodes feed the single deliverable. No edge rests on topical similarity alone, and no source is forced to connect directly to the output when an indirect path exists."
+            },
+            "information_roles": {
+              "passed": true,
+              "reason": "i1 (policy framework, ethical standards, existing procedures), i2 (purchased goods specifications and required technical characteristics), and i3 (observed price, quality, availability, reliability, and technical-support data) are correctly typed as external inputs, i.e., facts not derivable from the task itself. i4 is correctly derived (a comparison computed from observed data and specifications). i5 is correctly a professional judgment (which criteria matter and how to weigh them)."
+            },
+            "information_sufficiency": {
+              "passed": true,
+              "reason": "Trace of i5's concepts: 'how buyers should weigh and apply each criterion' is supplied by i1 (policy and ethical constraints) plus i4 (where offerings actually differ); 'which criteria are most decision-relevant' is supplied by i4, whose inputs i2 (required technical characteristics) and i3 (observed offerings) provide the requirement and market context. The deliverable's 'judgment basis' concept is supplied by i5, and its policy-consistency requirement by i1. All premises named in the node descriptions have at least an indirect path; none of the judgment nodes asserts facts no upstream node covers."
+            },
+            "minimality": {
+              "passed": true,
+              "reason": "One deliverable and five information nodes, no section-splitting of a single report, no generic communication node, no forecast, causal investigation, or corrective action. Nodes i3 and i4 add supporting supplier-comparison analysis beyond the bare minimum, but they remain internal evidence for the same guideline-authoring task rather than a second deliverable or a distinct professional problem."
+            },
+            "no_precomputed_answers": {
+              "passed": true,
+              "reason": "The plan states what must be obtained and analyzed but delivers no final criteria set, no weighted ranking, no supplier verdict, and no finished guideline text; i5 is framed as an assessment still to be produced, so no answer is presupposed."
+            },
+            "objective_alignment": {
+              "passed": true,
+              "reason": "The work_objective reproduces the work_demand verbatim, and the single deliverable (procurement guidelines defining selection criteria across price, quality, availability, reliability, and technical support, with judgment basis) preserves the one essential operation: authoring a criteria-defining guideline document. No adjacent duty from the evidence, such as actually executing a purchase or negotiating contracts, is imported as an objective."
+            },
+            "occupational_plausibility": {
+              "passed": true,
+              "reason": "Writing supplier/merchandise selection criteria and aligning them with organizational procurement policy and ethical standards matches the cited evidence: agents weigh price, quality, availability, reliability, and technical support (ev_4f233d1c), and purchasing managers develop procurement policies and procedures (ev_b49c348c). The described information needs (goods technical characteristics, supplier offerings) are plausible for this role."
+            }
+          },
+          "edge_reviews": [
+            {
+              "from": "i1",
+              "reason": "The organizational policy framework and required ethical standards constrain which criteria emphasis and weighting are permissible, so they are a direct premise for judging how buyers should weigh and apply criteria; without them the relevance judgment could contradict policy.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "The comparison of suppliers against each criterion needs the specifications and required technical characteristics of the goods being purchased to establish what counts as adequate quality and technical support; the specifications supply the benchmark, not just a related topic.",
+              "to": "i4",
+              "valid": true
+            },
+            {
+              "from": "i3",
+              "reason": "Observed pricing structures, quality measures, availability, reliability history, and technical-support offerings are the raw evidence the comparative analysis aggregates and categorizes; without this node the comparison would have no content.",
+              "to": "i4",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "Knowing where supplier offerings actually differ or align by criterion is the evidence base for judging which criteria are decision-relevant and how much they should matter; the judgment would otherwise be ungrounded assertion.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i1",
+              "reason": "The guidelines must be consistent with the organization's procurement policy, ethical standards, and existing procedures, so this node supplies the governing constraints the written criteria must satisfy.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "The technical characteristics of the goods purchased determine how the technical-support criterion and merchandise-quality criterion are framed and applied in the guideline text, making this a genuine content contribution rather than background.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "The criterion-by-criterion comparison supplies concrete evidence of where each criterion discriminates between offerings, which is what the deliverable's 'judgment basis for applying each criterion' must rest on.",
+              "to": "out1",
+              "valid": true
+            },
+            {
+              "from": "i5",
+              "reason": "The assessment of decision-relevant criteria and recommendations on applying them constitute the judgment-basis content of the guidelines; the deliverable cannot state how criteria should be applied without this node.",
+              "to": "out1",
+              "valid": true
+            }
+          ]
+        },
+        "status": "reviewed"
+      },
+      "status": "audit_rejected",
+      "status_before_audit": "accepted"
+    },
+    "seed_fd10d1bb12e351e2266e1dfb": {
+      "checkpoint_sha256": "58401d89d4f5e2ac990e04459365ff8740bf45938e78965591f609d3c8a1e8c6",
+      "deterministic": {
+        "checks": {
+          "all_information_serves_deliverables": true,
+          "deliverables_are_sinks": true,
+          "deliverables_have_information_inputs": true,
+          "derived_and_judgment_have_inputs": true,
+          "directed_acyclic_graph": true,
+          "external_input_exists": true,
+          "external_inputs_are_roots": true,
+          "no_input_carrier_assignment": true,
+          "no_numeric_case_literals": true,
+          "no_obvious_filled_answer_markers": true,
+          "no_source_urls_or_company_suffixes": true,
+          "schema": true,
+          "seed_is_sampled": true,
+          "seed_matches_request": true,
+          "unique_node_ids": true,
+          "valid_edge_references": true
+        },
+        "issues": [],
+        "passed": true
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:54:47.479530+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-planning-v3",
+          "request_sha256": "805eee4eeb36b9b30e3808cb2bdb0380964a3362c014a596cfc7579a9106f174"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-10T15:58:06.526582+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 4096,
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "intent-information-review-v4",
+          "request_sha256": "d63ed49bc501708d87844f629375099d52c1e3bd9348ace0c3c2a68f002d8aa6"
+        }
+      ],
+      "reasons": [],
+      "semantic": {
+        "review": {
+          "checks": {
+            "carrier_neutrality": {
+              "passed": true,
+              "reason": "The plan specifies information content, not carriers. The seed's reports/tabular_data families are absent but merely optional hints, and nothing requires a particular file type."
+            },
+            "case_neutrality": {
+              "passed": true,
+              "reason": "The plan does not fix a specific project, company, dates, or values; it describes categories of records and comparisons to be populated from case data."
+            },
+            "dependency_logic": {
+              "passed": true,
+              "reason": "Every edge carries a concrete information contribution: plan targets and actuals feed their respective comparisons; each comparison feeds the overall assessment; i8 feeds the status summary. No edge relies on mere topical similarity, and no leap from numbers alone to causes is made."
+            },
+            "information_roles": {
+              "passed": true,
+              "reason": "External inputs are observations and case facts (approved plan, progress records, cost records, quality/test evidence); the three comparisons are derived; the overall assessment is a professional judgment. Roles follow the objective's reconciliation logic."
+            },
+            "information_sufficiency": {
+              "passed": true,
+              "reason": "Deadline monitoring needs i1 and i2; cost monitoring needs i1 and i3; standards conformance needs i1's acceptance criteria plus i4's explicit test/review/acceptance observations — which satisfies the requirement for external conformity evidence beyond standards alone. The overall judgment draws on all three comparison nodes. No missing premise is evident."
+            },
+            "minimality": {
+              "passed": true,
+              "reason": "The plan uses one deliverable, four external inputs, three comparisons, and one overall judgment. Each input maps to one of the three demand dimensions, with no redundant node, unrequested forecast, causal investigation, or extra deliverable."
+            },
+            "no_precomputed_answers": {
+              "passed": true,
+              "reason": "No concrete milestones, dates, costs, variances, citations, or final assessments are stated; all such content is deferred to later retrieval and derivation."
+            },
+            "objective_alignment": {
+              "passed": true,
+              "reason": "The objective preserves the original work_demand's three monitoring axes (deadlines, standards, cost targets) across planning-through-implementation scope, and the deliverable is a status summary of schedule position, standards conformance, and cost position — the same professional problem, with no added objectives."
+            },
+            "occupational_plausibility": {
+              "passed": true,
+              "reason": "The BLS excerpt confirms IT/software project supervisors monitor progress against deadlines, standards, and cost targets, which is exactly the monitoring role the plan operationalizes through plan-vs-actual comparison and a status summary."
+            }
+          },
+          "edge_reviews": [
+            {
+              "from": "i1",
+              "reason": "The approved plan supplies planned milestones and deadlines, which are the baseline required to compute schedule progress and deadline variances.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i2",
+              "reason": "Current progress records supply actual milestone completion and activity dates needed to compare against the plan.",
+              "to": "i5",
+              "valid": true
+            },
+            {
+              "from": "i1",
+              "reason": "The approved plan supplies cost targets/budget against which actual expenditures are compared.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i3",
+              "reason": "Cost records supply actual and committed expenditures needed to compute cost variances and budget status.",
+              "to": "i6",
+              "valid": true
+            },
+            {
+              "from": "i1",
+              "reason": "The plan supplies the applicable standards and acceptance criteria that define what conformance means for the quality assessment.",
+              "to": "i7",
+              "valid": true
+            },
+            {
+              "from": "i4",
+              "reason": "Quality and standards evidence supplies the observed test/review/acceptance results that are assessed against the criteria.",
+              "to": "i7",
+              "valid": true
+            },
+            {
+              "from": "i5",
+              "reason": "The schedule comparison provides the deadline-status findings the overall assessment must synthesize.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i6",
+              "reason": "The cost comparison provides the budget-status findings the overall assessment must synthesize.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i7",
+              "reason": "The quality conformance assessment provides the standards-status findings the overall assessment must synthesize.",
+              "to": "i8",
+              "valid": true
+            },
+            {
+              "from": "i8",
+              "reason": "The overall judgment supplies the progress assessment and significance of variances that the status summary reports.",
+              "to": "out1",
+              "valid": true
+            }
+          ]
+        },
+        "status": "reviewed"
+      },
+      "status": "accepted"
+    }
+  },
+  "selected_seed_ids": [
+    "seed_557eec0637616419be8bbe23",
+    "seed_fd10d1bb12e351e2266e1dfb",
+    "seed_f72f218a6cef34260ae1bd01",
+    "seed_c651450be087dfe86854b1ab"
+  ],
+  "status_counts": {
+    "accepted": 2,
+    "audit_rejected": 2
+  }
+}

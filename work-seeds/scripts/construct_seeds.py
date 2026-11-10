@@ -123,7 +123,7 @@ def parse_response(response):
     except (KeyError, IndexError, ValueError, TypeError): raise DataError('llm_response_not_json') from None
 
 
-def llm_call(config, system, data, cache):
+def llm_call(config, system, data, cache, *, prompt_version=PROMPT_VERSION):
     endpoint = config.get('endpoint')
     if not endpoint: raise DataError('missing_llm_endpoint')
     if not config.get('model'): raise DataError('missing_llm_model')
@@ -132,13 +132,13 @@ def llm_call(config, system, data, cache):
     payload = {'model': config['model'], **params,
                'messages': [{'role': 'system', 'content': system},
                             {'role': 'user', 'content': json.dumps(data, ensure_ascii=False, sort_keys=True)}]}
-    key = sha256(json_bytes({'endpoint': endpoint, 'payload': payload, 'prompt_version': PROMPT_VERSION}))
+    key = sha256(json_bytes({'endpoint': endpoint, 'payload': payload, 'prompt_version': prompt_version}))
     path = cache / 'llm' / (key + '.json')
     if path.exists(): record = json.loads(path.read_text())
     else:
         response = request_json(endpoint, payload, config.get('api_key_env'), config.get('timeout_seconds', 45))
         record = {'model_requested': config['model'], 'model_returned': response.get('model'),
-                  'endpoint': endpoint, 'prompt_version': PROMPT_VERSION, 'parameters': params,
+                  'endpoint': endpoint, 'prompt_version': prompt_version, 'parameters': params,
                   'generated_at': now(), 'request_sha256': key, 'response': response}
         save(path, record)
     result = parse_response(record['response'])

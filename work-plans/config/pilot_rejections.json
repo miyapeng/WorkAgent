@@ -1,0 +1,10 @@
+{
+  "seed_f72f218a6cef34260ae1bd01": {
+    "plan_sha256": "40fe43a68412fbdffa537335a2e88f680ab87d720969d69800f4744d45a2f688",
+    "reason": "Repository audit: i3 and i4 require observed supplier data and comparative supplier analysis although the seed asks for procurement selection guidelines. This adds an unnecessary supplier evaluation objective; retain the generated plan for inspection but do not admit it."
+  },
+  "seed_c651450be087dfe86854b1ab": {
+    "plan_sha256": "886d1a70bea329c4113f208c5d6a1dc015cce0d322019acf27d4c137bac70c2e",
+    "reason": "Repository audit: i6 explicitly compares program budget performance, but its only parent is i5 (current-request cost-benefit analysis). Historical records i2 and their analysis i7 have no path into i6. The graph therefore omits a premise required by the node's own description."
+  }
+}
