@@ -1,0 +1,8 @@
+{
+  "provenance": "Small pilot source list found through web search, not an exhaustive occupational search index. BLS primary host returned HTTP 403 from CLI; official blsmon1 host is used explicitly. Its pages may be older snapshots; dates/content are retained in cache, not claimed current.",
+  "sources": [
+    {"occupation_code": "13-1023.00", "url": "https://blsmon1.bls.gov/ooh/business-and-financial/purchasing-managers-buyers-and-purchasing-agents.htm"},
+    {"occupation_code": "13-2031.00", "url": "https://blsmon1.bls.gov/ooh/business-and-financial/budget-analysts.htm"},
+    {"occupation_code": "15-1252.00", "url": "https://blsmon1.bls.gov/ooh/computer-and-information-technology/software-developers.htm"}
+  ]
+}

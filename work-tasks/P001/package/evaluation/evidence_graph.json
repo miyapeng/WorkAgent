@@ -1,0 +1,106 @@
+{
+  "nodes": [
+    {
+      "id": "quotes",
+      "status": "supplied",
+      "file": "quotes.csv",
+      "anchor": "supplier_id A/B/C; all fields"
+    },
+    {
+      "id": "policy",
+      "status": "supplied",
+      "file": "purchase_policy.json",
+      "anchor": "quantity_units and all thresholds, price_basis, decision_rule"
+    },
+    {
+      "id": "performance",
+      "status": "supplied",
+      "file": "supplier_performance.png",
+      "anchor": {
+        "A": [
+          40,
+          215,
+          1100,
+          280
+        ],
+        "B": [
+          40,
+          305,
+          1100,
+          370
+        ],
+        "C": [
+          40,
+          395,
+          1100,
+          460
+        ]
+      },
+      "coordinate_system": "1200x580 pixels; x0,y0,x1,y1"
+    },
+    {
+      "id": "cost",
+      "status": "solver_derived",
+      "file": "outputs/comparison.csv",
+      "anchor": "total_cost_cny"
+    },
+    {
+      "id": "eligibility",
+      "status": "solver_derived",
+      "file": "outputs/comparison.csv",
+      "anchor": "eligible"
+    },
+    {
+      "id": "decision",
+      "status": "solver_derived",
+      "file": "outputs/decision.json",
+      "anchor": "recommended_supplier"
+    },
+    {
+      "id": "memo",
+      "status": "solver_derived",
+      "file": "outputs/recommendation.md",
+      "anchor": "whole document"
+    }
+  ],
+  "edges": [
+    {
+      "from": [
+        "quotes",
+        "policy"
+      ],
+      "to": "cost",
+      "relation": "quantity * unit_price + freight + setup"
+    },
+    {
+      "from": [
+        "quotes",
+        "policy",
+        "performance"
+      ],
+      "to": "eligibility",
+      "relation": "all four hard constraints"
+    },
+    {
+      "from": [
+        "cost",
+        "eligibility",
+        "policy"
+      ],
+      "to": "decision",
+      "relation": "lowest eligible cost; declared tie rule"
+    },
+    {
+      "from": [
+        "quotes",
+        "policy",
+        "performance",
+        "cost",
+        "eligibility",
+        "decision"
+      ],
+      "to": "memo",
+      "relation": "evidence-supported explanation"
+    }
+  ]
+}

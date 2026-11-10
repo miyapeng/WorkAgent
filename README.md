@@ -1,5 +1,9 @@
 # Executable Multimodal Work Environments for Agent Learning
 
+当前研究数据工程阶段：**[Stage 1 · Occupation-grounded Work Seed Construction](work-seeds/STAGE1.md)**。在已完成的 [O*NET 原始目录](work-seeds/README.md) 上增加数字候选筛选、职业证据检索、模型 Seed 补充和覆盖采样；与以下早期 W001/P001 演示独立。当前不继续构造工作空间或训练数据。
+
+Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
+
 这是依据 [V0 方案](数据制造方案.md) 搭建的最小可运行框架。先让一个 W001 销售分析任务走完整个流程，再逐步设计每个环节。原方案保持不变。
 
 当前能真实生成 PNG / XLSX / PDF，重置工作空间、执行受控工具、检查交付物、保存轨迹和奖励。执行器是**手工参考样例**，没有接入模型，也没有进行 SFT / RL 训练。

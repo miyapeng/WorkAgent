@@ -1,0 +1,15 @@
+{
+  "version": "work-seeds-custom-v1",
+  "provenance": "Project-defined vocabulary. GraphForge Section 3.1 mentions 16 patterns but a complete authoritative definition was not confirmed; this is NOT that vocabulary.",
+  "patterns": {
+    "quantitative_analysis": "Calculate, model or compare quantities to support a professional decision.",
+    "reconciliation": "Identify and explain discrepancies across records, reports or accounts.",
+    "information_synthesis": "Find, compare and synthesize documented information into a supported account.",
+    "evaluation_and_selection": "Evaluate alternatives against explicit criteria and recommend a choice.",
+    "document_authoring": "Create a professional document from source material and requirements.",
+    "artifact_revision": "Review and revise an existing professional artifact.",
+    "planning_and_policy": "Develop a plan, schedule, procedure or policy using documented constraints.",
+    "software_development": "Implement, debug or test software or structured digital systems."
+  },
+  "input_file_families": ["tabular_data", "reports", "policies_and_specifications", "correspondence", "presentations", "source_code", "technical_drawings", "images", "logs", "structured_records"]
+}

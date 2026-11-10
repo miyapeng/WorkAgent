@@ -1,0 +1,16 @@
+[
+  {
+    "table": "occupations",
+    "id": "15-1252.00",
+    "source_text": "Software Developers",
+    "zh": "软件开发人员",
+    "reason": "职业指从业人员，不是软件开发商。"
+  },
+  {
+    "table": "tasks",
+    "id": "21579",
+    "source_text": "Advise clients on aspects of capitalization, such as amounts, sources, or timing.",
+    "zh": "就资本筹措的金额、来源或时机等事项向客户提供建议。",
+    "reason": "以金融工作语境表达 capitalization，供阅读使用。"
+  }
+]

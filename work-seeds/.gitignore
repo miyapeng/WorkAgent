@@ -1,0 +1,7 @@
+data/raw/*.zip
+data/raw/*.part
+data/processed-check/
+site/.git/
+site/.openai/*.tar.gz
+data/seed_cache/
+config/*.local.json

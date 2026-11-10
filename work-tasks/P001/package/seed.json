@@ -1,0 +1,36 @@
+{
+  "onet_version": "31.0",
+  "occupation": {
+    "occupation_code": "13-1023.00",
+    "occupation_title": "Purchasing Agents, Except Wholesale, Retail, and Farm Products"
+  },
+  "task": {
+    "task_id": "1144",
+    "occupation_code": "13-1023.00",
+    "task_text": "Research and evaluate suppliers, based on price, quality, selection, service, support, availability, reliability, production and distribution capabilities, and the supplier's reputation and history.",
+    "task_type": "Core"
+  },
+  "dwas": [
+    {
+      "dwa_id": "4.A.1.a.1.g.1",
+      "dwa_name": "Obtain information about goods or services."
+    }
+  ],
+  "digital_decision": {
+    "task_id": "1144",
+    "decision": "DIGITAL",
+    "rule_id": "R1_DIGITAL",
+    "source_label": "DIGITAL",
+    "source_row": "1269",
+    "source_reason": "as this task primarily involves online research, digital evaluation of suppliers, and analysis of data related to price, quality, and other factors using computer systems and databases."
+  },
+  "source_sha256": {
+    "tasks.csv": "819798eb7f6b58c7ee424ed8ddaabea8bdd4e500b64ba666ce764b21455f79a1",
+    "occupations.csv": "c50d4956e8ebe42638435cd01799e025a1dbaa02feef8803458aa0e54085dc0b",
+    "dwas.csv": "09dc40e376be47ff68a17e8e82d9a9134dc98c65fb429e74653e1f67ba93d73a",
+    "task_dwa.csv": "1ab30c7b8e986c020e18cee9c2aa43095e3eebd87fe3a9a999d163ed783a05b3",
+    "task_decisions.csv": "3ccd9b55ed243a9db94f15404796d8f2baa8a9fadc4a2b578904c0345b541642"
+  },
+  "official_source": "https://www.onetcenter.org/database.html",
+  "license": "O*NET 31.0: USDOL/ETA, CC BY 4.0; no endorsement."
+}

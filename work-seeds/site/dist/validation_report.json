@@ -1,0 +1,75 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "all_links_preserved": true,
+    "all_observed_dwas_preserved": true,
+    "all_occupations_preserved": true,
+    "all_tasks_preserved": true,
+    "csv_roundtrip_preserves_values": true,
+    "dwa_primary_key": true,
+    "occupation_primary_key": true,
+    "task_dwa_foreign_keys": true,
+    "task_dwa_primary_key": true,
+    "task_occupation_foreign_key": true,
+    "task_primary_key": true
+  },
+  "counts": {
+    "dwas": 2085,
+    "occupations": 1016,
+    "occupations_without_tasks": 93,
+    "task_dwa": 24087,
+    "task_types": {
+      "Core": 14071,
+      "Missing": 418,
+      "Supplemental": 4349
+    },
+    "tasks": 18838,
+    "tasks_without_dwa": 0
+  },
+  "dwa_scope": "Distinct DWAs observed in tasks_to_dwas.csv; not a claim of the full DWA taxonomy.",
+  "outputs_sha256": {
+    "dwas.csv": "cabbc4c2dd5453ca3e68a391aabbb2e8f19a10af6258fb57904f12d061e1800c",
+    "occupations.csv": "cfe1aca5793e88631dbf1b7aaf05ffb86a5e8be2c2d4fe0b41973b3fdc73809c",
+    "task_dwa.csv": "ab39583a516fd6378950fa9bbfb83bda401a1ad4dae929d8b40362d39391be52",
+    "tasks.csv": "95e30bfd2f000003fe88f7c3a8df565780736498bd95deb7c8b430ff17fc0acb"
+  },
+  "provenance": {
+    "mode": "official_csv",
+    "release": "August 2026",
+    "sha256": {
+      "occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+      "task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+      "tasks_to_dwas.csv": "15624d31acb85627736a87dc7c485edffe30361262571c8242fad4ae9e7678a6"
+    },
+    "source": "https://www.onetcenter.org/database.html",
+    "urls": [
+      "https://www.onetcenter.org/dl_files/database/db_31_0_csv/occupation_data.csv",
+      "https://www.onetcenter.org/dl_files/database/db_31_0_csv/task_statements.csv",
+      "https://www.onetcenter.org/dl_files/database/db_31_0_csv/tasks_to_dwas.csv"
+    ],
+    "version": "31.0"
+  },
+  "raw_files": {
+    "occupation_data.csv": {
+      "exact_duplicate_rows_removed": 0,
+      "raw_rows": 1016,
+      "sha256": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+      "unique_rows": 1016
+    },
+    "task_statements.csv": {
+      "exact_duplicate_rows_removed": 0,
+      "raw_rows": 18838,
+      "sha256": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+      "unique_rows": 18838
+    },
+    "tasks_to_dwas.csv": {
+      "exact_duplicate_rows_removed": 0,
+      "raw_rows": 24087,
+      "sha256": "15624d31acb85627736a87dc7c485edffe30361262571c8242fad4ae9e7678a6",
+      "unique_rows": 24087
+    }
+  },
+  "release": "August 2026",
+  "source": "https://www.onetcenter.org/database.html",
+  "version": "31.0"
+}

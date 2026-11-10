@@ -1,0 +1,18 @@
+{
+  "method": "Assistant visual inspection of rendered PNG; explicit transcription, not autonomous teacher execution.",
+  "image_sha256": "ac474b97add2eb664ef513221efd5df2e0ab93a8cf317bf74dd1780d21c6144b",
+  "values": {
+    "A": {
+      "on_time_pct": 99,
+      "defect_pct": 2.4
+    },
+    "B": {
+      "on_time_pct": 96,
+      "defect_pct": 0.6
+    },
+    "C": {
+      "on_time_pct": 98,
+      "defect_pct": 0.8
+    }
+  }
+}

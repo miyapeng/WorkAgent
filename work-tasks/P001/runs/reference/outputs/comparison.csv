@@ -1,0 +1,4 @@
+supplier_id,total_cost_cny,on_time_pct,defect_pct,eligible
+A,20500.00,99,2.4,false
+B,21250.00,96,0.6,true
+C,21400.00,98,0.8,true

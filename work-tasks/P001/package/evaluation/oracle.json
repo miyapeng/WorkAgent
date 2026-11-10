@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "supplier_id": "A",
+      "total_cost_cny": "20500.00",
+      "on_time_pct": "99",
+      "defect_pct": "2.4",
+      "eligible": "false"
+    },
+    {
+      "supplier_id": "B",
+      "total_cost_cny": "21250.00",
+      "on_time_pct": "96",
+      "defect_pct": "0.6",
+      "eligible": "true"
+    },
+    {
+      "supplier_id": "C",
+      "total_cost_cny": "21400.00",
+      "on_time_pct": "98",
+      "defect_pct": "0.8",
+      "eligible": "true"
+    }
+  ],
+  "recommended_supplier": "B"
+}

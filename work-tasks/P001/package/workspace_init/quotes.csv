@@ -1,0 +1,4 @@
+supplier_id,unit_price_cny,freight_cny,setup_cny,lead_days,capacity_units
+A,2.00,300.00,200.00,7,15000
+B,2.10,150.00,100.00,10,11000
+C,2.05,600.00,300.00,8,12000

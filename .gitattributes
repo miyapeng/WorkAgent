@@ -1,0 +1,2 @@
+# Preserve official CSV bytes (including CRLF) for source checksum verification.
+/work-seeds/data/raw/*.csv -text whitespace=cr-at-eol

@@ -1,0 +1,23 @@
+{
+  "kind": "engineering_reference_and_fault_injection",
+  "tests_run": 9,
+  "passed": [
+    "test_sample.SampleTests.test_altered_image_invalidates_observation",
+    "test_sample.SampleTests.test_correct_reference_and_private_boundary",
+    "test_sample.SampleTests.test_duplicate_and_nonfinite_rejected",
+    "test_sample.SampleTests.test_evidence_graph_anchors_and_deterministic_build",
+    "test_sample.SampleTests.test_missing_deliverable_or_bad_json_rejected",
+    "test_sample.SampleTests.test_missing_freight_is_not_imputed",
+    "test_sample.SampleTests.test_missing_image_blocks_reference",
+    "test_sample.SampleTests.test_wrong_cost_visual_value_and_eligibility_rejected",
+    "test_sample.SampleTests.test_wrong_lowest_price_choice_rejected"
+  ],
+  "failures": [],
+  "errors": [],
+  "all_passed": true,
+  "agent_probe_executed": false,
+  "automatic_repair_executed": false,
+  "human_professional_review": "pending",
+  "training_admitted": false,
+  "limitation": "Tests check this single authored case and verifier; they are not model capability results."
+}

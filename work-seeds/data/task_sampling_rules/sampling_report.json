@@ -1,0 +1,119 @@
+{
+  "algorithm": "task-lexicographic-coverage-v1",
+  "available": {
+    "dwas": 8,
+    "major_group_counts": {
+      "11": 1,
+      "13": 1,
+      "17": 1,
+      "19": 1,
+      "21": 1,
+      "33": 2,
+      "43": 2
+    },
+    "major_groups": 7,
+    "occupation_counts": {
+      "11-3111.00": 1,
+      "13-1081.02": 1,
+      "17-3029.01": 1,
+      "19-5011.00": 1,
+      "21-1092.00": 1,
+      "33-1091.00": 1,
+      "33-3021.00": 1,
+      "43-4031.00": 1,
+      "43-9111.00": 1
+    },
+    "occupations": 9,
+    "task_count": 9,
+    "task_type_counts": {
+      "Core": 7,
+      "Missing": 0,
+      "Supplemental": 2
+    },
+    "task_type_ratios": {
+      "Core": 0.7777777777777778,
+      "Missing": 0.0,
+      "Supplemental": 0.2222222222222222
+    }
+  },
+  "classification": {
+    "counts": {
+      "digital_candidate": 9,
+      "physical_required": 0,
+      "uncertain": 18829
+    },
+    "rule_counts": {
+      "D_DOCUMENT": 8,
+      "D_SOFTWARE": 1,
+      "U_COMPOUND_OR_SCOPE": 17823,
+      "U_NO_SUFFICIENT_RULE": 1006
+    },
+    "source": {
+      "digital_rules": {
+        "D_DOCUMENT": "^(?:prepare|write|compile|edit|revise) (?:financial |statistical |technical |budget |annual |monthly )?(?:reports|budgets|spreadsheets|documents)\\b",
+        "D_RECORD": "^(?:enter|update|retrieve|organize) (?:data|records|information) (?:in|into|from|using) (?:a |the )?(?:computer|database|spreadsheet|software)\\b",
+        "D_SOFTWARE": "^(?:write|develop|debug|test|modify|maintain) (?:computer |software |application )?(?:programs|code|software|scripts)\\b"
+      },
+      "physical_rules": {
+        "P_CLEAN": "^(?:clean|wash|disinfect) (?:floors|dishes|windows|rooms|equipment)(?: [^,;]+)?[.]?$",
+        "P_DRIVE": "^(?:drive|pilot) (?:trucks|buses|vehicles|aircraft|airplanes)(?: [^,;]+)?[.]?$",
+        "P_HANDLE": "^(?:lift|carry|load|unload) (?:cargo|freight|materials|packages)(?: [^,;]+)?[.]?$"
+      },
+      "provider": "conservative-task-rules-v1",
+      "uncertain_scope_rule": "\\b(?:and|or|including|such as|to|not|without|supervise|coordinate|monitor|plan)\\b|[,;]"
+    }
+  },
+  "input_sha256": {
+    "dwas.csv": "cabbc4c2dd5453ca3e68a391aabbb2e8f19a10af6258fb57904f12d061e1800c",
+    "occupations.csv": "cfe1aca5793e88631dbf1b7aaf05ffb86a5e8be2c2d4fe0b41973b3fdc73809c",
+    "task_dwa.csv": "ab39583a516fd6378950fa9bbfb83bda401a1ad4dae929d8b40362d39391be52",
+    "tasks.csv": "95e30bfd2f000003fe88f7c3a8df565780736498bd95deb7c8b430ff17fc0acb"
+  },
+  "limitations": [
+    "Eligibility is a candidate annotation, not verified digital executability.",
+    "Supplemental target is a tie preference, not a quota overriding coverage."
+  ],
+  "original_tasks": 18838,
+  "parameters": {
+    "n": 200,
+    "seed": 42,
+    "supplemental_target": 0.15
+  },
+  "sampled": {
+    "dwas": 8,
+    "major_group_counts": {
+      "11": 1,
+      "13": 1,
+      "17": 1,
+      "19": 1,
+      "21": 1,
+      "33": 2,
+      "43": 2
+    },
+    "major_groups": 7,
+    "occupation_counts": {
+      "11-3111.00": 1,
+      "13-1081.02": 1,
+      "17-3029.01": 1,
+      "19-5011.00": 1,
+      "21-1092.00": 1,
+      "33-1091.00": 1,
+      "33-3021.00": 1,
+      "43-4031.00": 1,
+      "43-9111.00": 1
+    },
+    "occupations": 9,
+    "task_count": 9,
+    "task_type_counts": {
+      "Core": 7,
+      "Missing": 0,
+      "Supplemental": 2
+    },
+    "task_type_ratios": {
+      "Core": 0.7777777777777778,
+      "Missing": 0.0,
+      "Supplemental": 0.2222222222222222
+    }
+  },
+  "shortfall": 191
+}

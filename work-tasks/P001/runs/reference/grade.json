@@ -1,0 +1,27 @@
+{
+  "automated_checks_passed": true,
+  "checks": {
+    "input_integrity": true,
+    "comparison_schema": true,
+    "supplier_coverage": true,
+    "A.total_cost_cny": true,
+    "A.on_time_pct": true,
+    "A.defect_pct": true,
+    "A.eligible": true,
+    "B.total_cost_cny": true,
+    "B.on_time_pct": true,
+    "B.defect_pct": true,
+    "B.eligible": true,
+    "C.total_cost_cny": true,
+    "C.on_time_pct": true,
+    "C.defect_pct": true,
+    "C.eligible": true,
+    "recommendation": true,
+    "evidence_references": true,
+    "memo_present": true
+  },
+  "errors": [],
+  "human_review": "pending: memo factuality, rationale and citation entailment",
+  "training_admitted": false,
+  "limitations": "End-state integrity only; not an execution trace or proof of model vision."
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "P001",
+  "seed_task_id": "1144",
+  "split": "development",
+  "materials_provenance": "Synthetic business case authored for this prototype; only seed is official O*NET.",
+  "image_dependency": "Six historical rates occur only in PNG pixels in workspace_init.",
+  "input_sha256": {
+    "TASK.md": "6a66be9d03adc6bc1f571940caae5e075131dcfd6531986fbdf2065b2cdf7fe9",
+    "purchase_policy.json": "2a1af78f39ed570211b0c19dbd955ad0c364ef1ce42efb698560b920abedae96",
+    "quotes.csv": "c426980a42d13d7bb7ce9af001aeb7c3fbadfc4ce11119f4c7a3b9ffeefc1f23",
+    "supplier_performance.png": "ac474b97add2eb664ef513221efd5df2e0ab93a8cf317bf74dd1780d21c6144b"
+  },
+  "training_admitted": false,
+  "boundary": "Directory separation only, not an OS sandbox."
+}

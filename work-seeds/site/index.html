@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>O*NET 数字工作种子目录</title>
+  <meta name="description" content="O*NET 31.0 原始职业、任务和 DWA 种子目录。完整记录、原始文本、可追溯验证。">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="catalog.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<header><a class="brand" href="#"><span class="mark">W</span> 工作种子 <span class="divider">/</span> 研究目录</a><span class="version">O*NET® 31.0 · 2026 年 8 月</span></header>
+<main>
+  <section class="intro">
+    <div><p class="eyebrow">第一阶段 / 官方目录与数字任务筛选</p><h1>找到可以数字化开展的工作。</h1><p class="sub">依据 AI4Work 逐任务标注筛选，保留官方全量目录。中文辅助阅读，英文原文可随时切换；候选种子尚未验证可执行性。</p></div>
+    <a class="button" href="validation_report.json" download>下载验证报告 <span>↗</span></a>
+  </section>
+  <div id="status" class="status" role="status">正在读取已验证目录…</div>
+  <section class="view-controls"><label>浏览范围<select id="scope"><option value="DIGITAL">数字任务候选</option><option value="PHYSICAL">现场 / 物理任务</option><option value="REVIEW">待核对</option><option value="ALL">官方全量目录</option></select></label><label>阅读语言<select id="language"><option value="zh">中文（机器翻译）</option><option value="en">英文原文</option><option value="both">中英对照</option></select></label><p id="scope-note"></p></section><details class="rule-panel"><summary>筛选规则与边界：为什么保留、排除或待核对？</summary><ol id="rule-list"></ol><p>数字标签来自 AI4Work 外部研究，不是 O*NET 官方标签，也不等于 Agent 已能完成该任务。职业只要含一条数字任务便会进入子集。上游将部分面对面沟通归为 PHYSICAL，不能据此推断所有沟通都无法在线完成。</p><p>中文由 Google Translate 机器翻译，仅用于阅读，未经逐条人工审校；筛选只使用英文原文和原始 ID。</p><p><a href="digital/filter_report.json" download>筛选报告 ↗</a> · <a href="digital/task_decisions.csv" download>逐任务判断及上游原文理由 ↗</a></p></details>
+  <section id="metrics" class="metrics" aria-label="目录总量"></section>
+  <section class="coverage"><div><h2>当前视图的任务类型</h2><p>官方原始标签；缺失值原样保留。</p></div><div class="distribution"><div id="type-bar" class="type-bar"></div><div id="type-legend" class="legend"></div></div><div id="coverage-note" class="coverage-note"></div></section>
+  <section class="catalog" aria-label="职业与任务浏览器">
+    <aside><div class="panel-title"><h2>职业目录</h2><span id="occupation-total"></span></div><label for="occupation-search">搜索职业名称或代码</label><input id="occupation-search" type="search" placeholder="例如 软件、software 或 15-1252" autocomplete="off"><div id="occupation-list" class="occupation-list"></div><nav class="pager" aria-label="职业分页"><button id="occ-prev">← 上一页</button><span id="occ-page" aria-live="polite"></span><button id="occ-next">下一页 →</button></nav></aside>
+    <article class="detail"><p class="eyebrow" id="occupation-code"></p><h2 id="occupation-title"></h2><p id="occupation-original" class="muted"></p><p id="occupation-summary" class="muted"></p><div class="task-tools"><label>搜索该职业的任务<input id="task-search" type="search" placeholder="任务 ID、中文或英文描述"></label><label>官方任务类型<select id="task-type"><option value="all">全部类型</option><option value="Core">核心</option><option value="Supplemental">补充</option><option value="">未标注</option></select></label></div><div id="task-list"></div><nav class="pager" aria-label="任务分页"><button id="task-prev">← 上一页</button><span id="task-page" aria-live="polite"></span><button id="task-next">下一页 →</button></nav></article>
+  </section>
+  <section class="audit"><div><p class="eyebrow">可追溯性与完整性验证</p><h2>四张表，一条可核对的关联链。</h2><p class="muted">职业 → 任务 → 任务—活动关联 → 详细工作活动<br>全量底表保持不变；数字子集独立导出，不推测缺失标签。</p><p class="muted">官方全量目录</p><div class="downloads"><a href="occupations.csv" download>occupations.csv ↗</a><a href="tasks.csv" download>tasks.csv ↗</a><a href="dwas.csv" download>dwas.csv ↗</a><a href="task_dwa.csv" download>task_dwa.csv ↗</a></div><p class="muted">数字任务子集</p><div class="downloads"><a href="digital/occupations.csv" download>职业 ↗</a><a href="digital/tasks.csv" download>任务 ↗</a><a href="digital/dwas.csv" download>工作活动 ↗</a><a href="digital/task_dwa.csv" download>关联 ↗</a></div></div><div><div id="checks" class="checks"></div><details><summary>查看原始输入记录数与 SHA-256</summary><div id="hashes"></div></details></div></section>
+  <footer><p>筛选来源：<a href="https://github.com/zorazrw/ai4work-resources/blob/095db006debf83f2bbda2631964bd1b4c81190ad/real_work/employment/digital_task_annotation.xlsx">AI4Work 逐任务标注（固定版本 095db006）</a>。未对齐或未标注的任务保留为待核对，不自动视为非数字任务。</p><p>来源：<a href="https://www.onetcenter.org/database.html">O*NET® 31.0 Database</a>（August 2026），U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)。使用许可：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。O*NET® 是 USDOL/ETA 的商标。</p><p>官方底表进行字段投影、完全重复记录去重、规范化拆表与排序；另建 AI4Work 筛选层和机器翻译展示层，保留原始 ID 和英文文本。USDOL/ETA 未批准、认可或测试这些转换。DWA 数量仅指指定 Task-DWA 映射中出现的不同 DWA。</p><p><a href="https://www.onetcenter.org/dictionary/31.0/csv/occupation_data.html">Occupation 字典</a> · <a href="https://www.onetcenter.org/dictionary/31.0/csv/task_statements.html">Task 字典</a> · <a href="https://www.onetcenter.org/dictionary/31.0/csv/tasks_to_dwas.html">Task-DWA 字典</a></p></footer>
+</main>
+<noscript>请启用 JavaScript 浏览完整目录；四张 CSV 和验证报告仍可直接下载。</noscript>
+</body></html>

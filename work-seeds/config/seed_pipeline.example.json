@@ -1,0 +1,18 @@
+{
+  "vocabulary": "execution_patterns.json",
+  "retrieval": {
+    "provider": "url_manifest",
+    "manifest": "occupational_sources.json",
+    "timeout_seconds": 20,
+    "max_sources_per_pair": 2,
+    "max_passages_per_pair": 3
+  },
+  "llm": {
+    "model": "GLM-5.2",
+    "endpoint": "",
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "parameters": {"temperature": 0, "max_tokens": 2500},
+    "timeout_seconds": 45,
+    "candidates_per_pair": 2
+  }
+}

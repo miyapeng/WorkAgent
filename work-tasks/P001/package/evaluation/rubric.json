@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cost",
+    "anchors": [
+      "quotes",
+      "policy"
+    ],
+    "check": "all three costs within 0.01 CNY",
+    "mode": "automatic"
+  },
+  {
+    "id": "visual_values",
+    "anchors": [
+      "performance"
+    ],
+    "check": "all six percentages exact",
+    "mode": "automatic"
+  },
+  {
+    "id": "eligibility",
+    "anchors": [
+      "quotes",
+      "policy",
+      "performance"
+    ],
+    "check": "all three decisions exact",
+    "mode": "automatic"
+  },
+  {
+    "id": "recommendation",
+    "anchors": [
+      "cost",
+      "eligibility",
+      "policy"
+    ],
+    "check": "correct selected ID and three source filenames",
+    "mode": "automatic"
+  },
+  {
+    "id": "memo_quality",
+    "anchors": [
+      "memo",
+      "quotes",
+      "policy",
+      "performance"
+    ],
+    "check": "accurate claims, sufficient rationale, precise citations, no unsupported future guarantees",
+    "mode": "human_review_required"
+  }
+]

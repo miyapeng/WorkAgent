@@ -1,0 +1,8 @@
+{
+  "recommended_supplier": "B",
+  "evidence": {
+    "quotes": "quotes.csv",
+    "policy": "purchase_policy.json",
+    "performance": "supplier_performance.png"
+  }
+}

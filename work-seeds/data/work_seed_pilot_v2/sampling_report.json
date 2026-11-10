@@ -1,0 +1,596 @@
+{
+  "candidate_sha256": "432d1449faa881b927348d891ea6c23b1242506f8a6613a726bda530b962ad5d",
+  "classification": {
+    "counts": {
+      "digital_candidate": 5652,
+      "physical_required": 8808,
+      "uncertain": 4378
+    },
+    "rule_counts": {
+      "R1_DIGITAL": 5652,
+      "R2_PHYSICAL": 8808,
+      "R3_UNMATCHED": 134,
+      "R5_UNLABELED": 4244
+    },
+    "source": {
+      "interpretation": "External research annotation, not ground truth; PHYSICAL includes some in-person interactions.",
+      "provider": "ai4work",
+      "sha256": "01ee0ea4c9f5530240f25b5af9fa5df6218e429733e0f49914d6f501ac28167f",
+      "url": "https://raw.githubusercontent.com/zorazrw/ai4work-resources/095db006debf83f2bbda2631964bd1b4c81190ad/real_work/employment/digital_task_annotation.xlsx"
+    }
+  },
+  "digital_tasks_without_dwa": 0,
+  "eligible_pairs": 5894,
+  "enrich_signature": "ad561b0b96623045f66c9ef9fdb5aaed95066c7714c3c06a2b78d89819557dc4",
+  "enrichment": {
+    "candidate_seeds": 4,
+    "pair_status_counts": {
+      "processed": 6
+    },
+    "pairs": {
+      "13-1023.00|4.A.2.b.4.a.3": {
+        "accepted_seed_ids": [
+          "seed_f72f218a6cef34260ae1bd01"
+        ],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:13:25.279339+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "20134164f01c33d6eabd37b797e5a63cff7d951c1d1240140927299731970c3b"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:13:41.077203+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "65cd36d6b19d7b8bc1c7e78ecb2b327a95d2b11698fc9cce4452175593ab252b"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:13:48.133117+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "20ead7d957de4406da67af4f93bcc086ea65549dc955575321a4eebcfe1cbbf6"
+          }
+        ],
+        "proposals_received": 2,
+        "rejections": [
+          "review_unknown_evidence"
+        ],
+        "status": "processed",
+        "support_reviews": {
+          "seed_f72f218a6cef34260ae1bd01": {
+            "case_neutral": true,
+            "claims": [
+              {
+                "claim": "Purchasing managers are responsible for developing the organization's procurement policies and procedures.",
+                "evidence_id": "ev_b49c348cd1131f760e8eb42e",
+                "quote": "Purchasing managers are also responsible for developing their organization’s procurement policies and procedures."
+              },
+              {
+                "claim": "Buyers and purchasing agents consider price, quality, availability, reliability, and technical support when choosing suppliers and merchandise.",
+                "evidence_id": "ev_4f233d1cc7670f1814fcdd0c",
+                "quote": "Purchasing agents and buyers consider price, quality, availability, reliability, and technical support when choosing suppliers and merchandise."
+              },
+              {
+                "claim": "Procurement policies help ensure ethical standards and avoid conflicts of interest or inappropriate supplier relations.",
+                "evidence_id": "ev_b49c348cd1131f760e8eb42e",
+                "quote": "These policies help ensure that procurement professionals are meeting ethical standards to avoid potential conflicts of interest or inappropriate supplier and customer relations."
+              }
+            ],
+            "duplicate": false,
+            "input_families_fit": true,
+            "occupational_fit": true,
+            "pattern_fit": true,
+            "rationale": "The demand asks to draft procurement guidelines setting out the criteria buyers and purchasing agents apply when choosing suppliers and merchandise, covering price, quality, availability, reliability, and technical support. Evidence ev_b49c348cd1131f760e8eb42e directly supports drafting procurement policies/guidelines for the organization. Evidence ev_4f233d1cc7670f1814fcdd0c explicitly lists the exact criteria (price, quality, availability, reliability, and technical support) that purchasing agents and buyers apply when choosing suppliers and merchandise. The occupation (Purchasing Agents) and DWA (Establish organizational guidelines or policies) align with the evidence's occupation_dwa_pairs. The document_authoring pattern fits creating a guidelines document. The input_file_families (correspondence, policies_and_specifications) are plausible for authoring procurement guidelines. No nearest accepted demands exist to compare for duplication.",
+            "supported": true
+          }
+        }
+      },
+      "13-1023.00|4.A.3.b.6.h.14": {
+        "accepted_seed_ids": [],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:13:51.799399+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "5b78ab2f9495dc86d4a810c724939963c146a70cb3b11f7e426d09ed8562cfd3"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:02.814291+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "74779a849d37e0515c20431854e1f22f7c9539fb96c160b8ebed80949a1b1755"
+          }
+        ],
+        "proposals_received": 1,
+        "rejections": [
+          "review_quote_not_in_source"
+        ],
+        "status": "processed"
+      },
+      "13-1023.00|4.A.4.c.1.c.4": {
+        "accepted_seed_ids": [],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:07.294627+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "061ae3d2f66f620a1c3f61831339831c9a9b5855bc8b88420019dbf0a0c8f0a4"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:19.517755+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "d88370c9145598f95e0a142c457789452184f08b45342044f5b91c7e67677ff5"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:30.674770+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "0ec0fef25edb1e8b098bff54d1811bf5cc0847d92af952668996b47f0b1e77be"
+          }
+        ],
+        "proposals_received": 2,
+        "rejections": [
+          "review_rejected_input_families_fit",
+          "uncorroborated_evidence_reference"
+        ],
+        "status": "processed"
+      },
+      "13-2031.00|4.A.2.a.2.a.5": {
+        "accepted_seed_ids": [],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:35.341188+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "7483ed086b2a545ba0bc3f4af87df640a18735ad292b1694e4a2416afab08368"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:14:42.663795+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "2ae1069c3d05258f55cfd014d075dc29d97a32bae884cd7c4db60438d5ceb1be"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:02.692324+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "8ebb3bce92395241b13428c70b6bd0accfdac03a0d0e206bb34894e5abc1f6b3"
+          }
+        ],
+        "proposals_received": 2,
+        "rejections": [
+          "review_quote_not_in_source",
+          "review_rejected_input_families_fit"
+        ],
+        "status": "processed"
+      },
+      "13-2031.00|4.A.4.b.6.k.3": {
+        "accepted_seed_ids": [
+          "seed_557eec0637616419be8bbe23",
+          "seed_c651450be087dfe86854b1ab"
+        ],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:10.176670+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "a4ac7d4369fb5d569dd3e57cd93a8dadfe7133a0a5f581699ef2c9428ced487b"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:18.937055+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "d00778365b4a1c4472de4241e391e981e0e188a760b3bad46284020b04b49ccb"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:29.799620+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "958261bf23c95426f2ca36099ba089b7f5a0d1d6c965bccba2a3c8485a2e7cff"
+          }
+        ],
+        "proposals_received": 2,
+        "rejections": [],
+        "status": "processed",
+        "support_reviews": {
+          "seed_557eec0637616419be8bbe23": {
+            "case_neutral": true,
+            "claims": [
+              {
+                "claim": "Budget analysts advise officials within an organization on recommended changes.",
+                "evidence_id": "ev_25ba5151cf5a06b87c6fe02a",
+                "quote": "budget analysts must communicate their recommendations effectively to officials within the organization"
+              },
+              {
+                "claim": "The recommended changes aim to reconcile differences between an approved budget and actual spending.",
+                "evidence_id": "ev_25ba5151cf5a06b87c6fe02a",
+                "quote": "if there is a difference between the approved budget and actual spending, budget analysts may write a report explaining the variations and recommend changes to reconcile the differences"
+              },
+              {
+                "claim": "The recommendations are communicated effectively in a written report.",
+                "evidence_id": "ev_25ba5151cf5a06b87c6fe02a",
+                "quote": "must communicate their recommendations effectively to officials within the organization. For example, if there is a difference between the approved budget and actual spending, budget analysts may write a report explaining the variations"
+              }
+            ],
+            "duplicate": false,
+            "input_families_fit": true,
+            "occupational_fit": true,
+            "pattern_fit": true,
+            "rationale": "The demand is substantively supported by ev_25ba5151cf5a06b87c6fe02a, which describes budget analysts writing reports explaining variations between approved budgets and actual spending and recommending changes to reconcile differences, while communicating recommendations effectively to officials. The occupational context (Budget Analysts, 13-2031.00) is correct, and the DWA (4.A.4.b.6.k.3) is explicitly paired with this occupation in the evidence metadata. The source task 3398 ('Provide advice and technical assistance with cost analysis, fiscal allocation, and budget preparation') aligns with the advisory activity. The document_authoring pattern is appropriate for producing a written report. The input families (reports and tabular_data) are plausible: reports are the cited source material being authored/summarized, and tabular data is the expected format for budget-vs-actual spending figures. The demand is case-neutral and is not a semantic duplicate of the nearest accepted demand concerning procurement guidelines for choosing suppliers.",
+            "supported": true
+          },
+          "seed_c651450be087dfe86854b1ab": {
+            "case_neutral": true,
+            "claims": [
+              {
+                "claim": "Recommend cutting spending on particular programs or redistributing extra funds.",
+                "evidence_id": "ev_a4905af406723450bbd93ffd",
+                "quote": "Budget analysts may recommend cutting spending on particular programs or redistributing extra funds."
+              },
+              {
+                "claim": "Recommendations are based on cost-benefit analysis.",
+                "evidence_id": "ev_a4905af406723450bbd93ffd",
+                "quote": "budget analysts use cost–benefit analyses to review financial requests, assess program tradeoffs, and explore alternative funding methods."
+              },
+              {
+                "claim": "Cost-benefit analysis reviews financial requests and program tradeoffs.",
+                "evidence_id": "ev_a4905af406723450bbd93ffd",
+                "quote": "use cost–benefit analyses to review financial requests, assess program tradeoffs, and explore alternative funding methods."
+              },
+              {
+                "claim": "Analysis also considers past budgets.",
+                "evidence_id": "ev_a4905af406723450bbd93ffd",
+                "quote": "Budget analysts also may examine past budgets and research economic and financial developments that affect the organization’s income and expenditures."
+              },
+              {
+                "claim": "Task alignment: summarizing budgets and submitting recommendations for approval or disapproval of funds requests.",
+                "evidence_id": "ev_a4905af406723450bbd93ffd",
+                "quote": "review financial requests, assess program tradeoffs, and explore alternative funding methods."
+              }
+            ],
+            "duplicate": false,
+            "input_families_fit": true,
+            "occupational_fit": true,
+            "pattern_fit": true,
+            "rationale": "The demand is supported by ev_a4905af406723450bbd93ffd, which states that budget analysts use cost-benefit analyses to review financial requests, assess program tradeoffs, explore alternative funding methods, examine past budgets, and recommend cutting spending on particular programs or redistributing extra funds. The demand accurately paraphrases this excerpt without adding unsupported modifiers, technologies, or delivery formats. The case is neutral and specific to the Budget Analysts occupation. The evaluation_and_selection pattern fits because the demand involves evaluating financial tradeoffs and recommending a choice (cut vs. redistribute). The input families reports and tabular_data are plausible given financial requests, past budgets, and program analyses. The nearest accepted demand concerns reconciling approved budget vs. actual spending in a written report (ev_25ba5151cf5a06b87c6fe02a), which is semantically distinct from this demand's focus on cost-benefit analysis and spending cuts/redistribution.",
+            "supported": true
+          }
+        }
+      },
+      "15-1252.00|4.A.3.b.2.a.7": {
+        "accepted_seed_ids": [
+          "seed_fd10d1bb12e351e2266e1dfb"
+        ],
+        "model_calls": [
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:41.070952+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "e7c8cb6d53ccd033ff35e700f8a0a950a6ac64184e8b660fadc5acfcb0292c1b"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:48.765011+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "2ed66ac7b0871caef22a9b1fab36677f12ca29b7af348d6c2cdade4b3537c466"
+          },
+          {
+            "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+            "generated_at": "2026-11-10T14:15:57.058520+00:00",
+            "model_requested": "GLM_ka48dn",
+            "model_returned": "glm-5.2",
+            "parameters": {
+              "max_tokens": 4096,
+              "temperature": 0,
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "prompt_version": "occupation-seed-v2",
+            "request_sha256": "568cca817948b39552519c39e6aa5f692c8fefd79892e83a1e318b992ffcb748"
+          }
+        ],
+        "proposals_received": 2,
+        "rejections": [
+          "review_rejected_input_families_fit"
+        ],
+        "status": "processed",
+        "support_reviews": {
+          "seed_fd10d1bb12e351e2266e1dfb": {
+            "case_neutral": true,
+            "claims": [
+              {
+                "claim": "A developer supervising a software project from planning through implementation is sometimes called an information technology (IT) project manager.",
+                "evidence_id": "ev_e671f9014c0184b2195ce231",
+                "quote": "Developers who supervise a software project from the planning stages through implementation sometimes are called information technology (IT) project managers."
+              },
+              {
+                "claim": "These workers monitor the project's progress to ensure it meets deadlines, standards, and cost targets.",
+                "evidence_id": "ev_e671f9014c0184b2195ce231",
+                "quote": "These workers monitor the project’s progress to ensure that it meets deadlines, standards, and cost targets."
+              }
+            ],
+            "duplicate": false,
+            "input_families_fit": true,
+            "occupational_fit": true,
+            "pattern_fit": true,
+            "rationale": "The demand is supported by ev_e671f9014c0184b2195ce231, which describes developers supervising a software project from planning through implementation (\"IT project managers\") and monitoring progress against deadlines, standards, and cost targets. This directly substantiates the work demand's core operations and its IT/software-developer occupational context. The task 21668 (\"Determine system performance standards.\") aligns with the standards/performance component of the DWA, and the occupational code 15-1252.00 Software Developers is the cited occupation. The \"reconciliation\" execution pattern fits monitoring progress against multiple targets (deadlines, standards, costs) to identify discrepancies. The input families (reports, tabular_data) are plausible for project progress tracking against deadlines and cost targets. The demand is written in a neutral, case-appropriate manner and is not a semantic duplicate of the nearest accepted demands, which concern budget cutting, procurement guidelines, or budget-to-actual spending reconciliation.",
+            "supported": true
+          }
+        }
+      }
+    },
+    "proposals_received": 11,
+    "rejection_counts": {
+      "review_quote_not_in_source": 2,
+      "review_rejected_input_families_fit": 3,
+      "review_unknown_evidence": 1,
+      "uncorroborated_evidence_reference": 1
+    },
+    "status": "completed",
+    "successful_response_count": 17
+  },
+  "evidence_sha256": "d2bb8043d49b2d3ff7243759d45145c7f96c517a003108f92bfadfd50dd78f6b",
+  "implementation_sha256": {
+    "construct_seeds.py": "a62d17a646953fbe345ab6e25702af8eddfe1ec770448c02db8b3c4d792d2395",
+    "sample_seeds.py": "6edca6c44498a590552bf08cd6e83a49a8a4cc22c145dafb37968a38738959c1",
+    "seed_evidence.py": "36a297e4bdc7ba4de27a351bffe385924d91f1bae2d143f3ac8ac7b67f7d1199"
+  },
+  "input_fingerprint": "d2586a5b38aa53faa767cc595ad699ab8a2cef4838c4b1443401513c6cf52896",
+  "input_sha256": {
+    "dwas.csv": "cabbc4c2dd5453ca3e68a391aabbb2e8f19a10af6258fb57904f12d061e1800c",
+    "occupations.csv": "cfe1aca5793e88631dbf1b7aaf05ffb86a5e8be2c2d4fe0b41973b3fdc73809c",
+    "task_dwa.csv": "ab39583a516fd6378950fa9bbfb83bda401a1ad4dae929d8b40362d39391be52",
+    "tasks.csv": "95e30bfd2f000003fe88f7c3a8df565780736498bd95deb7c8b430ff17fc0acb"
+  },
+  "limitations": [
+    "Retrieved text overlap is not entailment; independent LLM review is fallible.",
+    "Model-generated work demands and expected file families are not official O*NET facts.",
+    "Custom vocabulary; not a reproduction of GraphForge complete taxonomy.",
+    "New model calls are not guaranteed deterministic; cached accepted data and selection are reproducible."
+  ],
+  "llm_configuration": {
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "candidates_per_pair": 2,
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "model": "GLM_ka48dn",
+    "model_name": "glm-5.2",
+    "model_resolution": "LLMCenter /v1/models, 2026-11-10; model is the gateway accessId, not the upstream name.",
+    "parameters": {
+      "max_tokens": 4096,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_seconds": 60
+  },
+  "original_tasks": 18838,
+  "prompt_version": "occupation-seed-v2",
+  "retrieval": {
+    "evidence_records": 11,
+    "pairs": {
+      "13-1023.00|4.A.2.b.4.a.3": {
+        "query_sha256": "edb2958c52b04d8b504d0dd4de2bf7983e96040d50558bf49cb3e9132ff95076",
+        "reason": "retrieved",
+        "source_errors": []
+      },
+      "13-1023.00|4.A.3.b.6.h.14": {
+        "query_sha256": "8cf9045566d41dfb3779778f09fa35180624ebba8bc0057739ef596806cf20e8",
+        "reason": "retrieved",
+        "source_errors": []
+      },
+      "13-1023.00|4.A.4.c.1.c.4": {
+        "query_sha256": "f71612755b7ccf46a460dd9edb5f42377f9fd55558e0685c89cdc2017358e20e",
+        "reason": "retrieved",
+        "source_errors": []
+      },
+      "13-2031.00|4.A.2.a.2.a.5": {
+        "query_sha256": "decf6d4a77c0c1d1b1f4d0793c2a67506020752d9a1c507268912cc71bdaaa18",
+        "reason": "retrieved",
+        "source_errors": []
+      },
+      "13-2031.00|4.A.4.b.6.k.3": {
+        "query_sha256": "254440b6db89753e0940b4be74b165f410ce4ccf9e2ce5c52c03e860097487a4",
+        "reason": "retrieved",
+        "source_errors": []
+      },
+      "15-1252.00|4.A.3.b.2.a.7": {
+        "query_sha256": "72cacbdc6c82f58ae6971786e4b7274d3aec8a34e5a1c042300d252e379d8d1b",
+        "reason": "retrieved",
+        "source_errors": []
+      }
+    },
+    "pairs_attempted": 6,
+    "status_counts": {
+      "retrieved": 6
+    },
+    "unique_sources": 3
+  },
+  "sampling": {
+    "actual_n": 4,
+    "candidate_coverage": {
+      "dwas": 3,
+      "execution_patterns": 3,
+      "input_file_families": 4,
+      "major_groups": 2,
+      "occupations": 3
+    },
+    "exclusion_counts": {},
+    "max_per_occupation": 0,
+    "max_per_pattern": 0,
+    "near_duplicate_threshold": 0.8,
+    "requested_n": 5,
+    "seed": 42,
+    "selected_coverage": {
+      "dwas": 3,
+      "execution_patterns": 3,
+      "input_file_families": 4,
+      "major_groups": 2,
+      "occupations": 3
+    },
+    "shortfall": 1,
+    "status": "completed",
+    "weights": {
+      "dwa": 1.0,
+      "file_family": 1.0,
+      "occupation": 1.0,
+      "pattern": 1.0
+    }
+  },
+  "scope_parameters": {
+    "max_pairs": 6,
+    "occupations": "13-1023.00,13-2031.00,15-1252.00",
+    "pair_order_seed": 42
+  },
+  "scoped_pairs": 6,
+  "unprocessed_scope_pairs": 5888,
+  "vocabulary_sha256": "56da2875281ba2844e4b1f2db0d1619843dc7c630e592d85419bd554e2ba842a",
+  "vocabulary_version": "work-seeds-custom-v1"
+}

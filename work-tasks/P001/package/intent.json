@@ -1,0 +1,32 @@
+{
+  "intent": "比较同规格包装箱供应商，在质量、交付和产能约束下给出最低成本采购建议。",
+  "selection_reason": "原始种子明确涉及价格、质量、交付与产能；可用一个小案例核对跨文件推理和图片依赖。",
+  "case_scope": "单一采购批次、单币种、同规格、三家供应商，不涉及真实法律或投资判断。",
+  "authoring": "One assistant-authored instance; no scalable intent generator implemented.",
+  "required_support": {
+    "total_cost": [
+      "quantity",
+      "unit_price",
+      "freight",
+      "setup",
+      "tax_and_fee_basis"
+    ],
+    "eligibility": [
+      "capacity",
+      "lead_days",
+      "historical_on_time",
+      "historical_defects",
+      "policy_thresholds"
+    ],
+    "recommendation": [
+      "costs",
+      "eligibility",
+      "tie_rule"
+    ]
+  },
+  "reserved_for_solver": [
+    "all totals",
+    "eligibility decisions",
+    "recommendation and rationale"
+  ]
+}

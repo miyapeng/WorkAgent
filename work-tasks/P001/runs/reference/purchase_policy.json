@@ -1,0 +1,9 @@
+{
+  "quantity_units": 10000,
+  "max_lead_days": 14,
+  "min_on_time_pct": 95,
+  "max_defect_pct": 1,
+  "currency": "CNY",
+  "price_basis": "含税；运费、开版费各收一次；无其他费用",
+  "decision_rule": "满足全部硬约束后，选择总采购成本最低者；同成本按供应商 ID 字母顺序选。"
+}

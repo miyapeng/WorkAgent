@@ -1,0 +1,16 @@
+{
+  "mode": "official_csv",
+  "release": "August 2026",
+  "sha256": {
+    "occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+    "task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+    "tasks_to_dwas.csv": "15624d31acb85627736a87dc7c485edffe30361262571c8242fad4ae9e7678a6"
+  },
+  "source": "https://www.onetcenter.org/database.html",
+  "urls": [
+    "https://www.onetcenter.org/dl_files/database/db_31_0_csv/occupation_data.csv",
+    "https://www.onetcenter.org/dl_files/database/db_31_0_csv/task_statements.csv",
+    "https://www.onetcenter.org/dl_files/database/db_31_0_csv/tasks_to_dwas.csv"
+  ],
+  "version": "31.0"
+}

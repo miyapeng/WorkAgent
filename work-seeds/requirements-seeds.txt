@@ -1,0 +1,2 @@
+# Only the enrichment path needs this; Task ID sampling remains standard library only.
+jsonschema==4.26.0
