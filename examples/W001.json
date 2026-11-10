@@ -1,0 +1,14 @@
+{
+  "task_id": "W001",
+  "occupation": "sales_analyst",
+  "family_id": "synthetic_sales_v1",
+  "split": "development",
+  "instruction": "结合订单、历史报告和最新看板，汇总四个区域的收入与转化率变化，标出异常区域，提交 sales_summary.xlsx 和两页 quarterly_brief.pdf。不得修改原始文件。具体口径见 report_requirements.md。",
+  "anomaly_conversion_drop": 0.02,
+  "regions": [
+    {"region": "A", "orders": [70000, 50000], "previous_revenue": 100000, "previous_conversion": 0.08, "conversion": 0.084},
+    {"region": "B", "orders": [60000, 38000], "previous_revenue": 140000, "previous_conversion": 0.08, "conversion": 0.051},
+    {"region": "C", "orders": [50000, 40000], "previous_revenue": 90000, "previous_conversion": 0.06, "conversion": 0.062},
+    {"region": "D", "orders": [80000, 70000], "previous_revenue": 130000, "previous_conversion": 0.07, "conversion": 0.075}
+  ]
+}
