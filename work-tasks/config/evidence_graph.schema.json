@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:evidence_graph",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "type": {
+                "enum": [
+                  "source_fact"
+                ]
+              },
+              "information_node_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "file_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "workspace_path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "verification": {
+                "enum": [
+                  "exact_substring_at_freshly_parsed_location"
+                ]
+              }
+            },
+            "required": [
+              "evidence_id",
+              "type",
+              "information_node_id",
+              "file_id",
+              "workspace_path",
+              "locator",
+              "description",
+              "verification"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "evidence_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "type": {
+                "enum": [
+                  "derived_requirement",
+                  "decision_requirement"
+                ]
+              },
+              "information_node_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              }
+            },
+            "required": [
+              "evidence_id",
+              "type",
+              "information_node_id",
+              "description"
+            ]
+          }
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "supports",
+              "requires"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "type",
+          "from",
+          "to"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 200,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "nodes",
+    "edges"
+  ]
+}

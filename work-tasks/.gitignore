@@ -1,0 +1,5 @@
+generated/
+data/stage4_cache/
+data/synthetic_test_fixture*/
+__pycache__/
+config/*.local.json

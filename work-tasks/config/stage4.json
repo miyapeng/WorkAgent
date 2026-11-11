@@ -1,0 +1,7 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "max_tokens": 10000,
+  "timeout_seconds": 180,
+  "retries": 1,
+  "max_model_input_bytes": 180000
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:rubric",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rubric_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "minItems": 1,
+            "maxItems": 200,
+            "uniqueItems": true
+          },
+          "verification_type": {
+            "enum": [
+              "programmatic",
+              "semantic",
+              "process"
+            ]
+          },
+          "verification_spec": {
+            "$ref": "urn:workagent:stage4:check"
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 100
+          },
+          "critical": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rubric_id",
+          "requirement_id",
+          "requirement",
+          "evidence_ids",
+          "verification_type",
+          "verification_spec",
+          "weight",
+          "critical"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "items"
+  ]
+}

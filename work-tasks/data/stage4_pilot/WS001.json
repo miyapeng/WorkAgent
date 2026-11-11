@@ -1,0 +1,46 @@
+{
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": false,
+    "reasons": [
+      "case_coherence:unverified",
+      "no_visible_evidence:i3",
+      "no_visible_evidence:i5",
+      "no_visible_evidence:i7",
+      "stage3_admission_recheck_failed",
+      "stage4_eligible_not_true",
+      "unresolved_case_assumptions",
+      "unresolved_node_assumption:i1",
+      "unresolved_node_assumption:i2",
+      "unresolved_scope_checks",
+      "unsupported_external_input:i1",
+      "unsupported_external_input:i2",
+      "unsupported_external_input:i3",
+      "unsupported_external_input:i5",
+      "unsupported_external_input:i7",
+      "workspace_status:incomplete"
+    ]
+  },
+  "model_calls": [],
+  "reasons": [
+    "case_coherence:unverified",
+    "no_visible_evidence:i3",
+    "no_visible_evidence:i5",
+    "no_visible_evidence:i7",
+    "stage3_admission_recheck_failed",
+    "stage4_eligible_not_true",
+    "unresolved_case_assumptions",
+    "unresolved_node_assumption:i1",
+    "unresolved_node_assumption:i2",
+    "unresolved_scope_checks",
+    "unsupported_external_input:i1",
+    "unsupported_external_input:i2",
+    "unsupported_external_input:i3",
+    "unsupported_external_input:i5",
+    "unsupported_external_input:i7",
+    "workspace_status:incomplete"
+  ],
+  "seed_id": "seed_557eec0637616419be8bbe23",
+  "status": "blocked_upstream",
+  "workspace_id": "WS001"
+}

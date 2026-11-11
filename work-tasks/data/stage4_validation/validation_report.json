@@ -1,0 +1,35 @@
+{
+  "human_runtime_overrides": 0,
+  "offline_replay": {
+    "fixtures": {
+      "synthetic_test_fixture": {
+        "data_provenance": "synthetic_test_fixture",
+        "files_byte_identical": 27,
+        "model_transport": "mock_no_network",
+        "passed": true,
+        "status": "draft"
+      },
+      "synthetic_test_fixture_live": {
+        "data_provenance": "synthetic_test_fixture",
+        "files_byte_identical": 16,
+        "model_transport": "live_api",
+        "passed": true,
+        "status": "rejected"
+      }
+    },
+    "network_and_dns_forbidden": true,
+    "real_report_files_byte_identical": 4
+  },
+  "real_pilot": {
+    "blocked_upstream": 2,
+    "draft_packages": 0,
+    "input_workspaces": 2,
+    "model_calls": 0
+  },
+  "teacher_or_probe_executed": false,
+  "unit_tests": {
+    "stage3_regression_passed": 26,
+    "stage4_passed": 28
+  },
+  "upstream_unchanged_tracked_files": 46
+}

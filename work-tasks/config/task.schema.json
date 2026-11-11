@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:task",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "instruction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "deliverable_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "plan_deliverable_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "format": {
+            "enum": [
+              "csv",
+              "json",
+              "xlsx",
+              "md",
+              "txt",
+              "pdf",
+              "docx",
+              "pptx"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "deliverable_id",
+          "plan_deliverable_id",
+          "path",
+          "format",
+          "description"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "kind": {
+            "enum": [
+              "outcome",
+              "constraint"
+            ]
+          },
+          "information_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "minItems": 1,
+            "maxItems": 200,
+            "uniqueItems": true
+          },
+          "deliverable_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "minItems": 1,
+            "maxItems": 200,
+            "uniqueItems": true
+          },
+          "unscored_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "requirement_id",
+          "description",
+          "kind",
+          "information_node_ids",
+          "deliverable_ids",
+          "unscored_reason"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "instruction",
+    "deliverables",
+    "requirements"
+  ]
+}

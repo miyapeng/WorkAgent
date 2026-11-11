@@ -1,0 +1,38 @@
+{
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": false,
+    "reasons": [
+      "case_coherence:unverified",
+      "no_visible_evidence:i1",
+      "no_visible_evidence:i2",
+      "no_visible_evidence:i3",
+      "no_visible_evidence:i4",
+      "stage3_admission_recheck_failed",
+      "stage4_eligible_not_true",
+      "unsupported_external_input:i1",
+      "unsupported_external_input:i2",
+      "unsupported_external_input:i3",
+      "unsupported_external_input:i4",
+      "workspace_status:rejected"
+    ]
+  },
+  "model_calls": [],
+  "reasons": [
+    "case_coherence:unverified",
+    "no_visible_evidence:i1",
+    "no_visible_evidence:i2",
+    "no_visible_evidence:i3",
+    "no_visible_evidence:i4",
+    "stage3_admission_recheck_failed",
+    "stage4_eligible_not_true",
+    "unsupported_external_input:i1",
+    "unsupported_external_input:i2",
+    "unsupported_external_input:i3",
+    "unsupported_external_input:i4",
+    "workspace_status:rejected"
+  ],
+  "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+  "status": "blocked_upstream",
+  "workspace_id": "WS002"
+}

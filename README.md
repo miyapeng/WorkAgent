@@ -1,8 +1,8 @@
 # Executable Multimodal Work Environments for Agent Learning
 
-当前研究数据工程阶段：**[Stage 3 · Evidence-grounded Workspace Construction](workspaces/README.md)**。读取 Stage 2 最终准入的两条计划，实际检索、下载和解析文件，检查外部信息覆盖及案例一致性，再组装初始 Workspace。只有 `ready` 才可进入 Stage 4；下载成功不代表信息充分。上游数据保持不变，当前不生成最终用户任务、答案或训练数据。
+当前研究数据工程阶段：**[Stage 4 · Evidence-Anchored Task & Verifier Co-generation](work-tasks/README.md)**。正式采用 **Phase I · Grounded Work Task Construction = Stage 1–4**：从职业 Seed，经信息规划和 Workspace 构建，联合生成任务与初步验证条件，产物为 Draft Work Task Package。只有 Stage 3 的 `ready` Workspace 可以进入；当前真实两个 Pilot 均被入口阻断，正式任务包仍为 0。
 
-研究流水线与以下早期 W001/P001 演示独立。[Stage 1](work-seeds/STAGE1.md) 构造职业 Seed；[Stage 2](work-plans/README.md) 生成了 4 条信息计划、准入 2 条；Stage 3 的实际文件获取和准入结果见 [Pilot 报告](workspaces/data/pilot/pilot_report.json)。
+研究流水线与以下早期 W001/P001 演示独立。[Stage 1](work-seeds/STAGE1.md) 构造职业 Seed；[Stage 2](work-plans/README.md) 生成了 4 条信息计划、准入 2 条；[Stage 3](workspaces/README.md) 保留实际文件、覆盖与失败记录；[Stage 4 报告](work-tasks/data/stage4_pilot/stage4_report.json) 记录入口阻断。Stage 4 运行无人工改判环节；工程夹具与真实数据分开。Phase II 为 Stage 5 的独立执行验证，Phase III 为 Stage 6–7 的训练数据与评测，均尚未实现。当前未完成真实 Draft Task 的首个里程碑，不把程序跑通称为有效数据生成。
 
 Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
 

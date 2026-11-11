@@ -1,0 +1,42 @@
+{
+  "code_sha256": {
+    "construct_tasks.py": "6fd4dee2edd554582d9d92d57aa58174908b73d2d3232f4081a27fe67e5eec05",
+    "run_synthetic_fixture.py": "989b8e2e5dde3792faaa88b366573a0de1b9fd86f9665456cc97b6bcb179b6da",
+    "task_common.py": "91292fc4d3ba3be893be673dd10447c20b71e57858997e53de44bf7dd9e18ca1",
+    "task_evidence.py": "8489a06ae1fe7ed228f1b49de1075e8dc786d6d5a24e009141fea017228abcf2",
+    "task_prompts.py": "919117088a79a30022a05a1cc256f92049aebe7b0eea45d5221098aae3689583",
+    "task_validation.py": "b806cb60628c4cd8fe4c7aee7ff54031049cc3b50cb26522f187964d74677102",
+    "task_verifier.py": "c274275eeec1cac1d6b5d0b6e8a3a9615edef9c102914370a5e9ce291004f6ef"
+  },
+  "config": {
+    "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+    "max_model_input_bytes": 180000,
+    "max_tokens": 10000,
+    "retries": 1,
+    "timeout_seconds": 180
+  },
+  "limit": 2,
+  "llm": {
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "model": "GLM_ka48dn",
+    "parameters": {
+      "max_tokens": 10000,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_seconds": 180
+  },
+  "schema_sha256": "364f1bc05654a5ee583ed79ede253f988525a098e20c0efa08c6187fd14eaf34",
+  "upstream_hashes": {
+    "stage1_seeds": "432d1449faa881b927348d891ea6c23b1242506f8a6613a726bda530b962ad5d",
+    "stage2_plans": "0beb747181431eded4ae338dd06a9e4934706c442db391bbe64d282ed8a8108e",
+    "stage2_report": "146e45c4641a0973284bd3f7c76780fa5f45b622967d3e855eaa799938026d93"
+  },
+  "workspaces": {
+    "WS001": "46b5df416ce3c4976adc9c8aefdd0f91cf4c35d25e93b4786df74d2489a407f5",
+    "WS002": "357867ac5b113fc88cc26107321cad6c11804066c3a84392a5cc33fcc33e260e"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:verifier",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "enum": [
+        "declarative-v1"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rubric_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "verification_type": {
+            "enum": [
+              "programmatic",
+              "semantic",
+              "process"
+            ]
+          },
+          "spec": {
+            "$ref": "urn:workagent:stage4:check"
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "critical": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rubric_id",
+          "verification_type",
+          "spec",
+          "weight",
+          "critical"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    },
+    "semantic_judge_prompt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "aggregation": {
+      "enum": [
+        "weighted_per_type_no_aggregate_until_all_scored"
+      ]
+    },
+    "process_policy": {
+      "enum": [
+        "requires_execution_trace_never_inferred_from_final_hashes"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "checks",
+    "semantic_judge_prompt",
+    "aggregation",
+    "process_policy"
+  ]
+}

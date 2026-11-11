@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "task": {
+      "$ref": "urn:workagent:stage4:task"
+    },
+    "grounding": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "minItems": 1,
+            "maxItems": 200,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "requirement_id",
+          "evidence_ids"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "uniqueItems": true
+    },
+    "rubric": {
+      "$ref": "urn:workagent:stage4:rubric"
+    }
+  },
+  "required": [
+    "task",
+    "grounding",
+    "rubric"
+  ]
+}
