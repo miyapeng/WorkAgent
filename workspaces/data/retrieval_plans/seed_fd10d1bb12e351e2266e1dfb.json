@@ -1,0 +1,41 @@
+{
+  "model": {
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "generated_at": "2026-11-11T06:35:32.329142+00:00",
+    "model_requested": "GLM_ka48dn",
+    "model_returned": "glm-5.2",
+    "parameters": {
+      "max_tokens": 4096,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "prompt_version": "workspace-retrieval-v1",
+    "request_sha256": "3fab4232c0750804e91a6be6add0d450e91f1d2a49e27c4a5ad8bdd604fd407d"
+  },
+  "plan": {
+    "anchor_strategy": "Find one public infrastructure/software or IT project with published baseline plan, monthly progress reports, and cost tracking data in the same currency and reporting period. Use its progress and financial reports to populate schedule, cost, and quality nodes.",
+    "coherence_requirements": [
+      "All external_input nodes must come from the same project, same reporting period, same currency, and same units for budget vs. actual costs.",
+      "Milestone dates in planned and actual records must use the same baseline version for variance calculation.",
+      "Standards and acceptance criteria in quality records must match those named in the approved plan.",
+      "Derived nodes i5, i6, i7 must reference the same project entity and reporting period as the external inputs.",
+      "Professional judgment in i8 should rely only on the retrieved data, not general occupational guidance."
+    ],
+    "expected_gaps": [
+      {
+        "node_id": "i4",
+        "reason": "Quality/standards evidence (tests, reviews, acceptance results) is often private or not published with cost and schedule records, leaving the conformance node partially empty."
+      },
+      {
+        "node_id": "i2",
+        "reason": "Detailed activity-level actual dates may be redacted or aggregated in public reports, limiting precise milestone variance analysis."
+      }
+    ],
+    "queries": [
+      "California Department of Technology project monthly progress report budget actual cost milestones",
+      "UK government major projects portfolio status report cost schedule variance software"
+    ]
+  }
+}

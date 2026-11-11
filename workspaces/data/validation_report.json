@@ -1,0 +1,25 @@
+{
+  "offline_replay": {
+    "files_byte_identical": 17,
+    "network_and_dns_forbidden": true,
+    "passed": true
+  },
+  "pilot_run_signature": "194737449a3d2580b26c80e28213d62fd2663e89a49a1d86ffc1d81d71807c0d",
+  "unit_tests": {
+    "command": ".venv/bin/python -m unittest discover -s workspaces/tests -v",
+    "passed": 26
+  },
+  "upstream_unchanged_tracked_files": 35,
+  "workspace_checks": {
+    "WS001": {
+      "file_count": 1,
+      "hash_checks": "passed",
+      "status": "incomplete"
+    },
+    "WS002": {
+      "file_count": 0,
+      "hash_checks": "passed",
+      "status": "rejected"
+    }
+  }
+}

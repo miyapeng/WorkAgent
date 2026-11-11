@@ -1,0 +1,7 @@
+data/cache/
+data/**/workspace_init/
+data/**/construction/file_profiles.jsonl
+data/**/construction/information_coverage.json
+data/**/construction/model_audit*.json
+config/*.local.json
+__pycache__/

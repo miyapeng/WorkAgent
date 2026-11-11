@@ -1,0 +1,19 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "search": {
+    "provider": "url_manifest",
+    "manifest": "pilot_urls.json",
+    "max_queries_per_round": 2
+  },
+  "limits": {
+    "rounds": 2,
+    "files_per_round": 3,
+    "download_bytes": 20000000,
+    "timeout_seconds": 25,
+    "redirects": 4,
+    "retries": 1,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "allow_synthetic": false,
+  "audit_timeout_seconds": 180
+}

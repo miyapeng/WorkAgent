@@ -1,0 +1,45 @@
+{
+  "model": {
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "generated_at": "2026-11-11T06:35:18.768971+00:00",
+    "model_requested": "GLM_ka48dn",
+    "model_returned": "glm-5.2",
+    "parameters": {
+      "max_tokens": 4096,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "prompt_version": "workspace-retrieval-v1",
+    "request_sha256": "7124833227ad4f7e322b9410d32560e4e784c09a62e598640f58662f315bd16d"
+  },
+  "plan": {
+    "anchor_strategy": "Select one credible public-sector budget execution case where an official budget law/appropriation is published alongside an annual or multi-year actual execution report for the same entity, period, currency, and classification. Use that single case as the anchor; then gather its related reconciliation files (budget law or approved budget document, execution/outturn report, and explanatory notes or review findings) so budget and actuals align on entity, period, currency, units, and classification.",
+    "coherence_requirements": [
+      "Approved budget and actual spending must refer to the same governmental or organizational entity and the same fiscal period(s).",
+      "Both figures must be expressed in the same currency and units (or clearly convertible with an explicit official rate/scale).",
+      "Classification must match: same program/unit/economic classification or a documented mapping between classification schemes.",
+      "Coverage must match: same funds, accounts, or agencies included; note any extrabudgetary or excluded items explicitly.",
+      "Documents must come from official or authoritative public sources, not descriptive summaries of roles or generic financial definitions."
+    ],
+    "expected_gaps": [
+      {
+        "node_id": "i5",
+        "reason": "Explanations or supporting operational context for spending differences are often internal and may not be published alongside the budget and execution figures."
+      },
+      {
+        "node_id": "i7",
+        "reason": "Audience requirements and decision-support preferences are organization-specific private inputs and are unlikely to be found in public records."
+      },
+      {
+        "node_id": "i3",
+        "reason": "Rules and legal criteria for permissible adjustments or budget transfers may exist publicly, but precise reconciliation thresholds and corrective action authority are often internal or jurisdiction-specific."
+      }
+    ],
+    "queries": [
+      "government annual budget execution report budget versus actual expenditure by ministry program fiscal year",
+      "citizens budget budget execution variance report approved budget actual spending reconciliation"
+    ]
+  }
+}

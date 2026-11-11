@@ -1,0 +1,200 @@
+{
+  "searches": [
+    {
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "round": 1,
+      "query": "government annual budget execution report budget versus actual expenditure by ministry program fiscal year",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:42:49.399648+00:00",
+      "supplemental_queries": [
+        "site.open.canada.ca \"Authorities and Expenditures\" csv 2024"
+      ],
+      "results": [
+        {
+          "url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv",
+          "title": "Canada Authorities and Expenditures by Vote (Annual)",
+          "source_page": "https://open.canada.ca/data/en/dataset/fc6ba156-a167-4abd-b172-d1293efebe55?wbdisable=true",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024"
+        },
+        {
+          "url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/2d6af7ca-0063-4ce8-a50f-1a273adf196e/download/abv_apc_en.csv",
+          "title": "Canada Estimates Expenditure Authorities by Vote (Sub-annual)",
+          "source_page": "https://open.canada.ca/data/en/dataset/fc6ba156-a167-4abd-b172-d1293efebe55?wbdisable=true",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024"
+        },
+        {
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/services/publication/pdf/SC12-4-2024-2-eng.pdf",
+          "title": "Public Service Commission Quarterly Financial Report September 2024",
+          "source_page": "https://www.canada.ca/content/dam/psc-cfp/documents/services/publication/pdf/SC12-4-2024-2-eng.pdf",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "round": 1,
+      "query": "citizens budget budget execution variance report approved budget actual spending reconciliation",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:42:49.399665+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://cfo.dc.gov/page/report-variances-between-actual-agency-expenditures-and-approved-spending-plans",
+          "title": "DC published budget variance reports",
+          "source_page": "https://cfo.dc.gov/page/report-variances-between-actual-agency-expenditures-and-approved-spending-plans",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "citizens budget budget execution variance report approved budget actual spending reconciliation"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "round": 1,
+      "query": "California Department of Technology project monthly progress report budget actual cost milestones",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:42:49.399669+00:00",
+      "supplemental_queries": [
+        "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx"
+      ],
+      "results": [
+        {
+          "url": "https://www.cdt.ca.gov/wp-content/uploads/2026/03/Tech-Modernization-Funding-TMF-and-Tech-Stabilization-Funding-TSF-Report-2025-1st-Report.pdf",
+          "title": "California technology funding projects report dated January 2025",
+          "source_page": "https://www.cdt.ca.gov/wp-content/uploads/2026/03/Tech-Modernization-Funding-TMF-and-Tech-Stabilization-Funding-TSF-Report-2025-1st-Report.pdf",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx"
+        },
+        {
+          "url": "https://cdt.ca.gov/wp-content/uploads/2017/02/SIMM_45_Appendix_F_2016_0506.pdf",
+          "title": "California IT project status reporting instructions; general policy not project results",
+          "source_page": "https://cdt.ca.gov/wp-content/uploads/2017/02/SIMM_45_Appendix_F_2016_0506.pdf",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "California Department of Technology project monthly progress report budget actual cost milestones"
+        },
+        {
+          "url": "https://lao.ca.gov/Publications/Report/5011",
+          "title": "California State Payroll System IT project analysis",
+          "source_page": "https://lao.ca.gov/Publications/Report/5011",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "round": 1,
+      "query": "UK government major projects portfolio status report cost schedule variance software",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:42:49.399672+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6787e2f85a1adfc79556df92/HMRC_Government_Major_Projects_Portofolio_AR_Data_March_2024.xlsx",
+          "title": "HMRC major projects portfolio March 2024 spreadsheet",
+          "source_page": "https://www.gov.uk/government/publications/hmrc-government-major-projects-portfolio-data-2024",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "discovery_query": "UK government major projects portfolio status report cost schedule variance software"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "round": 2,
+      "query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:56:51.195429+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf",
+          "title": "Public Accounts of Canada 2010-2011 Volume II original annual accounts",
+          "source_page": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital"
+        },
+        {
+          "url": "https://www.tbs-sct.canada.ca/rpp/2010-2011/inst/agr/agr-eng.pdf",
+          "title": "Agriculture and Agri-Food Canada 2010-2011 Report on Plans and Priorities",
+          "source_page": "https://www.tbs-sct.canada.ca/rpp/2010-2011/inst/agr/agr-eng.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "round": 2,
+      "query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:56:51.195447+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://publications.gc.ca/collections/collection_2025/bdp-lop/ym32-10/YM32-10-2024-5-eng.pdf",
+          "title": "Understanding the Public Accounts of Canada; newer general accounting guide",
+          "source_page": "https://publications.gc.ca/collections/collection_2025/bdp-lop/ym32-10/YM32-10-2024-5-eng.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II"
+        },
+        {
+          "url": "https://open.canada.ca/data/en/dataset/51c3b869-9182-4ee3-a7c2-36da0dc2889c",
+          "title": "Official metadata defining Authorities and Expenditures as per the Public Accounts",
+          "source_page": "https://open.canada.ca/data/en/dataset/51c3b869-9182-4ee3-a7c2-36da0dc2889c",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "round": 2,
+      "query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:56:51.195554+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e",
+          "title": "CDT actual CSPS project tracking record",
+          "source_page": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025"
+        },
+        {
+          "url": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+          "title": "CSPS 2026-27 budget change proposal including historical actual expenditures",
+          "source_page": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025"
+        }
+      ]
+    },
+    {
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "round": 2,
+      "query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status",
+      "provider": "web.run",
+      "searched_at": "2026-11-11T06:56:51.195559+00:00",
+      "supplemental_queries": [],
+      "results": [
+        {
+          "url": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+          "title": "CSPS 2023-24 legislative report and authorized versus actual costs",
+          "source_page": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status"
+        },
+        {
+          "url": "https://www.sco.ca.gov/Files-PPSD/ppsd_register_february_2026.pdf",
+          "title": "SCO February 2026 register with CSPS 2025 progress review",
+          "source_page": "https://www.sco.ca.gov/Files-PPSD/ppsd_register_february_2026.pdf",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "discovery_query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status"
+        }
+      ]
+    }
+  ]
+}

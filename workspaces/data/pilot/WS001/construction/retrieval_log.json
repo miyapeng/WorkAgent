@@ -1,0 +1,212 @@
+{
+  "events": [
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "government annual budget execution report budget versus actual expenditure by ministry program fiscal year",
+      "results": [
+        {
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://open.canada.ca/data/en/dataset/fc6ba156-a167-4abd-b172-d1293efebe55?wbdisable=true",
+          "title": "Canada Authorities and Expenditures by Vote (Annual)",
+          "url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv"
+        },
+        {
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://open.canada.ca/data/en/dataset/fc6ba156-a167-4abd-b172-d1293efebe55?wbdisable=true",
+          "title": "Canada Estimates Expenditure Authorities by Vote (Sub-annual)",
+          "url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/2d6af7ca-0063-4ce8-a50f-1a273adf196e/download/abv_apc_en.csv"
+        },
+        {
+          "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://www.canada.ca/content/dam/psc-cfp/documents/services/publication/pdf/SC12-4-2024-2-eng.pdf",
+          "title": "Public Service Commission Quarterly Financial Report September 2024",
+          "url": "https://www.canada.ca/content/dam/psc-cfp/documents/services/publication/pdf/SC12-4-2024-2-eng.pdf"
+        }
+      ],
+      "round": 1,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:42:49.399648+00:00",
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "status": "external_results_imported",
+      "supplemental_queries": [
+        "site.open.canada.ca \"Authorities and Expenditures\" csv 2024"
+      ]
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "citizens budget budget execution variance report approved budget actual spending reconciliation",
+      "results": [
+        {
+          "discovery_query": "citizens budget budget execution variance report approved budget actual spending reconciliation",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://cfo.dc.gov/page/report-variances-between-actual-agency-expenditures-and-approved-spending-plans",
+          "title": "DC published budget variance reports",
+          "url": "https://cfo.dc.gov/page/report-variances-between-actual-agency-expenditures-and-approved-spending-plans"
+        }
+      ],
+      "round": 1,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:42:49.399665+00:00",
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+      "results": [
+        {
+          "discovery_query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf",
+          "title": "Public Accounts of Canada 2010-2011 Volume II original annual accounts",
+          "url": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf"
+        },
+        {
+          "discovery_query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://www.tbs-sct.canada.ca/rpp/2010-2011/inst/agr/agr-eng.pdf",
+          "title": "Agriculture and Agri-Food Canada 2010-2011 Report on Plans and Priorities",
+          "url": "https://www.tbs-sct.canada.ca/rpp/2010-2011/inst/agr/agr-eng.pdf"
+        }
+      ],
+      "round": 2,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:56:51.195429+00:00",
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II",
+      "results": [
+        {
+          "discovery_query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://publications.gc.ca/collections/collection_2025/bdp-lop/ym32-10/YM32-10-2024-5-eng.pdf",
+          "title": "Understanding the Public Accounts of Canada; newer general accounting guide",
+          "url": "https://publications.gc.ca/collections/collection_2025/bdp-lop/ym32-10/YM32-10-2024-5-eng.pdf"
+        },
+        {
+          "discovery_query": "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://open.canada.ca/data/en/dataset/51c3b869-9182-4ee3-a7c2-36da0dc2889c",
+          "title": "Official metadata defining Authorities and Expenditures as per the Public Accounts",
+          "url": "https://open.canada.ca/data/en/dataset/51c3b869-9182-4ee3-a7c2-36da0dc2889c"
+        }
+      ],
+      "round": 2,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:56:51.195447+00:00",
+      "seed_id": "seed_557eec0637616419be8bbe23",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    }
+  ],
+  "retrieval_plan": {
+    "anchor_strategy": "Select one credible public-sector budget execution case where an official budget law/appropriation is published alongside an annual or multi-year actual execution report for the same entity, period, currency, and classification. Use that single case as the anchor; then gather its related reconciliation files (budget law or approved budget document, execution/outturn report, and explanatory notes or review findings) so budget and actuals align on entity, period, currency, units, and classification.",
+    "coherence_requirements": [
+      "Approved budget and actual spending must refer to the same governmental or organizational entity and the same fiscal period(s).",
+      "Both figures must be expressed in the same currency and units (or clearly convertible with an explicit official rate/scale).",
+      "Classification must match: same program/unit/economic classification or a documented mapping between classification schemes.",
+      "Coverage must match: same funds, accounts, or agencies included; note any extrabudgetary or excluded items explicitly.",
+      "Documents must come from official or authoritative public sources, not descriptive summaries of roles or generic financial definitions."
+    ],
+    "expected_gaps": [
+      {
+        "node_id": "i5",
+        "reason": "Explanations or supporting operational context for spending differences are often internal and may not be published alongside the budget and execution figures."
+      },
+      {
+        "node_id": "i7",
+        "reason": "Audience requirements and decision-support preferences are organization-specific private inputs and are unlikely to be found in public records."
+      },
+      {
+        "node_id": "i3",
+        "reason": "Rules and legal criteria for permissible adjustments or budget transfers may exist publicly, but precise reconciliation thresholds and corrective action authority are often internal or jurisdiction-specific."
+      }
+    ],
+    "queries": [
+      "government annual budget execution report budget versus actual expenditure by ministry program fiscal year",
+      "citizens budget budget execution variance report approved budget actual spending reconciliation"
+    ]
+  },
+  "rounds": [
+    {
+      "audit": "checked",
+      "queries": [
+        "government annual budget execution report budget versus actual expenditure by ministry program fiscal year",
+        "citizens budget budget execution variance report approved budget actual spending reconciliation"
+      ],
+      "refinement": {
+        "continue": true,
+        "queries": [
+          "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+          "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II"
+        ],
+        "reason": "The anchor CSV contains only 'authorities' and 'expenditures' columns spanning FY2011-2019 for Canadian federal organizations, with no supporting definitions, policy context, explanations, or audience requirements. Column semantics (whether 'authorities' = approved budget authority and 'expenditures' = actual spending) remain unverified. One focused search can confirm the Public Accounts of Canada accounting basis and the legal meaning of 'authorities' vs 'expenditures' for one named organizational unit (Department of Agriculture and Agri-Food, FY2011), which would firm up nodes i1/i2 and provide authoritative reconciliation criteria useful for i3."
+      },
+      "round": 1,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_2759fdc905f9a2d0a1a669ea",
+            "reason": "Same Canada dataset family but sub-annual expenditure authorities only; duplicates the selected resource's scope and offers no distinct budget-versus-actual pairing needed for variance computation, so it adds no new jurisdiction or evidence within the limit of one."
+          },
+          {
+            "candidate_id": "c_314df6bf75fff328cd1d95d1",
+            "reason": "Narrow quarterly financial report from a single agency (Public Service Commission); not the cross-organization budget-versus-actual authority data required, and its period/scope differ from the anchor dataset."
+          },
+          {
+            "candidate_id": "c_a031daad960595167acefe48",
+            "reason": "Washington DC budget variance page — a different jurisdiction from the Canada anchor; mixing jurisdictions is disallowed, and this is a general reporting page rather than the underlying approved-budget and actual-spending records."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_d54327ae49ddaba2eaeaf171",
+            "reason": "Authoritative Canadian federal dataset providing budget authorities and actual expenditures by vote in CSV form; supplies the approved-budget and actual-spending figures needed to compute variances for one coherent jurisdiction/organization, matching the anchor's Canada scope and the reconciliation objective."
+          }
+        ]
+      }
+    },
+    {
+      "audit": "checked",
+      "queries": [
+        "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+        "Canadian federal budget authorities versus expenditures reconciliation variance analysis Public Accounts of Canada Volume II"
+      ],
+      "round": 2,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_59f9243ab8dd8d2645abb4da",
+            "reason": "This is an Agriculture and Agri-Food Canada Report on Plans and Priorities, a forward-looking planning document rather than the authoritative Public Accounts actual-vs-authorities record. It is redundant with the primary Public Accounts source and does not resolve the definitional gaps for authorities/expenditures."
+          },
+          {
+            "candidate_id": "c_7501a8037f18f9a3ecc4eb7b",
+            "reason": "A newer general accounting guide on understanding the Public Accounts. It is a general descriptive document, not the specific FY2010-2011 Department of Agriculture and Agri-Food record, and its 2024 vintage falls outside the anchor period. Selecting it risks substituting general methodology for the actual case evidence."
+          },
+          {
+            "candidate_id": "c_0bb8439db87537d81b96f116",
+            "reason": "An open data metadata record defining Authorities and Expenditures. It is a discovery/metadata layer rather than the primary document; the actual Public Accounts PDF (c_5c9e0696b30abba047c0f100) is the authoritative source needed to inspect and confirm column semantics."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_5c9e0696b30abba047c0f100",
+            "reason": "This is a direct authoritative primary record for the anchor case (Government of Canada, Department of Agriculture and Agri-Food, FY 2010-2011). It is the actual Public Accounts of Canada Volume II for 2010-2011, the same jurisdiction/organization/period as the retained data, and is needed to verify that the 'authorities' and 'expenditures' column definitions mean approved budget versus actual spending (missing information i1, i2) and to extract supporting context for the variance analysis."
+          }
+        ]
+      }
+    }
+  ]
+}

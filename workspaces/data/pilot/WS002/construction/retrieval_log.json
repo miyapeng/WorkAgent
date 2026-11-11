@@ -1,0 +1,208 @@
+{
+  "events": [
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "California Department of Technology project monthly progress report budget actual cost milestones",
+      "results": [
+        {
+          "discovery_query": "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://www.cdt.ca.gov/wp-content/uploads/2026/03/Tech-Modernization-Funding-TMF-and-Tech-Stabilization-Funding-TSF-Report-2025-1st-Report.pdf",
+          "title": "California technology funding projects report dated January 2025",
+          "url": "https://www.cdt.ca.gov/wp-content/uploads/2026/03/Tech-Modernization-Funding-TMF-and-Tech-Stabilization-Funding-TSF-Report-2025-1st-Report.pdf"
+        },
+        {
+          "discovery_query": "California Department of Technology project monthly progress report budget actual cost milestones",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://cdt.ca.gov/wp-content/uploads/2017/02/SIMM_45_Appendix_F_2016_0506.pdf",
+          "title": "California IT project status reporting instructions; general policy not project results",
+          "url": "https://cdt.ca.gov/wp-content/uploads/2017/02/SIMM_45_Appendix_F_2016_0506.pdf"
+        },
+        {
+          "discovery_query": "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://lao.ca.gov/Publications/Report/5011",
+          "title": "California State Payroll System IT project analysis",
+          "url": "https://lao.ca.gov/Publications/Report/5011"
+        }
+      ],
+      "round": 1,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:42:49.399669+00:00",
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "status": "external_results_imported",
+      "supplemental_queries": [
+        "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx"
+      ]
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "UK government major projects portfolio status report cost schedule variance software",
+      "results": [
+        {
+          "discovery_query": "UK government major projects portfolio status report cost schedule variance software",
+          "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+          "source_page": "https://www.gov.uk/government/publications/hmrc-government-major-projects-portfolio-data-2024",
+          "title": "HMRC major projects portfolio March 2024 spreadsheet",
+          "url": "https://assets.publishing.service.gov.uk/media/6787e2f85a1adfc79556df92/HMRC_Government_Major_Projects_Portofolio_AR_Data_March_2024.xlsx"
+        }
+      ],
+      "round": 1,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:42:49.399672+00:00",
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+      "results": [
+        {
+          "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e",
+          "title": "CDT actual CSPS project tracking record",
+          "url": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e"
+        },
+        {
+          "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+          "title": "CSPS 2026-27 budget change proposal including historical actual expenditures",
+          "url": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf"
+        }
+      ],
+      "round": 2,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:56:51.195554+00:00",
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    },
+    {
+      "manifest_provider": "url_manifest",
+      "provider": "web.run",
+      "query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status",
+      "results": [
+        {
+          "discovery_query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+          "title": "CSPS 2023-24 legislative report and authorized versus actual costs",
+          "url": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf"
+        },
+        {
+          "discovery_query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status",
+          "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+          "source_page": "https://www.sco.ca.gov/Files-PPSD/ppsd_register_february_2026.pdf",
+          "title": "SCO February 2026 register with CSPS 2025 progress review",
+          "url": "https://www.sco.ca.gov/Files-PPSD/ppsd_register_february_2026.pdf"
+        }
+      ],
+      "round": 2,
+      "search_api_called_by_script": false,
+      "searched_at": "2026-11-11T06:56:51.195559+00:00",
+      "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+      "status": "external_results_imported",
+      "supplemental_queries": []
+    }
+  ],
+  "retrieval_plan": {
+    "anchor_strategy": "Find one public infrastructure/software or IT project with published baseline plan, monthly progress reports, and cost tracking data in the same currency and reporting period. Use its progress and financial reports to populate schedule, cost, and quality nodes.",
+    "coherence_requirements": [
+      "All external_input nodes must come from the same project, same reporting period, same currency, and same units for budget vs. actual costs.",
+      "Milestone dates in planned and actual records must use the same baseline version for variance calculation.",
+      "Standards and acceptance criteria in quality records must match those named in the approved plan.",
+      "Derived nodes i5, i6, i7 must reference the same project entity and reporting period as the external inputs.",
+      "Professional judgment in i8 should rely only on the retrieved data, not general occupational guidance."
+    ],
+    "expected_gaps": [
+      {
+        "node_id": "i4",
+        "reason": "Quality/standards evidence (tests, reviews, acceptance results) is often private or not published with cost and schedule records, leaving the conformance node partially empty."
+      },
+      {
+        "node_id": "i2",
+        "reason": "Detailed activity-level actual dates may be redacted or aggregated in public reports, limiting precise milestone variance analysis."
+      }
+    ],
+    "queries": [
+      "California Department of Technology project monthly progress report budget actual cost milestones",
+      "UK government major projects portfolio status report cost schedule variance software"
+    ]
+  },
+  "rounds": [
+    {
+      "audit_error": "quote_not_at_actual_location",
+      "queries": [
+        "California Department of Technology project monthly progress report budget actual cost milestones",
+        "UK government major projects portfolio status report cost schedule variance software"
+      ],
+      "refinement": {
+        "continue": true,
+        "queries": [
+          "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+          "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status"
+        ],
+        "reason": "The inspected LAO file on the California State Payroll System (CSPS) IT project is the anchor. The information nodes i1 (approved plan/milestones/cost targets) and i2/i3 (progress and cost records) remain missing. The file supplies partial planning context (approved baseline ~$1.2B, ~6-year schedule, Sept 2031 completion, $88.3M spent of $128.7M by Jan 2025, DART methodology). A focused search should retrieve authoritative project status/baseline milestone and cost-target documents within the same project and state jurisdiction before concluding the case cannot be supported."
+      },
+      "round": 1,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_6d2b5ab83ed49f714d636066",
+            "reason": "Program-level funding report covering multiple projects rather than one jurisdiction/organization/project case; also a completed analysis/recommendation artifact that risks leaking the work the solver must do."
+          },
+          {
+            "candidate_id": "c_09b29724a90aa5ab69d251b9",
+            "reason": "General policy/instructions (SIMM 45 Appendix F) describing how to report, not an actual project's status under deadline, standard, and cost monitoring."
+          },
+          {
+            "candidate_id": "c_ebbf65d1270c50ad9b1a7471",
+            "reason": "UK HMRC portfolio data would combine an unrelated jurisdiction with the California anchor and is portfolio-level rather than a single project case."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_f57deed7e0dc5be8daf9d878",
+            "reason": "California LAO report on the State Payroll System IT project — a single jurisdiction/organization case (State of California) matching the anchor, providing authoritative project-level schedule, scope, and cost performance data for a real software project. Rejected c_09b29724a90aa5ab69d251b9 (policy/instructions, not project results) and c_6d2b5ab83ed49f714d636066 (program-level funding report, not a single project case), and c_ebbf65d1270c50ad9b1a7471 to avoid mixing UK data with the California case."
+          }
+        ]
+      }
+    },
+    {
+      "audit_error": "quote_not_at_actual_location",
+      "queries": [
+        "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+        "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status"
+      ],
+      "round": 2,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_57265d3d3077f647898f4232",
+            "reason": "SCO February 2026 register may contain CSPS progress review content, but the three selected candidates already cover the authoritative CDT tracking record, the DOF budget change proposal with actual expenditures, and the SCO legislative report with authorized versus actual costs. Selecting fewer files preserves the single California State Payroll System case while avoiding redundancy."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_73aa6380ad2a2efc694a7080",
+            "reason": "CDT project tracking record for the CSPS IT project—the authoritative live project oversight system of record expected to contain current schedule milestones, progress status, and cost tracking against baseline."
+          },
+          {
+            "candidate_id": "c_7730f996c392f5600a5f840d",
+            "reason": "2026-27 Budget Change Proposal from the Department of Finance for CSPS, expected to contain historical actual expenditures, approved baseline costs, and project funding details directly relevant to cost performance monitoring."
+          },
+          {
+            "candidate_id": "c_20a1f88986b5c34882fe9a5b",
+            "reason": "SCO 2023-24 Report to the Legislature on CSPS providing authorized versus actual cost comparisons and project status—directly relevant to reconciling actual cost and schedule performance against the approved plan."
+          }
+        ]
+      }
+    }
+  ]
+}

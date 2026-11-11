@@ -1,0 +1,114 @@
+{
+  "sources": [
+    {
+      "bytes": 45248,
+      "candidate_id": "c_f57deed7e0dc5be8daf9d878",
+      "discovery_query": "site.cdt.ca.gov \"project status\" \"cost\" \"2024\" filetype:xlsx",
+      "disposition": "not_admitted",
+      "download_status": "downloaded",
+      "exclusion_reasons": [
+        "audit_not_completed_or_no_support"
+      ],
+      "file_id": "f_77870b6e7e0ef84735f03af7",
+      "final_url": "https://lao.ca.gov/Publications/Report/5011",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://lao.ca.gov/Publications/Report/5011",
+      "parse_status": "parsed",
+      "prior_errors": [],
+      "redirects": [],
+      "retrieved_at": "2026-11-11T06:49:52.398236+00:00",
+      "selection_reason": "California LAO report on the State Payroll System IT project — a single jurisdiction/organization case (State of California) matching the anchor, providing authoritative project-level schedule, scope, and cost performance data for a real software project. Rejected c_09b29724a90aa5ab69d251b9 (policy/instructions, not project results) and c_6d2b5ab83ed49f714d636066 (program-level funding report, not a single project case), and c_ebbf65d1270c50ad9b1a7471 to avoid mixing UK data with the California case.",
+      "sha256": "77870b6e7e0ef84735f03af78f272e48113c4f6261cfe8ea70551bc17115d656",
+      "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+      "source_page": "https://lao.ca.gov/Publications/Report/5011",
+      "title": "California State Payroll System IT project analysis",
+      "url": "https://lao.ca.gov/Publications/Report/5011"
+    },
+    {
+      "candidate_id": "c_73aa6380ad2a2efc694a7080",
+      "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+      "disposition": "download_failed",
+      "download_status": "failed",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "origin": "real_original",
+      "reason": "download_failed:http_status:404|http_status:404",
+      "selection_reason": "CDT project tracking record for the CSPS IT project—the authoritative live project oversight system of record expected to contain current schedule milestones, progress status, and cost tracking against baseline.",
+      "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+      "source_page": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e",
+      "title": "CDT actual CSPS project tracking record",
+      "url": "https://www.projecttracking.technology.ca.gov/Home/Details?id=34c91c7c-c1b0-4d98-bd9c-655d98c9cf4e"
+    },
+    {
+      "bytes": 4279239,
+      "candidate_id": "c_7730f996c392f5600a5f840d",
+      "discovery_query": "California State Payroll System CSPS IT project baseline schedule milestones cost $1.2 billion approved 2025",
+      "disposition": "not_admitted",
+      "download_status": "downloaded",
+      "exclusion_reasons": [
+        "audit_not_completed_or_no_support"
+      ],
+      "file_id": "f_01fa9a90acb3d1799ea2ef87",
+      "final_url": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "application/pdf",
+      "origin": "real_original",
+      "original_url": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+      "parse_status": "parsed",
+      "prior_errors": [
+        "TimeoutError"
+      ],
+      "redirects": [],
+      "retrieved_at": "2026-11-11T06:58:33.602223+00:00",
+      "selection_reason": "2026-27 Budget Change Proposal from the Department of Finance for CSPS, expected to contain historical actual expenditures, approved baseline costs, and project funding details directly relevant to cost performance monitoring.",
+      "sha256": "01fa9a90acb3d1799ea2ef87ff743f1f2e40a010d56e5be4badb6cc4fa0f2e5d",
+      "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+      "source_page": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf",
+      "title": "CSPS 2026-27 budget change proposal including historical actual expenditures",
+      "url": "https://bcp.dof.ca.gov/2627/FY2627_ORG0840_BCP9253.pdf"
+    },
+    {
+      "bytes": 407323,
+      "candidate_id": "c_20a1f88986b5c34882fe9a5b",
+      "discovery_query": "CSPS IT project DART funding change management 2025-26 May Revision budget change proposal status",
+      "disposition": "not_admitted",
+      "download_status": "downloaded",
+      "exclusion_reasons": [
+        "audit_not_completed_or_no_support"
+      ],
+      "file_id": "f_f12658aaf5ba68617e7ab503",
+      "final_url": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "application/pdf",
+      "origin": "real_original",
+      "original_url": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+      "parse_status": "parsed",
+      "prior_errors": [],
+      "redirects": [],
+      "retrieved_at": "2026-11-11T06:58:48.618308+00:00",
+      "selection_reason": "SCO 2023-24 Report to the Legislature on CSPS providing authorized versus actual cost comparisons and project status—directly relevant to reconciling actual cost and schedule performance against the approved plan.",
+      "sha256": "f12658aaf5ba68617e7ab50350422d393acd9acae98d3b36d91c9321360fc233",
+      "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+      "source_page": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf",
+      "title": "CSPS 2023-24 legislative report and authorized versus actual costs",
+      "url": "https://www.sco.ca.gov/Files-EO/2023-24_CSPS_Report_to_the_Legislature.pdf"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "code_sha256": {
+    "acquire.py": "18bf8ffc4ba292b14f6d33ef741c9f69b48c7ea81414f38cc02ba4eb4c5948b3",
+    "common.py": "fce2cda0161dc0160c3ccd681e6accd91bd99294301215d96898b21fc7debadb",
+    "companions.py": "2cb5ee6e76f79192f800e061b48ee127144d3f1ec73935309af6ded4d6db84c2",
+    "construct_workspace.py": "4b810cea6df50204d01cd52207bf819ea1f65f8b15b9b9de718d2e01829c8f5f",
+    "coverage.py": "ec1c5becce25fb2db4de71d68439547a1003b70155d11a71f42f493a0213629f",
+    "profile_files.py": "8b9f5270e128286c9c3ac8d1fe34a97d2124c1fb61296bf8d2179eee501021af",
+    "prompts.py": "e3f7d3d38ea24e0e79b1d52eebe41320b76cfb85ddd8fd625235c8eb00c6bef4",
+    "vision.py": "9283485b8c0d633d74abbaf870d3a4b8a0bb56dcc6fcbe478a143433b38a9e96"
+  },
+  "companion_specifications": [],
+  "config": {
+    "allow_synthetic": false,
+    "audit_timeout_seconds": 180,
+    "limits": {
+      "download_bytes": 20000000,
+      "files_per_round": 3,
+      "redirects": 4,
+      "retries": 1,
+      "rounds": 2,
+      "timeout_seconds": 25,
+      "trusted_proxy_env": "HTTPS_PROXY"
+    },
+    "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+    "search": {
+      "manifest": "pilot_urls.json",
+      "max_queries_per_round": 2,
+      "provider": "url_manifest"
+    }
+  },
+  "input_sha256": {
+    "stage1_seeds": "432d1449faa881b927348d891ea6c23b1242506f8a6613a726bda530b962ad5d",
+    "stage2_plans": "0beb747181431eded4ae338dd06a9e4934706c442db391bbe64d282ed8a8108e",
+    "stage2_report": "146e45c4641a0973284bd3f7c76780fa5f45b622967d3e855eaa799938026d93"
+  },
+  "limit": 2,
+  "llm": {
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "candidates_per_pair": 2,
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "model": "GLM_ka48dn",
+    "model_name": "glm-5.2",
+    "model_resolution": "LLMCenter /v1/models, 2026-11-10; model is the gateway accessId, not the upstream name.",
+    "parameters": {
+      "max_tokens": 4096,
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_seconds": 60
+  },
+  "search_manifest_sha256": "e3164595ae0fc0ed7a535d634a079a2151e831d1edc9f786a4f0f93f524648e2",
+  "signature": "194737449a3d2580b26c80e28213d62fd2663e89a49a1d86ffc1d81d71807c0d"
+}

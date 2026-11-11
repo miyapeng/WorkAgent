@@ -1,0 +1,175 @@
+{
+  "completion": {
+    "decision": "not_materialized",
+    "model_assessment": {
+      "reason": "quote_not_at_actual_location",
+      "safe": false,
+      "target_nodes": []
+    },
+    "reason": "quote_not_at_actual_location",
+    "route": "real_only",
+    "synthetic_files": 0
+  },
+  "counts": {
+    "audit_excluded_unique_files": 0,
+    "download_failures": 1,
+    "downloaded_urls": 3,
+    "duplicates": 0,
+    "external_input_nodes": 4,
+    "external_search_queries_recorded": 5,
+    "parse_rejected_files": 0,
+    "parsed_unique_files": 3,
+    "retained_real_adapted": 0,
+    "retained_real_original": 0,
+    "retained_synthetic": 0,
+    "search_provider_requests": 4,
+    "usable_real_anchors": 0
+  },
+  "coverage": {
+    "after_completion_coverage": 0.0,
+    "after_completion_supported_nodes": 0,
+    "node_statuses": {
+      "i1": "missing",
+      "i2": "missing",
+      "i3": "missing",
+      "i4": "missing"
+    },
+    "observed_model_statuses": {
+      "i1": "not_run",
+      "i2": "not_run",
+      "i3": "not_run",
+      "i4": "not_run"
+    },
+    "real_coverage": 0.0,
+    "real_supported_nodes": 0
+  },
+  "errors": [
+    {
+      "reason": "quote_not_at_actual_location",
+      "round": 1,
+      "stage": "coverage_audit"
+    },
+    {
+      "reason": "quote_not_at_actual_location",
+      "round": 2,
+      "stage": "coverage_audit"
+    }
+  ],
+  "failure_reasons": [
+    "no_usable_real_anchor",
+    "uncovered:i1",
+    "uncovered:i2",
+    "uncovered:i3",
+    "uncovered:i4"
+  ],
+  "limitations": [
+    "Semantic coverage and scope are model assessments; quote location and byte hashes are independently checked.",
+    "No execution probe was run; ready would mean input sufficiency, not proven task solvability.",
+    "Unknown redistribution rights: original files and detailed extracted text remain local."
+  ],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T06:35:32.329142+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "workspace-retrieval-v1",
+      "request_sha256": "3fab4232c0750804e91a6be6add0d450e91f1d2a49e27c4a5ad8bdd604fd407d"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T06:55:11.301719+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "workspace-selection-v3",
+      "request_sha256": "e8e159853826045a0178b2556dad8b1b827a21fee8b3afd109a138a00992a462"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T06:55:31.612142+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 7000,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "workspace-coverage-v2",
+      "request_sha256": "4930a0a74c65972f415c238559c229e115db25246a550da8d6529954cd47ebe9"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T06:55:36.371128+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "workspace-refinement-v2",
+      "request_sha256": "8c09c2fe1fb5b250e96e4d749fe3acdc6a29460b52ddc590db496626f30fae23"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T06:57:41.136463+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "workspace-selection-v3",
+      "request_sha256": "dc47826f89e2d0bb3ed73b055049cb11866146920f1eebe6c8ccfc18466686ad"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-11T07:14:10.585068+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 7000,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prior_request_errors": [
+        "TimeoutError",
+        "TimeoutError"
+      ],
+      "prompt_version": "workspace-coverage-v2",
+      "request_sha256": "a29f12af79d5c1148fa5d06614f6abd9c73dc11e30ad3e89f32d8c248b80099c"
+    }
+  ],
+  "multimodal_dependency_established": false,
+  "objective_preserved": true,
+  "plan_sha256": "6fc6a78ea1e644f4b7d7c33793f74a89f5f3d9ec272a377106d9a0b2dea7e736",
+  "public_redistribution_approved": false,
+  "seed_id": "seed_fd10d1bb12e351e2266e1dfb",
+  "stage4_eligible": false,
+  "status": "rejected",
+  "work_objective_sha256": "c7e165aa5298434b50cfaf9efb385e3eda0dae784d34ce56e7c4cd6b71989b2e",
+  "workspace_files": {}
+}

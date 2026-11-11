@@ -1,0 +1,60 @@
+{
+  "sources": [
+    {
+      "bytes": 648257,
+      "candidate_id": "c_d54327ae49ddaba2eaeaf171",
+      "discovery_query": "site.open.canada.ca \"Authorities and Expenditures\" csv 2024",
+      "disposition": "retained",
+      "download_status": "downloaded",
+      "file_id": "f_3032f3110f52feb3fdc86642",
+      "final_url": "https://opencanada.blob.core.windows.net/opengovprod/resources/3fde453f-e3b7-4fa4-a282-f195bf872f9e/eav_eac_en.csv",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/csv",
+      "origin": "real_original",
+      "original_url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv",
+      "parse_status": "parsed",
+      "prior_errors": [],
+      "redirects": [
+        {
+          "from": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv",
+          "status": 302,
+          "to": "https://opencanada.blob.core.windows.net/opengovprod/resources/3fde453f-e3b7-4fa4-a282-f195bf872f9e/eav_eac_en.csv"
+        }
+      ],
+      "retrieved_at": "2026-11-11T06:39:38.612539+00:00",
+      "selection_reason": "Authoritative Canadian federal dataset providing budget authorities and actual expenditures by vote in CSV form; supplies the approved-budget and actual-spending figures needed to compute variances for one coherent jurisdiction/organization, matching the anchor's Canada scope and the reconciliation objective.",
+      "sha256": "3032f3110f52feb3fdc86642163fb14c7df81ac4c1a1730b670080681f767dac",
+      "signed_query_sha256": [
+        "5922bd76aa6d7958b7258f2cfed6bd626ecd729a360338aa952a1ea960b8e4c5",
+        "5922bd76aa6d7958b7258f2cfed6bd626ecd729a360338aa952a1ea960b8e4c5"
+      ],
+      "snippet": "Candidate discovered by external web search or following an official download link; content not yet verified.",
+      "source_page": "https://open.canada.ca/data/en/dataset/fc6ba156-a167-4abd-b172-d1293efebe55?wbdisable=true",
+      "title": "Canada Authorities and Expenditures by Vote (Annual)",
+      "url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv",
+      "workspace_path": "workspace_init/tables/3032f311_eav_eac_en.csv"
+    },
+    {
+      "candidate_id": "c_5c9e0696b30abba047c0f100",
+      "discovery_query": "Government of Canada public accounts expenditures authorities fiscal year 2011 Department of Agriculture and Agri-Food Operating Program Grants Contributions Capital",
+      "disposition": "download_failed",
+      "download_status": "failed",
+      "license": {
+        "reason": "Public accessibility alone does not establish redistribution rights.",
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "origin": "real_original",
+      "reason": "download_failed:http_status:202|http_status:202",
+      "selection_reason": "This is a direct authoritative primary record for the anchor case (Government of Canada, Department of Agriculture and Agri-Food, FY 2010-2011). It is the actual Public Accounts of Canada Volume II for 2010-2011, the same jurisdiction/organization/period as the retained data, and is needed to verify that the 'authorities' and 'expenditures' column definitions mean approved budget versus actual spending (missing information i1, i2) and to extract supporting context for the variance analysis.",
+      "snippet": "Located by recorded external query; the file must still be downloaded and inspected.",
+      "source_page": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf",
+      "title": "Public Accounts of Canada 2010-2011 Volume II original annual accounts",
+      "url": "https://publications.gc.ca/collections/collection_2011/tpsgc-pwgsc/P51-1-2011-2-eng.pdf"
+    }
+  ]
+}
