@@ -6,7 +6,7 @@
 
 Raw Seed 保留完整职业代码与名称，新增稳定 `seed_id` 和由代码查表得到的官方 SOC 大类 `work_domain`。文件级来源、版本和模型调用记录统一存入报告；每条记录只保留必要的原文、分类及追溯信息，Revision 才带 `original_task_id`。字段说明见 [精简输出格式](STAGE1.md#四个输出)。
 
-新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖下面记录的普通 Task 底表、`archive/data/digital/`、网页或历史模型实验。当前网页及旧数字子集仍是普通 Tasks 的 5,652 条基线，不包含本轮 Emerging 合并结果。
+新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖普通 Task 底表和历史模型实验。当前网页直接展示完整 5,745 条数字池；`archive/data/digital/` 仍保留普通 Tasks 的 5,652 条历史基线。
 
 ```bash
 # 在仓库根目录；Emerging 原始文件已保存
@@ -87,9 +87,14 @@ python -m unittest discover -s tests -v
 
 ```bash
 python scripts/build_view.py
+
+# 仅在缺少显示译文时联网补齐；不修改 Seed 或筛选标签
+python scripts/build_view.py --fetch-translations
 ```
 
-直接用浏览器打开 `site/dist/index.html` 即可，默认显示数字任务候选和中文译文，支持切换现场/物理任务、待核对、官方全量目录，以及中文、英文、中英对照。职业和任务均支持中英文搜索；可展开逐任务筛选依据，下载全量或数字子集 CSV。构建网页前核对原始目录、筛选依据与翻译覆盖。分页仅控制显示，不截断数据。
+直接用浏览器打开 `site/dist/index.html` 即可，默认显示完整数字候选池（5,745 条）和中英对照。支持全局搜索任务/职业/ID/DWA、SOC 大类、职业和来源组合筛选，切换 200 条采样、物理任务、待审核和全部 19,129 条有效任务。可以分页、跳页、展开来源和分类依据、查看完整 Seed JSON，下载原始 JSONL 或导出当前筛选结果。分页仅控制显示，不截断数据。
+
+构建前逐条核验数字池等于有效池中全部 DIGITAL 记录、采样为数字池子集、任务原文与官方 CSV 一致。页面不再依赖旧 `archive/data/digital/` 输出。显示译文按原文 SHA-256 匹配，复用历史翻译缓存，新增 354 条显示文本译文保存在 `site/translations.jsonl`；不能把 Revision 旧 ID 的译文套到新文本。当前有效任务全部有中文阅读译文，机器翻译不参与筛选，也不写入 Raw Seeds。后续缺译文时显示英文并标记，使用 `--fetch-translations` 可补齐。默认构建完全离线。
 
 网页使用原生 HTML/CSS/JavaScript，无运行时框架、数据库或 Web 后端。托管配置位于 `site/.openai/hosting.json`；本地打开不需要 Sites、Node 或网络连接。
 

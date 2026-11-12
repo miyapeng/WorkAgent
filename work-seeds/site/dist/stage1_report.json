@@ -1,0 +1,1139 @@
+{
+  "checks": {
+    "official_text_unchanged": true,
+    "sample_only_digital": true,
+    "superseded_originals_absent": true,
+    "unique_effective_task_ids": true
+  },
+  "classification_counts": {
+    "all": {
+      "DIGITAL": 5745,
+      "PHYSICAL": 8941,
+      "UNCERTAIN": 4443
+    },
+    "emerging_new": {
+      "DIGITAL": 93,
+      "PHYSICAL": 140,
+      "UNCERTAIN": 59
+    },
+    "emerging_revision": {
+      "DIGITAL": 16,
+      "PHYSICAL": 18,
+      "UNCERTAIN": 10
+    },
+    "regular": {
+      "DIGITAL": 5636,
+      "PHYSICAL": 8783,
+      "UNCERTAIN": 4374
+    }
+  },
+  "classification_guidance_sha256": "255cc37d10e63792dbd0333c6ebda1e8b74866b128e3e83d868dc818442d4e3b",
+  "counts": {
+    "conflicting_original_tasks": 1,
+    "digital_tasks": 5745,
+    "effective_tasks": 19129,
+    "emerging_raw": 338,
+    "regular_original": 18838,
+    "successful_revision_replacements": 44,
+    "unresolved_revision_relations": 0
+  },
+  "data_type": "raw_work_seed",
+  "digital_coverage": {
+    "dwas": 1167,
+    "major_groups": 22,
+    "occupations": 749,
+    "source_counts": {
+      "emerging_new": 93,
+      "emerging_revision": 16,
+      "regular": 5636
+    },
+    "tasks": 5745
+  },
+  "effective_coverage": {
+    "dwas": 2085,
+    "major_groups": 22,
+    "occupations": 923,
+    "source_counts": {
+      "emerging_new": 292,
+      "emerging_revision": 44,
+      "regular": 18793
+    },
+    "tasks": 19129
+  },
+  "implementation_sha256": {
+    "construct_seeds.py": "6a46ba08409e99433b66a1b003f380fb7c7b12a40f2e8a3d9f303a9e74bd160b",
+    "emerging_tasks.py": "5729382b9fa5831776337f84ef98685b74151d889f0505fc6b021eb9fa48d84a",
+    "filter_digital.py": "70ac7c0382d36a3ee9694ad9d78748e5d0f5e50b0de8719b1d1b83c46da4548e",
+    "sample_seeds.py": "38a8a48d1ea49b2373bfb3233703a25365389527f5372fcddbde64510573a5e9",
+    "seed_evidence.py": "36a297e4bdc7ba4de27a351bffe385924d91f1bae2d143f3ac8ac7b67f7d1199"
+  },
+  "limitations": [
+    "Emerging statements are official proposals for future collection; replacement is this project’s derived-pool policy.",
+    "Same-date conflicting revisions and their original are quarantined, never arbitrarily selected.",
+    "AI4Work annotations and LLM classifications are candidate labels, not verified executability.",
+    "Emerging DWA associations are empty; old Task mappings are not asserted to apply to revised text."
+  ],
+  "llm_classified_tasks": 336,
+  "major_group_distribution": [
+    {
+      "digital_after_filter": 631,
+      "effective_before_filter": 1227,
+      "regular_original": 1213,
+      "sampled": 16,
+      "soc_major_group": "11",
+      "work_domain": "Management Occupations"
+    },
+    {
+      "digital_after_filter": 607,
+      "effective_before_filter": 999,
+      "regular_original": 988,
+      "sampled": 16,
+      "soc_major_group": "13",
+      "work_domain": "Business and Financial Operations Occupations"
+    },
+    {
+      "digital_after_filter": 685,
+      "effective_before_filter": 776,
+      "regular_original": 770,
+      "sampled": 17,
+      "soc_major_group": "15",
+      "work_domain": "Computer and Mathematical Occupations"
+    },
+    {
+      "digital_after_filter": 660,
+      "effective_before_filter": 1267,
+      "regular_original": 1237,
+      "sampled": 16,
+      "soc_major_group": "17",
+      "work_domain": "Architecture and Engineering Occupations"
+    },
+    {
+      "digital_after_filter": 597,
+      "effective_before_filter": 1269,
+      "regular_original": 1236,
+      "sampled": 16,
+      "soc_major_group": "19",
+      "work_domain": "Life, Physical, and Social Science Occupations"
+    },
+    {
+      "digital_after_filter": 86,
+      "effective_before_filter": 299,
+      "regular_original": 295,
+      "sampled": 8,
+      "soc_major_group": "21",
+      "work_domain": "Community and Social Service Occupations"
+    },
+    {
+      "digital_after_filter": 56,
+      "effective_before_filter": 127,
+      "regular_original": 124,
+      "sampled": 3,
+      "soc_major_group": "23",
+      "work_domain": "Legal Occupations"
+    },
+    {
+      "digital_after_filter": 641,
+      "effective_before_filter": 1659,
+      "regular_original": 1636,
+      "sampled": 14,
+      "soc_major_group": "25",
+      "work_domain": "Educational Instruction and Library Occupations"
+    },
+    {
+      "digital_after_filter": 242,
+      "effective_before_filter": 816,
+      "regular_original": 806,
+      "sampled": 13,
+      "soc_major_group": "27",
+      "work_domain": "Arts, Design, Entertainment, Sports, and Media Occupations"
+    },
+    {
+      "digital_after_filter": 450,
+      "effective_before_filter": 1759,
+      "regular_original": 1729,
+      "sampled": 16,
+      "soc_major_group": "29",
+      "work_domain": "Healthcare Practitioners and Technical Occupations"
+    },
+    {
+      "digital_after_filter": 53,
+      "effective_before_filter": 352,
+      "regular_original": 347,
+      "sampled": 5,
+      "soc_major_group": "31",
+      "work_domain": "Healthcare Support Occupations"
+    },
+    {
+      "digital_after_filter": 97,
+      "effective_before_filter": 536,
+      "regular_original": 519,
+      "sampled": 9,
+      "soc_major_group": "33",
+      "work_domain": "Protective Service Occupations"
+    },
+    {
+      "digital_after_filter": 13,
+      "effective_before_filter": 327,
+      "regular_original": 320,
+      "sampled": 1,
+      "soc_major_group": "35",
+      "work_domain": "Food Preparation and Serving Related Occupations"
+    },
+    {
+      "digital_after_filter": 16,
+      "effective_before_filter": 167,
+      "regular_original": 164,
+      "sampled": 1,
+      "soc_major_group": "37",
+      "work_domain": "Building and Grounds Cleaning and Maintenance Occupations"
+    },
+    {
+      "digital_after_filter": 58,
+      "effective_before_filter": 635,
+      "regular_original": 617,
+      "sampled": 6,
+      "soc_major_group": "39",
+      "work_domain": "Personal Care and Service Occupations"
+    },
+    {
+      "digital_after_filter": 138,
+      "effective_before_filter": 434,
+      "regular_original": 427,
+      "sampled": 9,
+      "soc_major_group": "41",
+      "work_domain": "Sales and Related Occupations"
+    },
+    {
+      "digital_after_filter": 336,
+      "effective_before_filter": 981,
+      "regular_original": 975,
+      "sampled": 13,
+      "soc_major_group": "43",
+      "work_domain": "Office and Administrative Support Occupations"
+    },
+    {
+      "digital_after_filter": 8,
+      "effective_before_filter": 230,
+      "regular_original": 225,
+      "sampled": 1,
+      "soc_major_group": "45",
+      "work_domain": "Farming, Fishing, and Forestry Occupations"
+    },
+    {
+      "digital_after_filter": 57,
+      "effective_before_filter": 1151,
+      "regular_original": 1140,
+      "sampled": 5,
+      "soc_major_group": "47",
+      "work_domain": "Construction and Extraction Occupations"
+    },
+    {
+      "digital_after_filter": 95,
+      "effective_before_filter": 1034,
+      "regular_original": 1016,
+      "sampled": 5,
+      "soc_major_group": "49",
+      "work_domain": "Installation, Maintenance, and Repair Occupations"
+    },
+    {
+      "digital_after_filter": 120,
+      "effective_before_filter": 2159,
+      "regular_original": 2140,
+      "sampled": 5,
+      "soc_major_group": "51",
+      "work_domain": "Production Occupations"
+    },
+    {
+      "digital_after_filter": 99,
+      "effective_before_filter": 925,
+      "regular_original": 914,
+      "sampled": 5,
+      "soc_major_group": "53",
+      "work_domain": "Transportation and Material Moving Occupations"
+    },
+    {
+      "digital_after_filter": 0,
+      "effective_before_filter": 0,
+      "regular_original": 0,
+      "sampled": 0,
+      "soc_major_group": "55",
+      "work_domain": "Military Specific Occupations"
+    }
+  ],
+  "merge": {
+    "emerging_raw_rows": 338,
+    "exact_duplicates_removed": 0,
+    "new_rows": 292,
+    "quarantined_original_task_ids": [
+      "21211"
+    ],
+    "regular_original_count": 18838,
+    "replaced_original_task_ids": [
+      "1009",
+      "1012",
+      "1017",
+      "10618",
+      "11028",
+      "11610",
+      "1213",
+      "1228",
+      "13770",
+      "15213",
+      "15234",
+      "1593",
+      "16301",
+      "1739",
+      "17719",
+      "18026",
+      "19197",
+      "19250",
+      "19998",
+      "20049",
+      "20451",
+      "20722",
+      "20734",
+      "21182",
+      "21280",
+      "21504",
+      "22234",
+      "22780",
+      "23625",
+      "2370",
+      "23939",
+      "23988",
+      "24004",
+      "24008",
+      "5386",
+      "5441",
+      "5849",
+      "7247",
+      "7608",
+      "8437",
+      "8915",
+      "8916",
+      "9094",
+      "9363"
+    ],
+    "resolved_replacements": 44,
+    "revision_conflicts": [
+      {
+        "original_task_id": "21211",
+        "reason": "No unique latest official revision; no published tie-break assumed.",
+        "source_rows": [
+          323,
+          326
+        ]
+      }
+    ],
+    "revision_rows": 46,
+    "superseded_revision_rows": [],
+    "unresolved_revisions": []
+  },
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:17.053830+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "1a1dffea6dc021b8b7940a2922ac7e98cab64e9f9a84e0822d7d206ad6b685c5",
+      "task_ids": [
+        "emerging_31_0_007c9ed46ca0ca85506f7a1e",
+        "emerging_31_0_0315aba4028aa083e794f302",
+        "emerging_31_0_042e58fbd0a39f9c00ed5a1b",
+        "emerging_31_0_04a5335d01362a6f8ade92e2",
+        "emerging_31_0_056bf38359ee183c9f3bf869",
+        "emerging_31_0_0716bf0dd85295c389843801",
+        "emerging_31_0_07d235f6337fae8787977c60",
+        "emerging_31_0_082d5a2e081457339c12ffed",
+        "emerging_31_0_0ef74c6fb01df96c4ec23b31",
+        "emerging_31_0_1053cdb8be269f6e523c683e",
+        "emerging_31_0_13405eb1543e8acf06fbdc08",
+        "emerging_31_0_13803813fcffe04819b5065b",
+        "emerging_31_0_13a50d3fd8208b5e652bf006",
+        "emerging_31_0_145c033561810836525e6fa8",
+        "emerging_31_0_15801c4306d5a00cc34194df",
+        "emerging_31_0_161f0ef786326bbb66c4b90e"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:01:49.070821+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "1787d38b765ae4ada7c8845552be52a7fd8b192174f75a5e4dbd25a7f59cfdb9",
+      "task_ids": [
+        "emerging_31_0_1683e5898cfd7eecb058051c",
+        "emerging_31_0_1783dd1a8384eb172ceae624",
+        "emerging_31_0_19a9649f6215997f0d410089",
+        "emerging_31_0_1a3e5e958aa8a392eee410df",
+        "emerging_31_0_1a49d17c3cfb30670bd62fe8",
+        "emerging_31_0_1b10decd5cdd994962a66d25",
+        "emerging_31_0_1b9e90ae3849ecaed85e576f",
+        "emerging_31_0_1c1230c92a8a0b55f4a0725b",
+        "emerging_31_0_1c43baa891c6a90cffe08807",
+        "emerging_31_0_1cbc032566754e9debdfcd77",
+        "emerging_31_0_1d3e304ec421539a57a7ee36",
+        "emerging_31_0_1da9cbe02aa25f09842ffdc1",
+        "emerging_31_0_1e276e8b74982102acce90a9",
+        "emerging_31_0_1f660b6621cc94e7ba2fe8d9",
+        "emerging_31_0_200dbe1683987c594aa959e5",
+        "emerging_31_0_2067072c0f2298dd44b6d18c"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:13.895873+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "85f01cbb47583b948a388ed2fe11c80062daf51d0f5bad3acc01288538f65905",
+      "task_ids": [
+        "emerging_31_0_218b216fe1367ee28509a11e",
+        "emerging_31_0_21b95ce9ebbd9a8ff68f2a8c",
+        "emerging_31_0_21e674e8b40423bcaf14521a",
+        "emerging_31_0_2267833d5660d4b685bd1a36",
+        "emerging_31_0_2477c13b59d321c389cb73fa",
+        "emerging_31_0_24dc44d1dfbe2715a9805325",
+        "emerging_31_0_254fb519590da8dff46f5a8f",
+        "emerging_31_0_259396c3718018281d4d829a",
+        "emerging_31_0_260eb69327afa5a40e5f309f",
+        "emerging_31_0_263818268e082f971b543a55",
+        "emerging_31_0_2671d3fd6757dfb9d9e88761",
+        "emerging_31_0_26ef2e4531d138ec0f17d115",
+        "emerging_31_0_29b9ff88bb29fdfcc674eec6",
+        "emerging_31_0_2a2ee3ede2b7e725dc7e2783",
+        "emerging_31_0_2be428ff0f9eeb2a473a5841",
+        "emerging_31_0_2c07529c7a5f129acf81a394"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:01:50.985481+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "59ae330373ce28ddc9c0166461a40177d698eb16dd9b895181d4527dc606ddbc",
+      "task_ids": [
+        "emerging_31_0_2c2d7bb7c96e252c98a6e83f",
+        "emerging_31_0_2c57321782344513f9f7eef7",
+        "emerging_31_0_2dbe0d6faa1b288fda237bf2",
+        "emerging_31_0_2e50ccc9231c0e1a4bea832a",
+        "emerging_31_0_2fd9326c8165a71389da47e2",
+        "emerging_31_0_3002641c875f8d1ebcff0d00",
+        "emerging_31_0_30265a384e7179ed828b806f",
+        "emerging_31_0_30f78aead0325e0e7db8703c",
+        "emerging_31_0_310061f4bde10be89d7be306",
+        "emerging_31_0_323609babe6fe9830843050c",
+        "emerging_31_0_328d35b5be5b2e4ef8a80c1a",
+        "emerging_31_0_34c0ec3175be69d3ba32250e",
+        "emerging_31_0_34c534860d58719e312620c6",
+        "emerging_31_0_3548a5e1c46638cb65f3bdd9",
+        "emerging_31_0_3686f6f529b94504dcb748c8",
+        "emerging_31_0_372e15705aa60b6a133e692a"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:01:52.552991+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "5d8a075fcfc52aa29e84f13f506cbb4a12510436f6b58108ec6316552ecae6d3",
+      "task_ids": [
+        "emerging_31_0_374c63b71c3855d6d0e5af54",
+        "emerging_31_0_375cb0a5b216a1e954c74d31",
+        "emerging_31_0_37d4e7fad44e57bb10568a92",
+        "emerging_31_0_393d160d87f6df6670639413",
+        "emerging_31_0_3a75f0b4e08cb75d78471fcf",
+        "emerging_31_0_3b1661f9cbc95bf40373c9e4",
+        "emerging_31_0_3c3e71dff6a0e0fa060d59cc",
+        "emerging_31_0_3c5a1dff016fc659d8a2fe4a",
+        "emerging_31_0_3c93b12f386820d56cf6507e",
+        "emerging_31_0_3cadf392053d24f3a18fd724",
+        "emerging_31_0_3e93017f0de8586a36ee024f",
+        "emerging_31_0_3f9621b986e6d92c5815806a",
+        "emerging_31_0_3fbfde3b853b5efa535ddcbd",
+        "emerging_31_0_408ecb6e592445a8667458d4",
+        "emerging_31_0_40de49c249f464d212ae12d9",
+        "emerging_31_0_41de62fb3f53540c8226a252"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:01:55.472932+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "5d6a363f23c8b14b6efdd2a3abcd51c03adcf8aa7ee49063f5baccef86722385",
+      "task_ids": [
+        "emerging_31_0_4285233337adda7b1ad9cd16",
+        "emerging_31_0_42d57a710f71656f464da8db",
+        "emerging_31_0_432ccbdcdfaba4902f2dd413",
+        "emerging_31_0_434b64eb28768c5e9c72fb3a",
+        "emerging_31_0_45a2985fe82b2f1409a11927",
+        "emerging_31_0_45dce8495ed64a7a46998380",
+        "emerging_31_0_487dcd00d310a42d4bd82867",
+        "emerging_31_0_49668791b8d64a426f3d2105",
+        "emerging_31_0_4a5940aec4eb3f51ee37d716",
+        "emerging_31_0_4ae8ffb3f998faf4effeba81",
+        "emerging_31_0_4af1b5aa34cefede8991b8f7",
+        "emerging_31_0_4bcba89efa69a0d3de0fa7d8",
+        "emerging_31_0_4d11be57e27afb40f2e6994a",
+        "emerging_31_0_4d150580fedb826ede0b6bd2",
+        "emerging_31_0_4d17a26aacf935a8c0665f8c",
+        "emerging_31_0_4d597fe95ed939c0b1bebdd2"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:01:56.198712+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "e02251c9d34e1f50e52980f92e390db38d8db08487f355a09227a0b77638d71b",
+      "task_ids": [
+        "emerging_31_0_4d5f98de4434f006f8885221",
+        "emerging_31_0_4dbdac47f8365e384da0bc7f",
+        "emerging_31_0_4df88761025b18aa35bc19e2",
+        "emerging_31_0_4e285bef501a7f3adb7fc11f",
+        "emerging_31_0_4fa3d5f0d7353d032813bc89",
+        "emerging_31_0_4fcd2e9f6d28b3e19d2dcbb1",
+        "emerging_31_0_4fd5a997d4ad18ee23620675",
+        "emerging_31_0_5003bdc074a8160fc0b32f4f",
+        "emerging_31_0_501dae7f5afbf06f5896da38",
+        "emerging_31_0_502910e470d3239ce2f22cc6",
+        "emerging_31_0_50ec1bb0498984524d7fde70",
+        "emerging_31_0_51b24ea9344d0bc51ac9c379",
+        "emerging_31_0_51c1b7d320524862d3319446",
+        "emerging_31_0_5231c870b1e43436cd092f0c",
+        "emerging_31_0_5297bf69d863630882873424",
+        "emerging_31_0_52e3269711555fcbd523988d"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:00.187467+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "53279dc77725c09785e2e73ea1a99c7bb8ce0bf3485ae8509399ebc08f9eb381",
+      "task_ids": [
+        "emerging_31_0_54d198b30794e60660cd244f",
+        "emerging_31_0_550ba4e7973f3d80635a6c35",
+        "emerging_31_0_555b9da8c1e4633e67f4094d",
+        "emerging_31_0_559bb09e1ae9fb8d938039a1",
+        "emerging_31_0_55ed2d835ebd85d632963a86",
+        "emerging_31_0_568e22b348ab8225d8b51585",
+        "emerging_31_0_5749e6f9c4525f656ba734a4",
+        "emerging_31_0_574de169fcbe2ab96c1d740b",
+        "emerging_31_0_574f224eb3fe79398ba3b72f",
+        "emerging_31_0_580ff9264f45529fec2096f9",
+        "emerging_31_0_581dc0ec0437869621201c9f",
+        "emerging_31_0_59151506cf76cc13b50ef3f0",
+        "emerging_31_0_5b7515f326ec2211b64027ea",
+        "emerging_31_0_5bdf3a838f076762656bcd0e",
+        "emerging_31_0_5bf1d4a0cf33a44360a1158c",
+        "emerging_31_0_5c3cd8057c5f7da54200315c"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:00.269850+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "e4120c68f65a626ff1dfe700ed15f84804c7868ed28499b27c259495ab2d56b6",
+      "task_ids": [
+        "emerging_31_0_5cbd71db6835894df5cc1f7f",
+        "emerging_31_0_5d239be27c731cf54e121cf4",
+        "emerging_31_0_5e011fcf8f8dfc5a8e855718",
+        "emerging_31_0_5e53e04d146dfe62797662f3",
+        "emerging_31_0_5e7e4cd61f280327b75b2b98",
+        "emerging_31_0_605b2ae9157cf8ec67c1d760",
+        "emerging_31_0_615604c55b1010b8bbd3ba71",
+        "emerging_31_0_61891e3afec3fefb4a586eb9",
+        "emerging_31_0_62f258c0c4361810851d8fd1",
+        "emerging_31_0_62f61680a2994ed33e778fcc",
+        "emerging_31_0_64921a42cda4a0a582264317",
+        "emerging_31_0_65083896fd146d1aea455628",
+        "emerging_31_0_655255a26872b0e6e06844e8",
+        "emerging_31_0_6586db5d924aeac20fffebc3",
+        "emerging_31_0_6897ff9e8db0750cdc9bfe80",
+        "emerging_31_0_68f41aeb603b161c37061f50"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:03.170899+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "de37cc74d66aa297619104f798f001427001a2de7e02c77e2b5f95e15143bd7d",
+      "task_ids": [
+        "emerging_31_0_6a6903d83ac311c5419fa3bc",
+        "emerging_31_0_6aca345a1742a40aae2f2abf",
+        "emerging_31_0_6b1625033ba7805d397dbf3d",
+        "emerging_31_0_6b433a6aaa6738c0285ca804",
+        "emerging_31_0_6bc0b755691efbc6cd0c8ad1",
+        "emerging_31_0_6bd63c094b6f73305068a391",
+        "emerging_31_0_6c155e4eb47be4105d3051b7",
+        "emerging_31_0_6cc6051dddb9d5195b9c0db0",
+        "emerging_31_0_6d0335f9f34e3568c28bc2f1",
+        "emerging_31_0_6d5cd9f7cd7f427d74a77c2f",
+        "emerging_31_0_6e549debd53eaef12af6dd7d",
+        "emerging_31_0_6e81c7c2782113f0f23e0bee",
+        "emerging_31_0_6f23c063cfacd94c7513b968",
+        "emerging_31_0_6f267687f0f242c8130723bc",
+        "emerging_31_0_6f2d98ea6452e01cd0363007",
+        "emerging_31_0_6fce220610d1ab72b8b1799c"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:05.070178+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "8fd4ceadb96e9c57b667162c9128c1d88a79ac1ad9f1f1f35cac97a18fd2492b",
+      "task_ids": [
+        "emerging_31_0_713ecf1fe9c7da15ea3139fa",
+        "emerging_31_0_72b2172e57883a1d0ca28f8e",
+        "emerging_31_0_733814a14d3e45ccc23da8e1",
+        "emerging_31_0_748e4049382d47ac2877a1df",
+        "emerging_31_0_752961e2a7b10daba70a5201",
+        "emerging_31_0_75d95448599f2571a46f4476",
+        "emerging_31_0_7656fd6e865f11ee19f7d49e",
+        "emerging_31_0_7732d457d2559b9e12bef39b",
+        "emerging_31_0_77ec06c4b98492d738a87cf2",
+        "emerging_31_0_788ffe706cc05b0a0e791af8",
+        "emerging_31_0_78c630c0a0505e70f748f759",
+        "emerging_31_0_79412c370a0ad289c855604a",
+        "emerging_31_0_79df2430cc4b4a3447e261ea",
+        "emerging_31_0_7a6f0c10626aa68a8f46ab21",
+        "emerging_31_0_7aa56ffa70206d2bd6b501e2",
+        "emerging_31_0_7b0e693d2153dd38a00242f9"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:06.889736+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "1ceac9d844c1b9920abe03dfebf40db9a3bee044bd75c4582475134ed40be994",
+      "task_ids": [
+        "emerging_31_0_7b93de86fa005c3181aaac9f",
+        "emerging_31_0_7bce12a69ceaad923d75ffb8",
+        "emerging_31_0_7bd5fcf474d325126583bfda",
+        "emerging_31_0_7cac5da69a5ad22b85678d8e",
+        "emerging_31_0_7ee32013e673945c5199cc9a",
+        "emerging_31_0_7ee94c4ac9f370d218474277",
+        "emerging_31_0_7ef1304d84a2a302fb16b286",
+        "emerging_31_0_7f130e44bffe3f111d437c74",
+        "emerging_31_0_7f2362b48a11301cddd6db94",
+        "emerging_31_0_80735ff3abb92014de47c458",
+        "emerging_31_0_80ab460d65ead4e8139b5755",
+        "emerging_31_0_81a482c97d3cb1f325646074",
+        "emerging_31_0_81cc04ffe1d4e2d42060aa98",
+        "emerging_31_0_823141e766540c030723a020",
+        "emerging_31_0_8365d861ed5fc02ca13b3031",
+        "emerging_31_0_83ec7fc4d2498cc906d4c577"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:12.007179+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "dd29cca88b4e1819da66b78e5a8839ee1a53f2c8622316365522967b285f19ae",
+      "task_ids": [
+        "emerging_31_0_840a1a0bb4bb817495528c70",
+        "emerging_31_0_8527f0c593b1ebd6c38bfac5",
+        "emerging_31_0_855420d721c22e8eb75d5b5e",
+        "emerging_31_0_85cfa9444d6d8d470392f46b",
+        "emerging_31_0_85fbd0008d7c64206b4e9961",
+        "emerging_31_0_86b66975bb8f3a1b1e7e4f9e",
+        "emerging_31_0_86ce2640af49b1c0bb0d9341",
+        "emerging_31_0_8746481bf218d9d600bd77fe",
+        "emerging_31_0_879120b7aba37176a5fc275f",
+        "emerging_31_0_8824b78a672855d73266bab5",
+        "emerging_31_0_891fb86dfc0337d352ae1090",
+        "emerging_31_0_899d19294f9fa676e096d34c",
+        "emerging_31_0_8a9fb03d5a12ddf4c31ee1b2",
+        "emerging_31_0_8ab0f59be5a8da02ab20453a",
+        "emerging_31_0_8b092f9079316c806f767169",
+        "emerging_31_0_8d27a6b5127f733fb67242ae"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:11.755707+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "28c0bff6c6c7cf9422c04e79b924417e869260ae281127a8511f694a4d372378",
+      "task_ids": [
+        "emerging_31_0_8d628b4bf88ed9d459454a19",
+        "emerging_31_0_8d7c249ded3c635de2dfe66e",
+        "emerging_31_0_8e836a0c150babd98260e4b7",
+        "emerging_31_0_8ea675ae690fe2ff0d57545f",
+        "emerging_31_0_8f23db393c7e12eb1fc82184",
+        "emerging_31_0_8f4d1df504395d903ffbdc7f",
+        "emerging_31_0_8fb4fa182b9258a14238e379",
+        "emerging_31_0_91561993c2475f18b8924244",
+        "emerging_31_0_91f3390b364e65a432e59c3d",
+        "emerging_31_0_928f52945c8b4e60387f49be",
+        "emerging_31_0_93964042bc4f3b86258b69dd",
+        "emerging_31_0_94758450bbef8955ebfdf888",
+        "emerging_31_0_967e35405aa6e6b913a0478c",
+        "emerging_31_0_9886983772a460b8ac3188a6",
+        "emerging_31_0_9bb1e4781b1a70cf90b98f9a",
+        "emerging_31_0_9daa546af34c2f3aedb272da"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:22.479407+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "2453d720e9ca95bf93ec545d3fac368de49079818a8f482c3afa6802390d4c0f",
+      "task_ids": [
+        "emerging_31_0_9dc19501da41308358138851",
+        "emerging_31_0_a07b29203679af8df5803e7e",
+        "emerging_31_0_a097eda3903698011d86bb8c",
+        "emerging_31_0_a174fa24aaa17c3c36b4ee6a",
+        "emerging_31_0_a289e5776058ffa1972e841b",
+        "emerging_31_0_a348f0c4584d74f5f4d4aa5c",
+        "emerging_31_0_a37a6375c6bf713357b994d8",
+        "emerging_31_0_a4171b602ece3659b201b37c",
+        "emerging_31_0_a46c006522ad327ef20f2c35",
+        "emerging_31_0_a4bf3f1a7825426b591876ad",
+        "emerging_31_0_a4cd30f7a4207edd10a5d6f6",
+        "emerging_31_0_a4f72c2c8a31f25aefc305c3",
+        "emerging_31_0_a561993ece8d4995aea9ae82",
+        "emerging_31_0_a78f03b590534e2b84ffd969",
+        "emerging_31_0_a7dad8e60a730b05a5a38b0c",
+        "emerging_31_0_a7eb350a889a76f83ac08142"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:16.867577+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "de9d26bcf50096457711c5ff7d31ad0e8d977309dc22fc4ca739c83d0b3a7e4c",
+      "task_ids": [
+        "emerging_31_0_a8abaa44abc4bbbc2a209986",
+        "emerging_31_0_a8b73c2558605e1f7da3f274",
+        "emerging_31_0_a99e7338505882e2c5fba220",
+        "emerging_31_0_aa0e9a3e8517c60857815958",
+        "emerging_31_0_aa884b7ef6cf74562e4d20cb",
+        "emerging_31_0_ae48eef60565d2834d5c77ef",
+        "emerging_31_0_ae828b2a10187f4f83be346d",
+        "emerging_31_0_afb965f8aec2c5afcfed58f3",
+        "emerging_31_0_b07350a162a1e263c0b2cdc8",
+        "emerging_31_0_b1b8149f29214d74a7a543db",
+        "emerging_31_0_b283ce74d413e8d414d4a580",
+        "emerging_31_0_b4cfd1af1e5a2e9990bfee5c",
+        "emerging_31_0_b7c2494545a8876dd5772523",
+        "emerging_31_0_b8fc81c0f6d5b8a91726f14b",
+        "emerging_31_0_ba5e1a2bbed25532730fcf1b",
+        "emerging_31_0_ba6693c550574cc3d64b9106"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:18.874514+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "d2c4146643a7b485b0bf70730e1e7ed0272bfb9d700a97df46d78b79a609ed5f",
+      "task_ids": [
+        "emerging_31_0_bcc35c9b54ff1173fe1ee634",
+        "emerging_31_0_be4a1edc65d99c472ff01aed",
+        "emerging_31_0_bf08c425b1e545e31f2e3dce",
+        "emerging_31_0_c134d65f382daa0f32985f52",
+        "emerging_31_0_c1727923c9ab287e9a1f41c9",
+        "emerging_31_0_c2377b19ca89c3f5ac1f5188",
+        "emerging_31_0_c2b45be33a65c5e3e054f437",
+        "emerging_31_0_c4fdd76fe53fcb5aeb0f3bc9",
+        "emerging_31_0_c5a23cf400a2cb1ec7e1bc27",
+        "emerging_31_0_c5c8038708286555a1d57866",
+        "emerging_31_0_c634b6cf868e590a2da18d20",
+        "emerging_31_0_c6c160b23ee009c1bc32d3ae",
+        "emerging_31_0_c8ca9553520d7b9c3212f17b",
+        "emerging_31_0_c8fe442d43488ee2164d9efc",
+        "emerging_31_0_c93793ca826e0e5183ead7d3",
+        "emerging_31_0_c9f52cfef5aeef0900d4d2e7"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:57.999569+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "15945665851669ab7afe91aeb5b31404475b34de8f806e7ad9a1d33f5790fff4",
+      "task_ids": [
+        "emerging_31_0_ca0969b8d1018fe7f183b444",
+        "emerging_31_0_cb2ad4372653c90f972c6d1c",
+        "emerging_31_0_cb51eb86d4d263f7067174ac",
+        "emerging_31_0_cc6716bbb460350fee418e38",
+        "emerging_31_0_ccdaeb79b9b54be960745b17",
+        "emerging_31_0_cd3e7aa6e02227a44bdd30fa",
+        "emerging_31_0_ce01ae945b7e9135b24e6083",
+        "emerging_31_0_cfdbb6924c6be573095937c1",
+        "emerging_31_0_d00abe4d0e0aa5c73a62cdbf",
+        "emerging_31_0_d2275f25da85179e5eab50ef",
+        "emerging_31_0_d2ad998cc4907a9268a52303",
+        "emerging_31_0_d3a9ced56826983fb1469a10",
+        "emerging_31_0_d4479a1de74fb7616c663db6",
+        "emerging_31_0_d57dc69f175437671715d36f",
+        "emerging_31_0_d5d0f1cb2a2e50e0c18392a4",
+        "emerging_31_0_d61e2bccf9a6f55244af32b9"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:55.601762+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "4421f5392d56126e6f773d461d3e6db9b019acb2e32578f15854dfb196bb4437",
+      "task_ids": [
+        "emerging_31_0_d6c5a46c42f0cad4b2d1863e",
+        "emerging_31_0_d6f9e2ee07125505e509725b",
+        "emerging_31_0_d896c9c4f13c9129345a95c5",
+        "emerging_31_0_d8af6632714585dc7825cb3e",
+        "emerging_31_0_d90f870c5164470e78a32092",
+        "emerging_31_0_d92c12d8369b2cd00d7ec25a",
+        "emerging_31_0_d96129e329497ae7d3bc5a18",
+        "emerging_31_0_d9eb7a514e1bde77a79a2d5e",
+        "emerging_31_0_da2cae44b026464e3c86654b",
+        "emerging_31_0_da69181bde1742cd88b07c5d",
+        "emerging_31_0_dab494a8c1cdc99d548a2749",
+        "emerging_31_0_dac31177459ffbb75f0cfef3",
+        "emerging_31_0_db81987557c643497fae627b",
+        "emerging_31_0_dc4929940ecafb58d54083fa",
+        "emerging_31_0_dc68aaf658a6b1938e782435",
+        "emerging_31_0_dc69f4ed8fa47a42b54f7b4d"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:23.278104+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "7d1837c1c06fed3002c0e92833724549bcdb6054fde6e34b258692c6f58a5967",
+      "task_ids": [
+        "emerging_31_0_dd7afe3121d054942f9891f7",
+        "emerging_31_0_de21f9dbd79ef35c5430c518",
+        "emerging_31_0_df51c89b8b07598b7a8533eb",
+        "emerging_31_0_df89060cd10a541e67a8d71c",
+        "emerging_31_0_e290de41333e582f4d341a36",
+        "emerging_31_0_e4792d7bf52ef5d1bf693cf4",
+        "emerging_31_0_e7d0240bbcc8cb06d1184782",
+        "emerging_31_0_ebe196b18df91a050c864b5d",
+        "emerging_31_0_ecae03b22f26b899ea27b1a4",
+        "emerging_31_0_ed730fda7cdb76983d7743ec",
+        "emerging_31_0_ee5f49551f9799043a65b6c1",
+        "emerging_31_0_ee8121786b63b378a9212acc",
+        "emerging_31_0_ee9fe09a1a35074b0759c1d8",
+        "emerging_31_0_eeeafbbe3c032eccdb83bf8e",
+        "emerging_31_0_f04b051b93a69e7f1ee21c20",
+        "emerging_31_0_f052942163f9d7d5189a55df"
+      ]
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T08:02:27.972023+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 4096,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "emerging-digital-classification-v1",
+      "request_sha256": "1398889153554f748ffabdbae1a9e00213cc3c27d44a10f02ff9f13d4e7b1eb9",
+      "task_ids": [
+        "emerging_31_0_f054e6367e933fc8b36a2a67",
+        "emerging_31_0_f1576cfd9df7269db9932592",
+        "emerging_31_0_f1bd47c5f4fd9cd733014b88",
+        "emerging_31_0_f232bfec156b552eb286cdfe",
+        "emerging_31_0_f285108128b02bd8e33374d2",
+        "emerging_31_0_f5d4c23335a16ff82965b50d",
+        "emerging_31_0_f7248410fed59cbf2a183b45",
+        "emerging_31_0_f724c00be5208acd3fd584a2",
+        "emerging_31_0_f880192abc69c642ac73abbd",
+        "emerging_31_0_f8a72b8f7ecf99a8baa108e1",
+        "emerging_31_0_fb9f84d7fa831eb4f6a78a2f",
+        "emerging_31_0_fbcac3216e8f8689a19e5aeb",
+        "emerging_31_0_fc33bb0a02d9c0b8893c6c53",
+        "emerging_31_0_fd975729711d368f0792daf7",
+        "emerging_31_0_ff0223468a497251f7097bfa",
+        "emerging_31_0_ff062fae3e4682222155c372"
+      ]
+    }
+  ],
+  "normalized_input_sha256": {
+    "dwas.csv": "cabbc4c2dd5453ca3e68a391aabbb2e8f19a10af6258fb57904f12d061e1800c",
+    "occupations.csv": "cfe1aca5793e88631dbf1b7aaf05ffb86a5e8be2c2d4fe0b41973b3fdc73809c",
+    "task_dwa.csv": "ab39583a516fd6378950fa9bbfb83bda401a1ad4dae929d8b40362d39391be52",
+    "tasks.csv": "95e30bfd2f000003fe88f7c3a8df565780736498bd95deb7c8b430ff17fc0acb"
+  },
+  "parameters": {
+    "batch_size": 16,
+    "n": 200,
+    "seed": 42,
+    "supplemental_target": 0.15
+  },
+  "record_format": {
+    "classification_provenance": "AI4Work row/rule or LLM reason per record; model_calls links task_ids to cached requests.",
+    "emerging_dwa_mapping": "No official mapping asserted; dwa_ids is empty for all Emerging records.",
+    "omitted_original_label": "When absent from digital_annotation, the upstream label equals digital_label.",
+    "seed_id": "raw_<O*NET version with underscores>_<task_id>, with the repeated release prefix removed from Emerging IDs.",
+    "source_files": {
+      "emerging_new": "emerging_tasks.csv",
+      "emerging_revision": "emerging_tasks.csv",
+      "regular": "task_statements.csv"
+    },
+    "source_row": "CSV record number counting the header as 1; not a physical text line.",
+    "version": 2,
+    "work_domain": "Official 2018 SOC major group name decoded from occupation_code; not an inferred industry."
+  },
+  "sampled": {
+    "dwas": 458,
+    "major_groups": 22,
+    "occupations": 200,
+    "source_counts": {
+      "emerging_new": 1,
+      "emerging_revision": 1,
+      "regular": 198
+    },
+    "tasks": 200
+  },
+  "sampling_algorithm": "task_coverage_with_source_gain_v1",
+  "sampling_priorities": [
+    "unseen_SOC_major_group",
+    "unseen_occupation",
+    "has_new_DWA + unseen_task_source (one point each)",
+    "unseen_task_source",
+    "new_DWA_count",
+    "lower_occupation_frequency",
+    "lower_major_group_frequency",
+    "lower_source_frequency",
+    "Core/Supplemental_tie_preference",
+    "fixed_seed_hash"
+  ],
+  "shortfall": 0,
+  "sources": {
+    "ai4work": {
+      "commit": "095db006debf83f2bbda2631964bd1b4c81190ad",
+      "sha256": "01ee0ea4c9f5530240f25b5af9fa5df6218e429733e0f49914d6f501ac28167f",
+      "url": "https://raw.githubusercontent.com/zorazrw/ai4work-resources/095db006debf83f2bbda2631964bd1b4c81190ad/real_work/employment/digital_task_annotation.xlsx"
+    },
+    "emerging": {
+      "mode": "official_csv",
+      "sha256": "7b7f304c456617083150cb7b09eb2be885dc11351fce1dbcc33bf0839d6dbfac",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/emerging_tasks.csv",
+      "version": "31.0"
+    },
+    "regular": {
+      "mode": "official_csv",
+      "release": "August 2026",
+      "sha256": {
+        "occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+        "task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+        "tasks_to_dwas.csv": "15624d31acb85627736a87dc7c485edffe30361262571c8242fad4ae9e7678a6"
+      },
+      "source": "https://www.onetcenter.org/database.html",
+      "urls": [
+        "https://www.onetcenter.org/dl_files/database/db_31_0_csv/occupation_data.csv",
+        "https://www.onetcenter.org/dl_files/database/db_31_0_csv/task_statements.csv",
+        "https://www.onetcenter.org/dl_files/database/db_31_0_csv/tasks_to_dwas.csv"
+      ],
+      "version": "31.0"
+    },
+    "soc_major_groups": {
+      "classification": "2018 SOC",
+      "groups": {
+        "11": "Management Occupations",
+        "13": "Business and Financial Operations Occupations",
+        "15": "Computer and Mathematical Occupations",
+        "17": "Architecture and Engineering Occupations",
+        "19": "Life, Physical, and Social Science Occupations",
+        "21": "Community and Social Service Occupations",
+        "23": "Legal Occupations",
+        "25": "Educational Instruction and Library Occupations",
+        "27": "Arts, Design, Entertainment, Sports, and Media Occupations",
+        "29": "Healthcare Practitioners and Technical Occupations",
+        "31": "Healthcare Support Occupations",
+        "33": "Protective Service Occupations",
+        "35": "Food Preparation and Serving Related Occupations",
+        "37": "Building and Grounds Cleaning and Maintenance Occupations",
+        "39": "Personal Care and Service Occupations",
+        "41": "Sales and Related Occupations",
+        "43": "Office and Administrative Support Occupations",
+        "45": "Farming, Fishing, and Forestry Occupations",
+        "47": "Construction and Extraction Occupations",
+        "49": "Installation, Maintenance, and Repair Occupations",
+        "51": "Production Occupations",
+        "53": "Transportation and Material Moving Occupations",
+        "55": "Military Specific Occupations"
+      },
+      "sha256": "54d8d8a1b2fc26eaf1bc7b3c3c4c8c34fcfcdef49e81c9367c018fd7d72de4c5",
+      "source_url": "https://www.bls.gov/soc/2018/major_groups.htm"
+    }
+  },
+  "status": "complete",
+  "version": "31.0"
+}

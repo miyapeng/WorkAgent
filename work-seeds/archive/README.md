@@ -6,8 +6,8 @@
 
 | 目录 | 保留原因 |
 | --- | --- |
-| `digital/` | 普通 Tasks 的旧数字筛选基线（5,652 条），旧网页和 P001 开发样例仍使用 |
-| `translations/` | 旧目录网页的机器翻译及其缓存 |
+| `digital/` | 普通 Tasks 的旧数字筛选基线（5,652 条），P001 开发样例仍使用；当前网页已改用完整数字池 |
+| `translations/` | 旧目录的机器翻译及缓存；当前网页按原文哈希复用，不继承旧任务文本 |
 | `task_sampling/` | 旧 Task ID 覆盖采样基线 |
 | `task_sampling_rules/` | 旧规则筛选采样实验 |
 | `work_seed_inventory/` | 旧职业—DWA 证据检索清点 |

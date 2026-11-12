@@ -1,82 +1,88 @@
 "use strict";
 (() => {
   const $ = id => document.getElementById(id), data = window.CATALOG;
-  if (!data) { $("status").textContent="目录加载失败，请确认 catalog.js 存在。"; return; }
-  const fmt = n => n.toLocaleString("en-US");
-  const el = (tag,text,cls) => { const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n; };
-  const report=data.report, dr=data.digital_report, zh=data.translations;
-  const decisions=new Map(data.decisions.map(d=>[d.task_id,d])), byOccupation=new Map(), byTask=new Map(), dwas=new Map(data.dwas);
-  data.tasks.forEach(t=>{if(!byOccupation.has(t[1]))byOccupation.set(t[1],[]);byOccupation.get(t[1]).push(t);});
-  data.task_dwa.forEach(([t,d])=>{if(!byTask.has(t))byTask.set(t,[]);byTask.get(t).push(d);});
-  const labels={DIGITAL:"数字任务候选",PHYSICAL:"现场 / 物理任务",REVIEW:"待核对"}, types={Core:"核心",Supplemental:"补充",Missing:"未标注"};
-  let scope="DIGITAL",language="zh",selected=null,occupationPage=0,taskPage=0,scopedTasks=[],scopedOccupations=[],scopedByOccupation=new Map();
-  const occupationSize=25, taskSize=12;
-  const translated=(table,id,original)=>language==="en"?original:zh[table][id];
-  function addText(parent,table,id,original,tag="p",cls=""){
-    parent.append(el(tag,translated(table,id,original),cls));
-    if(language==="both")parent.append(el("div",original,"original-text"));
+  if (!data) { $("status").textContent = "加载失败，请刷新页面；也可直接下载完整数字池。"; return; }
+  const el = (tag, text, cls) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (cls) node.className = cls; return node; };
+  const fmt = n => n.toLocaleString("en-US"), translated = text => data.zh[text];
+  const sources = {regular:"普通任务", emerging_new:"Emerging · 新增", emerging_revision:"Emerging · 修订"};
+  const labels = {DIGITAL:"数字候选", PHYSICAL:"物理操作", UNCERTAIN:"待审核"};
+  const sampled = new Set(data.sampled_ids), report = data.report;
+  let filtered = [], currentPage = 0, language = "both";
+  const tasks = data.tasks, occupations = new Map(tasks.map(t => [t.occupation_code,t.occupation_title]));
+  const searchIndex = new Map(tasks.map(t => [t.seed_id, [t.seed_id,t.task_id,t.original_task_id||"",t.task_text,translated(t.task_text)||"",t.occupation_code,t.occupation_title,translated(t.occupation_title)||"",t.work_domain,translated(t.work_domain)||"",...t.dwa_ids.flatMap(id=>[id,data.dwas[id],translated(data.dwas[id])||""])].join(" ").toLowerCase()]));
+  function option(select, value, text) { const o = el("option",text); o.value=value; select.append(o); }
+  function readable(text) { return language === "en" ? text : translated(text)||text; }
+  function content(parent,text,tag="p",cls="") {
+    parent.append(el(tag,readable(text),cls));
+    if (language === "both" && translated(text)) parent.append(el("p",text,"original-text"));
+    if (language !== "en" && !translated(text)) parent.append(el("small","暂无中文译文 · 显示官方原文","muted"));
   }
-  Object.values(dr.rules).forEach(rule=>$("rule-list").append(el("li",rule)));
-  const ok=report.all_checks_passed&&dr.all_checks_passed&&data.decisions.length===data.tasks.length;
-  $("status").textContent=ok?"✓ 原始目录与筛选完整性检查通过 · 全量底表保留 · 中文译文不参与筛选":"数据校验未通过";
-  if(!ok)$("status").classList.add("error");
-  const checkNames={occupation_primary_key:"职业主键唯一",task_primary_key:"任务主键唯一",dwa_primary_key:"活动主键唯一",task_dwa_primary_key:"关联复合主键唯一",task_occupation_foreign_key:"任务职业外键完整",task_dwa_foreign_keys:"活动关联外键完整",all_occupations_preserved:"职业全量保留",all_tasks_preserved:"任务全量保留",all_observed_dwas_preserved:"工作活动全量保留",all_links_preserved:"关联全量保留",csv_roundtrip_preserves_values:"CSV 回读与原值一致"};
-  Object.entries(report.checks).forEach(([k,v])=>$("checks").append(el("div",(v?"":"失败：")+(checkNames[k]||k),v?"check":"")));
-  Object.entries(report.raw_files).forEach(([name,s])=>{const p=el("p");p.append(el("strong",name),el("div",`${fmt(s.raw_rows)} 原始行 / ${fmt(s.exact_duplicate_rows_removed)} 完全重复行`),el("code",s.sha256));$("hashes").append(p);});
-  function setScope(){
-    scopedTasks=data.tasks.filter(t=>scope==="ALL"||decisions.get(t[0]).decision===scope);
-    scopedByOccupation=new Map();scopedTasks.forEach(t=>{if(!scopedByOccupation.has(t[1]))scopedByOccupation.set(t[1],[]);scopedByOccupation.get(t[1]).push(t);});
-    scopedOccupations=data.occupations.filter(o=>scope==="ALL"||scopedByOccupation.has(o[0]));
-    if(!scopedOccupations.some(o=>o[0]===selected))selected=scopedOccupations[0]?.[0]??null;
-    occupationPage=taskPage=0;$("occupation-search").value="";$("task-search").value="";$("task-type").value="all";
-    const ids=new Set(scopedTasks.map(t=>t[0])),links=data.task_dwa.filter(r=>ids.has(r[0])),activityIds=new Set(links.map(r=>r[1]));
-    $("scope-note").textContent=`全量 ${fmt(report.counts.tasks)} 条：数字候选 ${fmt(dr.decisions.DIGITAL||0)} · 现场/物理 ${fmt(dr.decisions.PHYSICAL||0)} · 待核对 ${fmt(dr.decisions.REVIEW||0)}`;
-    $("metrics").replaceChildren();
-    [[scope==="ALL"?"全部职业":"涉及职业",scopedOccupations.length,scope==="ALL"?"含无任务记录的职业":"至少含一条当前视图任务"],["任务",scopedTasks.length,"保留官方原始任务 ID"],["详细工作活动",activityIds.size,"当前任务关联的不同 DWA"],["任务—活动关联",links.length,"保留每条任务的全部关联"]].forEach(([label,n,note])=>{const card=el("div",undefined,"metric");card.append(el("div",label,"label"),el("div",fmt(n),"value"),el("div",note,"note"));$("metrics").append(card);});
-    $("type-bar").replaceChildren();$("type-legend").replaceChildren();
-    ["Core","Supplemental","Missing"].forEach((type,i)=>{const count=scopedTasks.filter(t=>(t[3]||"Missing")===type).length;const bar=el("span");bar.style.width=(scopedTasks.length?count/scopedTasks.length*100:0)+"%";bar.title=types[type]+": "+count;$("type-bar").append(bar);const label=el("span"),dot=el("i");dot.style.background=["#146b56","#a2baac","#d5b77d"][i];label.append(dot,document.createTextNode(types[type]+" "+fmt(count)));$("type-legend").append(label);});
-    $("coverage-note").textContent=scope==="REVIEW"?`未匹配 ID：${dr.rules_applied.R3_UNMATCHED||0}；文本或职业变更：${dr.rules_applied.R4_CHANGED||0}；未标注：${dr.rules_applied.R5_UNLABELED||0}。待核对不等于非数字任务。`:`当前视图：${scope==="ALL"?"官方全量目录":labels[scope]}。职业进入数字子集，不代表该职业所有职责均可数字化。`;
-    occupations();tasks();
+  const digital = tasks.filter(t=>t.digital_label==="DIGITAL");
+  const complete = data.validation.digital_pool_complete && digital.length === report.counts.digital_tasks;
+  $("status").textContent = complete ? `✓ 全量载入 ${fmt(digital.length)} 条数字候选 · 来源原文核验通过 · ${fmt(data.validation.digital_translated)} 条有中文阅读译文` : "完整性校验失败，请检查构建报告。";
+  if (!complete) $("status").classList.add("error");
+  [["完整数字候选池",digital.length,"全部 DIGITAL，不限于采样"],["覆盖职业",report.digital_coverage.occupations,"至少一条数字候选任务"],["SOC 职业大类",report.digital_coverage.major_groups,"按官方职业代码归类"],["Emerging 数字候选",digital.filter(t=>t.task_source!=="regular").length,"新增与修订后的有效任务"]].forEach(([label,n,note])=>{const c=el("div",undefined,"metric");c.append(el("div",label,"label"),el("div",fmt(n),"value"),el("div",note,"note"));$("metrics").append(c);});
+  Object.entries(sources).forEach(([key,label])=>{const n=report.digital_coverage.source_counts[key]||0,bar=el("span");bar.style.width=(n/digital.length*100)+"%";bar.title=`${label} ${n}`;$("source-bar").append(bar);$("source-legend").append(el("span",`${label} ${fmt(n)}`));});
+  const conflict = report.merge.quarantined_original_task_ids;
+  $("merge-note").textContent = `${fmt(report.counts.regular_original)} 条普通任务与 ${report.counts.emerging_raw} 行 Emerging，经 ${report.counts.successful_revision_replacements} 次修订替换后得到 ${fmt(tasks.length)} 条有效任务。${conflict.length ? `冲突隔离：原 Task ${conflict.join("、")} 及其冲突修订未进入候选池。` : "没有待解决的修订冲突。"}`;
+  $("pool-hash").textContent=data.validation.digital_sha256;
+  function scopeRows() { const s=$("scope").value;return tasks.filter(t=>s==="ALL"||(s==="SAMPLED"?sampled.has(t.seed_id):t.digital_label===s)); }
+  function refreshOptions() {
+    const base=scopeRows(),group=$("group").value,occupation=$("occupation").value;
+    const counts=new Map();base.forEach(t=>counts.set(t.occupation_code.slice(0,2),(counts.get(t.occupation_code.slice(0,2))||0)+1));
+    $("group").replaceChildren();option($("group"),"all","全部大类");
+    Object.entries(data.groups).forEach(([code,name])=>option($("group"),code,`${code} · ${readable(name)} (${fmt(counts.get(code)||0)})`));$("group").value=group;
+    const occCounts=new Map();base.filter(t=>group==="all"||t.occupation_code.startsWith(group+"-")).forEach(t=>occCounts.set(t.occupation_code,(occCounts.get(t.occupation_code)||0)+1));
+    $("occupation").replaceChildren();option($("occupation"),"all","全部职业");
+    [...occCounts.keys()].sort().forEach(code=>option($("occupation"),code,`${code} · ${readable(occupations.get(code))} (${occCounts.get(code)})`));
+    $("occupation").value=occCounts.has(occupation)?occupation:"all";
   }
-  function occupations(){
-    const query=$("occupation-search").value.toLowerCase().trim();
-    const filtered=scopedOccupations.filter(o=>(o.join(" ")+" "+zh.occupations[o[0]]).toLowerCase().includes(query));
-    const max=Math.max(1,Math.ceil(filtered.length/occupationSize));occupationPage=Math.min(occupationPage,max-1);
-    $("occupation-total").textContent=fmt(filtered.length)+" 个";$("occupation-list").replaceChildren();
-    filtered.slice(occupationPage*occupationSize,(occupationPage+1)*occupationSize).forEach(([code,title])=>{
-      const button=el("button",undefined,"occupation"+(selected===code?" active":""));button.type="button";button.setAttribute("aria-pressed",String(selected===code));
-      button.append(el("small",`${code} · ${(scopedByOccupation.get(code)||[]).length} 条任务`));addText(button,"occupations",code,title,"strong");
-      button.onclick=()=>{selected=code;taskPage=0;$("task-search").value="";$("task-type").value="all";occupations();tasks();};$("occupation-list").append(button);
+  function applyFilters() {
+    const terms=$("search").value.toLowerCase().trim().split(/\s+/).filter(Boolean),group=$("group").value,occupation=$("occupation").value,source=$("source").value;
+    filtered=scopeRows().filter(t=>(group==="all"||t.occupation_code.startsWith(group+"-"))&&(occupation==="all"||t.occupation_code===occupation)&&(source==="all"||t.task_source===source)&&terms.every(term=>searchIndex.get(t.seed_id).includes(term)));
+    currentPage=0;render();
+  }
+  function render() {
+    const size=Number($("page-size").value),pages=Math.max(1,Math.ceil(filtered.length/size));currentPage=Math.max(0,Math.min(currentPage,pages-1));
+    $("result-count").textContent=`${fmt(filtered.length)} 条任务`;
+    $("result-note").textContent=`当前筛选覆盖 ${new Set(filtered.map(t=>t.occupation_code)).size} 个职业 · ${new Set(filtered.map(t=>t.occupation_code.slice(0,2))).size} 个 SOC 大类 · 顶部统计始终为完整数字池`;
+    $("task-list").replaceChildren();
+    filtered.slice(currentPage*size,(currentPage+1)*size).forEach(t=>{
+      const card=el("article",undefined,"seed-card"),head=el("div",undefined,"task-meta");card.dataset.seedId=t.seed_id;
+      head.append(el("span",sources[t.task_source],"badge source-"+t.task_source),el("span",labels[t.digital_label],"badge decision-"+t.digital_label));
+      if(sampled.has(t.seed_id))head.append(el("span","已入选 200 条采样","badge sampled"));
+      head.append(el("code",t.task_id,"task-id"));card.append(head);
+      content(card,t.task_text,"h3","task-text");
+      const context=el("div",undefined,"occupation-context"),link=el("button",`${t.occupation_code} · ${readable(t.occupation_title)}`,"occupation-link");link.type="button";link.onclick=()=>{$("group").value=t.occupation_code.slice(0,2);refreshOptions();$("occupation").value=t.occupation_code;applyFilters();};
+      context.append(link,el("span",readable(t.work_domain)));card.append(context);
+      const details=el("details",undefined,"seed-details");details.append(el("summary","查看来源、分类依据与工作活动"));
+      const meta=t.source_metadata,annotation=meta.digital_annotation;
+      details.append(el("p",`Seed ID：${t.seed_id}`,"mono"),el("p",`标签来源：${t.digital_label_source}${t.digital_label_source==="LLM"?" · GLM-5.2 辅助分类":" · 外部研究标注"}`));
+      if(annotation.reason)details.append(el("p","分类理由（模型英文输出）："+annotation.reason));
+      if(annotation.rule)details.append(el("p",`标注规则：${annotation.rule} · AI4Work 记录行：${annotation.annotation_row||"未匹配"}${Object.hasOwn(annotation,"original_label")?` · 上游标签：${annotation.original_label||"空"}`:""}`));
+      const filename=report.record_format.source_files[t.task_source];details.append(el("p",`官方来源：${filename} · CSV 记录 ${meta.row}（含表头） · 日期 ${meta.date} · ${meta.domain_source}`));
+      const a=el("a","查看官方数据字典 ↗");a.href=`https://www.onetcenter.org/dictionary/31.0/csv/${t.task_source==="regular"?"task_statements":"emerging_tasks"}.html`;a.target="_blank";a.rel="noopener";details.append(a);
+      if(t.original_task_id)details.append(el("p",`Revision 替换的旧 Task ID：${t.original_task_id}。当前仅展示官方修订文本。`));
+      if(meta.task_type)details.append(el("p","官方任务类型："+meta.task_type));
+      details.append(el("h4","关联的详细工作活动 · DWA"));
+      t.dwa_ids.forEach(id=>{const row=el("div",undefined,"dwa");row.append(el("code",id));content(row,data.dwas[id]);details.append(row);});
+      if(!t.dwa_ids.length)details.append(el("p","无官方 DWA 映射；未推断或继承旧任务的关联。","muted"));
+      const raw=el("details");raw.append(el("summary","查看完整 Raw Seed JSON"),el("pre",JSON.stringify(t,null,2)));details.append(raw);card.append(details);$("task-list").append(card);
     });
-    if(!filtered.length)$("occupation-list").append(el("p","当前视图没有匹配的职业。","empty"));
-    $("occ-page").textContent=`${occupationPage+1} / ${max}`;$("occ-prev").disabled=occupationPage===0;$("occ-next").disabled=occupationPage+1>=max;
+    if(!filtered.length)$("task-list").append(el("p","没有符合条件的任务。请调整筛选或点击“重置筛选”。","empty"));
+    $("page").textContent=filtered.length?`${currentPage*size+1}–${Math.min((currentPage+1)*size,filtered.length)} / ${fmt(filtered.length)} · 第 ${currentPage+1} / ${pages} 页`:"0 条任务";
+    $("prev").disabled=currentPage===0;$("next").disabled=currentPage+1>=pages;$("export").disabled=!filtered.length;
+    $("page-number").max=pages;$("page-number").value=currentPage+1;
   }
-  function tasks(){
-    const occupation=data.occupations.find(o=>o[0]===selected);$("task-list").replaceChildren();
-    if(!occupation){$("occupation-title").textContent="当前视图没有职业";$("occupation-original").textContent="";$("occupation-summary").textContent="";$("occupation-code").textContent="";$("task-page").textContent="0 条任务";$("task-prev").disabled=$("task-next").disabled=true;return;}
-    const all=scopedByOccupation.get(selected)||[],query=$("task-search").value.toLowerCase().trim(),type=$("task-type").value;
-    const filtered=all.filter(t=>(type==="all"||t[3]===type)&&(t[0]+" "+t[2]+" "+zh.tasks[t[0]]).toLowerCase().includes(query));
-    const max=Math.max(1,Math.ceil(filtered.length/taskSize));taskPage=Math.min(taskPage,max-1);
-    $("occupation-code").textContent="职业代码 / "+occupation[0];$("occupation-title").textContent=translated("occupations",occupation[0],occupation[1]);
-    $("occupation-original").textContent=language==="both"?occupation[1]:"";
-    $("occupation-summary").textContent=`当前 ${all.length} 条任务 / 该职业原始 ${(byOccupation.get(selected)||[]).length} 条 · ${new Set(all.flatMap(t=>byTask.get(t[0])||[])).size} 个关联活动`;
-    filtered.slice(taskPage*taskSize,(taskPage+1)*taskSize).forEach(t=>{
-      const d=decisions.get(t[0]),item=el("section",undefined,"task"),meta=el("div",undefined,"task-meta"),type=t[3]||"Missing";
-      meta.append(el("span","任务 / "+t[0]),el("span",types[type],"badge "+type.toLowerCase()),el("span",labels[d.decision],"badge decision-"+d.decision));item.append(meta);addText(item,"tasks",t[0],t[2]);
-      const why=el("details",undefined,"decision-detail"),summary=el("summary","筛选依据 · "+d.rule_id);why.append(summary,el("p",dr.rules[d.rule_id]));
-      if(d.source_row){why.append(el("p",`AI4Work 表格第 ${d.source_row} 行 · 原始标签：${d.source_label||"空值"}`));const a=el("a","查看固定版本标注文件 ↗");a.href=dr.source.page;a.target="_blank";a.rel="noopener";why.append(a);}
-      if(d.source_reason){const original=el("details");original.append(el("summary","查看上游英文原始理由"),el("p",d.source_reason));why.append(original);}item.append(why,el("div","关联的详细工作活动","dwa-label"));
-      const related=byTask.get(t[0])||[];related.forEach(id=>{const row=el("div",undefined,"dwa");row.append(el("code",id));addText(row,"dwas",id,dwas.get(id),"span");item.append(row);});
-      if(!related.length)item.append(el("div","原始数据未提供工作活动映射。","muted"));$("task-list").append(item);
-    });
-    if(!filtered.length)$("task-list").append(el("p",all.length?"没有匹配的任务。":"当前视图没有任务记录；官方职业记录仍保留。","empty"));
-    $("task-page").textContent=`${filtered.length} 条任务 · ${taskPage+1} / ${max}`;$("task-prev").disabled=taskPage===0;$("task-next").disabled=taskPage+1>=max;
-  }
-  $("scope").onchange=()=>{scope=$("scope").value;setScope();};
-  $("language").onchange=()=>{language=$("language").value;occupations();tasks();};
-  $("occupation-search").oninput=()=>{occupationPage=0;occupations();};
-  $("task-search").oninput=$("task-type").onchange=()=>{taskPage=0;tasks();};
-  $("occ-prev").onclick=()=>{occupationPage--;occupations();};$("occ-next").onclick=()=>{occupationPage++;occupations();};
-  $("task-prev").onclick=()=>{taskPage--;tasks();};$("task-next").onclick=()=>{taskPage++;tasks();};
-  setScope();
+  $("scope").onchange=()=>{refreshOptions();applyFilters();};$("group").onchange=()=>{refreshOptions();applyFilters();};
+  $("source").onchange=$("occupation").onchange=applyFilters;
+  $("language").onchange=()=>{language=$("language").value;refreshOptions();render();};
+  let timer;$("search").oninput=()=>{clearTimeout(timer);timer=setTimeout(applyFilters,120);};
+  $("page-size").onchange=()=>{currentPage=0;render();};
+  $("prev").onclick=()=>{currentPage--;render();};$("next").onclick=()=>{currentPage++;render();};
+  $("go").onclick=()=>{const n=Number($("page-number").value);currentPage=Number.isFinite(n)?Math.floor(n)-1:0;render();};
+  $("page-number").onkeydown=e=>{if(e.key==="Enter")$("go").click();};
+  $("reset").onclick=()=>{$("search").value="";$("scope").value="DIGITAL";$("group").value=$("occupation").value=$("source").value="all";refreshOptions();applyFilters();};
+  $("export").onclick=()=>{const url=URL.createObjectURL(new Blob([filtered.map(t=>JSON.stringify(t)).join("\n")+"\n"],{type:"application/x-ndjson;charset=utf-8"})),a=el("a");a.href=url;a.download=`raw-seeds-${$("scope").value.toLowerCase()}-${filtered.length}.jsonl`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  refreshOptions();applyFilters();
 })();

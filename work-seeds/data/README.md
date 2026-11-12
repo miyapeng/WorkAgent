@@ -30,4 +30,4 @@
 
 离线运行需要本机 `raw_seed_cache/`。新机器没有缓存时，按 [STAGE1.md](../STAGE1.md) 配置模型并运行分类。
 
-旧筛选、翻译、采样和 Work Demand 实验已移至 [`../archive/data/`](../archive/data/)，说明见 [归档清单](../archive/README.md)。旧网页仍展示普通任务的历史基线，不代表当前完整数字池。
+旧筛选、翻译、采样和 Work Demand 实验已移至 [`../archive/data/`](../archive/data/)，说明见 [归档清单](../archive/README.md)。当前[浏览网页](https://onet-seeds-phase-one.miyapeng78.chatgpt.site)已改为直接展示完整数字池；网页中文译文仅供阅读，不修改这些原始结果。
