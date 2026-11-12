@@ -166,7 +166,7 @@ def main():
     p.add_argument('--prompt-api-key', action='store_true')
     a = p.parse_args()
     if a.output_dir is None:
-        a.output_dir = ROOT / ('data/raw_work_seeds' if a.mode == 'raw' else 'data/task_sampling')
+        a.output_dir = ROOT / ('data/raw_work_seeds' if a.mode == 'raw' else 'archive/data/task_sampling')
     if a.mode == 'raw':
         from emerging_tasks import build_raw_seeds
         try:

@@ -160,7 +160,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config',type=Path,default=ROOT/'config/stage4.json')
     parser.add_argument('--plan-dir',type=Path,default=REPO/'work-plans/data/pilot')
-    parser.add_argument('--seed-dir',type=Path,default=REPO/'work-seeds/data/work_seed_pilot_v2')
+    parser.add_argument('--seed-dir',type=Path,default=REPO/'work-seeds/archive/data/work_seed_pilot_v2')
     parser.add_argument('--workspace-dir',type=Path,default=REPO/'workspaces/data/pilot')
     parser.add_argument('--output-dir',type=Path,default=ROOT/'generated')
     parser.add_argument('--report-dir',type=Path,default=ROOT/'data/stage4_pilot')

@@ -98,6 +98,8 @@ python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 
 ## 四个输出
 
+**完整阶段性结果是 `data/raw_work_seeds/digital_task_pool.jsonl`；200 条 `sampled_raw_seeds.jsonl` 只是它的子集。** 当前数据用途见 [data/README.md](data/README.md)。旧筛选、翻译和 Work Demand 实验已迁至 [archive/data/](archive/README.md)，历史 Stage 2–4 仅更新输入路径，仍使用旧 Pilot。
+
 输出目录 `data/raw_work_seeds/`：
 
 | 文件 | 用途 |
@@ -205,4 +207,4 @@ python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 
 完整 Stage 1 的 **44 个测试通过**，包括既有底表、数字筛选、历史 enrichment/采样测试及新增的少量 Emerging 夹具。覆盖 New、Revision 替换与重标、普通标签复用、官方原文保持、同日期冲突、无法关联、禁止模型回传改写内容、无 DWA 来源覆盖、采样复现，以及精简输出的 ID、SOC 大类和来源追溯。
 
-实际全量验证：禁用网络与 DNS 后，四个新输出可从缓存逐字节重建；三个 JSONL 中每条任务原文均与来源 CSV 记录一致。旧 Task-ID 基线的三个输出也逐字节一致；检查的 118 个既有数据及 Stage 2–4 文件保持不变。测试夹具不混入正式输出。
+实际全量验证：禁用网络与 DNS 后，四个新输出可从缓存逐字节重建；三个 JSONL 中每条任务原文均与来源 CSV 记录一致。数字池逐条等于有效池的全部 DIGITAL 记录。历史数据迁移到 `archive/data/` 时逐文件核验 SHA-256，数据字节不变；旧 Task-ID 基线和 Stage 2–4 的使用路径同步调整，业务逻辑不变。测试夹具不混入正式输出。

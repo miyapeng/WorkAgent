@@ -21,7 +21,7 @@ O*NET 四表 → AI4Work / 替代候选标注 → 职业–DWA 组合
 python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 ```
 
-默认从 `data/processed/` 读完整四表，复用现有 CSV 解析、主键冲突检查，并检查外键。输出 `data/task_sampling/` 中恰好三份文件：
+默认从 `data/processed/` 读完整四表，复用现有 CSV 解析、主键冲突检查，并检查外键。输出 `archive/data/task_sampling/` 中恰好三份文件：
 
 - `seed_candidates.csv`：`task_id,eligibility`，覆盖所有原始任务，包含 uncertain。
 - `sampled_seeds.csv`：仅 `task_id`，顺序就是贪心选择顺序。
@@ -32,7 +32,7 @@ python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 可显式切换为保守规则基线：
 
 ```bash
-python work-seeds/scripts/sample_seeds.py --mode task-id --eligibility rules --n 200 --seed 42 --output-dir work-seeds/data/task_sampling_rules
+python work-seeds/scripts/sample_seeds.py --mode task-id --eligibility rules --n 200 --seed 42 --output-dir work-seeds/archive/data/task_sampling_rules
 ```
 
 规则限定动作与对象（例如驾驶车辆、编写软件、编制报表）；复杂连接词、否定或范围不明的任务转 uncertain。Inspect / advise / operate 等泛化动词本身不会导致 physical_required。规则版本、正则定义和命中数量均写入报告。这一极保守基线会漏掉大量可数字化任务，不能代替 AI4Work 或专家审核。
@@ -72,7 +72,7 @@ Schema 校验使用一个直接依赖 `jsonschema`；其余使用标准库：
 ```bash
 .venv/bin/python work-seeds/scripts/construct_seeds.py \
   --config work-seeds/config/seed_pipeline.llmcenter.json \
-  --output-dir work-seeds/data/work_seed_pilot_v2 \
+  --output-dir work-seeds/archive/data/work_seed_pilot_v2 \
   --occupations 13-1023.00,13-2031.00,15-1252.00 \
   --max-pairs 6 --n 5 --seed 42 --prompt-api-key
 ```
@@ -116,7 +116,7 @@ Schema 校验使用一个直接依赖 `jsonschema`；其余使用标准库：
 | `sampled_seed_ids.jsonl` | 仅最终选中的 seed_id |
 | `sampling_report.json` | 各阶段数量、逐组合状态/拒绝原因、审核结论、覆盖、参数与模型运行元数据 |
 
-缓存单独位于 `data/seed_cache/`（不纳入 Git）：原始网页、检索回执、模型原始响应、原子检查点。模型 ID、Endpoint、Prompt 版本、参数、生成时间、请求哈希保存到报告；凭证不保存。程序常量保存完整 Prompt，报告记录脚本哈希。数据与缓存一起归档才能复现外部网页及模型原始响应。
+缓存单独位于 `archive/data/seed_cache/`（不纳入 Git）：原始网页、检索回执、模型原始响应、原子检查点。模型 ID、Endpoint、Prompt 版本、参数、生成时间、请求哈希保存到报告；凭证不保存。程序常量保存完整 Prompt，报告记录脚本哈希。数据与缓存一起归档才能复现外部网页及模型原始响应。
 
 `--stage filter|retrieve|enrich|sample|all` 可分阶段运行。保持同一范围、配置和输出目录；已完成组合复用缓存，生成状态用单个原子检查点记录。`--retry-failed` 重试失败或完全被拒绝的组合，保留之前的尝试记录；已缓存的模型响应仍复用，若确实要重新生成，应显式使用新缓存目录并保留旧实验。
 
@@ -136,9 +136,9 @@ Schema 校验使用一个直接依赖 `jsonschema`；其余使用标准库：
 
 - AI4Work 基线：18,838 条原始任务分为 5,652 digital_candidate、8,808 physical_required、4,378 uncertain。抽取 200 条，覆盖 22 大类、200 职业、463 DWA；Core 188、Supplemental 11、Missing 1。相同参数三份输出逐字节一致。
 - 极保守规则基线：9 条 digital_candidate、0 条 physical_required、18,829 条 uncertain；请求 200 实得 9，不补齐数量。这说明规则覆盖率很低，不表示其他任务不能数字化。
-- 全量组合检索清点：5,894 个 eligible 职业–DWA 组合。当前三个职业来源列表支持 33 个组合，得到去重后 30 个证据片段；5,858 个无来源 URL，3 个无有效相关段落。结果在 `data/work_seed_inventory/`，没有声称完成全职业检索。
+- 全量组合检索清点：5,894 个 eligible 职业–DWA 组合。当前三个职业来源列表支持 33 个组合，得到去重后 30 个证据片段；5,858 个无来源 URL，3 个无有效相关段落。结果在 `archive/data/work_seed_inventory/`，没有声称完成全职业检索。
 - GLM-5.2 实际 pilot：6 个组合、11 个去重证据片段，17 个成功模型响应（6 次生成、11 次审核）。使用 `occupation-seed-v2` Prompt，11 条提案中 4 条通过、7 条拒绝：输入家族不适配 3、引文对不上原文 2、审核引用未列入 Seed 的证据 1、Seed 引用未被审核引文覆盖 1。候选覆盖 3 职业、3 DWA、3 模式、4 输入家族。请求 N=5，实际采样 4，shortfall=1。
-- 第一轮发现合理推测被写成需求约束后，收紧 Prompt 再跑，最终结果以 `data/work_seed_pilot_v2/` 为准；旧轮次归档到缓存，不混入最终候选。没有为了补足 N 放宽证据门槛。
+- 第一轮发现合理推测被写成需求约束后，收紧 Prompt 再跑，最终结果以 `archive/data/work_seed_pilot_v2/` 为准；旧轮次归档到缓存，不混入最终候选。没有为了补足 N 放宽证据门槛。
 - 33 项测试通过。禁止网络调用后完整回放 `--stage all` 成功，四份模型版输出逐字节一致；凭证未写入项目文件或缓存。
 
 模型审核通过仍不是专家认证。原始标注的不确定性、来源覆盖不足和模型审核误判，是本阶段必须保留的研究限制。

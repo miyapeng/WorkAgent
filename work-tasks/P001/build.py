@@ -31,7 +31,7 @@ def write_csv(path, records):
 
 def build():
     from PIL import Image, ImageDraw, ImageFont
-    source = REPO / 'work-seeds/data/digital'
+    source = REPO / 'work-seeds/archive/data/digital'
     task = next(r for r in rows(source / 'tasks.csv') if r['task_id'] == '1144')
     occupation = next(r for r in rows(source / 'occupations.csv')
                       if r['occupation_code'] == task['occupation_code'])

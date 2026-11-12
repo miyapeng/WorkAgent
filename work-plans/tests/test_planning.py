@@ -12,7 +12,7 @@ from unittest.mock import Mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import plan_intents as planning
 
-SOURCE = planning.REPO / 'work-seeds/data/work_seed_pilot_v2'
+SOURCE = planning.REPO / 'work-seeds/archive/data/work_seed_pilot_v2'
 CONFIG = planning.REPO / 'work-seeds/config/seed_pipeline.llmcenter.json'
 
 

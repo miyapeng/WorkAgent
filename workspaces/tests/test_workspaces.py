@@ -212,13 +212,13 @@ class CoverageTests(unittest.TestCase):
 
     def test_only_stage2_accepted_inputs(self):
         repo=Path(__file__).resolve().parents[2]
-        plans,_,_=load_inputs(repo/'work-plans/data/pilot',repo/'work-seeds/data/work_seed_pilot_v2')
+        plans,_,_=load_inputs(repo/'work-plans/data/pilot',repo/'work-seeds/archive/data/work_seed_pilot_v2')
         self.assertEqual(len(plans),2)
         with tempfile.TemporaryDirectory() as tmp:
             d=Path(tmp)
             (d/'work_plans.jsonl').write_text(json.dumps(plans[0])+'\n')
             save(d/'planning_report.json',{'seeds':{plans[0]['seed_id']:{'status':'audit_rejected'}}})
-            with self.assertRaises(DataError):load_inputs(d,repo/'work-seeds/data/work_seed_pilot_v2')
+            with self.assertRaises(DataError):load_inputs(d,repo/'work-seeds/archive/data/work_seed_pilot_v2')
 
     def test_modified_approved_plan_fails_checkpoint_binding(self):
         repo=Path(__file__).resolve().parents[2]
@@ -228,7 +228,7 @@ class CoverageTests(unittest.TestCase):
             plans[0]['work_objective']='A different but structurally valid professional work objective.'
             (d/'work_plans.jsonl').write_text(''.join(json.dumps(p)+'\n' for p in plans))
             (d/'planning_report.json').write_bytes((source/'planning_report.json').read_bytes())
-            with self.assertRaisesRegex(DataError,'approved_checkpoint'):load_inputs(d,repo/'work-seeds/data/work_seed_pilot_v2')
+            with self.assertRaisesRegex(DataError,'approved_checkpoint'):load_inputs(d,repo/'work-seeds/archive/data/work_seed_pilot_v2')
 
     def test_search_manifest_missing_query_is_not_invented(self):
         with tempfile.TemporaryDirectory() as tmp:

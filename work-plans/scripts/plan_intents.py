@@ -331,7 +331,7 @@ def run(input_dir, output_dir, cache_dir, config_path, limit=4, retry_errors=Fal
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--input-dir', type=Path, default=REPO / 'work-seeds/data/work_seed_pilot_v2')
+    p.add_argument('--input-dir', type=Path, default=REPO / 'work-seeds/archive/data/work_seed_pilot_v2')
     p.add_argument('--output-dir', type=Path, default=ROOT / 'data/pilot')
     p.add_argument('--cache-dir', type=Path, default=ROOT / 'data/cache')
     p.add_argument('--config', type=Path, default=REPO / 'work-seeds/config/seed_pipeline.llmcenter.json')

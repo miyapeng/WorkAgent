@@ -20,13 +20,13 @@ def main():
     args = parser.parse_args()
     report = build(args.input_dir, args.processed_dir, verify_only=True)
     payload = {"report": report}
-    digital_dir = ROOT / "data/digital"
+    digital_dir = ROOT / "archive/data/digital"
     filter_report = filter_catalog(args.input_dir, args.processed_dir,
                                    ROOT / "data/annotations/ai4work_digital_task_annotation.xlsx", digital_dir)
     payload["digital_report"] = filter_report
     with (digital_dir / "task_decisions.csv").open(encoding="utf-8", newline="") as stream:
         payload["decisions"] = list(csv.DictReader(stream))
-    translations = json.loads((ROOT / "data/translations/translations_zh.json").read_text(encoding="utf-8"))
+    translations = json.loads((ROOT / "archive/data/translations/translations_zh.json").read_text(encoding="utf-8"))
     for table, records in source_records(args.processed_dir).items():
         assert set(translations[table]) == set(records), f"{table}: 翻译覆盖不完整"
         assert translations["metadata"]["source_sha256"][table + ".csv"] == hashlib.sha256((args.processed_dir / (table + ".csv")).read_bytes()).hexdigest(), "译文对应旧版数据"

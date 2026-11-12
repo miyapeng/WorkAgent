@@ -117,7 +117,7 @@ def build(processed, output, fetch=False, workers=3):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--processed-dir", type=Path, default=ROOT / "data/processed")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "data/translations")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "archive/data/translations")
     parser.add_argument("--fetch", action="store_true")
     parser.add_argument("--workers", type=int, default=3)
     args = parser.parse_args()

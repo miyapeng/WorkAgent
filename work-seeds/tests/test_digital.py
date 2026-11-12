@@ -67,7 +67,7 @@ class DigitalTests(unittest.TestCase):
     def test_chinese_coverage_and_source_linkage(self):
         import hashlib
         import re
-        path = ROOT / "data/translations/translations_zh.json"
+        path = ROOT / "archive/data/translations/translations_zh.json"
         if not path.exists():
             self.skipTest("Run translate_catalog.py --fetch before translation coverage test")
         translations = json.loads(path.read_text())
@@ -76,10 +76,10 @@ class DigitalTests(unittest.TestCase):
             self.assertTrue(all(re.search(r"[\u3400-\u9fff]", text) for text in translations[table].values()))
             actual = hashlib.sha256((ROOT / "data/processed" / (table + ".csv")).read_bytes()).hexdigest()
             self.assertEqual(actual, translations["metadata"]["source_sha256"][table + ".csv"])
-        for line in (ROOT / "data/translations/translation_cache.jsonl").read_text().splitlines():
+        for line in (ROOT / "archive/data/translations/translation_cache.jsonl").read_text().splitlines():
             item = json.loads(line)
             self.assertEqual(digest(item["source_text"]), item["source_sha256"])
-        for item in json.loads((ROOT / "data/translations/translation_overrides.json").read_text()):
+        for item in json.loads((ROOT / "archive/data/translations/translation_overrides.json").read_text()):
             self.assertEqual(source_records(ROOT / "data/processed")[item["table"]][item["id"]], item["source_text"])
             self.assertEqual(translations[item["table"]][item["id"]], item["zh"])
 

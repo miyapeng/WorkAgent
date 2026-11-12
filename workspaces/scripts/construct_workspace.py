@@ -364,7 +364,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config',type=Path,default=ROOT/'config/pilot.json')
     p.add_argument('--plan-dir',type=Path,default=REPO/'work-plans/data/pilot')
-    p.add_argument('--seed-dir',type=Path,default=REPO/'work-seeds/data/work_seed_pilot_v2')
+    p.add_argument('--seed-dir',type=Path,default=REPO/'work-seeds/archive/data/work_seed_pilot_v2')
     p.add_argument('--output-dir',type=Path,default=ROOT/'data/pilot')
     p.add_argument('--cache-dir',type=Path,default=ROOT/'data/cache')
     p.add_argument('--limit',type=int,default=2)

@@ -16,7 +16,7 @@ flowchart LR
 
 ## 输入和输出
 
-只读取 `work-seeds/data/work_seed_pilot_v2/` 的三个文件：`sampled_seed_ids.jsonl`、`candidate_seeds.jsonl`、`occupational_evidence.jsonl`。按采样文件的顺序处理，用 `seed_id` 关联，核对 Seed 内容哈希、Evidence ID 及职业—DWA 关系。职业证据仅帮助核对职业合理性，不能被当作案例材料；`input_file_families` 仅是上游提示。
+只读取 `work-seeds/archive/data/work_seed_pilot_v2/` 的三个文件：`sampled_seed_ids.jsonl`、`candidate_seeds.jsonl`、`occupational_evidence.jsonl`。按采样文件的顺序处理，用 `seed_id` 关联，核对 Seed 内容哈希、Evidence ID 及职业—DWA 关系。职业证据仅帮助核对职业合理性，不能被当作案例材料；`input_file_families` 仅是上游提示。
 
 | 文件 | 用途 |
 |---|---|
@@ -49,7 +49,7 @@ python -m venv .venv  # 已有虚拟环境可跳过
 
 # 显式指定路径；改变实验参数时使用新的输出目录
 .venv/bin/python work-plans/scripts/plan_intents.py \
-  --input-dir work-seeds/data/work_seed_pilot_v2 \
+  --input-dir work-seeds/archive/data/work_seed_pilot_v2 \
   --output-dir work-plans/data/another_pilot \
   --cache-dir work-plans/data/cache \
   --config work-seeds/config/seed_pipeline.llmcenter.json \

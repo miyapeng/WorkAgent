@@ -1,10 +1,12 @@
 # Stage 1 · Official Raw Work Seed Construction
 
+**当前阶段性全量结果：[`data/raw_work_seeds/digital_task_pool.jsonl`](data/raw_work_seeds/digital_task_pool.jsonl)，共 5,745 条。** `sampled_raw_seeds.jsonl` 只是其中 200 条采样。当前数据目录用途见 [data/README.md](data/README.md)；历史实验已移至 [archive/](archive/README.md)，不与当前结果混放。
+
 默认流程已调整为 **O*NET 31.0 → Emerging Tasks 合并 → Digital Filtering → Coverage-aware Sampling → Raw Work Seeds**。任务文本直接保留官方英文，LLM 仅分类最终有效的 Emerging Tasks，不生成 `work_demand`。具体规则、运行结果和命令见 [STAGE1.md](STAGE1.md)。
 
 Raw Seed 保留完整职业代码与名称，新增稳定 `seed_id` 和由代码查表得到的官方 SOC 大类 `work_domain`。文件级来源、版本和模型调用记录统一存入报告；每条记录只保留必要的原文、分类及追溯信息，Revision 才带 `original_task_id`。字段说明见 [精简输出格式](STAGE1.md#四个输出)。
 
-新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖下面记录的普通 Task 底表、`data/digital/`、网页或历史模型实验。当前网页及旧数字子集仍是普通 Tasks 的 5,652 条基线，不包含本轮 Emerging 合并结果。
+新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖下面记录的普通 Task 底表、`archive/data/digital/`、网页或历史模型实验。当前网页及旧数字子集仍是普通 Tasks 的 5,652 条基线，不包含本轮 Emerging 合并结果。
 
 ```bash
 # 在仓库根目录；Emerging 原始文件已保存
@@ -114,7 +116,7 @@ python scripts/filter_digital.py
 python scripts/filter_digital.py --download
 ```
 
-输出 `data/digital/` 下的四张同 Schema CSV、`task_decisions.csv`（全量任务的状态、规则、上游行号与原文理由）和 `filter_report.json`（版本、来源哈希、输入输出哈希、完整性检查）。不改写 `data/processed/`。
+输出 `archive/data/digital/` 下的四张同 Schema CSV、`task_decisions.csv`（全量任务的状态、规则、上游行号与原文理由）和 `filter_report.json`（版本、来源哈希、输入输出哈希、完整性检查）。不改写 `data/processed/`。
 
 本次严格对齐结果：**5,652 条数字候选、8,808 条现场/物理任务、4,378 条待核对**。待核对包括 134 条无匹配 ID、4,244 条上游无标签；当前没有职业/文本变更匹配。数字子集涉及 **743 个职业、1,168 个 DWA、7,123 条关联**。这不是 GraphForge 的完整预处理复现，不通过追加筛选去凑论文数量。
 
@@ -128,7 +130,7 @@ python scripts/translate_catalog.py
 python scripts/build_view.py
 ```
 
-`data/translations/translation_cache.jsonl` 保存英文、源文本 SHA-256、中文和翻译来源。`translations_zh.json` 按官方 ID 关联，覆盖全部 1,016 个职业、18,838 条 Task 和 2,085 个 DWA。重复英文文本共用同一译文，但不合并原始记录。空原文仍为空。
+`archive/data/translations/translation_cache.jsonl` 保存英文、源文本 SHA-256、中文和翻译来源。`translations_zh.json` 按官方 ID 关联，覆盖全部 1,016 个职业、18,838 条 Task 和 2,085 个 DWA。重复英文文本共用同一译文，但不合并原始记录。空原文仍为空。
 
 翻译来自 Google Translate 公共网页端点，是**未经逐条人工审校的机器译文**，仅辅助阅读；英文原文仍为权威版本。该网络端点不是稳定性受保证的付费 API；离线复现依赖已保存缓存，不依赖重新调用翻译服务。请求中的记录序号必须完整匹配，防止批量翻译串行；原始英文变化后旧译文不能继续使用。筛选完全不使用译文。
 

@@ -151,7 +151,7 @@ if __name__ == "__main__":
     parser.add_argument("--raw-dir", type=Path, default=ROOT / "data/raw")
     parser.add_argument("--processed-dir", type=Path, default=ROOT / "data/processed")
     parser.add_argument("--annotations", type=Path, default=ROOT / "data/annotations/ai4work_digital_task_annotation.xlsx")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "data/digital")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "archive/data/digital")
     parser.add_argument("--download", action="store_true")
     args = parser.parse_args()
     if args.download:

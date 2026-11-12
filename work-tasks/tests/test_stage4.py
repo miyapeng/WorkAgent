@@ -48,7 +48,7 @@ class Stage4Tests(unittest.TestCase):
         self.assertEqual(result['status'],'blocked_upstream');self.assertFalse(model.calls)
 
     def test_real_pilots_block_without_llm(self):
-        plans,seeds,hashes=load_production(REPO/'work-plans/data/pilot',REPO/'work-seeds/data/work_seed_pilot_v2')
+        plans,seeds,hashes=load_production(REPO/'work-plans/data/pilot',REPO/'work-seeds/archive/data/work_seed_pilot_v2')
         for ws in ('WS001','WS002'):
             directory=REPO/'workspaces/data/pilot'/ws;sid=read(directory/'construction/construction_report.json')['seed_id']
             model=FixtureModel();r=process_workspace(directory,plans[sid],seeds[sid],hashes,self.cache,self.out,model)

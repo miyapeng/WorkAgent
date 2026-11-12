@@ -176,7 +176,7 @@ def export_record(record, major_groups):
 def build_raw_seeds(a):
     require(a.n>=0 and 0<=a.supplemental_target<=1,'Invalid sampling parameters')
     require(a.eligibility=='ai4work','Raw Stage 1 reuses AI4Work; alternative label baselines require --mode task-id')
-    for source in (a.raw_dir,a.input_dir,ROOT/'data/work_seed_pilot_v2',ROOT/'data/work_seed_inventory'):
+    for source in (a.raw_dir,a.input_dir,ROOT/'archive/data/work_seed_pilot_v2',ROOT/'archive/data/work_seed_inventory'):
         require(not a.output_dir.resolve().is_relative_to(source.resolve()) and not source.resolve().is_relative_to(a.output_dir.resolve()),'Raw outputs must not overwrite official or historical data')
     build(a.raw_dir,a.input_dir,verify_only=True)
     catalog=load_catalog(a.input_dir)
