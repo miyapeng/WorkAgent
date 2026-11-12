@@ -1,0 +1,118 @@
+{
+  "blueprint_sha256": "b2a40d56805e6e2fcc8c3667d55aeefd9e1ea19f08bda6affa3bc9ae514b26a5",
+  "config_sha256": "a64d2eda36ae220707393b2a6e2a6627d6829be9bc9d4edbff88e0ef3347e334",
+  "counts": {
+    "actual_search_requests": 0,
+    "critical_coverage": 0.0,
+    "critical_external_nodes": 2,
+    "download_attempts": 0,
+    "download_or_profile_failures": 0,
+    "downloaded_urls": 0,
+    "duplicate_files": 0,
+    "independently_verified_visual_evidence": 0,
+    "parsed_unique_files": 0,
+    "planned_queries": 5,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "cross_file_coherence": {
+    "evidence": [],
+    "reason": "not_searched",
+    "status": "unverified",
+    "unverified_assumptions": []
+  },
+  "failure_reasons": [
+    {
+      "reason": "awaiting_search: configure a real Search API key; no autonomous search executed",
+      "stage": "search"
+    },
+    {
+      "reason": "no_grounded_anchor",
+      "stage": "anchor_discovery"
+    }
+  ],
+  "interface": "grounded-workspace-v2",
+  "limitations": [
+    "Source text and positions are programmatically checked; semantic applicability is model judgment.",
+    "Ready concerns input sufficiency, not solver executability.",
+    "Instruction-channel requirements must be explicitly fulfilled by Stage 4."
+  ],
+  "limits": {
+    "anchor_candidates": 3,
+    "anchor_queries": 5,
+    "download_bytes": 20000000,
+    "files_per_gap": 3,
+    "gap_rounds": 2,
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100,
+    "queries_per_gap": 3,
+    "redirects": 4,
+    "retries": 1,
+    "timeout_seconds": 30,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "missing_nodes": [
+    "i2",
+    "i3"
+  ],
+  "modality_evidence": [],
+  "mode": "direct",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T15:26:38.747676+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "e82b7cd0d9f7ef26995af9d941ea573e730828922fcf5627527b5172e4237309",
+      "prompt_version": "direct_search.v1",
+      "request_sha256": "e40c56d42eb0e187c5dbf5df32df0c7922def7b08eaa0de09724f55275b12770",
+      "usage": {
+        "buyer_cost_micro": 1,
+        "completion_tokens": 58,
+        "prompt_tokens": 363,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 421
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 58,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 363,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [],
+  "search_cost": {
+    "billed_cost": 0,
+    "currency": null,
+    "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+  },
+  "search_queries": [
+    "regulatory affairs guidance documents identification process standard operating procedure"
+  ],
+  "search_state": "awaiting_search",
+  "seed_id": "raw_31_0_21094",
+  "seed_sha256": "4e32887a4819d9927a2c5ae8f5d543db35667d72d022c1431858f99e402d0d7d",
+  "selected_anchor": null,
+  "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+  "status": "incomplete",
+  "supported_nodes": [],
+  "work_objective_sha256": "5824db0fbabba4d1d1adb01302996a4b8cfff15eacd8f37ec44329719cafe4bc",
+  "workspace_files": {}
+}

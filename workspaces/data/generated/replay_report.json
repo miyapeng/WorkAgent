@@ -1,0 +1,21 @@
+{
+  "network_disabled": true,
+  "byte_identical_files": 13,
+  "files": [
+    "work-plans/data/generated/blueprints.jsonl",
+    "work-plans/data/generated/planning_report.json",
+    "workspaces/data/generated/WS_3ff8d749c6f4/construction/construction_report.json",
+    "workspaces/data/generated/WS_3ff8d749c6f4/construction/file_profiles.json",
+    "workspaces/data/generated/WS_3ff8d749c6f4/construction/information_coverage.json",
+    "workspaces/data/generated/WS_3ff8d749c6f4/construction/search_trace.json",
+    "workspaces/data/generated/WS_3ff8d749c6f4/construction/source_manifest.json",
+    "workspaces/data/generated/WS_97f914e6ade5/construction/construction_report.json",
+    "workspaces/data/generated/WS_97f914e6ade5/construction/file_profiles.json",
+    "workspaces/data/generated/WS_97f914e6ade5/construction/information_coverage.json",
+    "workspaces/data/generated/WS_97f914e6ade5/construction/search_trace.json",
+    "workspaces/data/generated/WS_97f914e6ade5/construction/source_manifest.json",
+    "workspaces/data/generated/pilot_report.json"
+  ],
+  "status": "passed",
+  "scope": "Replay of current local model cache; no new calls or search."
+}

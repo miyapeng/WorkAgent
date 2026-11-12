@@ -1,2 +1,3 @@
 data/cache/
+data/cache_graph/
 config/*.local.json

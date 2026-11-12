@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "provider": "tavily",
+      "query": "automotive engineering documentation standards requirements",
+      "reason": "missing_search_api_credentials",
+      "results": [],
+      "search_api_called": false,
+      "status": "awaiting_search"
+    }
+  ],
+  "mode": "direct",
+  "rounds": [
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "automotive engineering documentation standards requirements",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "engineering document control procedures automotive industry",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "technical writing standards for engineering documentation SAE",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "engineering documentation review checklist automotive OEM",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "maintaining engineering records configuration management automotive",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "direct_search"
+      },
+      "round": 0
+    }
+  ]
+}

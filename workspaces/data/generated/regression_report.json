@@ -1,0 +1,39 @@
+{
+  "does_not_increase_pilot_ready_or_anchor_counts": true,
+  "real_cached_regressions": [
+    {
+      "checked_locators": [
+        "row:1",
+        "row:2",
+        "row:3"
+      ],
+      "file_type": "csv",
+      "new_downloads": 0,
+      "new_search_requests": 0,
+      "original_retrieved_at": "2026-11-11T06:39:38.612539+00:00",
+      "segments": 5337,
+      "semantic_coverage": "not_asserted",
+      "sha256": "3032f3110f52feb3fdc86642163fb14c7df81ac4c1a1730b670080681f767dac",
+      "source_url": "https://open.canada.ca/data/dataset/fc6ba156-a167-4abd-b172-d1293efebe55/resource/3fde453f-e3b7-4fa4-a282-f195bf872f9e/download/eav_eac_en.csv",
+      "status": "passed",
+      "usage": "Real cached-source parser and stable-ID regression only, not a new pilot anchor."
+    },
+    {
+      "checked_locators": [
+        "sheet:Sheet1!A1",
+        "sheet:Sheet1!B1",
+        "sheet:Sheet1!C1"
+      ],
+      "file_type": "xlsx",
+      "new_downloads": 0,
+      "new_search_requests": 0,
+      "original_retrieved_at": "2026-11-11T06:47:08.691161+00:00",
+      "segments": 266,
+      "semantic_coverage": "not_asserted",
+      "sha256": "946bb8c07c3b38110fc9fbabd9f99532344c7ab6d303406023b43a18fe2da33b",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6787e2f85a1adfc79556df92/HMRC_Government_Major_Projects_Portofolio_AR_Data_March_2024.xlsx",
+      "status": "passed",
+      "usage": "Real cached-source parser and stable-ID regression only, not a new pilot anchor."
+    }
+  ]
+}

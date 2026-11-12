@@ -1,0 +1,129 @@
+{
+  "blueprint_sha256": "3d84b5ab5034f5e0453fa4892c39898ce7877608b09e7853908c82b530c3920a",
+  "config_sha256": "a64d2eda36ae220707393b2a6e2a6627d6829be9bc9d4edbff88e0ef3347e334",
+  "counts": {
+    "actual_search_requests": 0,
+    "critical_coverage": 0.0,
+    "critical_external_nodes": 3,
+    "download_attempts": 0,
+    "download_or_profile_failures": 0,
+    "downloaded_urls": 0,
+    "duplicate_files": 0,
+    "independently_verified_visual_evidence": 0,
+    "parsed_unique_files": 0,
+    "planned_queries": 5,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "cross_file_coherence": {
+    "evidence": [],
+    "reason": "not_searched",
+    "status": "unverified",
+    "unverified_assumptions": []
+  },
+  "failure_reasons": [
+    {
+      "reason": "awaiting_search: configure a real Search API key; no autonomous search executed",
+      "stage": "search"
+    },
+    {
+      "reason": "no_grounded_anchor",
+      "stage": "anchor_discovery"
+    }
+  ],
+  "interface": "grounded-workspace-v2",
+  "limitations": [
+    "Source text and positions are programmatically checked; semantic applicability is model judgment.",
+    "Ready concerns input sufficiency, not solver executability.",
+    "Instruction-channel requirements must be explicitly fulfilled by Stage 4."
+  ],
+  "limits": {
+    "anchor_candidates": 3,
+    "anchor_queries": 5,
+    "download_bytes": 20000000,
+    "files_per_gap": 3,
+    "gap_rounds": 2,
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100,
+    "queries_per_gap": 3,
+    "redirects": 4,
+    "retries": 1,
+    "timeout_seconds": 30,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "missing_nodes": [
+    "I_ExistingEngineeringDocument",
+    "I_EngineeringChangeNotices",
+    "I_DesignSpecifications"
+  ],
+  "modality_evidence": [
+    {
+      "evidence_status": "unretrieved",
+      "independently_verified": false,
+      "information_needed": "Schematic diagrams or engineering drawings embedded in the document that must be visually interpreted to verify that depicted components, connections, and configurations match current specifications.",
+      "modality_candidate": "diagram",
+      "modality_rationale": "Automotive engineering documents frequently include diagrams whose correctness cannot be assessed through text alone; the spatial relationships and component representations must be visually inspected.",
+      "necessity_status": "hypothesis",
+      "node_id": "I_ExistingEngineeringDocument"
+    }
+  ],
+  "mode": "direct",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-12T15:26:30.124027+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "e82b7cd0d9f7ef26995af9d941ea573e730828922fcf5627527b5172e4237309",
+      "prompt_version": "direct_search.v1",
+      "request_sha256": "ca9b6914de1f2c34a51387b80476a98eb99b6db1850338e9e568dd12dde8f1c6",
+      "usage": {
+        "buyer_cost_micro": 1,
+        "completion_tokens": 47,
+        "prompt_tokens": 347,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 394
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 47,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 347,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [],
+  "search_cost": {
+    "billed_cost": 0,
+    "currency": null,
+    "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+  },
+  "search_queries": [
+    "automotive engineering documentation standards requirements"
+  ],
+  "search_state": "awaiting_search",
+  "seed_id": "raw_31_0_16425",
+  "seed_sha256": "0e57a70aae495b84c4595271320d1e3d4fb6d23981d556a26008efa64327c8e2",
+  "selected_anchor": null,
+  "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+  "status": "incomplete",
+  "supported_nodes": [],
+  "work_objective_sha256": "1fd7c7c0284c9d49a10114fcb6870a32849425efc9366fc247a5843ffce1e7f0",
+  "workspace_files": {}
+}

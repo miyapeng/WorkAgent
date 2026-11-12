@@ -1,0 +1,58 @@
+{
+  "events": [],
+  "mode": "graph",
+  "rounds": [
+    {
+      "event": "invalid_retrieval_plan",
+      "proposed_retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "workspace technical file, product specification sheet, or process description from a real organization",
+            "query": "regulatory affairs product technical file specification example medical device or chemical product compliance documentation",
+            "reason": "No anchor exists yet; i2 is a critical missing workspace node. Need a real organization's product/process documentation to ground which standards categories apply.",
+            "target_node_ids": [
+              "i2"
+            ]
+          },
+          {
+            "desired_source_type": "standards register, catalog, or official standards body equivalence listing (e.g., ISO, IEC, national body indexes)",
+            "query": "standards catalog listing ISO IEC consensus standards titles issuing bodies scope statements regulatory affairs",
+            "reason": "i3 is the other critical missing node; the deliverable requires named sources with issuing bodies and scope, so a real catalog/register is needed as the reference anchor.",
+            "target_node_ids": [
+              "i3"
+            ]
+          },
+          {
+            "desired_source_type": "issuing body guidance page or cross-reference index linking standards to regulatory domains",
+            "query": "ISO IEC regulatory affairs standards mapping product scope jurisdiction applicability guidance document",
+            "reason": "Supports building the standards-to-subject/jurisdiction mapping (i6) while reinforcing the i3 reference anchor with real issuing-body metadata.",
+            "target_node_ids": [
+              "i3",
+              "i6"
+            ]
+          },
+          {
+            "desired_source_type": "professional practice guide or case example of standards applicability determination",
+            "query": "regulatory affairs specialist curated reference list standards applicability justification example",
+            "reason": "Anchor discovery step: identify a coherent real case showing both the organization context and the standards set used, so later gap-filling stays within one compatible project.",
+            "target_node_ids": [
+              "i2",
+              "i3"
+            ]
+          },
+          {
+            "desired_source_type": "standards body overview or scope register covering multiple jurisdictions",
+            "query": "international consensus standards scope statement issuing body jurisdiction market application regulatory framework overview",
+            "reason": "Broadens the i3 candidate pool with authoritative scope statements, ensuring the eventual curated list can be verified against named issuing bodies rather than title matches.",
+            "target_node_ids": [
+              "i3"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 0
+    }
+  ]
+}

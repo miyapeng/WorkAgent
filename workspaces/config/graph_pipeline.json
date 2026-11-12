@@ -1,0 +1,39 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "search": {
+    "provider": "tavily",
+    "api_key_env": "TAVILY_API_KEY",
+    "max_results": 6,
+    "timeout_seconds": 30,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "limits": {
+    "anchor_queries": 5,
+    "anchor_candidates": 3,
+    "gap_rounds": 2,
+    "queries_per_gap": 3,
+    "files_per_gap": 3,
+    "download_bytes": 20000000,
+    "timeout_seconds": 30,
+    "redirects": 4,
+    "retries": 1,
+    "trusted_proxy_env": "HTTPS_PROXY",
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100
+  },
+  "vision": null
+}

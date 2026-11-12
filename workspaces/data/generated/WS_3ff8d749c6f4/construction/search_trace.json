@@ -1,0 +1,70 @@
+{
+  "events": [
+    {
+      "provider": "tavily",
+      "query": "automotive engineering change notice ECN service manual revision procedure example",
+      "reason": "missing_search_api_credentials",
+      "results": [],
+      "search_api_called": false,
+      "status": "awaiting_search"
+    }
+  ],
+  "mode": "graph",
+  "rounds": [
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "publicly available engineering change notice and corresponding manual revision from an original equipment manufacturer or engineering standards body",
+            "query": "automotive engineering change notice ECN service manual revision procedure example",
+            "reason": "Need a coherent real-world anchor that pairs an existing engineering document with formal change notices so both critical input nodes can be satisfied within a single organization and project.",
+            "target_node_ids": [
+              "I_EngineeringChangeNotices",
+              "I_ExistingEngineeringDocument"
+            ]
+          },
+          {
+            "desired_source_type": "manufacturer documentation set containing original document, revision bulletin, and current design specification",
+            "query": "OEM technical service bulletin and workshop manual revision history automotive component specification update",
+            "reason": "Locate a reusable documentation set where the pre-revision document, change instruction, and current specification coexist, supporting all three critical nodes and the diagram modality hypothesis.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_DesignSpecifications",
+              "I_EngineeringChangeNotices"
+            ]
+          },
+          {
+            "desired_source_type": "native engineering drawing or schematic with accompanying revision description, preferably in its original diagram format",
+            "query": "automotive wiring diagram or assembly drawing revision from change request to updated schematic",
+            "reason": "The blueprint requires visual verification of depicted components and connections; a native drawing with revision context provides evidence that cannot be substituted by text descriptions.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_DesignSpecifications"
+            ]
+          },
+          {
+            "desired_source_type": "authoritative design specification or technical data sheet with tabular parameters and tolerances",
+            "query": "public automotive engineering specification document with parameter table and tolerance values for component configuration",
+            "reason": "Design specifications are a critical node requiring correct parameters and tolerances; a primary specification with tabular data supports discrepancy identification and revision planning.",
+            "target_node_ids": [
+              "I_DesignSpecifications"
+            ]
+          },
+          {
+            "desired_source_type": "documented configuration management or revision control record from a public engineering program",
+            "query": "NASA or SAE engineering document revision control case study with configuration management records",
+            "reason": "Alternative anchor candidate where revision-controlled engineering documents, change requests, and current specifications are publicly archived together, preserving project and time-period consistency.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_EngineeringChangeNotices",
+              "I_DesignSpecifications"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 0
+    }
+  ]
+}

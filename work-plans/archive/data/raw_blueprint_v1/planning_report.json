@@ -1,0 +1,2130 @@
+{
+  "blueprints_sha256": "a201781472e2a63bcac378b876f1a2e54333487834b6caae6d2af64289f572f2",
+  "config_sha256": "fc8d23f9eee1dfc1ae8e3040fe5d0e08e44167d7da1a7f5b18df6604abea36cd",
+  "counts": {
+    "accepted": 2,
+    "generated": 10,
+    "graph_passed": 2,
+    "input": 10,
+    "modality_candidate_plans": 1,
+    "rejected_or_failed": 8
+  },
+  "input_sha256": "6bafac8662dbea9aab9ed920bad703aa0bd67b4eec07e27c21e23f1cf54a031c",
+  "interface": "raw-blueprint-v1",
+  "limitations": [
+    "Independent review uses the same model family, not expert certification.",
+    "Task instruction requirements remain pending for Stage 4; they are not case facts."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 12127,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 24358,
+    "unique_model_requests": 12
+  },
+  "seeds": {
+    "raw_31_0_13744": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "missing_modality_rationale"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:22.611454+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "5360e116aa8fa8e4b6f3adea4c2f73f9975f4952c9a35c8051d0b58ee8106c25",
+          "usage": {
+            "buyer_cost_micro": 30,
+            "completion_tokens": 1558,
+            "prompt_tokens": 1911,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "total_tokens": 3469
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A structured summary documenting the interpreted signal flow, key component locations, relevant electrical specifications, and applicable service procedures extracted from the provided technical documents.",
+            "id": "interpretation_summary",
+            "type": "technical interpretation summary"
+          }
+        ],
+        "dependencies": [
+          [
+            "function_block_diagram",
+            "signal_flow"
+          ],
+          [
+            "circuit_diagram",
+            "signal_flow"
+          ],
+          [
+            "circuit_diagram",
+            "component_layout"
+          ],
+          [
+            "engineering_drawing",
+            "component_layout"
+          ],
+          [
+            "specifications_doc",
+            "electrical_values"
+          ],
+          [
+            "circuit_diagram",
+            "electrical_values"
+          ],
+          [
+            "service_manual",
+            "service_procedures"
+          ],
+          [
+            "circuit_diagram",
+            "service_procedures"
+          ],
+          [
+            "signal_flow",
+            "cross_document_consistency"
+          ],
+          [
+            "component_layout",
+            "cross_document_consistency"
+          ],
+          [
+            "electrical_values",
+            "cross_document_consistency"
+          ],
+          [
+            "service_procedures",
+            "cross_document_consistency"
+          ],
+          [
+            "cross_document_consistency",
+            "interpretation_summary"
+          ],
+          [
+            "signal_flow",
+            "interpretation_summary"
+          ],
+          [
+            "component_layout",
+            "interpretation_summary"
+          ],
+          [
+            "electrical_values",
+            "interpretation_summary"
+          ],
+          [
+            "service_procedures",
+            "interpretation_summary"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Electronic circuit diagram showing component interconnections, node labels, and electrical relationships for the AV equipment under consideration.",
+            "id": "circuit_diagram",
+            "modality_candidates": [
+              "diagram",
+              "text"
+            ],
+            "modality_rationale": "Circuit diagrams use schematic symbols, connection lines, and reference designators that require spatial and symbolic interpretation beyond plain text.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Function block diagram depicting high-level signal flow and functional relationships among subsystems of the AV equipment.",
+            "id": "function_block_diagram",
+            "modality_candidates": [
+              "diagram",
+              "text"
+            ],
+            "modality_rationale": "Block diagrams convey functional stages and signal paths through labeled blocks and directional connectors that require visual interpretation.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Technical specifications document listing electrical ratings, input/output parameters, environmental limits, and performance characteristics for the equipment.",
+            "id": "specifications_doc",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Specifications are typically presented as structured text and tabular data listing numerical values and tolerances.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Engineering drawing showing physical layout, mounting dimensions, connector positions, and mechanical details of the AV equipment.",
+            "id": "engineering_drawing",
+            "modality_candidates": [
+              "diagram",
+              "spatial",
+              "text"
+            ],
+            "modality_rationale": "Engineering drawings convey dimensional and spatial information through scaled views, callouts, and annotations that require spatial reasoning.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Service manual providing troubleshooting procedures, test point locations, disassembly steps, and repair guidance for the AV equipment.",
+            "id": "service_manual",
+            "modality_candidates": [
+              "text",
+              "diagram",
+              "table"
+            ],
+            "modality_rationale": "Service manuals combine procedural text with diagnostic flowcharts, test point diagrams, and reference tables.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "Derived understanding of the end-to-end signal path through the equipment, mapping input stages through processing blocks to output stages.",
+            "id": "signal_flow",
+            "type": "derived_information"
+          },
+          {
+            "description": "Derived mapping of key electronic and mechanical components to their physical and schematic locations as shown across the circuit diagram and engineering drawing.",
+            "id": "component_layout",
+            "type": "derived_information"
+          },
+          {
+            "description": "Extracted electrical ratings, tolerances, and signal parameters relevant to installation or repair, consolidated from the specifications and circuit diagram.",
+            "id": "electrical_values",
+            "type": "derived_information"
+          },
+          {
+            "description": "Extracted troubleshooting steps, test point references, and repair procedures applicable to the identified equipment and fault context.",
+            "id": "service_procedures",
+            "type": "derived_information"
+          },
+          {
+            "description": "Professional assessment that the interpreted signal flow, component layout, electrical values, and service procedures are mutually consistent across all provided documents and sufficient to inform the installation or repair activity.",
+            "id": "cross_document_consistency",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Schematic symbols, reference designators, interconnection topology, and node labels that define the electrical relationships among components.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Circuit diagrams encode component identity and connectivity through standardized schematic symbols and line routing that cannot be fully represented in linear text without loss of spatial relationship information.",
+            "necessity_status": "hypothesis",
+            "node_id": "circuit_diagram"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Functional block labels, signal direction arrows, and inter-block connections that define the high-level signal flow through the equipment.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Block diagrams represent sequential and parallel signal relationships through spatially arranged blocks and directional connectors, requiring visual interpretation to trace flow.",
+            "necessity_status": "hypothesis",
+            "node_id": "function_block_diagram"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Physical dimensions, mounting hole positions, connector locations, and spatial relationships among mechanical features of the equipment enclosure.",
+            "modality_candidate": "spatial",
+            "modality_rationale": "Engineering drawings convey scaled geometric and dimensional information that requires spatial reasoning to relate physical features to installation constraints.",
+            "necessity_status": "hypothesis",
+            "node_id": "engineering_drawing"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Diagnostic flowcharts, test point callouts on board layouts, and disassembly sequence illustrations referenced by the service procedures.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Service manuals frequently embed decision-flow diagrams and annotated board photographs that guide troubleshooting steps requiring visual reference.",
+            "necessity_status": "hypothesis",
+            "node_id": "service_manual"
+          }
+        ],
+        "seed_id": "raw_31_0_13744",
+        "work_objective": "Read and interpret a set of AV equipment technical documents—electronic circuit diagrams, function block diagrams, specifications, engineering drawings, and service manuals—to extract the signal flow, component layout, electrical values, and servicing procedures needed to support an installation or repair activity."
+      },
+      "seed_sha256": "b6c3f44ad31da6367d943ac5884ff5f3dfe2027ed14d31c567a5e34a47fdab9d",
+      "selection_reason": "visual circuit diagram interpretation",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_16209": {
+      "blueprint_sha256": "5035179ca9b8ee11e0de3e3f05471c6716004d47f794bd293e6af6da15dd6cf2",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:48.251945+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "967e0110504772e06387389c510fbd4fdcf41693872db5b7c410ba4835b8101d",
+          "usage": {
+            "buyer_cost_micro": 11,
+            "completion_tokens": 595,
+            "prompt_tokens": 1883,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "total_tokens": 2478
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:52.052875+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "af8ec1f8016ef9065f21824a29bbd2785a926cd1c905db787c51b4f76ea22b81",
+          "usage": {
+            "buyer_cost_micro": 2,
+            "completion_tokens": 82,
+            "prompt_tokens": 1570,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "total_tokens": 1652
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A structured design level document containing defined game mechanics, design guidelines, and mission outlines, written for use by the development team.",
+            "id": "DesignLevelDocumentation",
+            "type": "design_document"
+          }
+        ],
+        "dependencies": [
+          [
+            "GameConceptBrief",
+            "CoreMechanicsDefinition"
+          ],
+          [
+            "ExistingDesignMaterials",
+            "CoreMechanicsDefinition"
+          ],
+          [
+            "GameConceptBrief",
+            "DesignGuidelines"
+          ],
+          [
+            "ExistingDesignMaterials",
+            "DesignGuidelines"
+          ],
+          [
+            "CoreMechanicsDefinition",
+            "MissionOutlines"
+          ],
+          [
+            "DesignGuidelines",
+            "MissionOutlines"
+          ],
+          [
+            "CoreMechanicsDefinition",
+            "MechanicsGuidelineAlignment"
+          ],
+          [
+            "DesignGuidelines",
+            "MechanicsGuidelineAlignment"
+          ],
+          [
+            "MissionOutlines",
+            "MechanicsGuidelineAlignment"
+          ],
+          [
+            "MechanicsGuidelineAlignment",
+            "DesignLevelDocumentation"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "High-level description of the game's genre, theme, target platform, and intended player experience.",
+            "id": "GameConceptBrief",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "A text brief is the standard format for communicating the foundational concept and scope of a game project to a designer.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Any prior or related design documents, feature lists, or narrative outlines that the new level documentation must align with or extend.",
+            "id": "ExistingDesignMaterials",
+            "modality_candidates": [
+              "text",
+              "diagram"
+            ],
+            "modality_rationale": "Prior design artifacts may include text specifications and structural diagrams that the designer must reference for consistency.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "A clear articulation of the core gameplay mechanics—player actions, rules, and systems—that operate within the levels being documented.",
+            "id": "CoreMechanicsDefinition",
+            "type": "derived_information"
+          },
+          {
+            "description": "Standards and constraints governing level construction, including pacing, difficulty progression, and interaction principles.",
+            "id": "DesignGuidelines",
+            "type": "derived_information"
+          },
+          {
+            "description": "Structured descriptions of level missions, including objectives, sequence of events, and success/failure conditions.",
+            "id": "MissionOutlines",
+            "type": "derived_information"
+          },
+          {
+            "description": "Assessment that the defined mechanics and mission structures are consistent with the established design guidelines and the overall game concept.",
+            "id": "MechanicsGuidelineAlignment",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Structural relationships between game systems, level flow, or mission progression as depicted in prior design artifacts.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Game design documents frequently use flowcharts or diagrams to represent system interactions and level progression, which the designer must interpret to ensure new documentation is consistent.",
+            "necessity_status": "hypothesis",
+            "node_id": "ExistingDesignMaterials"
+          }
+        ],
+        "seed_id": "raw_31_0_16209",
+        "work_objective": "Develop and maintain design level documentation for a video game, specifying gameplay mechanics, design guidelines, and mission outlines in a structured, reference-ready format."
+      },
+      "seed_sha256": "2a98d60d154eb0b847322904d0c78c6701913fcc392f7a8decba11730016ee56",
+      "selection_reason": "game design documentation",
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "status": "accepted"
+    },
+    "raw_31_0_16425": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['modality_hypotheses', 2, 'modality_candidate']: 'table' is not one of ['image', 'audio', 'video', 'diagram', 'spatial']"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:43.209164+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "1ff12d388e5a62f20d82aa906b41ccd6f39efe696ed74183abc787a0a9cf748d",
+          "usage": {
+            "completion_tokens": 1286,
+            "prompt_tokens": 2252,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3538
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A written or revised engineering documentation entry (report section, specification record, or record entry) covering the assigned automotive engineering item, consistent with the existing documentation system.",
+            "id": "engineering_doc_record",
+            "type": "Technical documentation"
+          },
+          {
+            "description": "Documented review findings on the draft or existing documentation, noting discrepancies, gaps, and required corrections with justification.",
+            "id": "documentation_review_notes",
+            "type": "Review record"
+          },
+          {
+            "description": "An entry in the operational records system reflecting the update, its date, its author/owner, and the revision status of the documentation.",
+            "id": "records_maintenance_log",
+            "type": "Operational record entry"
+          }
+        ],
+        "dependencies": [
+          [
+            "assigned_doc_scope",
+            "current_doc_content_summary"
+          ],
+          [
+            "existing_documentation",
+            "current_doc_content_summary"
+          ],
+          [
+            "existing_documentation",
+            "technical_accuracy_check"
+          ],
+          [
+            "technical_source_material",
+            "technical_accuracy_check"
+          ],
+          [
+            "documentation_conventions",
+            "technical_accuracy_check"
+          ],
+          [
+            "operational_records_system",
+            "record_status_assessment"
+          ],
+          [
+            "existing_documentation",
+            "record_status_assessment"
+          ],
+          [
+            "technical_accuracy_check",
+            "correction_decisions"
+          ],
+          [
+            "current_doc_content_summary",
+            "correction_decisions"
+          ],
+          [
+            "record_status_assessment",
+            "correction_decisions"
+          ],
+          [
+            "correction_decisions",
+            "documentation_readiness"
+          ],
+          [
+            "correction_decisions",
+            "engineering_doc_record"
+          ],
+          [
+            "current_doc_content_summary",
+            "engineering_doc_record"
+          ],
+          [
+            "correction_decisions",
+            "documentation_review_notes"
+          ],
+          [
+            "documentation_readiness",
+            "documentation_review_notes"
+          ],
+          [
+            "correction_decisions",
+            "records_maintenance_log"
+          ],
+          [
+            "record_status_assessment",
+            "records_maintenance_log"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Statement of which engineering item, subsystem, or document the work covers, and what level of documentation action (write, review, or maintain) is requested.",
+            "id": "assigned_doc_scope",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Scope and request type are normally conveyed as written instructions.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The current engineering documentation for the assigned item, including prior revisions, as available in the workspace.",
+            "id": "existing_documentation",
+            "modality_candidates": [
+              "text",
+              "table",
+              "diagram",
+              "image"
+            ],
+            "modality_rationale": "Engineering documentation commonly mixes prose, parameter tables, and embedded schematics or figures that must be read together.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The existing records system or log structure used to track documentation status, revisions, and ownership.",
+            "id": "operational_records_system",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Record systems are typically structured as text fields or tables with defined columns and revision identifiers.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Underlying engineering data, test results, specifications, or design inputs that the documentation must accurately reflect.",
+            "id": "technical_source_material",
+            "modality_candidates": [
+              "text",
+              "table",
+              "diagram",
+              "image"
+            ],
+            "modality_rationale": "Source engineering data may be numeric tables, marked-up drawings, or plotted results whose values must be transcribed correctly.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Internal documentation standards, templates, or formatting and traceability conventions that govern the required documentation form.",
+            "id": "documentation_conventions",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Standards and templates are usually textual procedural documents.",
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "A consolidated understanding of what the existing documentation currently states about the item, separated into verified content and open gaps.",
+            "id": "current_doc_content_summary",
+            "type": "derived_information"
+          },
+          {
+            "description": "Item-by-item comparison of documented statements, values, and figures against the technical source material, with discrepancies identified.",
+            "id": "technical_accuracy_check",
+            "type": "derived_information"
+          },
+          {
+            "description": "Determination of the documentation's revision state, ownership trail, and completeness relative to the records system's required fields.",
+            "id": "record_status_assessment",
+            "type": "derived_information"
+          },
+          {
+            "description": "Judgment on which discrepancies require correction, clarification, or escalation, and which are acceptable, with rationale grounded in the technical source material and documentation purpose.",
+            "id": "correction_decisions",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Conclusion on whether the documentation is fit for internal use after revision review, and what residual limitations internal users should know.",
+            "id": "documentation_readiness",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Schematic or layout references embedded in the existing documentation that the text description points to.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Engineering documentation often embeds schematic figures whose content is not fully restated in prose, so the reviewer may need to interpret the drawing.",
+            "necessity_status": "hypothesis",
+            "node_id": "existing_documentation"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Marked-up drawings or plotted test results carrying values that must be transcribed into the documentation.",
+            "modality_candidate": "image",
+            "modality_rationale": "Source engineering evidence is frequently supplied as scanned or plotted graphical outputs rather than typed values.",
+            "necessity_status": "hypothesis",
+            "node_id": "technical_source_material"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Parameter, revision, and change tables whose row-column structure carries the authoritative values.",
+            "modality_candidate": "table",
+            "modality_rationale": "Specification and revision data are commonly organized in tabular form where structure itself conveys meaning.",
+            "necessity_status": "hypothesis",
+            "node_id": "existing_documentation"
+          }
+        ],
+        "seed_id": "raw_31_0_16425",
+        "work_objective": "Produce, review, and maintain engineering documentation that accurately records an automotive engineering item's current technical content and history, so internal users can rely on it as an up-to-date record."
+      },
+      "seed_sha256": "0e57a70aae495b84c4595271320d1e3d4fb6d23981d556a26008efa64327c8e2",
+      "selection_reason": "professional engineering documentation",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_18983": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['information_nodes', 5]: {'id': 'planned_value_by_period', 'type': 'derived_information', 'description': 'The time-phased planned value of scheduled work, derived from activity durations, dependencies, and budget line items, "
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:19.447377+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "b4f1a5d71c7a077e83725c3c40b6bfd70fc9e3b69cb8dbd23cd0bce0d46dfa90",
+          "usage": {
+            "completion_tokens": 1592,
+            "prompt_tokens": 2254,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3846
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A consolidated project schedule and budget status report for a network project, showing cost and schedule variances, forecast-to-completion figures, and cost-control findings suitable for financial and resource-allocation review.",
+            "id": "schedule_budget_status_report",
+            "type": "Project status / cost-control report"
+          }
+        ],
+        "dependencies": [
+          [
+            "project_scope_and_milestones",
+            "planned_value_by_period"
+          ],
+          [
+            "activity_durations_and_dependencies",
+            "planned_value_by_period"
+          ],
+          [
+            "budget_line_items_and_rates",
+            "planned_value_by_period"
+          ],
+          [
+            "actual_cost_and_progress_records",
+            "earned_value_and_actual_cost_by_period"
+          ],
+          [
+            "reporting_period_and_currency_conventions",
+            "earned_value_and_actual_cost_by_period"
+          ],
+          [
+            "planned_value_by_period",
+            "schedule_and_cost_variances"
+          ],
+          [
+            "earned_value_and_actual_cost_by_period",
+            "schedule_and_cost_variances"
+          ],
+          [
+            "schedule_and_cost_variances",
+            "forecast_to_completion"
+          ],
+          [
+            "activity_durations_and_dependencies",
+            "critical_path_and_float_analysis"
+          ],
+          [
+            "reporting_period_and_currency_conventions",
+            "critical_path_and_float_analysis"
+          ],
+          [
+            "schedule_and_cost_variances",
+            "cost_control_findings"
+          ],
+          [
+            "forecast_to_completion",
+            "cost_control_findings"
+          ],
+          [
+            "critical_path_and_float_analysis",
+            "cost_control_findings"
+          ],
+          [
+            "cost_control_findings",
+            "schedule_budget_recommendation"
+          ],
+          [
+            "schedule_and_cost_variances",
+            "schedule_budget_status_report"
+          ],
+          [
+            "forecast_to_completion",
+            "schedule_budget_status_report"
+          ],
+          [
+            "cost_control_findings",
+            "schedule_budget_status_report"
+          ],
+          [
+            "schedule_budget_recommendation",
+            "schedule_budget_status_report"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The defined project scope for a network project and its milestone/work-package breakdown that the schedule must represent.",
+            "id": "project_scope_and_milestones",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Scope and milestone breakdowns are typically delivered as written project charters or work-breakdown tables; a table is the natural representation for milestone dates and work-package ownership.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Planned durations for scheduled network activities and their logical dependencies (which activities must precede others).",
+            "id": "activity_durations_and_dependencies",
+            "modality_candidates": [
+              "text",
+              "table",
+              "diagram"
+            ],
+            "modality_rationale": "Dependency logic is often recorded in scheduling tables or network-style Gantt/precedence diagrams; the diagram form matters when activity sequencing must be read spatially rather than from a list.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The project budget breakdown by cost category (labor, hardware, licensing, services) with planned unit rates or allocations for each line item.",
+            "id": "budget_line_items_and_rates",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Budget breakdowns are conventionally supplied as line-item tables; tabular form is required to map each cost category to activity and period.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Recorded actual expenditures to date and actual completion or earned-progress data for scheduled activities.",
+            "id": "actual_cost_and_progress_records",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Actuals are recorded in time-phased ledgers or progress logs; tables are needed to align cost and progress observations to specific activities and reporting periods.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "The reporting period end date, currency, and rounding conventions the status report must follow.",
+            "id": "reporting_period_and_currency_conventions",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Conventions are concise textual parameters typically stated in the task request rather than a document.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "The time-phased planned value of scheduled work, derived from activity durations, dependencies, and budget line items, expressed by reporting period.",
+            "id": "planned_value_by_period",
+            "type": "derived_information",
+            "type_note": null
+          },
+          {
+            "description": "Earned value and actual cost aggregated by reporting period from progress records and actual expenditure data.",
+            "id": "earned_value_and_actual_cost_by_period",
+            "type": "derived_information"
+          },
+          {
+            "description": "Schedule variance and cost variance computed by comparing earned value against planned value and actual cost at the reporting period.",
+            "id": "schedule_and_cost_variances",
+            "type": "derived_information"
+          },
+          {
+            "description": "Forecast estimate at completion and estimated completion date derived from current variances and remaining scheduled work.",
+            "id": "forecast_to_completion",
+            "type": "derived_information"
+          },
+          {
+            "description": "Identification of critical-path activities and available float, derived from activity durations and dependency logic, that constrains schedule risk.",
+            "id": "critical_path_and_float_analysis",
+            "type": "derived_information"
+          },
+          {
+            "description": "Judgment on which budget categories or activities are exceeding thresholds, whether variances are material, and which cost-control actions or resource reallocations are warranted.",
+            "id": "cost_control_findings",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Recommended schedule and budget adjustments and resource-allocation priorities for financial management review, grounded in the variance and forecast findings.",
+            "id": "schedule_budget_recommendation",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Activity precedence logic and sequencing as depicted in a Gantt chart or precedence network",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Scheduling deliverables in network engineering are frequently published as Gantt or precedence diagrams; reading the sequencing correctly may require visual interpretation of the chart rather than a text list.",
+            "necessity_status": "hypothesis",
+            "node_id": "activity_durations_and_dependencies"
+          }
+        ],
+        "seed_id": "raw_31_0_18983",
+        "work_objective": "Prepare or monitor a network project's schedule, budget, or cost-control system to support financial management and resource allocation decisions for the project."
+      },
+      "seed_sha256": "1692647c02de6d181b3373e0fd48cf984290d627ad84338a2d596079bfe4bd2e",
+      "selection_reason": "software/network project schedule and budget; legacy project regression family",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_21094": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['information_nodes', 4]: {'id': 'relevant_jurisdictions_mapped', 'type': 'derived_information', 'description': 'The set of jurisdictions and regulatory regimes determined to apply, cross-referenced against the product/activit; ['information_nodes', 5]: {'id': 'candidate_sources_shortlist', 'type': 'derived_information', 'description': 'A shortlist of candidate guidance documents, international standards, and consensus standards drawn from each appli; ['information_nodes', 6]: {'id': 'applicability_screening', 'type': 'professional_judgment', 'description': 'Judgment of which candidate sources actually apply to the product/activity and organizational scope, based on scope s"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:47.505616+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "bdbdc05be6aac98063813e96c3cce9632775fc607e31936a71bd674796113dae",
+          "usage": {
+            "completion_tokens": 1102,
+            "prompt_tokens": 2310,
+            "prompt_tokens_details": {
+              "cached_tokens": 204
+            },
+            "total_tokens": 3412
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A structured list of the guidance documents, international standards, and consensus standards judged relevant to the organization's product/activity and jurisdictions, with identification of each source, its issuing body, its scope, and the basis for its applicability.",
+            "id": "applicable_standards_inventory",
+            "type": "reference inventory / compiled documentation list"
+          }
+        ],
+        "dependencies": [
+          [
+            "product_activity_profile",
+            "relevant_jurisdictions_mapped"
+          ],
+          [
+            "target_jurisdictions",
+            "relevant_jurisdictions_mapped"
+          ],
+          [
+            "organizational_activity_scope",
+            "relevant_jurisdictions_mapped"
+          ],
+          [
+            "relevant_jurisdictions_mapped",
+            "candidate_sources_shortlist"
+          ],
+          [
+            "regulatory_framework_knowledge",
+            "candidate_sources_shortlist"
+          ],
+          [
+            "candidate_sources_shortlist",
+            "applicability_screening"
+          ],
+          [
+            "product_activity_profile",
+            "applicability_screening"
+          ],
+          [
+            "organizational_activity_scope",
+            "applicability_screening"
+          ],
+          [
+            "applicability_screening",
+            "applicable_standards_inventory"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Description of the product, process, or activity for which standards and guidance must be identified, including its technical nature and intended use.",
+            "id": "product_activity_profile",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "The product/activity description is expected to be conveyed in written form.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The countries, regions, or regulatory regimes in which the organization operates or seeks compliance, which determine which guidance and standards bodies are authoritative.",
+            "id": "target_jurisdictions",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Jurisdictional scope is expected to be stated in text.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Documentation or description of the organization's regulated activities and internal compliance context that the standards must map to.",
+            "id": "organizational_activity_scope",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Organizational activity records may appear as narrative documents or tabular registers of regulated activities.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Knowledge of the regulatory landscape per jurisdiction, including which bodies issue binding regulations versus guidance and which international or consensus standards are recognized or referenced by those regimes.",
+            "id": "regulatory_framework_knowledge",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Regulatory registers and standards catalogues are typically text documents or structured tables; no visual interpretation is inherently required.",
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "The set of jurisdictions and regulatory regimes determined to apply, cross-referenced against the product/activity profile and organizational activity scope.",
+            "id": "relevant_jurisdictions_mapped",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Derived mapping is produced as internal analysis, not tied to a modality.",
+            "supply_channel": "workspace",
+            "type": "derived_information"
+          },
+          {
+            "critical": false,
+            "description": "A shortlist of candidate guidance documents, international standards, and consensus standards drawn from each applicable jurisdiction and regime, before relevance screening.",
+            "id": "candidate_sources_shortlist",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Shortlists are naturally compiled as text lists or tables.",
+            "supply_channel": "workspace",
+            "type": "derived_information"
+          },
+          {
+            "critical": false,
+            "description": "Judgment of which candidate sources actually apply to the product/activity and organizational scope, based on scope statements of each source and the mapped jurisdictions, with documented reasoning for inclusion or exclusion.",
+            "id": "applicability_screening",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Screening conclusions are recorded in written justification, independent of presentation format.",
+            "supply_channel": "workspace",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_21094",
+        "work_objective": "Identify the relevant guidance documents, international standards, or consensus standards that apply to a specific organizational context, based on the product/activity profile and the regulatory jurisdictions involved, and compile them into a structured inventory of applicable references."
+      },
+      "seed_sha256": "4e32887a4819d9927a2c5ae8f5d543db35667d72d022c1431858f99e402d0d7d",
+      "selection_reason": "regulatory reference identification",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_21676": {
+      "blueprint_sha256": "03ea4afe1ead6408d83b0d6556791dd0aa844dae0428515cee092d8f41c93b8a",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:33.143165+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "77c0b6e6390e6456142fbf6226fa8e72b2f25c282bcfbb90ac2387c810b22714",
+          "usage": {
+            "buyer_cost_micro": 15,
+            "completion_tokens": 797,
+            "prompt_tokens": 1875,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 2672
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:37.356353+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "e2b002ea7e61f9d08a821bdc97882d933b31b3a3576ec265a01147f04eaef866",
+          "usage": {
+            "buyer_cost_micro": 2,
+            "completion_tokens": 82,
+            "prompt_tokens": 1582,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 1664
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A cleaned, transformed, and organized dataset stored in a queryable format suitable for analysis of system capabilities and requirements.",
+            "id": "PreparedDataset",
+            "type": "structured_dataset"
+          },
+          {
+            "description": "A written summary describing system capabilities and requirements as evidenced by the manipulated data, including key findings derived from the analysis.",
+            "id": "CapabilityAssessmentSummary",
+            "type": "analysis_report"
+          }
+        ],
+        "dependencies": [
+          [
+            "RawSystemData",
+            "StoredDataset"
+          ],
+          [
+            "DataSchema",
+            "StoredDataset"
+          ],
+          [
+            "StoredDataset",
+            "RetrievedSubset"
+          ],
+          [
+            "AnalysisScope",
+            "RetrievedSubset"
+          ],
+          [
+            "RetrievedSubset",
+            "TransformedData"
+          ],
+          [
+            "AnalysisScope",
+            "TransformedData"
+          ],
+          [
+            "TransformedData",
+            "CapabilityFindings"
+          ],
+          [
+            "AnalysisScope",
+            "CapabilityFindings"
+          ],
+          [
+            "TransformedData",
+            "PreparedDataset"
+          ],
+          [
+            "CapabilityFindings",
+            "CapabilityAssessmentSummary"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Raw operational or performance data from the system under assessment, provided in a structured or semi-structured format for storage and manipulation.",
+            "id": "RawSystemData",
+            "modality_candidates": [
+              "table"
+            ],
+            "modality_rationale": "System operational data such as metrics, logs, or configuration records are naturally represented in tabular form for storage and retrieval.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Definition of which system capabilities and requirements are to be analyzed, including relevant data fields, time ranges, and evaluation criteria.",
+            "id": "AnalysisScope",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Scope and criteria are textual instructions specifying what the worker must assess.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Schema or structure description of the raw system data, including field names, data types, and relationships, needed to store and retrieve data correctly.",
+            "id": "DataSchema",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "A schema description is textual metadata required to correctly interpret, store, and query the raw data.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "The raw data after it has been loaded into a storage mechanism, making it retrievable for subsequent manipulation and analysis.",
+            "id": "StoredDataset",
+            "type": "derived_information"
+          },
+          {
+            "description": "The subset of stored data retrieved according to the analysis scope, isolating the records and fields relevant to the capability assessment.",
+            "id": "RetrievedSubset",
+            "type": "derived_information"
+          },
+          {
+            "description": "The retrieved data after manipulation—such as filtering, aggregation, normalization, or calculation of derived metrics—producing a dataset ready for analysis.",
+            "id": "TransformedData",
+            "type": "derived_information"
+          },
+          {
+            "description": "Conclusions about system capabilities and requirements drawn from evidence in the transformed data, identifying performance characteristics, limitations, or compliance with stated requirements.",
+            "id": "CapabilityFindings",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_21676",
+        "work_objective": "Store, retrieve, and manipulate operational data so that system capabilities and requirements can be analyzed, producing a structured dataset and a capability assessment summary."
+      },
+      "seed_sha256": "f571e99fc4b6aab5e06f09698361bf5bbc26b365b211abf0a413d1aface5cd87",
+      "selection_reason": "software capability data analysis",
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "status": "accepted"
+    },
+    "raw_31_0_22125": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['information_nodes', 6]: {'id': 'parcel_boundary_interpretation', 'type': 'derived_information', 'description': 'Interpretation of deed and field-note boundary language into comparable bearings, distances, and parcel geometry"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:29.631720+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "5080abecf9f61e1eaebbcb785d415960ee295efa0b8022c3ee482beb0061410b",
+          "usage": {
+            "completion_tokens": 1677,
+            "prompt_tokens": 2294,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3971
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "The survey source records entered into the GIS workstation with consistent attribution, coding, and spatial referencing sufficient for downstream map and drawing production.",
+            "id": "gis_entered_survey_data",
+            "type": "GIS data entry record"
+          },
+          {
+            "description": "A graphic land description produced from the entered GIS data, representing parcels, boundaries, or survey features as maps or drawings.",
+            "id": "graphic_land_description",
+            "type": "Map or drawing"
+          }
+        ],
+        "dependencies": [
+          [
+            "gps_data",
+            "gps_coordinate_normalization"
+          ],
+          [
+            "legal_deeds",
+            "parcel_boundary_interpretation"
+          ],
+          [
+            "field_notes",
+            "parcel_boundary_interpretation"
+          ],
+          [
+            "parcel_boundary_interpretation",
+            "source_consistency_assessment"
+          ],
+          [
+            "gps_coordinate_normalization",
+            "source_consistency_assessment"
+          ],
+          [
+            "land_survey_reports",
+            "source_consistency_assessment"
+          ],
+          [
+            "gis_workstation_schema",
+            "feature_and_attribute_coding"
+          ],
+          [
+            "digitizing_and_coding_conventions",
+            "feature_and_attribute_coding"
+          ],
+          [
+            "parcel_boundary_interpretation",
+            "feature_and_attribute_coding"
+          ],
+          [
+            "gps_coordinate_normalization",
+            "feature_and_attribute_coding"
+          ],
+          [
+            "feature_and_attribute_coding",
+            "gis_entered_survey_data"
+          ],
+          [
+            "source_consistency_assessment",
+            "gis_entered_survey_data"
+          ],
+          [
+            "gis_entered_survey_data",
+            "graphic_representation_readiness"
+          ],
+          [
+            "graphic_representation_readiness",
+            "graphic_land_description"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "GPS observation data or coordinate records to be entered into the GIS workstation.",
+            "id": "gps_data",
+            "modality_candidates": [
+              "text",
+              "table",
+              "spatial"
+            ],
+            "modality_rationale": "GPS records may arrive as coordinate tables, text files, or spatial datasets; the underlying information is positional and numeric.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Legal deed documents containing parcel descriptions, bearings, distances, and boundary language.",
+            "id": "legal_deeds",
+            "modality_candidates": [
+              "text",
+              "image"
+            ],
+            "modality_rationale": "Deeds are typically textual legal documents that may be supplied as scanned page images requiring visual reading of metes-and-bounds language.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Surveyor field notes recording observations, measurements, and feature descriptions collected in the field.",
+            "id": "field_notes",
+            "modality_candidates": [
+              "text",
+              "image",
+              "table"
+            ],
+            "modality_rationale": "Field notes are often handwritten or structured as field-book tables or sketches; visual interpretation may be required to read entries and layout.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Land survey reports summarizing survey methods, control, and findings relevant to the parcels being entered.",
+            "id": "land_survey_reports",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Survey reports are predominantly textual and tabular narrative documents.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The GIS workstation data structure, including layers, attribute fields, and coding conventions into which survey information must be entered.",
+            "id": "gis_workstation_schema",
+            "modality_candidates": [
+              "text",
+              "table",
+              "diagram"
+            ],
+            "modality_rationale": "Schema definitions may be presented as field lists, data dictionaries, or diagrams of layer relationships that determine correct entry.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Established coding, naming, and digitizing conventions governing how survey features and attributes are recorded in the GIS.",
+            "id": "digitizing_and_coding_conventions",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Conventions are documented rules and code lists that must be applied consistently during data entry.",
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Interpretation of deed and field-note boundary language into comparable bearings, distances, and parcel geometry for entry.",
+            "id": "parcel_boundary_interpretation",
+            "type": "derived_information",
+            "type_note": null
+          },
+          {
+            "description": "Normalization of GPS coordinates to the GIS workstation's coordinate reference and units so entered positions align with other survey data.",
+            "id": "gps_coordinate_normalization",
+            "type": "derived_information"
+          },
+          {
+            "description": "Assignment of survey features and attributes to the appropriate GIS layers, codes, and field values according to the schema and conventions.",
+            "id": "feature_and_attribute_coding",
+            "type": "derived_information"
+          },
+          {
+            "description": "Judgment on whether GPS data, deeds, field notes, and reports are mutually consistent enough to enter and render, and identification of discrepancies requiring resolution or annotation.",
+            "id": "source_consistency_assessment",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Conclusion that entered information is sufficiently complete and structured to be transformed into graphic land descriptions such as maps and drawings.",
+            "id": "graphic_representation_readiness",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Legible reading of recorded deed language, bearings, distances, and boundary calls from scanned or imaged deed pages.",
+            "modality_candidate": "image",
+            "modality_rationale": "Deeds are frequently supplied as scanned or photographed page images, so visual reading may be necessary to transcribe boundary information accurately.",
+            "necessity_status": "hypothesis",
+            "node_id": "legal_deeds"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Interpretation of handwritten field-book entries, sketches, and measurement annotations.",
+            "modality_candidate": "image",
+            "modality_rationale": "Field notes are commonly handwritten and may include sketches that require visual interpretation before entry into the GIS.",
+            "necessity_status": "hypothesis",
+            "node_id": "field_notes"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Positional geometry and coordinate values for surveyed points and features.",
+            "modality_candidate": "spatial",
+            "modality_rationale": "GPS data is inherently spatial; coordinate geometry and point locations may need to be interpreted spatially to confirm alignment during entry.",
+            "necessity_status": "hypothesis",
+            "node_id": "gps_data"
+          }
+        ],
+        "seed_id": "raw_31_0_22125",
+        "work_objective": "Enter survey source records (GPS data, legal deeds, field notes, and land survey reports) into a GIS workstation so the information is captured consistently and transformed into graphic land descriptions such as maps and drawings."
+      },
+      "seed_sha256": "40d51be6895b673746fb2255c6817a231ab67a81c3c5434dba4e6988f577ea3d",
+      "selection_reason": "spatial GIS source interpretation",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_3405": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "modality_not_in_node"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:46:12.024576+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "51a7e5d5b3df597f67c4eabd833b4b5d2d202fe2e36100a1a5bf1f78a2a54c95",
+          "usage": {
+            "completion_tokens": 1077,
+            "prompt_tokens": 2259,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3336
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A documented determination of the total financial resources required to implement the program, grounded in the compiled accounting records and related data, with the cost build-up and supporting evidence basis stated.",
+            "id": "resource_requirement_determination",
+            "type": "Financial analysis determination"
+          },
+          {
+            "description": "A consolidated summary of the accounting records and related data used, reconciled and organized by cost category and period, identifying the basis for the resource estimate.",
+            "id": "compiled_financial_record_basis",
+            "type": "Consolidated financial record summary"
+          }
+        ],
+        "dependencies": [
+          [
+            "accounting_records",
+            "record_inventory_and_completeness"
+          ],
+          [
+            "additional_program_data",
+            "record_inventory_and_completeness"
+          ],
+          [
+            "program_scope_definition",
+            "record_inventory_and_completeness"
+          ],
+          [
+            "accounting_records",
+            "cost_category_reconciliation"
+          ],
+          [
+            "additional_program_data",
+            "cost_category_reconciliation"
+          ],
+          [
+            "program_scope_definition",
+            "cost_category_reconciliation"
+          ],
+          [
+            "record_inventory_and_completeness",
+            "cost_category_reconciliation"
+          ],
+          [
+            "cost_category_reconciliation",
+            "cost_per_unit_basis"
+          ],
+          [
+            "program_scope_definition",
+            "cost_per_unit_basis"
+          ],
+          [
+            "cost_category_reconciliation",
+            "quantified_resource_requirement"
+          ],
+          [
+            "cost_per_unit_basis",
+            "quantified_resource_requirement"
+          ],
+          [
+            "record_inventory_and_completeness",
+            "sufficiency_and_reliability_judgment"
+          ],
+          [
+            "quantified_resource_requirement",
+            "sufficiency_and_reliability_judgment"
+          ],
+          [
+            "quantified_resource_requirement",
+            "resource_requirement_determination"
+          ],
+          [
+            "sufficiency_and_reliability_judgment",
+            "resource_requirement_determination"
+          ],
+          [
+            "cost_category_reconciliation",
+            "compiled_financial_record_basis"
+          ],
+          [
+            "record_inventory_and_completeness",
+            "compiled_financial_record_basis"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The underlying accounting records (ledgers, expenditure reports, transaction detail) relevant to program-related costs, as supplied in the workspace.",
+            "id": "accounting_records",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Accounting records are typically delivered as tabular ledgers or reports and read as structured text/numbers.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Other data referenced by the task beyond accounting records (e.g., program characteristics, staffing, or operational inputs) that bears on the resource estimate, as supplied in the workspace.",
+            "id": "additional_program_data",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Program data relevant to resource estimation is typically provided as narrative or tabular records.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The definition of the program to be implemented, including what activities or components it comprises, as stated in the task instruction or supplied materials.",
+            "id": "program_scope_definition",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Program scope is conveyed in written description.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "An assessment of which accounting records and related data have been gathered and whether they are complete and sufficient for the estimate, including identified gaps.",
+            "id": "record_inventory_and_completeness",
+            "type": "derived_information"
+          },
+          {
+            "description": "Reconciliation and categorization of accounting data into cost categories and time periods aligned with the program's components, eliminating duplication and resolving inconsistencies.",
+            "id": "cost_category_reconciliation",
+            "type": "derived_information"
+          },
+          {
+            "description": "Derived cost rates or per-unit cost bases for the expense drivers implied by the program scope and the categorized records.",
+            "id": "cost_per_unit_basis",
+            "type": "derived_information"
+          },
+          {
+            "description": "The computed financial resources required, built from reconciled cost categories and cost bases applied to the program scope.",
+            "id": "quantified_resource_requirement",
+            "type": "derived_information"
+          },
+          {
+            "description": "A judgment on whether the compiled records are reliable and sufficient to support the resource determination, and what caveats or gaps affect confidence in the result.",
+            "id": "sufficiency_and_reliability_judgment",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Cost and expenditure figures that may only exist in scanned ledger pages or photographed financial documents.",
+            "modality_candidate": "image",
+            "modality_rationale": "Where accounting records are supplied as scans or photos rather than structured tables, reading the figures requires visual interpretation.",
+            "necessity_status": "hypothesis",
+            "node_id": "accounting_records"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Program structure or workflow relationships that inform resource drivers.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Program operational data may be conveyed as a process or organizational diagram rather than text.",
+            "necessity_status": "hypothesis",
+            "node_id": "additional_program_data"
+          }
+        ],
+        "seed_id": "raw_31_0_3405",
+        "work_objective": "Compile the available accounting records and related program data for a proposed program, analyze the aggregated expenditure and resource data, and determine the financial resources required to implement the program, producing a documented resource-requirement determination."
+      },
+      "seed_sha256": "4bd3656dafae8961db2d9200fe620e964587308803b1d0522431eb436977e132",
+      "selection_reason": "financial records analysis",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_3747": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['information_nodes', 4]: {'id': 'processed_dataset', 'type': 'derived_information', 'description': 'A cleaned and organized dataset in which raw measurements have been checked for completeness, corrected for identified anomal; ['information_nodes', 5]: {'id': 'computed_results', 'type': 'derived_information', 'description': 'The calculated descriptive and comparative results obtained from the processed dataset, including any measures of central tend; ['information_nodes', 6]: {'id': 'result_interpretation', 'type': 'professional_judgment', 'description': 'A reasoned interpretation of what the computed results indicate about the experimental question, including whether the ; ['information_nodes', 7]: {'id': 'findings_significance', 'type': 'professional_judgment', 'description': 'A judgment of the scientific or operational significance of the interpreted results, identifying which findings merit e"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:37.197547+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "cb9d44a587aeee5c8a3c524510ed5a32cff45d4447a8ef8353f65216041ec4b9",
+          "usage": {
+            "completion_tokens": 1283,
+            "prompt_tokens": 2263,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3546
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A structured report presenting the analysis of experimental data together with an interpretation of the results and the significance of the findings.",
+            "id": "findings_report",
+            "type": "written report"
+          },
+          {
+            "description": "A concise summary of the experimental findings intended for distribution to laboratory staff or research collaborators.",
+            "id": "findings_summary",
+            "type": "summary document"
+          }
+        ],
+        "dependencies": [
+          [
+            "raw_experimental_data",
+            "processed_dataset"
+          ],
+          [
+            "experimental_protocol",
+            "processed_dataset"
+          ],
+          [
+            "processed_dataset",
+            "computed_results"
+          ],
+          [
+            "experimental_protocol",
+            "computed_results"
+          ],
+          [
+            "computed_results",
+            "result_interpretation"
+          ],
+          [
+            "experimental_protocol",
+            "result_interpretation"
+          ],
+          [
+            "instrument_output_records",
+            "result_interpretation"
+          ],
+          [
+            "result_interpretation",
+            "findings_significance"
+          ],
+          [
+            "analysis_requirements",
+            "findings_significance"
+          ],
+          [
+            "findings_significance",
+            "findings_report"
+          ],
+          [
+            "findings_significance",
+            "findings_summary"
+          ],
+          [
+            "result_interpretation",
+            "findings_report"
+          ],
+          [
+            "result_interpretation",
+            "findings_summary"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The measured or observed experimental data generated by the biological or chemical procedure, before any analytical treatment.",
+            "id": "raw_experimental_data",
+            "modality_candidates": [
+              "table",
+              "text"
+            ],
+            "modality_rationale": "Experimental measurements are typically recorded as structured tabular datasets or as instrument text output; both representations may be required to capture the complete raw record.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The design and procedural context of the experiment, including variables tested, controls, treatments, and expected measurement endpoints.",
+            "id": "experimental_protocol",
+            "modality_candidates": [
+              "text",
+              "diagram"
+            ],
+            "modality_rationale": "Procedural context is usually documented in text protocols, but experimental design layouts may also be conveyed through schematic flow diagrams.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Any instrument-generated readings, charts, or logs that accompany the raw experimental measurements.",
+            "id": "instrument_output_records",
+            "modality_candidates": [
+              "table",
+              "image",
+              "diagram"
+            ],
+            "modality_rationale": "Instrument records may appear as tabular exports or as plotted graphs and chromatograms that require visual inspection to relate to the measured variables.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The scope of analysis requested, such as which comparisons, statistical treatments, or endpoints the report must address.",
+            "id": "analysis_requirements",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "The requested scope and audience for the report are conveyed as written instructions.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "A cleaned and organized dataset in which raw measurements have been checked for completeness, corrected for identified anomalies, and prepared for comparison.",
+            "id": "processed_dataset",
+            "id_dependencies": [],
+            "type": "derived_information"
+          },
+          {
+            "description": "The calculated descriptive and comparative results obtained from the processed dataset, including any measures of central tendency, variability, or change between conditions.",
+            "id": "computed_results",
+            "id_dependencies": [
+              "processed_dataset",
+              "experimental_protocol"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "A reasoned interpretation of what the computed results indicate about the experimental question, including whether the observed patterns support or contradict expectations and what limitations apply.",
+            "id": "result_interpretation",
+            "id_dependencies": [
+              "computed_results",
+              "experimental_protocol",
+              "instrument_output_records"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "A judgment of the scientific or operational significance of the interpreted results, identifying which findings merit emphasis and which caveats should accompany them.",
+            "id": "findings_significance",
+            "id_dependencies": [
+              "result_interpretation",
+              "analysis_requirements"
+            ],
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "The shape and pattern of instrument-generated plots or scanned records that must be read visually to identify peaks, trends, or anomalies.",
+            "modality_candidate": "image",
+            "modality_rationale": "Some instrument output is delivered as plotted graphs or scanned recorder traces rather than numeric tables, and accurate interpretation of these records depends on visual inspection.",
+            "necessity_status": "hypothesis",
+            "node_id": "instrument_output_records"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "The spatial or sequential layout of experimental conditions, such as treatment groups or sample flow, that clarifies how measured data relate to design factors.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Experimental designs are frequently communicated through schematic diagrams that convey grouping and sequence information more precisely than prose.",
+            "necessity_status": "hypothesis",
+            "node_id": "experimental_protocol"
+          }
+        ],
+        "seed_id": "raw_31_0_3747",
+        "work_objective": "Analyze experimental data from biological research activities and interpret the results in order to produce written reports and summaries of findings."
+      },
+      "seed_sha256": "ba9800a7a2a6cad191a8ed5e457e25fb24144409e68d1bba9fc7cfef7624c478",
+      "selection_reason": "experimental data analysis and report",
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_871": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "modality_not_in_node"
+      ],
+      "failure_stage": "graph_validation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T14:47:01.503686+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "4bcdb1d8bf8b3fb003f6a72bfa3bb7511ce735a7de7ae7c73687750adebf7d9c",
+          "prompt_version": "blueprint_generator.v1",
+          "request_sha256": "b1afb2405aa64de657808272b74d6b114f5c168de409228733a6610dee431ad3",
+          "usage": {
+            "buyer_cost_micro": 19,
+            "completion_tokens": 996,
+            "prompt_tokens": 1905,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "total_tokens": 2901
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A structured compliance assessment documenting each reviewed plan, specification, or construction method, identifying specific provisions of applicable codes or regulations, and stating whether compliance is achieved or deficiencies are found.",
+            "id": "compliance_assessment_report",
+            "type": "inspection_report"
+          }
+        ],
+        "dependencies": [
+          [
+            "construction_plans",
+            "extracted_design_requirements"
+          ],
+          [
+            "project_scope_context",
+            "identified_applicable_provisions"
+          ],
+          [
+            "applicable_codes_regulations",
+            "identified_applicable_provisions"
+          ],
+          [
+            "extracted_design_requirements",
+            "compliance_determination"
+          ],
+          [
+            "identified_applicable_provisions",
+            "compliance_determination"
+          ],
+          [
+            "compliance_determination",
+            "compliance_assessment_report"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Plans, blueprints, site layouts, or specification documents describing the proposed construction project, including dimensions, materials, structural details, and construction methods.",
+            "id": "construction_plans",
+            "modality_candidates": [
+              "diagram",
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Blueprints and site layouts are inherently graphical documents conveying spatial relationships, dimensions, and structural details; specifications may also include tabular schedules and textual requirements.",
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Building codes, safety regulations, zoning ordinances, or other legal requirements applicable to the jurisdiction and project type under review.",
+            "id": "applicable_codes_regulations",
+            "modality_candidates": [
+              "text",
+              "table"
+            ],
+            "modality_rationale": "Codes and regulations are primarily textual legal documents, often supplemented by tabular reference data for dimensions, loads, and material specifications.",
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Contextual information about the project type, occupancy classification, and intended use, which determines which code provisions and safety regulations apply.",
+            "id": "project_scope_context",
+            "modality_candidates": [
+              "text"
+            ],
+            "modality_rationale": "Project scope and classification are communicated through textual descriptions that establish the regulatory framework for the inspection.",
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "Specific design parameters, dimensions, materials, structural loads, egress paths, and construction methods extracted from the plans and specifications that are subject to regulatory compliance checks.",
+            "id": "extracted_design_requirements",
+            "type": "derived_information"
+          },
+          {
+            "description": "Specific provisions, sections, and requirements from applicable codes and regulations that are relevant to the project scope and the extracted design requirements.",
+            "id": "identified_applicable_provisions",
+            "type": "derived_information"
+          },
+          {
+            "description": "For each extracted design requirement, a determination of whether it complies with or violates the corresponding applicable code provision, supported by specific evidence from both the plans and the regulations.",
+            "id": "compliance_determination",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Spatial layout of the building, dimensional relationships between structural elements, egress paths, and placement of safety features as depicted in blueprints or site plans.",
+            "modality_candidate": "diagram",
+            "modality_rationale": "Blueprints and site layouts use graphical conventions to convey spatial and dimensional information that cannot be fully captured in text; interpreting these diagrams is a core professional skill for construction inspectors.",
+            "necessity_status": "hypothesis",
+            "node_id": "construction_plans"
+          },
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Three-dimensional relationships between building systems, clearance distances, and spatial arrangement of structural, mechanical, and life-safety components.",
+            "modality_candidate": "spatial",
+            "modality_rationale": "Site layouts and multi-view blueprints require spatial reasoning to reconcile plan, elevation, and section views into a coherent understanding of the building; this spatial interpretation is essential for verifying compliance with clearance and egress requirements.",
+            "necessity_status": "hypothesis",
+            "node_id": "construction_plans"
+          }
+        ],
+        "seed_id": "raw_31_0_871",
+        "work_objective": "Review and interpret construction plans, blueprints, site layouts, specifications, or construction methods to determine whether they comply with applicable legal requirements and safety regulations."
+      },
+      "seed_sha256": "5317467f148a97c7ae9c430b1b0314da07d503b9b946df292ae38789e796c443",
+      "selection_reason": "visual blueprint interpretation",
+      "semantic_review": null,
+      "status": "failed"
+    }
+  }
+}

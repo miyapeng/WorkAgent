@@ -1,0 +1,267 @@
+{
+  "counts": {
+    "actual_search_requests": 0,
+    "admitted_blueprints_processed": 2,
+    "anchors": 0,
+    "awaiting_search": 1,
+    "downloaded_urls": 0,
+    "ready": 0
+  },
+  "interface": "grounded-workspace-v2",
+  "mode": "graph",
+  "planning_input": {
+    "accepted": 2,
+    "generated": 10,
+    "graph_passed": 5,
+    "input": 10,
+    "modality_candidate_plans": 1,
+    "rejected_or_failed": 8
+  },
+  "workspaces": [
+    {
+      "blueprint_sha256": "3d84b5ab5034f5e0453fa4892c39898ce7877608b09e7853908c82b530c3920a",
+      "config_sha256": "a64d2eda36ae220707393b2a6e2a6627d6829be9bc9d4edbff88e0ef3347e334",
+      "counts": {
+        "actual_search_requests": 0,
+        "critical_coverage": 0.0,
+        "critical_external_nodes": 3,
+        "download_attempts": 0,
+        "download_or_profile_failures": 0,
+        "downloaded_urls": 0,
+        "duplicate_files": 0,
+        "independently_verified_visual_evidence": 0,
+        "parsed_unique_files": 0,
+        "planned_queries": 5,
+        "retained_files": 0,
+        "supported_critical_nodes": 0,
+        "synthetic_files": 0
+      },
+      "cross_file_coherence": {
+        "evidence": [],
+        "reason": "not_searched",
+        "status": "unverified",
+        "unverified_assumptions": []
+      },
+      "failure_reasons": [
+        {
+          "reason": "awaiting_search: configure a real Search API key; no autonomous search executed",
+          "stage": "search"
+        },
+        {
+          "reason": "no_grounded_anchor",
+          "stage": "anchor_discovery"
+        }
+      ],
+      "interface": "grounded-workspace-v2",
+      "limitations": [
+        "Source text and positions are programmatically checked; semantic applicability is model judgment.",
+        "Ready concerns input sufficiency, not solver executability.",
+        "Instruction-channel requirements must be explicitly fulfilled by Stage 4."
+      ],
+      "limits": {
+        "anchor_candidates": 3,
+        "anchor_queries": 5,
+        "download_bytes": 20000000,
+        "files_per_gap": 3,
+        "gap_rounds": 2,
+        "max_profile_chars": 50000,
+        "max_segments_per_file": 100,
+        "queries_per_gap": 3,
+        "redirects": 4,
+        "retries": 1,
+        "timeout_seconds": 30,
+        "trusted_proxy_env": "HTTPS_PROXY"
+      },
+      "missing_nodes": [
+        "I_ExistingEngineeringDocument",
+        "I_EngineeringChangeNotices",
+        "I_DesignSpecifications"
+      ],
+      "modality_evidence": [
+        {
+          "evidence_status": "unretrieved",
+          "independently_verified": false,
+          "information_needed": "Schematic diagrams or engineering drawings embedded in the document that must be visually interpreted to verify that depicted components, connections, and configurations match current specifications.",
+          "modality_candidate": "diagram",
+          "modality_rationale": "Automotive engineering documents frequently include diagrams whose correctness cannot be assessed through text alone; the spatial relationships and component representations must be visually inspected.",
+          "necessity_status": "hypothesis",
+          "node_id": "I_ExistingEngineeringDocument"
+        }
+      ],
+      "mode": "graph",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T15:19:09.592263+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "dc79cfbfa4a5d9fa08052dd0eb722848baa1d2f15ae61bfdc3b5aad2ea0a2f64",
+          "prompt_version": "search_planner.v1",
+          "request_sha256": "7000f81b94d3b5aa8096c08c6018dacd58652c415f48b6427cdca0f299d7f5e1",
+          "usage": {
+            "completion_tokens": 548,
+            "prompt_tokens": 2243,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 2791
+          }
+        }
+      ],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 548,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 2243,
+        "unique_model_requests": 1
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [],
+      "search_cost": {
+        "billed_cost": 0,
+        "currency": null,
+        "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+      },
+      "search_queries": [
+        "automotive engineering change notice ECN service manual revision procedure example"
+      ],
+      "search_state": "awaiting_search",
+      "seed_id": "raw_31_0_16425",
+      "seed_sha256": "0e57a70aae495b84c4595271320d1e3d4fb6d23981d556a26008efa64327c8e2",
+      "selected_anchor": null,
+      "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+      "status": "incomplete",
+      "supported_nodes": [],
+      "work_objective_sha256": "1fd7c7c0284c9d49a10114fcb6870a32849425efc9366fc247a5843ffce1e7f0",
+      "workspace_files": {},
+      "workspace_id": "WS_3ff8d749c6f4"
+    },
+    {
+      "blueprint_sha256": "b2a40d56805e6e2fcc8c3667d55aeefd9e1ea19f08bda6affa3bc9ae514b26a5",
+      "config_sha256": "a64d2eda36ae220707393b2a6e2a6627d6829be9bc9d4edbff88e0ef3347e334",
+      "counts": {
+        "actual_search_requests": 0,
+        "critical_coverage": 0.0,
+        "critical_external_nodes": 2,
+        "download_attempts": 0,
+        "download_or_profile_failures": 0,
+        "downloaded_urls": 0,
+        "duplicate_files": 0,
+        "independently_verified_visual_evidence": 0,
+        "parsed_unique_files": 0,
+        "planned_queries": 0,
+        "retained_files": 0,
+        "supported_critical_nodes": 0,
+        "synthetic_files": 0
+      },
+      "cross_file_coherence": {
+        "evidence": [],
+        "reason": "not_searched",
+        "status": "unverified",
+        "unverified_assumptions": []
+      },
+      "failure_reasons": [
+        {
+          "reason": "query_targets_non_retrievable_node",
+          "stage": "retrieval_planning"
+        },
+        {
+          "reason": "no_grounded_anchor",
+          "stage": "anchor_discovery"
+        }
+      ],
+      "interface": "grounded-workspace-v2",
+      "limitations": [
+        "Source text and positions are programmatically checked; semantic applicability is model judgment.",
+        "Ready concerns input sufficiency, not solver executability.",
+        "Instruction-channel requirements must be explicitly fulfilled by Stage 4."
+      ],
+      "limits": {
+        "anchor_candidates": 3,
+        "anchor_queries": 5,
+        "download_bytes": 20000000,
+        "files_per_gap": 3,
+        "gap_rounds": 2,
+        "max_profile_chars": 50000,
+        "max_segments_per_file": 100,
+        "queries_per_gap": 3,
+        "redirects": 4,
+        "retries": 1,
+        "timeout_seconds": 30,
+        "trusted_proxy_env": "HTTPS_PROXY"
+      },
+      "missing_nodes": [
+        "i2",
+        "i3"
+      ],
+      "modality_evidence": [],
+      "mode": "graph",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-12T15:19:13.699971+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "dc79cfbfa4a5d9fa08052dd0eb722848baa1d2f15ae61bfdc3b5aad2ea0a2f64",
+          "prompt_version": "search_planner.v1",
+          "request_sha256": "2257377e738c4b695a1b9f095661ef69398293804c8d2babe4979f9e32893601",
+          "usage": {
+            "completion_tokens": 498,
+            "prompt_tokens": 2138,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 2636
+          }
+        }
+      ],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 498,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 2138,
+        "unique_model_requests": 1
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [],
+      "search_cost": {
+        "billed_cost": 0,
+        "currency": null,
+        "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+      },
+      "search_queries": [],
+      "search_state": "not_started",
+      "seed_id": "raw_31_0_21094",
+      "seed_sha256": "4e32887a4819d9927a2c5ae8f5d543db35667d72d022c1431858f99e402d0d7d",
+      "selected_anchor": null,
+      "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+      "status": "incomplete",
+      "supported_nodes": [],
+      "work_objective_sha256": "5824db0fbabba4d1d1adb01302996a4b8cfff15eacd8f37ec44329719cafe4bc",
+      "workspace_files": {},
+      "workspace_id": "WS_97f914e6ade5"
+    }
+  ]
+}

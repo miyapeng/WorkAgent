@@ -1,0 +1,59 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "pilot_seeds": [
+    {
+      "seed_id": "raw_31_0_3405",
+      "selection_reason": "financial records analysis"
+    },
+    {
+      "seed_id": "raw_31_0_18983",
+      "selection_reason": "software/network project schedule and budget; legacy project regression family"
+    },
+    {
+      "seed_id": "raw_31_0_21676",
+      "selection_reason": "software capability data analysis"
+    },
+    {
+      "seed_id": "raw_31_0_16425",
+      "selection_reason": "professional engineering documentation"
+    },
+    {
+      "seed_id": "raw_31_0_21094",
+      "selection_reason": "regulatory reference identification"
+    },
+    {
+      "seed_id": "raw_31_0_871",
+      "selection_reason": "visual blueprint interpretation"
+    },
+    {
+      "seed_id": "raw_31_0_13744",
+      "selection_reason": "visual circuit diagram interpretation"
+    },
+    {
+      "seed_id": "raw_31_0_22125",
+      "selection_reason": "spatial GIS source interpretation"
+    },
+    {
+      "seed_id": "raw_31_0_3747",
+      "selection_reason": "experimental data analysis and report"
+    },
+    {
+      "seed_id": "raw_31_0_16209",
+      "selection_reason": "game design documentation"
+    }
+  ]
+}

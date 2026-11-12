@@ -1,0 +1,242 @@
+{
+  "critical_nodes_in_processed_workspaces": 5,
+  "development_v1": {
+    "counts": {
+      "accepted": 2,
+      "generated": 10,
+      "graph_passed": 2,
+      "input": 10,
+      "modality_candidate_plans": 1,
+      "rejected_or_failed": 8
+    },
+    "model_usage": {
+      "billed_cost": null,
+      "completion_tokens": 12127,
+      "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+      "currency": null,
+      "prompt_tokens": 24358,
+      "unique_model_requests": 12
+    }
+  },
+  "direct_search_control": {
+    "conclusion": "Not assessable: neither strategy executed a Search API request. This is a raw-seed-only search-planning control, not an end-to-end graph-free baseline.",
+    "counts": {
+      "actual_search_requests": 0,
+      "admitted_blueprints_processed": 2,
+      "anchors": 0,
+      "awaiting_search": 2,
+      "downloaded_urls": 0,
+      "ready": 0
+    }
+  },
+  "limits": [
+    "No live provider, candidate selection, download or semantic evidence audit occurred in this pilot.",
+    "Actual source regressions and synthetic loop tests are reported separately, never as pilot anchors.",
+    "Same-model semantic review is not expert certification; rejected cases are not automatically repaired.",
+    "Money cost is unknown without gateway billing receipts; token usage is recorded.",
+    "The initial v1 development run is archived separately and excluded from final v2 success rates."
+  ],
+  "model_usage_final_pilot_and_direct_control": {
+    "billed_cost": null,
+    "completion_tokens": 13374,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 40556,
+    "unique_model_requests": 19
+  },
+  "model_usage_including_development_v1": {
+    "billed_cost": null,
+    "completion_tokens": 25501,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 64914,
+    "unique_model_requests": 31
+  },
+  "multimodal": {
+    "accepted_plans_with_hypotheses": 1,
+    "independently_verified_visual_evidence": 0,
+    "necessity": "not_tested"
+  },
+  "planning_counts": {
+    "accepted": 2,
+    "generated": 10,
+    "graph_passed": 5,
+    "input": 10,
+    "modality_candidate_plans": 1,
+    "rejected_or_failed": 8
+  },
+  "planning_failure_stages": {
+    "graph_validation": 5,
+    "semantic_review": 3
+  },
+  "rates": {
+    "admitted_per_input": 0.2,
+    "anchor_discovery_success_per_live_search_attempt": null,
+    "blueprint_generated_per_input": 1.0,
+    "critical_coverage_per_processed_workspace": 0.0,
+    "graph_passed_per_input": 0.5,
+    "ready_per_admitted_blueprint": 0.0,
+    "semantic_accepted_per_reviewed": 0.4
+  },
+  "rows": [
+    {
+      "failure_reasons": [
+        "schema:['information_nodes', 10]: {'id': 'd1', 'type': 'deliverable', 'description': 'The technical interpretation summary deliverable.'} is not valid under any of the given schemas"
+      ],
+      "failure_stage": "graph_validation",
+      "occupation_title": "Audiovisual Equipment Installers and Repairers",
+      "planning_status": "failed",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_13744",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [
+        "schema:['information_nodes', 4]: {'id': 'i5', 'type': 'derived_information', 'description': 'The set of mechanics that this level must expose or rely on, filtered from the broader systems list to what is relevant to the level.', 'sup; ['information_nodes', 5]: {'id': 'i6', 'type': 'derived_information', 'description': 'A structured mission outline breaking the level into sequential objectives, beats, and player-facing goals consistent with the premise and m; ['information_nodes', 6]: {'id': 'i7', 'type': 'derived_information', 'description': 'A mapping of applicable guidelines and constraints to the specific level content, identifying which rules the documentation must reflect.', ; ['information_nodes', 7]: {'id': 'i8', 'type': 'professional_judgment', 'description': 'Judgment on whether the documented mechanics, mission flow, and guidelines are internally consistent and playable as described, and which "
+      ],
+      "failure_stage": "graph_validation",
+      "occupation_title": "Video Game Designers",
+      "planning_status": "failed",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_16209",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [],
+      "failure_stage": null,
+      "occupation_title": "Automotive Engineers",
+      "planning_status": "accepted",
+      "search_state": "awaiting_search",
+      "seed_id": "raw_31_0_16425",
+      "workspace_failure_reasons": [
+        {
+          "reason": "awaiting_search: configure a real Search API key; no autonomous search executed",
+          "stage": "search"
+        },
+        {
+          "reason": "no_grounded_anchor",
+          "stage": "anchor_discovery"
+        }
+      ],
+      "workspace_status": "incomplete"
+    },
+    {
+      "failure_reasons": [
+        "schema:['information_nodes', 3]: {'id': 'i4', 'type': 'derived_information', 'description': 'The computed schedule variance and budget variance, expressed both in absolute terms and as a proportion of the baseline plan.', 'premises':; ['information_nodes', 4]: {'id': 'i5', 'type': 'derived_information', 'description': 'The projected cost and schedule outcome to completion, derived from actual-to-date performance and remaining work against the baseline.', 'p; ['information_nodes', 5]: {'id': 'i6', 'type': 'professional_judgment', 'description': 'Whether the observed variances and projections indicate acceptable performance or require corrective action, and which control levers are ; ['information_nodes', 6]: {'id': 'i7', 'type': 'professional_judgment', 'description': 'Which resource allocation adjustments or budget reallocations are warranted, and whether they fall within authorized thresholds or require"
+      ],
+      "failure_stage": "graph_validation",
+      "occupation_title": "Computer Network Architects",
+      "planning_status": "failed",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_18983",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [],
+      "failure_stage": null,
+      "occupation_title": "Regulatory Affairs Specialists",
+      "planning_status": "accepted",
+      "search_state": "not_started",
+      "seed_id": "raw_31_0_21094",
+      "workspace_failure_reasons": [
+        {
+          "reason": "query_targets_non_retrievable_node",
+          "stage": "retrieval_planning"
+        },
+        {
+          "reason": "no_grounded_anchor",
+          "stage": "anchor_discovery"
+        }
+      ],
+      "workspace_status": "incomplete"
+    },
+    {
+      "failure_reasons": [
+        "Intent preservation issue: The original task is to store, retrieve, and manipulate data for analysis of system capabilities and requirements. The blueprint's derived nodes (i4-i8) and deliverables (d1,d2) shift the objective toward producing an analysis summary of capabilities/requirements (d2) and evaluating whether data is sufficient/appropriate (i8), which is closer to a requirements-analysis deliverable than the stated data-preparation and manipulation task. The core occupational operations of storing, retrieving, and manipulating data are not explicitly represented as work operations; they are folded into vague derived nodes rather than being preserved as the central operations.",
+        "Deliverable validity issue: d2 (an analysis summary of what the data shows about system capabilities and requirements) is not a natural direct outcome of 'store, retrieve, and manipulate data for analysis'; the task names analysis as the purpose, not as the deliverable. A working/manipulated dataset (d1) is valid, but d2 is an added analytical product that oversteps the stated deliverable scope.",
+        "Information sufficiency issue: i2 (system capabilities and requirements) is supplied via task_instruction, but the task instruction does not contain the actual capability or requirement facts; it only states the occupational task. Treating the task instruction as a source of case-specific capability/requirement content violates the supply-channel contract. Consequently i4 (relevant fields/formats/retrieval patterns) cannot logically follow from i1, i2, i3 because no actual capability/requirement content is supplied.",
+        "Dependency correctness issue: Edges i6->i7 and i7->i8 assume that comparisons/calculations (i7) must precede a judgment about data sufficiency (i8), and that i8 is required to produce the dataset d1 and summary d2. This is inverted: the professional judgment about whether prepared data is adequate should follow from the prepared dataset and the analysis goals, not precede the final deliverables. The edge i8->d1 makes the working dataset depend on a sufficiency judgment, which is not a necessary information dependency. Also i2->i8 bypasses i4/i5/i6/i7 without a clear justification that capability requirements alone determine sufficiency judgment.",
+        "Minimality issue: i3 is marked noncritical but is described as governing how data is stored and accessed; if existing storage schema/retrieval rules exist they are material to correct storage and retrieval, so either it is critical or it should be omitted as optional in a way that does not affect the core operations. i8 (sufficiency/appropriateness judgment) is an added professional judgment node not required by the stated task, and d2 duplicates the purpose of the analysis rather than the deliverable. These are unnecessary additions.",
+        "Multimodal justification issue: Modality hypotheses are empty while information nodes list modality_candidates (text/table). The plan does not justify why a table modality is professionally meaningful for the raw dataset versus simple text/records, and no actual modality analysis is provided. The table candidate appears assumed rather than justified.",
+        "Case neutrality issue: i2 describes 'system capabilities and requirements' as if specific requirements are available, and i3 references 'existing storage schema, retrieval queries, or manipulation rules' without evidence they exist in the case. These are invented case-specific facts (that a schema and capability requirements are present) rather than neutral descriptions of what must be obtained. The plan thereby assumes case content not given in the task."
+      ],
+      "failure_stage": "semantic_review",
+      "occupation_title": "Software Developers",
+      "planning_status": "rejected",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_21676",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [
+        "Deliverable d2 (data entry exception log) and the judgment node i12 exceed the original occupational task, which is limited to entering GPS data, deeds, field notes, and survey reports into a GIS workstation so the information can be transformed into graphic land descriptions. The source task does not call for adjudicating conflicting or ambiguous source information or for producing a deficiency log; those are unsupported additions of an adjudication/reconciliation objective.",
+        "Node i12 depends on i10 (the set of non-enterable elements) and i11 (spatial-consistency determination), but i11 does not depend on i10, so information about non-enterable/ambiguous elements cannot reach i12 through the stated path. The determination of how to treat conflicting or ambiguous information requires knowing which elements are deficient, and that dependency edge is missing.",
+        "The dependency graph does not actually connect several inputs to the deliverables it claims to support. i6 (CRS/projection specifications) feeds only i9 and i11 and never reaches d1, even though d1 requires georeferencing 'according to the relevant spatial reference'; i5 (GIS schema) and i7 (entry request) reach d1 but not through any shared node. Likewise i4 (survey reports) reaches only i8, with no path to i9, i10, i11, i12, or any deliverable, so the survey-report input is effectively unused.",
+        "Information sufficiency is not established for the claimed professional judgments. Neither i11 (spatial consistency within acceptable limits) nor i12 (treatment of conflicts) can logically follow from the listed inputs because no tolerance/accuracy standard or conflict-resolution criterion is supplied; i6 covers the projection reference only, not acceptance limits.",
+        "Minimality: i12 and deliverable d2 are unnecessary to the stated objective, and i10 (the exception set) exists only to support the added adjudication output rather than the core GIS entry deliverable. None of these would be required to enter the source data and produce graphic land descriptions.",
+        "Case neutrality: the blueprint's assumptions about source-material conditions (missing coordinates, ambiguous deed calls, illegible field notes, conflicting boundary information) are presented as expected case facts rather than as neutral possibilities, which risks encoding invented case-specific circumstances."
+      ],
+      "failure_stage": "semantic_review",
+      "occupation_title": "Surveying and Mapping Technicians",
+      "planning_status": "rejected",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_22125",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [
+        "Information-sufficiency gap: node i5 (categorization of recorded costs into resource categories) has no input from i3. Yet i3 explicitly supplies 'other data bearing on resource needs, such as staffing plans, historical spending patterns, or prior program budgets.' If i5 only depends on i2 (program scope), the supporting resource data in i3 never influences the categorization, the itemized projection, or the final estimate. The path i3→i4 is acceptable, but the plan needs a dependent path from i3 into i5 (or i6/i8) for the required data to actually reach the deliverable. As written, a whole critical input is disconnected from where it is needed.",
+        "Dependency redundancy/ordering: i4 is defined as a consolidated and normalized view of the accounting records (i1) 'reconciled across cost categories and periods.' Edges i1→i4 and i3→i4 are necessary, but i5 is described as categorization of recorded costs 'and supporting data,' while only i2→i5 exists. The graph does not express the dependency that categorization of supporting data (i3) implies.",
+        "Judgment/derived boundary: i7 is an assessment of 'whether the compiled records and supporting data are sufficient and reliable for projecting program resource requirements' and depends on i6 and i4. This is reasonable, but i7 should also depend on i3 if 'supporting data' reliability is being assessed; otherwise i7 asserts sufficiency of data it never examines. This is the same missing i3 path and weakens the dependency correctness check.",
+        "Minimality concern (minor): i2 is sourced solely from the task_instruction channel. The implementation contract permits task_instruction to supply scope/audience/requested work, so this is acceptable, but the plan should not rely on the task instruction to supply program-specific facts such as activities, phases, or expected duration if those are case-specific. The node description should be constrained to requested-scope content rather than invented case facts; otherwise it risks case-neutrality and information-sufficiency problems.",
+        "Multimodal justification: no multimodal_hypotheses are supplied, and the modality_candidates are generic text/table. This is not itself a rejection reason because the task is financial-data-centric and text/table is professionally natural; no artificial modality is introduced. However, i4/i5/i6 derived nodes carry no modality indication, so the plan does not fully justify how tabular reconciliation output is represented. This is a minor gap, not an artificial addition."
+      ],
+      "failure_stage": "semantic_review",
+      "occupation_title": "Budget Analysts",
+      "planning_status": "rejected",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_3405",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [
+        "missing_modality_rationale"
+      ],
+      "failure_stage": "graph_validation",
+      "occupation_title": "Biological Technicians",
+      "planning_status": "failed",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_3747",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    },
+    {
+      "failure_reasons": [
+        "schema:['information_nodes', 5]: {'id': 'i6', 'type': 'derived_information', 'description': 'The governing requirements from the applicable regulations that specifically apply to this project type and its features.', 'type_note': Non"
+      ],
+      "failure_stage": "graph_validation",
+      "occupation_title": "Construction and Building Inspectors",
+      "planning_status": "failed",
+      "search_state": "not_run",
+      "seed_id": "raw_31_0_871",
+      "workspace_failure_reasons": [],
+      "workspace_status": "not_run_blueprint_not_admitted"
+    }
+  ],
+  "scope": "10 real Raw Seeds; actual GLM generation/review/planning; no Search API credentials.",
+  "supported_critical_nodes": 0,
+  "workspace_counts": {
+    "actual_search_requests": 0,
+    "admitted_blueprints_processed": 2,
+    "anchors": 0,
+    "awaiting_search": 1,
+    "downloaded_urls": 0,
+    "ready": 0
+  }
+}

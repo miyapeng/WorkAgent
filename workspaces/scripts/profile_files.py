@@ -4,7 +4,10 @@ import io
 import json
 import re
 import subprocess
+import shutil
 import sys
+import tempfile
+import wave
 import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
@@ -13,7 +16,7 @@ from xml.etree import ElementTree as ET
 
 from common import DataError, require, normalized, sha256, save
 
-VERSION = 'native-profiles-v1'
+VERSION = 'native-profiles-v2-segment-ids'
 MAX_SEGMENTS = 100000
 
 
@@ -41,6 +44,8 @@ def detect(data, url, mime):
             kind = 'xlsx' if 'xl/workbook.xml' in names else 'docx' if 'word/document.xml' in names else 'pptx' if 'ppt/presentation.xml' in names else 'repository_zip'
     elif data.startswith((b'\x89PNG\r\n\x1a\n', b'\xff\xd8\xff', b'GIF87a', b'GIF89a')):
         kind = 'image'
+    elif (data[:4]==b'RIFF' and data[8:12]==b'WAVE') or data.startswith((b'ID3',b'OggS',b'fLaC')) or data[4:8]==b'ftyp':
+        kind = 'media'
     else:
         text = data.decode('utf-8-sig')
         require('\x00' not in text, 'binary_or_invalid_text')
@@ -62,6 +67,8 @@ def detect(data, url, mime):
         require(mime == native[kind] or mime in allowed, 'mime_magic_mismatch')
     elif kind == 'image':
         require(mime.startswith('image/') or mime in allowed, 'mime_magic_mismatch')
+    elif kind == 'media':
+        require(mime.startswith(('audio/','video/')) or mime in allowed,'mime_magic_mismatch')
     else:
         require(mime.startswith('text/') or mime in allowed | {'application/json', 'application/xhtml+xml'}, 'mime_magic_mismatch')
     declared = {'.pdf':'pdf', '.xlsx':'xlsx', '.docx':'docx', '.pptx':'pptx', '.json':'json', '.csv':'csv'}
@@ -179,6 +186,22 @@ def parse_bytes(data, url, mime):
             require(im.width*im.height<=25_000_000,'image_pixel_limit')
             im.load(); structure={'width':im.width,'height':im.height,'format':im.format,'visual_content_verified':False}
         warnings.append('visual_inspection_required')
+    elif kind == 'media':
+        if data[:4]==b'RIFF' and data[8:12]==b'WAVE':
+            with wave.open(io.BytesIO(data)) as sound:
+                structure={'duration_seconds':sound.getnframes()/sound.getframerate(),'channels':sound.getnchannels(),
+                           'sample_rate':sound.getframerate(),'media_type':'audio','perception_verified':False}
+        elif shutil.which('ffprobe'):
+            with tempfile.NamedTemporaryFile() as stream:
+                stream.write(data);stream.flush()
+                result=subprocess.run(['ffprobe','-v','error','-protocol_whitelist','file,pipe','-show_format','-show_streams','-of','json',stream.name],capture_output=True,timeout=15,check=True)
+                info=json.loads(result.stdout)
+            structure={'duration_seconds':float(info.get('format',{}).get('duration',0)),
+                       'streams':[{k:s[k] for k in ('codec_type','codec_name','width','height','sample_rate','channels') if k in s} for s in info.get('streams',[])],
+                       'media_type':'video' if any(s.get('codec_type')=='video' for s in info.get('streams',[])) else 'audio','perception_verified':False}
+        else:
+            structure={'media_type':'video' if mime.startswith('video/') else 'audio','metadata_status':'ffprobe_unavailable','perception_verified':False}
+        warnings.append('audio_video_perception_required')
     elif kind == 'json':
         obj=json.loads(data.decode('utf-8-sig'))
         def visit(v,path):
@@ -195,14 +218,25 @@ def parse_bytes(data, url, mime):
             warnings.append('html_discovery_only_no_browser_execution')
         for i,line in enumerate(text.splitlines(),1): add(f'line:{i}',line)
         structure={'lines':len(text.splitlines())}
-    require(segments or kind=='image', 'no_readable_content')
+    require(segments or kind in ('image','media'), 'no_readable_content')
     full='\n'.join(s['text'] for s in segments)
     signals=[]
     if re.search(r'\b\d{3}-\d{2}-\d{4}\b|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',full): signals.append('potential_personal_identifiers')
     if re.search(r'\b(?:variance|over budget|under budget|recommendations?|RAG rating)\b',full,re.I): signals.append('possible_precomputed_analysis')
-    return {'file_id':'f_'+sha256(data)[:24], 'sha256':sha256(data),'type':kind,'parse_status':'parsed',
+    return add_segment_ids({'file_id':'f_'+sha256(data)[:24], 'sha256':sha256(data),'type':kind,'parse_status':'parsed',
             'structure':structure,'segments':segments,'warnings':warnings,'risk_signals':signals,
-            'profiling_version':VERSION}
+            'profiling_version':VERSION})
+
+
+def add_segment_ids(profile):
+    from common import json_bytes
+    for segment in profile.get('segments',[]):
+        segment.setdefault('evidence_method','programmatic_extraction')
+        segment['verification_status']='model_observation_unverified' if segment['evidence_method'].startswith('model_') else 'source_located'
+        content={k:v for k,v in segment.items() if k!='segment_id'}
+        segment['segment_id']='seg_'+sha256(json_bytes({'file_sha256':profile['sha256'],'segment':content}))[:24]
+    require(len(profile.get('segments',[]))==len({s['segment_id'] for s in profile.get('segments',[])}),'duplicate_segment_id')
+    return profile
 
 
 def profile(path, url, mime, cache):

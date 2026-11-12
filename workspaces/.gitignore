@@ -1,4 +1,10 @@
 data/cache/
+data/cache_graph/
+data/**/construction/file_profiles.json
+archive/data/**/workspace_init/
+archive/data/**/construction/file_profiles.jsonl
+archive/data/**/construction/information_coverage.json
+archive/data/**/construction/model_audit*.json
 data/**/workspace_init/
 data/**/construction/file_profiles.jsonl
 data/**/construction/information_coverage.json

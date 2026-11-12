@@ -1,8 +1,19 @@
 # Executable Multimodal Work Environments for Agent Learning
 
-当前研究数据工程阶段：**[Stage 4 · Evidence-Anchored Task & Verifier Co-generation](work-tasks/README.md)**。正式采用 **Phase I · Grounded Work Task Construction = Stage 1–4**：从职业 Seed，经信息规划和 Workspace 构建，联合生成任务与初步验证条件，产物为 Draft Work Task Package。只有 Stage 3 的 `ready` Workspace 可以进入；当前真实两个 Pilot 均被入口阻断，正式任务包仍为 0。
+当前默认研究流水线为 **Stage 1 Raw Seeds → Stage 2 Work Blueprint → Stage 3 Graph-guided Workspace Construction**。Stage 1 保留 5,745 条官方原文数字候选；Stage 2–3 已重构为直接读取 Raw Seeds，不再默认依赖历史 LLM 改写的 Work Demand。
 
-研究流水线与以下早期 W001/P001 演示独立。[Stage 1](work-seeds/STAGE1.md) 构造职业 Seed；[Stage 2](work-plans/README.md) 生成了 4 条信息计划、准入 2 条；[Stage 3](workspaces/README.md) 保留实际文件、覆盖与失败记录；[Stage 4 报告](work-tasks/data/stage4_pilot/stage4_report.json) 记录入口阻断。Stage 4 运行无人工改判环节；工程夹具与真实数据分开。Phase II 为 Stage 5 的独立执行验证，Phase III 为 Stage 6–7 的训练数据与评测，均尚未实现。当前未完成真实 Draft Task 的首个里程碑，不把程序跑通称为有效数据生成。
+本轮 10 条真实 Seed：10 条生成 Blueprint，5 条通过图结构检查，2 条通过独立语义审核。当前没有 Search API 凭证：一条保存 `awaiting_search`，另一条搜索计划引用了不可检索节点而被拒绝。**真实 Anchor、下载文件和 ready Workspace 均为 0。** 没有用合成夹具冒充真实检索成果。
+
+```bash
+.venv/bin/python -m pip install -r workspaces/requirements.txt
+.venv/bin/python workspaces/scripts/run_pipeline.py --limit 10
+# 已有本机响应缓存时可离线重放
+.venv/bin/python workspaces/scripts/run_pipeline.py --offline
+```
+
+入口、文件与结果：[Stage 1](work-seeds/STAGE1.md)、[Stage 2](work-plans/README.md)、[Stage 3](workspaces/README.md)、[本轮实验汇总](workspaces/data/generated/experiment_summary.json)、[三条完整处理记录](workspaces/data/generated/examples.md)、[论文依据与本项目设计](workspaces/METHODS.md)。缺少搜索 Key 时流程如实保存阻断状态；查询、选择、覆盖判定由配置、模型和程序完成，不需要开发者人工改判。
+
+Phase I 仍为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。旧 Stage 2–3 实验移入各模块 `archive/`。**现有 Stage 4 尚未迁移到新接口，不能直接消费新版结果**；旧 Stage 4 报告只是历史阻断记录，不代表当前已有正式任务。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。
 
 Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
 

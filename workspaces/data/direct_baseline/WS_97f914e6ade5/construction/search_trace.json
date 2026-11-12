@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "provider": "tavily",
+      "query": "regulatory affairs guidance documents identification process standard operating procedure",
+      "reason": "missing_search_api_credentials",
+      "results": [],
+      "search_api_called": false,
+      "status": "awaiting_search"
+    }
+  ],
+  "mode": "direct",
+  "rounds": [
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "regulatory affairs guidance documents identification process standard operating procedure",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "international standards identification consensus standards regulatory affairs procedure template",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "regulatory affairs standards tracking register guidance documents compliance",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "FDA consensus standards recognition regulatory affairs specialist workflow",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          },
+          {
+            "desired_source_type": "raw-seed-only comparison",
+            "query": "ISO IEC standards identification regulatory compliance procedure document",
+            "reason": "No explicit graph supplied to search planner.",
+            "target_node_ids": []
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "direct_search"
+      },
+      "round": 0
+    }
+  ]
+}
