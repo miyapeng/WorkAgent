@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auditable Task-ID eligibility and coverage sampling; standard library only."""
+"""Default Stage 1: official verbatim Raw Work Seeds; historical Task-ID baseline is opt-in."""
 import argparse
 from collections import Counter, defaultdict
 import hashlib
@@ -97,11 +97,12 @@ def tie(seed, key):
     return hashlib.sha256(f'{seed}\0{key}'.encode()).hexdigest()
 
 
-def task_sample(catalog, candidates, n, seed, supplemental_target=.15):
+def task_sample(catalog, candidates, n, seed, supplemental_target=.15, source_coverage=False):
     if n < 0 or not 0 <= supplemental_target <= 1: raise DataError('Invalid N or supplemental target')
     remaining = set(candidates)
     if not remaining <= catalog['tasks'].keys(): raise DataError('Unknown candidate Task ID')
     selected, occ, groups, dw = [], Counter(), Counter(), Counter()
+    sources = Counter()
     supplemental = 0
     ranks = {t: tie(seed, t) for t in remaining}
     while remaining and len(selected) < n:
@@ -111,12 +112,20 @@ def task_sample(catalog, candidates, n, seed, supplemental_target=.15):
             ds = catalog['task_dwas'][tid]
             priority = (2 if t['task_type'] == ('Supplemental' if prefer_supp else 'Core')
                         else 1 if t['task_type'] in ('Core', 'Supplemental') else 0)
-            return (not groups[g], not occ[o], sum(not dw[d] for d in ds),
-                    -occ[o], -groups[g], priority, ranks[tid])
+            prefix = (not groups[g], not occ[o], sum(not dw[d] for d in ds))
+            if source_coverage:
+                # Two tertiary coverage objectives, not a source quota: opening a new
+                # source gets real coverage credit even when no official DWA exists.
+                new_source = not sources[t['task_source']]
+                new_dwas = prefix[2]
+                return prefix[:2] + (bool(new_dwas) + new_source, new_source, new_dwas,
+                                    -occ[o], -groups[g], -sources[t['task_source']], priority, ranks[tid])
+            return prefix + (-occ[o], -groups[g], priority, ranks[tid])
         chosen = max(sorted(remaining), key=score)
         remaining.remove(chosen); selected.append(chosen)
         t = catalog['tasks'][chosen]; occ[t['occupation_code']] += 1; groups[t['occupation_code'][:2]] += 1
         dw.update(catalog['task_dwas'][chosen]); supplemental += t['task_type'] == 'Supplemental'
+        if source_coverage: sources[t['task_source']] += 1
     return selected
 
 
@@ -143,9 +152,31 @@ def common_args(parser):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__); common_args(p)
-    p.add_argument('--output-dir', type=Path, default=ROOT / 'data/task_sampling')
+    p.add_argument('--mode', choices=['raw', 'task-id'], default='raw')
+    p.add_argument('--output-dir', type=Path)
     p.add_argument('--supplemental-target', type=float, default=.15)
+    p.add_argument('--raw-dir', type=Path, default=ROOT / 'data/raw')
+    p.add_argument('--emerging-file', type=Path)
+    p.add_argument('--download-emerging', action='store_true')
+    p.add_argument('--config', type=Path, default=ROOT / 'config/seed_pipeline.llmcenter.json')
+    p.add_argument('--cache-dir', type=Path, default=ROOT / 'data/raw_seed_cache')
+    p.add_argument('--batch-size', type=int, default=16)
+    p.add_argument('--workers', type=int, default=4)
+    p.add_argument('--offline', action='store_true')
+    p.add_argument('--prompt-api-key', action='store_true')
     a = p.parse_args()
+    if a.output_dir is None:
+        a.output_dir = ROOT / ('data/raw_work_seeds' if a.mode == 'raw' else 'data/task_sampling')
+    if a.mode == 'raw':
+        from emerging_tasks import build_raw_seeds
+        try:
+            report = build_raw_seeds(a)
+        except (OSError, ValueError) as exc:
+            # Preserve successful historical outputs; explicit error, no placeholder data.
+            print('Stage 1 failed: ' + str(exc))
+            raise
+        print(json.dumps({k: report[k] for k in ('counts', 'classification_counts', 'digital_coverage', 'sampled')}, ensure_ascii=False, indent=2))
+        return
     if a.output_dir.resolve() == a.input_dir.resolve(): raise DataError('Output may not overwrite input directory')
     catalog = load_catalog(a.input_dir)
     decisions, audit = eligibility(catalog, a.eligibility, a.annotations, a.labels_file)

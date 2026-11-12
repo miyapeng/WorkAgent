@@ -4,4 +4,5 @@ data/processed-check/
 site/.git/
 site/.openai/*.tar.gz
 data/seed_cache/
+data/raw_seed_cache/
 config/*.local.json

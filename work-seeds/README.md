@@ -1,12 +1,23 @@
-# Phase 1 · O*NET Work Task Seed Universe
+# Stage 1 · Official Raw Work Seed Construction
 
-当前新增阶段：[Stage 1 · Occupation-grounded Work Seed Construction](STAGE1.md)。包含无模型 Task ID 采样基线，以及职业证据检索、模型补充与覆盖采样；本文继续记录原始目录的来源、构建和筛选。
+默认流程已调整为 **O*NET 31.0 → Emerging Tasks 合并 → Digital Filtering → Coverage-aware Sampling → Raw Work Seeds**。任务文本直接保留官方英文，LLM 仅分类最终有效的 Emerging Tasks，不生成 `work_demand`。具体规则、运行结果和命令见 [STAGE1.md](STAGE1.md)。
+
+新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖下面记录的普通 Task 底表、`data/digital/`、网页或历史模型实验。当前网页及旧数字子集仍是普通 Tasks 的 5,652 条基线，不包含本轮 Emerging 合并结果。
+
+```bash
+# 在仓库根目录；Emerging 原始文件已保存
+.venv/bin/python work-seeds/scripts/sample_seeds.py --n 200 --seed 42 --prompt-api-key
+# 同一输入和模型响应缓存，离线复现
+.venv/bin/python work-seeds/scripts/sample_seeds.py --n 200 --seed 42 --offline
+```
+
+职业证据检索与 LLM Work Demand enrichment 保留为显式调用的历史实验，见 [STAGE1_LEGACY.md](STAGE1_LEGACY.md)。新 Raw Seeds 与旧 `candidate_seeds.jsonl` 是不同数据类型；本次不改 Stage 2–7，也不自动把新输出接到旧接口。
 
 官方底表建立完整职业—Task—DWA 种子目录。后续按用户要求新增独立的 AI4Work 数字任务筛选层和中文阅读层，底表不变。尚未生成 Work Tasks 或 SFT/RL 轨迹；与本仓库早期 W001 演示独立。
 
 ## 数据来源与许可
 
-使用 [O*NET® 31.0 Database](https://www.onetcenter.org/database.html)，[August 2026 发行版](https://www.onetcenter.org/db_releases.html)。优先下载固定版本 [官方 CSV ZIP](https://www.onetcenter.org/dl_files/database/db_31_0_csv.zip)，只读取以下三个文件：
+使用 [O*NET® 31.0 Database](https://www.onetcenter.org/database.html)，[August 2026 发行版](https://www.onetcenter.org/db_releases.html)。原始四表构建器优先下载固定版本 [官方 CSV ZIP](https://www.onetcenter.org/dl_files/database/db_31_0_csv.zip)，只读取以下三个文件；新的 Raw Seed 层另读取同版本 Emerging Tasks：
 
 - [`occupation_data.csv` 字典](https://www.onetcenter.org/dictionary/31.0/csv/occupation_data.html)
 - [`task_statements.csv` 字典](https://www.onetcenter.org/dictionary/31.0/csv/task_statements.html)
@@ -14,11 +25,11 @@
 
 来源机构：U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)；数据库由 National Center for O*NET Development 开发。数据按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用，参见[官方许可声明](https://www.onetcenter.org/license_db.html)。O*NET® 是 USDOL/ETA 的商标。
 
-本项目的转换仅包括选取指定字段、规范化拆表、删除完全重复记录和排序。原始 ID、英文文本及空值保持不变。USDOL/ETA 未批准、认可或测试本项目的转换。`data/raw/source_manifest.json` 保留下载地址及 SHA-256；输出报告保留每份原始文件和输出 CSV 的 SHA-256。
+原始四表构建器的转换仅包括选取指定字段、规范化拆表、删除完全重复记录和排序。原始 ID、英文文本及空值保持不变。USDOL/ETA 未批准、认可或测试本项目的转换。`data/raw/source_manifest.json` 保留下载地址及 SHA-256；输出报告保留每份原始文件和输出 CSV 的 SHA-256。
 
 ## 下载与构建
 
-Python 3.10+，数据脚本与测试仅用标准库，无需安装第三方依赖。在 `work-seeds/` 目录执行：
+Python 3.10+，四表构建脚本只用标准库。完整 Stage 1 与历史测试沿用 `requirements-seeds.txt`，不新增依赖。在 `work-seeds/` 目录执行：
 
 ```bash
 python scripts/build_onet.py --download

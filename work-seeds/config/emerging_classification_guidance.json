@@ -1,0 +1,9 @@
+{
+  "source_project": "AI4Work",
+  "source_commit": "095db006debf83f2bbda2631964bd1b4c81190ad",
+  "documentation_url": "https://github.com/zorazrw/ai4work-resources/blob/095db006debf83f2bbda2631964bd1b4c81190ad/real_work/README.md",
+  "annotation_file": "real_work/employment/digital_task_annotation.xlsx",
+  "available_documentation": "The public README states that O*NET tasks are annotated as digital or physical and occupation-level digital ratios are calculated. It does not provide a complete task-labeling protocol.",
+  "observed_annotation_rationales": "The released spreadsheet has Is Digital and Reason columns. Inspected DIGITAL rationales refer to computer-based financial analysis and spreadsheet preparation; some PHYSICAL rationales treat in-person meetings and interpersonal management as physical work. These examples do not define an exhaustive rulebook.",
+  "project_boundary": "Classify Emerging Tasks using the explicit operational definition in the system prompt. Do not claim equivalence to the complete AI4Work protocol. Do not infer that remote work is possible merely because the occupation has other digital tasks. Do not classify or rewrite any ordinary task."
+}
