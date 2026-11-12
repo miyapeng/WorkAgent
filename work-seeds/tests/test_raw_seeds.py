@@ -1,5 +1,6 @@
 """Small synthetic fixtures; no fixture records enter the official seed pool."""
 import copy
+import json
 from collections import defaultdict
 from pathlib import Path
 import sys
@@ -7,7 +8,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from emerging_tasks import merge_tasks, apply_regular_labels, classify_emerging, DataError
+from emerging_tasks import merge_tasks, apply_regular_labels, classify_emerging, export_record, DataError
 from sample_seeds import task_sample
 
 
@@ -28,6 +29,40 @@ def fixture():
 
 
 class RawSeedTests(unittest.TestCase):
+    def test_compact_export_preserves_traceability_and_does_not_mutate_inputs(self):
+        c,raw,em,a=fixture();records,_=merge_tasks(c,raw,em);apply_regular_labels(records,a)
+        for r in records:
+            if r['task_source']!='regular':
+                r.update(digital_label='DIGITAL',digital_label_source='LLM')
+                r['source_metadata']['digital_annotation']={'reason':'Fixture classification','request_sha256':'fixture'}
+        original=copy.deepcopy(records)
+        groups=json.loads((Path(__file__).resolve().parents[1]/'config/soc_major_groups.json').read_text())['groups']
+        exported=[export_record(r,groups) for r in records]
+        self.assertEqual(records,original)
+        self.assertEqual(len({r['seed_id'] for r in exported}),3)
+        regular=next(r for r in exported if r['task_source']=='regular')
+        self.assertEqual(regular['seed_id'],'raw_31_0_2')
+        self.assertEqual(regular['work_domain'],'Business and Financial Operations Occupations')
+        for r in exported:
+            source=raw if r['task_source']=='regular' else em
+            self.assertEqual(r['task_text'],source[r['source_metadata']['row']-2]['Task'])
+            self.assertEqual('original_task_id' in r,r['task_source']=='emerging_revision')
+            self.assertNotIn('request_sha256',r['source_metadata']['digital_annotation'])
+            self.assertNotIn('original_label',r['source_metadata']['digital_annotation'])
+            for key in ('version','file','category','id_kind','dwa_mapping'):
+                self.assertNotIn(key,r['source_metadata'])
+        revision=next(r for r in exported if r['task_source']=='emerging_revision')
+        self.assertEqual(revision['original_task_id'],'1')
+        self.assertTrue(revision['seed_id'].startswith('raw_31_0_emerging_'))
+        self.assertEqual(exported,[export_record(r,groups) for r in records])
+
+    def test_compact_export_retains_disagreeing_upstream_label(self):
+        c,raw,_,a=fixture();records,_=merge_tasks(c,raw,[])
+        a['1'][1]['Is Digital']='REVIEW';apply_regular_labels(records,a)
+        record=export_record(next(r for r in records if r['task_id']=='1'),{'13':'Business and Financial Operations Occupations'})
+        self.assertEqual(record['digital_label'],'UNCERTAIN')
+        self.assertEqual(record['source_metadata']['digital_annotation']['original_label'],'REVIEW')
+
     def test_new_and_revision_preserve_official_text_and_ids(self):
         c,raw,em,_=fixture();original=copy.deepcopy((c,raw,em))
         records,stats=merge_tasks(c,raw,em)

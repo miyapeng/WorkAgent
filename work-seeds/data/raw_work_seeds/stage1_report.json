@@ -62,7 +62,7 @@
   },
   "implementation_sha256": {
     "construct_seeds.py": "b3d2d2b2d976f3b6c0a013329f050298238fd7394fb712179b18620505bc930a",
-    "emerging_tasks.py": "7200743cb050446a776044959b0e013a6472988e6f110522c300b1e9b9da0acd",
+    "emerging_tasks.py": "1685b7f3de226e896f196541521574c8f59d03444a40afbd4eac36e8ceaf0bc0",
     "filter_digital.py": "bebd65801bd2260060b7769d0e3e1733f146a815cf09d64ec2b804c3e7b60d1f",
     "sample_seeds.py": "a191f72f40bd7a694519e0fa1e46e4abbf46889597051733d626b878bb71fd21",
     "seed_evidence.py": "36a297e4bdc7ba4de27a351bffe385924d91f1bae2d143f3ac8ac7b67f7d1199"
@@ -80,161 +80,184 @@
       "effective_before_filter": 1227,
       "regular_original": 1213,
       "sampled": 16,
-      "soc_major_group": "11"
+      "soc_major_group": "11",
+      "work_domain": "Management Occupations"
     },
     {
       "digital_after_filter": 607,
       "effective_before_filter": 999,
       "regular_original": 988,
       "sampled": 16,
-      "soc_major_group": "13"
+      "soc_major_group": "13",
+      "work_domain": "Business and Financial Operations Occupations"
     },
     {
       "digital_after_filter": 685,
       "effective_before_filter": 776,
       "regular_original": 770,
       "sampled": 17,
-      "soc_major_group": "15"
+      "soc_major_group": "15",
+      "work_domain": "Computer and Mathematical Occupations"
     },
     {
       "digital_after_filter": 660,
       "effective_before_filter": 1267,
       "regular_original": 1237,
       "sampled": 16,
-      "soc_major_group": "17"
+      "soc_major_group": "17",
+      "work_domain": "Architecture and Engineering Occupations"
     },
     {
       "digital_after_filter": 597,
       "effective_before_filter": 1269,
       "regular_original": 1236,
       "sampled": 16,
-      "soc_major_group": "19"
+      "soc_major_group": "19",
+      "work_domain": "Life, Physical, and Social Science Occupations"
     },
     {
       "digital_after_filter": 86,
       "effective_before_filter": 299,
       "regular_original": 295,
       "sampled": 8,
-      "soc_major_group": "21"
+      "soc_major_group": "21",
+      "work_domain": "Community and Social Service Occupations"
     },
     {
       "digital_after_filter": 56,
       "effective_before_filter": 127,
       "regular_original": 124,
       "sampled": 3,
-      "soc_major_group": "23"
+      "soc_major_group": "23",
+      "work_domain": "Legal Occupations"
     },
     {
       "digital_after_filter": 641,
       "effective_before_filter": 1659,
       "regular_original": 1636,
       "sampled": 14,
-      "soc_major_group": "25"
+      "soc_major_group": "25",
+      "work_domain": "Educational Instruction and Library Occupations"
     },
     {
       "digital_after_filter": 242,
       "effective_before_filter": 816,
       "regular_original": 806,
       "sampled": 13,
-      "soc_major_group": "27"
+      "soc_major_group": "27",
+      "work_domain": "Arts, Design, Entertainment, Sports, and Media Occupations"
     },
     {
       "digital_after_filter": 450,
       "effective_before_filter": 1759,
       "regular_original": 1729,
       "sampled": 16,
-      "soc_major_group": "29"
+      "soc_major_group": "29",
+      "work_domain": "Healthcare Practitioners and Technical Occupations"
     },
     {
       "digital_after_filter": 53,
       "effective_before_filter": 352,
       "regular_original": 347,
       "sampled": 5,
-      "soc_major_group": "31"
+      "soc_major_group": "31",
+      "work_domain": "Healthcare Support Occupations"
     },
     {
       "digital_after_filter": 97,
       "effective_before_filter": 536,
       "regular_original": 519,
       "sampled": 9,
-      "soc_major_group": "33"
+      "soc_major_group": "33",
+      "work_domain": "Protective Service Occupations"
     },
     {
       "digital_after_filter": 13,
       "effective_before_filter": 327,
       "regular_original": 320,
       "sampled": 1,
-      "soc_major_group": "35"
+      "soc_major_group": "35",
+      "work_domain": "Food Preparation and Serving Related Occupations"
     },
     {
       "digital_after_filter": 16,
       "effective_before_filter": 167,
       "regular_original": 164,
       "sampled": 1,
-      "soc_major_group": "37"
+      "soc_major_group": "37",
+      "work_domain": "Building and Grounds Cleaning and Maintenance Occupations"
     },
     {
       "digital_after_filter": 58,
       "effective_before_filter": 635,
       "regular_original": 617,
       "sampled": 6,
-      "soc_major_group": "39"
+      "soc_major_group": "39",
+      "work_domain": "Personal Care and Service Occupations"
     },
     {
       "digital_after_filter": 138,
       "effective_before_filter": 434,
       "regular_original": 427,
       "sampled": 9,
-      "soc_major_group": "41"
+      "soc_major_group": "41",
+      "work_domain": "Sales and Related Occupations"
     },
     {
       "digital_after_filter": 336,
       "effective_before_filter": 981,
       "regular_original": 975,
       "sampled": 13,
-      "soc_major_group": "43"
+      "soc_major_group": "43",
+      "work_domain": "Office and Administrative Support Occupations"
     },
     {
       "digital_after_filter": 8,
       "effective_before_filter": 230,
       "regular_original": 225,
       "sampled": 1,
-      "soc_major_group": "45"
+      "soc_major_group": "45",
+      "work_domain": "Farming, Fishing, and Forestry Occupations"
     },
     {
       "digital_after_filter": 57,
       "effective_before_filter": 1151,
       "regular_original": 1140,
       "sampled": 5,
-      "soc_major_group": "47"
+      "soc_major_group": "47",
+      "work_domain": "Construction and Extraction Occupations"
     },
     {
       "digital_after_filter": 95,
       "effective_before_filter": 1034,
       "regular_original": 1016,
       "sampled": 5,
-      "soc_major_group": "49"
+      "soc_major_group": "49",
+      "work_domain": "Installation, Maintenance, and Repair Occupations"
     },
     {
       "digital_after_filter": 120,
       "effective_before_filter": 2159,
       "regular_original": 2140,
       "sampled": 5,
-      "soc_major_group": "51"
+      "soc_major_group": "51",
+      "work_domain": "Production Occupations"
     },
     {
       "digital_after_filter": 99,
       "effective_before_filter": 925,
       "regular_original": 914,
       "sampled": 5,
-      "soc_major_group": "53"
+      "soc_major_group": "53",
+      "work_domain": "Transportation and Material Moving Occupations"
     },
     {
       "digital_after_filter": 0,
       "effective_before_filter": 0,
       "regular_original": 0,
       "sampled": 0,
-      "soc_major_group": "55"
+      "soc_major_group": "55",
+      "work_domain": "Military Specific Occupations"
     }
   ],
   "merge": {
@@ -1013,6 +1036,20 @@
     "seed": 42,
     "supplemental_target": 0.15
   },
+  "record_format": {
+    "classification_provenance": "AI4Work row/rule or LLM reason per record; model_calls links task_ids to cached requests.",
+    "emerging_dwa_mapping": "No official mapping asserted; dwa_ids is empty for all Emerging records.",
+    "omitted_original_label": "When absent from digital_annotation, the upstream label equals digital_label.",
+    "seed_id": "raw_<O*NET version with underscores>_<task_id>, with the repeated release prefix removed from Emerging IDs.",
+    "source_files": {
+      "emerging_new": "emerging_tasks.csv",
+      "emerging_revision": "emerging_tasks.csv",
+      "regular": "task_statements.csv"
+    },
+    "source_row": "CSV record number counting the header as 1; not a physical text line.",
+    "version": 2,
+    "work_domain": "Official 2018 SOC major group name decoded from occupation_code; not an inferred industry."
+  },
   "sampled": {
     "dwas": 458,
     "major_groups": 22,
@@ -1065,6 +1102,36 @@
         "https://www.onetcenter.org/dl_files/database/db_31_0_csv/tasks_to_dwas.csv"
       ],
       "version": "31.0"
+    },
+    "soc_major_groups": {
+      "classification": "2018 SOC",
+      "groups": {
+        "11": "Management Occupations",
+        "13": "Business and Financial Operations Occupations",
+        "15": "Computer and Mathematical Occupations",
+        "17": "Architecture and Engineering Occupations",
+        "19": "Life, Physical, and Social Science Occupations",
+        "21": "Community and Social Service Occupations",
+        "23": "Legal Occupations",
+        "25": "Educational Instruction and Library Occupations",
+        "27": "Arts, Design, Entertainment, Sports, and Media Occupations",
+        "29": "Healthcare Practitioners and Technical Occupations",
+        "31": "Healthcare Support Occupations",
+        "33": "Protective Service Occupations",
+        "35": "Food Preparation and Serving Related Occupations",
+        "37": "Building and Grounds Cleaning and Maintenance Occupations",
+        "39": "Personal Care and Service Occupations",
+        "41": "Sales and Related Occupations",
+        "43": "Office and Administrative Support Occupations",
+        "45": "Farming, Fishing, and Forestry Occupations",
+        "47": "Construction and Extraction Occupations",
+        "49": "Installation, Maintenance, and Repair Occupations",
+        "51": "Production Occupations",
+        "53": "Transportation and Material Moving Occupations",
+        "55": "Military Specific Occupations"
+      },
+      "sha256": "54d8d8a1b2fc26eaf1bc7b3c3c4c8c34fcfcdef49e81c9367c018fd7d72de4c5",
+      "source_url": "https://www.bls.gov/soc/2018/major_groups.htm"
     }
   },
   "status": "complete",

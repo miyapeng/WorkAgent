@@ -153,6 +153,26 @@ def classify_emerging(records,regular_rows,config,cache,batch_size=16,workers=4,
     return calls
 
 
+def export_record(record, major_groups):
+    """Compact public record; keep classification requests and their cache keys unchanged."""
+    source=record['source_metadata'];tid=record['task_id']
+    version=VERSION.replace('.','_')
+    # Emerging Task IDs already contain the release; include it only once in the seed ID.
+    seed_key=tid.replace('emerging_'+version+'_','emerging_',1) if record['task_source']!='regular' else tid
+    result={'seed_id':'raw_'+version+'_'+seed_key,
+            'work_domain':major_groups[record['occupation_code'][:2]],
+            **{key:record[key] for key in ('occupation_code','occupation_title','task_id','task_text','task_source',
+                                         'dwa_ids','digital_label','digital_label_source')}}
+    if record['task_source']=='emerging_revision':result['original_task_id']=record['original_task_id']
+    metadata={key:source[key] for key in ('row','date','domain_source')}
+    if source['task_type']:metadata['task_type']=source['task_type']
+    annotation={key:value for key,value in source['digital_annotation'].items()
+                if key!='request_sha256' and not (key=='original_label' and value==record['digital_label'])}
+    metadata['digital_annotation']=annotation
+    result['source_metadata']=metadata
+    return result
+
+
 def build_raw_seeds(a):
     require(a.n>=0 and 0<=a.supplemental_target<=1,'Invalid sampling parameters')
     require(a.eligibility=='ai4work','Raw Stage 1 reuses AI4Work; alternative label baselines require --mode task-id')
@@ -180,6 +200,9 @@ def build_raw_seeds(a):
     # Verify final serialized text against its exact source row; LLM responses never supply content.
     require(all(r['task_text']==(regular if r['task_source']=='regular' else emerging)[r['source_metadata']['row']-2]['Task'] for r in records),'Official task text changed')
     groups=sorted({o[:2] for o in catalog['occupations']})
+    group_path=ROOT/'config/soc_major_groups.json'
+    group_source=json.loads(group_path.read_text())
+    require(set(groups)<=set(group_source['groups']),'Missing official SOC major group name')
     def summary(rows):
         return {'tasks':len(rows),'occupations':len({r['occupation_code'] for r in rows}),'major_groups':len({r['occupation_code'][:2] for r in rows}),
                 'dwas':len({d for r in rows for d in r['dwa_ids']}),'source_counts':dict(sorted(Counter(r['task_source'] for r in rows).items()))}
@@ -190,7 +213,7 @@ def build_raw_seeds(a):
                   'conflicting_original_tasks':len(merge['revision_conflicts'])},
         'classification_counts':{s:dict(sorted(Counter(r['digital_label'] for r in records if s=='all' or r['task_source']==s).items())) for s in ('all','regular','emerging_new','emerging_revision')},
         'effective_coverage':summary(records),'digital_coverage':summary(digital),'sampled':summary(sampled),
-        'major_group_distribution':[{'soc_major_group':g,'regular_original':sum(r['O*NET-SOC Code'][:2]==g for r in regular),
+        'major_group_distribution':[{'soc_major_group':g,'work_domain':group_source['groups'][g],'regular_original':sum(r['O*NET-SOC Code'][:2]==g for r in regular),
                                      'effective_before_filter':before[g],'digital_after_filter':after[g],
                                      'sampled':sum(r['occupation_code'][:2]==g for r in sampled)} for g in groups],
         'parameters':{'n':a.n,'seed':a.seed,'batch_size':a.batch_size,'supplemental_target':a.supplemental_target},
@@ -201,7 +224,15 @@ def build_raw_seeds(a):
              'lower_source_frequency','Core/Supplemental_tie_preference','fixed_seed_hash'],
         'shortfall':max(0,a.n-len(sampled)),
         'sources':{'regular':json.loads((a.raw_dir/'source_manifest.json').read_text()) if (a.raw_dir/'source_manifest.json').exists() else {'mode':'local_user_supplied'},
-                   'emerging':provenance,'ai4work':{'url':SOURCE_URL,'commit':COMMIT,'sha256':EXPECTED_SHA256}},
+                   'emerging':provenance,'ai4work':{'url':SOURCE_URL,'commit':COMMIT,'sha256':EXPECTED_SHA256},
+                   'soc_major_groups':{**group_source,'sha256':sha256(group_path.read_bytes())}},
+        'record_format':{'version':2,'source_files':{'regular':'task_statements.csv','emerging_new':'emerging_tasks.csv','emerging_revision':'emerging_tasks.csv'},
+                         'source_row':'CSV record number counting the header as 1; not a physical text line.',
+                         'work_domain':'Official 2018 SOC major group name decoded from occupation_code; not an inferred industry.',
+                         'seed_id':'raw_<O*NET version with underscores>_<task_id>, with the repeated release prefix removed from Emerging IDs.',
+                         'classification_provenance':'AI4Work row/rule or LLM reason per record; model_calls links task_ids to cached requests.',
+                         'omitted_original_label':'When absent from digital_annotation, the upstream label equals digital_label.',
+                         'emerging_dwa_mapping':'No official mapping asserted; dwa_ids is empty for all Emerging records.'},
         'normalized_input_sha256':catalog['hashes'],
         'implementation_sha256':{name:sha256((ROOT/'scripts'/name).read_bytes()) for name in ('sample_seeds.py','emerging_tasks.py','filter_digital.py','construct_seeds.py','seed_evidence.py')},
         'classification_guidance_sha256':sha256((ROOT/'config/emerging_classification_guidance.json').read_bytes()),
@@ -215,6 +246,9 @@ def build_raw_seeds(a):
                       'Emerging DWA associations are empty; old Task mappings are not asserted to apply to revised text.']}
     require(all(report['checks'].values()),'Raw seed validation failed')
     a.output_dir.mkdir(parents=True,exist_ok=True)
-    for name,rows in [('effective_tasks.jsonl',records),('digital_task_pool.jsonl',digital),('sampled_raw_seeds.jsonl',sampled)]:write_jsonl(a.output_dir/name,rows)
+    exported={r['task_id']:export_record(r,group_source['groups']) for r in records}
+    require(len({r['seed_id'] for r in exported.values()})==len(records),'Duplicate raw seed IDs')
+    for name,rows in [('effective_tasks.jsonl',records),('digital_task_pool.jsonl',digital),('sampled_raw_seeds.jsonl',sampled)]:
+        write_jsonl(a.output_dir/name,[exported[r['task_id']] for r in rows])
     save(a.output_dir/'stage1_report.json',report)
     return report

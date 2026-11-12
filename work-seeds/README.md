@@ -2,6 +2,8 @@
 
 默认流程已调整为 **O*NET 31.0 → Emerging Tasks 合并 → Digital Filtering → Coverage-aware Sampling → Raw Work Seeds**。任务文本直接保留官方英文，LLM 仅分类最终有效的 Emerging Tasks，不生成 `work_demand`。具体规则、运行结果和命令见 [STAGE1.md](STAGE1.md)。
 
+Raw Seed 保留完整职业代码与名称，新增稳定 `seed_id` 和由代码查表得到的官方 SOC 大类 `work_domain`。文件级来源、版本和模型调用记录统一存入报告；每条记录只保留必要的原文、分类及追溯信息，Revision 才带 `original_task_id`。字段说明见 [精简输出格式](STAGE1.md#四个输出)。
+
 新增官方输入 [`emerging_tasks.csv`](https://www.onetcenter.org/dictionary/31.0/csv/emerging_tasks.html)，原始字节和独立来源清单保存在 `data/raw/`。派生结果写入 `data/raw_work_seeds/`，不覆盖下面记录的普通 Task 底表、`data/digital/`、网页或历史模型实验。当前网页及旧数字子集仍是普通 Tasks 的 5,652 条基线，不包含本轮 Emerging 合并结果。
 
 ```bash

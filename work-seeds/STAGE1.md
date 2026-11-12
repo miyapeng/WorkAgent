@@ -35,7 +35,7 @@ O*NET 31.0 → Emerging Tasks 合并 → Digital Task Filtering
 
 ## 数字化分类
 
-未修改普通任务直接复用 AI4Work：DIGITAL 纳入，PHYSICAL 不纳入，缺失/未知/REVIEW/不匹配转为本项目待审核 UNCERTAIN。`source_metadata.digital_annotation` 保留上游行号、原标签及匹配规则，方便区分原始标签与本项目保守处理。
+未修改普通任务直接复用 AI4Work：DIGITAL 纳入，PHYSICAL 不纳入，缺失/未知/REVIEW/不匹配转为本项目待审核 UNCERTAIN。`source_metadata.digital_annotation` 保留上游行号及匹配规则；原标签与最终标签不同时才额外保存 `original_label`，方便区分原始标签与本项目保守处理。
 
 Emerging 的有效 New/Revision 单独调用 GLM-5.2。输入为职业、官方原文、类型、Revision 旧文本和来源说明；输出只允许 `task_id, digital_label, reason`，返回任务文本、多余字段、遗漏 ID 或非法标签会报错。接口不接受模型生成的 Seed 内容。
 
@@ -107,7 +107,30 @@ python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 | `sampled_raw_seeds.jsonl` | 固定参数采样的官方原文记录；没有 Work Demand 改写 |
 | `stage1_report.json` | 来源、合并账目、冲突、标签数量、23 大类前后分布、采样、模型调用与代码哈希 |
 
-记录字段为 `task_id, occupation_code, occupation_title, task_text, task_source, original_task_id, digital_label, digital_label_source, dwa_ids, source_metadata`。元数据保留源文件/CSV 记录位置（含表头计数）、原始日期/类别/Domain Source、ID 类型及标签来源。源文件下载 URL 和 SHA-256 在统一报告中保存，不在每条记录重复一长串链接。任务原文可以直接按来源位置核对。
+三个 JSONL 使用同一精简格式：
+
+| 字段 | 用途 |
+| --- | --- |
+| `seed_id` | 稳定、带版本的 Raw Seed ID，例如 `raw_31_0_3398`；Emerging 为 `raw_31_0_emerging_<原有哈希>`，不重复版本前缀 |
+| `work_domain` | 由职业代码前两位查表得到的官方 SOC 大类名称，不是 LLM 推断的行业标签 |
+| `occupation_code`, `occupation_title` | 保留完整 O*NET 职业代码及官方名称 |
+| `task_id`, `task_text` | 原有 Task ID 与未经改写的官方原文；Emerging 保留既有稳定内部 Task ID |
+| `task_source` | `regular` / `emerging_new` / `emerging_revision` |
+| `original_task_id` | 仅 Revision 保存，其他类型不输出空字段 |
+| `dwa_ids` | 官方关联；Emerging 无官方映射时保留空数组 |
+| `digital_label`, `digital_label_source` | 候选分类及 AI4Work / LLM 来源 |
+| `source_metadata` | CSV 记录位置、日期、Domain Source；非空的 Task Type；分类行号/规则或模型理由 |
+
+例如 `13-2031.00` 保留为完整职业代码，`occupation_title` 为 `Budget Analysts`，`work_domain` 为 `Business and Financial Operations Occupations`，而不是自行缩窄成 Finance。23 个大类名称来自 [BLS 2018 SOC](https://www.bls.gov/soc/2018/major_groups.htm)，固定查表文件为 `config/soc_major_groups.json`，其来源与哈希写入报告。
+
+精简的是重复元数据，不改变任务文本、任务身份、标签或采样顺序：
+
+- 数据版本、源文件映射、来源 URL 和 SHA-256 放在统一报告中。普通记录对应 `task_statements.csv`，Emerging 对应 `emerging_tasks.csv`；`source_metadata.row` 是含表头的 CSV 记录序号，不是物理文本行号。
+- Category、ID 类型及 DWA 映射说明可由 `task_source` 和报告得到，不逐条重复。
+- 模型请求哈希、模型参数和时间放在报告 `model_calls` 中，通过 `task_ids` 关联；每条 Emerging 仍保留分类理由。
+- 上游标签等于 `digital_label` 时不重复保存；不同时保留 `original_label`。没有 Task Type 时省略，不推测填充。
+
+这是输出格式调整，已有 LLM 请求和缓存键保持不变。离线重建不需要重新分类。
 
 ## 实际全量运行
 
@@ -180,6 +203,6 @@ python work-seeds/scripts/sample_seeds.py --mode task-id --n 200 --seed 42
 
 ## 验证
 
-完整 Stage 1 的 **42 个测试通过**，包括既有底表、数字筛选、历史 enrichment/采样测试及新增的少量 Emerging 夹具。覆盖 New、Revision 替换与重标、普通标签复用、官方原文保持、同日期冲突、无法关联、禁止模型回传改写内容、无 DWA 来源覆盖及采样复现。
+完整 Stage 1 的 **44 个测试通过**，包括既有底表、数字筛选、历史 enrichment/采样测试及新增的少量 Emerging 夹具。覆盖 New、Revision 替换与重标、普通标签复用、官方原文保持、同日期冲突、无法关联、禁止模型回传改写内容、无 DWA 来源覆盖、采样复现，以及精简输出的 ID、SOC 大类和来源追溯。
 
 实际全量验证：禁用网络与 DNS 后，四个新输出可从缓存逐字节重建；三个 JSONL 中每条任务原文均与来源 CSV 记录一致。旧 Task-ID 基线的三个输出也逐字节一致；检查的 118 个既有数据及 Stage 2–4 文件保持不变。测试夹具不混入正式输出。
