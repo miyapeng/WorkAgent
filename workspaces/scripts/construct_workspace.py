@@ -15,14 +15,15 @@ from acquire import download,public_url
 from profile_files import profile,add_segment_ids
 from coverage import external_nodes,check_audit,empty_coverage,resolve_refs
 from search_provider import search,available
-from vision import inspect_visual,inspect_audio,inspect_video
+from vision import inspect_visual
 from planning_common import schema,validate,load_llm,model_call,usage
 from plan_intents import load_raw,validate_blueprint,validate_review
+from compile_blueprint import compile_blueprint
 
 
 def load_inputs(plan_dir,seed_file):
     seeds=load_raw(seed_file);report=schema(plan_dir/'planning_report.json');plans=read_jsonl(plan_dir/'blueprints.jsonl')
-    require(report['interface']=='raw-blueprint-v1','legacy_plan_interface_not_supported')
+    require(report['interface']=='raw-blueprint-v2','legacy_plan_interface_not_supported')
     require(report['blueprints_sha256']==sha256((plan_dir/'blueprints.jsonl').read_bytes()),'blueprints_file_changed')
     accepted={k for k,r in report['seeds'].items() if r['status']=='accepted'}
     require(len(plans)==len(accepted) and {p['seed_id'] for p in plans}==accepted,'only_accepted_blueprints_allowed')
@@ -30,6 +31,7 @@ def load_inputs(plan_dir,seed_file):
         record=report['seeds'][p['seed_id']];require(p['seed_id'] in seeds,'raw_seed_missing')
         require(sha256(json_bytes(seeds[p['seed_id']]))==record['seed_sha256'],'raw_seed_changed')
         require(sha256(json_bytes(p))==record['blueprint_sha256'],'approved_blueprint_changed')
+        require(compile_blueprint(record['semantic_plan'],p['seed_id'])==p,'compiled_graph_does_not_match_semantic_plan')
         validate_blueprint(p,seeds[p['seed_id']]);validate_review(record['semantic_review']);require(record['semantic_review']['accepted'],'blueprint_not_accepted')
     return plans,seeds,report
 
@@ -69,7 +71,7 @@ def discover_links(data,url):
                     except ValueError:pass
     parser=Links();parser.feed(data.decode('utf-8-sig'));links=[]
     for link in dict.fromkeys(parser.links):
-        if re.search(r'\.(?:pdf|csv|xlsx|docx|pptx|json|png|jpe?g|zip|wav|mp4)(?:\?|$)',link,re.I):
+        if re.search(r'\.(?:pdf|csv|xlsx|docx|pptx|json|png|jpe?g|tiff|svg|tex|txt|md|py|js|ipynb|zip)(?:\?|$)',link,re.I):
             links.append({'candidate_id':'c_'+sha256(link.encode())[:24],'url':link,'source_page':url,'title':Path(urlsplit(link).path).name,
                           'snippet':'Actual href extracted from downloaded source page; not yet inspected.'})
     return links[:40]
@@ -131,7 +133,7 @@ def build_one(plan,seed,config,config_path,cache,directory,offline=False,stage='
         value,meta=model_call(llm,ROOT/'prompts'/name,context,cache,offline);calls.append(meta);return value
     def audit(items):
         views={fid:profile_view(profiles[fid],plan,limits) for fid in items}
-        value=call('evidence_auditor.v1.txt',{'raw_seed':seed,'blueprint':plan,'existing_anchor':coverage['selected_anchor'],
+        value=call('evidence_auditor.v2.txt',{'raw_seed':seed,'blueprint':plan,'existing_anchor':coverage['selected_anchor'],
                    'file_profiles':list(views.values()),'sources':{fid:sources[fid] for fid in views},'schema':schema(ROOT/'config/audit.schema.json')})
         # The model may cite only segments actually present in its bounded context.
         checked=check_audit(value,plan,views,sources)
@@ -145,7 +147,7 @@ def build_one(plan,seed,config,config_path,cache,directory,offline=False,stage='
                'previous_queries':[e['query'] for e in events],'remaining_search_budget':{'queries_this_round':budget,'rounds_after_this':max_rounds-round_no-1}}
         try:
             if mode=='graph':
-                retrieval=call('search_planner.v1.txt',{'raw_seed':seed,'approved_blueprint':plan,'schema':schema(ROOT/'config/search.schema.json'),**state})
+                retrieval=call('search_planner.v2.txt',{'raw_seed':seed,'approved_blueprint':plan,'schema':schema(ROOT/'config/search.schema.json'),**state})
                 validate_search(retrieval,plan,budget,coverage['selected_anchor'])
             else:
                 direct=call('direct_search.v1.txt',{'raw_seed':seed,**{k:v for k,v in state.items() if k!='missing_information'}})
@@ -194,12 +196,6 @@ def build_one(plan,seed,config,config_path,cache,directory,offline=False,stage='
                 if config.get('vision') and p['type'] in ('image','pdf') and plan['modality_hypotheses']:
                     try:p=inspect_visual(raw,p,config['vision'],cache,offline)
                     except (OSError,ValueError,KeyError,TypeError) as exc:p['warnings'].append('vision_failed:'+type(exc).__name__)
-                if config.get('audio') and p['type']=='media' and p['structure'].get('media_type')=='audio':
-                    try:p=inspect_audio(raw,p,config['audio'],cache,offline)
-                    except (OSError,ValueError,KeyError,TypeError) as exc:p['warnings'].append('audio_inspection_failed:'+type(exc).__name__)
-                if config.get('video') and p['type']=='media' and p['structure'].get('media_type')=='video':
-                    try:p=inspect_video(raw,p,config['video'],cache,offline)
-                    except (OSError,ValueError,KeyError,TypeError,subprocess.SubprocessError) as exc:p['warnings'].append('video_inspection_failed:'+type(exc).__name__)
                 p['source_url']=transport['final_url'];profiles[fid]=add_segment_ids(p);new_ids.append(fid)
             except (OSError,ValueError,KeyError,TypeError) as exc:
                 parse_rejected+=1;failures.append({'stage':'download_or_profile','url':c['url'],'reason':str(exc) if isinstance(exc,DataError) else type(exc).__name__})
@@ -263,8 +259,8 @@ def run(plan_dir,seed_file,output_dir,cache,config_path,offline=False,limit=None
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--plan-dir',type=Path,default=REPO/'work-plans/data/generated');p.add_argument('--seed-file',type=Path,default=REPO/'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl')
-    p.add_argument('--config',type=Path,default=ROOT/'config/graph_pipeline.json');p.add_argument('--output-dir',type=Path,default=ROOT/'data/generated')
+    p.add_argument('--plan-dir',type=Path,default=REPO/'work-plans/data/semantic_pilot');p.add_argument('--seed-file',type=Path,default=REPO/'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl')
+    p.add_argument('--config',type=Path,default=ROOT/'config/graph_pipeline.json');p.add_argument('--output-dir',type=Path,default=ROOT/'data/semantic_workspaces')
     p.add_argument('--cache-dir',type=Path,default=ROOT/'data/cache_graph');p.add_argument('--offline',action='store_true');p.add_argument('--limit',type=int)
     p.add_argument('--stage',choices=['plan','all','verify'],default='all');p.add_argument('--mode',choices=['graph','direct'],default='graph')
     a=p.parse_args()

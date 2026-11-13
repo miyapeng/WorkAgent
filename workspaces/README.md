@@ -2,9 +2,9 @@
 
 消费 Stage 2 已准入的 Raw Seed Blueprint。先寻找真实案例 Anchor，再根据关键输入缺口补充同一案例的材料。模型负责规划、选择和语义判断；Python 负责真实 Search API、下载、解析、位置恢复、哈希与准入检查。运行过程没有人工选文件或改判环节。本轮不使用合成配套材料。
 
-**当前结果：10 条 Raw Seeds → 2 条准入 Blueprint → 0 个真实 Anchor → 0 个 ready Workspace。** 没有 Search API 凭证；一条停在 `awaiting_search`，另一条查询计划引用了推导节点 `i6`，在调用搜索前被拒绝。下载与实时检索尚未实测成功。
+**当前入口已更新为 `work-plans/data/semantic_pilot/blueprints.jsonl`（raw-blueprint-v2，5 条准入计划）**，包含 Python 组装的 Graph、文件格式偏好和可选视觉依赖假设。默认输出目录为 `data/semantic_workspaces/`，避免覆盖历史实验。本次优化只重跑 Stage 2，没有生成新的 Workspace。
 
-后续新增了 [Claude Code + LLMCenter 搜索试验](CLAUDE_SEARCH.md)：无需单独 Search API Key，当前路由实际完成工具调用，Stage 3 下载并解析 1 个网页；仍为 0 Anchor / 0 ready。它使用独立配置和目录，不覆盖上面的原始 Pilot。
+历史记录：原直接 Graph Pilot 为 10 条 Seed → 2 条准入 → 0 ready，保存在 `data/generated/`。后续 [Claude Code + LLMCenter 搜索试验](CLAUDE_SEARCH.md) 实际下载解析 1 个网页，但仍为 0 Anchor / 0 ready；其独立记录保留，不与本轮新 Blueprint 混用。
 
 ## 命令
 
@@ -16,14 +16,14 @@
 .venv/bin/python workspaces/scripts/run_pipeline.py --limit 10
 # 只消费当前已准入 Blueprint
 .venv/bin/python workspaces/scripts/construct_workspace.py
-# 已有本机缓存时离线重放；缺缓存明确失败，不偷偷联网
-.venv/bin/python workspaces/scripts/run_pipeline.py --offline
+# 只离线重放本轮 Stage 2；本轮未运行新的检索
+.venv/bin/python work-plans/scripts/plan_intents.py --offline
 # 只生成搜索计划 / 独立重新解析并核验已组装文件
 .venv/bin/python workspaces/scripts/construct_workspace.py --stage plan --output-dir /tmp/workagent-search-plans
 .venv/bin/python workspaces/scripts/construct_workspace.py --stage verify
 # 两条相同 Seed 的极简对照：搜索规划不传显式 Graph
-.venv/bin/python workspaces/scripts/construct_workspace.py --mode direct --limit 2 --output-dir workspaces/data/direct_baseline
-# 汇总已有结果，无新模型或搜索调用
+.venv/bin/python workspaces/scripts/construct_workspace.py --mode direct --limit 2 --output-dir workspaces/data/semantic_direct_baseline
+# 汇总上轮历史结果，无新模型或搜索调用
 .venv/bin/python workspaces/scripts/summarize_pilot.py
 .venv/bin/python -m unittest discover -s workspaces/tests -v
 ```
@@ -40,7 +40,7 @@ CLI 支持 `--plan-dir --seed-file --output-dir --config --cache-dir --limit --o
 
 这里展示的只是配置片段；保留完整配置中的模型与检索预算。凭证不要写入 JSON。未配置时保留 `awaiting_search`，不接入未经验证的公共搜索抓取。`disabled` 或 `url_manifest` 也不执行自动检索；本版本支持缓存离线重放，没有把旧人工 URL 清单作为新 Pipeline 的默认路径。
 
-Provider 已实现实际 HTTP 协议并通过模拟 HTTP 契约测试；尚未有凭证完成实时 API 集成测试。默认预算：Anchor 最多 5 个查询、选择最多 3 个候选；最多 2 轮缺口搜索，每轮最多 3 查询/3 文件。预算放在配置，不写死在 Prompt 中。缺少 Key、查询非法、搜索空结果、下载/解析失败分别记录。
+上述 Tavily/Brave/Serper 后端已实现 HTTP 协议并通过模拟契约测试，尚未有凭证完成实时集成测试；Claude Code 后端的真实试验单独记录。默认预算：Anchor 最多 5 个查询、选择最多 3 个候选；最多 2 轮缺口搜索，每轮最多 3 查询/3 文件。预算放在配置，不写死在 Prompt 中。缺少 Key、查询非法、搜索空结果、下载/解析失败分别记录。
 
 ## 信息覆盖怎么验证
 
@@ -54,24 +54,25 @@ Provider 已实现实际 HTTP 协议并通过模拟 HTTP 契约测试；尚未�
 
 `ready` 要求有真实 Anchor、所有关键可检索输入获得支持、案例一致、没有关键冲突和答案泄漏，并重新解析组装后的实际字节核验引用。`incomplete / rejected` 均不进入任务生成。ready 只是材料充分性的初审，不是执行可解性证明。
 
-## 多模态边界
+## 格式和多模态边界
 
-图像/PDF 可配置具备视觉能力的接口检查，PDF 按配置页码或有限页面检查，记录未检查页。WAV 有真实时长/采样率元数据和可选音频接口；其他音视频元数据可使用本机 `ffprobe`，视频可使用 `ffmpeg` 做有上限的抽帧观察。缺少相应工具/接口就保留未检查状态，不假设 LLMCenter 的文本模型具备这些能力。
+规划的 `preferred_formats` 只是候选，不作为逐文件准入过滤器；程序核验实际文件类型并在 File Profile 的 `format` 中记录。HTML 检索页和仓库 ZIP 等既有获取能力保留，不能据其格式推断多模态价值。最终交付格式留给 Stage 4。
 
-`vision`、`audio`、`video` 可选配置沿用 `endpoint / model / api_key_env / parameters`；具体接口须支持对应输入类型。PDF 渲染另需 `pypdfium2`，音视频工具为可选。当前真实 Pilot 没有调用感知模型；音视频接口尚未完成实时集成测试。
+当前收敛到文本、文档、表格、图片和代码。音频/视频下载内容会明确拒绝，停止发现其链接，移除了默认音视频感知调用；旧代码仅保存在 `archive/scripts/*with-media.py`，不在默认流程中运行。
 
-程序提取的原文定位与 VLM/音频模型观察分开记录。模型观察仍是未独立验证的候选，不能单凭它把关键节点升为 supported。此版没有独立视觉真值认证机制；即使有图片也不声称多模态必要性。必要性检验留给 Stage 5。
+新增 TEX、PY、JS 源文、Notebook JSON、TIFF 和 SVG 的只读解析。不会编译 LaTeX、执行代码或 Notebook。Notebook 已有输出会记录答案泄漏审查提示。SVG 只检查静态结构和坐标，不执行脚本、不加载外部资源、不声称已经理解空间含义。
+
+图像/PDF 仍可通过可选视觉接口检查；VLM 描述是未独立核实的观察，不能直接升级为关键事实。候选视觉依赖保留信息需求、所支持操作和待验证状态。等价且可定位的文本/结构化事实可以满足信息需求，不能仅因存在视觉假设就强制使用图片；这种覆盖也不证明视觉必要性。文件扩展名不证明视觉必要性，必要性验证留给 Stage 5。
 
 ## 输出与复现
 
+以下是后续运行 Stage 3 时的目录结构，本轮尚未生成该目录：
+
 ```text
-workspaces/data/generated/
+workspaces/data/semantic_workspaces/
 ├── pilot_report.json                 # 每个准入 Blueprint 的构造结果
-├── experiment_summary.json           # 10 条的分母、失败、用量及对照
-├── examples.md                       # 三条完整 Seed→Blueprint→搜索记录
-├── regression_report.json            # 两份历史真实来源解析回归
 └── WS_<seed_hash>/
-    ├── workspace_init/               # 仅实际准入的输入文件；当前为空
+    ├── workspace_init/               # 仅实际准入的输入文件
     └── construction/
         ├── search_trace.json          # 计划、真实搜索结果、选择和审核
         ├── source_manifest.json       # 来源 URL、哈希、时间和许可状态
@@ -80,15 +81,15 @@ workspaces/data/generated/
         └── construction_report.json   # 状态、缺口、模型和运行配置
 ```
 
-`construction/` 和模型缓存不交给未来执行 Agent。未确认再分发许可的来源不允许标记公开发布；下载字节、完整文件清点及覆盖片段默认不提交 Git。当前空 Workspace 的清点文件在本机存在，Git 仅保存报告/搜索记录等。响应缓存位于 `workspaces/data/cache_graph/`，不含明文 Key；它包含来源内容，不能随意公开。
+`construction/` 和模型缓存不交给未来执行 Agent。未确认再分发许可的来源不允许标记公开发布；下载字节、完整文件清点及覆盖片段默认不提交 Git。实际运行后，清点文件保留在本机，Git 仅保存可公开的报告/搜索记录等。响应缓存位于 `workspaces/data/cache_graph/`，不含明文 Key；它包含来源内容，不能随意公开。
 
-已在禁止网络连接的测试中逐字节比较 13 个重放输出，全部一致，见 [replay_report.json](data/generated/replay_report.json)。对应可执行检查在 `tests/test_cached_replay.py`；新克隆没有缓存时会明确跳过。
+上轮的 13 文件重放记录保留在 [历史报告](data/generated/replay_report.json)。当前 `tests/test_cached_replay.py` 核验本轮 Stage 2 字节一致性与新版 Stage 3 入口；新克隆没有缓存时明确跳过，不假装已做新检索。
 
 对同一输入与缓存，离线重放不产生新请求。报告中的请求元数据与用量保留原始调用，不代表重放又收费；没有供应商账单时金额为 `null`。首次克隆没有本地缓存，只能查看已提交结果或配置接口重新运行，不能保证新模型输出逐字相同。
 
-## 实际 Pilot 与回归
+## 历史 Pilot 与回归
 
-[汇总 JSON](data/generated/experiment_summary.json)、[三条完整记录](data/generated/examples.md)。本轮生成 10/10、图检查通过 5/10、语义准入 2/10。汽车文档计划等待搜索凭证；法规计划查询引用推导节点而被拒绝。关键可检索输入覆盖 0/5，没有新文件、真实 Anchor 或已核实视觉证据。直接搜索对照两条也在等待凭证，不能比较 Graph 的检索收益。
+[汇总 JSON](data/generated/experiment_summary.json)、[三条完整记录](data/generated/examples.md)。上轮直接 Graph 实验生成 10/10、图检查通过 5/10、语义准入 2/10。汽车文档计划等待搜索凭证；法规计划查询引用推导节点而被拒绝。关键可检索输入覆盖 0/5，没有新文件、真实 Anchor 或已核实视觉证据。直接搜索对照两条也在等待凭证，不能比较 Graph 的检索收益。
 
 `inspect_regressions.py` 使用本机已有真实下载缓存，重新解析加拿大 CSV 和 HMRC XLSX，核验稳定片段 ID、原始字节与定位；2 份通过。来源、哈希和原始获取时间在 [regression_report.json](data/generated/regression_report.json)。这些不是本轮检索成果，也不证明它们覆盖新 Blueprint；新克隆没有原始字节时不伪造回归结果。
 
@@ -96,4 +97,4 @@ workspaces/data/generated/
 
 ## 迁移与后续入口
 
-旧脚本、配置、测试及 Pilot 在 `archive/`，仅供历史审阅；完整旧环境请检出 `5e61eae`。新 Stage 2 接口 `raw-blueprint-v1`，Stage 3 接口 `grounded-workspace-v2`。现有 Stage 4 仍依赖旧数据/函数，**不能直接运行新流水线的结果**，本次未增加兼容层。后续需迁移其入口、哈希关联与 segment_id 定位，并继续强制 ready 准入；不得将本轮 incomplete 改名为成功。方法与论文差异见 [METHODS.md](METHODS.md)。
+旧脚本、配置、测试及 Pilot 在 `archive/`，仅供历史审阅；完整旧环境请检出 `5e61eae`。新 Stage 2 接口 `raw-blueprint-v2`，Stage 3 接口 `grounded-workspace-v2`。现有 Stage 4 仍依赖旧数据/函数，**不能直接运行新流水线的结果**，本次未增加兼容层。后续需迁移其入口、哈希关联与 segment_id 定位，并继续强制 ready 准入；不得将本轮 incomplete 改名为成功。方法与论文差异见 [METHODS.md](METHODS.md)。

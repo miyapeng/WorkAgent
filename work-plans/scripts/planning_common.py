@@ -45,7 +45,14 @@ def model_call(llm,prompt_path,context,cache,offline=False):
     key=sha256(json_bytes({'endpoint':llm['endpoint'],'payload':payload,'prompt_version':version}))
     cached=Path(cache)/'llm'/(key+'.json')
     require(not offline or cached.exists(),'offline_model_cache_missing:'+key)
-    value,meta=llm_call(llm,prompt,context,Path(cache),prompt_version=version)
+    try:
+        value,meta=llm_call(llm,prompt,context,Path(cache),prompt_version=version)
+    except DataError as exc:
+        if cached.exists():
+            record=schema(cached)
+            exc.model_metadata={k:v for k,v in record.items() if k!='response'}
+            exc.model_metadata.update(usage=record['response'].get('usage',{}),prompt_sha256=sha256(prompt.encode()))
+        raise
     record=schema(cached)
     meta['usage']=record['response'].get('usage',{})
     meta['prompt_sha256']=sha256(prompt.encode())

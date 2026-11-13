@@ -1,5 +1,7 @@
 # Claude Code + LLMCenter 搜索试验
 
+以下实测统计来自旧版 Blueprint，原始结果保留。当前 CLI 已改为读取 `work-plans/data/semantic_pilot/`；下面的新运行命令使用新输出目录，不覆盖旧实验。
+
 本轮实测使用本机 Claude Code 2.1.299、LLMCenter 的 GLM-5.2 accessId `GLM_ka48dn` 和现有推理 Key，未提供 Tavily/Brave/Serper Key。**WebSearch 与 WebFetch 可以调用并返回工具结果，但本轮没有形成 ready Workspace。**
 
 ## 实际结果
@@ -22,7 +24,7 @@
 独立试一条已通过 Stage 2 审核的 Blueprint：
 
 ```bash
-.venv/bin/python workspaces/scripts/probe_claude_search.py --seed-id raw_31_0_21094
+.venv/bin/python workspaces/scripts/probe_claude_search.py --seed-id raw_31_0_18983
 ```
 
 自动接入现有 Stage 3（当前配置限制为两个 Anchor 查询、两个下载候选、一轮补充检索；此命令只运行一个已准入 Seed）：
@@ -31,11 +33,11 @@
 .venv/bin/python workspaces/scripts/construct_workspace.py \
   --config workspaces/config/claude_search_pilot.json \
   --limit 1 \
-  --output-dir workspaces/data/claude_search_pilot \
+  --output-dir workspaces/data/semantic_claude_workspaces \
   --cache-dir workspaces/data/cache_claude_search
 ```
 
-已有本机缓存时，在以上命令末尾加 `--offline` 重放。已禁用网络及 Claude 子进程，逐字节核对 6 个 Stage 3 输出，结果一致，见 [replay_report.json](data/claude_search_pilot/replay_report.json)。首次克隆没有私有缓存，需要实际运行，不能冒充离线重放成功。
+已有本机缓存时，在以上命令末尾加 `--offline` 重放对应新运行；本轮尚未执行新 Blueprint 的搜索。历史实验已禁用网络及 Claude 子进程，逐字节核对 6 个 Stage 3 输出，结果一致，见 [replay_report.json](data/claude_search_pilot/replay_report.json)。首次克隆没有私有缓存，需要实际运行，不能冒充离线重放成功。
 
 ```bash
 .venv/bin/python workspaces/scripts/summarize_claude_search.py

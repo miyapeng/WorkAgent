@@ -11,8 +11,8 @@ from plan_intents import validate_blueprint,validate_review,load_raw,DataError,r
 
 def fixture():
     return {'seed_id':'synthetic_test_fixture','work_objective':'Compare requested amounts with recorded amounts.',
-            'deliverables':[{'id':'out1','type':'comparison','description':'Comparison of the amounts'}],
-            'information_nodes':[{'id':'i1','type':'external_input','description':'Recorded amounts','supply_channel':'workspace','critical':True,'modality_candidates':['table'],'modality_rationale':'Amounts grouped by item.'},
+            'deliverables':[{'id':'out1','type':'report','description':'Comparison of the amounts','preferred_formats':['md']}],
+            'information_nodes':[{'id':'i1','type':'external_input','description':'Recorded amounts','supply_channel':'workspace','critical':True,'kind':'table','preferred_formats':['csv'],'modality_candidates':[],'modality_rationale':''},
                                  {'id':'i2','type':'derived_information','description':'Differences between the amounts'}],
             'dependencies':[['i1','i2'],['i2','out1']],'modality_hypotheses':[]}
 
@@ -47,7 +47,7 @@ class BlueprintTests(unittest.TestCase):
     def test_modality_linkage(self):
         p=fixture();p['information_nodes'][0]['modality_candidates'].append('image')
         with self.assertRaisesRegex(DataError,'missing_modality'):self.check(p)
-        p['modality_hypotheses']=[{'node_id':'i1','modality_candidate':'image','information_needed':'Spatial relation','modality_rationale':'Drawing needed','evidence_status':'unretrieved','necessity_status':'hypothesis'}]
+        p['modality_hypotheses']=[{'node_id':'i1','supports_node_id':'i2','modality_candidate':'image','information_needed':'Spatial relation','modality_rationale':'Drawing needed','evidence_status':'unretrieved','necessity_status':'hypothesis'}]
         self.check(p)
         p['modality_hypotheses'][0]['evidence_status']='verified'
         with self.assertRaises(DataError):self.check(p)

@@ -1,0 +1,218 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deliverable": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "direct_answer",
+            "report",
+            "spreadsheet",
+            "presentation",
+            "code_notebook",
+            "visual_design",
+            "structured_data",
+            "document_revision"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preferred_formats": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "csv",
+              "docx",
+              "ipynb",
+              "jpeg",
+              "jpg",
+              "js",
+              "json",
+              "md",
+              "pdf",
+              "png",
+              "pptx",
+              "py",
+              "svg",
+              "tex",
+              "tiff",
+              "txt",
+              "xlsx"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "description",
+        "preferred_formats",
+        "requires"
+      ]
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "kind": {
+            "enum": [
+              "text_instruction",
+              "document",
+              "table",
+              "image",
+              "diagram",
+              "code",
+              "structured_data"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "enum": [
+              "task_instruction",
+              "workspace",
+              "external_reference"
+            ]
+          },
+          "preferred_formats": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "csv",
+                "docx",
+                "ipynb",
+                "jpeg",
+                "jpg",
+                "js",
+                "json",
+                "md",
+                "pdf",
+                "png",
+                "pptx",
+                "py",
+                "svg",
+                "tex",
+                "tiff",
+                "txt",
+                "xlsx"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "modality_dependency": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "modality": {
+                "enum": [
+                  "visual",
+                  "visual_spatial"
+                ]
+              },
+              "information_needed": {
+                "type": "string",
+                "minLength": 1
+              },
+              "required_operation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "supports": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              }
+            },
+            "required": [
+              "modality",
+              "information_needed",
+              "required_operation",
+              "supports"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "kind",
+          "description",
+          "source",
+          "preferred_formats"
+        ]
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "type": {
+            "enum": [
+              "derived_information",
+              "professional_judgment"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "description",
+          "requires"
+        ]
+      }
+    }
+  },
+  "required": [
+    "objective",
+    "deliverable",
+    "inputs",
+    "operations"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

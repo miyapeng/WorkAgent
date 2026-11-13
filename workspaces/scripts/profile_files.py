@@ -4,10 +4,7 @@ import io
 import json
 import re
 import subprocess
-import shutil
 import sys
-import tempfile
-import wave
 import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
@@ -16,7 +13,7 @@ from xml.etree import ElementTree as ET
 
 from common import DataError, require, normalized, sha256, save
 
-VERSION = 'native-profiles-v2-segment-ids'
+VERSION = 'native-profiles-v3-text-doc-table-image-code'
 MAX_SEGMENTS = 100000
 
 
@@ -36,22 +33,25 @@ def checked_zip(data):
 
 def detect(data, url, mime):
     suffix = Path(urlsplit(url).path).suffix.lower()
+    require(not mime.startswith(('audio/','video/')) and suffix not in ('.wav','.mp3','.mp4','.mov','.ogg','.flac','.webm'), 'audio_video_out_of_scope')
     if data.startswith(b'%PDF-'):
         kind = 'pdf'
     elif data.startswith(b'PK\x03\x04'):
         with checked_zip(data) as z:
             names = set(z.namelist())
             kind = 'xlsx' if 'xl/workbook.xml' in names else 'docx' if 'word/document.xml' in names else 'pptx' if 'ppt/presentation.xml' in names else 'repository_zip'
-    elif data.startswith((b'\x89PNG\r\n\x1a\n', b'\xff\xd8\xff', b'GIF87a', b'GIF89a')):
+    elif data.startswith((b'\x89PNG\r\n\x1a\n', b'\xff\xd8\xff', b'II*\x00', b'MM\x00*')):
         kind = 'image'
     elif (data[:4]==b'RIFF' and data[8:12]==b'WAVE') or data.startswith((b'ID3',b'OggS',b'fLaC')) or data[4:8]==b'ftyp':
-        kind = 'media'
+        raise DataError('audio_video_out_of_scope')
     else:
         text = data.decode('utf-8-sig')
         require('\x00' not in text, 'binary_or_invalid_text')
         if re.search(r'<(?:!doctype\s+html|html|head|body)\b', text[:2000], re.I):
             kind = 'html'
-        elif suffix == '.json' or mime == 'application/json':
+        elif suffix == '.svg' or mime == 'image/svg+xml' or re.search(r'<svg\b',text[:2000],re.I):
+            kind = 'svg'
+        elif suffix in ('.json','.ipynb') or mime in ('application/json','application/x-ipynb+json'):
             json.loads(text); kind = 'json'
         elif suffix in ('.csv', '.tsv') or mime in ('text/csv', 'text/tab-separated-values'):
             kind = 'csv'
@@ -67,11 +67,11 @@ def detect(data, url, mime):
         require(mime == native[kind] or mime in allowed, 'mime_magic_mismatch')
     elif kind == 'image':
         require(mime.startswith('image/') or mime in allowed, 'mime_magic_mismatch')
-    elif kind == 'media':
-        require(mime.startswith(('audio/','video/')) or mime in allowed,'mime_magic_mismatch')
+    elif kind == 'svg':
+        require(mime in allowed | {'image/svg+xml','text/xml','application/xml','text/plain'},'mime_magic_mismatch')
     else:
-        require(mime.startswith('text/') or mime in allowed | {'application/json', 'application/xhtml+xml'}, 'mime_magic_mismatch')
-    declared = {'.pdf':'pdf', '.xlsx':'xlsx', '.docx':'docx', '.pptx':'pptx', '.json':'json', '.csv':'csv'}
+        require(mime.startswith('text/') or mime in allowed | {'application/json', 'application/xhtml+xml','application/x-ipynb+json','application/x-tex','application/x-latex','application/javascript','application/x-python'}, 'mime_magic_mismatch')
+    declared = {'.pdf':'pdf', '.xlsx':'xlsx', '.docx':'docx', '.pptx':'pptx', '.json':'json', '.ipynb':'json', '.svg':'svg', '.csv':'csv'}
     if suffix in declared:
         require(kind == declared[suffix], 'extension_magic_mismatch')
     return kind
@@ -186,22 +186,20 @@ def parse_bytes(data, url, mime):
             require(im.width*im.height<=25_000_000,'image_pixel_limit')
             im.load(); structure={'width':im.width,'height':im.height,'format':im.format,'visual_content_verified':False}
         warnings.append('visual_inspection_required')
-    elif kind == 'media':
-        if data[:4]==b'RIFF' and data[8:12]==b'WAVE':
-            with wave.open(io.BytesIO(data)) as sound:
-                structure={'duration_seconds':sound.getnframes()/sound.getframerate(),'channels':sound.getnchannels(),
-                           'sample_rate':sound.getframerate(),'media_type':'audio','perception_verified':False}
-        elif shutil.which('ffprobe'):
-            with tempfile.NamedTemporaryFile() as stream:
-                stream.write(data);stream.flush()
-                result=subprocess.run(['ffprobe','-v','error','-protocol_whitelist','file,pipe','-show_format','-show_streams','-of','json',stream.name],capture_output=True,timeout=15,check=True)
-                info=json.loads(result.stdout)
-            structure={'duration_seconds':float(info.get('format',{}).get('duration',0)),
-                       'streams':[{k:s[k] for k in ('codec_type','codec_name','width','height','sample_rate','channels') if k in s} for s in info.get('streams',[])],
-                       'media_type':'video' if any(s.get('codec_type')=='video' for s in info.get('streams',[])) else 'audio','perception_verified':False}
-        else:
-            structure={'media_type':'video' if mime.startswith('video/') else 'audio','metadata_status':'ffprobe_unavailable','perception_verified':False}
-        warnings.append('audio_video_perception_required')
+    elif kind == 'svg':
+        require(b'<!DOCTYPE' not in data.upper() and b'<!ENTITY' not in data.upper(), 'xml_entity_forbidden')
+        tree=ET.fromstring(data)
+        require(tree.tag.rsplit('}',1)[-1]=='svg','invalid_svg_root')
+        for i,e in enumerate(tree.iter(),1):
+            tag=e.tag.rsplit('}',1)[-1]
+            require(tag.lower() not in ('script','foreignobject'),'active_svg_content')
+            for key,value in e.attrib.items():
+                key=key.rsplit('}',1)[-1].lower()
+                require(not key.startswith('on') and (key!='href' or value.startswith('#')) and 'url(' not in value.lower(),'active_svg_reference')
+            require('url(' not in (e.text or '').lower(),'active_svg_reference')
+            add(f'svg:element:{i}',json.dumps({'tag':tag,'attributes':e.attrib,'text':e.text or ''},ensure_ascii=False,sort_keys=True))
+        structure={'elements':sum(1 for _ in tree.iter()),'viewBox':tree.attrib.get('viewBox'),'visual_content_verified':False,'rendered':False}
+        warnings.append('svg_structure_only_visual_inspection_required')
     elif kind == 'json':
         obj=json.loads(data.decode('utf-8-sig'))
         def visit(v,path):
@@ -211,6 +209,11 @@ def parse_bytes(data, url, mime):
                 for i,x in enumerate(v): visit(x,path+'/'+str(i))
             else: add('json:'+path,json.dumps(v,ensure_ascii=False))
         visit(obj,''); structure={'root_type':type(obj).__name__,'root_keys':list(obj) if isinstance(obj,dict) else None}
+        if Path(urlsplit(url).path).suffix.lower()=='.ipynb':
+            require(isinstance(obj,dict) and isinstance(obj.get('cells'),list) and obj.get('nbformat')==4,'invalid_notebook_structure')
+            require(all(isinstance(c,dict) and c.get('cell_type') in ('code','markdown','raw') and isinstance(c.get('source'),(str,list)) for c in obj['cells']),'invalid_notebook_cell')
+            structure.update(cells=len(obj['cells']),cells_with_outputs=sum(bool(c.get('outputs')) for c in obj['cells']),executed=False)
+            if structure['cells_with_outputs']:warnings.append('notebook_contains_existing_outputs_review_for_answer_leakage')
     else:
         text=data.decode('utf-8-sig')
         if kind=='html':
@@ -218,12 +221,17 @@ def parse_bytes(data, url, mime):
             warnings.append('html_discovery_only_no_browser_execution')
         for i,line in enumerate(text.splitlines(),1): add(f'line:{i}',line)
         structure={'lines':len(text.splitlines())}
-    require(segments or kind in ('image','media'), 'no_readable_content')
+    require(segments or kind=='image', 'no_readable_content')
+    suffix=Path(urlsplit(url).path).suffix.lower().lstrip('.')
+    actual_format=structure['format'].lower() if kind=='image' else ('zip' if kind=='repository_zip' else ('md' if kind=='markdown' else kind))
+    if suffix in ('tex','py','js') and kind=='text':actual_format=suffix;structure['executed_or_compiled']=False
+    if suffix=='ipynb' and kind=='json':actual_format='ipynb'
+    if kind=='text' and actual_format=='text':actual_format='txt'
     full='\n'.join(s['text'] for s in segments)
     signals=[]
     if re.search(r'\b\d{3}-\d{2}-\d{4}\b|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',full): signals.append('potential_personal_identifiers')
     if re.search(r'\b(?:variance|over budget|under budget|recommendations?|RAG rating)\b',full,re.I): signals.append('possible_precomputed_analysis')
-    return add_segment_ids({'file_id':'f_'+sha256(data)[:24], 'sha256':sha256(data),'type':kind,'parse_status':'parsed',
+    return add_segment_ids({'file_id':'f_'+sha256(data)[:24], 'sha256':sha256(data),'type':kind,'format':actual_format,'parse_status':'parsed',
             'structure':structure,'segments':segments,'warnings':warnings,'risk_signals':signals,
             'profiling_version':VERSION})
 

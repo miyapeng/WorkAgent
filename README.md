@@ -2,18 +2,16 @@
 
 当前默认研究流水线为 **Stage 1 Raw Seeds → Stage 2 Work Blueprint → Stage 3 Graph-guided Workspace Construction**。Stage 1 保留 5,745 条官方原文数字候选；Stage 2–3 已重构为直接读取 Raw Seeds，不再默认依赖历史 LLM 改写的 Work Demand。
 
-本轮 10 条真实 Seed：10 条生成 Blueprint，5 条通过图结构检查，2 条通过独立语义审核。当前没有 Search API 凭证：一条保存 `awaiting_search`，另一条搜索计划引用了不可检索节点而被拒绝。**真实 Anchor、下载文件和 ready Workspace 均为 0。** 没有用合成夹具冒充真实检索成果。
+当前 Stage 2 已更新为 **LLM 语义规划 → Python Graph 编译 → 独立审核**，加入输入/输出候选格式，范围收敛到文本、文档、表格、图片和代码。相同 10 条真实 Seed：结构通过 **6/10**，语义准入 **5/10**（上一版 5/10、2/10）。4 条类别/格式错误、1 条审核 JSON 错误均保留，未人工修复。原文未改动，本轮没有生成新的 Workspace。
 
 ```bash
 .venv/bin/python -m pip install -r workspaces/requirements.txt
-.venv/bin/python workspaces/scripts/run_pipeline.py --limit 10
-# 已有本机响应缓存时可离线重放
-.venv/bin/python workspaces/scripts/run_pipeline.py --offline
+.venv/bin/python work-plans/scripts/plan_intents.py --limit 10
+# 本机已有本轮响应缓存时可离线重放
+.venv/bin/python work-plans/scripts/plan_intents.py --limit 10 --offline
 ```
 
-后续 [Claude Code 搜索试验](workspaces/CLAUDE_SEARCH.md) 已接通现有 LLMCenter 路由：观察到真实工具调用，Stage 3 下载解析了 1 个网页，但仍未形成 ready Workspace；未提供单独搜索 API Key。
-
-入口、文件与结果：[Stage 1](work-seeds/STAGE1.md)、[Stage 2](work-plans/README.md)、[Stage 3](workspaces/README.md)、[本轮实验汇总](workspaces/data/generated/experiment_summary.json)、[三条完整处理记录](workspaces/data/generated/examples.md)、[论文依据与本项目设计](workspaces/METHODS.md)。缺少搜索 Key 时流程如实保存阻断状态；查询、选择、覆盖判定由配置、模型和程序完成，不需要开发者人工改判。
+当前产物：[准入 Blueprint](work-plans/data/semantic_pilot/blueprints.jsonl)、[逐条对照和实际示例](work-plans/data/semantic_pilot/comparison.md)、[Stage 2 说明](work-plans/README.md)。后续 [Stage 3](workspaces/README.md) 默认消费新接口，实际检索时可以选 [Claude Code 搜索后端](workspaces/CLAUDE_SEARCH.md)；上轮该后端下载解析过 1 个网页，但仍未产生 ready Workspace，历史记录不计入本轮结果。
 
 Phase I 仍为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。旧 Stage 2–3 实验移入各模块 `archive/`。**现有 Stage 4 尚未迁移到新接口，不能直接消费新版结果**；旧 Stage 4 报告只是历史阻断记录，不代表当前已有正式任务。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。
 

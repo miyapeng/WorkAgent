@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+"""Official Raw Seed -> minimal Blueprint DAG -> independent semantic admission."""
+import argparse
+from collections import defaultdict,deque,Counter
+import csv
+from pathlib import Path
+from planning_common import REPO,DataError,require,schema,validate,load_llm,model_call,usage,save,read_jsonl,write_jsonl,sha256,json_bytes
+ROOT=REPO/'work-plans'
+
+
+def validate_blueprint(plan,seed):
+    validate(plan,schema(ROOT/'config/blueprint.schema.json'))
+    require(plan['seed_id']==seed['seed_id'],'seed_id_mismatch')
+    nodes={n['id']:n for n in plan['information_nodes']};outputs={n['id'] for n in plan['deliverables']}
+    ids=set(nodes)|outputs
+    require(len(ids)==len(plan['information_nodes'])+len(plan['deliverables']),'duplicate_node_id')
+    edges=[tuple(e) for e in plan['dependencies']];require(len(edges)==len(set(edges)),'duplicate_edge')
+    children=defaultdict(set);parents=defaultdict(set)
+    for a,b in edges:
+        require(a in ids and b in ids and a!=b,'invalid_dependency_reference')
+        require(a not in outputs,'deliverable_must_be_sink')
+        require(b not in nodes or nodes[b]['type']!='external_input','external_input_must_be_root')
+        children[a].add(b);parents[b].add(a)
+    for ident in ids:
+        if ident in outputs or nodes[ident]['type']!='external_input':require(bool(parents[ident]),'missing_premises:'+ident)
+    degrees={i:len(parents[i]) for i in ids};queue=deque(sorted(i for i in ids if not degrees[i]));visited=[]
+    while queue:
+        i=queue.popleft();visited.append(i)
+        for child in sorted(children[i]):
+            degrees[child]-=1
+            if degrees[child]==0:queue.append(child)
+    require(len(visited)==len(ids),'cyclic_graph')
+    serves=set(outputs)
+    for i in reversed(visited):
+        if children[i]&serves:serves.add(i)
+    require(serves==ids,'unused_information_node')
+    actual=set()
+    for h in plan['modality_hypotheses']:
+        n=nodes.get(h['node_id']);require(n and n['type']=='external_input','invalid_modality_node')
+        require(h['modality_candidate'] in n['modality_candidates'],'modality_not_in_node')
+        pair=(h['node_id'],h['modality_candidate']);require(pair not in actual,'duplicate_modality_hypothesis');actual.add(pair)
+    expected={(n['id'],m) for n in nodes.values() if n['type']=='external_input' for m in n['modality_candidates'] if m not in ('text','table')}
+    require(actual==expected,'missing_modality_rationale')
+    return {'schema':True,'seed_id':True,'dag':True,'roots_and_sinks':True,'all_nodes_serve_outputs':True,'modality_linkage':True}
+
+
+def validate_review(review):
+    validate(review,schema(ROOT/'config/review.schema.json'))
+    require(review['accepted']==(all(review['checks'].values()) and not review['issues']),'inconsistent_semantic_review')
+
+
+def load_raw(path):
+    rows=read_jsonl(path);require(len(rows)==len({r['seed_id'] for r in rows}),'duplicate_seed_id')
+    for r in rows:require(r['digital_label']=='DIGITAL' and r['task_text'],'non_digital_or_empty_seed')
+    official={r['seed_id']:r for r in read_jsonl(REPO/'work-seeds/data/raw_work_seeds/digital_task_pool.jsonl')}
+    require(all(official.get(r['seed_id'])==r for r in rows),'raw_seed_not_current_official_pool')
+    return {r['seed_id']:r for r in rows}
+
+
+def background(seed):
+    with (REPO/'work-seeds/data/processed/occupations.csv').open() as s:occupations={r['occupation_code']:r['occupation_title'] for r in csv.DictReader(s)}
+    with (REPO/'work-seeds/data/processed/dwas.csv').open() as s:dwas={r['dwa_id']:r['dwa_name'] for r in csv.DictReader(s)}
+    require(occupations.get(seed['occupation_code'])==seed['occupation_title'],'official_occupation_mismatch')
+    return {'occupation_title':occupations[seed['occupation_code']],'official_dwas':[{'dwa_id':d,'dwa_name':dwas[d]} for d in seed['dwa_ids']]}
+
+
+def run(input_file,output_dir,cache,config_path,limit=None,offline=False):
+    config=schema(config_path);llm=load_llm(config,config_path,offline);raw=load_raw(input_file)
+    selected=config.get('pilot_seeds') or [{'seed_id':sid} for sid in raw]
+    if limit is not None:require(limit>=0,'negative_limit');selected=selected[:limit]
+    require(len(selected)==len({x['seed_id'] for x in selected}),'duplicate_pilot_seed')
+    report={'interface':'raw-blueprint-v1','input_sha256':sha256(Path(input_file).read_bytes()),'config_sha256':sha256(Path(config_path).read_bytes()),'seeds':{},'limitations':['Independent review uses the same model family, not expert certification.','Task instruction requirements remain pending for Stage 4; they are not case facts.']}
+    plans=[];calls=[]
+    for item in selected:
+        sid=item['seed_id'];require(sid in raw,'selected_seed_missing:'+sid);seed=raw[sid]
+        record={'status':'failed','seed_sha256':sha256(json_bytes(seed)),'selection_reason':item.get('selection_reason','CLI input order'),'model_calls':[],'deterministic_checks':None,'semantic_review':None}
+        checkpoint=cache/'planning'/(sha256(json_bytes({'seed':seed,'config':config,'prompts':{p.name:sha256(p.read_bytes()) for p in (ROOT/'prompts').glob('*.txt')},'schemas':{p.name:sha256(p.read_bytes()) for p in (ROOT/'config').glob('*.schema.json')},'code':sha256(Path(__file__).read_bytes())}))+'.json')
+        if checkpoint.exists():record=schema(checkpoint)
+        else:
+            stage='generation'
+            try:
+                plan,meta=model_call(llm,ROOT/'prompts/blueprint_generator.v2.txt',{'raw_seed':seed,'official_background':background(seed),'schema':schema(ROOT/'config/blueprint.schema.json')},cache,offline)
+                record['model_calls'].append(meta);record['proposed_blueprint']=plan
+                if 'failure_reason' in plan:raise DataError('planning_failure:'+str(plan['failure_reason']))
+                stage='graph_validation';record['deterministic_checks']=validate_blueprint(plan,seed)
+                stage='semantic_review';review,meta=model_call(llm,ROOT/'prompts/blueprint_reviewer.v1.txt',{'raw_seed':seed,'blueprint':plan,'schema':schema(ROOT/'config/review.schema.json')},cache,offline)
+                record['model_calls'].append(meta);validate_review(review);record['semantic_review']=review
+                record['status']='accepted' if review['accepted'] else 'rejected'
+                record['failure_stage']=None if review['accepted'] else stage
+                record['failure_reasons']=review['issues']
+                record['blueprint_sha256']=sha256(json_bytes(plan))
+            except (OSError,ValueError,KeyError,TypeError) as exc:
+                record.update(failure_stage=stage,failure_reasons=[str(exc) if isinstance(exc,DataError) else type(exc).__name__])
+            # Preserve model/validation outcomes, but let transient transport/auth failures retry next run.
+            if (('proposed_blueprint' in record and record.get('semantic_review') is not None)
+                    or record.get('failure_stage')=='graph_validation' or record['status']=='accepted'):
+                save(checkpoint,record)
+        if record['status']=='accepted':
+            validate_blueprint(record['proposed_blueprint'],seed);validate_review(record['semantic_review'])
+            plans.append(record['proposed_blueprint'])
+        report['seeds'][sid]=record;calls.extend(record['model_calls'])
+        print(sid,record['status'],flush=True)
+        write_jsonl(output_dir/'blueprints.jsonl',plans);save(output_dir/'planning_report.json',report)
+    report['counts']={'input':len(selected),'generated':sum('proposed_blueprint' in r and 'failure_reason' not in r['proposed_blueprint'] for r in report['seeds'].values()),'graph_passed':sum(bool(r['deterministic_checks']) for r in report['seeds'].values()),'accepted':len(plans),'rejected_or_failed':len(selected)-len(plans),'modality_candidate_plans':sum(bool(p['modality_hypotheses']) for p in plans)}
+    write_jsonl(output_dir/'blueprints.jsonl',plans)
+    report['model_usage']=usage(calls);report['blueprints_sha256']=sha256((output_dir/'blueprints.jsonl').read_bytes())
+    save(output_dir/'planning_report.json',report);return report
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--input-file',type=Path,default=REPO/'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl')
+    p.add_argument('--output-dir',type=Path,default=ROOT/'data/generated')
+    p.add_argument('--cache-dir',type=Path,default=ROOT/'data/cache_graph')
+    p.add_argument('--config',type=Path,default=ROOT/'config/blueprint_pilot.json')
+    p.add_argument('--limit',type=int);p.add_argument('--offline',action='store_true')
+    a=p.parse_args();r=run(a.input_file,a.output_dir,a.cache_dir,a.config,a.limit,a.offline);print(r['counts'])
+if __name__=='__main__':main()

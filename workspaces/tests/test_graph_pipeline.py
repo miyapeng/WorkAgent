@@ -18,8 +18,8 @@ from search_provider import search
 
 
 def plan():
-    return {'seed_id':'synthetic_test_fixture','work_objective':'Compare two source values.','deliverables':[{'id':'out1','type':'comparison','description':'Comparison'}],
-            'information_nodes':[{'id':i,'type':'external_input','description':'Input '+i,'supply_channel':'workspace','critical':True,'modality_candidates':['table'],'modality_rationale':'Tabular values'} for i in ('i1','i2')],
+    return {'seed_id':'synthetic_test_fixture','work_objective':'Compare two source values.','deliverables':[{'id':'out1','type':'report','description':'Comparison','preferred_formats':['md']}],
+            'information_nodes':[{'id':i,'type':'external_input','description':'Input '+i,'supply_channel':'workspace','critical':True,'kind':'table','preferred_formats':['xlsx'],'modality_candidates':[],'modality_rationale':''} for i in ('i1','i2')],
             'dependencies':[['i1','out1'],['i2','out1']],'modality_hypotheses':[]}
 
 
@@ -66,12 +66,22 @@ class EvidenceTests(unittest.TestCase):
         a=auditor(self.profiles)
         # The anchor identity must itself be programmatically located, not a VLM claim.
         with self.assertRaisesRegex(DataError,'anchor_identity'):check_audit(a,plan(),self.profiles,sources(self.profiles))
-    def test_segment_ids_stable_and_audio_metadata_not_transcription(self):
+    def test_format_preference_and_visual_hypothesis_do_not_force_carriers(self):
+        blueprint=plan();blueprint['information_nodes'][0]['modality_candidates']=['spatial']
+        blueprint['information_nodes'].append({'id':'i3','type':'derived_information','description':'Interpret the fixture relation'})
+        blueprint['dependencies']=[['i1','i3'],['i2','i3'],['i3','out1']]
+        blueprint['modality_hypotheses']=[{'node_id':'i1','supports_node_id':'i3','modality_candidate':'spatial','information_needed':'Fixture relation','modality_rationale':'Potential spatial evidence','evidence_status':'unretrieved','necessity_status':'hypothesis'}]
+        result=check_audit(self.audit,blueprint,self.profiles,sources(self.profiles))
+        # Fixture evidence is CSV although the input prefers XLSX. Semantic applicability
+        # is mocked here; a hypothesis alone cannot prove a visual requirement.
+        self.assertEqual(result['status'],'ready')
+        self.assertFalse(result['modality_evidence'][0]['independently_verified'])
+    def test_segment_ids_stable_and_audio_rejected(self):
         p=next(iter(self.profiles.values()));self.assertEqual(add_segment_ids(copy.deepcopy(p)),p)
         data=io.BytesIO()
         with wave.open(data,'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(8000);w.writeframes(b'\0\0'*8000)
-        media=parse_bytes(data.getvalue(),'https://example.org/a.wav','audio/wav')
-        self.assertEqual(media['structure']['duration_seconds'],1);self.assertEqual(media['segments'],[])
+        with self.assertRaisesRegex(DataError,'audio_video_out_of_scope'):
+            parse_bytes(data.getvalue(),'https://example.org/a.wav','audio/wav')
     def test_links_only_come_from_downloaded_hrefs(self):
         results=discover_links(b'<a href="/a.pdf">real href</a><a href="http://localhost/x.csv">bad</a>','https://example.org/page')
         self.assertEqual([r['url'] for r in results],['https://example.org/a.pdf'])
@@ -97,18 +107,25 @@ class SearchTests(unittest.TestCase):
 class LoopTests(unittest.TestCase):
     def test_upstream_review_and_hash_cannot_be_bypassed(self):
         raw=REPO/'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl'
-        plans,seeds,report=load_inputs(REPO/'work-plans/data/generated',raw)
-        for change in ('file_hash','review','seed_hash'):
+        plans,seeds,report=load_inputs(REPO/'work-plans/data/semantic_pilot',raw)
+        for change in ('file_hash','review','seed_hash','compiler'):
             with tempfile.TemporaryDirectory() as temp:
                 root=Path(temp);r=copy.deepcopy(report)
-                write_jsonl(root/'blueprints.jsonl',plans)
+                local_plans=copy.deepcopy(plans)
+                if change=='compiler':
+                    local_plans[0]['work_objective']='An altered objective'
+                    r['seeds'][plans[0]['seed_id']]['blueprint_sha256']=sha256(json_bytes(local_plans[0]))
+                write_jsonl(root/'blueprints.jsonl',local_plans)
+                if change=='compiler':r['blueprints_sha256']=sha256((root/'blueprints.jsonl').read_bytes())
                 if change=='file_hash':r['blueprints_sha256']='wrong'
                 elif change=='review':r['seeds'][plans[0]['seed_id']]['semantic_review']['accepted']=False
-                else:r['seeds'][plans[0]['seed_id']]['seed_sha256']='wrong'
+                elif change=='seed_hash':r['seeds'][plans[0]['seed_id']]['seed_sha256']='wrong'
                 save(root/'planning_report.json',r)
                 with self.assertRaises(DataError):load_inputs(root,raw)
     def test_two_round_fixture_and_hash_gate(self):
         with tempfile.TemporaryDirectory() as temp:
+            from plan_intents import validate_blueprint
+            validate_blueprint(plan(),{'seed_id':'synthetic_test_fixture'})
             root=Path(temp);cache=root/'cache';calls=[]
             config={'limits':{'anchor_queries':1,'anchor_candidates':1,'gap_rounds':1,'queries_per_gap':1,'files_per_gap':1,'download_bytes':10000,'timeout_seconds':1,'redirects':1,'max_profile_chars':10000,'max_segments_per_file':20},'search':{'provider':'fixture'},'vision':None}
             def model(llm,path,context,cache,offline):

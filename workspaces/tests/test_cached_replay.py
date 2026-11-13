@@ -12,7 +12,7 @@ import construct_workspace
 
 class CachedPilotReplay(unittest.TestCase):
     @unittest.skipUnless((REPO / 'work-plans/data/cache_graph/llm').exists()
-                         and (REPO / 'workspaces/data/cache_graph/llm').exists(),
+                         and (REPO / 'work-plans/data/semantic_pilot/planning_report.json').exists(),
                          'Local private model caches not present in a fresh clone')
     def test_current_pilot_replays_identically_without_network(self):
         seed = REPO / 'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl'
@@ -25,11 +25,8 @@ class CachedPilotReplay(unittest.TestCase):
             root = Path(temp)
             plan_intents.run(seed, root / 'plans', REPO / 'work-plans/data/cache_graph',
                              REPO / 'work-plans/config/blueprint_pilot.json', 10, True)
-            construct_workspace.run(root / 'plans', seed, root / 'workspaces',
-                                    REPO / 'workspaces/data/cache_graph',
-                                    REPO / 'workspaces/config/graph_pipeline.json', True)
-            for output, saved in ((root / 'plans', REPO / 'work-plans/data/generated'),
-                                  (root / 'workspaces', REPO / 'workspaces/data/generated')):
+            construct_workspace.load_inputs(root / 'plans', seed)
+            for output, saved in ((root / 'plans', REPO / 'work-plans/data/semantic_pilot'),):
                 for file in output.rglob('*'):
                     if file.is_file():
                         relative = file.relative_to(output)

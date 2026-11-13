@@ -1,0 +1,2697 @@
+{
+  "blueprints_sha256": "0e6d1bc70fec7e7924b8b9d4589caaf7f49b69b5244b9a6bc1727367732131ed",
+  "config_sha256": "fc8d23f9eee1dfc1ae8e3040fe5d0e08e44167d7da1a7f5b18df6604abea36cd",
+  "counts": {
+    "accepted": 5,
+    "generated": 10,
+    "graph_passed": 6,
+    "input": 10,
+    "modality_candidate_plans": 1,
+    "rejected_or_failed": 5,
+    "semantic_review_attempted": 6,
+    "semantic_reviewed": 5,
+    "semantic_schema_passed": 8
+  },
+  "input_sha256": "6bafac8662dbea9aab9ed920bad703aa0bd67b4eec07e27c21e23f1cf54a031c",
+  "interface": "raw-blueprint-v2",
+  "limitations": [
+    "Independent review uses the same model family, not expert certification.",
+    "Task instruction requirements remain pending for Stage 4; they are not case facts."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 31904,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 34791,
+    "unique_model_requests": 16
+  },
+  "seeds": {
+    "raw_31_0_13744": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['inputs', 5, 'kind']: 'external_reference' is not one of ['text_instruction', 'document', 'table', 'image', 'diagram', 'code', 'structured_data']"
+      ],
+      "failure_stage": "semantic_schema",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:34.964726+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "e9e0f62518174a5ba1afaf60af2bc5997af16abb80eaf706db900c3393da0468",
+          "usage": {
+            "completion_tokens": 1679,
+            "prompt_tokens": 3026,
+            "prompt_tokens_details": {
+              "cached_tokens": 65
+            },
+            "total_tokens": 4705
+          }
+        }
+      ],
+      "seed_sha256": "b6c3f44ad31da6367d943ac5884ff5f3dfe2027ed14d31c567a5e34a47fdab9d",
+      "selection_reason": "visual circuit diagram interpretation",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A concise interpretation summary identifying the located technical documents, the equipment and circuit functions they describe, the key specifications and configuration/signal details relevant to the work, the relationships among diagram, drawing, and manual content, discrepancies or ambiguities that affect installation or repair, and the resulting technical guidance for the intended activity.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "task_scope_and_equipment_context",
+            "circuit_and_block_diagram_content",
+            "equipment_specification_details",
+            "engineering_drawing_content",
+            "service_manual_procedures",
+            "signal_and_functional_relationships",
+            "cross_document_consistency_check",
+            "installation_and_repair_implications"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The stated work scope: which audiovisual equipment or system is being installed, maintained, or repaired, and what activity the document interpretation must support.",
+            "kind": "text_instruction",
+            "name": "task_scope_and_equipment_context",
+            "preferred_formats": [
+              "txt",
+              "md"
+            ],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Electronic circuit diagrams and function block diagrams covering the relevant equipment, including component symbols, connections, signal paths, and functional block boundaries.",
+            "kind": "diagram",
+            "modality_dependency": {
+              "information_needed": "Symbol shapes, connection routing, block boundaries, and signal-path topology within the diagrams",
+              "modality": "visual_spatial",
+              "required_operation": "Trace circuit and functional relationships from symbols and connection topology, since these are conveyed spatially rather than in prose",
+              "supports": "signal_and_functional_relationships"
+            },
+            "name": "circuit_and_block_diagram_content",
+            "preferred_formats": [
+              "pdf",
+              "svg",
+              "png"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Specification documents stating equipment ratings, interfaces, signal levels, and operational limits relevant to the audiovisual equipment.",
+            "kind": "document",
+            "name": "equipment_specification_details",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Engineering drawings showing equipment layout, mounting, wiring routes, and connection points relevant to the installation or repair.",
+            "kind": "diagram",
+            "modality_dependency": {
+              "information_needed": "Layout positions, spatial relationships between components, and routing paths on the drawings",
+              "modality": "visual_spatial",
+              "required_operation": "Interpret spatial arrangement and routing to determine how drawings correspond to diagram and manual content",
+              "supports": "cross_document_consistency_check"
+            },
+            "name": "engineering_drawing_content",
+            "preferred_formats": [
+              "pdf",
+              "svg",
+              "png"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Service manual content describing maintenance and repair procedures, adjustment steps, and diagnostic guidance for the equipment.",
+            "kind": "document",
+            "name": "service_manual_procedures",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Applicable published references such as manufacturer documentation conventions or electrical/AV interface standards used to resolve symbol or specification meanings.",
+            "kind": "external_reference",
+            "name": "applicable_technical_references",
+            "preferred_formats": [
+              "pdf",
+              "md"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Produce a technician-facing interpretation summary that extracts and reconciles the relevant technical content from electronic circuit diagrams, function block diagrams, specifications, engineering drawings, and service manuals so it can inform audiovisual equipment installation, maintenance, or repair work.",
+        "operations": [
+          {
+            "description": "Extract the functional blocks, component connections, and signal paths represented in the circuit and function block diagrams.",
+            "name": "circuit_and_block_diagram_content",
+            "requires": [
+              "task_scope_and_equipment_context",
+              "circuit_and_block_diagram_content"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Extract the ratings, interface requirements, signal levels, and operational limits relevant to the equipment in scope.",
+            "name": "equipment_specification_details",
+            "requires": [
+              "task_scope_and_equipment_context",
+              "equipment_specification_details"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Extract the layout, mounting, and wiring connection details conveyed by the engineering drawings.",
+            "name": "engineering_drawing_content",
+            "requires": [
+              "task_scope_and_equipment_context",
+              "engineering_drawing_content"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Extract the maintenance, repair, and adjustment guidance from the service manuals that applies to the equipment in scope.",
+            "name": "service_manual_procedures",
+            "requires": [
+              "task_scope_and_equipment_context",
+              "service_manual_procedures"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Relate functional blocks, signal paths, specifications, and physical connections into a coherent picture of how the equipment operates.",
+            "name": "signal_and_functional_relationships",
+            "requires": [
+              "circuit_and_block_diagram_content",
+              "equipment_specification_details",
+              "engineering_drawing_content",
+              "applicable_technical_references"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Judge whether diagrams, drawings, specifications, and service manuals agree, identifying conflicts, ambiguities, or content needing qualified clarification.",
+            "name": "cross_document_consistency_check",
+            "requires": [
+              "circuit_and_block_diagram_content",
+              "equipment_specification_details",
+              "engineering_drawing_content",
+              "service_manual_procedures",
+              "applicable_technical_references"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determine which interpreted details constrain or guide the installation, maintenance, or repair activity and what technical guidance follows.",
+            "name": "installation_and_repair_implications",
+            "requires": [
+              "signal_and_functional_relationships",
+              "cross_document_consistency_check",
+              "service_manual_procedures"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_16209": {
+      "blueprint_sha256": "559cdda8756f73121a270b98f712e43353d1ec9899c8eb0ba4ce85d6db1dbf8b",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:13:43.897400+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "221fdda0fbe2fe81351a148fe773e5ebc310c7c5e0594da5b3fb4a1d48991a0c",
+          "usage": {
+            "completion_tokens": 478,
+            "prompt_tokens": 2088,
+            "prompt_tokens_details": {
+              "cached_tokens": 1024
+            },
+            "total_tokens": 2566
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:13:47.366029+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "e4ebd90f5b3d92f7b187f98ef7240e44c9860064b3dd66bc7c9bca076a7cd94d",
+          "usage": {
+            "completion_tokens": 82,
+            "prompt_tokens": 1455,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "total_tokens": 1537
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "Design level documentation capturing game mechanics, design guidelines, and mission outlines in a structured, maintainable written artifact.",
+            "id": "out1",
+            "preferred_formats": [
+              "docx",
+              "md",
+              "pdf"
+            ],
+            "type": "document_revision"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i4"
+          ],
+          [
+            "i2",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i1",
+            "i5"
+          ],
+          [
+            "i2",
+            "i5"
+          ],
+          [
+            "i3",
+            "i5"
+          ],
+          [
+            "i1",
+            "i6"
+          ],
+          [
+            "i2",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Instruction describing the game or level scope for which design documentation is required, including any known feature priorities or constraints.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Prior or partial design documentation to be maintained, updated, or extended.",
+            "id": "i2",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "docx",
+              "md",
+              "pdf",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Reference standards or conventions for documenting game mechanics, guidelines, and mission structures.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Define and articulate the game mechanics relevant to the level, including player actions, rules, interactions, and system behaviors.",
+            "id": "i4",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Establish design guidelines governing level construction, pacing, difficulty progression, and consistency with overall game design intent.",
+            "id": "i5",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Outline mission structure including objectives, progression flow, key events, and completion conditions for the level.",
+            "id": "i6",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_16209",
+        "work_objective": "Develop and maintain design level documentation that specifies game mechanics, guidelines, and mission outlines."
+      },
+      "seed_sha256": "2a98d60d154eb0b847322904d0c78c6701913fcc392f7a8decba11730016ee56",
+      "selection_reason": "game design documentation",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "Design level documentation capturing game mechanics, design guidelines, and mission outlines in a structured, maintainable written artifact.",
+          "kind": "document_revision",
+          "preferred_formats": [
+            "docx",
+            "md",
+            "pdf"
+          ],
+          "requires": [
+            "design_mechanics_specification",
+            "design_guidelines_specification",
+            "mission_outline_specification"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Instruction describing the game or level scope for which design documentation is required, including any known feature priorities or constraints.",
+            "kind": "text_instruction",
+            "name": "design_scope_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": false,
+            "description": "Prior or partial design documentation to be maintained, updated, or extended.",
+            "kind": "document",
+            "name": "existing_design_documentation",
+            "preferred_formats": [
+              "docx",
+              "md",
+              "pdf",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Reference standards or conventions for documenting game mechanics, guidelines, and mission structures.",
+            "kind": "document",
+            "name": "game_design_reference_standards",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Develop and maintain design level documentation that specifies game mechanics, guidelines, and mission outlines.",
+        "operations": [
+          {
+            "description": "Define and articulate the game mechanics relevant to the level, including player actions, rules, interactions, and system behaviors.",
+            "name": "design_mechanics_specification",
+            "requires": [
+              "design_scope_request",
+              "existing_design_documentation",
+              "game_design_reference_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Establish design guidelines governing level construction, pacing, difficulty progression, and consistency with overall game design intent.",
+            "name": "design_guidelines_specification",
+            "requires": [
+              "design_scope_request",
+              "existing_design_documentation",
+              "game_design_reference_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Outline mission structure including objectives, progression flow, key events, and completion conditions for the level.",
+            "name": "mission_outline_specification",
+            "requires": [
+              "design_scope_request",
+              "existing_design_documentation",
+              "game_design_reference_standards"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_16425": {
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [
+        "llm_response_not_json"
+      ],
+      "failure_stage": "semantic_review",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:10:42.981102+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "84d30b70d3b14915fbe444c7260771daf8218516976d3c9730e1791d783747b6",
+          "usage": {
+            "completion_tokens": 3149,
+            "prompt_tokens": 2085,
+            "total_tokens": 5234
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:05.619671+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "b649a92301c19f96255fafb0e96604d1702dab6370df48f4cb2f2364f46e1eee",
+          "usage": {
+            "completion_tokens": 6897,
+            "prompt_tokens": 1664,
+            "total_tokens": 8561
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "Reviewed and updated engineering documentation capturing automotive engineering specifications, design rationale, test results, or operational records, formatted for internal use.",
+            "id": "out1",
+            "preferred_formats": [
+              "docx",
+              "pdf",
+              "md"
+            ],
+            "type": "document_revision"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i5"
+          ],
+          [
+            "i3",
+            "i5"
+          ],
+          [
+            "i2",
+            "i6"
+          ],
+          [
+            "i4",
+            "i6"
+          ],
+          [
+            "i3",
+            "i7"
+          ],
+          [
+            "i6",
+            "i7"
+          ],
+          [
+            "i4",
+            "i7"
+          ],
+          [
+            "i5",
+            "i8"
+          ],
+          [
+            "i7",
+            "i8"
+          ],
+          [
+            "i6",
+            "i8"
+          ],
+          [
+            "i8",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Specification of the documentation to write, review, or maintain, including its purpose, scope, and intended internal audience.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Current engineering documentation to be reviewed or maintained, including prior technical reports, specifications, or operational records.",
+            "id": "i2",
+            "kind": "document",
+            "modality_candidates": [
+              "spatial"
+            ],
+            "modality_rationale": "Interpret engineering diagrams and schematics to assess their accuracy and consistency with text during review",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Engineering data to be documented, such as design parameters, specifications, test results, or operational records.",
+            "id": "i3",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Applicable documentation standards, templates, or conventions governing internal engineering documentation.",
+            "id": "i4",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Determine the documentation type, sections, level of detail, and audience based on the request and available engineering data.",
+            "id": "i5",
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate existing documentation for accuracy, completeness, currency, and conformance with applicable standards.",
+            "id": "i6",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Organize engineering data and review findings into a coherent documentation structure aligned with applicable standards.",
+            "id": "i7",
+            "type": "derived_information"
+          },
+          {
+            "description": "Write, update, or revise the engineering documentation incorporating scoped requirements, compiled technical content, and review outcomes.",
+            "id": "i8",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Embedded diagrams, schematics, or drawings within existing documentation",
+            "modality_candidate": "spatial",
+            "modality_rationale": "Interpret engineering diagrams and schematics to assess their accuracy and consistency with text during review",
+            "necessity_status": "hypothesis",
+            "node_id": "i2",
+            "supports_node_id": "i6"
+          }
+        ],
+        "seed_id": "raw_31_0_16425",
+        "work_objective": "Produce or maintain accurate engineering documentation for internal automotive engineering use."
+      },
+      "seed_sha256": "0e57a70aae495b84c4595271320d1e3d4fb6d23981d556a26008efa64327c8e2",
+      "selection_reason": "professional engineering documentation",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "Reviewed and updated engineering documentation capturing automotive engineering specifications, design rationale, test results, or operational records, formatted for internal use.",
+          "kind": "document_revision",
+          "preferred_formats": [
+            "docx",
+            "pdf",
+            "md"
+          ],
+          "requires": [
+            "draft_or_revise_documentation"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Specification of the documentation to write, review, or maintain, including its purpose, scope, and intended internal audience.",
+            "kind": "text_instruction",
+            "name": "documentation_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Current engineering documentation to be reviewed or maintained, including prior technical reports, specifications, or operational records.",
+            "kind": "document",
+            "modality_dependency": {
+              "information_needed": "Embedded diagrams, schematics, or drawings within existing documentation",
+              "modality": "visual_spatial",
+              "required_operation": "Interpret engineering diagrams and schematics to assess their accuracy and consistency with text during review",
+              "supports": "review_existing_documentation"
+            },
+            "name": "existing_documentation",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Engineering data to be documented, such as design parameters, specifications, test results, or operational records.",
+            "kind": "table",
+            "name": "engineering_data",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable documentation standards, templates, or conventions governing internal engineering documentation.",
+            "kind": "document",
+            "name": "engineering_standards",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Produce or maintain accurate engineering documentation for internal automotive engineering use.",
+        "operations": [
+          {
+            "description": "Determine the documentation type, sections, level of detail, and audience based on the request and available engineering data.",
+            "name": "assess_documentation_scope",
+            "requires": [
+              "documentation_request",
+              "engineering_data"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate existing documentation for accuracy, completeness, currency, and conformance with applicable standards.",
+            "name": "review_existing_documentation",
+            "requires": [
+              "existing_documentation",
+              "engineering_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Organize engineering data and review findings into a coherent documentation structure aligned with applicable standards.",
+            "name": "compile_technical_content",
+            "requires": [
+              "engineering_data",
+              "review_existing_documentation",
+              "engineering_standards"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Write, update, or revise the engineering documentation incorporating scoped requirements, compiled technical content, and review outcomes.",
+            "name": "draft_or_revise_documentation",
+            "requires": [
+              "assess_documentation_scope",
+              "compile_technical_content",
+              "review_existing_documentation"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_18983": {
+      "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:09:56.543434+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "f5434a092b9b62e057b765c9ddca1461d0ddf2fd34b85ba09882d6fea1d56784",
+          "usage": {
+            "completion_tokens": 2145,
+            "prompt_tokens": 2504,
+            "prompt_tokens_details": {
+              "cached_tokens": 281
+            },
+            "total_tokens": 4649
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:09:59.146575+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "e3acdd0d98928cbaf7b7fd111959efc05cdff6ccce88e70d831423c007b9a06c",
+          "usage": {
+            "completion_tokens": 82,
+            "prompt_tokens": 1932,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 2014
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A project budget and schedule status workbook that presents schedule and budget variances against baseline, a forecast of the cost outcome, an assessment of resource allocation against the budget, and recommended cost-control actions.",
+            "id": "out1",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "type": "spreadsheet"
+          }
+        ],
+        "dependencies": [
+          [
+            "i2",
+            "i7"
+          ],
+          [
+            "i5",
+            "i7"
+          ],
+          [
+            "i3",
+            "i8"
+          ],
+          [
+            "i4",
+            "i8"
+          ],
+          [
+            "i8",
+            "i9"
+          ],
+          [
+            "i7",
+            "i9"
+          ],
+          [
+            "i1",
+            "i9"
+          ],
+          [
+            "i9",
+            "i10"
+          ],
+          [
+            "i3",
+            "i10"
+          ],
+          [
+            "i1",
+            "i10"
+          ],
+          [
+            "i9",
+            "i11"
+          ],
+          [
+            "i10",
+            "i11"
+          ],
+          [
+            "i6",
+            "i11"
+          ],
+          [
+            "i7",
+            "i12"
+          ],
+          [
+            "i8",
+            "i12"
+          ],
+          [
+            "i9",
+            "i12"
+          ],
+          [
+            "i1",
+            "out1"
+          ],
+          [
+            "i2",
+            "out1"
+          ],
+          [
+            "i3",
+            "out1"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ],
+          [
+            "i7",
+            "out1"
+          ],
+          [
+            "i8",
+            "out1"
+          ],
+          [
+            "i9",
+            "out1"
+          ],
+          [
+            "i10",
+            "out1"
+          ],
+          [
+            "i11",
+            "out1"
+          ],
+          [
+            "i12",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The request defining the project being monitored, the reporting period, and any tolerance thresholds or monitoring focus.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Planned milestones, activities, durations, and planned completion dates for the project.",
+            "id": "i2",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Approved budget allocation by cost category, activity, or resource for the project.",
+            "id": "i3",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Recorded actual costs and committed expenditures incurred to date by cost category or activity.",
+            "id": "i4",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Reported completion status, percent complete, and actual milestone dates to date.",
+            "id": "i5",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Applicable organizational cost-control, budget-allocation, or variance-reporting standards.",
+            "id": "i6",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Compare planned milestones and durations against reported progress to quantify schedule slippage or acceleration.",
+            "id": "i7",
+            "type": "derived_information"
+          },
+          {
+            "description": "Compare actual and committed expenditures against the approved budget to quantify cost variance by category.",
+            "id": "i8",
+            "type": "derived_information"
+          },
+          {
+            "description": "Estimate the projected cost outcome for remaining work by combining cost and schedule variance with the defined monitoring scope and period.",
+            "id": "i9",
+            "type": "derived_information"
+          },
+          {
+            "description": "Judge whether current and projected budget allocation aligns with the resources needed to complete the remaining scope.",
+            "id": "i10",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determine appropriate cost-control and reallocation actions consistent with the applicable standards and observed variances.",
+            "id": "i11",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Consolidate schedule variance, budget variance, and forecast into an overall project status characterization.",
+            "id": "i12",
+            "type": "derived_information"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_18983",
+        "work_objective": "Prepare and monitor a network project's schedule and budget by analyzing planned versus actual progress and cost, forecasting the cost outcome, and evaluating whether budget allocation matches resource needs so that cost-control actions can be identified."
+      },
+      "seed_sha256": "1692647c02de6d181b3373e0fd48cf984290d627ad84338a2d596079bfe4bd2e",
+      "selection_reason": "software/network project schedule and budget; legacy project regression family",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A project budget and schedule status workbook that presents schedule and budget variances against baseline, a forecast of the cost outcome, an assessment of resource allocation against the budget, and recommended cost-control actions.",
+          "kind": "spreadsheet",
+          "preferred_formats": [
+            "xlsx",
+            "csv"
+          ],
+          "requires": [
+            "monitoring_scope",
+            "project_schedule_baseline",
+            "budget_baseline",
+            "actual_expenditures",
+            "progress_records",
+            "cost_control_standards",
+            "schedule_variance_analysis",
+            "budget_variance_analysis",
+            "cost_forecast",
+            "resource_allocation_assessment",
+            "cost_control_recommendations",
+            "status_summary"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The request defining the project being monitored, the reporting period, and any tolerance thresholds or monitoring focus.",
+            "kind": "text_instruction",
+            "name": "monitoring_scope",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Planned milestones, activities, durations, and planned completion dates for the project.",
+            "kind": "table",
+            "name": "project_schedule_baseline",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Approved budget allocation by cost category, activity, or resource for the project.",
+            "kind": "table",
+            "name": "budget_baseline",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Recorded actual costs and committed expenditures incurred to date by cost category or activity.",
+            "kind": "table",
+            "name": "actual_expenditures",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Reported completion status, percent complete, and actual milestone dates to date.",
+            "kind": "table",
+            "name": "progress_records",
+            "preferred_formats": [
+              "xlsx",
+              "csv"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable organizational cost-control, budget-allocation, or variance-reporting standards.",
+            "kind": "document",
+            "name": "cost_control_standards",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Prepare and monitor a network project's schedule and budget by analyzing planned versus actual progress and cost, forecasting the cost outcome, and evaluating whether budget allocation matches resource needs so that cost-control actions can be identified.",
+        "operations": [
+          {
+            "description": "Compare planned milestones and durations against reported progress to quantify schedule slippage or acceleration.",
+            "name": "schedule_variance_analysis",
+            "requires": [
+              "project_schedule_baseline",
+              "progress_records"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Compare actual and committed expenditures against the approved budget to quantify cost variance by category.",
+            "name": "budget_variance_analysis",
+            "requires": [
+              "budget_baseline",
+              "actual_expenditures"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Estimate the projected cost outcome for remaining work by combining cost and schedule variance with the defined monitoring scope and period.",
+            "name": "cost_forecast",
+            "requires": [
+              "budget_variance_analysis",
+              "schedule_variance_analysis",
+              "monitoring_scope"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Judge whether current and projected budget allocation aligns with the resources needed to complete the remaining scope.",
+            "name": "resource_allocation_assessment",
+            "requires": [
+              "cost_forecast",
+              "budget_baseline",
+              "monitoring_scope"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determine appropriate cost-control and reallocation actions consistent with the applicable standards and observed variances.",
+            "name": "cost_control_recommendations",
+            "requires": [
+              "cost_forecast",
+              "resource_allocation_assessment",
+              "cost_control_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Consolidate schedule variance, budget variance, and forecast into an overall project status characterization.",
+            "name": "status_summary",
+            "requires": [
+              "schedule_variance_analysis",
+              "budget_variance_analysis",
+              "cost_forecast"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_21094": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['inputs', 2, 'preferred_formats', 2]: 'html' is not one of ['csv', 'docx', 'ipynb', 'jpeg', 'jpg', 'js', 'json', 'md', 'pdf', 'png', 'pptx', 'py', 'svg', 'tex', 'tiff', 'txt', 'xlsx']"
+      ],
+      "failure_stage": "semantic_schema",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:13.617692+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "0bd7ac078e4a929a402e1747bd1ab22acb0949615a8c680a5c35804eecce5bb3",
+          "usage": {
+            "completion_tokens": 590,
+            "prompt_tokens": 2136,
+            "prompt_tokens_details": {
+              "cached_tokens": 1024
+            },
+            "total_tokens": 2726
+          }
+        }
+      ],
+      "seed_sha256": "4e32887a4819d9927a2c5ae8f5d543db35667d72d022c1431858f99e402d0d7d",
+      "selection_reason": "regulatory reference identification",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A structured inventory of identified guidance documents, international standards, and consensus standards, including title, issuing body, standard or document number, scope, and relevance rationale.",
+          "kind": "structured_data",
+          "preferred_formats": [
+            "json",
+            "csv"
+          ],
+          "requires": [
+            "determine_relevance",
+            "compile_standards_inventory"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Description of the product, process, or organizational activity for which applicable guidance documents, international standards, or consensus standards must be identified.",
+            "kind": "text_instruction",
+            "name": "scope_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Available internal records describing the regulatory framework, product classification, target markets, or compliance obligations relevant to the scope.",
+            "kind": "document",
+            "name": "regulatory_context",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Published guidance documents, international standards catalogs, or consensus standards listings from recognized standards bodies or regulatory authorities.",
+            "kind": "document",
+            "name": "standards_references",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "html",
+              "txt"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Identify relevant guidance documents, international standards, or consensus standards applicable to a specified regulatory or organizational context.",
+        "operations": [
+          {
+            "description": "Analyze the scope and regulatory context to determine the applicable laws, regulations, and compliance obligations that necessitate specific guidance documents or standards.",
+            "name": "evaluate_applicable_requirements",
+            "requires": [
+              "scope_request",
+              "regulatory_context"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Review available standards references and match candidate guidance documents, international standards, or consensus standards to the evaluated regulatory and organizational requirements.",
+            "name": "match_standards_to_scope",
+            "requires": [
+              "evaluate_applicable_requirements",
+              "standards_references"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Assess each matched standard or guidance document for direct relevance to the scope, determining priority and applicability.",
+            "name": "determine_relevance",
+            "requires": [
+              "match_standards_to_scope"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Compile the determined relevant guidance documents, international standards, and consensus standards into a structured inventory with identifying details and relevance rationale.",
+            "name": "compile_standards_inventory",
+            "requires": [
+              "determine_relevance"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_21676": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:structured_data"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:10:06.360335+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "086b4d0827056cb15311cf7f62b2c7cdd1207fd63f95195df001a23fd5b5e6ff",
+          "usage": {
+            "completion_tokens": 436,
+            "prompt_tokens": 2080,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 2516
+          }
+        }
+      ],
+      "seed_sha256": "f571e99fc4b6aab5e06f09698361bf5bbc26b365b211abf0a413d1aface5cd87",
+      "selection_reason": "software capability data analysis",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A code notebook that stores, retrieves, and manipulates the relevant data and produces a structured analysis of system capabilities and requirements.",
+          "kind": "code_notebook",
+          "preferred_formats": [
+            "ipynb",
+            "py"
+          ],
+          "requires": [
+            "data_storage_retrieval_logic",
+            "data_manipulation_logic",
+            "capability_requirements_analysis"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Statement of the system capabilities and requirements to be analyzed and the data operations needed.",
+            "kind": "text_instruction",
+            "name": "analysis_objective",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Raw data to be stored, retrieved, and manipulated for the capability and requirements analysis.",
+            "kind": "structured_data",
+            "name": "source_data",
+            "preferred_formats": [
+              "json",
+              "csv"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Documentation of system capabilities and requirements against which the data will be analyzed.",
+            "kind": "document",
+            "name": "system_specifications",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Store, retrieve, and manipulate data for analysis of system capabilities and requirements.",
+        "operations": [
+          {
+            "description": "Derive the logic and code for storing the source data in a suitable structure and retrieving it for subsequent manipulation.",
+            "name": "data_storage_retrieval_logic",
+            "requires": [
+              "analysis_objective",
+              "source_data"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Derive the transformations, filtering, and aggregation operations needed to prepare the retrieved data for capability and requirements analysis.",
+            "name": "data_manipulation_logic",
+            "requires": [
+              "data_storage_retrieval_logic",
+              "source_data"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Interpret the manipulated data to assess system capabilities and requirements, determining whether the data supports or reveals gaps in the specified capabilities.",
+            "name": "capability_requirements_analysis",
+            "requires": [
+              "data_manipulation_logic",
+              "system_specifications"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_22125": {
+      "blueprint_sha256": "476cb41a59eab49d610d55b0e398cfe56fcb3e56c4af441f46b212583139c480",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:42.087706+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "a5b03efdb1ae7382f17f0879555c732d6b4346cf284ac29d6884e10912344a60",
+          "usage": {
+            "completion_tokens": 1378,
+            "prompt_tokens": 3031,
+            "prompt_tokens_details": {
+              "cached_tokens": 65
+            },
+            "total_tokens": 4409
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:13:12.580276+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "2f3b21ace06dfe2b83219c6cbb16a308802134cea9c9d520d9c159c0bfc1faab",
+          "usage": {
+            "completion_tokens": 6484,
+            "prompt_tokens": 2193,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 8677
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "GIS graphic land descriptions (maps and drawings) produced from interpreted survey records, showing mapped spatial features with associated land description annotations.",
+            "id": "out1",
+            "preferred_formats": [
+              "pdf",
+              "svg",
+              "png"
+            ],
+            "type": "visual_design"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i6"
+          ],
+          [
+            "i2",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i4",
+            "i6"
+          ],
+          [
+            "i5",
+            "i7"
+          ],
+          [
+            "i6",
+            "i7"
+          ],
+          [
+            "i6",
+            "i8"
+          ],
+          [
+            "i2",
+            "i8"
+          ],
+          [
+            "i3",
+            "i8"
+          ],
+          [
+            "i7",
+            "i9"
+          ],
+          [
+            "i8",
+            "i9"
+          ],
+          [
+            "i1",
+            "out1"
+          ],
+          [
+            "i2",
+            "out1"
+          ],
+          [
+            "i3",
+            "out1"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ],
+          [
+            "i7",
+            "out1"
+          ],
+          [
+            "i8",
+            "out1"
+          ],
+          [
+            "i9",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "GPS coordinate records collected in the field, to be entered and georeferenced in the GIS.",
+            "id": "i1",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Legal deed text describing parcel boundaries and rights, to be entered and translated into spatial features.",
+            "id": "i2",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Surveyor field notes capturing observations, measurements and conditions relevant to the survey.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "txt",
+              "docx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Formal land survey reports summarizing survey methods, results and boundary determinations.",
+            "id": "i4",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Applicable coding scheme or data-entry standard governing how survey attributes and feature codes are entered into the GIS.",
+            "id": "i5",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Unify GPS coordinates, deed descriptions, field notes and survey reports into a single coherent spatial dataset with reconciled locations and attributes.",
+            "id": "i6",
+            "type": "derived_information"
+          },
+          {
+            "description": "Assign appropriate feature codes and attribute values to each spatial element according to the GIS encoding specification.",
+            "id": "i7",
+            "type": "derived_information"
+          },
+          {
+            "description": "Interpret boundary, adjacency and location relationships among parcels and features to resolve conflicts between deed text, GPS data and field observations.",
+            "id": "i8",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Decide the cartographic form (symbology, scale, labeling, layout) that best represents the structures and landscape as a legible graphic land description.",
+            "id": "i9",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_22125",
+        "work_objective": "Transform entered GPS data, legal deeds, field notes, and land survey reports into GIS-based graphic land descriptions so the spatial records can be visualized as maps and drawings."
+      },
+      "seed_sha256": "40d51be6895b673746fb2255c6817a231ab67a81c3c5434dba4e6988f577ea3d",
+      "selection_reason": "spatial GIS source interpretation",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "GIS graphic land descriptions (maps and drawings) produced from interpreted survey records, showing mapped spatial features with associated land description annotations.",
+          "kind": "visual_design",
+          "preferred_formats": [
+            "pdf",
+            "svg",
+            "png"
+          ],
+          "requires": [
+            "gps_data_records",
+            "legal_deed_descriptions",
+            "field_notes",
+            "land_survey_reports",
+            "gis_encoding_specification",
+            "consolidated_spatial_dataset",
+            "code_assignment_for_features",
+            "spatial_relationship_interpretation",
+            "graphic_representation_design"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "GPS coordinate records collected in the field, to be entered and georeferenced in the GIS.",
+            "kind": "table",
+            "name": "gps_data_records",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Legal deed text describing parcel boundaries and rights, to be entered and translated into spatial features.",
+            "kind": "document",
+            "name": "legal_deed_descriptions",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Surveyor field notes capturing observations, measurements and conditions relevant to the survey.",
+            "kind": "document",
+            "name": "field_notes",
+            "preferred_formats": [
+              "pdf",
+              "txt",
+              "docx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Formal land survey reports summarizing survey methods, results and boundary determinations.",
+            "kind": "document",
+            "name": "land_survey_reports",
+            "preferred_formats": [
+              "pdf",
+              "docx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable coding scheme or data-entry standard governing how survey attributes and feature codes are entered into the GIS.",
+            "kind": "document",
+            "name": "gis_encoding_specification",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Transform entered GPS data, legal deeds, field notes, and land survey reports into GIS-based graphic land descriptions so the spatial records can be visualized as maps and drawings.",
+        "operations": [
+          {
+            "description": "Unify GPS coordinates, deed descriptions, field notes and survey reports into a single coherent spatial dataset with reconciled locations and attributes.",
+            "name": "consolidated_spatial_dataset",
+            "requires": [
+              "gps_data_records",
+              "legal_deed_descriptions",
+              "field_notes",
+              "land_survey_reports"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Assign appropriate feature codes and attribute values to each spatial element according to the GIS encoding specification.",
+            "name": "code_assignment_for_features",
+            "requires": [
+              "gis_encoding_specification",
+              "consolidated_spatial_dataset"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Interpret boundary, adjacency and location relationships among parcels and features to resolve conflicts between deed text, GPS data and field observations.",
+            "name": "spatial_relationship_interpretation",
+            "requires": [
+              "consolidated_spatial_dataset",
+              "legal_deed_descriptions",
+              "field_notes"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Decide the cartographic form (symbology, scale, labeling, layout) that best represents the structures and landscape as a legible graphic land description.",
+            "name": "graphic_representation_design",
+            "requires": [
+              "code_assignment_for_features",
+              "spatial_relationship_interpretation"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_3405": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:table"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:09:47.626374+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "89922019e63f38acf60a25a508d3dd22fe2cd69196928918bd1d6b97deae24bc",
+          "usage": {
+            "completion_tokens": 1958,
+            "prompt_tokens": 2509,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 4467
+          }
+        }
+      ],
+      "seed_sha256": "4bd3656dafae8961db2d9200fe620e964587308803b1d0522431eb436977e132",
+      "selection_reason": "financial records analysis",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A resource requirements analysis report presenting the compiled accounting basis, categorized cost analysis, and the reasoned determination of financial resources required to implement the program.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "determine_financial_resources"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Description of the program to be implemented, including its activities, scope, and resource expectations.",
+            "kind": "text_instruction",
+            "name": "program_scope_requirements",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Accounting records containing expenditures, transactions, or budget entries relevant to the program.",
+            "kind": "table",
+            "name": "accounting_records",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Additional financial data needed to interpret program costs, such as cost assumptions or related expenditure records.",
+            "kind": "table",
+            "name": "supplemental_financial_data",
+            "preferred_formats": [
+              "csv",
+              "xlsx",
+              "json"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Determine the financial resources required to implement a program by compiling and analyzing accounting records and related financial data.",
+        "operations": [
+          {
+            "description": "Consolidate accounting records and supplemental financial data into a consistent, program-relevant financial dataset, resolving duplicate or inconsistent entries.",
+            "name": "compile_accounting_records",
+            "requires": [
+              "accounting_records",
+              "supplemental_financial_data"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Relate compiled financial data to the program's activities and cost categories so that only relevant resource requirements are included.",
+            "name": "map_costs_to_program_scope",
+            "requires": [
+              "compile_accounting_records",
+              "program_scope_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Analyze categorized costs and financial patterns to estimate the financial resources required by category and period for program implementation.",
+            "name": "analyze_resource_requirements",
+            "requires": [
+              "map_costs_to_program_scope",
+              "program_scope_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Judge the completeness, consistency, and reasonableness of the resource estimate, identifying material gaps or assumptions that affect the determination.",
+            "name": "evaluate_estimate_basis",
+            "requires": [
+              "analyze_resource_requirements",
+              "program_scope_requirements"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Form a justified determination of the total financial resources required to implement the program, reflecting the analyzed cost requirements and the evaluated basis.",
+            "name": "determine_financial_resources",
+            "requires": [
+              "analyze_resource_requirements",
+              "evaluate_estimate_basis"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_3747": {
+      "blueprint_sha256": "81beb84187c206d6a92b03ae227dc2631b3446e7cbf7f8772cda99e28d768958",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:13:24.777690+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "c2e6c2d261bf7eb67012f0a6bdac6baae4c7b19d917719443143292973224e5b",
+          "usage": {
+            "completion_tokens": 3191,
+            "prompt_tokens": 2513,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 5704
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:13:35.737418+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "22edfd68663349b105f36b651ebd205f38a6b277bb4777305ded6b7c1cc12f11",
+          "usage": {
+            "completion_tokens": 2657,
+            "prompt_tokens": 1868,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 4525
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A written report that presents the analyzed experimental data, interprets the results, and summarizes the findings.",
+            "id": "out1",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "type": "report"
+          }
+        ],
+        "dependencies": [
+          [
+            "i2",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i2",
+            "i5"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i3",
+            "i5"
+          ],
+          [
+            "i5",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i1",
+            "i6"
+          ],
+          [
+            "i6",
+            "i7"
+          ],
+          [
+            "i1",
+            "i7"
+          ],
+          [
+            "i7",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The user's request specifying the experimental data to analyze and the reporting objective.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Experimental measurements and observations to be analyzed.",
+            "id": "i2",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Documentation of experimental design, methods, conditions, and controls needed to interpret the data.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "Judge the completeness, consistency, and suitability of the experimental data for analysis, noting exclusions or limitations.",
+            "id": "i4",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Derive summary statistics and identify patterns, differences, or relationships in the experimental data.",
+            "id": "i5",
+            "type": "derived_information"
+          },
+          {
+            "description": "Interpret the analyzed results in relation to the experimental question, methods, and controls, distinguishing supported conclusions from uncertainty.",
+            "id": "i6",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Synthesize interpreted findings into a concise set of reportable results, conclusions, and limitations.",
+            "id": "i7",
+            "type": "derived_information"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_3747",
+        "work_objective": "Analyze experimental data and interpret the results to produce a written report summarizing the findings."
+      },
+      "seed_sha256": "ba9800a7a2a6cad191a8ed5e457e25fb24144409e68d1bba9fc7cfef7624c478",
+      "selection_reason": "experimental data analysis and report",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A written report that presents the analyzed experimental data, interprets the results, and summarizes the findings.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "findings_synthesis",
+            "result_interpretation"
+          ]
+        },
+        "inputs": [
+          {
+            "critical": true,
+            "description": "The user's request specifying the experimental data to analyze and the reporting objective.",
+            "kind": "text_instruction",
+            "name": "task_scope",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": true,
+            "description": "Experimental measurements and observations to be analyzed.",
+            "kind": "table",
+            "name": "experimental_data",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": true,
+            "description": "Documentation of experimental design, methods, conditions, and controls needed to interpret the data.",
+            "kind": "document",
+            "name": "experimental_protocol",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Analyze experimental data and interpret the results to produce a written report summarizing the findings.",
+        "operations": [
+          {
+            "description": "Judge the completeness, consistency, and suitability of the experimental data for analysis, noting exclusions or limitations.",
+            "name": "data_quality_assessment",
+            "requires": [
+              "experimental_data",
+              "experimental_protocol"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Derive summary statistics and identify patterns, differences, or relationships in the experimental data.",
+            "name": "data_analysis",
+            "requires": [
+              "experimental_data",
+              "data_quality_assessment",
+              "experimental_protocol"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Interpret the analyzed results in relation to the experimental question, methods, and controls, distinguishing supported conclusions from uncertainty.",
+            "name": "result_interpretation",
+            "requires": [
+              "data_analysis",
+              "experimental_protocol",
+              "task_scope"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Synthesize interpreted findings into a concise set of reportable results, conclusions, and limitations.",
+            "name": "findings_synthesis",
+            "requires": [
+              "result_interpretation",
+              "task_scope"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_871": {
+      "blueprint_sha256": "758c9457c0ab1f915fa7d570f9e74272a7cbabf17e4f0915f34619ce78721708",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:21.904761+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "bb9a73c4d3bd1f1c7b174553c7405121838d6b980d6f7f218dd71e090552e15c",
+          "usage": {
+            "completion_tokens": 616,
+            "prompt_tokens": 2110,
+            "prompt_tokens_details": {
+              "cached_tokens": 1024
+            },
+            "total_tokens": 2726
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T04:12:25.212794+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "1ac0339c9adda8f8dc41e9278377ff62380ee6632b9b89176e5bf9d40352f60b",
+          "usage": {
+            "completion_tokens": 82,
+            "prompt_tokens": 1597,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "total_tokens": 1679
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A compliance determination report identifying each reviewed plan, specification, or construction method, the applicable legal and safety requirements, and an assessment of whether compliance is achieved or deficiencies exist.",
+            "id": "out1",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "type": "report"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i2",
+            "i5"
+          ],
+          [
+            "i4",
+            "i6"
+          ],
+          [
+            "i5",
+            "i6"
+          ],
+          [
+            "i6",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Plans, blueprints, site layouts, specifications, or construction method descriptions to be reviewed for compliance.",
+            "id": "i1",
+            "kind": "document",
+            "modality_candidates": [
+              "spatial"
+            ],
+            "modality_rationale": "Interpret spatial layout and structural details to identify what is being built and how, enabling comparison against code requirements",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Applicable building codes, legal requirements, and safety regulations against which construction plans and methods must be evaluated.",
+            "id": "i2",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "txt",
+              "md"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The specific scope or focus of the compliance review, indicating which aspects of the plans, specifications, or methods to prioritize.",
+            "id": "i3",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "Derive the work requirements, structural details, site layout, and construction methods from the plans, blueprints, and specifications.",
+            "id": "i4",
+            "type": "derived_information"
+          },
+          {
+            "description": "Identify the specific legal requirements and safety regulations from the reference standards that apply to the interpreted plan requirements and construction methods.",
+            "id": "i5",
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate the interpreted construction plans, specifications, and methods against the applicable legal and safety requirements to determine compliance and identify any deficiencies.",
+            "id": "i6",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Spatial layout, dimensions, structural relationships, and site arrangement depicted in blueprints or site plans",
+            "modality_candidate": "spatial",
+            "modality_rationale": "Interpret spatial layout and structural details to identify what is being built and how, enabling comparison against code requirements",
+            "necessity_status": "hypothesis",
+            "node_id": "i1",
+            "supports_node_id": "i4"
+          }
+        ],
+        "seed_id": "raw_31_0_871",
+        "work_objective": "Review and interpret plans, blueprints, site layouts, specifications, or construction methods to determine compliance with legal requirements and safety regulations."
+      },
+      "seed_sha256": "5317467f148a97c7ae9c430b1b0314da07d503b9b946df292ae38789e796c443",
+      "selection_reason": "visual blueprint interpretation",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A compliance determination report identifying each reviewed plan, specification, or construction method, the applicable legal and safety requirements, and an assessment of whether compliance is achieved or deficiencies exist.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "compliance_assessment"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Plans, blueprints, site layouts, specifications, or construction method descriptions to be reviewed for compliance.",
+            "kind": "document",
+            "modality_dependency": {
+              "information_needed": "Spatial layout, dimensions, structural relationships, and site arrangement depicted in blueprints or site plans",
+              "modality": "visual_spatial",
+              "required_operation": "Interpret spatial layout and structural details to identify what is being built and how, enabling comparison against code requirements",
+              "supports": "interpret_plan_requirements"
+            },
+            "name": "construction_plans_specifications",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable building codes, legal requirements, and safety regulations against which construction plans and methods must be evaluated.",
+            "kind": "document",
+            "name": "legal_safety_requirements",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "txt",
+              "md"
+            ],
+            "source": "external_reference"
+          },
+          {
+            "description": "The specific scope or focus of the compliance review, indicating which aspects of the plans, specifications, or methods to prioritize.",
+            "kind": "text_instruction",
+            "name": "inspection_scope",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          }
+        ],
+        "objective": "Review and interpret plans, blueprints, site layouts, specifications, or construction methods to determine compliance with legal requirements and safety regulations.",
+        "operations": [
+          {
+            "description": "Derive the work requirements, structural details, site layout, and construction methods from the plans, blueprints, and specifications.",
+            "name": "interpret_plan_requirements",
+            "requires": [
+              "construction_plans_specifications",
+              "inspection_scope"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Identify the specific legal requirements and safety regulations from the reference standards that apply to the interpreted plan requirements and construction methods.",
+            "name": "identify_applicable_requirements",
+            "requires": [
+              "interpret_plan_requirements",
+              "legal_safety_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate the interpreted construction plans, specifications, and methods against the applicable legal and safety requirements to determine compliance and identify any deficiencies.",
+            "name": "compliance_assessment",
+            "requires": [
+              "interpret_plan_requirements",
+              "identify_applicable_requirements"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    }
+  }
+}

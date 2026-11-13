@@ -1,0 +1,74 @@
+{
+  "inputs": {
+    "text_instruction": [],
+    "document": [
+      "pdf",
+      "docx",
+      "md",
+      "txt",
+      "tex"
+    ],
+    "table": [
+      "csv",
+      "xlsx"
+    ],
+    "image": [
+      "png",
+      "jpg",
+      "jpeg",
+      "tiff"
+    ],
+    "diagram": [
+      "svg",
+      "png",
+      "pdf"
+    ],
+    "code": [
+      "py",
+      "js",
+      "ipynb"
+    ],
+    "structured_data": [
+      "json"
+    ]
+  },
+  "deliverables": {
+    "direct_answer": [],
+    "report": [
+      "pdf",
+      "docx",
+      "md",
+      "txt",
+      "tex"
+    ],
+    "spreadsheet": [
+      "xlsx",
+      "csv"
+    ],
+    "presentation": [
+      "pptx",
+      "pdf"
+    ],
+    "code_notebook": [
+      "py",
+      "ipynb",
+      "js"
+    ],
+    "visual_design": [
+      "png",
+      "jpg",
+      "svg",
+      "pdf"
+    ],
+    "structured_data": [
+      "json",
+      "csv"
+    ],
+    "document_revision": [
+      "docx",
+      "pdf",
+      "md",
+      "tex"
+    ]
+  }
+}

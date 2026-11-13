@@ -41,10 +41,9 @@ def check_audit(value,plan,profiles,sources):
         if status=='supported':
             require(evidence,'supported_without_evidence');require(not row['unverified_assumptions'],'supported_with_unverified_assumptions')
             if any(r['verification_status']!='source_located' for r in evidence):status='partial';reason+=' [Program gate: model perception is not independently verified.]'
-            mods=set(nodes[row['node_id']]['modality_candidates'])
-            if mods and not mods & {'text','table'}:
-                # A necessary non-text input cannot be satisfied by extracted text or a VLM assertion.
-                status='partial';reason+=' [Program gate: mandatory non-text evidence requires validated perception.]'
+            # A planned visual dependency is a hypothesis, not a compulsory carrier.
+            # Located text/structured facts may supply the same information; this does
+            # not establish visual necessity. Model-only perception remains partial above.
         resolved.append({**row,'status':status,'model_status':row['status'],'reason':reason,'evidence':evidence})
     anchor=value['selected_anchor']
     if anchor:

@@ -11,13 +11,13 @@ from claude_search import run_session
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--seed-id', default='raw_31_0_16425')
+    p.add_argument('--seed-id', default='raw_31_0_18983')
     p.add_argument('--config', type=Path, default=ROOT / 'config/claude_search_pilot.json')
-    p.add_argument('--output-dir', type=Path, default=ROOT / 'data/claude_search_probe')
+    p.add_argument('--output-dir', type=Path, default=ROOT / 'data/semantic_claude_probe')
     p.add_argument('--cache-dir', type=Path, default=ROOT / 'data/cache_claude_search')
     p.add_argument('--offline', action='store_true')
     a = p.parse_args()
-    plans, seeds, _ = load_inputs(REPO / 'work-plans/data/generated', REPO / 'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl')
+    plans, seeds, _ = load_inputs(REPO / 'work-plans/data/semantic_pilot', REPO / 'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl')
     plan = next(p for p in plans if p['seed_id'] == a.seed_id)
     config = {**schema(a.config)['search'], 'max_search_calls': 2, 'max_turns': 6}
     prompt = ('For this approved work blueprint, actually call WebSearch up to twice to locate one coherent real professional case '

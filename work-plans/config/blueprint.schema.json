@@ -22,18 +22,52 @@
             "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
           },
           "type": {
-            "type": "string",
-            "minLength": 1
+            "enum": [
+              "direct_answer",
+              "report",
+              "spreadsheet",
+              "presentation",
+              "code_notebook",
+              "visual_design",
+              "structured_data",
+              "document_revision"
+            ]
           },
           "description": {
             "type": "string",
             "minLength": 1
+          },
+          "preferred_formats": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "csv",
+                "docx",
+                "ipynb",
+                "jpeg",
+                "jpg",
+                "js",
+                "json",
+                "md",
+                "pdf",
+                "png",
+                "pptx",
+                "py",
+                "svg",
+                "tex",
+                "tiff",
+                "txt",
+                "xlsx"
+              ]
+            },
+            "uniqueItems": true
           }
         },
         "required": [
           "id",
           "type",
-          "description"
+          "description",
+          "preferred_formats"
         ]
       },
       "minItems": 1
@@ -71,21 +105,52 @@
                 "type": "array",
                 "items": {
                   "enum": [
-                    "text",
-                    "table",
                     "image",
-                    "audio",
-                    "video",
-                    "diagram",
                     "spatial"
                   ]
                 },
-                "minItems": 1,
+                "minItems": 0,
                 "uniqueItems": true
               },
               "modality_rationale": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 0
+              },
+              "kind": {
+                "enum": [
+                  "text_instruction",
+                  "document",
+                  "table",
+                  "image",
+                  "diagram",
+                  "code",
+                  "structured_data"
+                ]
+              },
+              "preferred_formats": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "csv",
+                    "docx",
+                    "ipynb",
+                    "jpeg",
+                    "jpg",
+                    "js",
+                    "json",
+                    "md",
+                    "pdf",
+                    "png",
+                    "pptx",
+                    "py",
+                    "svg",
+                    "tex",
+                    "tiff",
+                    "txt",
+                    "xlsx"
+                  ]
+                },
+                "uniqueItems": true
               }
             },
             "required": [
@@ -95,7 +160,9 @@
               "supply_channel",
               "critical",
               "modality_candidates",
-              "modality_rationale"
+              "modality_rationale",
+              "kind",
+              "preferred_formats"
             ]
           },
           {
@@ -159,9 +226,6 @@
           "modality_candidate": {
             "enum": [
               "image",
-              "audio",
-              "video",
-              "diagram",
               "spatial"
             ]
           },
@@ -178,6 +242,10 @@
           },
           "necessity_status": {
             "const": "hypothesis"
+          },
+          "supports_node_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
           }
         },
         "required": [
@@ -186,7 +254,8 @@
           "information_needed",
           "modality_rationale",
           "evidence_status",
-          "necessity_status"
+          "necessity_status",
+          "supports_node_id"
         ]
       },
       "minItems": 0

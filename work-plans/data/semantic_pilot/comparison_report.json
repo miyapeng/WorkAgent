@@ -1,0 +1,141 @@
+{
+  "accepted_artifact_kinds": {
+    "document_revision": 1,
+    "report": 2,
+    "spreadsheet": 1,
+    "visual_design": 1
+  },
+  "accepted_input_format_preferences": {
+    "csv": 6,
+    "docx": 9,
+    "md": 6,
+    "pdf": 10,
+    "txt": 6,
+    "xlsx": 6
+  },
+  "actual_materialized_files": 0,
+  "baseline": {
+    "graph_pass_rate": 0.5,
+    "graph_passed": 5,
+    "input": 10,
+    "semantic_accepted": 2,
+    "semantic_accepted_per_attempt": 0.4,
+    "semantic_accepted_per_input": 0.2,
+    "semantic_attempted": 5,
+    "semantic_valid_responses": 5
+  },
+  "current": {
+    "graph_pass_rate": 0.6,
+    "graph_passed": 6,
+    "input": 10,
+    "semantic_accepted": 5,
+    "semantic_accepted_per_attempt": 0.8333333333333334,
+    "semantic_accepted_per_input": 0.5,
+    "semantic_attempted": 6,
+    "semantic_valid_responses": 5
+  },
+  "failure_stages": {
+    "graph_compilation": 2,
+    "semantic_review": 1,
+    "semantic_schema": 2
+  },
+  "limitations": [
+    "Same 10 Seeds and reviewer prompt; small comparison, not a causal ablation or population-quality estimate.",
+    "Preferred formats are alternatives, not files found or final output contracts.",
+    "One review returned non-JSON; this is a model-response failure, not a semantic rejection.",
+    "No repair or format coercion; missing professional premises are not filled by Python."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 31904,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 34791,
+    "unique_model_requests": 16
+  },
+  "new_workspaces_constructed": 0,
+  "rows": [
+    {
+      "baseline_status": "failed",
+      "current_status": "failed",
+      "failure_reasons": [
+        "schema:['inputs', 5, 'kind']: 'external_reference' is not one of ['text_instruction', 'document', 'table', 'image', 'diagram', 'code', 'structured_data']"
+      ],
+      "failure_stage": "semantic_schema",
+      "seed_id": "raw_31_0_13744"
+    },
+    {
+      "baseline_status": "failed",
+      "current_status": "accepted",
+      "failure_reasons": [],
+      "failure_stage": null,
+      "seed_id": "raw_31_0_16209"
+    },
+    {
+      "baseline_status": "accepted",
+      "current_status": "failed",
+      "failure_reasons": [
+        "llm_response_not_json"
+      ],
+      "failure_stage": "semantic_review",
+      "seed_id": "raw_31_0_16425"
+    },
+    {
+      "baseline_status": "failed",
+      "current_status": "accepted",
+      "failure_reasons": [],
+      "failure_stage": null,
+      "seed_id": "raw_31_0_18983"
+    },
+    {
+      "baseline_status": "accepted",
+      "current_status": "failed",
+      "failure_reasons": [
+        "schema:['inputs', 2, 'preferred_formats', 2]: 'html' is not one of ['csv', 'docx', 'ipynb', 'jpeg', 'jpg', 'js', 'json', 'md', 'pdf', 'png', 'pptx', 'py', 'svg', 'tex', 'tiff', 'txt', 'xlsx']"
+      ],
+      "failure_stage": "semantic_schema",
+      "seed_id": "raw_31_0_21094"
+    },
+    {
+      "baseline_status": "rejected",
+      "current_status": "failed",
+      "failure_reasons": [
+        "format_not_allowed_for_kind:structured_data"
+      ],
+      "failure_stage": "graph_compilation",
+      "seed_id": "raw_31_0_21676"
+    },
+    {
+      "baseline_status": "rejected",
+      "current_status": "accepted",
+      "failure_reasons": [],
+      "failure_stage": null,
+      "seed_id": "raw_31_0_22125"
+    },
+    {
+      "baseline_status": "rejected",
+      "current_status": "failed",
+      "failure_reasons": [
+        "format_not_allowed_for_kind:table"
+      ],
+      "failure_stage": "graph_compilation",
+      "seed_id": "raw_31_0_3405"
+    },
+    {
+      "baseline_status": "failed",
+      "current_status": "accepted",
+      "failure_reasons": [],
+      "failure_stage": null,
+      "seed_id": "raw_31_0_3747"
+    },
+    {
+      "baseline_status": "failed",
+      "current_status": "accepted",
+      "failure_reasons": [],
+      "failure_stage": null,
+      "seed_id": "raw_31_0_871"
+    }
+  ],
+  "same_raw_input_and_seed_hashes": true,
+  "visual_hypothesis_plans": 1
+}
