@@ -1,0 +1,253 @@
+{
+  "blueprint_sha256": "3d84b5ab5034f5e0453fa4892c39898ce7877608b09e7853908c82b530c3920a",
+  "config_sha256": "9e88eb8696dddb3e16a2e7a860a667c4bcae355750a1f884bcc649b021a3ae56",
+  "counts": {
+    "actual_search_requests": 4,
+    "critical_coverage": 0.0,
+    "critical_external_nodes": 3,
+    "download_attempts": 4,
+    "download_or_profile_failures": 3,
+    "downloaded_urls": 1,
+    "duplicate_files": 0,
+    "independently_verified_visual_evidence": 0,
+    "parsed_unique_files": 1,
+    "planned_queries": 4,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "cross_file_coherence": {
+    "evidence": [],
+    "reason": "not_searched",
+    "status": "unverified",
+    "unverified_assumptions": []
+  },
+  "failure_reasons": [
+    {
+      "reason": "download_failed:http_status:403|http_status:403",
+      "stage": "download_or_profile",
+      "url": "https://ryxen.ca/sops/shopdocs"
+    },
+    {
+      "reason": "download_failed:http_status:404|http_status:404",
+      "stage": "download_or_profile",
+      "url": "https://usedrox.com/Blog"
+    },
+    {
+      "reason": "download_failed:http_status:404|http_status:404",
+      "stage": "download_or_profile",
+      "url": "https://www.cadtutor.net/AutoCAD/CADManagement"
+    },
+    {
+      "reason": "node_coverage_mismatch",
+      "stage": "evidence_audit"
+    },
+    {
+      "reason": "no_grounded_anchor",
+      "stage": "anchor_discovery"
+    }
+  ],
+  "interface": "grounded-workspace-v2",
+  "limitations": [
+    "Source text and positions are programmatically checked; semantic applicability is model judgment.",
+    "Ready concerns input sufficiency, not solver executability.",
+    "Instruction-channel requirements must be explicitly fulfilled by Stage 4."
+  ],
+  "limits": {
+    "anchor_candidates": 2,
+    "anchor_queries": 2,
+    "download_bytes": 20000000,
+    "files_per_gap": 2,
+    "gap_rounds": 1,
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100,
+    "queries_per_gap": 2,
+    "redirects": 4,
+    "retries": 1,
+    "timeout_seconds": 30,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "missing_nodes": [
+    "I_ExistingEngineeringDocument",
+    "I_EngineeringChangeNotices",
+    "I_DesignSpecifications"
+  ],
+  "modality_evidence": [
+    {
+      "evidence_status": "unretrieved",
+      "independently_verified": false,
+      "information_needed": "Schematic diagrams or engineering drawings embedded in the document that must be visually interpreted to verify that depicted components, connections, and configurations match current specifications.",
+      "modality_candidate": "diagram",
+      "modality_rationale": "Automotive engineering documents frequently include diagrams whose correctness cannot be assessed through text alone; the spatial relationships and component representations must be visually inspected.",
+      "necessity_status": "hypothesis",
+      "node_id": "I_ExistingEngineeringDocument"
+    }
+  ],
+  "mode": "graph",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T03:32:02.489049+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "dc79cfbfa4a5d9fa08052dd0eb722848baa1d2f15ae61bfdc3b5aad2ea0a2f64",
+      "prompt_version": "search_planner.v1",
+      "request_sha256": "f444526569f59502ec19aa0ca1e873a58e45955ad2c18960e9c21fda94924ddb",
+      "usage": {
+        "completion_tokens": 268,
+        "prompt_tokens": 1851,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 2119
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T03:32:55.651992+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "af81274bebff8f7b3a9d50e7875d43d5e065dc3122a10a7925c50cea4773a46c",
+      "prompt_version": "candidate_selector.v1",
+      "request_sha256": "e889d588a72482a7400f7c2bd200e521f9bf7be4d76b9d3e26ba7757f2f0a2e1",
+      "usage": {
+        "completion_tokens": 1378,
+        "prompt_tokens": 3796,
+        "prompt_tokens_details": {
+          "cached_tokens": 65
+        },
+        "total_tokens": 5174
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T03:33:09.621100+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "dc79cfbfa4a5d9fa08052dd0eb722848baa1d2f15ae61bfdc3b5aad2ea0a2f64",
+      "prompt_version": "search_planner.v1",
+      "request_sha256": "99a98c097d9675a22bf89ac9203f6810766800f82bca5cf0f6317c57b2f6b766",
+      "usage": {
+        "completion_tokens": 318,
+        "prompt_tokens": 1877,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "total_tokens": 2195
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T03:33:52.645510+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "af81274bebff8f7b3a9d50e7875d43d5e065dc3122a10a7925c50cea4773a46c",
+      "prompt_version": "candidate_selector.v1",
+      "request_sha256": "d4f0cafe05784322eedfe1bc91e431f036ec2a60518edbaf70a1b9c212709edd",
+      "usage": {
+        "completion_tokens": 1426,
+        "prompt_tokens": 4095,
+        "prompt_tokens_details": {
+          "cached_tokens": 65
+        },
+        "total_tokens": 5521
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T03:34:39.649116+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "969afc2c4df7dfeffef847b7ddf77a59027c12825adf4deeaab05992ce9fd7cf",
+      "prompt_version": "evidence_auditor.v1",
+      "request_sha256": "4f4dd19d4b1cedd16554bb9e00df28544643d506dcf97a9a78565aa4ce8ffdd6",
+      "usage": {
+        "completion_tokens": 2873,
+        "prompt_tokens": 9705,
+        "total_tokens": 12578
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 6263,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 21324,
+    "unique_model_requests": 5
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_8ba21f8e1cd23bea5cae1830"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "currency": null,
+    "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+  },
+  "search_queries": [
+    "automotive engineering design specification document revision change notice ECR ECN",
+    "automotive component engineering drawing schematic specification revision control document",
+    "automotive engineering document revision ECR ECN design specification filetype:pdf",
+    "automotive component engineering drawing revision change notice specification control document site:gov OR site:edu OR site:sae.org"
+  ],
+  "search_state": "searched",
+  "seed_id": "raw_31_0_16425",
+  "seed_sha256": "0e57a70aae495b84c4595271320d1e3d4fb6d23981d556a26008efa64327c8e2",
+  "selected_anchor": null,
+  "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+  "status": "incomplete",
+  "supported_nodes": [],
+  "work_objective_sha256": "1fd7c7c0284c9d49a10114fcb6870a32849425efc9366fc247a5843ffce1e7f0",
+  "workspace_files": {}
+}

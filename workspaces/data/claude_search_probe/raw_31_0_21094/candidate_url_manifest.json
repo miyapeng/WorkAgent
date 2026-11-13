@@ -1,0 +1,118 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "c_5c96f5014d9f9d31e8e3eabe",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://www.slideshare.net/Business",
+      "title": "Technical Files for Medical Devices | PPTX",
+      "url": "https://www.slideshare.net/Business"
+    },
+    {
+      "candidate_id": "c_be4cc789de706e7842824494",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://www.scribd.com/document",
+      "title": "General Considerations For FDA Submission",
+      "url": "https://www.scribd.com/document"
+    },
+    {
+      "candidate_id": "c_55960be0f91fba66cb880703",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://matrixone.health/Blog",
+      "title": "AAMI Standards and Cybersecurity in Medical Devices",
+      "url": "https://matrixone.health/Blog"
+    },
+    {
+      "candidate_id": "c_f17ef60e794e0e013db5706d",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://www.researchgate.net/publication",
+      "title": "Analysis of ISO 13485:2016 requirements and their effects ...",
+      "url": "https://www.researchgate.net/publication"
+    },
+    {
+      "candidate_id": "c_6b3a488937970502065bca3f",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://docxpert.io/use-cases/medtech",
+      "title": "ISO 13485 for Medical Devices | QMS Software for Medtech",
+      "url": "https://docxpert.io/use-cases/medtech"
+    },
+    {
+      "candidate_id": "c_d5be2329c3b5147b40b8df05",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://bsol-bsigroup-com.manchester.idm.oclc.org/",
+      "title": "https://bsol-bsigroup-com.manchester.idm.oclc.org/...",
+      "url": "https://bsol-bsigroup-com.manchester.idm.oclc.org/"
+    },
+    {
+      "candidate_id": "c_3775317244f8b28ef5bd3943",
+      "discovered_by_tool_use_id": "call_f19c7534b12048d88ab03927",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://blog.cm-dm.com/post/2016/02/05",
+      "title": "New FDA draft guidance on interoperable medical devices",
+      "url": "https://blog.cm-dm.com/post/2016/02/05"
+    },
+    {
+      "candidate_id": "c_d1b20ed2f692547cb3a18346",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://24x7mag.com/FDAUpdates/DraftGuidances",
+      "title": "FDA Releases Draft Guidance on the Evaluation of Software ...",
+      "url": "https://24x7mag.com/FDAUpdates/DraftGuidances"
+    },
+    {
+      "candidate_id": "c_2417a139688a12d1c6afaea6",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://operonstrategist.com/",
+      "title": "SaMD Software Documentation: 7 FDA Submission ...",
+      "url": "https://operonstrategist.com/"
+    },
+    {
+      "candidate_id": "c_e4a1a6090a29521451abbef8",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://www.cliffsnotes.com/HealthScience",
+      "title": "List of US FDA Guidance document (docx)",
+      "url": "https://www.cliffsnotes.com/HealthScience"
+    },
+    {
+      "candidate_id": "c_ec7b6fe18997c05980cc0a3b",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://ismg-cdn.nyc3.cdn.digitaloceanspaces.com/",
+      "title": "Attachment B CDRH Draft Guidance Cover Sheet",
+      "url": "https://ismg-cdn.nyc3.cdn.digitaloceanspaces.com/"
+    },
+    {
+      "candidate_id": "c_4ecdcc05b06d3b8bcb7b8a8f",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://sunmantechnology.com/",
+      "title": "Understanding the FDA Approval Process: A Step-by- ...",
+      "url": "https://sunmantechnology.com/"
+    },
+    {
+      "candidate_id": "c_cd5f0efb6c6fb03f63c52891",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://www.medtechdive.com/news",
+      "title": "FDA finalizes guidance for accepting De Novo requests",
+      "url": "https://www.medtechdive.com/news"
+    },
+    {
+      "candidate_id": "c_356b3e7b3e2e2d02ba9839e3",
+      "discovered_by_tool_use_id": "call_2bf04c9a39ec4253954d2473",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://cybellum.com/Blog",
+      "title": "Essential Resources for Medical Device Compliance",
+      "url": "https://cybellum.com/Blog"
+    }
+  ],
+  "seed_id": "raw_31_0_21094",
+  "status": "unverified_search_candidates"
+}

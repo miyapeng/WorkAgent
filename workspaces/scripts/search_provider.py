@@ -8,6 +8,9 @@ from acquire import https_request,public_url
 
 def available(config):
     name=config['provider']
+    if name=='claude_code':
+        from claude_search import available as claude_available
+        return claude_available(config)
     if name in ('disabled','url_manifest'):return False
     require(name in ('tavily','brave','serper'),'unsupported_search_provider')
     return bool(os.environ.get(config['api_key_env']))
@@ -17,6 +20,14 @@ def search(query,config,cache,offline=False):
     key=sha256(json_bytes({'query':query,'config':config}));path=cache/'search'/(key+'.json')
     if path.exists():
         receipt=json.loads(path.read_text());require(receipt['query']==query,'search_cache_mismatch');return receipt
+    if config['provider']=='claude_code':
+        from claude_search import search_query
+        if not offline and not available(config):
+            return {'query':query,'provider':'claude_code','status':'awaiting_search','results':[],
+                    'reason':'missing_claude_cli_or_inference_key','search_api_called':False}
+        receipt=search_query(query,config,cache,offline)
+        save(path,receipt)
+        return receipt
     if config['provider']=='url_manifest':
         return {'query':query,'provider':'url_manifest','status':'awaiting_search','results':[],
                 'reason':'Manifest replay is not autonomous search. Configure a real provider.','search_api_called':False}

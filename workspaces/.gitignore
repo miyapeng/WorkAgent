@@ -1,5 +1,6 @@
 data/cache/
 data/cache_graph/
+data/cache_claude_search/
 data/**/construction/file_profiles.json
 archive/data/**/workspace_init/
 archive/data/**/construction/file_profiles.jsonl

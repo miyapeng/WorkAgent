@@ -11,6 +11,8 @@
 .venv/bin/python workspaces/scripts/run_pipeline.py --offline
 ```
 
+后续 [Claude Code 搜索试验](workspaces/CLAUDE_SEARCH.md) 已接通现有 LLMCenter 路由：观察到真实工具调用，Stage 3 下载解析了 1 个网页，但仍未形成 ready Workspace；未提供单独搜索 API Key。
+
 入口、文件与结果：[Stage 1](work-seeds/STAGE1.md)、[Stage 2](work-plans/README.md)、[Stage 3](workspaces/README.md)、[本轮实验汇总](workspaces/data/generated/experiment_summary.json)、[三条完整处理记录](workspaces/data/generated/examples.md)、[论文依据与本项目设计](workspaces/METHODS.md)。缺少搜索 Key 时流程如实保存阻断状态；查询、选择、覆盖判定由配置、模型和程序完成，不需要开发者人工改判。
 
 Phase I 仍为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。旧 Stage 2–3 实验移入各模块 `archive/`。**现有 Stage 4 尚未迁移到新接口，不能直接消费新版结果**；旧 Stage 4 报告只是历史阻断记录，不代表当前已有正式任务。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。

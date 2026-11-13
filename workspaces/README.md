@@ -4,6 +4,8 @@
 
 **当前结果：10 条 Raw Seeds → 2 条准入 Blueprint → 0 个真实 Anchor → 0 个 ready Workspace。** 没有 Search API 凭证；一条停在 `awaiting_search`，另一条查询计划引用了推导节点 `i6`，在调用搜索前被拒绝。下载与实时检索尚未实测成功。
 
+后续新增了 [Claude Code + LLMCenter 搜索试验](CLAUDE_SEARCH.md)：无需单独 Search API Key，当前路由实际完成工具调用，Stage 3 下载并解析 1 个网页；仍为 0 Anchor / 0 ready。它使用独立配置和目录，不覆盖上面的原始 Pilot。
+
 ## 命令
 
 在仓库根目录执行：

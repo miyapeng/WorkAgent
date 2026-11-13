@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "f_8ba21f8e1cd23bea5cae1830": {
+      "bytes": 837774,
+      "candidate_id": "c_65746d0d2aa806c210833656",
+      "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+      "file_id": "f_8ba21f8e1cd23bea5cae1830",
+      "final_url": "https://community.ptc.com/",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://community.ptc.com/",
+      "prior_errors": [],
+      "redirects": [],
+      "retrieved_at": "2026-11-13T03:33:59.404706+00:00",
+      "selection_reason": "PTC community thread on drawing changes and whether all changes are identified/accounted for; directly applicable to the discrepancy-identification and revision-completeness judgment nodes, and the second-best anchor for verifying change-marking practice.",
+      "sha256": "8ba21f8e1cd23bea5cae1830b894f681b3866644bf5de7677da10c4e5111d351",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://community.ptc.com/",
+      "title": "Drawing Changes-Are all changes identified",
+      "url": "https://community.ptc.com/"
+    }
+  }
+}

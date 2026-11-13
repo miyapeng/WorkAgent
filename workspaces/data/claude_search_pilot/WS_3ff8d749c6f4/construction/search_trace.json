@@ -1,0 +1,1105 @@
+{
+  "events": [
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.0989534,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 65,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 4929,
+        "iterations": [],
+        "output_tokens": 1391,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "automotive engineering design specification document revision change notice ECR ECN",
+      "results": [
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Engineering Change Notice Template | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_5f4e988248a2f12d7c68ac2b",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://sitemate.com/templates/commercial/forms",
+          "title": "Engineering Change Notice Template: Use this ECN Format",
+          "url": "https://sitemate.com/templates/commercial/forms"
+        },
+        {
+          "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECR-21-FORMAT",
+          "title": "Engineering Change Request Overview | PDF",
+          "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+        },
+        {
+          "candidate_id": "c_f17ef60e794e0e013db5706d",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/publication",
+          "title": "Optimizing Engineering Change Management Through ...",
+          "url": "https://www.researchgate.net/publication"
+        },
+        {
+          "candidate_id": "c_9ff4073d7bb3ff49033bb453",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.lawinsider.com/Clauses",
+          "title": "Engineering Change Request Sample Clauses",
+          "url": "https://www.lawinsider.com/Clauses"
+        },
+        {
+          "candidate_id": "c_8a99454e25005a5d7fd3fa29",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECN-Check-List",
+          "title": "ECN Change Classification Guide | PDF | Economic Sectors",
+          "url": "https://www.scribd.com/document/ECN-Check-List"
+        },
+        {
+          "candidate_id": "c_9bb6e31b360fbc983f32051e",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ryxen.ca/sops/shopdocs",
+          "title": "Engineering Change Notification ECN Procedure - Ryxen",
+          "url": "https://ryxen.ca/sops/shopdocs"
+        },
+        {
+          "candidate_id": "c_bb2d4c8f74154551e9b2128d",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.eetimes.com/",
+          "title": "Optimizing Engineering Revision Control",
+          "url": "https://www.eetimes.com/"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 24.84,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "56018cda7586a2f95a989778a41eafaa27c3e4eabe74c14a9dc2223bb0fa7c37",
+        "returncode": 0,
+        "started_at": "2026-11-13T03:32:02.510226+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "d44a6b73c92b9680c8fa9ca2fa0f29a1dc23d0f8c2d586ebfc2d0e5f5a93c135"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "automotive engineering design specification document revision change notice ECR ECN"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_0_db95b8b261b91da1"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "automotive engineering design specification document revision change notice ECR ECN"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Engineering Change Notice Template | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "Engineering Change Notice Template: Use this ECN Format",
+              "url": "https://sitemate.com/templates/commercial/forms"
+            },
+            {
+              "title": "Engineering Change Request Overview | PDF",
+              "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+            },
+            {
+              "title": "Optimizing Engineering Change Management Through ...",
+              "url": "https://www.researchgate.net/publication"
+            },
+            {
+              "title": "Engineering Change Request Sample Clauses",
+              "url": "https://www.lawinsider.com/Clauses"
+            },
+            {
+              "title": "ECN Change Classification Guide | PDF | Economic Sectors",
+              "url": "https://www.scribd.com/document/ECN-Check-List"
+            },
+            {
+              "title": "Engineering Change Notification ECN Procedure - Ryxen",
+              "url": "https://ryxen.ca/sops/shopdocs"
+            },
+            {
+              "title": "Optimizing Engineering Revision Control",
+              "url": "https://www.eetimes.com/"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3305,
+          "result_sha256": "b351eb4ff5b4b9e4674e7b883c1af65588bc07d952c449c0f15b0c74ebb8d643",
+          "tool_use_id": "call_0_db95b8b261b91da1"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.053724999999999995,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1345,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 3512,
+        "iterations": [],
+        "output_tokens": 862,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "automotive component engineering drawing schematic specification revision control document",
+      "results": [
+        {
+          "candidate_id": "c_27132f17712322bf1b0983fe",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://legacy.sae.org/books/toc_pdfs/BELS031",
+          "title": "Untitled",
+          "url": "https://legacy.sae.org/books/toc_pdfs/BELS031"
+        },
+        {
+          "candidate_id": "c_ef8bbe246933a0ea82d007e8",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/pin",
+          "title": "Automotive Design Form Practice",
+          "url": "https://www.pinterest.com/pin"
+        },
+        {
+          "candidate_id": "c_2c45ece52f7f4648cd19ab69",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://usedrox.com/Blog",
+          "title": "Document Revision Control in Engineering | Drox",
+          "url": "https://usedrox.com/Blog"
+        },
+        {
+          "candidate_id": "c_5ce09b60724fcbfb9011b4c9",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.imat-uve.com/newsroom/news",
+          "title": "Automotive component validation: From requirements to report",
+          "url": "https://www.imat-uve.com/newsroom/news"
+        },
+        {
+          "candidate_id": "c_2db860aaeb5bd167ef93c35e",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://jishihengsheng.com/guides",
+          "title": "Prototype Revision Control: Keep CAD, Drawings and ...",
+          "url": "https://jishihengsheng.com/guides"
+        },
+        {
+          "candidate_id": "c_eb6e072969d615e31622446a",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ali21498.blogspot.com/2026/11",
+          "title": "The Old Drawing Is Still on the Production Floor",
+          "url": "https://ali21498.blogspot.com/2026/11"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 19.63,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "1158b35055334877b1e412d5b71fbdd78c23d6421d0ecdcbb6e58c3f6d0e12f8",
+        "returncode": 0,
+        "started_at": "2026-11-13T03:32:27.366313+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "f85f4d1ca43f794237c7aea385882596c88ea8392325e36bf7f138bd85303c05"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "automotive component engineering drawing schematic specification revision control document"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_083626efea5d47b3b82c6477"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "automotive component engineering drawing schematic specification revision control document"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Untitled",
+              "url": "https://legacy.sae.org/books/toc_pdfs/BELS031"
+            },
+            {
+              "title": "Automotive Design Form Practice",
+              "url": "https://www.pinterest.com/pin"
+            },
+            {
+              "title": "Document Revision Control in Engineering | Drox",
+              "url": "https://usedrox.com/Blog"
+            },
+            {
+              "title": "Automotive component validation: From requirements to report",
+              "url": "https://www.imat-uve.com/newsroom/news"
+            },
+            {
+              "title": "Prototype Revision Control: Keep CAD, Drawings and ...",
+              "url": "https://jishihengsheng.com/guides"
+            },
+            {
+              "title": "The Old Drawing Is Still on the Production Floor",
+              "url": "https://ali21498.blogspot.com/2026/11"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 2654,
+          "result_sha256": "6a11a56b65cc3c108a458a402b0eb13672e2ea99a06fd08a335011bf71078da0",
+          "tool_use_id": "call_083626efea5d47b3b82c6477"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.0468232,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1280,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 2836,
+        "iterations": [],
+        "output_tokens": 517,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "automotive engineering document revision ECR ECN design specification filetype:pdf",
+      "results": [
+        {
+          "candidate_id": "c_2adeff1071a9e5b4ff7a9b6c",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.eng-tips.com/threads",
+          "title": "Do we need issue ECN (Engineering Change Notice) ...",
+          "url": "https://www.eng-tips.com/threads"
+        },
+        {
+          "candidate_id": "c_34c09e7d3d9536da5a64eeca",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://plm.newicon.fi/enduserhelp/html-en",
+          "title": "User Guide Engineering Change process",
+          "url": "https://plm.newicon.fi/enduserhelp/html-en"
+        },
+        {
+          "candidate_id": "c_8443638720e9f60d710d058a",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/Ecn-Manual-for-sap-freaks",
+          "title": "ECR Process for Inspection Plan Changes | PDF",
+          "url": "https://www.scribd.com/Ecn-Manual-for-sap-freaks"
+        },
+        {
+          "candidate_id": "c_ce1403715a06bc3545e6c823",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://xkema.com/",
+          "title": "ECR, ECO, ECN: What the Change Process Is Actually For",
+          "url": "https://xkema.com/"
+        },
+        {
+          "candidate_id": "c_0b19fc573a16287535d270e1",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECN-Procedure",
+          "title": "Engineering Change Note Procedure | PDF | Audit | Business",
+          "url": "https://www.scribd.com/document/ECN-Procedure"
+        },
+        {
+          "candidate_id": "c_005dd7231e8b1ac9ffba0045",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://quizlet.com/study-guides",
+          "title": "Understanding Engineering Change Orders and Drawing ...",
+          "url": "https://quizlet.com/study-guides"
+        },
+        {
+          "candidate_id": "c_e0494459c32f8c5c555d695d",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://metal.kushmar.com/changes",
+          "title": "Engineering Change Management - ECO/ECN - metal hub",
+          "url": "https://metal.kushmar.com/changes"
+        },
+        {
+          "candidate_id": "c_a6ef5b20beef485390f6b18a",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.erp.ai/erp-for-automotive/processes",
+          "title": "Engineering change to effective revision · Automotive ERP",
+          "url": "https://www.erp.ai/erp-for-automotive/processes"
+        },
+        {
+          "candidate_id": "c_2a154aa0d0aa29efc9f52da6",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.ambitionbox.com/Interviews",
+          "title": "What are ECN and ECR, and how are they implemented?",
+          "url": "https://www.ambitionbox.com/Interviews"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 22.34,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "4eda076039c806dc2119d3f1c41ad574d443f18ee6fc8dbfe1ed4885a6617324",
+        "returncode": 0,
+        "started_at": "2026-11-13T03:33:09.635660+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "00c7afb92f2216fa9a22ff66c20357ca94bd9d3769a177bc4b341568d8a8867a"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "automotive engineering document revision ECR ECN design specification filetype:pdf"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_14582506aeff4c4dae372775"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "automotive engineering document revision ECR ECN design specification filetype:pdf"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Do we need issue ECN (Engineering Change Notice) ...",
+              "url": "https://www.eng-tips.com/threads"
+            },
+            {
+              "title": "User Guide Engineering Change process",
+              "url": "https://plm.newicon.fi/enduserhelp/html-en"
+            },
+            {
+              "title": "ECR Process for Inspection Plan Changes | PDF",
+              "url": "https://www.scribd.com/Ecn-Manual-for-sap-freaks"
+            },
+            {
+              "title": "ECR, ECO, ECN: What the Change Process Is Actually For",
+              "url": "https://xkema.com/"
+            },
+            {
+              "title": "Engineering Change Note Procedure | PDF | Audit | Business",
+              "url": "https://www.scribd.com/document/ECN-Procedure"
+            },
+            {
+              "title": "Understanding Engineering Change Orders and Drawing ...",
+              "url": "https://quizlet.com/study-guides"
+            },
+            {
+              "title": "Engineering Change Management - ECO/ECN - metal hub",
+              "url": "https://metal.kushmar.com/changes"
+            },
+            {
+              "title": "Engineering change to effective revision · Automotive ERP",
+              "url": "https://www.erp.ai/erp-for-automotive/processes"
+            },
+            {
+              "title": "What are ECN and ECR, and how are they implemented?",
+              "url": "https://www.ambitionbox.com/Interviews"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3487,
+          "result_sha256": "8f5d6014fa078d121884d12198e8e23f3387e456f3b191cfa75c15268b6dc100",
+          "tool_use_id": "call_14582506aeff4c4dae372775"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.0881534,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1345,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 3785,
+        "iterations": [],
+        "output_tokens": 1048,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "automotive component engineering drawing revision change notice specification control document site:gov OR site:edu OR site:sae.org",
+      "results": [
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Engineering Drawing Revision Overview | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_a6ef5b20beef485390f6b18a",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.erp.ai/erp-for-automotive/processes",
+          "title": "Engineering change to effective revision · Automotive ERP",
+          "url": "https://www.erp.ai/erp-for-automotive/processes"
+        },
+        {
+          "candidate_id": "c_e42ad8ffcadf42bf9101c2f4",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.cadtutor.net/AutoCAD/CADManagement",
+          "title": "Altered Item or New Revision? ASME Standards Question",
+          "url": "https://www.cadtutor.net/AutoCAD/CADManagement"
+        },
+        {
+          "candidate_id": "c_928c8b90241d4f207fa759cd",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.slideshare.net/Engineering",
+          "title": "Technical Drawing Documentation and Revision Process ...",
+          "url": "https://www.slideshare.net/Engineering"
+        },
+        {
+          "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECR-21-FORMAT",
+          "title": "Engineering Change Request Overview | PDF",
+          "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+        },
+        {
+          "candidate_id": "c_90ba8ef7849ccff3add67cf3",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/doc/DWG-rev-chg",
+          "title": "Drawing Revision Control Process | PDF",
+          "url": "https://www.scribd.com/doc/DWG-rev-chg"
+        },
+        {
+          "candidate_id": "c_65746d0d2aa806c210833656",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://community.ptc.com/",
+          "title": "Drawing Changes-Are all changes identified",
+          "url": "https://community.ptc.com/"
+        },
+        {
+          "candidate_id": "c_a627ea51df0d31f1e88b91c4",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.meegle.com/mechanical_engineering",
+          "title": "Technical Drawing Revision Control Template",
+          "url": "https://www.meegle.com/mechanical_engineering"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 13.9,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "b3e018d9c968a7d3732375e6914ee0f8e83610144f353fa04687c6e3a8bac0f3",
+        "returncode": 0,
+        "started_at": "2026-11-13T03:33:31.990221+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "fda598e2a663333b4c4de7ecabf79ad742f1c68d289fcc500077e65d868f387e"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "automotive component engineering drawing revision change notice specification control document site:gov OR site:edu OR site:sae.org"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_ff71b4e3459d4db39dd4d54c"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "automotive component engineering drawing revision change notice specification control document site:gov OR site:edu OR site:sae.org"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Engineering Drawing Revision Overview | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "Engineering change to effective revision · Automotive ERP",
+              "url": "https://www.erp.ai/erp-for-automotive/processes"
+            },
+            {
+              "title": "Altered Item or New Revision? ASME Standards Question",
+              "url": "https://www.cadtutor.net/AutoCAD/CADManagement"
+            },
+            {
+              "title": "Technical Drawing Documentation and Revision Process ...",
+              "url": "https://www.slideshare.net/Engineering"
+            },
+            {
+              "title": "Engineering Change Request Overview | PDF",
+              "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+            },
+            {
+              "title": "Drawing Revision Control Process | PDF",
+              "url": "https://www.scribd.com/doc/DWG-rev-chg"
+            },
+            {
+              "title": "Drawing Changes-Are all changes identified",
+              "url": "https://community.ptc.com/"
+            },
+            {
+              "title": "Technical Drawing Revision Control Template",
+              "url": "https://www.meegle.com/mechanical_engineering"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3364,
+          "result_sha256": "9440b15544f8bd5b95ac00e9f095786b44c752e8b4d1dfbae39f4779c5310dd9",
+          "tool_use_id": "call_ff71b4e3459d4db39dd4d54c"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    }
+  ],
+  "mode": "graph",
+  "rounds": [
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "engineering document set (specification + change notice + revision record)",
+            "query": "automotive engineering design specification document revision change notice ECR ECN",
+            "reason": "All three critical input nodes are unretrieved and share a common supply channel (workspace). An anchor search targeting a coherent automotive engineering document set—containing a design specification, associated engineering change notice(s), and the existing document under revision—can potentially satisfy multiple nodes simultaneously, preserving project and organizational consistency.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_EngineeringChangeNotices",
+              "I_DesignSpecifications"
+            ]
+          },
+          {
+            "desired_source_type": "engineering document with embedded diagrams or drawings",
+            "query": "automotive component engineering drawing schematic specification revision control document",
+            "reason": "The modality hypothesis for I_ExistingEngineeringDocument indicates that schematic diagrams or engineering drawings must be visually inspected to verify component configurations. This query targets documents that contain both textual specifications and visual/diagrammatic content, addressing the diagram modality candidate identified in the blueprint.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 0
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Engineering Change Notice Template | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_5f4e988248a2f12d7c68ac2b",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://sitemate.com/templates/commercial/forms",
+          "title": "Engineering Change Notice Template: Use this ECN Format",
+          "url": "https://sitemate.com/templates/commercial/forms"
+        },
+        {
+          "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECR-21-FORMAT",
+          "title": "Engineering Change Request Overview | PDF",
+          "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+        },
+        {
+          "candidate_id": "c_f17ef60e794e0e013db5706d",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/publication",
+          "title": "Optimizing Engineering Change Management Through ...",
+          "url": "https://www.researchgate.net/publication"
+        },
+        {
+          "candidate_id": "c_9ff4073d7bb3ff49033bb453",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.lawinsider.com/Clauses",
+          "title": "Engineering Change Request Sample Clauses",
+          "url": "https://www.lawinsider.com/Clauses"
+        },
+        {
+          "candidate_id": "c_8a99454e25005a5d7fd3fa29",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECN-Check-List",
+          "title": "ECN Change Classification Guide | PDF | Economic Sectors",
+          "url": "https://www.scribd.com/document/ECN-Check-List"
+        },
+        {
+          "candidate_id": "c_9bb6e31b360fbc983f32051e",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ryxen.ca/sops/shopdocs",
+          "title": "Engineering Change Notification ECN Procedure - Ryxen",
+          "url": "https://ryxen.ca/sops/shopdocs"
+        },
+        {
+          "candidate_id": "c_bb2d4c8f74154551e9b2128d",
+          "discovered_by_tool_use_id": "call_0_db95b8b261b91da1",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.eetimes.com/",
+          "title": "Optimizing Engineering Revision Control",
+          "url": "https://www.eetimes.com/"
+        },
+        {
+          "candidate_id": "c_27132f17712322bf1b0983fe",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://legacy.sae.org/books/toc_pdfs/BELS031",
+          "title": "Untitled",
+          "url": "https://legacy.sae.org/books/toc_pdfs/BELS031"
+        },
+        {
+          "candidate_id": "c_ef8bbe246933a0ea82d007e8",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/pin",
+          "title": "Automotive Design Form Practice",
+          "url": "https://www.pinterest.com/pin"
+        },
+        {
+          "candidate_id": "c_2c45ece52f7f4648cd19ab69",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://usedrox.com/Blog",
+          "title": "Document Revision Control in Engineering | Drox",
+          "url": "https://usedrox.com/Blog"
+        },
+        {
+          "candidate_id": "c_5ce09b60724fcbfb9011b4c9",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.imat-uve.com/newsroom/news",
+          "title": "Automotive component validation: From requirements to report",
+          "url": "https://www.imat-uve.com/newsroom/news"
+        },
+        {
+          "candidate_id": "c_2db860aaeb5bd167ef93c35e",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://jishihengsheng.com/guides",
+          "title": "Prototype Revision Control: Keep CAD, Drawings and ...",
+          "url": "https://jishihengsheng.com/guides"
+        },
+        {
+          "candidate_id": "c_eb6e072969d615e31622446a",
+          "discovered_by_tool_use_id": "call_083626efea5d47b3b82c6477",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ali21498.blogspot.com/2026/11",
+          "title": "The Old Drawing Is Still on the Production Floor",
+          "url": "https://ali21498.blogspot.com/2026/11"
+        }
+      ],
+      "round": 0,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_be4cc789de706e7842824494",
+            "reason": "Generic Engineering Change Notice template on Scribd; template-level content with no project data or automotive applicability, and no evidence it supplies data-bearing document content for anchor inspection."
+          },
+          {
+            "candidate_id": "c_5f4e988248a2f12d7c68ac2b",
+            "reason": "Commercial template page for an ECN format; duplicates the same generic change-notice template function without verified data-bearing content or automotive relevance."
+          },
+          {
+            "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+            "reason": "Engineering Change Request form overview on Scribd; a generic form description rather than an actual data-bearing engineering document or notice."
+          },
+          {
+            "candidate_id": "c_f17ef60e794e0e013db5706d",
+            "reason": "Research publication on engineering change management optimization; academic analysis rather than an inspectable native engineering document, change notice, or specification."
+          },
+          {
+            "candidate_id": "c_9ff4073d7bb3ff49033bb453",
+            "reason": "Contract clause samples for engineering change requests; legal boilerplate unrelated to the technical document revision workflow."
+          },
+          {
+            "candidate_id": "c_8a99454e25005a5d7fd3fa29",
+            "reason": "ECN classification checklist guide; generic standards-style checklist, not a data-bearing document or notice for the specific automotive case."
+          },
+          {
+            "candidate_id": "c_bb2d4c8f74154551e9b2128d",
+            "reason": "EE Times article on engineering revision control; electronics-oriented editorial content, not a native engineering document or automotive-specific material."
+          },
+          {
+            "candidate_id": "c_27132f17712322bf1b0983fe",
+            "reason": "SAE book table-of-contents PDF; a catalog listing rather than an inspectable engineering document, notice, or specification with data."
+          },
+          {
+            "candidate_id": "c_ef8bbe246933a0ea82d007e8",
+            "reason": "Pinterest pin on automotive design form practice; social media image pin with no reliable document content."
+          },
+          {
+            "candidate_id": "c_5ce09b60724fcbfb9011b4c9",
+            "reason": "Newsroom item on automotive component validation reporting; relates to testing/validation rather than document revision and provides no data-bearing document artifact."
+          },
+          {
+            "candidate_id": "c_2db860aaeb5bd167ef93c35e",
+            "reason": "Prototype revision control guide covering CAD and drawings; adjacent but generic, and the other revision-control candidate more directly addresses engineering document revision tracking."
+          },
+          {
+            "candidate_id": "c_eb6e072969d615e31622446a",
+            "reason": "Informal blog post about old drawings on the production floor; anecdotal and not an authoritative native document or specification."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_9bb6e31b360fbc983f32051e",
+            "reason": "A concrete Engineering Change Notification procedure document from Ryxen serves as a plausible anchor for the Engineering Change Notices input node; it can be inspected to understand the structure and fields that change notices carry into a document revision workflow, without asserting automotive specificity."
+          },
+          {
+            "candidate_id": "c_2c45ece52f7f4648cd19ab69",
+            "reason": "A document revision control article specific to engineering practices is the most relevant remaining candidate for the deliverable's revision-tracking and maintenance dimension, anchoring inspection of how tracked revisions and revision completeness are recorded in practice."
+          }
+        ]
+      }
+    },
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "PDF document set (engineering drawing, change notice, specification)",
+            "query": "automotive engineering document revision ECR ECN design specification filetype:pdf",
+            "reason": "All three critical workspace inputs remain unretrieved. A single coherent automotive engineering document set that includes the base document, its associated change notices, and current design specifications would serve as a strong anchor supporting multiple nodes simultaneously. Searching for real PDF artifacts from automotive engineering revision workflows targets primary work materials rather than secondary descriptions.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_EngineeringChangeNotices",
+              "I_DesignSpecifications"
+            ]
+          },
+          {
+            "desired_source_type": "Primary engineering documents (drawings, ECO/ECN records, spec sheets)",
+            "query": "automotive component engineering drawing revision change notice specification control document site:gov OR site:edu OR site:sae.org",
+            "reason": "Authoritative domains such as government, university, or professional engineering society repositories may host publicly accessible automotive engineering documentation sets that include drawings, change notices, and specifications together. This targets the same anchor case from a different source angle, increasing the likelihood of finding a coherent, real-world document set that can supply all three critical input nodes.",
+            "target_node_ids": [
+              "I_ExistingEngineeringDocument",
+              "I_EngineeringChangeNotices",
+              "I_DesignSpecifications"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 1
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "c_2adeff1071a9e5b4ff7a9b6c",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.eng-tips.com/threads",
+          "title": "Do we need issue ECN (Engineering Change Notice) ...",
+          "url": "https://www.eng-tips.com/threads"
+        },
+        {
+          "candidate_id": "c_34c09e7d3d9536da5a64eeca",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://plm.newicon.fi/enduserhelp/html-en",
+          "title": "User Guide Engineering Change process",
+          "url": "https://plm.newicon.fi/enduserhelp/html-en"
+        },
+        {
+          "candidate_id": "c_8443638720e9f60d710d058a",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/Ecn-Manual-for-sap-freaks",
+          "title": "ECR Process for Inspection Plan Changes | PDF",
+          "url": "https://www.scribd.com/Ecn-Manual-for-sap-freaks"
+        },
+        {
+          "candidate_id": "c_ce1403715a06bc3545e6c823",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://xkema.com/",
+          "title": "ECR, ECO, ECN: What the Change Process Is Actually For",
+          "url": "https://xkema.com/"
+        },
+        {
+          "candidate_id": "c_0b19fc573a16287535d270e1",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECN-Procedure",
+          "title": "Engineering Change Note Procedure | PDF | Audit | Business",
+          "url": "https://www.scribd.com/document/ECN-Procedure"
+        },
+        {
+          "candidate_id": "c_005dd7231e8b1ac9ffba0045",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://quizlet.com/study-guides",
+          "title": "Understanding Engineering Change Orders and Drawing ...",
+          "url": "https://quizlet.com/study-guides"
+        },
+        {
+          "candidate_id": "c_e0494459c32f8c5c555d695d",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://metal.kushmar.com/changes",
+          "title": "Engineering Change Management - ECO/ECN - metal hub",
+          "url": "https://metal.kushmar.com/changes"
+        },
+        {
+          "candidate_id": "c_a6ef5b20beef485390f6b18a",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.erp.ai/erp-for-automotive/processes",
+          "title": "Engineering change to effective revision · Automotive ERP",
+          "url": "https://www.erp.ai/erp-for-automotive/processes"
+        },
+        {
+          "candidate_id": "c_2a154aa0d0aa29efc9f52da6",
+          "discovered_by_tool_use_id": "call_14582506aeff4c4dae372775",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.ambitionbox.com/Interviews",
+          "title": "What are ECN and ECR, and how are they implemented?",
+          "url": "https://www.ambitionbox.com/Interviews"
+        },
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Engineering Drawing Revision Overview | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_e42ad8ffcadf42bf9101c2f4",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.cadtutor.net/AutoCAD/CADManagement",
+          "title": "Altered Item or New Revision? ASME Standards Question",
+          "url": "https://www.cadtutor.net/AutoCAD/CADManagement"
+        },
+        {
+          "candidate_id": "c_928c8b90241d4f207fa759cd",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.slideshare.net/Engineering",
+          "title": "Technical Drawing Documentation and Revision Process ...",
+          "url": "https://www.slideshare.net/Engineering"
+        },
+        {
+          "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/ECR-21-FORMAT",
+          "title": "Engineering Change Request Overview | PDF",
+          "url": "https://www.scribd.com/document/ECR-21-FORMAT"
+        },
+        {
+          "candidate_id": "c_90ba8ef7849ccff3add67cf3",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/doc/DWG-rev-chg",
+          "title": "Drawing Revision Control Process | PDF",
+          "url": "https://www.scribd.com/doc/DWG-rev-chg"
+        },
+        {
+          "candidate_id": "c_65746d0d2aa806c210833656",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://community.ptc.com/",
+          "title": "Drawing Changes-Are all changes identified",
+          "url": "https://community.ptc.com/"
+        },
+        {
+          "candidate_id": "c_a627ea51df0d31f1e88b91c4",
+          "discovered_by_tool_use_id": "call_ff71b4e3459d4db39dd4d54c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.meegle.com/mechanical_engineering",
+          "title": "Technical Drawing Revision Control Template",
+          "url": "https://www.meegle.com/mechanical_engineering"
+        }
+      ],
+      "round": 1,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_2adeff1071a9e5b4ff7a9b6c",
+            "reason": "Eng-tips thread index page rather than a specific, data-bearing discussion; too generic to serve as an inspection anchor for revising automotive engineering documents."
+          },
+          {
+            "candidate_id": "c_34c09e7d3d9536da5a64eeca",
+            "reason": "Generic PLM end-user guide for an engineering change process; describes a tool's workflow rather than material usable to verify document revisions or discrepancies."
+          },
+          {
+            "candidate_id": "c_8443638720e9f60d710d058a",
+            "reason": "Third-party Scribd posting of an SAP ECN manual aimed at inspection plans; not an authoritative native file and tangential to the automotive engineering document revision blueprint."
+          },
+          {
+            "candidate_id": "c_ce1403715a06bc3545e6c823",
+            "reason": "Commercial vendor marketing/blog overview of ECR/ECO/ECN concepts; generic educational description, not a data-bearing artifact for the blueprint's document-of-record work."
+          },
+          {
+            "candidate_id": "c_0b19fc573a16287535d270e1",
+            "reason": "Scribd-hosted ECN procedure with audit framing; a generic procedural document aggregator, not an authoritative source embedded in the required information nodes."
+          },
+          {
+            "candidate_id": "c_005dd7231e8b1ac9ffba0045",
+            "reason": "Quizlet study guide; a generic educational description unsuitable as an inspection anchor."
+          },
+          {
+            "candidate_id": "c_e0494459c32f8c5c555d695d",
+            "reason": "Commercial metal-fabrication hub marketing page on ECO/ECN; vendor promotional and not specific to automotive engineering documentation revision."
+          },
+          {
+            "candidate_id": "c_a6ef5b20beef485390f6b18a",
+            "reason": "ERP marketing/process overview page for automotive; generic vendor description, not actual engineering-document change material to inspect."
+          },
+          {
+            "candidate_id": "c_2a154aa0d0aa29efc9f52da6",
+            "reason": "Interview-question aggregator page; generic Q&A description with no bearing on the specific revision task."
+          },
+          {
+            "candidate_id": "c_be4cc789de706e7842824494",
+            "reason": "Scribd document landing page without identifiable authoritative drawing-revision content; cannot be verified as useful."
+          },
+          {
+            "candidate_id": "c_928c8b90241d4f207fa759cd",
+            "reason": "SlideShare presentation index; generic educational overview, not a native authoritative artifact."
+          },
+          {
+            "candidate_id": "c_d58b9de70470d1515f1e6a0b",
+            "reason": "Scribd posting of an ECR form format; generic template aggregator, not a data-bearing source for the automotive document revision."
+          },
+          {
+            "candidate_id": "c_90ba8ef7849ccff3add67cf3",
+            "reason": "Scribd-hosted drawing revision control PDF; third-party upload of unknown provenance, generic procedure rather than automotive-specific document material."
+          },
+          {
+            "candidate_id": "c_a627ea51df0d31f1e88b91c4",
+            "reason": "Meegle template landing page offering a revision-control template; promotional template offer, not an inspectable authoritative source."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_e42ad8ffcadf42bf9101c2f4",
+            "reason": "Forum/standards discussion specifically about whether a change to an engineering drawing constitutes an altered item or a new revision under ASME standards; directly bears on the document revision decision nodes (D_RequiredDocumentRevisions, J_RevisionCompleteness) and is the most plausible inspection anchor among candidates for revision-control practice."
+          },
+          {
+            "candidate_id": "c_65746d0d2aa806c210833656",
+            "reason": "PTC community thread on drawing changes and whether all changes are identified/accounted for; directly applicable to the discrepancy-identification and revision-completeness judgment nodes, and the second-best anchor for verifying change-marking practice."
+          }
+        ]
+      }
+    }
+  ]
+}
