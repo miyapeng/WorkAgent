@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "object",
+      "properties": {
+        "intent_preservation": {
+          "type": "boolean"
+        },
+        "evidence_support": {
+          "type": "boolean"
+        },
+        "preliminary_feasibility": {
+          "type": "boolean"
+        },
+        "deliverable_appropriateness": {
+          "type": "boolean"
+        },
+        "task_rubric_alignment": {
+          "type": "boolean"
+        },
+        "verification_soundness": {
+          "type": "boolean"
+        },
+        "no_answer_leakage": {
+          "type": "boolean"
+        },
+        "minimality": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "intent_preservation",
+        "evidence_support",
+        "preliminary_feasibility",
+        "deliverable_appropriateness",
+        "task_rubric_alignment",
+        "verification_soundness",
+        "no_answer_leakage",
+        "minimality"
+      ],
+      "additionalProperties": false
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "accepted",
+    "checks",
+    "issues"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workagent:stage4:asset_task_review"
+}

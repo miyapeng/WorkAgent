@@ -1,0 +1,169 @@
+{
+  "blueprint_sha256": "e0cd48c408a049c21c67d8e19080ddaece51261b14c0fdd1fc38c92255245abb",
+  "config_sha256": "f3fb4f0535e9b40de183ea7818328c254320518d8477acf39d490a852c85beb3",
+  "construction_hashes": {
+    "case_attempts.json": "6187ba198758882899c7c301e54b21e5011ac2854b2ad44c1c82295788b72d47",
+    "case_design.json": "5431bce9c8fffeaaedde6c6eea64e5be7974fe3028d5fe8b6f76faa602dacc8b",
+    "case_review.json": "797f17f26b91f96c0a0812d4ea32425a4cf8e31401ceaf97f64745a61e5e9315",
+    "download_trace.json": "a1f654000b2de508eba33d600dd95d0aed7c6ca6364b8ee3da183f51db37d708",
+    "file_profiles.json": "6b5a8855ebb555bb484d91c6859ec22d722c9f8b5ba85de272ae17ca771fb27e",
+    "grounded_graph.json": "a7cb82e7fa239f092557a351a2f37d6d7cf8fcd0c4077b927d9dda2438f6e691",
+    "search_decision.json": "99c4dc9264b50fb9e4cf9ac77f94e2098079bd3208da7e1cdee07d7364409d51",
+    "search_trace.json": "6bcf3b42c1f00dab4e0f4b20ffb2c07b6ce32e53da8b135a859476535de503f6",
+    "source_manifest.json": "481fddcd5967bdc6e86975cb26cc841cfb1d5a4c81fba8442d59fce4d89038e3"
+  },
+  "counts": {
+    "actual_fetch_requests": 43,
+    "actual_search_requests": 13,
+    "critical_external_nodes": 2,
+    "downloaded_urls": 21,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 2,
+    "parsed_unique_files": 1,
+    "real_original_files": 1,
+    "retained_files": 1,
+    "supported_critical_nodes": 1,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2/Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27/Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27/Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28/Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28/Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24/Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24.mp4"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46/Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46.mp4"
+    },
+    {
+      "node_ids": [
+        "i1"
+      ],
+      "reason": "unsupported_critical_inputs",
+      "stage": "coverage"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [
+    "i1"
+  ],
+  "modality_evidence": [
+    {
+      "evidence_status": "model_inspected_reference_asset",
+      "necessity_status": "not_tested",
+      "node_id": "i1"
+    }
+  ],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:35:40.326107+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "29bb13081ad338054bda06dfd8c9a885ffdaa8be2771473d1b88fc7e1b1393cd",
+      "prompt_version": "asset_case.v3",
+      "request_sha256": "c2e359a7bb5e02d49dfd54a58cc377f411cbd7dfce456e881c790ee0909a7646",
+      "usage": {
+        "completion_tokens": 5156,
+        "prompt_tokens": 3878,
+        "total_tokens": 9034
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:48:40.123113+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "1416372f5e2fa3c3fab6664af646ea8e3b67e9325fe6b1dc206618ee1fa1a34e",
+      "prompt_version": "asset_reviewer.v2",
+      "request_sha256": "789556ab35312fccf7ac0d75d295ddc4b035e25b8e3670b7af2cc86bf687150f",
+      "usage": {
+        "completion_tokens": 64,
+        "prompt_tokens": 4674,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 4738
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 5220,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 8552,
+    "unique_model_requests": 2
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_fd939e1aec01c4a0d846f398"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_4053",
+  "seed_sha256": "a3933ddcc9ebcd89a6e0cc72ff5ce51fb949e2a29857997241176d62c1633d9c",
+  "selected_anchor": "1979 Evelyn 'Champagne' King music-video production rushes (Bristol Productions, New York), digitized by XFR Collective from Mark Pines' Umatic collection, organized by scene and take — a coherent multi-take shoot from which an editor selects the most effective shots of each scene and assembles them into a continuous sequence.",
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [
+    "i2"
+  ],
+  "workspace_files": {
+    "references/f_fd939e1aec01c4a0d846f398.mp4": "fd939e1aec01c4a0d846f398c2dd0b2bdf7dcb5f05eb23211618db887d207e46"
+  }
+}

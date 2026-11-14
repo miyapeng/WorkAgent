@@ -1,0 +1,61 @@
+{
+  "case_objective": "Review the available multi-take rushes for Scene 6 (takes 11–15) and Scene 7 (take 16), evaluate each take for effectiveness, select the strongest material, and assemble the selected shots into a single continuous, logically ordered video sequence.",
+  "case_title": "Editing a continuous sequence from Scene 6 and Scene 7 rushes of the 1979 Evelyn 'Champagne' King production",
+  "deliverables": [
+    {
+      "description": "An edited video sequence assembling the selected shots from Scene 6 and Scene 7 into a continuous, logically ordered narrative, with Scene 6 preceding Scene 7.",
+      "format": "mp4",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": null,
+      "node_id": "i1",
+      "rationale": "The file contains real production rushes covering Scene 6 takes 11–15 and Scene 7 take 16, providing multiple takes of Scene 6 for evaluation and one take of Scene 7. However, only two scenes are represented, Scene 7 has a single take so no take selection is possible for that scene, earlier takes of Scene 6 are absent, audio was not inspected, and two of four sampled frames could not be visually read.",
+      "references": [
+        {
+          "file_id": "f_fd939e1aec01c4a0d846f398",
+          "segment_id": "seg_95b6d183a5d5bf599cd6db78"
+        },
+        {
+          "file_id": "f_fd939e1aec01c4a0d846f398",
+          "segment_id": "seg_5940b54a42b3d626b295f349"
+        },
+        {
+          "file_id": "f_fd939e1aec01c4a0d846f398",
+          "segment_id": "seg_7aae782c21b5422864def7ad"
+        },
+        {
+          "file_id": "f_fd939e1aec01c4a0d846f398",
+          "segment_id": "seg_efe42b5c1b1ba14b3aa4eab6"
+        }
+      ],
+      "status": "partial"
+    },
+    {
+      "instruction": "Hypothetical commission: Edit a continuous two-scene sequence from the available production rushes (Scene 6, takes 11–15; Scene 7, take 16) dated 1979-03-28. Review all available takes of Scene 6 and select the most effective take(s) based on performance quality, framing, and visual continuity. Combine the Scene 6 selection with the available Scene 7 take into a single continuous sequence ordered Scene 6 then Scene 7. Ensure cuts between selected material are logical and the assembled sequence runs smoothly. Deliver as a single video file suitable for a music-video reel.",
+      "node_id": "i2",
+      "rationale": "The task_instruction is a hypothetical editorial brief for the available rushes. The actual raw footage (file1) provides the multi-take material the editor needs to perform take evaluation and cross-scene assembly, and the brief specifies the scene order and story objective the worker requires.",
+      "references": [],
+      "status": "supported"
+    }
+  ],
+  "limitations": [
+    "Only Scene 6 (takes 11–15) and Scene 7 (take 16) are available in the workspace; earlier takes of Scene 6 and any additional takes of Scene 7 are not present, so take selection is limited to the available rushes.",
+    "Scene 7 has only one take (take 16), so no take-to-take selection is possible for that scene.",
+    "Audio content of the rushes was not inspected (audio_content_inspected: false); the worker must independently assess audio continuity and synchronization.",
+    "Of four sampled frames, only two (at 810.413s and 1184.45s) produced visual observations; frames at 62.339s and 436.376s failed visual inspection, and sampled frames do not establish complete temporal or audio understanding of the footage.",
+    "Model visual observations for the two readable frames are unverified and should not be treated as definitive descriptions of the footage content."
+  ],
+  "operations": [
+    {
+      "description": "Evaluate each available take within Scene 6 (takes 11–15) and the single available take of Scene 7 to identify the most effective shots based on performance, composition, continuity, and alignment with the intended story. For Scene 7, where only one take is present, assess its effectiveness and suitability for inclusion rather than selecting among alternatives.",
+      "node_id": "i3"
+    },
+    {
+      "description": "Determine the ordering and combination of the selected shots from Scene 6 and Scene 7 so that cuts between scenes are logical and the assembled sequence runs smoothly as a continuous story.",
+      "node_id": "i4"
+    }
+  ]
+}

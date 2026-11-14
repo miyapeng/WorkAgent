@@ -1,0 +1,61 @@
+{
+  "interface": "asset-task-v1",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:42:47.896858+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "asset_task.v2",
+      "request_sha256": "5a7de7213e44bd5eeeaec9616fdae83e61f5eb037ade1be1306213038e0951b4"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:44:24.667381+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "asset_task_review.v2",
+      "request_sha256": "4bc50b292943a0ca4247c4da6d8349a0c1cd6b71c3c6bd524bde65cd0e701992"
+    }
+  ],
+  "package_path": "/user/miyapeng/WorkAgent/work-tasks/generated/asset_pilot/TASK_19388cd71ca0f5bdb02185f5",
+  "reasons": [],
+  "seed_id": "raw_31_0_21714",
+  "semantic_audit": {
+    "accepted": true,
+    "checks": {
+      "deliverable_appropriateness": true,
+      "evidence_support": true,
+      "intent_preservation": true,
+      "minimality": true,
+      "no_answer_leakage": true,
+      "preliminary_feasibility": true,
+      "task_rubric_alignment": true,
+      "verification_soundness": true
+    },
+    "issues": []
+  },
+  "status": "draft",
+  "task_id": "TASK_19388cd71ca0f5bdb02185f5",
+  "workspace_id": "WS_132f78cff63a"
+}

@@ -1,0 +1,117 @@
+{
+  "blueprint_sha256": "21227312a23a68e428a17135b3d2610db2985d33f87b09a91cb30e07de869ba9",
+  "config_sha256": "0872614bc6b061a9f0d30366254d37a6cdc69eec72ff05b8c679a030201bd452",
+  "construction_hashes": {
+    "case_attempts.json": "1222c0ed7196f0de992d3f6a1c14ef049977968555402d54882eedeca7a9c13a",
+    "download_trace.json": "0cb6e77c8e3017c2ccbf867c9922da5579aae2ce1f2dfc13079aa1fc0badeea6",
+    "file_profiles.json": "bde2c6a20c5f1fc8a961bc860a9ade76989197f826e8d4542cbe5327b65f9c9b",
+    "search_decision.json": "d7ac508028e591ea14fd41dee2eee858930934d35ae7b17eaed7ec9f5832d249",
+    "search_trace.json": "0e364381b83e0d23cc1757e43254c884d38fac2f249fb683800fe42962d29aaa",
+    "source_manifest.json": "b92f6fd7c182ef65d481fa9417eb02e1626dfb630682c8de69814b670423180b"
+  },
+  "counts": {
+    "actual_fetch_requests": 16,
+    "actual_search_requests": 4,
+    "critical_external_nodes": 1,
+    "downloaded_urls": 8,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 0,
+    "parsed_unique_files": 6,
+    "real_original_files": 0,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "html_not_allowed_in_workspace",
+      "stage": "acquisition",
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+    },
+    {
+      "reason": "html_not_allowed_in_workspace",
+      "stage": "acquisition",
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+    },
+    {
+      "case": "DHS Digital Design Guide — government style-guide website built with Jekyll/Liquid on the U.S. Web Design System (USWDS), with a published DHS color palette, component, typography, and form specifications and custom Sass/Liquid implementation",
+      "reason": "unknown_segment_id",
+      "stage": "case_binding"
+    },
+    {
+      "node_ids": [
+        "i1"
+      ],
+      "reason": "unsupported_critical_inputs",
+      "stage": "coverage"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [
+    "i1"
+  ],
+  "modality_evidence": [],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:28:41.439878+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "667437349c69b459e1672cd1a24e44241bb7bd45b71d427ad07ffc76ef32bf42",
+      "prompt_version": "asset_case.v2",
+      "request_sha256": "3e344ba9cdd9db90c88fa02b45142ffb042351c194f63607aef9e6288bddc40b",
+      "usage": {
+        "completion_tokens": 2456,
+        "prompt_tokens": 31532,
+        "prompt_tokens_details": {
+          "cached_tokens": 153
+        },
+        "total_tokens": 33988
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 2456,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 31532,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_ffc58e8f13f4aa562d37c170",
+    "f_6141abc0c06d331d1ae2c8a0",
+    "f_3857ea832280379516b1f646",
+    "f_a19613b9144366106fb07aad",
+    "f_37c5891bab4141e7a59a431e",
+    "f_fe498796aac931248e374a13"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_21714",
+  "seed_sha256": "4152005e5ea717c6c763d5eedc6d7e88aca700728c7436d4d00a0396f8cf048a",
+  "selected_anchor": null,
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [],
+  "workspace_files": {}
+}

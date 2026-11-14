@@ -46,7 +46,17 @@
               "tex",
               "py",
               "js",
-              "ipynb"
+              "ipynb",
+              "zip",
+              "html",
+              "mp4",
+              "mov",
+              "webm",
+              "obj",
+              "gltf",
+              "glb",
+              "stl",
+              "blend"
             ]
           },
           "description": {

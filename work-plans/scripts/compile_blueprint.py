@@ -32,7 +32,7 @@ def compile_blueprint(value, seed_id):
         if dependency:
             require(row['kind'] != 'text_instruction', 'direct_text_has_no_visual_dependency')
             require(dependency['supports'] in operation_names, 'modality_supports_unknown_operation')
-            modality = {'visual': 'image', 'visual_spatial': 'spatial'}[dependency['modality']]
+            modality = {'visual': 'image', 'visual_spatial': 'spatial', 'temporal_visual':'video', 'auditory':'audio'}[dependency['modality']]
             node.update(modality_candidates=[modality], modality_rationale=dependency['required_operation'])
             hypotheses.append({'node_id': node['id'], 'modality_candidate': modality,
                                'information_needed': dependency['information_needed'],

@@ -1,0 +1,77 @@
+{
+  "interface": "asset-task-v1",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:38:54.669034+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "asset_task.v1",
+      "request_sha256": "d8ecbea9eafa00822bc1de70eb134be3ee34377b604b1de7317bc82284895405"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:39:04.548929+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "asset_task_review.v1",
+      "request_sha256": "faeb3b0305b698107863589843448001d03adc6092b07252090fe0fa886617b6"
+    }
+  ],
+  "reasons": [
+    "r6 (rubric_r6) is unsatisfiable and self-contradictory: task.deliverables fixes a single 2D PNG at outputs/out1.png, and the instruction requires a 2D environment concept layout, yet rubric_r6 asks the worker to have committed to one branch '2D layout or 3D mock-up' and scores branch consistency. With a 2D-only deliverable mandated, the branch choice is pre-determined by the case author, not a worker professional judgment, so rubric_r6 cannot produce meaningful signal and contradicts r1's single-2D-artifact requirement. It cannot be traced to a distinct public task requirement beyond the original O*NET task's permissive '2D layouts or 3D mock-ups' phrasing, which the case itself already forecloses.",
+    "Requirement mapping is internally inconsistent. r1 maps to binding_i1 and binding_i2 only (both synthetic instructions), while r2-r6 map to binding_i1/i2/i3 including binding_i3. The artifact_d1 requirement maps all three. binding_i3 is listed with instruction:null and references[] empty, i.e. it supplies no actual requirement text; the rubric criteria (r2, r3, r4) nevertheless cite it as evidence. A required reference binding with no instruction and no bound content cannot substantiate the scored criteria attributed to it.",
+    "r4 asserts consistency with 'the proportions of the supplied character sheet' as a scored criterion, but the only character-sheet evidence is a model_observation_unverified segment description (seg_cf8a8048e5fc5133dfa8617b) plus a programmatic 1334x750 dimension record. No measured proportion relationships, no named rider, and no verified human-scale ratios are bound. The criterion asks the grader to validate proportion consistency against an unverified visual description, so the specified verification is not executable as written.",
+    "The case objective and r1 mandate 'approximately the references' aspect (about 1.78:1 = 1334x750)', but the referenced f_79d6f4de056ace187d8b1581 binding lists six panel segments at half-height crops (boxes with y-extent 0.5) plus a separate full-image dimension record. The 1334x750 figure is sourced only from programmatic extraction (source_located, not content-verified). Aspect is stated as both an authored preference (i2, synthetic_instruction) and as a property of 'the references'; the rubric presents 1.78:1 as a target grounded in reference geometry while the limitation text concedes no measured dimensions exist. That ambiguity makes the aspect tolerance in verification_spec undefined.",
+    "r2's conflict_policy and full_credit require that 'the reference panels are not reproduced or redistributed' and that the deliverable not 'imply affiliation'. This is a compliance/licence condition, not a visual outcome derivable from the assets (both files carry license_status unknown, redistribution_allowed false). It is scored under a semantic_guide on the delivered artwork, but a PNG cannot demonstrate non-affiliation or non-redistribution; there is no artifact-level observable that verifies this condition, so the criterion is unverifiable by the stated method.",
+    "r3 and r5 assert stylistic targets ('quiet, geometric, painterly-vector', 'strong horizontal layering', restrained palette). These trace to synthetic_instruction i1 and to unverified panel observations, not to any public task requirement. The underlying O*NET task ('Prepare two-dimensional concept layouts or three-dimensional mock-ups') contains no such style mandate. The audit must reject unsupported exact visual claims; here the entire style rubric rests on the model's own fallible descriptions of the reference sheet and on authored preferences.",
+    "No completed example solution or full source model is present in the graph, and neither reference is supplied as a finished answer, so no_answer_leakage passes. The procedural operations (i4-i7) trace forward to out1 and to r1-r5, and the artifact check (artifact_d1, file_exists on outputs/out1.png) is deterministic and correctly distinguished from the semantic criteria. However, verification_soundness fails: all five semantic rubric items are semantic_guide with no rendered-inspection verifier executed, the VLM segment descriptions are explicitly model_observation_unverified, and no modality necessity is established — i3's spatial hypothesis remains necessity_status 'hypothesis' with evidence_status 'unretrieved'.",
+    "Minimality is satisfied for a single-artifact case, but the rubric carries seven scored items for one image, of which r6 is non-actionable and r2 embeds a non-visual compliance condition; the set contains redundant/unsatisfiable criteria rather than the minimal criterion set needed for this task."
+  ],
+  "seed_id": "raw_31_0_16203",
+  "semantic_audit": {
+    "accepted": false,
+    "checks": {
+      "deliverable_appropriateness": true,
+      "evidence_support": false,
+      "intent_preservation": true,
+      "minimality": true,
+      "no_answer_leakage": true,
+      "preliminary_feasibility": true,
+      "task_rubric_alignment": false,
+      "verification_soundness": false
+    },
+    "issues": [
+      "r6 (rubric_r6) is unsatisfiable and self-contradictory: task.deliverables fixes a single 2D PNG at outputs/out1.png, and the instruction requires a 2D environment concept layout, yet rubric_r6 asks the worker to have committed to one branch '2D layout or 3D mock-up' and scores branch consistency. With a 2D-only deliverable mandated, the branch choice is pre-determined by the case author, not a worker professional judgment, so rubric_r6 cannot produce meaningful signal and contradicts r1's single-2D-artifact requirement. It cannot be traced to a distinct public task requirement beyond the original O*NET task's permissive '2D layouts or 3D mock-ups' phrasing, which the case itself already forecloses.",
+      "Requirement mapping is internally inconsistent. r1 maps to binding_i1 and binding_i2 only (both synthetic instructions), while r2-r6 map to binding_i1/i2/i3 including binding_i3. The artifact_d1 requirement maps all three. binding_i3 is listed with instruction:null and references[] empty, i.e. it supplies no actual requirement text; the rubric criteria (r2, r3, r4) nevertheless cite it as evidence. A required reference binding with no instruction and no bound content cannot substantiate the scored criteria attributed to it.",
+      "r4 asserts consistency with 'the proportions of the supplied character sheet' as a scored criterion, but the only character-sheet evidence is a model_observation_unverified segment description (seg_cf8a8048e5fc5133dfa8617b) plus a programmatic 1334x750 dimension record. No measured proportion relationships, no named rider, and no verified human-scale ratios are bound. The criterion asks the grader to validate proportion consistency against an unverified visual description, so the specified verification is not executable as written.",
+      "The case objective and r1 mandate 'approximately the references' aspect (about 1.78:1 = 1334x750)', but the referenced f_79d6f4de056ace187d8b1581 binding lists six panel segments at half-height crops (boxes with y-extent 0.5) plus a separate full-image dimension record. The 1334x750 figure is sourced only from programmatic extraction (source_located, not content-verified). Aspect is stated as both an authored preference (i2, synthetic_instruction) and as a property of 'the references'; the rubric presents 1.78:1 as a target grounded in reference geometry while the limitation text concedes no measured dimensions exist. That ambiguity makes the aspect tolerance in verification_spec undefined.",
+      "r2's conflict_policy and full_credit require that 'the reference panels are not reproduced or redistributed' and that the deliverable not 'imply affiliation'. This is a compliance/licence condition, not a visual outcome derivable from the assets (both files carry license_status unknown, redistribution_allowed false). It is scored under a semantic_guide on the delivered artwork, but a PNG cannot demonstrate non-affiliation or non-redistribution; there is no artifact-level observable that verifies this condition, so the criterion is unverifiable by the stated method.",
+      "r3 and r5 assert stylistic targets ('quiet, geometric, painterly-vector', 'strong horizontal layering', restrained palette). These trace to synthetic_instruction i1 and to unverified panel observations, not to any public task requirement. The underlying O*NET task ('Prepare two-dimensional concept layouts or three-dimensional mock-ups') contains no such style mandate. The audit must reject unsupported exact visual claims; here the entire style rubric rests on the model's own fallible descriptions of the reference sheet and on authored preferences.",
+      "No completed example solution or full source model is present in the graph, and neither reference is supplied as a finished answer, so no_answer_leakage passes. The procedural operations (i4-i7) trace forward to out1 and to r1-r5, and the artifact check (artifact_d1, file_exists on outputs/out1.png) is deterministic and correctly distinguished from the semantic criteria. However, verification_soundness fails: all five semantic rubric items are semantic_guide with no rendered-inspection verifier executed, the VLM segment descriptions are explicitly model_observation_unverified, and no modality necessity is established — i3's spatial hypothesis remains necessity_status 'hypothesis' with evidence_status 'unretrieved'.",
+      "Minimality is satisfied for a single-artifact case, but the rubric carries seven scored items for one image, of which r6 is non-actionable and r2 embeds a non-visual compliance condition; the set contains redundant/unsatisfiable criteria rather than the minimal criterion set needed for this task."
+    ]
+  },
+  "status": "rejected",
+  "workspace_id": "WS_e06a400f4ac2"
+}

@@ -1,0 +1,98 @@
+{
+  "case_objective": "Produce a two-dimensional concept layout for a meteorological-mountain endless-runner level, reinterpreting the composition, layer hierarchy, palette discipline and figure-to-environment scale established by the supplied landscape panel sheet and character sheet, with an authored 16:9 delivery frame suitable for stakeholder review.",
+  "case_title": "Endless-Runner Environment Concept Layout from Panel References",
+  "deliverables": [
+    {
+      "description": "A single 2D environment concept layout in landscape 16:9, showing the continuous traversal ridge, at least two background parallax layers, the cold-alpine-to-warm-dusk biome gradient, horizon and sky wash, and one rider figure staged on the path at reference-consistent small scale; flat shape language with a restrained palette, no HUD or UI elements.",
+      "format": "png",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": "Concept commission (hypothetical): The team is prototyping a new biome transition for a 2D side-scrolling endless runner set on a meteorological mountain. The concept layout must depict a single playable screen-wide vista in which the rider travels left-to-right along a continuous terrain ridge, with the biome shifting from a cold alpine crest toward a warmer dusk valley across the frame. Show the playable terrain band, at least two parallax background layers, a clear horizon, and one rider character silhouette placed on the traversal path. The layout is an environment-and-staging concept only: no HUD, no menus, no in-game UI overlays.",
+      "node_id": "i1",
+      "rationale": "The raw task begins with a design request describing the game concept and visual intent; this hypothetical commission authorizes that request without asserting it as a historical client brief. The character sheet and landscape panels provide the working style targets the layout must re-derive.",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": "Presentation specification (hypothetical): Deliver a single raster layout at a 16:9 landscape aspect ratio, minimum 1920x1080, intended for on-screen review at desktop scale and for print at A2 without loss of readable silhouette edges. Work in flat vector-clean shapes with no gradients except a single soft sky wash; keep the palette to a restrained set drawn from the reference panels rather than full-spectrum rendering. Reserve the lower third of the frame for the traversal terrain band and keep the rider figure small relative to the landscape, consistent with the reference proportion language.",
+      "node_id": "i2",
+      "rationale": "The supplied reference files are both 1334x750 landscape rasters, so a 16:9 working frame is compatible with the reference aspect language; the exact pixel minimum is an authored presentation preference, not a measured fact about the source assets.",
+      "references": [
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_f8c4aa7a080784d496f3f683"
+        },
+        {
+          "file_id": "f_3652dc45eabd2b7f6f183749",
+          "segment_id": "seg_e13d2482269a03b191205742"
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i3",
+      "rationale": "file2 is a six-panel landscape sheet supplying layered mountain compositions and palette families per biome; file1 supplies a character lineup with attire, accessory and relative-height cues for figure-to-environment scale. Both are located assets, but the segment descriptions are unverified model visual observations, and the panels are discrete samples rather than a continuous scene, so the reference set is available yet not fully characterized as a coherent single vista.",
+      "references": [
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_16867b45a69ad0a8a85a1bfb"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_2811842cb6559287ed2cb16c"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_de256617e8beb984ebc4ec3c"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_bf2d9ccdad16bb3fd6b69f2a"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_62fc676d6a130c726eb308f4"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_7bee2fed2b110ff6f7681f99"
+        },
+        {
+          "file_id": "f_3652dc45eabd2b7f6f183749",
+          "segment_id": "seg_cf8a8048e5fc5133dfa8617b"
+        }
+      ],
+      "status": "partial"
+    }
+  ],
+  "limitations": [
+    "All segment-level visual descriptions are unverified model observations; the worker must inspect the actual panels before relying on any claim about palette, layering or figure proportions.",
+    "file2 is a six-panel sheet of discrete biome samples, not a continuous level; the biome transition in the layout is an authored synthesis, not a measured spatial fact from the asset.",
+    "The actual pixel canvas of file1 and file2 is recorded as 1334x750, while the source metadata note for file2 mentions a larger source canvas; the working resolution basis is unresolved and should be confirmed by inspection.",
+    "No dimensional, in-engine performance or camera-value data accompanies either image, so scale and parallax depth relationships in the layout are design judgments rather than extracted measurements.",
+    "Licensing status of both reference images is recorded as unknown with redistribution not confirmed; the concept layout is an original reinterpretation and must not be presented as an official or affiliated Snowman asset.",
+    "The commission scope, frame specification and presentation preferences are hypothetical and authored for this case; they are not historical requirements from the original project."
+  ],
+  "operations": [
+    {
+      "description": "Interpret the commission, presentation specification and the two reference sheets together, deciding which compositional devices (layer count, ridge silhouettes, horizon placement, palette families, figure proportion) must be carried into the new layout and which reference details are incidental to the original panels and should not be transplanted.",
+      "node_id": "i4"
+    },
+    {
+      "description": "Define the required visual content of the layout: the playable terrain ridge, the parallax layer hierarchy, the biome transition across the frame, the horizon and sky treatment, and the placement and relative size of the lone rider figure — at a level of finish appropriate to an early environment concept rather than a marketing key art.",
+      "node_id": "i5"
+    },
+    {
+      "description": "Decide between a 2D flat concept layout and a 3D mock-up, weighing the side-scrolling staging needs, the flat-shape style language visible in the references, and the review purpose stated in the commission; justify the choice in the delivered concept's presentation context.",
+      "node_id": "i6"
+    },
+    {
+      "description": "Derive the composition itself: horizontal banding and depth separation, ridge angle and rhythm along the traversal path, where the biome shift begins and resolves, the sky wash and palette assignment per layer, and the contrast treatment that keeps the rider readable against the terrain.",
+      "node_id": "i7"
+    }
+  ]
+}

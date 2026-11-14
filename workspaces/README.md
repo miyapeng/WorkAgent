@@ -1,5 +1,7 @@
 # Stage 3 · Graph-guided Real Workspace Construction
 
+当前新版入口和两层 Graph 的方法边界见 [ASSET_PIPELINE.md](../ASSET_PIPELINE.md)，本轮批次见 [实际报告](../workspaces/data/asset_pilot_v4/report.md)。以下保留原接口与历史实验说明；标为“本轮”的旧统计属于当时记录，不与新批次合并。
+
 消费 Stage 2 已准入的 Raw Seed Blueprint。先寻找真实案例 Anchor，再根据关键输入缺口补充同一案例的材料。模型负责规划、选择和语义判断；Python 负责真实 Search API、下载、解析、位置恢复、哈希与准入检查。运行过程没有人工选文件或改判环节。本轮不使用合成配套材料。
 
 **当前入口已更新为 `work-plans/data/semantic_pilot/blueprints.jsonl`（raw-blueprint-v2，5 条准入计划）**，包含 Python 组装的 Graph、文件格式偏好和可选视觉依赖假设。默认输出目录为 `data/semantic_workspaces/`，避免覆盖历史实验。本次优化只重跑 Stage 2，没有生成新的 Workspace。

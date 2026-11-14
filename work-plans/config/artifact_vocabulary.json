@@ -26,10 +26,29 @@
     "code": [
       "py",
       "js",
-      "ipynb"
+      "ipynb",
+      "css",
+      "ts",
+      "tsx",
+      "jsx"
     ],
     "structured_data": [
       "json"
+    ],
+    "video": [
+      "mp4",
+      "mov",
+      "webm"
+    ],
+    "audio": [
+      "wav",
+      "mp3"
+    ],
+    "model_3d": [
+      "obj",
+      "gltf",
+      "glb",
+      "stl"
     ]
   },
   "deliverables": {
@@ -69,6 +88,22 @@
       "pdf",
       "md",
       "tex"
+    ],
+    "web_app": [
+      "zip",
+      "html"
+    ],
+    "video": [
+      "mp4",
+      "webm",
+      "mov"
+    ],
+    "model_3d": [
+      "obj",
+      "gltf",
+      "glb",
+      "stl",
+      "blend"
     ]
   }
 }

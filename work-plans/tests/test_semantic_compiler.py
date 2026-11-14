@@ -75,11 +75,19 @@ class CompilerTests(unittest.TestCase):
         self.assertEqual(h['evidence_status'],'unretrieved')
         value['inputs'][0]['modality_dependency']['supports']='invented'
         with self.assertRaises(DataError):compile_check(value)
-    def test_supported_vocabulary_contains_tex_and_no_media(self):
+    def test_supported_vocabulary_includes_explicit_media_and_model_types(self):
         self.assertIn('tex',VOCABULARY['inputs']['document'])
         self.assertIn('txt',VOCABULARY['deliverables']['report'])
-        self.assertNotIn('audio',VOCABULARY['inputs'])
-        self.assertNotIn('video',VOCABULARY['inputs'])
+        self.assertIn('mp4',VOCABULARY['inputs']['video'])
+        self.assertIn('obj',VOCABULARY['deliverables']['model_3d'])
+        self.assertIn('html',VOCABULARY['deliverables']['web_app'])
+        self.assertNotIn('html',VOCABULARY['inputs']['document'])
+    def test_temporal_dependency_compiles_without_claiming_evidence(self):
+        value=semantic();value['inputs'][0].update(kind='video',preferred_formats=['mp4'],modality_dependency={
+            'modality':'temporal_visual','information_needed':'Visible transitions between shots',
+            'required_operation':'Compare continuity','supports':'compare'})
+        graph=compile_check(value);self.assertEqual(graph['modality_hypotheses'][0]['modality_candidate'],'video')
+        self.assertEqual(graph['modality_hypotheses'][0]['necessity_status'],'hypothesis')
 
 
 if __name__=='__main__':unittest.main()

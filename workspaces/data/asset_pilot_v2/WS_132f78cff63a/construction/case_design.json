@@ -1,0 +1,97 @@
+{
+  "case_objective": "Write supporting front-end code (Sass, Liquid/HTML markup, and JavaScript) for a new page on the DHS Digital Design Guide site, implementing specified USWDS components and form patterns using the project's existing custom DHS color tokens and component conventions.",
+  "case_title": "Implement a DHS Design Guide Component and Form Page with Custom USWDS Theme Overrides",
+  "deliverables": [
+    {
+      "description": "Supporting source code files for the new DHS Design Guide page: a Jekyll Markdown/HTML file with embedded Liquid markup, a Sass/SCSS partial for page-specific styling, and a JavaScript file for form validation behavior, implementing the specified accordion, summary box, and form components using the project's USWDS theme and DHS color tokens.",
+      "format": "js",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": "Hypothetical commission: Build a new 'Contact & Feedback' page for the DHS Digital Design Guide. The page must use the Jekyll 'content--sidebar' layout and include: (1) a borderless USWDS accordion for FAQ items; (2) a 'usa-summary-box' for key contact information; (3) a 'usa-form' containing a text input with a character counter (max 50 characters), a required email input with error state styling, and a submit button. All interactive elements must meet Section 508 accessibility requirements (ARIA attributes, 4.5:1 contrast). The deliverable should be a Jekyll Markdown file with embedded HTML/Liquid, an accompanying SCSS partial for any page-specific styling, and a small JavaScript snippet for form validation behavior.",
+      "node_id": "i1",
+      "rationale": "The task instruction defines the specific web application features, page structure, and component behaviors the supporting code must implement, providing the functional requirements for the deliverable.",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i2",
+      "rationale": "Existing project source code is available: the USWDS theme overrides SCSS defines the DHS color scale variables and font settings that new styling must integrate with, and the custom components SCSS demonstrates the project's conventions for writing non-USWDS component styles using those variables and USWDS mixins.",
+      "references": [
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_5175ea2574b92f026402e8e2"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_80649a683130c5cde87fc650"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_bc279ff9708dbdad82a76138"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_c1abd34bf24436907f7c3664"
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i3",
+      "rationale": "Design and interface specifications are available across multiple Markdown files: the color palette defines approved DHS colors and Section 508 contrast rules, the components file provides USWDS accordion and summary-box markup patterns, the forms file provides character-count and input validation markup, and the typography file specifies the approved Source Sans Pro typeface.",
+      "references": [
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8ca6352b739a0a851ec1c302"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_36d614d98b9566ace0ec1baa"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_b1951de7f7a6a46c2d111cc6"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_61d826f4b5219dae70935112"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_4b0030800803221bd537986f"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_119bb2d9a8b67644d3b4750d"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_b56ec391841df0d4d1334126"
+        }
+      ],
+      "status": "supported"
+    }
+  ],
+  "limitations": [
+    "The supplied specification files were not fully received by the profiling model (model_received_all_segments is false for five of six files), so some intermediate markup examples or color tint values within those files may not be visible in the provided segments; the worker must consult the complete original files at their workspace paths for any missing detail.",
+    "The hypothetical commission is a synthetic task instruction created for this case and does not represent a real client request or historical project requirement.",
+    "The color palette file references external PDF and Excel palette exports (segments seg_2ff56edac5815556afe67b9e, seg_b59532f0c819889d7f421143) that were not retrieved; if precise tint values beyond the SCSS variables are needed, those external resources remain unavailable.",
+    "No complete Jekyll site configuration, Gemfile, or full _config.yml is included in the supplied assets, so the worker must infer build and dependency context from the available SCSS and Markdown files alone.",
+    "The worker must independently verify that all color combinations used in the implementation meet the 4.5:1 contrast ratio specified in the design guide; the supplied files state the rule but do not provide pre-calculated pass/fail results for arbitrary component combinations."
+  ],
+  "operations": [
+    {
+      "description": "Analyze the hypothetical page requirements (accordion, summary box, form with validation) against the existing DHS theme override variables, custom component SCSS conventions, and the USWDS component/form markup documented in the specification files. Determine which existing Sass variables (e.g., $c-dhs-blue, $c-dhs-red) and USWDS utility classes to use, identify integration points in the Jekyll layout structure, and plan the code structure for the new page, SCSS partial, and validation script.",
+      "node_id": "i4"
+    },
+    {
+      "description": "Write the supporting code: (1) a Jekyll Markdown file with front matter using the 'content--sidebar' layout, containing the borderless accordion markup, summary box, and usa-form with character-count input, email input with aria-describedby error messaging, and submit button; (2) an SCSS partial applying DHS color tokens to any page-specific elements while following the project's existing mixin and variable conventions; (3) a JavaScript snippet implementing the character-count and email validation behaviors using USWDS-compatible aria-live regions and error class toggling. Ensure all markup references the correct USWDS class names and DHS color variables documented in the supplied files.",
+      "node_id": "i5"
+    }
+  ]
+}

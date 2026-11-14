@@ -1,0 +1,29 @@
+{
+  "interface": "asset-task-v1",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:42:58.901823+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "asset_task.v2",
+      "request_sha256": "78d32026b95a0466ea5f1e3ec6859e984d0ef5e71d60981637d330712a350b34"
+    }
+  ],
+  "reasons": [
+    "task_omits_professional_operation"
+  ],
+  "seed_id": "raw_31_0_16203",
+  "status": "rejected",
+  "workspace_id": "WS_e06a400f4ac2"
+}

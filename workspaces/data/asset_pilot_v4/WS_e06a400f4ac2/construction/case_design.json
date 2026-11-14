@@ -1,0 +1,98 @@
+{
+  "case_objective": "Produce a single 2D environment concept layout that re-derives the spatial composition, layered depth, form language and restrained palette observed in the supplied landscape concept panel, using the supplied character sheet to establish figure-to-environment scale, so a downstream environment art team can read the intended look and depth organization of a snow-and-ridge biome.",
+  "case_title": "Reference-led 2D environment concept layout for an alpine endless-runner biome",
+  "deliverables": [
+    {
+      "description": "One 2D environment concept layout for the opening high-ridge biome, re-deriving from the supplied reference panels the spatial composition, layered depth, form language and restrained palette, with a rider-scale figure relationship established from the supplied character sheet. Delivered as a single landscape image or PDF page at approximately the references' aspect; no embedded annotation or provenance text is required.",
+      "format": "png",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": "New internal commission (hypothetical, not a historical client brief): the studio is prototyping a 2D endless-runner level and needs one environment concept layout for the opening 'high ridge' biome. Subject: a side-scrolling alpine slope traversed left to right, with a rider-scale silhouette relationship and layered mountain depth. Visual intent: quiet, geometric, painterly-vector look; strong horizontal layering; clear separation of playable foreground band from atmospheric distance. Communicate the biome's spatial composition and mood, not a finished in-game asset.",
+      "node_id": "i1",
+      "rationale": "The task prompt (i1) in the intent graph is a request describing concept, subject matter and visual intent. No historical client request was downloaded, so this is authored as a clearly hypothetical commission consistent with the real assets, without asserting any real client, affiliation or event.",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": "Presentation preferences for the deliverable (hypothetical): a single landscape canvas at the same aspect as the supplied references (roughly 1334x750, i.e. approximately 16:9), delivered as one flattened raster image (PNG or JPG) or a PDF page at that aspect; no text annotations required on the image itself; the working file is not scored. Mock-up scale is 1:1 pixel at the stated canvas size for review on a standard monitor. These are presentation choices, not measured facts about any real scene.",
+      "node_id": "i2",
+      "rationale": "i2 covers explicit layout dimensions and viewing conditions. No measured dimension record was supplied for a target scene, so this is framed as an authored presentation preference for a new deliverable rather than a claimed measurement.",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i3",
+      "rationale": "The reference imagery requirement is met by two present, inspected, relevant raster panels from the same project: a six-panel landscape series establishing layered mountain depth, horizon arrangement and a restrained palette (file2 s3-s8; canvas geometry in s9), and a character sheet establishing figure proportions and scale relationships (file1 s1; canvas geometry in s2). These are references for the worker to interpret; the panel set inspires a new biome concept and is not required to depict the finished scene requested. Segment descriptions are model visual observations and remain unverified.",
+      "references": [
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_16867b45a69ad0a8a85a1bfb"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_2811842cb6559287ed2cb16c"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_de256617e8beb984ebc4ec3c"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_bf2d9ccdad16bb3fd6b69f2a"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_62fc676d6a130c726eb308f4"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_7bee2fed2b110ff6f7681f99"
+        },
+        {
+          "file_id": "f_79d6f4de056ace187d8b1581",
+          "segment_id": "seg_f8c4aa7a080784d496f3f683"
+        },
+        {
+          "file_id": "f_3652dc45eabd2b7f6f183749",
+          "segment_id": "seg_cf8a8048e5fc5133dfa8617b"
+        },
+        {
+          "file_id": "f_3652dc45eabd2b7f6f183749",
+          "segment_id": "seg_e13d2482269a03b191205742"
+        }
+      ],
+      "status": "supported"
+    }
+  ],
+  "limitations": [
+    "All segment descriptions for file1 and file2 are model visual observations (verification_status: model_observation_unverified); the panel subjects, palettes and spatial arrangements have not been independently proven and must be confirmed by a human before they are treated as fact.",
+    "The six landscape panel segments are separate crops of a single sheet; they do not establish that these are six sequential frames, a single continuous scene, or any temporal order. No continuity between panels should be assumed.",
+    "No measured dimensions, blueprint, or target-scene measurements were supplied; canvas size and aspect are grounded only in the two reference files' pixel dimensions (programmatic extraction, source_located) and in authored presentation preferences.",
+    "No historical client brief, brand guidelines, or style bible was downloaded; the commission scope and presentation choices at i1 and i2 are synthetic instructions authored for this case, not real records.",
+    "License status for both source files is 'unknown' with redistribution_allowed false; the deliverable must not reproduce the reference panels or imply affiliation with the original project or originator.",
+    "Whether a 2D layout or a 3D mock-up is more appropriate cannot be settled from the assets alone; that branch is the worker's professional judgment at i6, and only the chosen branch is scored.",
+    "The reference panels depict varied biomes (green ridge, snow peak, sunset, desert, pastel ridges, twilight); they do not themselves define the high-ridge biome requested, so the worker's re-derivation — not a copy — is the intended operation."
+  ],
+  "operations": [
+    {
+      "description": "Interpret the brief, the presentation preferences and the two reference panels together, judging which spatial and stylistic elements must carry into the new layout: layered ridge silhouettes, horizon placement, foreground-to-distance scale drop, the conifer and rock form language, and the restrained per-panel temperature shifts. Decide which panel(s) to draw on for the ridge biome and which stylistic directions to hold as the team's target.",
+      "node_id": "i4"
+    },
+    {
+      "description": "Define the visual content the concept must convey: the focal traversable slope band, the playable foreground versus atmospheric far ridges, the presence and scale of a rider/character silhouette using the character-sheet proportions, the density of conifer and rock elements, and the level of detail appropriate to an early environment concept rather than a finished asset.",
+      "node_id": "i5"
+    },
+    {
+      "description": "Decide, from the design stage, the content complexity and the stated preferences, whether the concept is best expressed as a 2D layout or a 3D mock-up; the underlying task permits either. Commit to one branch and justify the choice in terms of readability of layering and speed of iteration.",
+      "node_id": "i6"
+    },
+    {
+      "description": "Derive the composition from the references: horizontal banding of ridge layers, left-to-right traversal path, perspective or elevation treatment for the side-scrolling view, scale relationships between foreground slope, mid ridges and far peaks, and the lighting and color treatment (sky-to-ground value steps) that communicate depth and mood.",
+      "node_id": "i7"
+    }
+  ]
+}

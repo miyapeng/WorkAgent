@@ -1,0 +1,161 @@
+{
+  "blueprint_sha256": "21227312a23a68e428a17135b3d2610db2985d33f87b09a91cb30e07de869ba9",
+  "config_sha256": "aff9199ff83d5ee9ae1cb5bb668dc0dd2f0bbbc4229b837459a74acce16bb535",
+  "construction_hashes": {
+    "case_attempts.json": "875e4b8aa86cb8b523b7923033d4e768d23d455c8a371051ab1f5e3d157d2aba",
+    "case_design.json": "d1eec6c0b2b6417d9d850a0169d8cbee48e39009078e2376d4746a1029ef3763",
+    "case_review.json": "8d5699ee25f02dfbe28f05a9896194b40c1597a04a3735c9fa31e8ca88a2b31f",
+    "download_trace.json": "0cb6e77c8e3017c2ccbf867c9922da5579aae2ce1f2dfc13079aa1fc0badeea6",
+    "file_profiles.json": "bde2c6a20c5f1fc8a961bc860a9ade76989197f826e8d4542cbe5327b65f9c9b",
+    "grounded_graph.json": "4f590bda221b449581496e3fe367f175baa7631c713e74efd2473bb4a3c3c1a5",
+    "search_decision.json": "d7ac508028e591ea14fd41dee2eee858930934d35ae7b17eaed7ec9f5832d249",
+    "search_trace.json": "0e364381b83e0d23cc1757e43254c884d38fac2f249fb683800fe42962d29aaa",
+    "source_manifest.json": "b92f6fd7c182ef65d481fa9417eb02e1626dfb630682c8de69814b670423180b"
+  },
+  "counts": {
+    "actual_fetch_requests": 16,
+    "actual_search_requests": 4,
+    "critical_external_nodes": 1,
+    "downloaded_urls": 8,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 0,
+    "parsed_unique_files": 6,
+    "real_original_files": 6,
+    "retained_files": 6,
+    "supported_critical_nodes": 1,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "html_not_allowed_in_workspace",
+      "stage": "acquisition",
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+    },
+    {
+      "reason": "html_not_allowed_in_workspace",
+      "stage": "acquisition",
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+    },
+    {
+      "reason": "The reference files include near-complete USWDS markup for exactly the components the hypothetical commission asks the worker to author. f_6141abc0c06d331d1ae2c8a0 (Components) contains the full borderless accordion markup (including the `usa-accordion`, `usa-accordion__heading`, `usa-accordion__button`, `aria-expanded`, and `aria-controls` structure), and f_3857ea832280379516b1f646 (Forms) contains the full `usa-form` with character-count field, `maxlength`, `aria-describedby`, `usa-character-count__message`/`aria-live` region, plus a required-submit and validation pattern. These constitute a substantial precomputed answer for the requested deliverable: a worker could largely copy the supplied reference markup rather than produce it from the stated requirements, which the no_answer_leakage check disallows for input files containing the complete requested answer or core sub-answers.",
+      "stage": "case_review"
+    },
+    {
+      "reason": "The reference material supports the surrounding project conventions (DHS color tokens, palette contrast rules, typographic choice) but the specific deliverable components — borderless accordion, summary box, and character-count form with validation — are supplied verbatim in the reference corpus. Because these are the exact artifacts the deliverable asks the worker to author, their presence as source content leaks the intended solution and weakens the case as an authentic authoring exercise.",
+      "stage": "case_review"
+    },
+    {
+      "reason": "The hypothetical commission references specific component choices (borderless accordion, `usa-summary-box`, `usa-form` with character-count input and email error state) that map one-to-one onto the exact example markup already present in the references. This coupling is what enables rote reuse, and the case does not introduce a novel synthesis requirement that would prevent treating the reference markup as the answer.",
+      "stage": "case_review"
+    },
+    {
+      "reason": "Note on inputs beyond the leakage failure: the profiling records show `model_received_all_segments` false for five of six files, and the `content--sidebar` layout, `_config.yml`, and Gemfile are not supplied, so build-context integration is only partially inspectable. These do not independently fail input sufficiency given the case permits inferring build context, but they reinforce that this case is better framed as a convention-integration or extension task than as a from-scratch authoring task when the example markup remains in the reference set.",
+      "stage": "case_review"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [],
+  "modality_evidence": [],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:25:56.575182+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "373b7255059f5736bb396c7bc84dd341e75322541b1ed1be0d42a4106bb52036",
+      "prompt_version": "asset_case.v1",
+      "request_sha256": "2be2c74681622f47fbed10a22cd54b8034ada9dff12d41cb21b31cc01998ecbb",
+      "usage": {
+        "buyer_cost_micro": 35,
+        "completion_tokens": 1760,
+        "prompt_tokens": 30422,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 32182
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:26:02.112612+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "83f1654a6f56f6af6b72a85e670bff5439619716de1d174e1dca09f9e12a7998",
+      "prompt_version": "asset_reviewer.v1",
+      "request_sha256": "7ba53593431bc90f23b386b17b9dc914c099a0317b3288c39cd09a9a2ee79de7",
+      "usage": {
+        "completion_tokens": 557,
+        "prompt_tokens": 31097,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 31654
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 2317,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 61519,
+    "unique_model_requests": 2
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_ffc58e8f13f4aa562d37c170",
+    "f_6141abc0c06d331d1ae2c8a0",
+    "f_3857ea832280379516b1f646",
+    "f_a19613b9144366106fb07aad",
+    "f_37c5891bab4141e7a59a431e",
+    "f_fe498796aac931248e374a13"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_21714",
+  "seed_sha256": "4152005e5ea717c6c763d5eedc6d7e88aca700728c7436d4d00a0396f8cf048a",
+  "selected_anchor": "DHS Digital Design Guide — government style-guide website built with Jekyll/Liquid on the U.S. Web Design System (USWDS), with a published DHS color palette, component, typography, and form specifications and custom Sass/Liquid implementation",
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [
+    "i1",
+    "i2",
+    "i3"
+  ],
+  "workspace_files": {
+    "references/f_37c5891bab4141e7a59a431e.scss": "37c5891bab4141e7a59a431e8d9de27209e10d7ce00674843516e5e6e1cd212b",
+    "references/f_3857ea832280379516b1f646.md": "3857ea832280379516b1f6464a8711936e95913a2fabc9931330f824b25ab6a1",
+    "references/f_6141abc0c06d331d1ae2c8a0.md": "6141abc0c06d331d1ae2c8a0105767e66379547595f673d79ea1ab941c31712e",
+    "references/f_a19613b9144366106fb07aad.md": "a19613b9144366106fb07aad3e9a5502bcbda1caa191fdaf568de06eaf4121a9",
+    "references/f_fe498796aac931248e374a13.scss": "fe498796aac931248e374a13d7317c9591a884ad61c3089ce9da511bebf697dd",
+    "references/f_ffc58e8f13f4aa562d37c170.md": "ffc58e8f13f4aa562d37c17021b9b0172c9e59a87718a679b771e7ef53fbc974"
+  }
+}

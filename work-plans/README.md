@@ -1,5 +1,7 @@
 # Stage 2 · Semantic Planning → Python Graph Compilation
 
+当前新版入口和两层 Graph 的方法边界见 [ASSET_PIPELINE.md](../ASSET_PIPELINE.md)，本轮批次见 [实际报告](../workspaces/data/asset_pilot_v4/report.md)。以下保留原接口与历史实验说明；标为“本轮”的旧统计属于当时记录，不与新批次合并。
+
 默认流程：**官方 Raw Seed → LLM 语义规划 → Python 组装 Graph → 结构校验 → 独立语义审核**。原始 O*NET `task_text` 不改写；Stage 1 数据保持不变。
 
 模型只输出 `objective + deliverable + inputs + operations`。Python 分配 `i1…`、`out1`，把明确的名称引用转换为依赖边。交付物也必须声明 `requires`，程序不猜测输出依赖、不修复环路、不增加专业前提。

@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "Official DHS color specification: primary/secondary colors dhs-blue #005288, dhs-gray #c0c2c4, dhs-dark-gray #5a5b5d, dhs-red #c41230, dhs-light-blue #0078ae, dhs-green #5e9732, each with HTML/RGB/CMYK, a 90–10 tint scale, and Section 508 accessibility rules (min 4.5:1 contrast, color not sole conveyer). Directly usable to drive a code task's theme tokens and styling; observed as raw Markdown. Uncertainty: links on the page reference separate PDF/Excel palette exports not yet retrieved.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md"
+        },
+        {
+          "reason": "Component interface specification with real USWDS markup examples (usa-accordion, usa-button, usa-card, usa-collection, usa-grid, usa-icon-list, usa-list, usa-search, usa-site-alert, usa-summary-box, usa-table, usa-tag, usa-tooltip) and usage guidance. Provides the layout/component/interaction patterns a supporting-code task must implement. Observed and parsed as raw Markdown.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md"
+        },
+        {
+          "reason": "Form component specification documenting character count, checkbox/tile, combo box, date input/picker, file input variants, input prefix/suffix, process list, range slider, step indicator, text input states, time picker, and validation rules, all with markup conventions (usa-form, usa-form-group, aria-describedby, usa-input--error). Substantive behavioral spec for supporting form-related code. Observed as raw Markdown.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md"
+        },
+        {
+          "reason": "Typography reference: typefaces (Source Sans Pro, Merriweather), type-scale utility classes (font-sans-lg/xl/3xs, text-huge/tiny/base), list/link styles, and a 240-icon SVG library. Supports the design/interface specification for layout and type. Uncertainty: page mostly references USWDS utility class names rather than explicit numeric sizes/line-heights.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md"
+        },
+        {
+          "reason": "Real Jekyll page-shell layout showing the site skeleton: skip-nav, Liquid includes (head, site-header, site-footer, site-identifier), {{ content }} insertion, and USWDS JS bundle script tag. Concrete existing project code a new supporting-code task would extend. Observed exact raw content.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+        },
+        {
+          "reason": "Substantial actual Liquid navigation component with a microsite-mode branch ({% if include.microsite != true %}), megamenu submenus, search form, and links to Components/Forms/Typography/Content/Microsite/Color Palette pages. Prime integration point for extending site navigation. Observed full raw content.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+        },
+        {
+          "reason": "Real USWDS theme-token override file defining the DHS color scales ($c-dhs-blue-05..90, gray, dark-gray, red, light-blue, green), token mappings (primary, base, secondary, accent warm/cool), state colors, focus offset, and component overrides (button radius, identifier, card, sortable table, summary box). Directly supports implementing styling consistent with the palette spec. Observed and parsed.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss"
+        },
+        {
+          "reason": "Real custom SCSS defining non-USWDS components: .news-list (homepage news listing with metadata and category links), .meta-info.meta-info--block, and .meta-tags, using USWDS mixins and DHS color variables. Shows the project's custom-component conventions for extension. Observed and parsed; exact line-level content summarized because verbatim quoting is limited.",
+          "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss"
+        }
+      ],
+      "identity": "DHS Digital Design Guide — government style-guide website built with Jekyll/Liquid on the U.S. Web Design System (USWDS), with a published DHS color palette, component, typography, and form specifications and custom Sass/Liquid implementation",
+      "missing_information": [
+        "Page-level content/markup pages (e.g., components.html, forms.html, typography.html outputs or their MD-to-HTML sources) are referenced by nav but only the .md specs were retrieved.",
+        "The _config.yml excludes/nav and the _site compiled output were not fully audited; build reproducibility (gulp/webpack pipelines) depends on package.json/gulpfile.js not selected here.",
+        "No explicit license file was observed at repository root; reuse/licensing is unconfirmed.",
+        "The color-palette page links to separate PDF/Excel palette exports that were not downloaded or verified.",
+        "Typography numeric scale values (px/rem, line-heights) are not stated explicitly in typography.md; they live in USWDS defaults."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "Real Jekyll design system, but README states patterns/templates are largely 'pictures' rather than code, no license file observed, and no native specification artifact (PDF/Excel) in a usable target format was identified; weaker i2/i3 pairing than the DHS repo.",
+      "url": "https://github.com/canada-ca/design-system"
+    },
+    {
+      "reason": "Generic HTML template collection surfaced by search; provides no coherent project, design spec, or case-bearing implementation.",
+      "url": "https://github.com/develop/templating/html-templates"
+    },
+    {
+      "reason": "Single boilerplate template file with no design specification or project context; a blank/worked template rejected as a case anchor.",
+      "url": "https://github.com/shale0315/static_site/blob/main/template.html"
+    },
+    {
+      "reason": "Marketing-grade generic template collection; no design specification document and no coherent real case.",
+      "url": "https://github.com/wpacademy/agency-website-html-css-template"
+    },
+    {
+      "reason": "Editorial listicle/aggregator returned by broad query; not a primary record or case-bearing artifact.",
+      "url": "https://dev.to/playfulprogramming"
+    },
+    {
+      "reason": "Truncated aggregator link to a beginner Figma guide PDF; generic tutorial/template, not a project case anchor.",
+      "url": "https://www.scribd.com/document"
+    }
+  ],
+  "stop_reason": "A defensible, coherent real case was secured: the DHS Digital Design Guide repository is a complete Jekyll + USWDS government website whose published design specifications (color palette with exact hex/RGB/CMYK and accessibility rules, component markup, form and typography specs) and actual implementation code (page-shell layout, Liquid navigation with microsite branching, USWDS theme-token overrides, custom component Sass) were directly observed as raw native files. Eight files were selected within the materialization limit, covering both retrievable nodes (i2 source code, i3 design/interface specification). Remaining gaps are documented (license, PDF/Excel palette exports, compiled-page outputs, numeric type scale) and do not prevent an independent inspection and scoping of a supporting-code task."
+}

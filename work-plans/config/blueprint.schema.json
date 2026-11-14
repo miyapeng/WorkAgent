@@ -30,7 +30,10 @@
               "code_notebook",
               "visual_design",
               "structured_data",
-              "document_revision"
+              "document_revision",
+              "web_app",
+              "video",
+              "model_3d"
             ]
           },
           "description": {
@@ -41,23 +44,39 @@
             "type": "array",
             "items": {
               "enum": [
+                "blend",
+                "css",
                 "csv",
                 "docx",
+                "glb",
+                "gltf",
+                "html",
                 "ipynb",
                 "jpeg",
                 "jpg",
                 "js",
                 "json",
+                "jsx",
                 "md",
+                "mov",
+                "mp3",
+                "mp4",
+                "obj",
                 "pdf",
                 "png",
                 "pptx",
                 "py",
+                "stl",
                 "svg",
                 "tex",
                 "tiff",
+                "ts",
+                "tsx",
                 "txt",
-                "xlsx"
+                "wav",
+                "webm",
+                "xlsx",
+                "zip"
               ]
             },
             "uniqueItems": true
@@ -106,7 +125,9 @@
                 "items": {
                   "enum": [
                     "image",
-                    "spatial"
+                    "spatial",
+                    "video",
+                    "audio"
                   ]
                 },
                 "minItems": 0,
@@ -124,30 +145,49 @@
                   "image",
                   "diagram",
                   "code",
-                  "structured_data"
+                  "structured_data",
+                  "video",
+                  "audio",
+                  "model_3d"
                 ]
               },
               "preferred_formats": {
                 "type": "array",
                 "items": {
                   "enum": [
+                    "blend",
+                    "css",
                     "csv",
                     "docx",
+                    "glb",
+                    "gltf",
+                    "html",
                     "ipynb",
                     "jpeg",
                     "jpg",
                     "js",
                     "json",
+                    "jsx",
                     "md",
+                    "mov",
+                    "mp3",
+                    "mp4",
+                    "obj",
                     "pdf",
                     "png",
                     "pptx",
                     "py",
+                    "stl",
                     "svg",
                     "tex",
                     "tiff",
+                    "ts",
+                    "tsx",
                     "txt",
-                    "xlsx"
+                    "wav",
+                    "webm",
+                    "xlsx",
+                    "zip"
                   ]
                 },
                 "uniqueItems": true
@@ -226,7 +266,9 @@
           "modality_candidate": {
             "enum": [
               "image",
-              "spatial"
+              "spatial",
+              "video",
+              "audio"
             ]
           },
           "information_needed": {

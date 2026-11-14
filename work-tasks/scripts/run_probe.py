@@ -27,6 +27,7 @@ def hashes(folder):
 
 def verify_package(package):
     manifest=read(package/'manifest.json');require(manifest['status']=='draft','package_not_draft')
+    require(manifest.get('interface')!='asset-task-v1','asset_task_requires_visual_probe_adapter_not_yet_implemented')
     for path,h in manifest['package_files'].items():
         require(sha256(confined(package,path).read_bytes())==h,'package_hash_changed:'+path)
     return digest(manifest)

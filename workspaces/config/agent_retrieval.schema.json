@@ -38,6 +38,12 @@
                 "reason": {
                   "type": "string",
                   "minLength": 1
+                },
+                "reason_note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 }
               },
               "required": [

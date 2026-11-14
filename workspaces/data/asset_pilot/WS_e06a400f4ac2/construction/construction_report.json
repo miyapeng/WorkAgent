@@ -1,0 +1,119 @@
+{
+  "blueprint_sha256": "2db01c76a59405c3e5bb9f3fb4336ffa6a4edd85e991f5c9d89e20b26dc41327",
+  "config_sha256": "cec7ece82e3a07c6c003072f3a927f39b37bd65ba2e5910164b773fbf625188d",
+  "construction_hashes": {
+    "case_attempts.json": "bcc41a1d4f14b1fb6e0f87ad7824760b841008b77ba3b142dc2a9727593930a4",
+    "download_trace.json": "a1f630ea91222f576d2e513170eb938d7828cb698b4fa06994750fa65184c63e",
+    "file_profiles.json": "5ee6c2f683b6b24ccbe2966999fae819d51ca4ecf6c8e141106c14c92a7fd05b",
+    "search_decision.json": "e3b9022d399c45854db23687fbd67b9d83641820c6b9e793bb07a61cf052301d",
+    "search_trace.json": "8f3329bbf1c0e83931beb97e97cafb95d3c93d97e1d823422d3707d6ab7202da",
+    "source_manifest.json": "7f30a3e059c5288fc72c9a4f7354dcc0f11a72147a6474d6c0297d3f48783b4c"
+  },
+  "counts": {
+    "actual_fetch_requests": 16,
+    "actual_search_requests": 8,
+    "critical_external_nodes": 3,
+    "downloaded_urls": 14,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 0,
+    "parsed_unique_files": 2,
+    "real_original_files": 0,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Prune_video_game_first_prototype_1.jpg"
+    },
+    {
+      "case": "Alto's Adventure (Snowman, 2015) original concept art panel series — matched reference set establishing spatial composition, form language and palette for a 2D endless-runner environment concept layout",
+      "reason": "visual_input_not_inspected",
+      "stage": "case_binding"
+    },
+    {
+      "node_ids": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "reason": "unsupported_critical_inputs",
+      "stage": "coverage"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [
+    "i1",
+    "i2",
+    "i3"
+  ],
+  "modality_evidence": [],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:24:04.774804+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "373b7255059f5736bb396c7bc84dd341e75322541b1ed1be0d42a4106bb52036",
+      "prompt_version": "asset_case.v1",
+      "request_sha256": "62348ffe6d7f1ba14d49529c9dcd1daf184aac3914b27c3d955c436ecfed9627",
+      "usage": {
+        "completion_tokens": 4642,
+        "prompt_tokens": 3380,
+        "total_tokens": 8022
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 4642,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 3380,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_79d6f4de056ace187d8b1581",
+    "f_3652dc45eabd2b7f6f183749"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_16203",
+  "seed_sha256": "700f1cdc7a57e5d244293bd4aab6382de83fd0a3b6262bb770f7f1976ae97d22",
+  "selected_anchor": null,
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [],
+  "workspace_files": {}
+}

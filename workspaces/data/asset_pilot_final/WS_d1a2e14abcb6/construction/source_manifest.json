@@ -1,0 +1,38 @@
+{
+  "sources": {
+    "f_fd939e1aec01c4a0d846f398": {
+      "bytes": 122082526,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-335bf884-b0d9-48ad-afca-9edb5101ca3d"
+      },
+      "file_id": "f_fd939e1aec01c4a0d846f398",
+      "final_url": "https://dn710207.ca.archive.org/0/items/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "video/mp4",
+      "origin": "real_original",
+      "original_url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+      "prior_errors": [],
+      "reason": "Scene 6 takes 11–15 plus Scene 7 take 16 (length 1246.79 s; ~122.1 MB MP4). Continuing take coverage of Scene 6 and the first take of Scene 7 — directly supports cross-scene ordering and continuity judgment.",
+      "reason_note": null,
+      "redirects": [
+        {
+          "from": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+          "status": 302,
+          "to": "https://dn710207.ca.archive.org/0/items/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4"
+        }
+      ],
+      "retrieved_at": "2026-11-14T10:30:59.801894+00:00",
+      "sha256": "fd939e1aec01c4a0d846f398c2dd0b2bdf7dcb5f05eb23211618db887d207e46",
+      "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+      "workspace_path": "workspace_init/references/f_fd939e1aec01c4a0d846f398.mp4"
+    }
+  }
+}

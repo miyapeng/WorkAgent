@@ -1,0 +1,58 @@
+{
+  "sources": {
+    "f_3652dc45eabd2b7f6f183749": {
+      "bytes": 325845,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-b0a83521-18ab-44ff-845b-908be40a22d5"
+      },
+      "file_id": "f_3652dc45eabd2b7f6f183749",
+      "final_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "image/png",
+      "origin": "real_original",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png",
+      "prior_errors": [],
+      "reason": "Native PNG (confirmed live, 318.2KB, image/png, 1334x750). Character sheet from same project/release/originator — supports scale relationships and figure-to-environment proportion needed in the concept layout. Same VRT ticket as the panel set.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:47.515343+00:00",
+      "sha256": "3652dc45eabd2b7f6f183749b4ac5681ca4e144ccaa8bc68d5bf08a20726a9c5",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_03_Characters.png",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png",
+      "workspace_path": "workspace_init/references/f_3652dc45eabd2b7f6f183749.png"
+    },
+    "f_79d6f4de056ace187d8b1581": {
+      "bytes": 606663,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-20406876-3a49-4409-ab79-c74aa9f2b433"
+      },
+      "file_id": "f_79d6f4de056ace187d8b1581",
+      "final_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "image/png",
+      "origin": "real_original",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+      "prior_errors": [],
+      "reason": "Native PNG (confirmed live, 592.4KB, image/png, ~1334x750 with 2000x1124 source canvas). Landscape concept panel from the shipped game — directly supplies the environment composition, horizon/depth arrangement and restrained color palette that a 2D concept layout would re-derive. Risk: WebFetch cannot visually describe compressed pixels; a human must confirm subject framing.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:46.458252+00:00",
+      "sha256": "79d6f4de056ace187d8b15811841e80fe9fa83245c463cbaf1bf7b51518a4d7f",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+      "workspace_path": "workspace_init/references/f_79d6f4de056ace187d8b1581.png"
+    }
+  }
+}

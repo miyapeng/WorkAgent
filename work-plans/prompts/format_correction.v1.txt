@@ -1,0 +1,1 @@
+Correct ONLY kind and preferred_formats fields in previous_plan to comply with the supplied schema and artifact vocabulary. Every other key, value, description, name, source, operation and dependency MUST remain identical. Do not repair professional premises or change the task. Return the full corrected JSON object only.

@@ -1,0 +1,52 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "search": {
+    "provider": "claude_code_agent",
+    "binary": "claude",
+    "model": "GLM_ka48dn",
+    "api_base": "https://llm-center.modelbest.co",
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "max_search_calls": null,
+    "max_fetch_calls": null,
+    "max_turns": null,
+    "timeout_seconds": 900
+  },
+  "limits": {
+    "selected_files": 8,
+    "discovery_pages": 20,
+    "download_bytes": 150000000,
+    "timeout_seconds": 60,
+    "redirects": 4,
+    "retries": 1,
+    "trusted_proxy_env": "HTTPS_PROXY",
+    "max_profile_chars": 35000,
+    "max_segments_per_file": 60
+  },
+  "workflow": "asset_graph",
+  "retrieval_prompt": "asset_search.v1.txt",
+  "workers": 3,
+  "vision": {
+    "model": "QWEN_40e5sh",
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "timeout_seconds": 90,
+    "max_pages": 2,
+    "inspection_prompt_version": 2
+  },
+  "case_prompt": "asset_case.v3.txt",
+  "case_review_prompt": "asset_reviewer.v2.txt"
+}

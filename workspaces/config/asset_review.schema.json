@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "object",
+      "properties": {
+        "intent_preservation": {
+          "type": "boolean"
+        },
+        "input_sufficiency": {
+          "type": "boolean"
+        },
+        "case_coherence": {
+          "type": "boolean"
+        },
+        "deliverable_appropriateness": {
+          "type": "boolean"
+        },
+        "no_answer_leakage": {
+          "type": "boolean"
+        },
+        "observation_boundaries": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "intent_preservation",
+        "input_sufficiency",
+        "case_coherence",
+        "deliverable_appropriateness",
+        "no_answer_leakage",
+        "observation_boundaries"
+      ],
+      "additionalProperties": false
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "accepted",
+    "checks",
+    "issues"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

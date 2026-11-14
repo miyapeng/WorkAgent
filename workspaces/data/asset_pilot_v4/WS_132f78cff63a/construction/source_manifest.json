@@ -1,0 +1,166 @@
+{
+  "sources": {
+    "f_37c5891bab4141e7a59a431e": {
+      "bytes": 8860,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-f94d7bb7-9ff3-485d-a3b0-5d3eb266ef1b"
+      },
+      "file_id": "f_37c5891bab4141e7a59a431e",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss",
+      "prior_errors": [],
+      "reason": "Real USWDS theme-token override file defining the DHS color scales ($c-dhs-blue-05..90, gray, dark-gray, red, light-blue, green), token mappings (primary, base, secondary, accent warm/cool), state colors, focus offset, and component overrides (button radius, identifier, card, sortable table, summary box). Directly supports implementing styling consistent with the palette spec. Observed and parsed.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:31.881189+00:00",
+      "sha256": "37c5891bab4141e7a59a431e8d9de27209e10d7ce00674843516e5e6e1cd212b",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i2"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss",
+      "workspace_path": "workspace_init/references/f_37c5891bab4141e7a59a431e.scss"
+    },
+    "f_3857ea832280379516b1f646": {
+      "bytes": 29366,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-b255428d-2b57-4dbd-8440-5f149948da65"
+      },
+      "file_id": "f_3857ea832280379516b1f646",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md",
+      "prior_errors": [],
+      "reason": "Form component specification documenting character count, checkbox/tile, combo box, date input/picker, file input variants, input prefix/suffix, process list, range slider, step indicator, text input states, time picker, and validation rules, all with markup conventions (usa-form, usa-form-group, aria-describedby, usa-input--error). Substantive behavioral spec for supporting form-related code. Observed as raw Markdown.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:27.846408+00:00",
+      "sha256": "3857ea832280379516b1f6464a8711936e95913a2fabc9931330f824b25ab6a1",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md",
+      "workspace_path": "workspace_init/references/f_3857ea832280379516b1f646.md"
+    },
+    "f_6141abc0c06d331d1ae2c8a0": {
+      "bytes": 95376,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-8a16339d-8738-4bd0-a838-69f068383cdb"
+      },
+      "file_id": "f_6141abc0c06d331d1ae2c8a0",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md",
+      "prior_errors": [],
+      "reason": "Component interface specification with real USWDS markup examples (usa-accordion, usa-button, usa-card, usa-collection, usa-grid, usa-icon-list, usa-list, usa-search, usa-site-alert, usa-summary-box, usa-table, usa-tag, usa-tooltip) and usage guidance. Provides the layout/component/interaction patterns a supporting-code task must implement. Observed and parsed as raw Markdown.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:26.755438+00:00",
+      "sha256": "6141abc0c06d331d1ae2c8a0105767e66379547595f673d79ea1ab941c31712e",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md",
+      "workspace_path": "workspace_init/references/f_6141abc0c06d331d1ae2c8a0.md"
+    },
+    "f_a19613b9144366106fb07aad": {
+      "bytes": 282757,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-d53a97df-15e7-4d9d-8d6c-0b5e5e64854f"
+      },
+      "file_id": "f_a19613b9144366106fb07aad",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md",
+      "prior_errors": [],
+      "reason": "Typography reference: typefaces (Source Sans Pro, Merriweather), type-scale utility classes (font-sans-lg/xl/3xs, text-huge/tiny/base), list/link styles, and a 240-icon SVG library. Supports the design/interface specification for layout and type. Uncertainty: page mostly references USWDS utility class names rather than explicit numeric sizes/line-heights.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:29.129078+00:00",
+      "sha256": "a19613b9144366106fb07aad3e9a5502bcbda1caa191fdaf568de06eaf4121a9",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md",
+      "workspace_path": "workspace_init/references/f_a19613b9144366106fb07aad.md"
+    },
+    "f_fe498796aac931248e374a13": {
+      "bytes": 1497,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-e76b1edc-51cf-4133-a8b1-fa98243ffefb"
+      },
+      "file_id": "f_fe498796aac931248e374a13",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss",
+      "prior_errors": [],
+      "reason": "Real custom SCSS defining non-USWDS components: .news-list (homepage news listing with metadata and category links), .meta-info.meta-info--block, and .meta-tags, using USWDS mixins and DHS color variables. Shows the project's custom-component conventions for extension. Observed and parsed; exact line-level content summarized because verbatim quoting is limited.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:32.701313+00:00",
+      "sha256": "fe498796aac931248e374a13d7317c9591a884ad61c3089ce9da511bebf697dd",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i2"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss",
+      "workspace_path": "workspace_init/references/f_fe498796aac931248e374a13.scss"
+    },
+    "f_ffc58e8f13f4aa562d37c170": {
+      "bytes": 25950,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-eba83da5-085c-4391-bc9d-92d38ef75c2f"
+      },
+      "file_id": "f_ffc58e8f13f4aa562d37c170",
+      "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md",
+      "license": {
+        "redistribution_allowed": false,
+        "status": "unknown"
+      },
+      "mime": "text/plain",
+      "origin": "real_original",
+      "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md",
+      "prior_errors": [],
+      "reason": "Official DHS color specification: primary/secondary colors dhs-blue #005288, dhs-gray #c0c2c4, dhs-dark-gray #5a5b5d, dhs-red #c41230, dhs-light-blue #0078ae, dhs-green #5e9732, each with HTML/RGB/CMYK, a 90–10 tint scale, and Section 508 accessibility rules (min 4.5:1 contrast, color not sole conveyer). Directly usable to drive a code task's theme tokens and styling; observed as raw Markdown. Uncertainty: links on the page reference separate PDF/Excel palette exports not yet retrieved.",
+      "redirects": [],
+      "retrieved_at": "2026-11-14T10:22:25.068231+00:00",
+      "sha256": "ffc58e8f13f4aa562d37c17021b9b0172c9e59a87718a679b771e7ef53fbc974",
+      "source_page": "https://github.com/dhs-gov/usdhs-design-site",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md",
+      "workspace_path": "workspace_init/references/f_ffc58e8f13f4aa562d37c170.md"
+    }
+  }
+}

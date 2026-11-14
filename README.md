@@ -1,23 +1,20 @@
 # Executable Multimodal Work Environments for Agent Learning
 
-当前默认研究流水线为 **Stage 1 Raw Seeds → Stage 2 Work Blueprint → Stage 3 Graph-guided Workspace Construction**。Stage 1 保留 5,745 条官方原文数字候选；Stage 2–3 已重构为直接读取 Raw Seeds，不再默认依赖历史 LLM 改写的 Work Demand。
+当前主入口采用 **Stage 1 官方 Raw Seeds → Stage 2 Intent Graph → Stage 3 Asset-Grounded Graph + Workspace → Stage 4 Draft Task**。Stage 1 的 5,745 条数字候选原文保持不变。
 
-当前 Stage 2 已更新为 **LLM 语义规划 → Python Graph 编译 → 独立审核**，加入输入/输出候选格式，范围收敛到文本、文档、表格、图片和代码。相同 10 条真实 Seed：结构通过 **6/10**，语义准入 **5/10**（上一版 5/10、2/10）。4 条类别/格式错误、1 条审核 JSON 错误均保留，未人工修复。原文未改动，本轮没有生成新的 Workspace。
+新实现与运行方式见 [Asset Pipeline](ASSET_PIPELINE.md)，实际批次见 [10 条 Seed 报告](workspaces/data/asset_pilot_v4/report.md)。Stage 2 规划职业信息需求；Stage 3 根据实际下载的资产具体化案例、恢复片段/区域/时间戳并绑定操作；Stage 4 生成工作委托与有依据的初步验收条件。图片观察与独立真值分开保存，HTML 不进入初始 Workspace。
 
 ```bash
-.venv/bin/python -m pip install -r workspaces/requirements.txt
-.venv/bin/python work-plans/scripts/plan_intents.py --limit 10
-# 本机已有本轮响应缓存时可离线重放
-.venv/bin/python work-plans/scripts/plan_intents.py --limit 10 --offline
+.venv/bin/python workspaces/scripts/run_pipeline.py --limit 10
+# 本机已有同一版本的完整缓存时可离线重放
+.venv/bin/python workspaces/scripts/run_pipeline.py --limit 10 --offline
 ```
 
-当前产物：[准入 Blueprint](work-plans/data/semantic_pilot/blueprints.jsonl)、[逐条对照和实际示例](work-plans/data/semantic_pilot/comparison.md)、[Stage 2 说明](work-plans/README.md)。后续 [Stage 3](workspaces/README.md) 默认消费新接口，实际检索时可以选 [Claude Code 搜索后端](workspaces/CLAUDE_SEARCH.md)；上轮该后端下载解析过 1 个网页，但仍未产生 ready Workspace，历史记录不计入本轮结果。
+本轮是开发批次，包含失败及调试记录，不是留出集成功率。`ready` 和 `draft` 均不等于完成执行验证。通用多模态 Rollout、非视觉对照、难度校准与来源分组划分尚未完成。
 
-历史对照实验：[同 Seed 真实检索 / 受控世界对照](workspaces/WORLD_PILOT.md)。项目监控任务的真实路线仍 incomplete；模型生成的虚构世界已渲染为 5 份输入文件，附实验任务和数值验证规则，状态为 experimental_draft。30 个数值/单位错误均被检出，但语义审核仍容忍了叙述和规则信息缺口；没有独立 Agent Probe，不标为 ready/verified，不替换默认主流程。
+Phase I 为 Stage 1–4 的 Draft 构造；Phase II 为 Stage 5 的独立执行验证；Phase III 为 Stage 6–7 的训练数据和评测。已有 [原生文件任务实验](work-tasks/NATIVE_FILE_PILOT.md) 与 [Stage 5 文本任务 Probe](work-tasks/STAGE5.md) 保留，后者为 `needs_review`，未准入训练。下方 W001/P001 是独立开发演示，不计入新批次。
 
-随后修正了把 Claude Code 限成单次查询的接法：[自主检索实测](workspaces/AGENT_SEARCH.md)。完整上下文会话实际进行了 10 次搜索、31 次页面读取；耗尽轮数后的无工具收尾及 Python 独立获取得到 1 个真实项目 PDF、3 份 CSV 内容和来源页。仍未形成 ready Workspace，不能把获取文件与信息充分性混为一谈。
-
-Phase I 为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。Stage 4 已迁移到新版 Raw Seed / Blueprint / Workspace 接口；[原生文件实验](work-tasks/NATIVE_FILE_PILOT.md) 实际生成了 1 个通过结构和独立语义审核的 Draft，输入不含 HTML。[Stage 5 实际执行实验](work-tasks/STAGE5.md) 已生成报告并完成错误产物测试，当前为 `needs_review`，未准入训练。旧 Stage 2–3 实验移入各模块 `archive/`，旧阻断报告继续保留。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。
+历史方法探索：[简化 Blueprint 对照](work-plans/data/semantic_pilot/comparison.md)、[自主检索实验](workspaces/AGENT_SEARCH.md)、[受控世界对照](workspaces/WORLD_PILOT.md)。
 
 Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
 

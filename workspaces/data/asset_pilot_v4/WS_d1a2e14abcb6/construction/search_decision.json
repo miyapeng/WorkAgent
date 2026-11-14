@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "Observed H.264 derivative of the rushes reel covering Scene 2, takes 1–2 (720×486 original; 712×480 derivative; length 905.08 s; ~88.7 MB). Raw multi-take coverage of Scene 2, usable as the earliest story beats. Derivative MP4 confirmed present in item file listing; download URL 302-redirects to an archive node (file resolves, content exceeded fetch cap).",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2/Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2.mp4"
+        },
+        {
+          "reason": "Additional Scene 2 takes 3 and 4 (length 835.18 s; ~80.9 MB MP4). Provides alternate takes of the same scene as take 1/2, enabling take comparison for the same narrative beat. Dated 1979-03-27.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27/Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27.mp4"
+        },
+        {
+          "reason": "Scene 3 takes 4–5 (length 911.78 s; ~90.2 MB MP4). Labeled 'Background', indicating setup/background-plate coverage; useful as an alternate scene segment. Date 1979-05-27.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27/Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27.mp4"
+        },
+        {
+          "reason": "Scene 6 takes 7–10 for 'Stepping Out' (length 1158.1 s; ~113.2 MB MP4). First batch of Scene 6 takes; establishes the scene and gives multiple performance options.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28/Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28.mp4"
+        },
+        {
+          "reason": "Scene 6 takes 11–15 plus Scene 7 take 16 (length 1246.79 s; ~122.1 MB MP4). Continuing take coverage of Scene 6 and the first take of Scene 7 — directly supports cross-scene ordering and continuity judgment.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4"
+        },
+        {
+          "reason": "Scene 7 takes 17–20, labeled 'Music Box' (length 955.43 s; ~93.5 MB MP4). Dense take coverage of Scene 7 for performance selection.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28/Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28.mp4"
+        },
+        {
+          "reason": "Scene 7 takes 21–24 (length 1374.94 s; ~132.4 MB MP4). More Scene 7 takes; combined with Reel 12 gives takes 17–28 of the same scene, ideal for shot effectiveness comparison.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24/Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24.mp4"
+        },
+        {
+          "reason": "Scene 8 (tape 37–38) and Scene 9 takes 39–46 (length 1326.26 s; ~130.0 MB MP4). Supplies the latest-numbered scenes, giving the sequence an ending and completing the scene span needed for logical ordering. Date 1979-03-29.",
+          "reason_note": null,
+          "source_page": "https://archive.org/details/mp_Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46/Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46.mp4"
+        }
+      ],
+      "identity": "1979 Evelyn 'Champagne' King music-video production rushes (Bristol Productions, New York), digitized by XFR Collective from Mark Pines' Umatic collection, organized by scene and take — a coherent multi-take shoot from which an editor selects the most effective shots of each scene and assembles them into a continuous sequence.",
+      "missing_information": [
+        "No explicit license/rights field is recorded on the items or the markpines collection (collections: markpines, folksoundomy; some items also list xfrcollective). Reuse rights cannot be certified from the metadata alone; provenance is stated only as Umatic digitization via XFR Collective equipment loan from Mark Pines' collection.",
+        "No shot-level log, clapperboard slate metadata, or take-level timecodes are published; the association of each reel with its scene/take numbers comes solely from item titles, so exact in-reel take boundaries must be established by inspecting the footage.",
+        "No directorial/editorial brief (i2) exists in these records — that is a task_instruction input supplied later, not found here.",
+        "The 712×480 H.264 MP4s are lossy derivatives of 720×486 8–10 GB Cinepak AVIs; whether the derivative resolution/temporal quality is sufficient for fine performance/composition judgments is unverified without playback (native AVI originals are also downloadable if needed).",
+        "Relationship between the multiple reel dates (1979-03-27/28/29 and 1979-05-27, plus a Reel 14 titled 1978-03-28) and a single final cut is not documented; some reels may belong to different edits/versions of the same song."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "Tears of Steel camera-original folder contains only two whole-clip MXF files (A003C007_120507.mxf ~21GB; A011C012_120509.mxf ~13GB), not per-scene multiple takes; files far exceed the modest-size goal and are not organized by scene/take.",
+      "url": "https://media.xiph.org/tearsofsteel/raw/"
+    },
+    {
+      "reason": "Contains finished-film render deliverable files (y4m, DCP zip, PNG/TIFF/EXR render sequences) and audio mixes; these are outputs, not raw multi-take raw footage, so they cannot serve as the i1 case anchor.",
+      "url": "https://media.xiph.org/tearsofsteel/"
+    },
+    {
+      "reason": "Item is a single ~105 s clip (only format derivatives of one source: mov/ogv/mp4/gif); it is one short uncut rushes clip, not multiple takes of each scene, and resolution is only 384×288.",
+      "url": "https://archive.org/details/Vloggers_rushes_1"
+    },
+    {
+      "reason": "Promising-title item resolves to a single continuous ~61-minute 712×480 reel (one AVI original + one MP4 derivative); no per-scene/per-take structure is documented, so scene boundaries cannot be established for selecting 'most effective shots of each scene'.",
+      "url": "https://archive.org/details/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations"
+    },
+    {
+      "reason": "Repeated TLS handshake failure (SSLV3_ALERT_HANDSHAKE_FAILURE) prevented page inspection; content is commercial licensed footage rather than an openly retrievable native artifact, so it cannot be the case anchor.",
+      "url": "https://www.editstock.com/"
+    },
+    {
+      "reason": "Same TLS handshake failure; page unreadable via the fetch tool and no native downloadable artifact could be confirmed.",
+      "url": "https://www.editstock.com/product/killing-time"
+    },
+    {
+      "reason": "Official Tears of Steel download page lists only the finished film (HD/4K MOV, DCP), audio mixes, subtitles and soundtrack; no raw footage/dailies/torrent links are present despite secondary claims of a 4TB archive.",
+      "url": "https://mango.blender.org/download/"
+    }
+  ],
+  "stop_reason": "A single coherent, case-bearing original-record set was located and verified: the 1979 Evelyn 'Champagne' King shoot rushes preserved by XFR Collective/Mark Pines on the Internet Archive, explicitly organized by scene and take across multiple reels (Scene 2 takes 1–4; Scene 3 takes 4–5; Scene 6 takes 7–15; Scene 7 takes 16–28; Scene 8 tape 37–38; Scene 9 takes 39–46). Each selected item has a confirmed native H.264 MP4 derivative (~80–132 MB, 712×480) plus the original multi-GB AVI, directly supporting node i1 (raw multi-take footage per scene) and, by extension, professional judgment i3 (take selection) and i4 (cross-scene ordering) leading to out1. Eight MP4 derivatives were selected within the total_selected_files limit, spanning scenes from earliest (Scene 2) to latest (Scene 9) so a full narrative can be assembled. The download URLs are canonical archive.org/download/<identifier>/<filename> paths that 302-redirect to content nodes (file presence confirmed; a node fetch returned real video data over the tool's size cap). No explicit license is recorded, so reuse rights are handed off as an open uncertainty rather than certified. Remaining gaps (take boundaries within reels, derivative resolution adequacy, relationship among the different shoot dates) are documented as missing_information and do not prevent independent inspection."
+}

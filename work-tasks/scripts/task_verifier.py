@@ -149,6 +149,10 @@ def run_check(spec,package,run,graph,manifest,cache):
     path=spec.get('path') or spec['target']['path'];file=confined(run,path)
     require(file.is_file() and file.stat().st_size<=20_000_000,'deliverable_missing_or_too_large')
     fmt=spec.get('format') or spec.get('target',{}).get('format') or ('csv' if kind=='csv_columns' else 'json')
+    from artifact_checks import FORMATS, inspect_output
+    if fmt in FORMATS:
+        require(kind=='file_exists','unsupported_asset_check')
+        inspect_output(file,fmt);return
     parsed=profile(file,'https://submission.invalid/file.'+fmt,MIME[fmt],cache)
     require(parsed['parse_status']=='parsed','deliverable_not_readable_as_declared_type')
     if fmt in ('png','jpg'):require(parsed['format']==('jpeg' if fmt=='jpg' else fmt),'image_format_mismatch')

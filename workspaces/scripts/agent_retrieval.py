@@ -78,7 +78,15 @@ def parse_decision(receipt,plan,config):
             require(len(blocks)==1,'ambiguous_agent_json_blocks')
             text=blocks[0].strip()
         try:decision=json.loads(text)
-        except ValueError:raise DataError('agent_result_not_json')
+        except ValueError:
+            # A single JSON object after plain introductory prose is still an
+            # unambiguous handoff. No bracket repair or model content changes.
+            start=re.search(r'(?m)^\{',text)
+            require(start is not None,'agent_result_not_json')
+            try:
+                decision,end=json.JSONDecoder().raw_decode(text[start.start():])
+                require(not text[start.start()+end:].strip(),'ambiguous_agent_json_tail')
+            except ValueError:raise DataError('agent_result_not_json')
     validate(decision,schema(ROOT/'config/agent_retrieval.schema.json'))
     nodes={n['id'] for n in external_nodes(plan)}
     require(sum(len(c['files']) for c in decision['cases'])<=config['limits']['selected_files'],'selected_file_budget_exceeded')

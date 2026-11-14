@@ -1,0 +1,72 @@
+{
+  "blueprint_sha256": "e0cd48c408a049c21c67d8e19080ddaece51261b14c0fdd1fc38c92255245abb",
+  "config_sha256": "aff9199ff83d5ee9ae1cb5bb668dc0dd2f0bbbc4229b837459a74acce16bb535",
+  "construction_hashes": {
+    "case_attempts.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "download_trace.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "file_profiles.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "search_trace.json": "c417b8645413fd34eb4f088197cd4e167375975b8d139a2808fe79175cc8a726",
+    "source_manifest.json": "3cc7dd69d9a0b5a2f9eebd220909d43688a98338d628607707ca2e3acca2a742"
+  },
+  "counts": {
+    "actual_fetch_requests": 2,
+    "actual_search_requests": 4,
+    "critical_external_nodes": 2,
+    "downloaded_urls": 0,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 0,
+    "parsed_unique_files": 0,
+    "real_original_files": 0,
+    "retained_files": 0,
+    "supported_critical_nodes": 0,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "agent_session_incomplete",
+      "stage": "search"
+    },
+    {
+      "node_ids": [
+        "i1",
+        "i2"
+      ],
+      "reason": "unsupported_critical_inputs",
+      "stage": "coverage"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [
+    "i1",
+    "i2"
+  ],
+  "modality_evidence": [],
+  "model_calls": [],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 0,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 0,
+    "unique_model_requests": 0
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_4053",
+  "seed_sha256": "a3933ddcc9ebcd89a6e0cc72ff5ce51fb949e2a29857997241176d62c1633d9c",
+  "selected_anchor": null,
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [],
+  "workspace_files": {}
+}

@@ -254,6 +254,10 @@ def build_one(plan,seed,config,config_path,cache,directory,offline=False,stage='
 def run(plan_dir,seed_file,output_dir,cache,config_path,offline=False,limit=None,stage='all',mode='graph'):
     plans,seeds,planning=load_inputs(plan_dir,seed_file);config=schema(config_path)
     if limit is not None:require(limit>=0,'negative_limit');plans=plans[:limit]
+    if config.get('workflow')=='asset_graph':
+        require(stage=='all','asset_mode_uses_all_or_verify')
+        from asset_workspace import run_assets
+        return run_assets(plans,seeds,planning,config,config_path,cache,output_dir,offline)
     results=[]
     for plan in plans:
         ws='WS_'+sha256(plan['seed_id'].encode())[:12]
@@ -280,7 +284,12 @@ def main():
     p.add_argument('--stage',choices=['plan','all','verify'],default='all');p.add_argument('--mode',choices=['graph','direct'],default='graph')
     a=p.parse_args()
     if a.stage=='verify':
-        plans,_,_=load_inputs(a.plan_dir,a.seed_file)
-        for plan in plans:print(verify_workspace(a.output_dir/('WS_'+sha256(plan['seed_id'].encode())[:12]),plan))
+        plans,seeds,_=load_inputs(a.plan_dir,a.seed_file)
+        for plan in plans:
+            directory=a.output_dir/('WS_'+sha256(plan['seed_id'].encode())[:12])
+            if schema(directory/'construction/construction_report.json')['interface']=='asset-grounded-workspace-v1':
+                from asset_workspace import verify_asset_workspace
+                print(verify_asset_workspace(directory,plan,seeds[plan['seed_id']])['status'])
+            else:print(verify_workspace(directory,plan))
     else:print(run(a.plan_dir,a.seed_file,a.output_dir,a.cache_dir,a.config,a.offline,a.limit,a.stage,a.mode)['counts'])
 if __name__=='__main__':main()

@@ -1,0 +1,61 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 300,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "pilot_seeds": [
+    {
+      "seed_id": "raw_31_0_14694",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_14724",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_21693",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_21714",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_4053",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_4057",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_4066",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_20964",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_20488",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success."
+    },
+    {
+      "seed_id": "raw_31_0_16203",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success."
+    }
+  ],
+  "planner_prompt": "semantic_planner.v2.txt",
+  "format_correction": true
+}

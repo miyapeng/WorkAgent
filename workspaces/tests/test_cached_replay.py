@@ -12,10 +12,10 @@ import construct_workspace
 
 class CachedPilotReplay(unittest.TestCase):
     @unittest.skipUnless((REPO / 'work-plans/data/cache_graph/llm').exists()
-                         and (REPO / 'work-plans/data/semantic_pilot/planning_report.json').exists(),
+                         and (REPO / 'work-plans/data/asset_pilot_v2/planning_report.json').exists(),
                          'Local private model caches not present in a fresh clone')
     def test_current_pilot_replays_identically_without_network(self):
-        seed = REPO / 'work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl'
+        seed = REPO / 'work-seeds/data/raw_work_seeds/digital_task_pool.jsonl'
         def deny(*args, **kwargs):
             raise AssertionError('Network is forbidden during offline replay')
         with tempfile.TemporaryDirectory() as temp, \
@@ -24,9 +24,9 @@ class CachedPilotReplay(unittest.TestCase):
                 patch('http.client.HTTPSConnection.connect', side_effect=deny):
             root = Path(temp)
             plan_intents.run(seed, root / 'plans', REPO / 'work-plans/data/cache_graph',
-                             REPO / 'work-plans/config/blueprint_pilot.json', 10, True)
+                             REPO / 'work-plans/config/asset_pilot.json', 10, True)
             construct_workspace.load_inputs(root / 'plans', seed)
-            for output, saved in ((root / 'plans', REPO / 'work-plans/data/semantic_pilot'),):
+            for output, saved in ((root / 'plans', REPO / 'work-plans/data/asset_pilot_v2'),):
                 for file in output.rglob('*'):
                     if file.is_file():
                         relative = file.relative_to(output)

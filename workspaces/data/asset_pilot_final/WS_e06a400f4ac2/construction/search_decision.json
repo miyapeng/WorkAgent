@@ -1,0 +1,77 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "Native PNG (confirmed live, 592.4KB, image/png, ~1334x750 with 2000x1124 source canvas). Landscape concept panel from the shipped game — directly supplies the environment composition, horizon/depth arrangement and restrained color palette that a 2D concept layout would re-derive. Risk: WebFetch cannot visually describe compressed pixels; a human must confirm subject framing.",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png"
+        },
+        {
+          "reason": "Native PNG (confirmed live, 318.2KB, image/png, 1334x750). Character sheet from same project/release/originator — supports scale relationships and figure-to-environment proportion needed in the concept layout. Same VRT ticket as the panel set.",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_03_Characters.png",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png"
+        },
+        {
+          "reason": "Native PNG, 1334x750, 476KB. Sketch-stage character exploration from the same series/release (dated 10 Feb 2015, same VRT ticket #2015032510006039). Shows the intended look-and-feel at a pre-final concept stage, appropriate as style target.",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+        },
+        {
+          "reason": "Native PNG, 1334x750, 236KB. Additional concept sketch from the identical series/license/ticket — reinforces form language and silhouette conventions. Completes the matched single-project reference set.",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+        },
+        {
+          "reason": "Native JPEG, 2000x1333, 674KB, CC BY-SA 3.0, VRT-confirmed, by Joel McDonald/Polyculture. Early-prototype environment framing of a shipped game — an independent, clearly-hypothetical concept-layout reference establishing sparse silhouette-driven composition. Separate project, kept as a distinct reference option rather than merged with the Alto case.",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_1.jpg",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Prune_video_game_first_prototype_1.jpg"
+        }
+      ],
+      "identity": "Alto's Adventure (Snowman, 2015) original concept art panel series — matched reference set establishing spatial composition, form language and palette for a 2D endless-runner environment concept layout",
+      "missing_information": [
+        "Visual subject/content of the PNG/JPEG pixels could not be semantically interpreted by the tool (compressed binary); a human or vision pass must confirm the depicted composition matches the eventual brief.",
+        "The definitive client-facing brief text (i1) and explicit layout dimensions/mock-up scale/viewing conditions (i2) are supplied via task_instruction and are intentionally not searched for here.",
+        "No official Alto's Adventure developer style guide / art bible document was found as a native file; only the concept-art panels are available as references."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "OpenGameArt returns HTTP 403 Forbidden to WebFetch on all paths (content pages and collections alike), so download links cannot be observed or verified; cannot establish native artifacts from this host with available tools.",
+      "url": "https://opengameart.org/content/background-5"
+    },
+    {
+      "reason": "Catalog/landing page only; no directly observable native image artifact or per-asset download URL retrievable. Also CC0 asset packs are game-ready assets rather than project-bearing concept-art references, weak as a case anchor for concept-layout derivation.",
+      "url": "https://kenney.nl/assets"
+    },
+    {
+      "reason": "Discovery/provenance HTML category page, not a native file; used only to locate candidate File: pages. Retained as navigation, not as an admissible artifact.",
+      "url": "https://commons.wikimedia.org/wiki/Category:Video_game_concept_art"
+    },
+    {
+      "reason": "Largest file (4158x5262) but single high-res illustration with no coherent companion series/traceable project when compared to the matched Alto set; less defensible as the case anchor, omitted to respect the file budget.",
+      "url": "https://commons.wikimedia.org/wiki/File:Flynn-son-of-crimson.jpg"
+    },
+    {
+      "reason": "Third-party aggregator reposting Wesnoth artwork with unclear/license-unverified provenance; not a primary or authoritative source and not a native project record.",
+      "url": "https://favpng.com/png_search/battle-for-wesnoth"
+    }
+  ],
+  "stop_reason": "A defensible case is established: a matched, single-project (Alto's Adventure / Snowman) concept-art panel series with four verified, live native PNG artifacts at uniform 1334x750 layout, plus one independent secondary reference (Prune prototype JPEG). All URLs were directly observed, licenses are CC BY-SA 3.0 with VRT tickets, and two native PNGs were confirmed to download as real image files. Remaining gap (semantic pixel content) requires human/vision inspection and cannot be closed with WebFetch. No further distinct, fetchable primary source offering a stronger coherent case was found within budget; additional searching would risk topic-similarity substitutes rather than new case-bearing evidence."
+}

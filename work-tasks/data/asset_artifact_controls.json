@@ -1,0 +1,209 @@
+{
+  "conclusion": "Artifact parsing alone cannot establish success. Semantic checks remain pending; no task admission.",
+  "empty_submission": {
+    "critical_gate": "failed",
+    "items": [
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r1",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r2",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r3",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r4",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r5",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r6",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r7",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r8",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r9",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "deliverable_missing_or_too_large",
+        "rubric_id": "check_artifact_d1",
+        "score": 0,
+        "status": "failed",
+        "verification_type": "programmatic",
+        "weight": 1
+      }
+    ],
+    "overall_score": null,
+    "scope": "artifact_checks_only_not_task_verification_or_training_admission",
+    "scores": {
+      "process": null,
+      "programmatic": 0.0,
+      "semantic": null
+    }
+  },
+  "parseable_but_wrong_zip": {
+    "critical_gate": "pending",
+    "items": [
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r1",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r2",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r3",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r4",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r5",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r6",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": false,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r7",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r8",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "semantic_judge_not_executed",
+        "rubric_id": "rubric_r9",
+        "score": null,
+        "status": "pending",
+        "verification_type": "semantic",
+        "weight": 4
+      },
+      {
+        "critical": true,
+        "reason": "deterministic_check_passed",
+        "rubric_id": "check_artifact_d1",
+        "score": 1,
+        "status": "passed",
+        "verification_type": "programmatic",
+        "weight": 1
+      }
+    ],
+    "overall_score": null,
+    "scope": "artifact_checks_only_not_task_verification_or_training_admission",
+    "scores": {
+      "process": null,
+      "programmatic": 1.0,
+      "semantic": null
+    }
+  },
+  "provenance": "synthetic_engineering_controls_not_solver_outputs",
+  "task_id": "TASK_19388cd71ca0f5bdb02185f5"
+}

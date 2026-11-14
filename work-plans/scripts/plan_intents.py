@@ -91,8 +91,23 @@ def run(input_file,output_dir,cache,config_path,limit=None,offline=False):
         else:
             stage='generation'
             try:
-                semantic,meta=model_call(llm,ROOT/'prompts/semantic_planner.v1.txt',{'raw_seed':seed,'official_background':background(seed),'schema':schema(ROOT/'config/semantic_plan.schema.json'),'artifact_vocabulary':VOCABULARY},cache,offline)
+                context={'raw_seed':seed,'official_background':background(seed),'schema':schema(ROOT/'config/semantic_plan.schema.json'),'artifact_vocabulary':VOCABULARY}
+                semantic,meta=model_call(llm,ROOT/'prompts'/config.get('planner_prompt','semantic_planner.v1.txt'),context,cache,offline)
                 record['model_calls'].append(meta);record['semantic_plan']=semantic
+                if config.get('format_correction') and 'failure_reason' not in semantic:
+                    try:compile_blueprint(semantic,sid)
+                    except DataError as error:
+                        if not str(error).startswith(('schema:','format_not_allowed','empty_formats','unknown_artifact_kind')):raise
+                        record['initial_structural_error']=str(error)
+                        fixed,meta=model_call(llm,ROOT/'prompts/format_correction.v1.txt',
+                            {**context,'previous_plan':semantic,'structural_error':str(error)},cache,offline)
+                        record['model_calls'].append(meta)
+                        def meaning(value):
+                            if isinstance(value,dict):return {k:meaning(v) for k,v in value.items() if k not in ('kind','preferred_formats')}
+                            if isinstance(value,list):return [meaning(v) for v in value]
+                            return value
+                        require(meaning(fixed)==meaning(semantic),'format_correction_changed_professional_content')
+                        semantic=fixed;record['semantic_plan']=semantic
                 if 'failure_reason' in semantic:
                     stage='planning_limitation';raise DataError('planning_failure:'+str(semantic['failure_reason']))
                 stage='semantic_schema';validate(semantic,schema(ROOT/'config/semantic_plan.schema.json'));record['semantic_schema_passed']=True

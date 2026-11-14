@@ -1,0 +1,398 @@
+{
+  "billing": {
+    "confirmed_total_cost": null,
+    "reason": "No provider billing reconciliation; token records remain in model receipts."
+  },
+  "counts": {
+    "draft_tasks": 1,
+    "fetch_requests": 75,
+    "independently_verified_visual_facts": 0,
+    "material_inputs": 4,
+    "new_solver_rollouts": 0,
+    "parsed_native_files": 9,
+    "ready_workspaces": 2,
+    "search_requests": 25,
+    "searched_seeds": 3,
+    "seeds_with_downloaded_native_assets": 3,
+    "supported_material_inputs": 3
+  },
+  "denominator": 10,
+  "development_overhead": {
+    "additional_fetch_requests": 2,
+    "additional_search_requests": 4,
+    "cancelled_or_failed_search_sessions": 1,
+    "reason": "Aborted development sessions are separate from the three retained pilot sessions, not hidden as zero cost."
+  },
+  "limitations": [
+    "Development batch used while revising interfaces/prompts; not a held-out success-rate estimate.",
+    "Repeated builds reuse the same actual search receipts; counts describe unique retained sessions, not fresh searches on each replay.",
+    "Visual observations are model inspections; necessity and scoring reliability have not been established.",
+    "Blank/mutated fixture artifact tests are engineering validation, not empirical task success."
+  ],
+  "planning_counts": {
+    "accepted": 3,
+    "generated": 10,
+    "graph_passed": 5,
+    "input": 10,
+    "modality_candidate_plans": 2,
+    "rejected_or_failed": 7,
+    "semantic_review_attempted": 5,
+    "semantic_reviewed": 5,
+    "semantic_schema_passed": 6
+  },
+  "records": [
+    {
+      "blueprint_status": "failed",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "format_correction_changed_professional_content"
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Web Developers",
+      "parsed_native_files": 0,
+      "raw_task_text": "Design, build, or maintain Web sites, using authoring or scripting languages, content creation tools, management tools, and digital media.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_14694",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "failed",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "format_correction_changed_professional_content"
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Web Developers",
+      "parsed_native_files": 0,
+      "raw_task_text": "Create Web models or prototypes that include physical, interface, logical, or data models.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_14724",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "accepted",
+      "critical_inputs": 3,
+      "downloaded_urls_including_discovery_pages": 14,
+      "failures": {
+        "planning": [],
+        "task": [
+          "r1 is promoted to a scored critical requirement ('a single unified environment concept layout rather than a collage') but its strongest clause — the canvas must not be a collage integration of reference panels or a screenshot sheet — is an assumption imported from the sub-theme. Nothing in the O*NET task, the intent graph, or the commission states the deliverable must be a single non-collage scene; the commission only fixes one flattened canvas, which is a presentation constraint, not a prohibition on composite layouts. Scoring 'reads as one unified environment concept layout rather than a collage' as a critical criterion is a hidden requirement.",
+          "r2 scores 'visually distinct from each of the six reference panels (not a recolored or re-cropped green ridge, snow peak, sunset, desert, pastel ridge, or twilight panel)' and 'alpine rather than desert dunes, tropical hills, or a night-only twilight scene.' The reference subjects (six varied biomes) are model visual observations (model_observation_unverified) that the audit contract forbids treating as established facts. The rubric thereby builds scored criteria on unverified segment descriptions, and the alpine-vs-desert distinction is enforced more strictly than the commission supports.",
+          "r3 full-credit clause 'echoing the banded ridge construction visible across f_79d6f4de056ace187d8b1581.png with a consistent horizon placement' relies directly on a model visual observation of that reference as a factual target. The verification spec does not require independent pixel inspection to confirm the claimed banded construction before treating it as the scoring baseline.",
+          "r4 requires body proportions 'consistent with the figures in f_3652dc45eabd2b7f6f183749.png.' That character sheet is inspected only by an unverified model observation describing five figures, and no measured proportion data exists. The criterion is therefore not verifiable as written: it depends on a hidden ratio that has no grounded source.",
+          "r3 and r5 encode software-detectable, exact value/color judgments ('detail density and contrast decrease with distance,' 'consistent scale drop,' 'limited hue range per zone,' 'sky-to-ground value progression') without any defined measurement procedure or evidence source. These are semantic aspirations presented as if deterministically checkable, which the verification specification cannot execute as stated."
+        ],
+        "workspace": [
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Prune_video_game_first_prototype_1.jpg"
+          }
+        ]
+      },
+      "fetch_requests": 16,
+      "material_inputs": 1,
+      "modality_evidence": [
+        {
+          "evidence_status": "model_inspected_reference_asset",
+          "necessity_status": "not_tested",
+          "node_id": "i3"
+        }
+      ],
+      "occupation": "Video Game Designers",
+      "parsed_native_files": 2,
+      "raw_task_text": "Prepare two-dimensional concept layouts or three-dimensional mock-ups.",
+      "retained_native_files": 2,
+      "search_requests": 8,
+      "seed_id": "raw_31_0_16203",
+      "supported_critical_inputs": 3,
+      "supported_material_inputs": 1,
+      "task_id": null,
+      "task_status": "rejected",
+      "workspace_status": "ready"
+    },
+    {
+      "blueprint_status": "rejected",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "Minimality violation: i3 (tabular data specifying dimensions, materials, or component parameters) is marked critical but is not derivable from the task instruction or the workspace supply channel description itself; it is an assumed auxiliary input. The task requires creating a 3D representation from a design, and dimensional data would naturally originate from the drawings/drawings set (i2). Adding a separate critical table node is unsupported.",
+          "Dependency correctness: edge i3→i4 introduces i3 as a necessary input to the professional judgment, but if i3's content (dimensions/materials) is already encoded in the design drawings (i2), the dependency is redundant. If it is not encoded, then i3 is a fabricated case-specific fact, which violates case neutrality.",
+          "Dependency correctness: edge i1→i4 connects a text instruction node (i1) to the professional judgment i4. While scope instructions inform the work, i1 as described is a task instruction supplying scope/audience/requested work, not case facts. The implementation contract states a task_instruction channel is valid only for scope/audience/requested work, not as a substitute for missing case facts or observations. A necessary information dependency from i1 to the professional analysis is not established.",
+          "Information sufficiency: i4 claims to analyze design drawings (i2) and dimensional data (i3) to determine geometry, spatial arrangement, proportions, and structural elements. Proportions and structural element dimensions cannot be reliably determined from drawings and a separate dimension table alone without an explicit relation; the analysis steps as described do not logically guarantee sufficiency for producing a faithful 3D model.",
+          "Modality justification: the modality hypothesis for i2 (spatial) is marked as a hypothesis with evidence_status 'unretrieved', yet i2 is simultaneously treated as critical in the dependency graph. A critical dependency cannot rest on an unretrieved/hypothetical modality justification for determining 3D geometry without additional verification, making the modality justification internally inconsistent.",
+          "Intent preservation: the original task permits 'three-dimensional or interactive representatives'. The blueprint only targets 3D, which is acceptable as one valid branch, but it omits the interactive representation branch without justification, potentially narrowing the intended occupational operation."
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Architects, Except Landscape and Naval",
+      "parsed_native_files": 0,
+      "raw_task_text": "Create three-dimensional or interactive representations of designs, using computer-assisted design software.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_20488",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "failed",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "instruction_kind_source_mismatch"
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Mechanical Drafters",
+      "parsed_native_files": 0,
+      "raw_task_text": "Produce three-dimensional models, using computer-aided design (CAD) software.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_20964",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "failed",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "format_correction_changed_professional_content"
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Web and Digital Interface Designers",
+      "parsed_native_files": 0,
+      "raw_task_text": "Develop and document style guidelines for Web site content.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_21693",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "accepted",
+      "critical_inputs": 1,
+      "downloaded_urls_including_discovery_pages": 8,
+      "failures": {
+        "planning": [],
+        "task": [],
+        "workspace": [
+          {
+            "reason": "html_not_allowed_in_workspace",
+            "stage": "acquisition",
+            "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+          },
+          {
+            "reason": "html_not_allowed_in_workspace",
+            "stage": "acquisition",
+            "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+          }
+        ]
+      },
+      "fetch_requests": 16,
+      "material_inputs": 2,
+      "modality_evidence": [],
+      "occupation": "Web and Digital Interface Designers",
+      "parsed_native_files": 6,
+      "raw_task_text": "Write supporting code for Web applications or Web sites.",
+      "retained_native_files": 6,
+      "search_requests": 4,
+      "seed_id": "raw_31_0_21714",
+      "supported_critical_inputs": 1,
+      "supported_material_inputs": 2,
+      "task_id": "TASK_19388cd71ca0f5bdb02185f5",
+      "task_status": "draft",
+      "workspace_status": "ready"
+    },
+    {
+      "blueprint_status": "accepted",
+      "critical_inputs": 2,
+      "downloaded_urls_including_discovery_pages": 21,
+      "failures": {
+        "planning": [],
+        "task": [
+          "asset_workspace_not_ready:incomplete"
+        ],
+        "workspace": [
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2/Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27/Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27/Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28/Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28/Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24/Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24.mp4"
+          },
+          {
+            "reason": "url_not_observed_in_search_or_actual_href",
+            "stage": "acquisition",
+            "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46/Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46.mp4"
+          },
+          {
+            "node_ids": [
+              "i1"
+            ],
+            "reason": "unsupported_critical_inputs",
+            "stage": "coverage"
+          }
+        ]
+      },
+      "fetch_requests": 43,
+      "material_inputs": 1,
+      "modality_evidence": [
+        {
+          "evidence_status": "model_inspected_reference_asset",
+          "necessity_status": "not_tested",
+          "node_id": "i1"
+        }
+      ],
+      "occupation": "Film and Video Editors",
+      "parsed_native_files": 1,
+      "raw_task_text": "Select and combine the most effective shots of each scene to form a logical and smoothly running story.",
+      "retained_native_files": 1,
+      "search_requests": 13,
+      "seed_id": "raw_31_0_4053",
+      "supported_critical_inputs": 1,
+      "supported_material_inputs": 0,
+      "task_id": null,
+      "task_status": "blocked_upstream",
+      "workspace_status": "incomplete"
+    },
+    {
+      "blueprint_status": "failed",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "unused_information_node"
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Film and Video Editors",
+      "parsed_native_files": 0,
+      "raw_task_text": "Organize and string together raw footage into a continuous whole according to scripts or the instructions of directors and producers.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_4057",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    },
+    {
+      "blueprint_status": "rejected",
+      "critical_inputs": null,
+      "downloaded_urls_including_discovery_pages": 0,
+      "failures": {
+        "planning": [
+          "Dependency i2 -> out1 is incorrect: the text instruction (i2) is not a direct input to the finished video deliverable. It constrains the trimming (i3) and judgment (i4, i5) work, and its influence reaches out1 only through those intermediate nodes. Listing it as a direct dependency of out1 conflates task constraints with deliverable inputs and violates the requirement that every edge express a necessary direct information dependency.",
+          "Dependency i3 -> out1 and i5 -> out1 are questionable as direct edges: i3 (in/out points) and i5 (arrangement order) are work products that inform the assembly, but the evidence they provide reaches the deliverable only via i4's judgment about retained moments. If i3 and i5 are inputs to i4 (which they are per the plan), then their direct edges to out1 either duplicate the path through i4 or imply they independently produce the video, which is not established.",
+          "Dependency i1 -> i3 and i4 -> i5 may encode redundant/incorrect directionality: i3 is described as deriving trim points from length specifications and usable content, yet its listed inputs are only i1 and i2, with no explicit dependency on i4's judgment about narrative value; conversely i5 is described as ordering selected segments but depends on i4 (judgment) and i2, not actually on i3's trim results, which the plan itself says feed i4. The graph does not cleanly express the stated premise chain.",
+          "Modality hypothesis for i1 uses the same rationale as the i1 node description and frames video as a mere hypothesis when the raw recordings are the essential primary input; the necessity_status 'hypothesis' with evidence_status 'unretrieved' is consistent with pre-retrieval review, but the rationale does not add a distinct multimodal justification beyond restating boundary/content needs already covered by the node description."
+        ],
+        "task": [],
+        "workspace": []
+      },
+      "fetch_requests": 0,
+      "material_inputs": null,
+      "modality_evidence": [],
+      "occupation": "Film and Video Editors",
+      "parsed_native_files": 0,
+      "raw_task_text": "Trim film segments to specified lengths and reassemble segments in sequences that present stories with maximum effect.",
+      "retained_native_files": 0,
+      "search_requests": 0,
+      "seed_id": "raw_31_0_4066",
+      "supported_critical_inputs": null,
+      "supported_material_inputs": null,
+      "task_id": null,
+      "task_status": "not_attempted",
+      "workspace_status": "not_attempted"
+    }
+  ],
+  "selection": "Predeclared purposive batch: 4 Web, 3 video-editing, 3 spatial-design seeds from the official pool."
+}

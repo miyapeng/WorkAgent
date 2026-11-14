@@ -1,0 +1,17 @@
+{
+  "accepted": false,
+  "checks": {
+    "case_coherence": true,
+    "deliverable_appropriateness": true,
+    "input_sufficiency": true,
+    "intent_preservation": true,
+    "no_answer_leakage": false,
+    "observation_boundaries": true
+  },
+  "issues": [
+    "The reference files include near-complete USWDS markup for exactly the components the hypothetical commission asks the worker to author. f_6141abc0c06d331d1ae2c8a0 (Components) contains the full borderless accordion markup (including the `usa-accordion`, `usa-accordion__heading`, `usa-accordion__button`, `aria-expanded`, and `aria-controls` structure), and f_3857ea832280379516b1f646 (Forms) contains the full `usa-form` with character-count field, `maxlength`, `aria-describedby`, `usa-character-count__message`/`aria-live` region, plus a required-submit and validation pattern. These constitute a substantial precomputed answer for the requested deliverable: a worker could largely copy the supplied reference markup rather than produce it from the stated requirements, which the no_answer_leakage check disallows for input files containing the complete requested answer or core sub-answers.",
+    "The reference material supports the surrounding project conventions (DHS color tokens, palette contrast rules, typographic choice) but the specific deliverable components — borderless accordion, summary box, and character-count form with validation — are supplied verbatim in the reference corpus. Because these are the exact artifacts the deliverable asks the worker to author, their presence as source content leaks the intended solution and weakens the case as an authentic authoring exercise.",
+    "The hypothetical commission references specific component choices (borderless accordion, `usa-summary-box`, `usa-form` with character-count input and email error state) that map one-to-one onto the exact example markup already present in the references. This coupling is what enables rote reuse, and the case does not introduce a novel synthesis requirement that would prevent treating the reference markup as the answer.",
+    "Note on inputs beyond the leakage failure: the profiling records show `model_received_all_segments` false for five of six files, and the `content--sidebar` layout, `_config.yml`, and Gemfile are not supplied, so build-context integration is only partially inspectable. These do not independently fail input sufficiency given the case permits inferring build context, but they reinforce that this case is better framed as a convention-integration or extension task than as a from-scratch authoring task when the example markup remains in the reference set."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "case_objective": "Author and integrate a new, compliance-oriented \"Color and Accessibility Guidance\" section into the existing DHS Digital Design Guide Jekyll site so that it renders correctly through the project's existing layout, Liquid includes, and USWDS/DHS Sass theme, using only the DHS color palette values and Section 508 rules already documented in the reference files.",
+  "case_title": "Extend the DHS Digital Design Guide Jekyll Site: A Color and Accessibility Section for the Palette Page",
+  "deliverables": [
+    {
+      "description": "Supporting source code for the design-guide site extension: the new Liquid/HTML section markup, the accompanying Sass using the project's existing DHS color variables, and the vanilla-JS hex copy-to-clipboard behavior, written to integrate with the existing layout and includes. Deliver as source files (and/or a notebook documenting and assembling them), not as a rendered screen or description.",
+      "format": "js",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": "Hypothetical commission: You are the front-end developer for the DHS Digital Design Guide. The design team wants visitors to the Color Palette page to be able to see, per palette color, whether it is approved for text-on-background use under Section 508, and to copy a color's hex value. Deliver, as part of the Jekyll site, a new reusable section on the Color Palette page plus a small vanilla-JS copy-to-clipboard behavior for hex values. Constraints the design team sets (synthetic presentation preferences, not historical facts): the new section must appear directly after the existing primary/secondary color table; it must be built with the project's existing USWDS markup conventions and DHS Sass tokens rather than hard-coded colors; the hex-copy control must be keyboard operable and must not convey state by color alone; on mobile widths the color/contrast rows must stack using the table conventions already used elsewhere on the site. Present the contrast data as a table of color names against white and against black, each cell showing the ratio and a pass/fail label with text (not color only). Copy the section's markup style and class naming from the existing Components and Forms pages.",
+      "node_id": "i1",
+      "rationale": "This is the specification the supporting code must implement. It is supplied through the task instruction channel as a hypothetical commission, not as a record of a real client request. It scopes audience (designers and developers using the Design Guide), scope (one new section on the Color Palette page plus one copy-to-clipboard behavior), and presentation preferences (placement, table form, stacking on mobile).",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i2",
+      "rationale": "These are the actual project integration points: the Liquid navigation include with its conditional microsite branch and links to the site's content pages, the USWDS theme-override Sass file that already defines $c-dhs-blue, $c-dhs-red, $c-dhs-gray, $c-dhs-dark-gray and the sans typeface token, and the custom-component Sass file showing the project's own .news-list / .meta-tags conventions and mixin usage. The new section and copy behavior must be written to coexist with these files; the exact include structure is only partially visible (profiles report model_received_all_segments=false for the nav and theme files).",
+      "references": [
+        {
+          "file_id": "f_f0fee357d7e29bbfcf67fc81",
+          "segment_id": "seg_3421f41c20381ac6238ecb9d"
+        },
+        {
+          "file_id": "f_f0fee357d7e29bbfcf67fc81",
+          "segment_id": "seg_8cdfcd2866847c5a1931692b"
+        },
+        {
+          "file_id": "f_f0fee357d7e29bbfcf67fc81",
+          "segment_id": "seg_5b3997ec20a47fea9a3971bf"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_5175ea2574b92f026402e8e2"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_aec218dfe6ad9782ee0707f1"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_bb46348715fffa06ea346823"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_0e482a7ea42df01c2e71233e"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_80649a683130c5cde87fc650"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_bc279ff9708dbdad82a76138"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_5968a2be789ae531e12da445"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_6555bc545d9ce390a290026f"
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i3",
+      "rationale": "The design/interface specification: the Color Palette page gives the authoritative named colors with HTML/RGB/CMYK values (dhs-blue, dhs-gray, dhs-dark-gray, dhs-red, dhs-light-blue, dhs-green) and states the two Section 508 requirements (color not the sole conveyer of information; minimum 4.5:1 contrast). The Components page supplies the site's actual table captioning and stacking conventions used by the new section, the Forms page supplies the structural markup pattern (form group, label, described-by hint, aria-live message) that the copy-to-clipboard control should follow, and the Typography page documents the type-token classes. The contrast ratios themselves must be computed by the worker from the documented hex values; none are stated in these sources.",
+      "references": [
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_2bd9e3f88bbfa4ce82e5fb92"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8e36717239c832aaea438792"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_321d875ebd17dd90caae951f"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_d1cb8e2c9c36ac0f0c11ff74"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8cd86fe3e317e86850af1bef"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_fbc5705eb0886b9024be5c3f"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_7e146954216269006ff00fef"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_36d614d98b9566ace0ec1baa"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_b20c28a8ddf7f7d7bb4c1edb"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_191911b65eb27cc137a6c8fb"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_6b93a35beaf3de56eaf36c4a"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_45015b1b04ce519b9c663abe"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_952c0d93ad0373365a5a7e21"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_7d3f01011447279e868ff01c"
+        }
+      ],
+      "status": "supported"
+    }
+  ],
+  "limitations": [
+    "The profiles for the Color Palette, Components, Forms, Typography, nav-include, and theme-override files all report model_received_all_segments=false and model_received_all_source_records=false; the larger markdown pages are only partially visible (e.g. Components reports 2045 total segments and Typography 2459), so the full inventory of markup variants, the complete icon sprite behavior, and the complete theme-token list cannot be assumed from the quoted segments.",
+    "Only the custom-component Sass file reports complete coverage; the `_uswds-theme-overrides.scss` file's component-override section, state colors, and focus offset are not visible in the supplied segments, so any Sass additions must be checked against the live file rather than inferred.",
+    "No computed color-contrast ratios are present in any supplied file; the two thresholds stated (color not sole conveyer; minimum 4.5:1) are requirements, not measured values. The worker must compute ratios from the documented hex values, and those computations are not verifiable against any supplied source.",
+    "Only six palette colors with hex/RGB/CMYK values are quoted from the Color Palette page; the tint scales and the full USWDS color wheel described on that page are not available in the supplied segments, so the new section can cover only the quoted colors unless additional segments are provided.",
+    "The Color Palette page links to separate PDF and Excel palette exports that were not retrieved; those exports are not available as inputs.",
+    "The pages reference real DHS/USWDS URLs and a GitHub repository link in the navigation; none of the linked destinations' contents were retrieved, and their inclusion in navigation markup does not establish anything about their current content.",
+    "The commission (section placement, copy-to-clipboard feature, mobile stacking, audience) is a synthetic hypothetical instruction, not a record of any real DHS requirement or approval.",
+    "No usability, accessibility-conformance, or browser/assistive-technology testing of the resulting code is represented by any supplied asset."
+  ],
+  "operations": [
+    {
+      "description": "Analyze the commission together with the retrieved project assets and design specification to settle the code structure and integration points: which existing Liquid include and layout the new section must render under, which USWDS markup patterns from the Components and Forms pages to reuse, which DHS Sass color tokens and utility mixins already exist in the theme-override and custom-component files, and where the new partial/SCSS/JS should sit. Confirm which required inputs are present and which remain partial or missing before writing.",
+      "node_id": "i4"
+    },
+    {
+      "description": "Write the supporting code: the new Liquid/HTML section for the Color Palette page following the existing USWDS table, label, hint, and aria-live conventions, any Sass added to the project's custom-component layer using the existing DHS color variables, and the small vanilla-JS copy-to-clipboard behavior that is keyboard operable and signals state by text as well as styling. Responsive stacking must reuse the table conventions already present on the site. Code must not hard-code colors that already exist as theme tokens.",
+      "node_id": "i5"
+    }
+  ]
+}

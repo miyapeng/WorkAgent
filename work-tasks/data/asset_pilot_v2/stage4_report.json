@@ -1,0 +1,80 @@
+{
+  "blocked_upstream": 1,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 3,
+  "rejected": 2,
+  "stage": "all",
+  "workspaces": [
+    {
+      "interface": "asset-task-v1",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:42:47.896858+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "asset_task.v2",
+          "request_sha256": "5a7de7213e44bd5eeeaec9616fdae83e61f5eb037ade1be1306213038e0951b4"
+        }
+      ],
+      "reasons": [
+        "task_mentions_unknown_input_path"
+      ],
+      "seed_id": "raw_31_0_21714",
+      "status": "rejected",
+      "workspace_id": "WS_132f78cff63a"
+    },
+    {
+      "interface": "asset-task-v1",
+      "model_calls": [],
+      "reasons": [
+        "asset_workspace_not_ready:incomplete"
+      ],
+      "seed_id": "raw_31_0_4053",
+      "status": "blocked_upstream",
+      "workspace_id": "WS_d1a2e14abcb6"
+    },
+    {
+      "interface": "asset-task-v1",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:42:58.901823+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "asset_task.v2",
+          "request_sha256": "78d32026b95a0466ea5f1e3ec6859e984d0ef5e71d60981637d330712a350b34"
+        }
+      ],
+      "reasons": [
+        "task_omits_professional_operation"
+      ],
+      "seed_id": "raw_31_0_16203",
+      "status": "rejected",
+      "workspace_id": "WS_e06a400f4ac2"
+    }
+  ]
+}

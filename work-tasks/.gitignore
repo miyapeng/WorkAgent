@@ -6,3 +6,5 @@ config/*.local.json
 
 # Stage 5: private transcripts, evaluator cache, copied licensed files and runtimes.
 data/probes/
+
+data/asset_agent_view/

@@ -1,0 +1,246 @@
+[
+  {
+    "bytes": 101117,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-9abdc5be-e3a8-4e5b-b24d-117af10df04f"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:24.093907+00:00",
+    "role": "discovery_page",
+    "sha256": "cae0937b51c60c3da4d7fbcda57e6614099f377db79b8ea9a80375bebfcf17d2",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+  },
+  {
+    "bytes": 100137,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-2f6d9088-0270-449a-8e84-5bc4b3a7d0a2"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:25.035509+00:00",
+    "role": "discovery_page",
+    "sha256": "5eb3f77f997d08e1eae7f8cae7ee6e15b705b464a477e5776486a16508f2d226",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+  },
+  {
+    "bytes": 83110,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-acfb7257-2b6d-42b4-a0b5-e09da792b8fe"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_1.jpg",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_1.jpg",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:26.091315+00:00",
+    "role": "discovery_page",
+    "sha256": "579be579dd4413b0525342d40e6a24764a80f099ffc6488f381b953e6c47b3fd",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_1.jpg"
+  },
+  {
+    "reason": "download_failed:UnicodeEncodeError|UnicodeEncodeError",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://opengameart.org/content/сс0-favourites"
+  },
+  {
+    "bytes": 21097,
+    "discovery": {
+      "method": "WebSearch_tool_result",
+      "tool_use_id": "call_7ddcd716f81a4713bec0b0e1"
+    },
+    "final_url": "https://opengameart.org/content/background-5",
+    "mime": "text/html",
+    "original_url": "https://opengameart.org/content/background-5",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:27.477409+00:00",
+    "role": "discovery_page",
+    "sha256": "82e05b2cbf07b4e644e9ce32fcb728e06fb66fc61890b3ef1effbdec50600965",
+    "status": "downloaded",
+    "url": "https://opengameart.org/content/background-5"
+  },
+  {
+    "bytes": 23360,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-fff1e969-829b-43f8-ac9c-66203ade79e2"
+    },
+    "final_url": "https://kenney.nl/assets",
+    "mime": "text/html",
+    "original_url": "https://kenney.nl/assets",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:31.250381+00:00",
+    "role": "discovery_page",
+    "sha256": "3297ee173d2861f682550fa984a6e6311582d607cef53fa2009a01485baaaf00",
+    "status": "downloaded",
+    "url": "https://kenney.nl/assets"
+  },
+  {
+    "bytes": 70932,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-d2a9dc28-fff0-4483-b05f-586a977d10f2"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/Category:Video_game_concept_art",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/Category:Video_game_concept_art",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:35.333145+00:00",
+    "role": "discovery_page",
+    "sha256": "176968e980d53d57a68612f6a33517542c7009ea14ee14d778ad98b50d16550e",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/Category:Video_game_concept_art"
+  },
+  {
+    "bytes": 101104,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-fc568cb6-0514-476c-a5e1-cb4ccf18eb75"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:39.391703+00:00",
+    "role": "discovery_page",
+    "sha256": "39006d29b73e023be1c8180f99ea4a51b5b43f014a24f3f87a3204699d8e0170",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_01_Landscapes.png"
+  },
+  {
+    "bytes": 90105,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-099d6ad9-f812-408b-9589-c61658110676"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_2.jpg",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_2.jpg",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:40.514434+00:00",
+    "role": "discovery_page",
+    "sha256": "d3534bfa13ba37894c9f8d5ba3587448b9bc1a73220af8b49dd8bf46db68509b",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_2.jpg"
+  },
+  {
+    "bytes": 95127,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-0e349f67-5bb8-4299-ac76-fae16b342d5c"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_2.jpg",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_2.jpg",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:41.456324+00:00",
+    "role": "discovery_page",
+    "sha256": "83ba9a06dfaaf5758d26bb461b19cb6e5e25bad1ab243afed1d503aeb4601ccb",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Prune_video_game_first_prototype_2.jpg"
+  },
+  {
+    "bytes": 87272,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-420a0220-f084-4258-b67f-903bd8e35fbf"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_1.jpg",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_1.jpg",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:42.922542+00:00",
+    "role": "discovery_page",
+    "sha256": "127d7a02ecd2f8e63c236574b2d87b29690d9171f0f90b2f18082c4801311b67",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Shelter_-_Tree_Concept_Art_1.jpg"
+  },
+  {
+    "bytes": 100818,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-852a0c88-b603-4a82-8338-6b735e5473ee"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_03_Characters.png",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_03_Characters.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:43.881907+00:00",
+    "role": "discovery_page",
+    "sha256": "21c81630cc8ed5d2f667ae82b8aa20a6152b5b155ac4b742ba36259729b58bea",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Alto%27s_Adventure_concept_art_-_03_Characters.png"
+  },
+  {
+    "bytes": 97033,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-d435cb44-89b3-4094-b73d-fae58124ac6a"
+    },
+    "final_url": "https://commons.wikimedia.org/wiki/File:Pid_-_Crook_Concept_Art.jpg",
+    "mime": "text/html",
+    "original_url": "https://commons.wikimedia.org/wiki/File:Pid_-_Crook_Concept_Art.jpg",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:45.079511+00:00",
+    "role": "discovery_page",
+    "sha256": "b363d6c8c87fef590c5bd531d55ccf2ef8690b8976787abaf71f978dbf17ab1a",
+    "status": "downloaded",
+    "url": "https://commons.wikimedia.org/wiki/File:Pid_-_Crook_Concept_Art.jpg"
+  },
+  {
+    "bytes": 606663,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-20406876-3a49-4409-ab79-c74aa9f2b433"
+    },
+    "final_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+    "mime": "image/png",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:46.458252+00:00",
+    "role": "discovery_page",
+    "sha256": "79d6f4de056ace187d8b15811841e80fe9fa83245c463cbaf1bf7b51518a4d7f",
+    "status": "downloaded",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alto%27s_Adventure_concept_art_-_01_Landscapes.png"
+  },
+  {
+    "bytes": 325845,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b0a83521-18ab-44ff-845b-908be40a22d5"
+    },
+    "final_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png",
+    "mime": "image/png",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:47.515343+00:00",
+    "role": "discovery_page",
+    "sha256": "3652dc45eabd2b7f6f183749b4ac5681ca4e144ccaa8bc68d5bf08a20726a9c5",
+    "status": "downloaded",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alto%27s_Adventure_concept_art_-_03_Characters.png"
+  }
+]

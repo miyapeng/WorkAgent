@@ -1,0 +1,486 @@
+{
+  "counts": {
+    "actual_search_requests": 25,
+    "admitted_blueprints_processed": 3,
+    "anchors": 3,
+    "downloaded_urls": 43,
+    "ready": 2
+  },
+  "interface": "asset-grounded-workspace-v1",
+  "planning_input": {
+    "accepted": 3,
+    "generated": 10,
+    "graph_passed": 5,
+    "input": 10,
+    "modality_candidate_plans": 2,
+    "rejected_or_failed": 7,
+    "semantic_review_attempted": 5,
+    "semantic_reviewed": 5,
+    "semantic_schema_passed": 6
+  },
+  "workspaces": [
+    {
+      "blueprint_sha256": "2db01c76a59405c3e5bb9f3fb4336ffa6a4edd85e991f5c9d89e20b26dc41327",
+      "config_sha256": "f3fb4f0535e9b40de183ea7818328c254320518d8477acf39d490a852c85beb3",
+      "construction_hashes": {
+        "case_attempts.json": "421e1e6c57145e1284530e4aa4de3bb832ae826ddea7a8c4d4d60c83e43a0a1d",
+        "case_design.json": "6cb488d6f661d87a0d4c7632c4660bbf897af50db00c6502dde824a2683e7123",
+        "case_review.json": "797f17f26b91f96c0a0812d4ea32425a4cf8e31401ceaf97f64745a61e5e9315",
+        "download_trace.json": "a1f630ea91222f576d2e513170eb938d7828cb698b4fa06994750fa65184c63e",
+        "file_profiles.json": "511a2f2a64f92025809f5541cd743b4983183828b4015f44beb0941852348243",
+        "grounded_graph.json": "d7c6dc32b10a0cf53239aa6d9ed52f06a73f1d4e952db9f8b4b30055c6565494",
+        "search_decision.json": "e3b9022d399c45854db23687fbd67b9d83641820c6b9e793bb07a61cf052301d",
+        "search_trace.json": "8f3329bbf1c0e83931beb97e97cafb95d3c93d97e1d823422d3707d6ab7202da",
+        "source_manifest.json": "7f30a3e059c5288fc72c9a4f7354dcc0f11a72147a6474d6c0297d3f48783b4c"
+      },
+      "counts": {
+        "actual_fetch_requests": 16,
+        "actual_search_requests": 8,
+        "critical_external_nodes": 3,
+        "downloaded_urls": 14,
+        "independently_verified_visual_facts": 0,
+        "model_visual_observations": 7,
+        "parsed_unique_files": 2,
+        "real_original_files": 2,
+        "retained_files": 2,
+        "supported_critical_nodes": 3,
+        "synthetic_files": 0
+      },
+      "failure_reasons": [
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Prune_video_game_first_prototype_1.jpg"
+        }
+      ],
+      "interface": "asset-grounded-workspace-v1",
+      "limitations": [
+        "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+        "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+        "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+      ],
+      "missing_nodes": [],
+      "modality_evidence": [
+        {
+          "evidence_status": "model_inspected_reference_asset",
+          "necessity_status": "not_tested",
+          "node_id": "i3"
+        }
+      ],
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:34:49.113547+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "29bb13081ad338054bda06dfd8c9a885ffdaa8be2771473d1b88fc7e1b1393cd",
+          "prompt_version": "asset_case.v3",
+          "request_sha256": "8db52da315bca6532877cda95a257cf82505128b7aecbad4f7a3430fc6ff0650",
+          "usage": {
+            "completion_tokens": 1641,
+            "prompt_tokens": 5595,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 7236
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:37:17.348113+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "1416372f5e2fa3c3fab6664af646ea8e3b67e9325fe6b1dc206618ee1fa1a34e",
+          "prompt_version": "asset_reviewer.v2",
+          "request_sha256": "02219627dbb3736ba755b03d247386b24388577d89ddc02db0f7023a99a823a8",
+          "usage": {
+            "completion_tokens": 81,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens": 24142,
+            "prompt_tokens_details": {
+              "cached_tokens": 3404
+            },
+            "total_tokens": 24223
+          }
+        }
+      ],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 1722,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 29737,
+        "unique_model_requests": 2
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [
+        "f_79d6f4de056ace187d8b1581",
+        "f_3652dc45eabd2b7f6f183749"
+      ],
+      "search_cost": {
+        "billed_cost": null,
+        "note": "Gateway/search billing unavailable; no guessed dollar cost."
+      },
+      "search_state": "completed",
+      "seed_id": "raw_31_0_16203",
+      "seed_sha256": "700f1cdc7a57e5d244293bd4aab6382de83fd0a3b6262bb770f7f1976ae97d22",
+      "selected_anchor": "Alto's Adventure (Snowman, 2015) original concept art panel series — matched reference set establishing spatial composition, form language and palette for a 2D endless-runner environment concept layout",
+      "stage4_eligible": true,
+      "status": "ready",
+      "supported_nodes": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "workspace_files": {
+        "references/f_3652dc45eabd2b7f6f183749.png": "3652dc45eabd2b7f6f183749b4ac5681ca4e144ccaa8bc68d5bf08a20726a9c5",
+        "references/f_79d6f4de056ace187d8b1581.png": "79d6f4de056ace187d8b15811841e80fe9fa83245c463cbaf1bf7b51518a4d7f"
+      },
+      "workspace_id": "WS_e06a400f4ac2"
+    },
+    {
+      "blueprint_sha256": "21227312a23a68e428a17135b3d2610db2985d33f87b09a91cb30e07de869ba9",
+      "config_sha256": "f3fb4f0535e9b40de183ea7818328c254320518d8477acf39d490a852c85beb3",
+      "construction_hashes": {
+        "case_attempts.json": "30644aaffbaad418d01f74da5399c2591a27b0d2ef614ef021c954bdd8da0976",
+        "case_design.json": "f4ffbe954576086c5db00f28ca76dd1dfb429fd78ba6b4c15429337167d092bd",
+        "case_review.json": "797f17f26b91f96c0a0812d4ea32425a4cf8e31401ceaf97f64745a61e5e9315",
+        "download_trace.json": "0cb6e77c8e3017c2ccbf867c9922da5579aae2ce1f2dfc13079aa1fc0badeea6",
+        "file_profiles.json": "bde2c6a20c5f1fc8a961bc860a9ade76989197f826e8d4542cbe5327b65f9c9b",
+        "grounded_graph.json": "2aa71c098062a7e44baebf47f19d1682450e8ba80f6a69a8c91bdb0044388225",
+        "search_decision.json": "d7ac508028e591ea14fd41dee2eee858930934d35ae7b17eaed7ec9f5832d249",
+        "search_trace.json": "0e364381b83e0d23cc1757e43254c884d38fac2f249fb683800fe42962d29aaa",
+        "source_manifest.json": "b92f6fd7c182ef65d481fa9417eb02e1626dfb630682c8de69814b670423180b"
+      },
+      "counts": {
+        "actual_fetch_requests": 16,
+        "actual_search_requests": 4,
+        "critical_external_nodes": 1,
+        "downloaded_urls": 8,
+        "independently_verified_visual_facts": 0,
+        "model_visual_observations": 0,
+        "parsed_unique_files": 6,
+        "real_original_files": 6,
+        "retained_files": 6,
+        "supported_critical_nodes": 1,
+        "synthetic_files": 0
+      },
+      "failure_reasons": [
+        {
+          "reason": "html_not_allowed_in_workspace",
+          "stage": "acquisition",
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+        },
+        {
+          "reason": "html_not_allowed_in_workspace",
+          "stage": "acquisition",
+          "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+        }
+      ],
+      "interface": "asset-grounded-workspace-v1",
+      "limitations": [
+        "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+        "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+        "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+      ],
+      "missing_nodes": [],
+      "modality_evidence": [],
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:35:48.400435+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "29bb13081ad338054bda06dfd8c9a885ffdaa8be2771473d1b88fc7e1b1393cd",
+          "prompt_version": "asset_case.v3",
+          "request_sha256": "5a4f55b730c6c63f22dedeb880e2becd4b437286faf3830a29ef9e7409817a1c",
+          "usage": {
+            "completion_tokens": 6469,
+            "prompt_tokens": 25186,
+            "total_tokens": 31655
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:35:52.060460+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "1416372f5e2fa3c3fab6664af646ea8e3b67e9325fe6b1dc206618ee1fa1a34e",
+          "prompt_version": "asset_reviewer.v2",
+          "request_sha256": "0951b626e712e4fbf6d6f753ed6fbd297277e5ee709148fe4b70990de910dbe0",
+          "usage": {
+            "completion_tokens": 64,
+            "prompt_tokens": 34164,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 34228
+          }
+        }
+      ],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 6533,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 59350,
+        "unique_model_requests": 2
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [
+        "f_ffc58e8f13f4aa562d37c170",
+        "f_6141abc0c06d331d1ae2c8a0",
+        "f_3857ea832280379516b1f646",
+        "f_a19613b9144366106fb07aad",
+        "f_37c5891bab4141e7a59a431e",
+        "f_fe498796aac931248e374a13"
+      ],
+      "search_cost": {
+        "billed_cost": null,
+        "note": "Gateway/search billing unavailable; no guessed dollar cost."
+      },
+      "search_state": "completed",
+      "seed_id": "raw_31_0_21714",
+      "seed_sha256": "4152005e5ea717c6c763d5eedc6d7e88aca700728c7436d4d00a0396f8cf048a",
+      "selected_anchor": "DHS Digital Design Guide — government style-guide website built with Jekyll/Liquid on the U.S. Web Design System (USWDS), with a published DHS color palette, component, typography, and form specifications and custom Sass/Liquid implementation",
+      "stage4_eligible": true,
+      "status": "ready",
+      "supported_nodes": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "workspace_files": {
+        "references/f_37c5891bab4141e7a59a431e.scss": "37c5891bab4141e7a59a431e8d9de27209e10d7ce00674843516e5e6e1cd212b",
+        "references/f_3857ea832280379516b1f646.md": "3857ea832280379516b1f6464a8711936e95913a2fabc9931330f824b25ab6a1",
+        "references/f_6141abc0c06d331d1ae2c8a0.md": "6141abc0c06d331d1ae2c8a0105767e66379547595f673d79ea1ab941c31712e",
+        "references/f_a19613b9144366106fb07aad.md": "a19613b9144366106fb07aad3e9a5502bcbda1caa191fdaf568de06eaf4121a9",
+        "references/f_fe498796aac931248e374a13.scss": "fe498796aac931248e374a13d7317c9591a884ad61c3089ce9da511bebf697dd",
+        "references/f_ffc58e8f13f4aa562d37c170.md": "ffc58e8f13f4aa562d37c17021b9b0172c9e59a87718a679b771e7ef53fbc974"
+      },
+      "workspace_id": "WS_132f78cff63a"
+    },
+    {
+      "blueprint_sha256": "e0cd48c408a049c21c67d8e19080ddaece51261b14c0fdd1fc38c92255245abb",
+      "config_sha256": "f3fb4f0535e9b40de183ea7818328c254320518d8477acf39d490a852c85beb3",
+      "construction_hashes": {
+        "case_attempts.json": "6187ba198758882899c7c301e54b21e5011ac2854b2ad44c1c82295788b72d47",
+        "case_design.json": "5431bce9c8fffeaaedde6c6eea64e5be7974fe3028d5fe8b6f76faa602dacc8b",
+        "case_review.json": "797f17f26b91f96c0a0812d4ea32425a4cf8e31401ceaf97f64745a61e5e9315",
+        "download_trace.json": "a1f654000b2de508eba33d600dd95d0aed7c6ca6364b8ee3da183f51db37d708",
+        "file_profiles.json": "6b5a8855ebb555bb484d91c6859ec22d722c9f8b5ba85de272ae17ca771fb27e",
+        "grounded_graph.json": "a7cb82e7fa239f092557a351a2f37d6d7cf8fcd0c4077b927d9dda2438f6e691",
+        "search_decision.json": "99c4dc9264b50fb9e4cf9ac77f94e2098079bd3208da7e1cdee07d7364409d51",
+        "search_trace.json": "6bcf3b42c1f00dab4e0f4b20ffb2c07b6ce32e53da8b135a859476535de503f6",
+        "source_manifest.json": "481fddcd5967bdc6e86975cb26cc841cfb1d5a4c81fba8442d59fce4d89038e3"
+      },
+      "counts": {
+        "actual_fetch_requests": 43,
+        "actual_search_requests": 13,
+        "critical_external_nodes": 2,
+        "downloaded_urls": 21,
+        "independently_verified_visual_facts": 0,
+        "model_visual_observations": 2,
+        "parsed_unique_files": 1,
+        "real_original_files": 1,
+        "retained_files": 1,
+        "supported_critical_nodes": 1,
+        "synthetic_files": 0
+      },
+      "failure_reasons": [
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2/Evelyn_Champagne_King_Scene_2_Take_1_or_2_Reel_2.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27/Evelyn_Champagne_King_Original_Tape_3_Scene_2_Takes_3_and_4_1979-03-27.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27/Evelyn_Champagne_King_Scene_3_No_Time_Take_4_5_Background_1979-05-27.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28/Evelyn_Champagne_King_Reel_10_Scene_6_Take_7-10_Stepping_Out_1979-03-28.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28/Evelyn_Champagne_King_Reel_12_Scene_7_Music_Box_Take_17-20_1979-03-28.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24/Evelyn_Champagne_King_Reel_13_1979-03-28_Scene_7_Take_21-24.mp4"
+        },
+        {
+          "reason": "url_not_observed_in_search_or_actual_href",
+          "stage": "acquisition",
+          "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46/Evelyn_Champagne_King_Reel_17_1979-03-29_Scene_8_Tape_37-38_Scene_9_Take_39-46.mp4"
+        },
+        {
+          "node_ids": [
+            "i1"
+          ],
+          "reason": "unsupported_critical_inputs",
+          "stage": "coverage"
+        }
+      ],
+      "interface": "asset-grounded-workspace-v1",
+      "limitations": [
+        "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+        "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+        "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+      ],
+      "missing_nodes": [
+        "i1"
+      ],
+      "modality_evidence": [
+        {
+          "evidence_status": "model_inspected_reference_asset",
+          "necessity_status": "not_tested",
+          "node_id": "i1"
+        }
+      ],
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:35:40.326107+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "29bb13081ad338054bda06dfd8c9a885ffdaa8be2771473d1b88fc7e1b1393cd",
+          "prompt_version": "asset_case.v3",
+          "request_sha256": "c2e359a7bb5e02d49dfd54a58cc377f411cbd7dfce456e881c790ee0909a7646",
+          "usage": {
+            "completion_tokens": 5156,
+            "prompt_tokens": 3878,
+            "total_tokens": 9034
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:48:40.123113+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "1416372f5e2fa3c3fab6664af646ea8e3b67e9325fe6b1dc206618ee1fa1a34e",
+          "prompt_version": "asset_reviewer.v2",
+          "request_sha256": "789556ab35312fccf7ac0d75d295ddc4b035e25b8e3670b7af2cc86bf687150f",
+          "usage": {
+            "completion_tokens": 64,
+            "prompt_tokens": 4674,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 4738
+          }
+        }
+      ],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 5220,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 8552,
+        "unique_model_requests": 2
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [
+        "f_fd939e1aec01c4a0d846f398"
+      ],
+      "search_cost": {
+        "billed_cost": null,
+        "note": "Gateway/search billing unavailable; no guessed dollar cost."
+      },
+      "search_state": "completed",
+      "seed_id": "raw_31_0_4053",
+      "seed_sha256": "a3933ddcc9ebcd89a6e0cc72ff5ce51fb949e2a29857997241176d62c1633d9c",
+      "selected_anchor": "1979 Evelyn 'Champagne' King music-video production rushes (Bristol Productions, New York), digitized by XFR Collective from Mark Pines' Umatic collection, organized by scene and take — a coherent multi-take shoot from which an editor selects the most effective shots of each scene and assembles them into a continuous sequence.",
+      "stage4_eligible": false,
+      "status": "incomplete",
+      "supported_nodes": [
+        "i2"
+      ],
+      "workspace_files": {
+        "references/f_fd939e1aec01c4a0d846f398.mp4": "fd939e1aec01c4a0d846f398c2dd0b2bdf7dcb5f05eb23211618db887d207e46"
+      },
+      "workspace_id": "WS_d1a2e14abcb6"
+    }
+  ]
+}

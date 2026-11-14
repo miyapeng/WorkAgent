@@ -1,0 +1,12 @@
+{
+  "accepted": true,
+  "checks": {
+    "case_coherence": true,
+    "deliverable_appropriateness": true,
+    "input_sufficiency": true,
+    "intent_preservation": true,
+    "no_answer_leakage": true,
+    "observation_boundaries": true
+  },
+  "issues": []
+}

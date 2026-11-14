@@ -1,0 +1,1977 @@
+{
+  "blueprints_sha256": "3336341a55714fe048f752fc38b15952da262220c103c3d109db8f0e51be4ce5",
+  "config_sha256": "5f1aaa876e10df9886c9cfe0e7c29152050921a4583ba42d2898fbc201384085",
+  "counts": {
+    "accepted": 3,
+    "generated": 10,
+    "graph_passed": 3,
+    "input": 10,
+    "modality_candidate_plans": 2,
+    "rejected_or_failed": 7,
+    "semantic_review_attempted": 3,
+    "semantic_reviewed": 3,
+    "semantic_schema_passed": 9
+  },
+  "input_sha256": "c36a24b1f903ae7d851892064a8fc6a3e4436c5ad3821d1578b1f49228de146f",
+  "interface": "raw-blueprint-v2",
+  "limitations": [
+    "Independent review uses the same model family, not expert certification.",
+    "Task instruction requirements remain pending for Stage 4; they are not case facts."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 7170,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 31377,
+    "unique_model_requests": 13
+  },
+  "seeds": {
+    "raw_31_0_14694": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:document"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:26.390686+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "194979dd0db5d03dfee4d66392504a45966d75983a4b1cf1a3e8c8cb718758de",
+          "usage": {
+            "completion_tokens": 1244,
+            "prompt_tokens": 2790,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 4034
+          }
+        }
+      ],
+      "seed_sha256": "9803da5e38d1e468b106bb50ba3ff580989166476fada9b2a29b8ebc89eaefb5",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A functional website or web application implementation that realizes the intended design, incorporates specified content, and applies appropriate authoring/scripting languages, content creation tools, and digital media assets.",
+          "kind": "web_app",
+          "preferred_formats": [
+            "html",
+            "zip",
+            "js"
+          ],
+          "requires": [
+            "site_requirements",
+            "design_specifications",
+            "content_assets",
+            "technical_constraints",
+            "site_architecture_plan",
+            "content_integration_plan",
+            "design_implementation_judgment",
+            "technical_stack_judgment",
+            "media_optimization_judgment"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The scope, purpose, target audience, and functional requirements for the website or web application to be designed, built, or maintained.",
+            "kind": "text_instruction",
+            "name": "site_requirements",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Visual design specifications including layout mockups, color schemes, typography, branding guidelines, and interaction patterns that define the intended look and feel.",
+            "kind": "document",
+            "modality_dependency": {
+              "information_needed": "Layout structure, spatial relationships between page sections, visual hierarchy, and responsive breakpoint behavior as depicted in mockups or wireframes.",
+              "modality": "visual_spatial",
+              "required_operation": "Interpret the visual and spatial design intent from mockups or wireframes to determine the HTML structure, CSS layout approach, and responsive behavior needed to reproduce the design faithfully.",
+              "supports": "design_implementation_judgment"
+            },
+            "name": "design_specifications",
+            "preferred_formats": [
+              "pdf",
+              "png",
+              "svg",
+              "md"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": true,
+            "description": "Text content, images, videos, audio files, and other media or structured data that must be incorporated into the website pages.",
+            "kind": "structured_data",
+            "name": "content_assets",
+            "preferred_formats": [
+              "json",
+              "csv",
+              "png",
+              "jpg",
+              "mp4"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Platform limitations, hosting environment, browser support requirements, performance budgets, accessibility standards, and any mandated frameworks or libraries.",
+            "kind": "text_instruction",
+            "name": "technical_constraints",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": false,
+            "description": "Applicable web standards and best practices for markup validity, accessibility, performance, and security that the implementation must conform to.",
+            "kind": "document",
+            "name": "website_standards",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "source": "external_reference"
+          },
+          {
+            "critical": false,
+            "description": "The current codebase, templates, and configuration files for a website that is being maintained or updated rather than built from scratch.",
+            "kind": "code",
+            "name": "existing_site_code",
+            "preferred_formats": [
+              "html",
+              "js",
+              "py",
+              "json"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Design, build, or maintain a website using authoring or scripting languages, content creation tools, management tools, and digital media.",
+        "operations": [
+          {
+            "description": "A structured plan defining the page hierarchy, navigation model, URL routing, component breakdown, and data flow that organizes the site's structure and supports all required functionality.",
+            "name": "site_architecture_plan",
+            "requires": [
+              "site_requirements",
+              "technical_constraints",
+              "existing_site_code",
+              "content_assets"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "A mapping of each content asset and structured data element to its destination page, section, and presentation component, including any templates or dynamic data bindings needed for updates.",
+            "name": "content_integration_plan",
+            "requires": [
+              "content_assets",
+              "site_architecture_plan",
+              "site_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluation of how to translate visual design specifications into clean, semantic markup and styling that is faithful to the intended layout, responsive across viewports, accessible, and maintainable.",
+            "name": "design_implementation_judgment",
+            "requires": [
+              "design_specifications",
+              "site_architecture_plan",
+              "technical_constraints"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Selection and justification of authoring or scripting languages, content creation tools, management tools, and libraries that best satisfy the functional requirements, technical constraints, and long-term maintenance needs.",
+            "name": "technical_stack_judgment",
+            "requires": [
+              "site_requirements",
+              "technical_constraints",
+              "website_standards",
+              "existing_site_code"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determination of appropriate formats, compression levels, responsive image strategies, and lazy-loading or streaming approaches for digital media to balance visual fidelity with performance and bandwidth constraints.",
+            "name": "media_optimization_judgment",
+            "requires": [
+              "content_assets",
+              "technical_constraints",
+              "content_integration_plan"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_14724": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:document"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:37.822588+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "1fbe1cb30ed99caabc29eaf1dfc1f880c20f00df2ba110558c2c4064a5f4035a",
+          "usage": {
+            "buyer_cost_micro": 12,
+            "completion_tokens": 650,
+            "prompt_tokens": 2288,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 2938
+          }
+        }
+      ],
+      "seed_sha256": "f888757fc7026f5e8b52c2f68e618250b812b92498abd216f89a7f515c17ad42",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A Web prototype or model package that includes physical, interface, logical, or data models, implemented as runnable Web artifacts with supporting structured model definitions.",
+          "kind": "web_app",
+          "preferred_formats": [
+            "zip",
+            "html"
+          ],
+          "requires": [
+            "physical_model_spec",
+            "interface_model_spec",
+            "logical_model_spec",
+            "data_model_spec",
+            "prototype_implementation"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Specification of which Web models or prototypes to create (physical, interface, logical, data) and the scope or domain they must cover.",
+            "kind": "text_instruction",
+            "name": "modeling_requirements",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Background information on the target system, including existing architecture, data sources, and constraints relevant to the models.",
+            "kind": "document",
+            "name": "system_context",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Existing data schemas, entity definitions, or data source descriptions that inform the data and logical models.",
+            "kind": "structured_data",
+            "name": "existing_data_structures",
+            "preferred_formats": [
+              "json"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Reference standards or conventions for physical, interface, logical, and data modeling in Web systems.",
+            "kind": "document",
+            "name": "web_modeling_standards",
+            "preferred_formats": [
+              "pdf",
+              "html",
+              "md"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Create Web models or prototypes that include physical, interface, logical, or data models.",
+        "operations": [
+          {
+            "description": "Derive the physical model specifying hardware, hosting, deployment topology, and infrastructure components for the Web system.",
+            "name": "physical_model_spec",
+            "requires": [
+              "modeling_requirements",
+              "system_context",
+              "web_modeling_standards"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Derive the interface model defining user interface structure, navigation flows, and interaction points.",
+            "name": "interface_model_spec",
+            "requires": [
+              "modeling_requirements",
+              "system_context",
+              "web_modeling_standards"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Derive the logical model describing system components, their relationships, business logic, and processing flows.",
+            "name": "logical_model_spec",
+            "requires": [
+              "modeling_requirements",
+              "system_context",
+              "web_modeling_standards"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Derive the data model defining entities, attributes, relationships, and data storage structures.",
+            "name": "data_model_spec",
+            "requires": [
+              "modeling_requirements",
+              "existing_data_structures",
+              "web_modeling_standards"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Integrate the physical, interface, logical, and data model specifications into a cohesive Web prototype or model package, deciding on implementation structure and model representation.",
+            "name": "prototype_implementation",
+            "requires": [
+              "physical_model_spec",
+              "interface_model_spec",
+              "logical_model_spec",
+              "data_model_spec"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_16203": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "duplicate_semantic_name"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:30.087992+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "3a82d200cb403ab3cf0829ee49df459c0863bbae7fcdca031f95d2e461e72bbe",
+          "usage": {
+            "completion_tokens": 641,
+            "prompt_tokens": 2741,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3382
+          }
+        }
+      ],
+      "seed_sha256": "700f1cdc7a57e5d244293bd4aab6382de83fd0a3b6262bb770f7f1976ae97d22",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A two-dimensional concept layout or three-dimensional mock-up that visually represents the game design concept, showing composition, forms, and spatial arrangement of the intended design elements.",
+          "kind": "visual_design",
+          "preferred_formats": [
+            "png",
+            "jpg",
+            "pdf",
+            "svg",
+            "obj",
+            "gltf",
+            "glb"
+          ],
+          "requires": [
+            "design_scope_requirements",
+            "concept_content_specification",
+            "visual_composition_plan",
+            "dimensionality_selection",
+            "spatial_arrangement_validation"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The design brief or request specifying what concept must be visualized, including intended purpose and any explicit constraints.",
+            "kind": "text_instruction",
+            "name": "design_scope_requirements",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Descriptions of the subject matter, elements, and features that the concept layout or mock-up must depict.",
+            "kind": "text_instruction",
+            "name": "concept_content_specification",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": false,
+            "description": "Existing visual materials or references relevant to the game's style and design context.",
+            "kind": "image",
+            "name": "existing_design_references",
+            "preferred_formats": [
+              "png",
+              "jpg",
+              "pdf"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Prepare a two-dimensional concept layout or three-dimensional mock-up that visually communicates a game design concept.",
+        "operations": [
+          {
+            "description": "Consolidate the required subject elements and features into a clear specification of what the visual representation must depict.",
+            "name": "concept_content_specification",
+            "requires": [
+              "design_scope_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Determine the visual arrangement, layout composition, focal elements, and representational approach for the concept.",
+            "name": "visual_composition_plan",
+            "requires": [
+              "concept_content_specification",
+              "existing_design_references"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Decide whether a two-dimensional concept layout or a three-dimensional mock-up is the appropriate visual representation for the design scope.",
+            "name": "dimensionality_selection",
+            "requires": [
+              "design_scope_requirements",
+              "concept_content_specification"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Verify that the proposed composition and spatial arrangement accurately and coherently represent the intended design concept.",
+            "name": "spatial_arrangement_validation",
+            "requires": [
+              "visual_composition_plan",
+              "dimensionality_selection"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_20488": {
+      "blueprint_sha256": "dee9a1a375de927089beb39adcaf69e184dc9d375c484198df2eda355748d249",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:24.288447+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "5c25c446fda0e14e75f54e2395c49c5a3a56baa6bcab4fba68b049318249a66b",
+          "usage": {
+            "completion_tokens": 733,
+            "prompt_tokens": 2751,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3484
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:26.239221+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "87fbb5364519ef524b683a8006b996ed4c0c12acf9e22ce91f7a151e091ef5f8",
+          "usage": {
+            "completion_tokens": 87,
+            "prompt_tokens": 2042,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 2129
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A three-dimensional and/or interactive digital model that represents the architectural design's geometry, spatial arrangement, and key built elements, suitable for visualizing the design.",
+            "id": "out1",
+            "preferred_formats": [
+              "obj",
+              "gltf",
+              "glb",
+              "blend"
+            ],
+            "type": "model_3d"
+          }
+        ],
+        "dependencies": [
+          [
+            "i2",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i4",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i1",
+            "i7"
+          ],
+          [
+            "i4",
+            "i7"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ],
+          [
+            "i7",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The user's instruction specifying the design to represent and the intended three-dimensional and/or interactive representation.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Architectural drawings (plans, elevations, sections, or sketches) defining the design's dimensions, forms, and arrangement.",
+            "id": "i2",
+            "kind": "diagram",
+            "modality_candidates": [
+              "spatial"
+            ],
+            "modality_rationale": "spatial_organization_interpretation",
+            "preferred_formats": [
+              "pdf",
+              "png",
+              "svg"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Design specifications or design brief describing materials, scale, functional requirements, or constraints relevant to the representation.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "Derive the three-dimensional spatial organization, dimensions, and geometric relationships of the design from the supplied drawings and specifications.",
+            "id": "i4",
+            "type": "derived_information"
+          },
+          {
+            "description": "Produce the structured geometric data (coordinates, forms, surfaces, volumes) needed to construct the three-dimensional model.",
+            "id": "i5",
+            "type": "derived_information"
+          },
+          {
+            "description": "Determine how structural, architectural, and site elements are represented, including level of detail, materials, and appearance appropriate to the requested representation.",
+            "id": "i6",
+            "type": "derived_information"
+          },
+          {
+            "description": "Decide the representation approach (fully three-dimensional model versus interactive representation) that best satisfies the task request and design intent.",
+            "id": "i7",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Two-dimensional geometric relationships, dimensions, orientations, and spatial arrangement of design elements.",
+            "modality_candidate": "spatial",
+            "modality_rationale": "spatial_organization_interpretation",
+            "necessity_status": "hypothesis",
+            "node_id": "i2",
+            "supports_node_id": "i4"
+          }
+        ],
+        "seed_id": "raw_31_0_20488",
+        "work_objective": "Create a three-dimensional or interactive digital representation of an architectural design using computer-assisted design software."
+      },
+      "seed_sha256": "80c843bdce10b626dad0ac2facabc954552d46974f2e016535ab716636b71550",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A three-dimensional and/or interactive digital model that represents the architectural design's geometry, spatial arrangement, and key built elements, suitable for visualizing the design.",
+          "kind": "model_3d",
+          "preferred_formats": [
+            "obj",
+            "gltf",
+            "glb",
+            "blend"
+          ],
+          "requires": [
+            "design_geometry_data",
+            "spatial_organization_interpretation",
+            "element_representation_specification",
+            "interactive_or_3d_representation_plan"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The user's instruction specifying the design to represent and the intended three-dimensional and/or interactive representation.",
+            "kind": "text_instruction",
+            "name": "task_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Architectural drawings (plans, elevations, sections, or sketches) defining the design's dimensions, forms, and arrangement.",
+            "kind": "diagram",
+            "modality_dependency": {
+              "information_needed": "Two-dimensional geometric relationships, dimensions, orientations, and spatial arrangement of design elements.",
+              "modality": "visual_spatial",
+              "required_operation": "spatial_organization_interpretation",
+              "supports": "spatial_organization_interpretation"
+            },
+            "name": "design_drawings",
+            "preferred_formats": [
+              "pdf",
+              "png",
+              "svg"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Design specifications or design brief describing materials, scale, functional requirements, or constraints relevant to the representation.",
+            "kind": "document",
+            "name": "project_specifications",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Create a three-dimensional or interactive digital representation of an architectural design using computer-assisted design software.",
+        "operations": [
+          {
+            "description": "Derive the three-dimensional spatial organization, dimensions, and geometric relationships of the design from the supplied drawings and specifications.",
+            "name": "spatial_organization_interpretation",
+            "requires": [
+              "design_drawings",
+              "project_specifications"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Produce the structured geometric data (coordinates, forms, surfaces, volumes) needed to construct the three-dimensional model.",
+            "name": "design_geometry_data",
+            "requires": [
+              "spatial_organization_interpretation"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Determine how structural, architectural, and site elements are represented, including level of detail, materials, and appearance appropriate to the requested representation.",
+            "name": "element_representation_specification",
+            "requires": [
+              "spatial_organization_interpretation",
+              "project_specifications"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Decide the representation approach (fully three-dimensional model versus interactive representation) that best satisfies the task request and design intent.",
+            "name": "interactive_or_3d_representation_plan",
+            "requires": [
+              "task_request",
+              "spatial_organization_interpretation"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_20964": {
+      "blueprint_sha256": "3e0b472169f18677269434ef90714c97f813cde76e2ff8602e5efad48d3b0e41",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:17.114084+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "0911b2c272808a1540389d45bc55ff38fd6a0368c70baaf4ea050648a999ee09",
+          "usage": {
+            "buyer_cost_micro": 10,
+            "completion_tokens": 538,
+            "prompt_tokens": 2291,
+            "prompt_tokens_details": {
+              "cached_tokens": 1024
+            },
+            "total_tokens": 2829
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:20.108735+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "be987b5346ecfc0c1950a9726952e792cd208e52cef9113b8ba0b83a597809e5",
+          "usage": {
+            "buyer_cost_micro": 2,
+            "completion_tokens": 82,
+            "prompt_tokens": 1543,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "total_tokens": 1625
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A completed three-dimensional CAD model representing the specified mechanical part or assembly, with geometry, features, and spatial relationships defined per the design requirements.",
+            "id": "out1",
+            "preferred_formats": [
+              "obj",
+              "gltf",
+              "glb",
+              "stl",
+              "blend"
+            ],
+            "type": "model_3d"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i3"
+          ],
+          [
+            "i2",
+            "i3"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i3",
+            "i5"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i3",
+            "out1"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "Instructions describing the mechanical part or assembly to be modeled, including geometric features, dimensions, tolerances, and material considerations.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Existing two-dimensional drawings, sketches, or schematics depicting the part geometry, views, and dimensional annotations to be interpreted for 3D modeling.",
+            "id": "i2",
+            "kind": "diagram",
+            "modality_candidates": [
+              "spatial"
+            ],
+            "modality_rationale": "Interpret two-dimensional drawing views, dimensions, and annotations to determine the three-dimensional geometry, feature placement, and spatial relationships of the part",
+            "preferred_formats": [
+              "svg",
+              "png",
+              "pdf"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "Interpret the design specifications and reference drawings to determine the required three-dimensional geometry, features, dimensions, tolerances, and spatial relationships of the part or assembly.",
+            "id": "i3",
+            "type": "derived_information"
+          },
+          {
+            "description": "Select the appropriate CAD modeling strategy, including coordinate system setup, feature creation order, and modeling techniques (e.g., parametric, direct, surface) needed to accurately represent the part geometry.",
+            "id": "i4",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Build the three-dimensional model geometry by creating and combining features such as extrusions, revolves, cuts, fillets, patterns, and assemblies according to the determined modeling approach and translated specifications.",
+            "id": "i5",
+            "type": "derived_information"
+          }
+        ],
+        "modality_hypotheses": [
+          {
+            "evidence_status": "unretrieved",
+            "information_needed": "Orthographic views, sectional views, dimensional annotations, and geometric relationships shown on reference drawings",
+            "modality_candidate": "spatial",
+            "modality_rationale": "Interpret two-dimensional drawing views, dimensions, and annotations to determine the three-dimensional geometry, feature placement, and spatial relationships of the part",
+            "necessity_status": "hypothesis",
+            "node_id": "i2",
+            "supports_node_id": "i3"
+          }
+        ],
+        "seed_id": "raw_31_0_20964",
+        "work_objective": "Produce a three-dimensional mechanical model using computer-aided design (CAD) software."
+      },
+      "seed_sha256": "a02ddcbfafb2df9689b419bf974653b55501c3669bfa6b0d6830d465e8854854",
+      "selection_reason": "Predeclared purposive spatial pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A completed three-dimensional CAD model representing the specified mechanical part or assembly, with geometry, features, and spatial relationships defined per the design requirements.",
+          "kind": "model_3d",
+          "preferred_formats": [
+            "obj",
+            "gltf",
+            "glb",
+            "stl",
+            "blend"
+          ],
+          "requires": [
+            "translate_design_specifications",
+            "determine_modeling_approach",
+            "construct_3d_geometry"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Instructions describing the mechanical part or assembly to be modeled, including geometric features, dimensions, tolerances, and material considerations.",
+            "kind": "text_instruction",
+            "name": "design_specifications",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Existing two-dimensional drawings, sketches, or schematics depicting the part geometry, views, and dimensional annotations to be interpreted for 3D modeling.",
+            "kind": "diagram",
+            "modality_dependency": {
+              "information_needed": "Orthographic views, sectional views, dimensional annotations, and geometric relationships shown on reference drawings",
+              "modality": "visual_spatial",
+              "required_operation": "Interpret two-dimensional drawing views, dimensions, and annotations to determine the three-dimensional geometry, feature placement, and spatial relationships of the part",
+              "supports": "translate_design_specifications"
+            },
+            "name": "reference_drawings",
+            "preferred_formats": [
+              "svg",
+              "png",
+              "pdf"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Produce a three-dimensional mechanical model using computer-aided design (CAD) software.",
+        "operations": [
+          {
+            "description": "Interpret the design specifications and reference drawings to determine the required three-dimensional geometry, features, dimensions, tolerances, and spatial relationships of the part or assembly.",
+            "name": "translate_design_specifications",
+            "requires": [
+              "design_specifications",
+              "reference_drawings"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Select the appropriate CAD modeling strategy, including coordinate system setup, feature creation order, and modeling techniques (e.g., parametric, direct, surface) needed to accurately represent the part geometry.",
+            "name": "determine_modeling_approach",
+            "requires": [
+              "translate_design_specifications"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Build the three-dimensional model geometry by creating and combining features such as extrusions, revolves, cuts, fillets, patterns, and assemblies according to the determined modeling approach and translated specifications.",
+            "name": "construct_3d_geometry",
+            "requires": [
+              "translate_design_specifications",
+              "determine_modeling_approach"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_21693": {
+      "blueprint_sha256": "c00c14cc878564297751242dd606ab0ed54d8a79cac19d5bb0e55a90fab7df39",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:41.000891+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "bf2216a473a5f46f5815c7aa9bfe807ec81209365e1a18ca7e4e74311d1ad9cf",
+          "usage": {
+            "completion_tokens": 583,
+            "prompt_tokens": 2786,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3369
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:44.518961+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "cd3b9568749c2de90f4627dfc99557094655c853d8772dce9c5050dd09cd0672",
+          "usage": {
+            "completion_tokens": 86,
+            "prompt_tokens": 1512,
+            "total_tokens": 1598
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A documented style guide covering content presentation rules and development/maintenance procedures for website content.",
+            "id": "out1",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "type": "report"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i2",
+            "i5"
+          ],
+          [
+            "i4",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i5",
+            "i7"
+          ],
+          [
+            "i6",
+            "i7"
+          ],
+          [
+            "i3",
+            "out1"
+          ],
+          [
+            "i2",
+            "out1"
+          ],
+          [
+            "i7",
+            "out1"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i6",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The scope and purpose of the style guidelines to be developed, including which website content areas they cover.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Any current or prior style documentation, brand conventions, or content standards available in the workspace.",
+            "id": "i2",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": false,
+            "description": "Organizational or client requirements that constrain how website content should be styled and documented.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "description": "Identify the distinct categories of website content and the content elements (text, headings, links, media, metadata) that the style guidelines must address.",
+            "id": "i4",
+            "type": "derived_information"
+          },
+          {
+            "description": "Define the specific stylistic rules for each content category and element, covering voice, tone, grammar, formatting, and presentation consistency.",
+            "id": "i5",
+            "type": "derived_information"
+          },
+          {
+            "description": "Determine the procedures by which the style guidelines are applied, reviewed, and updated during website development and maintenance.",
+            "id": "i6",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Define the document structure and organization that makes the style guidelines usable and referenceable for web content work.",
+            "id": "i7",
+            "type": "derived_information"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_21693",
+        "work_objective": "Develop and document style guidelines that specify how website content should be presented and maintained consistently."
+      },
+      "seed_sha256": "e5de77d7091f41334819c7ff0e79f712ec1d8a22ead811d163eb37a6953f1778",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A documented style guide covering content presentation rules and development/maintenance procedures for website content.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "content_style_requirements",
+            "existing_style_conventions",
+            "guideline_structure",
+            "content_categories_and_elements",
+            "style_rule_specifications",
+            "development_maintenance_procedures"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The scope and purpose of the style guidelines to be developed, including which website content areas they cover.",
+            "kind": "text_instruction",
+            "name": "task_instruction",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": false,
+            "description": "Any current or prior style documentation, brand conventions, or content standards available in the workspace.",
+            "kind": "document",
+            "name": "existing_style_conventions",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Organizational or client requirements that constrain how website content should be styled and documented.",
+            "kind": "document",
+            "name": "content_style_requirements",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          }
+        ],
+        "objective": "Develop and document style guidelines that specify how website content should be presented and maintained consistently.",
+        "operations": [
+          {
+            "description": "Identify the distinct categories of website content and the content elements (text, headings, links, media, metadata) that the style guidelines must address.",
+            "name": "content_categories_and_elements",
+            "requires": [
+              "task_instruction",
+              "content_style_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Define the specific stylistic rules for each content category and element, covering voice, tone, grammar, formatting, and presentation consistency.",
+            "name": "style_rule_specifications",
+            "requires": [
+              "content_categories_and_elements",
+              "existing_style_conventions"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Determine the procedures by which the style guidelines are applied, reviewed, and updated during website development and maintenance.",
+            "name": "development_maintenance_procedures",
+            "requires": [
+              "content_categories_and_elements",
+              "content_style_requirements"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Define the document structure and organization that makes the style guidelines usable and referenceable for web content work.",
+            "name": "guideline_structure",
+            "requires": [
+              "style_rule_specifications",
+              "development_maintenance_procedures"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    },
+    "raw_31_0_21714": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "schema:['inputs', 3, 'kind']: 'external_reference' is not one of ['text_instruction', 'document', 'table', 'image', 'diagram', 'code', 'structured_data', 'video', 'audio', 'model_3d']"
+      ],
+      "failure_stage": "semantic_schema",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:51.920461+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "9519781e40e1485698b0c0eb91f759bf2ed3e907e0d81f5c1ad0f2482acbf766",
+          "usage": {
+            "completion_tokens": 670,
+            "prompt_tokens": 2781,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3451
+          }
+        }
+      ],
+      "seed_sha256": "4152005e5ea717c6c763d5eedc6d7e88aca700728c7436d4d00a0396f8cf048a",
+      "selection_reason": "Predeclared purposive web pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "Supporting front-end or back-end code that realizes the specified Web application or Web site functionality, with comments or notes indicating how it integrates with the existing site or application structure.",
+          "kind": "code_notebook",
+          "preferred_formats": [
+            "js",
+            "py",
+            "ipynb"
+          ],
+          "requires": [
+            "site_functional_requirements",
+            "target_integration_points",
+            "supporting_code_implementation"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The stated purpose, required behaviors and constraints for the Web application or Web site feature that the supporting code must serve.",
+            "kind": "text_instruction",
+            "name": "site_functional_requirements",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Existing source files or modules of the Web site or application into which the supporting code must fit, including relevant structure, naming and interface conventions.",
+            "kind": "code",
+            "name": "existing_site_codebase",
+            "preferred_formats": [
+              "js",
+              "py",
+              "ipynb"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Interface design or layout specifications describing the elements, states and interactions the supporting code must implement or support.",
+            "kind": "document",
+            "name": "design_specifications",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "png"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable Web platform, language and browser-compatibility conventions governing valid and interoperable supporting code.",
+            "kind": "external_reference",
+            "name": "platform_and_browser_constraints",
+            "preferred_formats": [
+              "md",
+              "pdf",
+              "txt"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Write supporting code that implements the required behavior for a Web application or Web site, consistent with its design and functional requirements.",
+        "operations": [
+          {
+            "description": "Determine, from the functional requirements and the existing codebase, which supporting behaviors, interfaces and structures the new code must provide versus what already exists.",
+            "name": "determine_supporting_code_scope",
+            "requires": [
+              "site_functional_requirements",
+              "existing_site_codebase"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Translate the design specifications into concrete code-level behavior: elements, states, events and data interactions the supporting code must handle.",
+            "name": "map_design_to_code_behavior",
+            "requires": [
+              "design_specifications",
+              "site_functional_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Identify where and how the supporting code must connect to existing modules, markup, styles or data sources, using the conventions of the existing codebase.",
+            "name": "identify_target_integration_points",
+            "requires": [
+              "existing_site_codebase",
+              "determine_supporting_code_scope"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Judge whether the planned implementation conforms to applicable platform and browser-compatibility conventions and adjust the approach accordingly.",
+            "name": "verify_platform_compatibility",
+            "requires": [
+              "platform_and_browser_constraints",
+              "map_design_to_code_behavior"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Produce the supporting code itself, realizing the mapped behaviors and connecting them at the identified integration points while respecting the compatibility constraints.",
+            "name": "supporting_code_implementation",
+            "requires": [
+              "map_design_to_code_behavior",
+              "identify_target_integration_points",
+              "verify_platform_compatibility"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "status": "failed"
+    },
+    "raw_31_0_4053": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:video"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:56.089235+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "07b5ad79c4db029becfeacc738deaa0dfd35f7d95f6f9f1b8951131eb55abbba",
+          "usage": {
+            "completion_tokens": 796,
+            "prompt_tokens": 2794,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3590
+          }
+        }
+      ],
+      "seed_sha256": "a3933ddcc9ebcd89a6e0cc72ff5ce51fb949e2a29857997241176d62c1633d9c",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "An edited sequence assembled from the selected shots of each scene, forming a logically ordered and smoothly flowing narrative.",
+          "kind": "video",
+          "preferred_formats": [
+            "mp4",
+            "mov",
+            "webm"
+          ],
+          "requires": [
+            "shot_inventory_and_content_map",
+            "scene_shot_selection",
+            "narrative_order_judgment",
+            "continuity_and_transition_assessment",
+            "audio_video_sync_confirmation"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The stated scope, story intent, and any required runtime or content direction for the edit.",
+            "kind": "text_instruction",
+            "name": "editing_brief",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "The available recorded shots per scene to be reviewed, selected, and combined.",
+            "kind": "video",
+            "modality_dependency": {
+              "information_needed": "Content, framing, performance quality, and movement of each shot across time",
+              "modality": "temporal_visual",
+              "required_operation": "shot_inventory_and_content_map",
+              "supports": "shot_inventory_and_content_map"
+            },
+            "name": "raw_footage",
+            "preferred_formats": [
+              "mp4",
+              "mov",
+              "webm"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Records grouping footage into scenes and any labeling that identifies coverage per scene.",
+            "kind": "document",
+            "name": "scene_organization_notes",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Take identifiers, timing, and any technical attributes available for each recorded shot.",
+            "kind": "table",
+            "name": "shot_metadata",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Production or guide audio used to confirm dialogue and sound alignment across shots.",
+            "kind": "audio",
+            "modality_dependency": {
+              "information_needed": "Audible dialogue and sound timing within and across shots",
+              "modality": "auditory",
+              "required_operation": "audio_video_sync_confirmation",
+              "supports": "audio_video_sync_confirmation"
+            },
+            "name": "sync_reference_audio",
+            "preferred_formats": [
+              "wav",
+              "mp3"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": false,
+            "description": "Applicable reference conventions for screen direction, eyeline, match cuts, and pacing.",
+            "kind": "document",
+            "name": "continuity_standards",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Select and combine the most effective shots of each scene into a logical, smoothly running edit that presents a coherent story.",
+        "operations": [
+          {
+            "description": "Catalog each available shot per scene with its content, framing, performance quality, and usable segments.",
+            "name": "shot_inventory_and_content_map",
+            "requires": [
+              "raw_footage",
+              "scene_organization_notes",
+              "shot_metadata"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Choose the most effective shots for each scene based on content strength, clarity, and contribution to the story.",
+            "name": "scene_shot_selection",
+            "requires": [
+              "shot_inventory_and_content_map",
+              "editing_brief"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Arrange selected shots so the sequence forms a logical, comprehensible story progression.",
+            "name": "narrative_order_judgment",
+            "requires": [
+              "scene_shot_selection",
+              "editing_brief"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Evaluate whether combined shots maintain visual continuity and that transitions yield a smooth-running flow.",
+            "name": "continuity_and_transition_assessment",
+            "requires": [
+              "scene_shot_selection",
+              "continuity_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Verify that dialogue and sound remain aligned with the selected picture across cuts.",
+            "name": "audio_video_sync_confirmation",
+            "requires": [
+              "shot_inventory_and_content_map",
+              "sync_reference_audio"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_4057": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:video"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:10:59.840867+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "7fd43fe2fd15a14e2600cc54442a6528863e59aaee49fde87bc2c7d005d2f314",
+          "usage": {
+            "completion_tokens": 554,
+            "prompt_tokens": 2755,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 3309
+          }
+        }
+      ],
+      "seed_sha256": "000809ec240531f4f0087846b7366f5c80fce9df5f1cb68bf2a99196c1c3d567",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "An edited continuous video sequence assembled from the raw footage, reflecting the narrative order and selection specified by the script or production instructions.",
+          "kind": "video",
+          "preferred_formats": [
+            "mp4",
+            "mov",
+            "webm"
+          ],
+          "requires": [
+            "raw_footage",
+            "editing_instructions",
+            "shot_content_map",
+            "continuity_judgment",
+            "narrative_sequence_plan"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "Unedited video recordings containing the takes and scenes to be assembled.",
+            "kind": "video",
+            "modality_dependency": {
+              "information_needed": "temporal content and visual composition of each take, including action continuity, screen direction, and usable segments.",
+              "modality": "temporal_visual",
+              "required_operation": "identify shot content and continuity relationships across takes to determine viable edit points and ordering.",
+              "supports": "shot_content_map"
+            },
+            "name": "raw_footage",
+            "preferred_formats": [
+              "mp4",
+              "mov",
+              "webm"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Script or director and producer instructions specifying required content, order, tone, and selections for the final sequence.",
+            "kind": "text_instruction",
+            "name": "editing_instructions",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          }
+        ],
+        "objective": "Organize and string together raw footage into a continuous whole according to scripts or the instructions of directors and producers.",
+        "operations": [
+          {
+            "description": "Catalogue of available shots with their content, quality, duration, and continuity relationships.",
+            "name": "shot_content_map",
+            "requires": [
+              "raw_footage"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Selection and ordering of takes and segments that realizes the script or production instructions as a coherent continuous whole.",
+            "name": "narrative_sequence_plan",
+            "requires": [
+              "shot_content_map",
+              "editing_instructions"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Evaluation of edit points for visual and temporal continuity, pacing, and adherence to the intended narrative flow.",
+            "name": "continuity_judgment",
+            "requires": [
+              "shot_content_map",
+              "narrative_sequence_plan"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    },
+    "raw_31_0_4066": {
+      "deterministic_checks": null,
+      "failure_reasons": [
+        "format_not_allowed_for_kind:video"
+      ],
+      "failure_stage": "graph_compilation",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-14T10:11:06.808241+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "bc8ee3635e2cd8adfe9ada09995b8a50f9a717d30422f428fc0b185c213cb4ed",
+          "prompt_version": "semantic_planner.v2",
+          "request_sha256": "eeccb3617f70cfbe4a6d9aac1032342db898c1119d83502178136eb6531c1d0f",
+          "usage": {
+            "buyer_cost_micro": 10,
+            "completion_tokens": 506,
+            "prompt_tokens": 2303,
+            "prompt_tokens_details": {
+              "cached_tokens": 1024
+            },
+            "total_tokens": 2809
+          }
+        }
+      ],
+      "seed_sha256": "eec1bc9f58e9d4c8e8213bf44086e50ecbd26285d49e48aa3863612a22828009",
+      "selection_reason": "Predeclared purposive video pilot; no selection on generation success.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "An edited video in which individual film segments have been trimmed to their specified lengths and reassembled into a coherent sequence that maximizes narrative effect.",
+          "kind": "video",
+          "preferred_formats": [
+            "mp4",
+            "webm",
+            "mov"
+          ],
+          "requires": [
+            "reassemble_sequence"
+          ]
+        },
+        "inputs": [
+          {
+            "critical": true,
+            "description": "The original film or video segments to be trimmed and reassembled.",
+            "kind": "video",
+            "modality_dependency": {
+              "information_needed": "Timing, duration, visual content, and narrative context of each segment to determine trim points and sequencing.",
+              "modality": "temporal_visual",
+              "required_operation": "Identify exact in/out points for each segment and evaluate how each segment contributes to the overall story flow.",
+              "supports": "determine_trim_points"
+            },
+            "name": "source_footage",
+            "preferred_formats": [
+              "mp4",
+              "mov",
+              "webm"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": true,
+            "description": "Specified target lengths or durations for the trimmed film segments.",
+            "kind": "text_instruction",
+            "name": "segment_length_specifications",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "critical": true,
+            "description": "Description of the intended story, narrative arc, or desired effect the final sequence should convey.",
+            "kind": "text_instruction",
+            "name": "story_objective",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          }
+        ],
+        "objective": "Trim film segments to specified lengths and reassemble them into a sequence that presents the story with maximum effect.",
+        "operations": [
+          {
+            "description": "Identify precise in and out points for each source segment so that the trimmed length meets the specified duration while preserving essential content.",
+            "name": "determine_trim_points",
+            "requires": [
+              "source_footage",
+              "segment_length_specifications"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Assess the narrative contribution of each trimmed segment and determine an ordering that presents the story with maximum effect.",
+            "name": "evaluate_narrative_flow",
+            "requires": [
+              "determine_trim_points",
+              "story_objective"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Produce the final edited video by concatenating the trimmed segments in the determined order to form a continuous sequence.",
+            "name": "reassemble_sequence",
+            "requires": [
+              "evaluate_narrative_flow"
+            ],
+            "type": "derived_information"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    }
+  }
+}

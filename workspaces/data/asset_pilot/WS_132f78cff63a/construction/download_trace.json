@@ -1,0 +1,138 @@
+[
+  {
+    "bytes": 25950,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-eba83da5-085c-4391-bc9d-92d38ef75c2f"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:25.068231+00:00",
+    "role": "selected_material",
+    "sha256": "ffc58e8f13f4aa562d37c17021b9b0172c9e59a87718a679b771e7ef53fbc974",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/color-palette.md"
+  },
+  {
+    "bytes": 95376,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-8a16339d-8738-4bd0-a838-69f068383cdb"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:26.755438+00:00",
+    "role": "selected_material",
+    "sha256": "6141abc0c06d331d1ae2c8a0105767e66379547595f673d79ea1ab941c31712e",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/components.md"
+  },
+  {
+    "bytes": 29366,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b255428d-2b57-4dbd-8440-5f149948da65"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:27.846408+00:00",
+    "role": "selected_material",
+    "sha256": "3857ea832280379516b1f6464a8711936e95913a2fabc9931330f824b25ab6a1",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/forms.md"
+  },
+  {
+    "bytes": 282757,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-d53a97df-15e7-4d9d-8d6c-0b5e5e64854f"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:29.129078+00:00",
+    "role": "selected_material",
+    "sha256": "a19613b9144366106fb07aad3e9a5502bcbda1caa191fdaf568de06eaf4121a9",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/typography.md"
+  },
+  {
+    "bytes": 335,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b585d23a-65f4-455d-ae58-8ec0c36c8330"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:30.230522+00:00",
+    "role": "selected_material",
+    "sha256": "ba13d3a36a505d02d211d6949ec764c247e3a7ead6f28fc9ad235b9be47b3fc3",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_layouts/default.html"
+  },
+  {
+    "bytes": 11454,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-2e4b9bf1-b0ac-402e-af4d-560d978463a0"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:31.068519+00:00",
+    "role": "selected_material",
+    "sha256": "f0fee357d7e29bbfcf67fc810ee7691496bcf9dc468acadeb2e4f9ae0d74d24d",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_includes/site-nav.html"
+  },
+  {
+    "bytes": 8860,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-f94d7bb7-9ff3-485d-a3b0-5d3eb266ef1b"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:31.881189+00:00",
+    "role": "selected_material",
+    "sha256": "37c5891bab4141e7a59a431e8d9de27209e10d7ce00674843516e5e6e1cd212b",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_uswds-theme-overrides.scss"
+  },
+  {
+    "bytes": 1497,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-e76b1edc-51cf-4133-a8b1-fa98243ffefb"
+    },
+    "final_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss",
+    "mime": "text/plain",
+    "original_url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:22:32.701313+00:00",
+    "role": "selected_material",
+    "sha256": "fe498796aac931248e374a13d7317c9591a884ad61c3089ce9da511bebf697dd",
+    "status": "downloaded",
+    "url": "https://raw.githubusercontent.com/dhs-gov/usdhs-design-site/master/_sass/_custom-components.scss"
+  }
+]

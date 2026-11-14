@@ -19,7 +19,10 @@
             "code_notebook",
             "visual_design",
             "structured_data",
-            "document_revision"
+            "document_revision",
+            "web_app",
+            "video",
+            "model_3d"
           ]
         },
         "description": {
@@ -30,23 +33,39 @@
           "type": "array",
           "items": {
             "enum": [
+              "blend",
+              "css",
               "csv",
               "docx",
+              "glb",
+              "gltf",
+              "html",
               "ipynb",
               "jpeg",
               "jpg",
               "js",
               "json",
+              "jsx",
               "md",
+              "mov",
+              "mp3",
+              "mp4",
+              "obj",
               "pdf",
               "png",
               "pptx",
               "py",
+              "stl",
               "svg",
               "tex",
               "tiff",
+              "ts",
+              "tsx",
               "txt",
-              "xlsx"
+              "wav",
+              "webm",
+              "xlsx",
+              "zip"
             ]
           },
           "uniqueItems": true
@@ -66,6 +85,256 @@
         "description",
         "preferred_formats",
         "requires"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "direct_answer"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "report"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "pdf",
+                    "docx",
+                    "md",
+                    "txt",
+                    "tex"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "spreadsheet"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "xlsx",
+                    "csv"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "presentation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "pptx",
+                    "pdf"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "code_notebook"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "py",
+                    "ipynb",
+                    "js"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "visual_design"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "png",
+                    "jpg",
+                    "svg",
+                    "pdf"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "structured_data"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "json",
+                    "csv"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "document_revision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "docx",
+                    "pdf",
+                    "md",
+                    "tex"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "web_app"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "zip",
+                    "html"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "video"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "mp4",
+                    "webm",
+                    "mov"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "model_3d"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "preferred_formats": {
+                "items": {
+                  "enum": [
+                    "obj",
+                    "gltf",
+                    "glb",
+                    "stl",
+                    "blend"
+                  ]
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
       ]
     },
     "inputs": {
@@ -87,7 +356,10 @@
               "image",
               "diagram",
               "code",
-              "structured_data"
+              "structured_data",
+              "video",
+              "audio",
+              "model_3d"
             ]
           },
           "description": {
@@ -105,23 +377,39 @@
             "type": "array",
             "items": {
               "enum": [
+                "blend",
+                "css",
                 "csv",
                 "docx",
+                "glb",
+                "gltf",
+                "html",
                 "ipynb",
                 "jpeg",
                 "jpg",
                 "js",
                 "json",
+                "jsx",
                 "md",
+                "mov",
+                "mp3",
+                "mp4",
+                "obj",
                 "pdf",
                 "png",
                 "pptx",
                 "py",
+                "stl",
                 "svg",
                 "tex",
                 "tiff",
+                "ts",
+                "tsx",
                 "txt",
-                "xlsx"
+                "wav",
+                "webm",
+                "xlsx",
+                "zip"
               ]
             },
             "uniqueItems": true
@@ -136,7 +424,9 @@
               "modality": {
                 "enum": [
                   "visual",
-                  "visual_spatial"
+                  "visual_spatial",
+                  "temporal_visual",
+                  "auditory"
                 ]
               },
               "information_needed": {
@@ -166,6 +456,235 @@
           "description",
           "source",
           "preferred_formats"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "text_instruction"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "maxItems": 0
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "document"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "pdf",
+                      "docx",
+                      "md",
+                      "txt",
+                      "tex"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "table"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "csv",
+                      "xlsx"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "image"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "png",
+                      "jpg",
+                      "jpeg",
+                      "tiff"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "diagram"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "svg",
+                      "png",
+                      "pdf"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "code"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "py",
+                      "js",
+                      "ipynb",
+                      "css",
+                      "ts",
+                      "tsx",
+                      "jsx"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "structured_data"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "json"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "video"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "mp4",
+                      "mov",
+                      "webm"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "wav",
+                      "mp3"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "model_3d"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "preferred_formats": {
+                  "items": {
+                    "enum": [
+                      "obj",
+                      "gltf",
+                      "glb",
+                      "stl"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          }
         ]
       }
     },

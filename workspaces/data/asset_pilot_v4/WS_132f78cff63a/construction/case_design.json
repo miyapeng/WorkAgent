@@ -1,0 +1,200 @@
+{
+  "case_objective": "Implement a Jekyll/Liquid page template, supporting Sass partial, and JavaScript for a 'News & Updates' listing page within a USWDS-based government design system, using the approved DHS color palette, USWDS component/form patterns, typography specifications, and existing custom-component conventions.",
+  "case_title": "DHS USWDS Design System — News & Updates Listing Page Implementation",
+  "deliverables": [
+    {
+      "description": "ZIP archive containing the Jekyll/Liquid page template (.html), Sass partial (.scss), and JavaScript (.js) files implementing the News & Updates listing page per the DHS USWDS design system specifications, with all markup, styling, and scripting needed for the filter form, results display, site alert, and pagination behaviors.",
+      "format": "zip",
+      "node_id": "out1"
+    }
+  ],
+  "inputs": [
+    {
+      "instruction": "Hypothetical commission: A government digital services team requires a 'News & Updates' listing page template implemented for their USWDS-based design system site. The page must include: (1) a filter form with a category select dropdown, date-range inputs, and a submit button; (2) a results area displaying news items as USWDS collection cards with title, category meta tag, publication date, and summary text; (3) a site-alert banner for emergency notices above the results; (4) pagination controls below the results list. The implementation must use the approved DHS color palette tokens (dhs-blue, dhs-gray, dhs-dark-gray, dhs-red, dhs-light-blue, dhs-green), Source Sans Pro for sans-serif text and Merriweather for serif headings, and must extend the existing .news-list and .meta-info custom component patterns already in the project Sass. Section 508 accessibility compliance is required: minimum 4.5:1 foreground-to-background contrast and color must not be the sole means of conveying information. Deliver the page as a Jekyll/Liquid HTML template, a Sass partial, and a JavaScript file bundled in a zip archive.",
+      "node_id": "i1",
+      "rationale": "The task_instruction supply channel permits a hypothetical commission authored from the real inspected assets. The scope is informed by the DHS color palette, component, form, and typography specifications actually present in the workspace and by the existing custom-component SCSS patterns.",
+      "references": [],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i2",
+      "rationale": "file1 (_uswds-theme-overrides.scss) defines the DHS brand color scale variables ($c-dhs-blue, $c-dhs-red, etc.), the sans-serif font theme setting, and component override entry points that the new Sass must integrate with. file5 (_custom-components.scss) defines the existing .news-list, .meta-info--block, and .meta-tags patterns the new page template must extend rather than duplicate.",
+      "references": [
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_5175ea2574b92f026402e8e2"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_aec218dfe6ad9782ee0707f1"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_80649a683130c5cde87fc650"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_697fe9ce8506247a1936cbd4"
+        },
+        {
+          "file_id": "f_37c5891bab4141e7a59a431e",
+          "segment_id": "seg_85426284f34d825d634a6c38"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_bc279ff9708dbdad82a76138"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_c2abbaa5cd87f724a498da49"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_c1abd34bf24436907f7c3664"
+        },
+        {
+          "file_id": "f_fe498796aac931248e374a13",
+          "segment_id": "seg_6555bc545d9ce390a290026f"
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "instruction": null,
+      "node_id": "i3",
+      "rationale": "file6 provides the official DHS color palette with HTML/RGB/CMYK values for all primary and secondary colors plus Section 508 accessibility rules. file2 specifies form component markup patterns (usa-form, usa-label, usa-input, usa-legend, submit button). file3 provides USWDS component markup examples for accordions, cards, grids, site alerts, tables, and tags. file4 documents the Source Sans Pro and Merriweather typefaces, link styles, and icon library. Together these define the layout, component, and interaction patterns the supporting code must implement.",
+      "references": [
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8ca6352b739a0a851ec1c302"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_62a280915ce6aeba719402f7"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_2bd9e3f88bbfa4ce82e5fb92"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8e36717239c832aaea438792"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_321d875ebd17dd90caae951f"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_d1cb8e2c9c36ac0f0c11ff74"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_8cd86fe3e317e86850af1bef"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_fbc5705eb0886b9024be5c3f"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_f7307bd24954bf0014e73a48"
+        },
+        {
+          "file_id": "f_ffc58e8f13f4aa562d37c170",
+          "segment_id": "seg_7e146954216269006ff00fef"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_4b0030800803221bd537986f"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_6b2516f60f91126e93c6d31e"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_119bb2d9a8b67644d3b4750d"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_5d267ba00156f7b0b8f576f8"
+        },
+        {
+          "file_id": "f_3857ea832280379516b1f646",
+          "segment_id": "seg_1a0e892db9223211f445ad3f"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_b1951de7f7a6a46c2d111cc6"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_61d826f4b5219dae70935112"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_bc66f23893c900b3d008d401"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_65f2f73c66cdbbe63d897785"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_9940e5afb3cc558004a13511"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_3868b891620b61b299bff3ff"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_3f43f0446827dd65adacef4b"
+        },
+        {
+          "file_id": "f_6141abc0c06d331d1ae2c8a0",
+          "segment_id": "seg_8d07dc1458aee381a63e3b49"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_b56ec391841df0d4d1334126"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_7d3f01011447279e868ff01c"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_ed323f90b21fe3591557f70b"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_7e8f2fab98ec50190776791d"
+        },
+        {
+          "file_id": "f_a19613b9144366106fb07aad",
+          "segment_id": "seg_afb36495d207e877a4283616"
+        }
+      ],
+      "status": "supported"
+    }
+  ],
+  "limitations": [
+    "The workspace contains design specification Markdown pages and SCSS fragments but not a complete buildable Jekyll project; no _config.yml, Gemfile, package.json, or full USWDS npm installation is present, so the implementation cannot be verified against the full build pipeline.",
+    "Segment coverage is partial for file1, file3, file4, and file6 (model_received_all_segments is false for each); many component variants, form interaction patterns, typography utility classes, and color-wheel gradient entries in those files were not fully received by the profiler.",
+    "The color palette page (file6) references external PDF and Excel palette exports at dhs.gov URLs that were not retrieved; complete tint/gradient scale values may be incomplete beyond what file1's SCSS variables define.",
+    "No USWDS JavaScript source files for component initialization (accordion toggle, character count, date picker, combo box) are present in the workspace; the worker must implement client-side behavior from the markup patterns and ARIA attributes shown in the specification pages, not from existing JS."
+  ],
+  "operations": [
+    {
+      "description": "Analyze the DHS color palette specification, component markup examples, form patterns, typography guidelines, and existing SCSS theme overrides and custom-component conventions to determine the appropriate Jekyll/Liquid page structure, USWDS component selections (usa-form for filters, usa-collection or usa-card for results, usa-site-alert for the emergency banner, usa-pagination for navigation), Sass extension points for the .news-list and .meta-info patterns using the approved DHS color tokens, and the JavaScript behavior needed for filter form interaction and pagination state management.",
+      "node_id": "i4"
+    },
+    {
+      "description": "Write the supporting code: a Jekyll/Liquid HTML template for the News & Updates page incorporating the USWDS form, collection/card, site-alert, grid, and pagination components with DHS color palette styling; a Sass partial that extends the existing theme override variables ($c-dhs-blue, $c-dhs-light-blue, $c-dhs-dark-gray, $c-dhs-red) and custom component patterns (.news-list, .meta-info--block, .meta-tags) for the new page elements; and a JavaScript file handling filter form submission, category and date-range filtering, and pagination interaction, all conforming to the Section 508 accessibility requirements documented in the color palette specification.",
+      "node_id": "i5"
+    }
+  ]
+}

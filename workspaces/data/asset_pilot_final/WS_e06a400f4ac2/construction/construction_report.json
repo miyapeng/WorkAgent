@@ -1,0 +1,152 @@
+{
+  "blueprint_sha256": "2db01c76a59405c3e5bb9f3fb4336ffa6a4edd85e991f5c9d89e20b26dc41327",
+  "config_sha256": "0872614bc6b061a9f0d30366254d37a6cdc69eec72ff05b8c679a030201bd452",
+  "construction_hashes": {
+    "case_attempts.json": "791922b743629af2dee52e3853d58fe2be327541d8639c822c9a412888d075c5",
+    "case_design.json": "c2cfb09a6145cb7f49c95e043de6bb8cdf8b01cd80c1d6ea978dcde0d6deb9b6",
+    "case_review.json": "797f17f26b91f96c0a0812d4ea32425a4cf8e31401ceaf97f64745a61e5e9315",
+    "download_trace.json": "a1f630ea91222f576d2e513170eb938d7828cb698b4fa06994750fa65184c63e",
+    "file_profiles.json": "511a2f2a64f92025809f5541cd743b4983183828b4015f44beb0941852348243",
+    "grounded_graph.json": "00503ba881be3edcf1c960a20b8c51437fbbcb3a523146f4748f47784569d835",
+    "search_decision.json": "e3b9022d399c45854db23687fbd67b9d83641820c6b9e793bb07a61cf052301d",
+    "search_trace.json": "8f3329bbf1c0e83931beb97e97cafb95d3c93d97e1d823422d3707d6ab7202da",
+    "source_manifest.json": "7f30a3e059c5288fc72c9a4f7354dcc0f11a72147a6474d6c0297d3f48783b4c"
+  },
+  "counts": {
+    "actual_fetch_requests": 16,
+    "actual_search_requests": 8,
+    "critical_external_nodes": 3,
+    "downloaded_urls": 14,
+    "independently_verified_visual_facts": 0,
+    "model_visual_observations": 7,
+    "parsed_unique_files": 2,
+    "real_original_files": 2,
+    "retained_files": 2,
+    "supported_critical_nodes": 2,
+    "synthetic_files": 0
+  },
+  "failure_reasons": [
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Alto%27s_Adventure_concept_art_-_04_Characters_Sketch.png"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Alto%27s_Adventure_concept_art_-_06_Wingsuit_Sketch.png"
+    },
+    {
+      "reason": "url_not_observed_in_search_or_actual_href",
+      "stage": "acquisition",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Prune_video_game_first_prototype_1.jpg"
+    },
+    {
+      "node_ids": [
+        "i3"
+      ],
+      "reason": "unsupported_critical_inputs",
+      "stage": "coverage"
+    }
+  ],
+  "interface": "asset-grounded-workspace-v1",
+  "limitations": [
+    "Ready is a model-reviewed draft construction gate, not proven task solvability.",
+    "Model visual observations remain unverified. Video frames are sparse samples; audio is not inspected.",
+    "Synthetic commission choices are isolated from source facts. No synthetic source files are used."
+  ],
+  "missing_nodes": [
+    "i3"
+  ],
+  "modality_evidence": [
+    {
+      "evidence_status": "model_inspected_reference_asset",
+      "necessity_status": "not_tested",
+      "node_id": "i3"
+    }
+  ],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:29:59.649070+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "667437349c69b459e1672cd1a24e44241bb7bd45b71d427ad07ffc76ef32bf42",
+      "prompt_version": "asset_case.v2",
+      "request_sha256": "b040aa02509a1e460104f17c1b624667040b971bcc7bf1b288e9442dad52e00e",
+      "usage": {
+        "completion_tokens": 1479,
+        "prompt_tokens": 5358,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 6837
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-14T10:33:40.972257+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "83f1654a6f56f6af6b72a85e670bff5439619716de1d174e1dca09f9e12a7998",
+      "prompt_version": "asset_reviewer.v1",
+      "request_sha256": "a619063b7286c917ec01ac0cbbd24998d0721bf1871cae58a5a2be522fa7d63b",
+      "usage": {
+        "completion_tokens": 2221,
+        "prompt_tokens": 6160,
+        "total_tokens": 8381
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 3700,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 11518,
+    "unique_model_requests": 2
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_79d6f4de056ace187d8b1581",
+    "f_3652dc45eabd2b7f6f183749"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "note": "Gateway/search billing unavailable; no guessed dollar cost."
+  },
+  "search_state": "completed",
+  "seed_id": "raw_31_0_16203",
+  "seed_sha256": "700f1cdc7a57e5d244293bd4aab6382de83fd0a3b6262bb770f7f1976ae97d22",
+  "selected_anchor": "Alto's Adventure (Snowman, 2015) original concept art panel series — matched reference set establishing spatial composition, form language and palette for a 2D endless-runner environment concept layout",
+  "stage4_eligible": false,
+  "status": "incomplete",
+  "supported_nodes": [
+    "i1",
+    "i2"
+  ],
+  "workspace_files": {
+    "references/f_3652dc45eabd2b7f6f183749.png": "3652dc45eabd2b7f6f183749b4ac5681ca4e144ccaa8bc68d5bf08a20726a9c5",
+    "references/f_79d6f4de056ace187d8b1581.png": "79d6f4de056ace187d8b15811841e80fe9fa83245c463cbaf1bf7b51518a4d7f"
+  }
+}

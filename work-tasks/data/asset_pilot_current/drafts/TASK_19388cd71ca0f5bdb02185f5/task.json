@@ -1,0 +1,165 @@
+{
+  "deliverables": [
+    {
+      "deliverable_id": "d1",
+      "description": "ZIP archive containing the Jekyll/Liquid page template (.html), Sass partial (.scss), and JavaScript (.js) files implementing the News & Updates listing page per the DHS USWDS design system specifications, with all markup, styling, and scripting needed for the filter form, results display, site alert, and pagination behaviors.",
+      "format": "zip",
+      "path": "outputs/out1.zip",
+      "plan_deliverable_id": "out1"
+    }
+  ],
+  "instruction": "Hypothetical commission: A government digital services team has engaged you to implement a 'News & Updates' listing page template for their USWDS-based design system site. The team has supplied its existing design-system reference materials under workspace_init/references/: the DHS color palette and Section 508 accessibility specification (workspace_init/references/f_ffc58e8f13f4aa562d37c170.md), USWDS form component markup patterns (workspace_init/references/f_3857ea832280379516b1f646.md), USWDS component examples for accordions, cards, grids, site alerts, tables, and tags (workspace_init/references/f_6141abc0c06d331d1ae2c8a0.md), the Source Sans Pro / Merriweather typography and link guidelines (workspace_init/references/f_a19613b9144366106fb07aad.md), the existing USWDS theme override Sass defining the DHS brand color variables and sans-serif font setting (workspace_init/references/f_37c5891bab4141e7a59a431e.scss), and the existing custom-component Sass defining the .news-list, .meta-info--block, and .meta-tags patterns (workspace_init/references/f_fe498796aac931248e374a13.scss). Build a News & Updates listing page that includes: (1) a filter form with a category select dropdown, date-range inputs, and a submit button; (2) a results area displaying news items as USWDS collection cards, each showing title, category meta tag, publication date, and summary text; (3) a site-alert banner for emergency notices placed above the results; and (4) pagination controls below the results list. Use the approved DHS color palette tokens (dhs-blue, dhs-gray, dhs-dark-gray, dhs-red, dhs-light-blue, dhs-green), Source Sans Pro for sans-serif text and Merriweather for serif headings, and extend — do not duplicate — the existing .news-list and .meta-info custom component patterns already present in the project Sass. Section 508 accessibility is required: minimum 4.5:1 foreground-to-background contrast and color must not be the sole means of conveying information. Deliver the page as a Jekyll/Liquid HTML template, a Sass partial, and a JavaScript file, bundled together in a single ZIP archive into the output directory. Note: the workspace contains design specification pages and Sass fragments but not a complete buildable Jekyll/USWDS project (no _config.yml, Gemfile, package.json, or USWDS npm installation is present), so the deliverable will be evaluated on source-code correctness and consistency with the cited references rather than against a full build pipeline; full runtime execution of USWDS component JavaScript cannot be verified.\n\nCommission details (a hypothetical exercise using the supplied references):\n- Hypothetical commission: A government digital services team requires a 'News & Updates' listing page template implemented for their USWDS-based design system site. The page must include: (1) a filter form with a category select dropdown, date-range inputs, and a submit button; (2) a results area displaying news items as USWDS collection cards with title, category meta tag, publication date, and summary text; (3) a site-alert banner for emergency notices above the results; (4) pagination controls below the results list. The implementation must use the approved DHS color palette tokens (dhs-blue, dhs-gray, dhs-dark-gray, dhs-red, dhs-light-blue, dhs-green), Source Sans Pro for sans-serif text and Merriweather for serif headings, and must extend the existing .news-list and .meta-info custom component patterns already in the project Sass. Section 508 accessibility compliance is required: minimum 4.5:1 foreground-to-background contrast and color must not be the sole means of conveying information. Deliver the page as a Jekyll/Liquid HTML template, a Sass partial, and a JavaScript file bundled in a zip archive.",
+  "requirements": [
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Deliverable packaging and file inventory: submit a single ZIP archive in the output directory containing the Jekyll/Liquid HTML template (.html), the Sass partial (.scss), and the JavaScript (.js) file for the News & Updates page.",
+      "information_node_ids": [
+        "i1",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r1",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Filter form implementation: a USWDS-styled filter form containing a category select dropdown, date-range start and end inputs, and a submit button, following the form markup patterns in workspace_init/references/f_3857ea832280379516b1f646.md.",
+      "information_node_ids": [
+        "i1",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r2",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Results area with USWDS collection cards carrying all four required content fields (title, category meta tag, publication date, summary text) and extending the existing .news-list / .meta-info--block / .meta-tags custom component patterns from workspace_init/references/f_fe498796aac931248e374a13.scss and the card/collection/tag examples in workspace_init/references/f_6141abc0c06d331d1ae2c8a0.md.",
+      "information_node_ids": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r3",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Site-alert banner for emergency notices placed above the results list, using the USWDS site-alert component pattern from workspace_init/references/f_6141abc0c06d331d1ae2c8a0.md.",
+      "information_node_ids": [
+        "i1",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r4",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Pagination controls placed below the results list, using the USWDS pagination pattern consistent with the component examples in workspace_init/references/f_6141abc0c06d331d1ae2c8a0.md, with a current-page indication.",
+      "information_node_ids": [
+        "i1",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r5",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Sass partial that uses the approved DHS color variables/tokens defined in workspace_init/references/f_37c5891bab4141e7a59a431e.scss and workspace_init/references/f_ffc58e8f13f4aa562d37c170.md, integrates with the existing theme override entry points, and extends the existing custom component patterns rather than duplicating them.",
+      "information_node_ids": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r6",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Typography implementation: Source Sans Pro for sans-serif/body text and Merriweather for serif headings, consistent with workspace_init/references/f_a19613b9144366106fb07aad.md and the $theme-font-type-sans setting in workspace_init/references/f_37c5891bab4141e7a59a431e.scss.",
+      "information_node_ids": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r7",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Section 508 accessibility: foreground-to-background color pairings meet at least 4.5:1 contrast, and information conveyed by color (category tags, alert state, pagination current page, filter active states) is also conveyed by text, icons, or ARIA attributes, per workspace_init/references/f_ffc58e8f13f4aa562d37c170.md.",
+      "information_node_ids": [
+        "i1",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r8",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "JavaScript behavior: handle filter form submission, read the category select and date-range values, filter the result cards accordingly, and manage pagination interaction, with selectors that match the actual IDs/classes used in the delivered HTML template.",
+      "information_node_ids": [
+        "i1",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "r9",
+      "unscored_reason": null
+    },
+    {
+      "deliverable_ids": [
+        "d1"
+      ],
+      "description": "Deliver a readable zip artifact at outputs/out1.zip.",
+      "information_node_ids": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "kind": "outcome",
+      "requirement_id": "artifact_d1",
+      "unscored_reason": null
+    }
+  ]
+}

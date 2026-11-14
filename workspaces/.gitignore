@@ -23,3 +23,10 @@ __pycache__/
 !data/world_pilot/world/workspace_init/**
 !data/world_pilot/world/construction/file_profiles.json
 !data/world_pilot/world/construction/information_coverage.json
+
+data/cache_assets/
+
+# Private source excerpts and raw tool transcripts for the asset development batch.
+data/asset_*/**/construction/grounded_graph.json
+data/asset_*/**/construction/case_attempts.json
+data/asset_*/**/construction/search_trace.json

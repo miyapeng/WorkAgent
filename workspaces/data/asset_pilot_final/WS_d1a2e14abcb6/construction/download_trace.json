@@ -1,0 +1,371 @@
+[
+  {
+    "bytes": 61512,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-91d54966-d7d1-4506-97d1-0a17559b67ce"
+    },
+    "final_url": "https://mango.blender.org/download/",
+    "mime": "text/html",
+    "original_url": "https://mango.blender.org/download/",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:29:55.257255+00:00",
+    "role": "discovery_page",
+    "sha256": "5b315c3589e2740a37e197099334e7515f7d7f22d74fc0fd1c5294855c90ebe9",
+    "status": "downloaded",
+    "url": "https://mango.blender.org/download/"
+  },
+  {
+    "bytes": 59030,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-18af7062-bde4-4f35-8869-bb425d272fd3"
+    },
+    "final_url": "https://www.dvxuser.com/threads/making-adr-sound-live.316930/",
+    "mime": "text/html",
+    "original_url": "https://www.dvxuser.com/threads/4tb-of-f65-footage-available-from-film.316930/",
+    "prior_errors": [],
+    "redirects": [
+      {
+        "from": "https://www.dvxuser.com/threads/4tb-of-f65-footage-available-from-film.316930/",
+        "status": 301,
+        "to": "https://www.dvxuser.com/threads/making-adr-sound-live.316930/"
+      }
+    ],
+    "retrieved_at": "2026-11-14T10:30:00.656286+00:00",
+    "role": "discovery_page",
+    "sha256": "acd48c5986084b4c1f8e50c84ebb52dd05cacd58c46e8012a84641fa32ae6cca",
+    "status": "downloaded",
+    "url": "https://www.dvxuser.com/threads/4tb-of-f65-footage-available-from-film.316930/"
+  },
+  {
+    "bytes": 7256,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-8059a8ae-cd75-4f62-b625-cfa5caf6a8fb"
+    },
+    "final_url": "https://media.xiph.org/tearsofsteel/",
+    "mime": "text/html",
+    "original_url": "https://media.xiph.org/tearsofsteel/",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:04.736333+00:00",
+    "role": "discovery_page",
+    "sha256": "f2b70b3f6cad473a58928764c78ecd1fc68960251a3beced464d7cf9fc477024",
+    "status": "downloaded",
+    "url": "https://media.xiph.org/tearsofsteel/"
+  },
+  {
+    "bytes": 13829,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-deacb2f4-c5e0-4589-9214-1a345956b1e0"
+    },
+    "final_url": "https://mango.blender.org/2013/09/",
+    "mime": "text/html",
+    "original_url": "https://mango.blender.org/2013/09/",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:06.488279+00:00",
+    "role": "discovery_page",
+    "sha256": "3cfd208c37d4b7a315a3f93a3b258d1edc4321e47a75950a7d0c6390bb89e840",
+    "status": "downloaded",
+    "url": "https://mango.blender.org/2013/09/"
+  },
+  {
+    "bytes": 1650,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-0eb40738-6180-4c54-860c-c6624c81f8e0"
+    },
+    "final_url": "https://media.xiph.org/tearsofsteel/raw/",
+    "mime": "text/html",
+    "original_url": "https://media.xiph.org/tearsofsteel/raw/",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:07.586034+00:00",
+    "role": "discovery_page",
+    "sha256": "476089f519aa16b77c632ecd57df8f7f5ef40e9ff05f13e3239c4d0b490facef",
+    "status": "downloaded",
+    "url": "https://media.xiph.org/tearsofsteel/raw/"
+  },
+  {
+    "bytes": 2046,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-614fc26d-818a-4996-acd2-fbcb7803a147"
+    },
+    "final_url": "https://archive.org/search?query=raw+footage+outtakes+multiple+takes&and[]=mediatype%3A%22movies%22",
+    "mime": "text/html",
+    "original_url": "https://archive.org/search?query=raw+footage+outtakes+multiple+takes&and[]=mediatype%3A%22movies%22",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:08.503381+00:00",
+    "role": "discovery_page",
+    "sha256": "ff6ab6e4df3eb0ca74f68cd9a70a5aef1441152b23c19336aa14824e0adc6862",
+    "status": "downloaded",
+    "url": "https://archive.org/search?query=raw+footage+outtakes+multiple+takes&and[]=mediatype%3A%22movies%22"
+  },
+  {
+    "bytes": 2046,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-547c0900-0252-42e9-99bd-d1e42fecd5f1"
+    },
+    "final_url": "https://archive.org/search?query=dailies+OR+rushes+OR+%22camera+original%22&and[]=mediatype%3A%22movies%22",
+    "mime": "text/html",
+    "original_url": "https://archive.org/search?query=dailies+OR+rushes+OR+%22camera+original%22&and[]=mediatype%3A%22movies%22",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:09.605356+00:00",
+    "role": "discovery_page",
+    "sha256": "ff6ab6e4df3eb0ca74f68cd9a70a5aef1441152b23c19336aa14824e0adc6862",
+    "status": "downloaded",
+    "url": "https://archive.org/search?query=dailies+OR+rushes+OR+%22camera+original%22&and[]=mediatype%3A%22movies%22"
+  },
+  {
+    "bytes": 40121,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-267b02bb-2230-4a7e-abd6-7d6cc6aecb70"
+    },
+    "final_url": "https://archive.org/advancedsearch.php?q=%28dailies+OR+rushes+OR+outtakes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "mime": "application/json",
+    "original_url": "https://archive.org/advancedsearch.php?q=%28dailies+OR+rushes+OR+outtakes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:11.333503+00:00",
+    "role": "discovery_page",
+    "sha256": "5ae8f3cc8508e5d6afe7d1754cbb7960d575839e07de5642462f7f44d655ba7f",
+    "status": "downloaded",
+    "url": "https://archive.org/advancedsearch.php?q=%28dailies+OR+rushes+OR+outtakes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json"
+  },
+  {
+    "bytes": 19606,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-3673e502-90e8-4bde-8839-07c494829b59"
+    },
+    "final_url": "https://archive.org/advancedsearch.php?q=title%3A%28raw+footage%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "mime": "application/json",
+    "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28raw+footage%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:12.436251+00:00",
+    "role": "discovery_page",
+    "sha256": "3f510d1b433294e6b41b17cf6dcfe1582b518fa3b86e26665925daafcd2dfdae",
+    "status": "downloaded",
+    "url": "https://archive.org/advancedsearch.php?q=title%3A%28raw+footage%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json"
+  },
+  {
+    "bytes": 184551,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-06cd1d82-a27c-483b-a4f0-2029e2ae6fd6"
+    },
+    "final_url": "https://archive.org/details/Vloggers_rushes_1",
+    "mime": "text/html",
+    "original_url": "https://archive.org/details/Vloggers_rushes_1",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:14.204586+00:00",
+    "role": "discovery_page",
+    "sha256": "63bbe37866eef5889d577340932be19e18bc74d0ea37aa1ee90584b1fbcde7cf",
+    "status": "downloaded",
+    "url": "https://archive.org/details/Vloggers_rushes_1"
+  },
+  {
+    "bytes": 9710,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b23c3fb1-6dc2-4fda-a665-83914b755a71"
+    },
+    "final_url": "https://archive.org/metadata/Vloggers_rushes_1",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/Vloggers_rushes_1",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:15.192696+00:00",
+    "role": "discovery_page",
+    "sha256": "812022b18822d1933484b87805a3e9edbc5676618b9fcf2d2d0a5b1db06fde19",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/Vloggers_rushes_1"
+  },
+  {
+    "bytes": 2,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-a9d39ce5-3ef1-4e1d-acac-2ce8f2d8dff8"
+    },
+    "final_url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:18.983975+00:00",
+    "role": "discovery_page",
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly"
+  },
+  {
+    "bytes": 2,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b42d28d7-8214-4690-98ab-cf2daffbfe55"
+    },
+    "final_url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly@1",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly@1",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:22.204289+00:00",
+    "role": "discovery_page",
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/ARSSUF%20Sharon%20Schaveet%20Rushes%20assembly@1"
+  },
+  {
+    "bytes": 748376,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-6637a0f6-81f7-4d67-a8ce-a18d732a4e0d"
+    },
+    "final_url": "https://archive.org/advancedsearch.php?q=%28takes+AND+scene%29+AND+mediatype%3Amovies+AND+%28description%3A%28rushes%29+OR+title%3A%28rushes%29+OR+title%3A%28dailies%29%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "mime": "application/json",
+    "original_url": "https://archive.org/advancedsearch.php?q=%28takes+AND+scene%29+AND+mediatype%3Amovies+AND+%28description%3A%28rushes%29+OR+title%3A%28rushes%29+OR+title%3A%28dailies%29%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:24.730678+00:00",
+    "role": "discovery_page",
+    "sha256": "2a3a86b459fef57ea9857115e4fb0b9d9aa42e0b65f1b61471b733e283ae8c22",
+    "status": "downloaded",
+    "url": "https://archive.org/advancedsearch.php?q=%28takes+AND+scene%29+AND+mediatype%3Amovies+AND+%28description%3A%28rushes%29+OR+title%3A%28rushes%29+OR+title%3A%28dailies%29%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=50&output=json"
+  },
+  {
+    "bytes": 54524,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-5bed9aab-de5c-48e4-96c3-29088dff37ca"
+    },
+    "final_url": "https://archive.org/advancedsearch.php?q=title%3A%28rushes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=100&output=json",
+    "mime": "application/json",
+    "original_url": "https://archive.org/advancedsearch.php?q=title%3A%28rushes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=100&output=json",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:27.460891+00:00",
+    "role": "discovery_page",
+    "sha256": "baaf347d9d4de748f2e50c2e4c8ab65e6608fd6d9ab652656b57c19e7a8fc925",
+    "status": "downloaded",
+    "url": "https://archive.org/advancedsearch.php?q=title%3A%28rushes%29+AND+mediatype%3Amovies&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&rows=100&output=json"
+  },
+  {
+    "bytes": 29428,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-796dfd80-f323-4110-ac67-b864f353ec44"
+    },
+    "final_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:28.826018+00:00",
+    "role": "discovery_page",
+    "sha256": "be383259b086ba2a126856e2e500b3e002d5918775210c0b1ef5a5d4e1d3169b",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations"
+  },
+  {
+    "bytes": 187587,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-17cbf227-c0d8-401b-ab16-a97f13c7e1be"
+    },
+    "final_url": "https://archive.org/details/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations",
+    "mime": "text/html",
+    "original_url": "https://archive.org/details/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:30.899996+00:00",
+    "role": "discovery_page",
+    "sha256": "bca6102f4e9e2af7723a4451b0e022e834d03e288cfd1c16a331e6f160aaed3c",
+    "status": "downloaded",
+    "url": "https://archive.org/details/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations"
+  },
+  {
+    "bytes": 28057,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-703475e7-530e-4c1a-bae4-1393971150aa"
+    },
+    "final_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:32.178403+00:00",
+    "role": "discovery_page",
+    "sha256": "b5ea38160f28df66a8b72c2d6369fc728f6e127b60b3a78ab51f03cadb1a6bba",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files"
+  },
+  {
+    "bytes": 536,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-2820c1d3-b563-422f-8068-cc19e7a09f1a"
+    },
+    "final_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/metadata",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/metadata",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:33.823025+00:00",
+    "role": "discovery_page",
+    "sha256": "3ad65785c1fa5c1d828b52dc29ed37e0f4ef64194cc016df70c34830ca83771e",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/metadata"
+  },
+  {
+    "bytes": 109,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-873011fa-96c1-4640-b616-582167e9be00"
+    },
+    "final_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files@1",
+    "mime": "application/json",
+    "original_url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files@1",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-14T10:30:35.284308+00:00",
+    "role": "discovery_page",
+    "sha256": "7fb066a2a4e9bdc201eb1eb098edcbf07ebc3e9fc46d0c1e8befa91f028268de",
+    "status": "downloaded",
+    "url": "https://archive.org/metadata/mp_Film_Shoot_Rushes_Multiple_Takes_Audio_Mixes_Various_Locations/files@1"
+  },
+  {
+    "bytes": 122082526,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-335bf884-b0d9-48ad-afca-9edb5101ca3d"
+    },
+    "final_url": "https://dn710207.ca.archive.org/0/items/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+    "mime": "video/mp4",
+    "original_url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+    "prior_errors": [],
+    "redirects": [
+      {
+        "from": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4",
+        "status": 302,
+        "to": "https://dn710207.ca.archive.org/0/items/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4"
+      }
+    ],
+    "retrieved_at": "2026-11-14T10:30:59.801894+00:00",
+    "role": "selected_material",
+    "sha256": "fd939e1aec01c4a0d846f398c2dd0b2bdf7dcb5f05eb23211618db887d207e46",
+    "status": "downloaded",
+    "url": "https://archive.org/download/mp_Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28/Evelyn_Champagne_King_Scene_6_Take_11-15_Scene_7_Take_16_1979-03-28.mp4"
+  }
+]

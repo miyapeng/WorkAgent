@@ -236,6 +236,11 @@ def assemble(snapshot,proposal,graph,audit,record,output):
 
 
 def process_workspace(directory,plan,seed,upstream_hashes,cache,output,model,stage='all',*,fixture=False):
+    marker=Path(directory)/'construction/construction_report.json'
+    if marker.exists() and read(marker).get('interface')=='asset-grounded-workspace-v1':
+        require(not fixture,'asset_fixture_requires_separate_test_entry')
+        from asset_tasks import process_asset_workspace
+        return process_asset_workspace(Path(directory),plan,seed,upstream_hashes,cache,output,model,stage)
     record={'workspace_id':Path(directory).name,'seed_id':plan['seed_id'],
             'data_provenance':'synthetic_test_fixture' if fixture else 'grounded_workspace','model_calls':[]}
     try:
