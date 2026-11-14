@@ -3,3 +3,6 @@ data/stage4_cache/
 data/synthetic_test_fixture*/
 __pycache__/
 config/*.local.json
+
+# Stage 5: private transcripts, evaluator cache, copied licensed files and runtimes.
+data/probes/

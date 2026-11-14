@@ -5,7 +5,7 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from task_common import *
 from profile_files import parse_bytes
-from coverage import verify_quote
+from coverage import resolve_refs
 
 
 def create_fixture(root):
@@ -18,6 +18,10 @@ def create_fixture(root):
                                {'id':'i4','type':'derived_information','description':'Compute actual minus approved amounts by category.'},
                                {'id':'i5','type':'professional_judgment','description':'Recommend a justified response consistent with operational context and policy.'}],
           'dependencies':[['i1','i4'],['i2','i4'],['i3','i5'],['i4','i5'],['i4','out1'],['i5','out1']]}
+    plan['modality_hypotheses']=[]
+    for n in plan['information_nodes']:
+        if n['type']=='external_input':n.update(supply_channel='workspace',critical=True)
+    seed={'seed_id':plan['seed_id'],'task_text':plan['work_objective']}
     data={'approved.csv':b'category,amount,unit\nOperations,100,USD\nSupplies,200,USD\n',
           'actual.csv':b'category,amount,unit\nOperations,120,USD\nSupplies,180,USD\n',
           'context.json':json_bytes({'provenance':'synthetic_test_fixture; fictional engineering data, not real business records',
@@ -30,26 +34,27 @@ def create_fixture(root):
         (init/name).write_bytes(raw);mime='text/csv' if name.endswith('csv') else 'application/json'
         p=parse_bytes(raw,'https://fixture.invalid/'+name,mime);profiles[p['file_id']]=p;filehashes[name]=sha256(raw)
         sources.append({'file_id':p['file_id'],'sha256':sha256(raw),'origin':'synthetic_test_fixture',
-                        'workspace_path':'workspace_init/'+name,'mime':mime,
+                        'workspace_path':name,'mime':mime,
                         'license':{'status':'synthetic_test_fixture','redistribution_allowed':False}})
         nid='i1' if name=='approved.csv' else 'i2' if name=='actual.csv' else 'i3'
         segments=[s for s in p['segments'] if s['locator'] in ('row:2','row:3')] if name.endswith('csv') else [s for s in p['segments'] if s['locator']!='json:/provenance']
         # Short numeric/unit facts are located by their surrounding JSON field instead of inventing text.
         # Currency proof is already in each CSV row; context includes only sufficiently long native quotes.
-        refs=[verify_quote({'file_id':p['file_id'],'locator':s['locator'],'quote':s['text']},profiles)
-              for s in segments if len(s['text'])>=12]
+        refs=resolve_refs([{'file_id':p['file_id'],'segment_id':s['segment_id']} for s in segments if len(s['text'])>=12],profiles)
         coverage.append({'node_id':nid,'status':'supported','model_status':'supported','evidence':refs,'workspace_evidence':refs,
                          'reason':'synthetic_test_fixture only','unverified_assumptions':[],'location_errors':[]})
-    cov={'nodes':coverage,'files':[],'retained_file_ids':list(profiles),'rejected_files':{},
-         'usable_real_anchors':[sources[0]['file_id']], # Simulated Stage 3 contract, explicitly not real anchors.
-         'coherence':{'status':'consistent','reason':'Fictional test case','evidence':coverage[0]['evidence'],'unverified_assumptions':[]},
-         'deterministic_scope_checks':[],'completion':{'safe':False,'reason':'Fixture already complete','target_nodes':[]}}
-    report={'seed_id':plan['seed_id'],'plan_sha256':digest(plan),'status':'ready','stage4_eligible':True,
-            'data_provenance':'synthetic_test_fixture','objective_preserved':True,
+    assessments=[{'file_id':fid,'retain':True,'role':'anchor' if fid==sources[0]['file_id'] else 'supporting',
+                  'sensitive':False,'answer_leakage':False} for fid in profiles]
+    cov={'nodes':coverage,'file_assessments':assessments,'retained_file_ids':list(profiles),
+         'selected_anchor':{'file_ids':[sources[0]['file_id']],'evidence':coverage[0]['evidence']},
+         'cross_file_coherence':{'status':'coherent','reason':'Fictional test case','evidence':coverage[0]['evidence'],'unverified_assumptions':[]},
+         'suspected_answer_leakage':False,'unresolved_information_gaps':[],'missing_critical_nodes':[],'status':'ready'}
+    report={'interface':'grounded-workspace-v2','seed_id':plan['seed_id'],'seed_sha256':digest(seed),
+            'blueprint_sha256':digest(plan),'status':'ready','data_provenance':'synthetic_test_fixture',
             'work_objective_sha256':sha256(plan['work_objective'].encode()),'workspace_files':filehashes}
-    c=directory/'construction';save(c/'construction_report.json',report);save(c/'information_coverage.json',cov);save(c/'source_manifest.json',{'sources':sources})
-    (c/'file_profiles.jsonl').write_text(''.join(json.dumps(p)+'\n' for p in profiles.values()))
-    return directory,plan,{'seed_id':plan['seed_id'],'work_demand':plan['work_objective']}
+    c=directory/'construction';save(c/'construction_report.json',report);save(c/'information_coverage.json',cov)
+    save(c/'source_manifest.json',{'sources':{r['file_id']:r for r in sources}});save(c/'file_profiles.json',list(profiles.values()))
+    return directory,plan,seed
 
 
 def proposal_for(graph):

@@ -1,5 +1,5 @@
 """Recover exact source evidence from stable segment IDs; gate workspace admission."""
-from common import require,sha256,json_bytes
+from common import require,sha256,json_bytes,require_workspace_artifact
 from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'work-plans/scripts'))
@@ -32,6 +32,7 @@ def check_audit(value,plan,profiles,sources):
         if a['license']['status']=='redistributable':require(refs and all(r['verification_status']=='source_located' for r in refs),'unsupported_license_claim')
     retained={r['file_id'] for r in assessments if r['retain']}
     for fid in retained:
+        require_workspace_artifact(profiles[fid],sources.get(fid,{}).get('workspace_path'))
         require(fid in sources and sources[fid]['origin']=='real_original' and sources[fid]['sha256']==profiles[fid]['sha256'],'invalid_real_source')
     nodes={n['id']:n for n in external_nodes(plan)};rows=value['node_coverage']
     require(len(rows)==len(nodes) and {r['node_id'] for r in rows}==set(nodes),'node_coverage_mismatch')

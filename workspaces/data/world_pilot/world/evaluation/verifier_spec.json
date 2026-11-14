@@ -1,0 +1,28 @@
+{
+  "absolute_tolerance": "0.01",
+  "columns": [
+    "work_package_id",
+    "currency",
+    "cost_variance_to_date_usd",
+    "schedule_effort_gap_hours",
+    "forecast_total_cost_usd",
+    "forecast_budget_variance_usd",
+    "resource_gap_hours"
+  ],
+  "family": "project_cost_schedule_v1",
+  "numeric_evaluator": "world_contract.grade_submission",
+  "numeric_metrics": {
+    "cost_variance_to_date_usd": "actual_cost_usd - baseline_budget_usd; negative is remaining budget, not proof of savings",
+    "forecast_budget_variance_usd": "forecast_total_cost_usd - baseline_budget_usd; positive is forecast overrun",
+    "forecast_total_cost_usd": "actual_cost_usd + estimated_remaining_hours * hourly_rate_usd + committed_remaining_nonlabor_usd",
+    "resource_gap_hours": "max(0, estimated_remaining_hours - available_remaining_hours)",
+    "schedule_effort_gap_hours": "planned_completed_effort_hours - completed_effort_hours; positive is behind planned effort"
+  },
+  "process": "Final-state input hashes only; no claim of unmodified execution history.",
+  "semantic": {
+    "criteria": "Explain schedule/milestone and budget status with source references, forecast assumptions, resource/budget allocation and justified cost-control recommendations. Distinguish observed facts, estimates and judgment; follow the fictional approval policy.",
+    "status": "not_executed"
+  },
+  "total_reward": null,
+  "unit_policy": "USD and hours as stated in column names"
+}

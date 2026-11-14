@@ -1,0 +1,286 @@
+{
+  "blueprints_sha256": "9867965722bea73f17a6880e476953400aa4681054c7191ae6d35243cc3a1d9b",
+  "config_sha256": "8e485f06056f874aef0477b179a62835bcdd3c52f3e5e9dc57e2563d2fb96c05",
+  "counts": {
+    "accepted": 1,
+    "generated": 1,
+    "graph_passed": 1,
+    "input": 1,
+    "modality_candidate_plans": 0,
+    "rejected_or_failed": 0,
+    "semantic_review_attempted": 1,
+    "semantic_reviewed": 1,
+    "semantic_schema_passed": 1
+  },
+  "input_sha256": "6bafac8662dbea9aab9ed920bad703aa0bd67b4eec07e27c21e23f1cf54a031c",
+  "interface": "raw-blueprint-v2",
+  "limitations": [
+    "Independent review uses the same model family, not expert certification.",
+    "Task instruction requirements remain pending for Stage 4; they are not case facts."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 3210,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 4288,
+    "unique_model_requests": 2
+  },
+  "seeds": {
+    "raw_31_0_21828": {
+      "blueprint_sha256": "869a1bd6a8ab77dffacd350ebf963fd2b0f8564ae52e5cbfce53e5224a04e815",
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [],
+      "failure_stage": null,
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T08:17:04.796017+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "5bc12364f5a9577809f46dd3844f1a4594374021f7319c4fc189aa94495a238d",
+          "usage": {
+            "completion_tokens": 2093,
+            "prompt_tokens": 2508,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 4601
+          }
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T08:17:11.099685+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "767e2be54f1ca54a67b13f0e33cb6fee8a96a8f68fd8dc202e382b918ac40832",
+          "prompt_version": "blueprint_reviewer.v1",
+          "request_sha256": "2b1831d3afc058d8781db2f51f0d6fa5d42624372764b47923713900b1a77300",
+          "usage": {
+            "completion_tokens": 1117,
+            "prompt_tokens": 1780,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            },
+            "total_tokens": 2897
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A set of charts or graphs that communicates the selected data analysis results clearly and accurately using appropriate titles, labels, legends, scales, and annotations.",
+            "id": "out1",
+            "preferred_formats": [
+              "png",
+              "pdf",
+              "svg"
+            ],
+            "type": "visual_design"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i3"
+          ],
+          [
+            "i2",
+            "i3"
+          ],
+          [
+            "i1",
+            "i4"
+          ],
+          [
+            "i2",
+            "i4"
+          ],
+          [
+            "i3",
+            "i4"
+          ],
+          [
+            "i1",
+            "i5"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i3",
+            "i5"
+          ],
+          [
+            "i4",
+            "out1"
+          ],
+          [
+            "i5",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The quantitative results and supporting variables from the completed data analysis that are to be visualized.",
+            "id": "i1",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "The stated purpose, audience, key message, and any presentation constraints for the requested visual representations.",
+            "id": "i2",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "description": "Determine which analysis results, comparisons, and patterns are relevant to the requested purpose and should be communicated visually.",
+            "id": "i3",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Define the chart types, source fields, axes, scales, groupings, color use, labels, legends, and annotations needed to represent the selected results accurately and clearly.",
+            "id": "i4",
+            "type": "derived_information"
+          },
+          {
+            "description": "Check that scales, aggregations, labels, and visual encodings preserve the data's magnitudes and comparisons without distortion, and adjust the visual specification as needed.",
+            "id": "i5",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_21828",
+        "work_objective": "Create graphs, charts, or other visual representations that accurately convey the results of a data analysis to the intended audience."
+      },
+      "seed_sha256": "e381d6fcc9172fb989f024246a278b6f40bf5d7ce4910274fe863a8507b949ca",
+      "selection_reason": "New pilot: data scientists creating visualizations; distinct from prior project monitoring cases.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A set of charts or graphs that communicates the selected data analysis results clearly and accurately using appropriate titles, labels, legends, scales, and annotations.",
+          "kind": "visual_design",
+          "preferred_formats": [
+            "png",
+            "pdf",
+            "svg"
+          ],
+          "requires": [
+            "specify_chart_encodings",
+            "validate_visual_fidelity"
+          ]
+        },
+        "inputs": [
+          {
+            "critical": true,
+            "description": "The quantitative results and supporting variables from the completed data analysis that are to be visualized.",
+            "kind": "table",
+            "name": "analysis_results",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "critical": true,
+            "description": "The stated purpose, audience, key message, and any presentation constraints for the requested visual representations.",
+            "kind": "text_instruction",
+            "name": "visualization_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          }
+        ],
+        "objective": "Create graphs, charts, or other visual representations that accurately convey the results of a data analysis to the intended audience.",
+        "operations": [
+          {
+            "description": "Determine which analysis results, comparisons, and patterns are relevant to the requested purpose and should be communicated visually.",
+            "name": "determine_visualization_content",
+            "requires": [
+              "analysis_results",
+              "visualization_request"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Define the chart types, source fields, axes, scales, groupings, color use, labels, legends, and annotations needed to represent the selected results accurately and clearly.",
+            "name": "specify_chart_encodings",
+            "requires": [
+              "analysis_results",
+              "visualization_request",
+              "determine_visualization_content"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Check that scales, aggregations, labels, and visual encodings preserve the data's magnitudes and comparisons without distortion, and adjust the visual specification as needed.",
+            "name": "validate_visual_fidelity",
+            "requires": [
+              "analysis_results",
+              "specify_chart_encodings",
+              "determine_visualization_content"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": {
+        "accepted": true,
+        "checks": {
+          "case_neutrality": true,
+          "deliverable_validity": true,
+          "dependency_correctness": true,
+          "information_sufficiency": true,
+          "intent_preservation": true,
+          "minimality": true,
+          "multimodal_justification": true
+        },
+        "issues": []
+      },
+      "semantic_schema_passed": true,
+      "status": "accepted"
+    }
+  }
+}

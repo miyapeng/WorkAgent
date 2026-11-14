@@ -38,7 +38,7 @@ def validate_proposal(value,graph,snapshot):
         own=[x for x in rubrics.values() if x['requirement_id']==rid]
         require(bool(own) or bool(r['unscored_reason']),'unscored_requirement_without_reason')
         require(not own or r['unscored_reason'] is None,'scored_requirement_marked_unscored')
-    core={n['id'] for n in info.values() if n['type']!='external_input'}
+    core={n['id'] for n in info.values() if n['type']!='external_input' or n.get('supply_channel')=='task_instruction'}
     require(core<=covered_info,'core_intent_information_omitted')
     require(covered_deliverables==set(delivers),'unrequired_deliverable')
     for r in rubrics.values():
@@ -54,6 +54,7 @@ def validate_proposal(value,graph,snapshot):
     import re
     allowed={s['workspace_path'] for s in snapshot['sources'].values()} | {d['path'] for d in delivers.values()}
     for path in re.findall(r'(?:workspace_init|outputs)/[A-Za-z0-9_./-]+',json.dumps(task)):
+        if path in ('outputs/.','workspace_init/.'):continue  # Directory mention + sentence punctuation.
         require(path.rstrip('.') in allowed,'instruction_invented_file_path')
     return {'passed':True,'requirements':len(requirements),'rubrics':len(rubrics),'source_facts':sum(f['type']=='source_fact' for f in facts.values())}
 
@@ -70,9 +71,16 @@ def validate_audit(audit,proposal,graph):
         require(row['requirement_id']==rubrics[bid]['requirement_id'],'audit_rubric_requirement_mismatch')
         require(set(row['evidence_ids'])<=set(rubrics[bid]['evidence_ids']),'audit_rubric_evidence_mismatch')
     decisions=list(audit['dimensions'].items())+list(ar.items())+list(br.items())
-    for _,row in decisions:
+    planning_dimensions={'intent_preservation','deliverable_appropriateness','task_rubric_alignment','unnecessary_complexity'}
+    citations=[(row,key in planning_dimensions) for key,row in audit['dimensions'].items()]
+    citations += [(row,False) for row in list(ar.values())+list(br.values())]
+    for row,may_cite_plan in citations:
         require(set(row['evidence_ids'])<=set(facts),'audit_unknown_evidence')
-        require(any(facts[e]['type']=='source_fact' for e in row['evidence_ids']),'audit_missing_source_evidence')
+        require(bool(row['evidence_ids']),'audit_missing_evidence')
+        # Intent/complexity/alignment concern the approved requirements themselves.
+        # Factual dimensions and every requirement/rubric review still need source facts.
+        require(may_cite_plan or any(facts[e]['type']=='source_fact' for e in row['evidence_ids']),
+                'audit_missing_source_evidence')
     return {'passed':all(row['passed'] for _,row in decisions),
             'failures':[{'check':key,'reason':row['reason']} for key,row in decisions if not row['passed']],
             'qualification':'Independent model call, not independent expert certification; execution not tested.'}

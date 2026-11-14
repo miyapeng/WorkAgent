@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rubric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "verdict": {
+            "enum": [
+              "passed",
+              "failed",
+              "unassessable"
+            ]
+          },
+          "report_line_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "rubric_id",
+          "score",
+          "verdict",
+          "report_line_ids",
+          "evidence_ids",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "numeric_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "report_number_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "metric_id",
+          "report_number_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "report_line_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "report_line_ids",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "items",
+    "numeric_claims",
+    "issues",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workagent.local/probe_judge.schema.json"
+}

@@ -1,0 +1,58 @@
+{
+  "artifact_checks_compiled": true,
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": true,
+    "reasons": []
+  },
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T10:35:52.539552+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "task-rubric-joint-v11",
+      "request_sha256": "d3e37d95fc127f6099194911579a218ce53b43f17fed855bbf6e7a0727112c70"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T10:36:16.397581+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "task-rubric-reverse-audit-v9",
+      "request_sha256": "eb191db0b80b6bbf67276197c04cf02063c9ee685fcb21ba5c3ee004e1b73e97"
+    }
+  ],
+  "reasons": [
+    "audit_missing_source_evidence"
+  ],
+  "seed_id": "raw_31_0_7382",
+  "status": "rejected",
+  "structural_checks": {
+    "passed": true,
+    "requirements": 8,
+    "rubrics": 8,
+    "source_facts": 25
+  },
+  "workspace_id": "WS_e3babe3a48a1"
+}

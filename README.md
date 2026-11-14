@@ -13,7 +13,11 @@
 
 当前产物：[准入 Blueprint](work-plans/data/semantic_pilot/blueprints.jsonl)、[逐条对照和实际示例](work-plans/data/semantic_pilot/comparison.md)、[Stage 2 说明](work-plans/README.md)。后续 [Stage 3](workspaces/README.md) 默认消费新接口，实际检索时可以选 [Claude Code 搜索后端](workspaces/CLAUDE_SEARCH.md)；上轮该后端下载解析过 1 个网页，但仍未产生 ready Workspace，历史记录不计入本轮结果。
 
-Phase I 仍为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。旧 Stage 2–3 实验移入各模块 `archive/`。**现有 Stage 4 尚未迁移到新接口，不能直接消费新版结果**；旧 Stage 4 报告只是历史阻断记录，不代表当前已有正式任务。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。
+历史对照实验：[同 Seed 真实检索 / 受控世界对照](workspaces/WORLD_PILOT.md)。项目监控任务的真实路线仍 incomplete；模型生成的虚构世界已渲染为 5 份输入文件，附实验任务和数值验证规则，状态为 experimental_draft。30 个数值/单位错误均被检出，但语义审核仍容忍了叙述和规则信息缺口；没有独立 Agent Probe，不标为 ready/verified，不替换默认主流程。
+
+随后修正了把 Claude Code 限成单次查询的接法：[自主检索实测](workspaces/AGENT_SEARCH.md)。完整上下文会话实际进行了 10 次搜索、31 次页面读取；耗尽轮数后的无工具收尾及 Python 独立获取得到 1 个真实项目 PDF、3 份 CSV 内容和来源页。仍未形成 ready Workspace，不能把获取文件与信息充分性混为一谈。
+
+Phase I 为 Stage 1–4，目标产物是 Draft Work Task Package；Phase II 为 Stage 5 独立执行验证；Phase III 为 Stage 6–7 训练数据和评测。Stage 4 已迁移到新版 Raw Seed / Blueprint / Workspace 接口；[原生文件实验](work-tasks/NATIVE_FILE_PILOT.md) 实际生成了 1 个通过结构和独立语义审核的 Draft，输入不含 HTML。[Stage 5 实际执行实验](work-tasks/STAGE5.md) 已生成报告并完成错误产物测试，当前为 `needs_review`，未准入训练。旧 Stage 2–3 实验移入各模块 `archive/`，旧阻断报告继续保留。下方 W001/P001 是独立开发演示，不能计入本轮研究产出。
 
 Phase 1 之后的首个种子实例：[P001 · 采购供应商比选](work-tasks/P001/README.md)。从官方 Task 1144 出发，提供合成材料、证据图、验收规则及参考执行；属于开发样例，尚未准入训练集。
 
@@ -170,3 +174,5 @@ env.close()
 这一步先看 `examples/W001.json` 和生成的 `report_requirements.md`。完成标准是：你能清楚指出每项输出来自哪份输入，以及怎样判定它对不对。
 
 之后按“材料 → 验证器 → 真实教师 → 轨迹筛选 → RL”的顺序逐环替换。当前四区域报表工具、手工策略和部分校验仍针对 W001；新增职业任务时再抽出通用接口，不需要现在就设计大规模框架。
+
+当前原生文件实验：从 Operations Research Analysts 的新 Raw Seed 出发，自主检索并核验 3 个 CSV、1 个 XLSX、1 个 DOCX 和 1 个 PDF；HTML 不进入 Agent 可见 Workspace。任务构造状态与复现命令见 [原生文件实验](work-tasks/NATIVE_FILE_PILOT.md)。之前含 HTML 的可视化示例已停止准入，仅保留历史记录。

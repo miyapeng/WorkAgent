@@ -10,7 +10,7 @@ import shutil
 import subprocess
 import sys
 from urllib.parse import urljoin,urlsplit
-from common import ROOT,REPO,DataError,require,sha256,json_bytes,read_jsonl,write_jsonl,save,safe_relative
+from common import ROOT,REPO,DataError,require,sha256,json_bytes,read_jsonl,write_jsonl,save,safe_relative,require_workspace_artifact
 from acquire import download,public_url
 from profile_files import profile,add_segment_ids
 from coverage import external_nodes,check_audit,empty_coverage,resolve_refs
@@ -46,7 +46,8 @@ def profile_view(p,plan,limits):
         s=segments[i]
         if chars+len(s['text'])>limits['max_profile_chars']:continue
         chosen.append(s);chars+=len(s['text'])
-    return {k:v for k,v in p.items() if k!='segments'}|{'segments':chosen,'total_segments':len(segments),'model_received_all_segments':len(chosen)==len(segments)}
+    return {k:v for k,v in p.items() if k!='segments'}|{'segments':chosen,'total_segments':len(segments),'model_received_all_segments':len(chosen)==len(segments),
+        'model_received_all_source_records':len(chosen)==len(segments) and p.get('structure',{}).get('content_fully_segmented',True)}
 
 
 def validate_search(plan,blueprint,budget,anchor):
@@ -81,10 +82,15 @@ def assemble(directory,sources,profiles,coverage,cache):
     init=directory/'workspace_init';init.mkdir(parents=True,exist_ok=True);expected={}
     for fid in coverage['retained_file_ids']:
         p=profiles[fid];source=sources[fid]
+        require_workspace_artifact(p)
         require(source['origin']=='real_original','synthetic_not_allowed')
         raw=(cache/'blobs'/p['sha256']).read_bytes();require(sha256(raw)==source['sha256']==p['sha256'],'source_hash_changed')
         filename=re.sub(r'[^A-Za-z0-9._-]','_',Path(urlsplit(source['final_url']).path).name)[:100] or ('source.'+p['type'])
-        if '.' not in filename:filename+='.'+('html' if p['type']=='html' else p['type'])
+        actual_format=p.get('format') or ('html' if p['type']=='html' else p['type'])
+        aliases={'html':{'html','htm'},'jpeg':{'jpg','jpeg'},'markdown':{'md','markdown'}}
+        extensions=aliases.get(actual_format,{actual_format})
+        if Path(filename).suffix.lower().lstrip('.') not in extensions:
+            filename+='.'+actual_format
         relative=safe_relative(('tables' if p['type'] in ('csv','xlsx') else 'materials')+'/'+fid+'_'+filename)
         target=init/relative;target.parent.mkdir(parents=True,exist_ok=True)
         if target.exists():require(sha256(target.read_bytes())==p['sha256'],'existing_workspace_file_changed')
@@ -107,6 +113,7 @@ def verify_workspace(directory,plan=None):
         require(actual.get(s['workspace_path'])==s['sha256']==profiles[fid]['sha256'],'source_file_relation_changed')
         native[fid]=profile(init/safe_relative(s['workspace_path']),s['final_url'],s['mime'],ROOT/'data/cache_graph')
         require(native[fid]['parse_status']=='parsed','assembled_source_unreadable')
+        require_workspace_artifact(native[fid],s['workspace_path'])
     for n in coverage['nodes']:
         refs=[{k:e[k] for k in ('file_id','segment_id')} for e in n['evidence']]
         require(resolve_refs(refs,profiles,set(coverage['retained_file_ids']))==n['evidence'],'restored_evidence_changed')
@@ -192,7 +199,10 @@ def build_one(plan,seed,config,config_path,cache,directory,offline=False,stage='
                 sources[fid]={**c,**transport,'file_id':fid,'origin':'real_original','selection_reason':decision['reason'],'license_status':'unknown'}
                 p=profile(cache/'blobs'/transport['sha256'],transport['final_url'],transport['mime'],cache)
                 require(p['parse_status']=='parsed','file_parse_rejected:'+p.get('reason','unknown'))
-                if p['type']=='html':links.extend(discover_links(raw,transport['final_url']))
+                if p['type']=='html':
+                    links.extend(discover_links(raw,transport['final_url']))
+                    failures.append({'stage':'material_selection','url':c['url'],'reason':'html_discovery_only'})
+                    continue
                 if config.get('vision') and p['type'] in ('image','pdf') and plan['modality_hypotheses']:
                     try:p=inspect_visual(raw,p,config['vision'],cache,offline)
                     except (OSError,ValueError,KeyError,TypeError) as exc:p['warnings'].append('vision_failed:'+type(exc).__name__)
@@ -248,7 +258,12 @@ def run(plan_dir,seed_file,output_dir,cache,config_path,offline=False,limit=None
     for plan in plans:
         ws='WS_'+sha256(plan['seed_id'].encode())[:12]
         print(ws,plan['seed_id'],'starting',flush=True)
-        result=build_one(plan,seeds[plan['seed_id']],config,config_path,cache,output_dir/ws,offline,stage,mode)
+        if config['search']['provider']=='claude_code_agent':
+            require(mode=='graph','agent_retrieval_requires_blueprint')
+            from agent_retrieval import build_agent
+            result=build_agent(plan,seeds[plan['seed_id']],config,config_path,cache,output_dir/ws,offline,stage)
+        else:
+            result=build_one(plan,seeds[plan['seed_id']],config,config_path,cache,output_dir/ws,offline,stage,mode)
         results.append({'workspace_id':ws,**result});print(ws,result['status'],result['search_state'],flush=True)
         save(output_dir/'pilot_report.json',{'interface':'grounded-workspace-v2','workspaces':results})
     report={'interface':'grounded-workspace-v2','planning_input':planning['counts'],'mode':mode,'workspaces':results,

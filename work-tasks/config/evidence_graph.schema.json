@@ -76,7 +76,8 @@
               "type": {
                 "enum": [
                   "derived_requirement",
-                  "decision_requirement"
+                  "decision_requirement",
+                  "instruction_requirement"
                 ]
               },
               "information_node_id": {

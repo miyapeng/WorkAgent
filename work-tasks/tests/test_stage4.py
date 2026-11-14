@@ -48,10 +48,10 @@ class Stage4Tests(unittest.TestCase):
         self.assertEqual(result['status'],'blocked_upstream');self.assertFalse(model.calls)
 
     def test_real_pilots_block_without_llm(self):
-        plans,seeds,hashes=load_production(REPO/'work-plans/data/pilot',REPO/'work-seeds/archive/data/work_seed_pilot_v2')
+        # Historical inputs use the retired interface and must be blocked before model calls.
         for ws in ('WS001','WS002'):
-            directory=REPO/'workspaces/data/pilot'/ws;sid=read(directory/'construction/construction_report.json')['seed_id']
-            model=FixtureModel();r=process_workspace(directory,plans[sid],seeds[sid],hashes,self.cache,self.out,model)
+            directory=REPO/'workspaces/data/pilot'/ws
+            model=FixtureModel();r=process_workspace(directory,self.plan,self.seed,{},self.cache,self.out,model)
             self.assertEqual(r['status'],'blocked_upstream');self.assertFalse(model.calls)
         self.assertFalse(self.out.exists())
 
@@ -66,11 +66,11 @@ class Stage4Tests(unittest.TestCase):
         r=self.run_pipeline(FixtureModel(mutate));self.assertEqual(r['status'],'rejected');self.assertIn('invalid_evidence_id',r['reasons'])
 
     def test_nonexistent_location_blocks(self):
-        self.change_coverage(lambda c:c['nodes'][0]['workspace_evidence'][0].update(locator='row:999'))
+        self.change_coverage(lambda c:c['nodes'][0]['evidence'][0].update(locator='row:999'))
         r=self.run_pipeline();self.assertEqual(r['status'],'blocked_upstream')
 
     def test_old_profile_cannot_fabricate_fact(self):
-        self.change_coverage(lambda c:c['nodes'][0]['workspace_evidence'][0].update(quote='Invented 999 dollars'))
+        self.change_coverage(lambda c:c['nodes'][0]['evidence'][0].update(quote='Invented 999 dollars'))
         self.assertEqual(self.run_pipeline()['status'],'blocked_upstream')
 
     def test_unrelated_information_goal_rejected(self):
@@ -107,14 +107,14 @@ class Stage4Tests(unittest.TestCase):
         # Simulate an upstream stale risk assessment with updated hash: independent parsing must still reject it.
         c=self.directory/'construction';r=read(c/'construction_report.json');r['workspace_files']['context.json']=sha256(file.read_bytes());save(c/'construction_report.json',r)
         sources=read(c/'source_manifest.json')
-        fid=next(s['file_id'] for s in sources['sources'] if s['workspace_path'].endswith('context.json'))
-        for s in sources['sources']:
+        fid=next(s['file_id'] for s in sources['sources'].values() if s['workspace_path'].endswith('context.json'))
+        for s in sources['sources'].values():
             if s['file_id']==fid:s['sha256']=sha256(file.read_bytes())
         save(c/'source_manifest.json',sources)
-        profiles=read_jsonl(c/'file_profiles.jsonl')
+        profiles=read(c/'file_profiles.json')
         for p in profiles:
             if p['file_id']==fid:p['sha256']=sha256(file.read_bytes())
-        (c/'file_profiles.jsonl').write_text(''.join(json.dumps(p)+'\n' for p in profiles))
+        save(c/'file_profiles.json',profiles)
         result=self.run_pipeline();self.assertEqual(result['status'],'blocked_upstream')
         self.assertIn('fresh_parse_unresolved_risk',result['reasons'])
 
@@ -134,11 +134,11 @@ class Stage4Tests(unittest.TestCase):
         model=FixtureModel();self.assertEqual(self.run_pipeline(model)['status'],'blocked_upstream');self.assertFalse(model.calls)
 
     def test_conflict_and_excluded_source_block(self):
-        self.change_coverage(lambda c:c['coherence'].update(status='conflicted'))
+        self.change_coverage(lambda c:c['cross_file_coherence'].update(status='conflicted'))
         self.assertEqual(self.run_pipeline()['status'],'blocked_upstream')
 
     def test_excluded_source_never_supports_coverage(self):
-        self.change_coverage(lambda c:c['rejected_files'].update({c['retained_file_ids'][0]:['not appropriate']}))
+        self.change_coverage(lambda c:c['file_assessments'][0].update(retain=False,role='excluded'))
         self.assertEqual(self.run_pipeline()['status'],'blocked_upstream')
 
     def test_reverse_audit_requires_every_rubric(self):

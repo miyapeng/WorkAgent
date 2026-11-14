@@ -1,0 +1,28 @@
+{
+  "constraints": [
+    "Preserve input files in the final state. No required tool or execution path.",
+    "The case is fictional. Do not claim real business outcomes or real regulatory compliance."
+  ],
+  "deliverables": [
+    {
+      "columns": [
+        "work_package_id",
+        "currency",
+        "cost_variance_to_date_usd",
+        "schedule_effort_gap_hours",
+        "forecast_total_cost_usd",
+        "forecast_budget_variance_usd",
+        "resource_gap_hours"
+      ],
+      "path": "outputs/assessment.csv",
+      "requirements": "One row per source work_package_id, currency USD. Compute every metric using the published policy. Absolute tolerance 0.01 in each stated unit."
+    },
+    {
+      "path": "outputs/report.md",
+      "requirements": "Explain schedule/milestone and budget status with source references, forecast assumptions, resource/budget allocation and justified cost-control recommendations. Distinguish observed facts, estimates and judgment; follow the fictional approval policy."
+    }
+  ],
+  "instruction": "Monitor the fictional network project at the supplied snapshot. Compare planned and actual progress and costs, forecast the cost outcome under the stated assumptions, assess budget and resource allocation, and recommend justified cost-control actions. Do not execute changes. Read workspace_init/context/project_brief.md and monitoring_policy.md. Use the three source tables. Produce the following two parts of one project-status deliverable.",
+  "provenance": "synthetic",
+  "status": "experimental_draft"
+}

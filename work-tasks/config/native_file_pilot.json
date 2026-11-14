@@ -1,0 +1,21 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "max_tokens": 10000,
+  "timeout_seconds": 300,
+  "retries": 1,
+  "max_model_input_bytes": 600000,
+  "profile_context_chars": 50000,
+  "compile_artifact_checks": true,
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "parameters": {
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  }
+}

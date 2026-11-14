@@ -1,0 +1,216 @@
+{
+  "agent_model_usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 33019,
+    "fallback_credit": null,
+    "inference_geo": "",
+    "input_tokens": 255909,
+    "iterations": [],
+    "output_tokens": 16266,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_fetch_requests": 0,
+      "web_search_requests": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "blueprint_sha256": "cbcae855ffbbb4c7d411db350cbc99e9f8a9b771fcef3b4bf082f5d392e20422",
+  "config_sha256": "2c5f661bbb04ac8c25e3226f6b759deafc3c9b945d72a145ecad9c17bb12f94d",
+  "counts": {
+    "actual_search_requests": 12,
+    "actual_webfetch_calls": 22,
+    "critical_coverage": 1.0,
+    "critical_external_nodes": 3,
+    "download_attempts": 7,
+    "downloaded_urls": 7,
+    "independently_verified_visual_evidence": 0,
+    "parsed_unique_files": 6,
+    "retained_files": 6,
+    "supported_critical_nodes": 3,
+    "synthetic_files": 0
+  },
+  "cross_file_coherence": {
+    "evidence": [
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_51b08606ef3dad1ae5d4c872",
+        "locator": "sheet:2024_code_list:row:2",
+        "quote": "A2=collision | B2=collision_index | E2=unique value for each collision. The collision_index combines the collision_year and collision_ref_no to form a unique ID. It can be used to join to Vehicle and Casualty",
+        "segment_id": "seg_0162a94b5f71567ecadb0ba8",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_32a78f4662e309160f37b1ea",
+        "locator": "row:1",
+        "quote": "collision_index | collision_year | collision_ref_no | location_easting_osgr | location_northing_osgr | longitude | latitude | police_force | collision_severity | number_of_vehicles | number_of_casualties | date | day_of_week | time | local_authority_district | local_authority_ons_district | local_authority_highway | local_authority_highway_current | first_road_class | first_road_number | road_type | speed_limit | junction_detail_historic | junction_detail | junction_control | second_road_class | second_road_number | pedestrian_crossing_human_control_historic | pedestrian_crossing_physical_facilities_historic | pedestrian_crossing | light_conditions | weather_conditions | road_surface_conditions | special_conditions_at_site | carriageway_hazards_historic | carriageway_hazards | urban_or_rural_area | did_police_officer_attend_scene_of_accident | trunk_road_flag | lsoa_of_accident_location | enhanced_severity_collision | collision_injury_based | collision_adjusted_severity_serious | collision_adjusted_severity_slight",
+        "segment_id": "seg_2317f6381755220d0424cfd5",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_1a60f65f07a44454bc03c63b",
+        "locator": "row:1",
+        "quote": "collision_index | collision_year | collision_ref_no | vehicle_reference | vehicle_type | towing_and_articulation | vehicle_manoeuvre_historic | vehicle_manoeuvre | vehicle_direction_from | vehicle_direction_to | vehicle_location_restricted_lane_historic | vehicle_location_restricted_lane | junction_location | skidding_and_overturning | hit_object_in_carriageway | vehicle_leaving_carriageway | hit_object_off_carriageway | first_point_of_impact | vehicle_left_hand_drive | journey_purpose_of_driver_historic | journey_purpose_of_driver | sex_of_driver | age_of_driver | age_band_of_driver | engine_capacity_cc | propulsion_code | age_of_vehicle | generic_make_model | driver_imd_decile | lsoa_of_driver | escooter_flag | driver_distance_banding",
+        "segment_id": "seg_c68e5d20fb7f7df84b0ec960",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_838aad605a6ac638973f0924",
+        "locator": "row:1",
+        "quote": "collision_index | collision_year | collision_ref_no | vehicle_reference | casualty_reference | casualty_class | sex_of_casualty | age_of_casualty | age_band_of_casualty | casualty_severity | pedestrian_location | pedestrian_movement | car_passenger | bus_or_coach_passenger | pedestrian_road_maintenance_worker | casualty_type | casualty_imd_decile | lsoa_of_casualty | enhanced_casualty_severity | casualty_injury_based | casualty_adjusted_severity_serious | casualty_adjusted_severity_slight | casualty_distance_banding | escooter_flag",
+        "segment_id": "seg_6c008069cffd0e7be9957136",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_9a0db9e666e696a8c4e61dd6",
+        "locator": "word/document.xml:paragraph:3",
+        "quote": "Users are encouraged to use the record-level adjustment probabilities and provide feedback on the adjustment process . At both casualty and collision level, th e s e lookup s contain the model probabilities for them being serious or slight under injury-based reporting systems ( IBRS ) since 2004, i.e. as if all forces were using injury-based reporting systems. The look ups contain adjustments for all non-fatal casualties and collisions . Fatal casualties and collisions are excluded as they are not given an adjustment probability.",
+        "segment_id": "seg_debdd06e42256bb632fe3027",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_23fc55d06693fda26a6ddb2a",
+        "locator": "page:4:line:1",
+        "quote": "I ntr o d u cti o n",
+        "segment_id": "seg_04c527357b87e73143816786",
+        "verification_status": "source_located"
+      }
+    ],
+    "reason": "All six files belong to the same DfT STATS19 Road Safety Open Data release for the 2024 data year. The three CSV tables (collision, vehicle, casualty) are linked by collision_index as confirmed by the data guide (seg_0162a94b5f71567ecadb0ba8: 'collision_index combines collision_year and collision_ref_no to form a unique ID. It can be used to join to Vehicle and Casualty'). The XLSX data guide defines fields and codes used across all three CSVs (e.g., junction_detail codes appear in the collision CSV header and are defined in the code list; vehicle_manoeuvre codes appear in the vehicle CSV and are defined in the code list). The DOCX severity-adjustment guidance documents methodology for adjustment fields present in the collision CSV (collision_adjusted_severity_serious, collision_adjusted_severity_slight, collision_injury_based, enhanced_severity_collision) and casualty CSV (casualty_adjusted_severity_serious, casualty_adjusted_severity_slight, casualty_injury_based, enhanced_casualty_severity). The PDF reviews the STATS19 collection system that produces all these files. collision_year=2024 is consistent across all sampled rows in all three CSVs. The XLSX is labeled '2024_code_list' and references '2024 STATS19 specification'. The DOCX covers 2004-latest year adjustment data. The PDF (2018 review, published March 2020) predates the 2024 data but covers the same STATS19 system; the 2024 data uses both 2011 and 2024 specifications as documented in the code list's historic vs new field distinctions.",
+    "status": "coherent",
+    "unverified_assumptions": []
+  },
+  "failure_reasons": [],
+  "interface": "grounded-workspace-v2",
+  "limitations": [
+    "Agent final narrative is provisional, not file evidence.",
+    "WebFetch is a summarized view; Python independently downloads selected materials and discovery pages.",
+    "This is Claude Code with GLM-5.2, not a Claude-model capability evaluation.",
+    "Context, tool workflow, prompts and larger budget differ from the query-only baseline; this is not a controlled causal test.",
+    "No explicit turn/search/fetch count limit; wall-clock timeout and materialization limits still apply."
+  ],
+  "limits": {
+    "discovery_pages": 10,
+    "download_bytes": 32000000,
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100,
+    "redirects": 4,
+    "retries": 1,
+    "retry_failed_downloads": true,
+    "selected_files": 6,
+    "timeout_seconds": 120,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "missing_nodes": [],
+  "modality_evidence": [],
+  "mode": "claude_code_agent",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T09:46:37.196523+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "74d44ea56629096f398e453589a36a9f7880f0d40bdf2595c2dedc25af9e6136",
+      "prompt_version": "evidence_auditor.v4",
+      "request_sha256": "688875123f4d60fd0addd38d94093f37e30b36f308c7227888f1b9c4000a2802",
+      "usage": {
+        "completion_tokens": 12516,
+        "prompt_tokens": 85332,
+        "total_tokens": 97848
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 12516,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 85332,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_32a78f4662e309160f37b1ea",
+    "f_1a60f65f07a44454bc03c63b",
+    "f_838aad605a6ac638973f0924",
+    "f_51b08606ef3dad1ae5d4c872",
+    "f_9a0db9e666e696a8c4e61dd6",
+    "f_23fc55d06693fda26a6ddb2a"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "cli_estimate_usd": 4.1161997999999995,
+    "note": "Client estimate is not a LLMCenter invoice. Calls count observed tools, not backend requests."
+  },
+  "search_queries": [
+    "operations research dataset CSV field definitions data quality documentation public download",
+    "Bureau Transportation Statistics airline on-time performance data download CSV field definitions",
+    "Zenodo dataset codebook data dictionary CSV operations research statistical validation download",
+    "public dataset download xlsx with accompanying data dictionary PDF statistical quality report",
+    "EIA-930 hourly electric grid operating data CSV file documentation data quality",
+    "NHS England A&E attendances emergency admissions CSV data quality statement guidance download",
+    "DfT road safety open data STATS19 download CSV data guide PDF quality",
+    "open government dataset \"data quality statement\" CSV variables file \"data dictionary\" statistical methodology download xlsx",
+    "gov.uk \"road casualties\" statistics \"quality and methodology\" report DfT",
+    "DfT \"background quality report\" road casualty statistics STATS19 known data issues",
+    "\"dft-road-casualty-statistics\" 2024 collision vehicle casualty CSV headers accident_index",
+    "DfT \"road safety open dataset data guide\" 2025 xlsx field definitions units collision vehicle casualty"
+  ],
+  "search_state": "agent_completed",
+  "seed_id": "raw_31_0_7382",
+  "seed_sha256": "2ff9a589e6d982d5c51368c693cf80ddceebb41ecd36379a807f21d91ce6454e",
+  "selected_anchor": {
+    "evidence": [
+      {
+        "file_id": "f_32a78f4662e309160f37b1ea",
+        "segment_id": "seg_2317f6381755220d0424cfd5"
+      },
+      {
+        "file_id": "f_32a78f4662e309160f37b1ea",
+        "segment_id": "seg_f309b33dad593b09bff59470"
+      }
+    ],
+    "file_ids": [
+      "f_32a78f4662e309160f37b1ea"
+    ],
+    "identity": "DfT STATS19 Road Safety Open Data — 2024 collision-level records for Great Britain",
+    "scope": "2024 data year, Great Britain reported road collisions, STATS19 collection specification (mixed 2011 and 2024 specs per code list), collision_index as primary key joinable to vehicle and casualty tables via collision_index + vehicle_reference + casualty_reference. Published by UK Department for Transport on gov.uk / data.dft.gov.uk."
+  },
+  "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+  "status": "ready",
+  "supported_nodes": [
+    "i2",
+    "i3",
+    "i4"
+  ],
+  "work_objective_sha256": "0c11f7312234f429d06af1caec45bdf648b21fa50d52ed91450b454decb6cf50",
+  "workspace_files": {
+    "materials/f_23fc55d06693fda26a6ddb2a_stats-19-review-final-report.pdf": "23fc55d06693fda26a6ddb2a1fea965f26a2cc6edc0c1204c784d955fef1b3b1",
+    "materials/f_9a0db9e666e696a8c4e61dd6_dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx": "9a0db9e666e696a8c4e61dd6c1eccd0d957e0a5871cd7c4439d43b63893bced8",
+    "tables/f_1a60f65f07a44454bc03c63b_dft-road-casualty-statistics-vehicle-2024.csv": "1a60f65f07a44454bc03c63b35d6741f41c9dfbb05a26753406aef8bff4ae6cd",
+    "tables/f_32a78f4662e309160f37b1ea_dft-road-casualty-statistics-collision-2024.csv": "32a78f4662e309160f37b1ea2b82017e85e07b62a022d680da7140e88706a17c",
+    "tables/f_51b08606ef3dad1ae5d4c872_dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12",
+    "tables/f_838aad605a6ac638973f0924_dft-road-casualty-statistics-casualty-2024.csv": "838aad605a6ac638973f09248ef3a730dbd1de30ac8fc79dfd536e7d4a47b0f8"
+  }
+}

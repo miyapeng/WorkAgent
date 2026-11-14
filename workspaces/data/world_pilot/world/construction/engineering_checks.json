@@ -1,0 +1,11 @@
+{
+  "duplicate_id_rejected": true,
+  "independent_agent_probe_run": false,
+  "kind": "engineering_reference_and_mutations_not_agent_probe",
+  "missing_id_rejected": true,
+  "multimodal_ablation_run": false,
+  "mutations_rejected": 30,
+  "numeric_and_unit_mutations": 30,
+  "semantic_quality_evaluated": false,
+  "visible_only_numeric_reference_passed": true
+}

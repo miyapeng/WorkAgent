@@ -123,12 +123,15 @@ def download(url, cache, limits, offline=False):
     if receipt.exists():
         record = json.loads(receipt.read_text())
         if record.get('status')=='failed':
-            raise DataError(record['reason'])
-        data = (cache / 'blobs' / record['sha256']).read_bytes()
-        require(record['original_url'] == url and sha256(data) == record['sha256'], 'download_cache_corrupt')
-        public_url(record['final_url'])
-        require(len(data) <= limits['download_bytes'], 'cached_download_too_large')
-        return data, record
+            if offline or not limits.get('retry_failed_downloads',False):raise DataError(record['reason'])
+            # Explicit retry preserves the previous failure receipt; successful bytes are never replaced.
+            save(cache/'download_failures'/(receipt.stem+'_'+sha256(receipt.read_bytes())[:16]+'.json'),record)
+        else:
+            data = (cache / 'blobs' / record['sha256']).read_bytes()
+            require(record['original_url'] == url and sha256(data) == record['sha256'], 'download_cache_corrupt')
+            public_url(record['final_url'])
+            require(len(data) <= limits['download_bytes'], 'cached_download_too_large')
+            return data, record
     require(not offline, 'offline_download_cache_missing')
     errors = []
     for _ in range(limits.get('retries', 0) + 1):

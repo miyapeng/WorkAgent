@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_page": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "target_node_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "url",
+                "source_page",
+                "target_node_ids",
+                "reason"
+              ]
+            },
+            "minItems": 1
+          },
+          "missing_information": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "identity",
+          "files",
+          "missing_information"
+        ]
+      },
+      "maxItems": 2
+    },
+    "rejected_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "url",
+          "reason"
+        ]
+      }
+    },
+    "stop_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "cases",
+    "rejected_candidates",
+    "stop_reason"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

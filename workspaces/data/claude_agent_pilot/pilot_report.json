@@ -1,0 +1,146 @@
+{
+  "counts": {
+    "actual_search_requests": 10,
+    "admitted_blueprints_processed": 1,
+    "anchors": 0,
+    "awaiting_search": 0,
+    "downloaded_urls": 0,
+    "ready": 0
+  },
+  "interface": "grounded-workspace-v2",
+  "mode": "graph",
+  "planning_input": {
+    "accepted": 5,
+    "generated": 10,
+    "graph_passed": 6,
+    "input": 10,
+    "modality_candidate_plans": 1,
+    "rejected_or_failed": 5,
+    "semantic_review_attempted": 6,
+    "semantic_reviewed": 5,
+    "semantic_schema_passed": 8
+  },
+  "workspaces": [
+    {
+      "agent_model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 321024,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 36459,
+        "iterations": [],
+        "output_tokens": 6335,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+      "config_sha256": "1c1395eda1bcf816986f801971dc6e0aa3270f9c1ffbdbfb609da9c5bd82da36",
+      "counts": {
+        "actual_search_requests": 10,
+        "actual_webfetch_calls": 31,
+        "critical_coverage": 0.0,
+        "critical_external_nodes": 5,
+        "download_attempts": 0,
+        "downloaded_urls": 0,
+        "independently_verified_visual_evidence": 0,
+        "parsed_unique_files": 0,
+        "retained_files": 0,
+        "supported_critical_nodes": 0,
+        "synthetic_files": 0
+      },
+      "cross_file_coherence": {
+        "evidence": [],
+        "reason": "agent_not_completed",
+        "status": "unverified",
+        "unverified_assumptions": []
+      },
+      "failure_reasons": [
+        {
+          "reason": "agent_session_incomplete",
+          "stage": "agent_retrieval"
+        },
+        {
+          "reason": "no_grounded_anchor",
+          "stage": "anchor_discovery"
+        }
+      ],
+      "interface": "grounded-workspace-v2",
+      "limitations": [
+        "Agent final narrative is provisional, not file evidence.",
+        "WebFetch is a summarized view; Python independently downloads selected materials and discovery pages.",
+        "This is Claude Code with GLM-5.2, not a Claude-model capability evaluation.",
+        "Context, tool workflow, prompts and larger budget differ from the query-only baseline; this is not a controlled causal test.",
+        "Per-tool fetch budget is prompt-enforced and checked after execution; wall time and turn count bound the process."
+      ],
+      "limits": {
+        "discovery_pages": 10,
+        "download_bytes": 20000000,
+        "max_profile_chars": 50000,
+        "max_segments_per_file": 100,
+        "redirects": 4,
+        "retries": 1,
+        "selected_files": 6,
+        "timeout_seconds": 30,
+        "trusted_proxy_env": "HTTPS_PROXY"
+      },
+      "missing_nodes": [
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "modality_evidence": [],
+      "mode": "claude_code_agent",
+      "model_calls": [],
+      "model_usage": {
+        "billed_cost": null,
+        "completion_tokens": 0,
+        "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+        "currency": null,
+        "prompt_tokens": 0,
+        "unique_model_requests": 0
+      },
+      "public_distribution_eligible": false,
+      "retrieved_files": [],
+      "search_cost": {
+        "billed_cost": null,
+        "cli_estimate_usd": 1.290299,
+        "note": "Client estimate is not a LLMCenter invoice. Calls count observed tools, not backend requests."
+      },
+      "search_queries": [
+        "network infrastructure project budget schedule variance report xlsx data",
+        "state broadband network project earned value management budget schedule report 2024 2025",
+        "federal IT dashboard network investment schedule cost variance CSV download itdashboard.gov",
+        "state government network modernization project monthly status report budget actual cost spreadsheet",
+        "itdashboard.gov data feed CSV download investment schedule cost variance",
+        "data.va.gov \"project management accountability\" dashboard CSV export schedule cost budget",
+        "GAO report network modernization project cost schedule variance data table 2023 2024",
+        "NTIA broadband grant project performance report budget actual cost schedule milestone data download",
+        "site:ntia.doc.gov BTOP quarterly performance progress report budget schedule milestones filetype:pdf",
+        "state CIO IT project dashboard network infrastructure budget schedule actual cost CSV download 2024"
+      ],
+      "search_state": "agent_failed",
+      "seed_id": "raw_31_0_18983",
+      "seed_sha256": "1692647c02de6d181b3373e0fd48cf984290d627ad84338a2d596079bfe4bd2e",
+      "selected_anchor": null,
+      "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+      "status": "incomplete",
+      "supported_nodes": [],
+      "work_objective_sha256": "02fc07c45d32b59e8af18e23cef038a92adb4577757c8085e6eb04552be23673",
+      "workspace_files": {},
+      "workspace_id": "WS_e0233264edff"
+    }
+  ]
+}

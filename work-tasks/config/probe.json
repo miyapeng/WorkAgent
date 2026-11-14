@@ -1,0 +1,15 @@
+{
+  "solver": {
+    "binary": "/root/.local/bin/claude",
+    "model": "GLM_ka48dn",
+    "api_base": "https://llm-center.modelbest.co",
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "timeout_seconds": 1200
+  },
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 300,
+    "parameters": {"temperature": 0, "max_tokens": 10000, "thinking": {"type": "disabled"}, "response_format": {"type": "json_object"}}
+  }
+}

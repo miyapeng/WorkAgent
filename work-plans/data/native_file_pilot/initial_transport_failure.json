@@ -1,0 +1,386 @@
+{
+  "blueprints_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "config_sha256": "86fc6512503ab9ee16e4d839eeaafc3312ed8d8e753e38231e7a231c4fd64451",
+  "counts": {
+    "accepted": 0,
+    "generated": 1,
+    "graph_passed": 1,
+    "input": 1,
+    "modality_candidate_plans": 0,
+    "rejected_or_failed": 1,
+    "semantic_review_attempted": 0,
+    "semantic_reviewed": 0,
+    "semantic_schema_passed": 1
+  },
+  "input_sha256": "6bafac8662dbea9aab9ed920bad703aa0bd67b4eec07e27c21e23f1cf54a031c",
+  "interface": "raw-blueprint-v2",
+  "limitations": [
+    "Independent review uses the same model family, not expert certification.",
+    "Task instruction requirements remain pending for Stage 4; they are not case facts."
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 3116,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 2557,
+    "unique_model_requests": 1
+  },
+  "seeds": {
+    "raw_31_0_7382": {
+      "deterministic_checks": {
+        "all_nodes_serve_outputs": true,
+        "dag": true,
+        "modality_linkage": true,
+        "roots_and_sinks": true,
+        "schema": true,
+        "seed_id": true
+      },
+      "failure_reasons": [
+        "TimeoutError"
+      ],
+      "failure_stage": "semantic_review",
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T09:13:12.133862+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_sha256": "316eef100b15cc20e0d345deab37a76c2459b74b6e5f52f89c9fd2af56dfc6ef",
+          "prompt_version": "semantic_planner.v1",
+          "request_sha256": "535a7e47c1483f81fd0161fea4d8b95b11780b72eddd5439dbddc8623b035d08",
+          "usage": {
+            "completion_tokens": 3116,
+            "prompt_tokens": 2557,
+            "prompt_tokens_details": {
+              "cached_tokens": 281
+            },
+            "total_tokens": 5673
+          }
+        }
+      ],
+      "proposed_blueprint": {
+        "deliverables": [
+          {
+            "description": "A report specifying the data requirements, documenting the gathered information, presenting data-quality and statistical validation results, and stating a judgment on fitness for the intended analysis.",
+            "id": "out1",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md"
+            ],
+            "type": "report"
+          }
+        ],
+        "dependencies": [
+          [
+            "i1",
+            "i5"
+          ],
+          [
+            "i4",
+            "i5"
+          ],
+          [
+            "i2",
+            "i6"
+          ],
+          [
+            "i3",
+            "i6"
+          ],
+          [
+            "i5",
+            "i6"
+          ],
+          [
+            "i6",
+            "i7"
+          ],
+          [
+            "i3",
+            "i7"
+          ],
+          [
+            "i4",
+            "i7"
+          ],
+          [
+            "i5",
+            "i8"
+          ],
+          [
+            "i7",
+            "i8"
+          ],
+          [
+            "i4",
+            "i8"
+          ],
+          [
+            "i6",
+            "i9"
+          ],
+          [
+            "i8",
+            "i9"
+          ],
+          [
+            "i7",
+            "i10"
+          ],
+          [
+            "i9",
+            "i10"
+          ],
+          [
+            "i5",
+            "i10"
+          ],
+          [
+            "i5",
+            "out1"
+          ],
+          [
+            "i7",
+            "out1"
+          ],
+          [
+            "i9",
+            "out1"
+          ],
+          [
+            "i10",
+            "out1"
+          ]
+        ],
+        "information_nodes": [
+          {
+            "critical": true,
+            "description": "The decision or analysis scope, target variables, population and time coverage, constraints, and intended use of the information.",
+            "id": "i1",
+            "kind": "text_instruction",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [],
+            "supply_channel": "task_instruction",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Raw or extracted records available for the analysis, including observed values and record-level identifiers.",
+            "id": "i2",
+            "kind": "table",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Field definitions, units, collection notes, provenance, and other metadata needed to interpret the source records correctly.",
+            "id": "i3",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "workspace",
+            "type": "external_input"
+          },
+          {
+            "critical": true,
+            "description": "Applicable data-quality criteria, statistical testing conventions, and acceptance considerations for validation.",
+            "id": "i4",
+            "kind": "document",
+            "modality_candidates": [],
+            "modality_rationale": "",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "supply_channel": "external_reference",
+            "type": "external_input"
+          },
+          {
+            "description": "Specify the variables, units, coverage, granularity, and acceptable quality criteria needed for the intended analysis.",
+            "id": "i5",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Gather and map relevant records to the defined requirements, producing the candidate dataset for validation.",
+            "id": "i6",
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate completeness, accuracy, consistency, validity, and timeliness of the candidate data against the defined requirements and applicable criteria.",
+            "id": "i7",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determine appropriate statistical checks based on variable types, sample structure, quality concerns, and the analysis purpose.",
+            "id": "i8",
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Apply the selected tests to detect anomalies, inconsistencies, coverage gaps, and distributional issues in the candidate data.",
+            "id": "i9",
+            "type": "derived_information"
+          },
+          {
+            "description": "Synthesize the quality assessment and statistical validation results to judge whether the information meets requirements, noting limitations and needed remediation.",
+            "id": "i10",
+            "type": "professional_judgment"
+          }
+        ],
+        "modality_hypotheses": [],
+        "seed_id": "raw_31_0_7382",
+        "work_objective": "Define data requirements and gather, validate, and judge the fitness of information for an operations research analysis using appropriate statistical tests and professional judgment."
+      },
+      "seed_sha256": "2ff9a589e6d982d5c51368c693cf80ddceebb41ecd36379a807f21d91ce6454e",
+      "selection_reason": "New native-file pilot: define data requirements, gather and validate information; no reuse of visualization case.",
+      "semantic_plan": {
+        "deliverable": {
+          "description": "A report specifying the data requirements, documenting the gathered information, presenting data-quality and statistical validation results, and stating a judgment on fitness for the intended analysis.",
+          "kind": "report",
+          "preferred_formats": [
+            "pdf",
+            "docx",
+            "md"
+          ],
+          "requires": [
+            "define_data_requirements",
+            "assess_data_quality",
+            "conduct_statistical_validation",
+            "judge_information_fitness"
+          ]
+        },
+        "inputs": [
+          {
+            "description": "The decision or analysis scope, target variables, population and time coverage, constraints, and intended use of the information.",
+            "kind": "text_instruction",
+            "name": "analysis_request",
+            "preferred_formats": [],
+            "source": "task_instruction"
+          },
+          {
+            "description": "Raw or extracted records available for the analysis, including observed values and record-level identifiers.",
+            "kind": "table",
+            "name": "source_data_records",
+            "preferred_formats": [
+              "csv",
+              "xlsx"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Field definitions, units, collection notes, provenance, and other metadata needed to interpret the source records correctly.",
+            "kind": "document",
+            "name": "data_definitions_and_metadata",
+            "preferred_formats": [
+              "pdf",
+              "docx",
+              "md",
+              "txt"
+            ],
+            "source": "workspace"
+          },
+          {
+            "description": "Applicable data-quality criteria, statistical testing conventions, and acceptance considerations for validation.",
+            "kind": "document",
+            "name": "validation_standards",
+            "preferred_formats": [
+              "pdf",
+              "md",
+              "txt"
+            ],
+            "source": "external_reference"
+          }
+        ],
+        "objective": "Define data requirements and gather, validate, and judge the fitness of information for an operations research analysis using appropriate statistical tests and professional judgment.",
+        "operations": [
+          {
+            "description": "Specify the variables, units, coverage, granularity, and acceptable quality criteria needed for the intended analysis.",
+            "name": "define_data_requirements",
+            "requires": [
+              "analysis_request",
+              "validation_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Gather and map relevant records to the defined requirements, producing the candidate dataset for validation.",
+            "name": "assemble_candidate_data",
+            "requires": [
+              "source_data_records",
+              "data_definitions_and_metadata",
+              "define_data_requirements"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Evaluate completeness, accuracy, consistency, validity, and timeliness of the candidate data against the defined requirements and applicable criteria.",
+            "name": "assess_data_quality",
+            "requires": [
+              "assemble_candidate_data",
+              "data_definitions_and_metadata",
+              "validation_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Determine appropriate statistical checks based on variable types, sample structure, quality concerns, and the analysis purpose.",
+            "name": "select_statistical_tests",
+            "requires": [
+              "define_data_requirements",
+              "assess_data_quality",
+              "validation_standards"
+            ],
+            "type": "professional_judgment"
+          },
+          {
+            "description": "Apply the selected tests to detect anomalies, inconsistencies, coverage gaps, and distributional issues in the candidate data.",
+            "name": "conduct_statistical_validation",
+            "requires": [
+              "assemble_candidate_data",
+              "select_statistical_tests"
+            ],
+            "type": "derived_information"
+          },
+          {
+            "description": "Synthesize the quality assessment and statistical validation results to judge whether the information meets requirements, noting limitations and needed remediation.",
+            "name": "judge_information_fitness",
+            "requires": [
+              "assess_data_quality",
+              "conduct_statistical_validation",
+              "define_data_requirements"
+            ],
+            "type": "professional_judgment"
+          }
+        ]
+      },
+      "semantic_review": null,
+      "semantic_schema_passed": true,
+      "status": "failed"
+    }
+  }
+}

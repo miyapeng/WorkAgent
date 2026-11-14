@@ -22,3 +22,11 @@ def safe_relative(value):
             and '..' not in p.parts and '\\' not in value and ':' not in value,
             'unsafe_relative_path')
     return p
+
+
+def require_workspace_artifact(profile, path=None):
+    """HTML is discovery/provenance material, never an Agent-visible input."""
+    require(profile.get('type')!='html' and profile.get('format') not in ('html','htm','xhtml'),
+            'html_not_allowed_in_workspace')
+    if path is not None:
+        require(Path(path).suffix.lower() not in ('.html','.htm','.xhtml'), 'html_not_allowed_in_workspace')

@@ -1,0 +1,6 @@
+work_package_id,name,baseline_start,baseline_due,baseline_budget_usd,baseline_effort_hours,planned_completed_effort_hours
+WP1,Site survey and requirements definition,2025-01-06,2025-02-14,38000,320,320
+WP2,Core and distribution switch design,2025-02-03,2025-04-11,62000,480,480
+WP3,Fiber backbone and structured cabling installation,2025-04-14,2025-08-22,210000,1600,900
+WP4,Wireless access point and IDF switch deployment,2025-05-19,2025-09-26,124000,960,140
+WP5,Monitoring integration and cutover validation,2025-06-02,2025-10-31,78000,640,96

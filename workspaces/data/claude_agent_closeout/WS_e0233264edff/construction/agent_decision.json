@@ -1,0 +1,100 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "This is a grantee annual performance report page for a broadband deployment project. The page metadata confirms it is an Annual Report for the Comanche Nation TBCP Round 1, and it links to a PDF (Comanche_Nation_Annual_Report_FY24_Q3.pdf at relative path /sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf) which likely contains planned milestones, budget allocation, actual expenditures, and completion status. The reporting page also shows 476 similar reports across multiple grantees and document types (Annual Report, Financial Report, Semi-Annual Technical Report, Baseline Report, CD-450, CD-451), indicating a structured grantee reporting system with cost and schedule data.",
+          "source_page": "https://broadbandusa.ntia.gov/funding-programs/reporting",
+          "target_node_ids": [
+            "i2",
+            "i3",
+            "i4",
+            "i5"
+          ],
+          "url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i"
+        }
+      ],
+      "identity": "NTIA Tribal Broadband Connectivity Program - Comanche Nation Annual Report FY24 Q3",
+      "missing_information": [
+        "i1 - Task instruction defining the specific project being monitored, reporting period, and tolerance thresholds",
+        "i6 - Applicable organizational cost-control, budget-allocation, or variance-reporting standards document",
+        "The PDF contents have not been verified; budget, cost, schedule, and milestone data are inferred from the report type and NTIA reporting framework but not confirmed from the actual file content"
+      ]
+    },
+    {
+      "files": [
+        {
+          "reason": "Observed CSV file with columns agencyCode, agencyName, fiscalYear, costVariance, numberOfProjects, DataAsOf. Contains FY2025 data as of 09/11/2024 for 26 federal agencies with project counts grouped by cost variance tier (Low/Medium/High). Provides agency-level budget vs actual cost variance classification, though it is aggregate counts rather than investment-level dollar variances.",
+          "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+          "target_node_ids": [
+            "i3",
+            "i4"
+          ],
+          "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance"
+        },
+        {
+          "reason": "Observed CSV file with columns agencyCode, agencyName, fiscalYear, scheduleVariance, numberOfProjects, DataAsOf. Contains FY2025 data as of 09/11/2024 for 26 federal agencies with project counts grouped by schedule variance tier (Low/Medium/High). Provides agency-level schedule variance classification, though aggregate rather than investment-level milestone data.",
+          "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+          "target_node_ids": [
+            "i2",
+            "i5"
+          ],
+          "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance"
+        },
+        {
+          "reason": "Observed CSV file with columns agencyCode, agencyName, targetMet, count, percent, fiscalYear, DataAsOf. Contains FY2025 agency performance metrics showing Met vs Not Met targets with counts and percentages for 24 federal agencies. Provides completion status/performance data, though aggregate rather than project-level.",
+          "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+          "target_node_ids": [
+            "i5"
+          ],
+          "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics"
+        }
+      ],
+      "identity": "IT Dashboard Agency Analysis - Federal IT Cost and Schedule Variance CSV Feeds (FY2025)",
+      "missing_information": [
+        "i1 - Task instruction defining the specific project being monitored, reporting period, and tolerance thresholds",
+        "i2 - Planned milestones, activities, durations, and planned completion dates for a specific project (these CSVs are agency-aggregate counts, not project-level schedules)",
+        "i3 - Approved budget allocation by cost category, activity, or resource for a specific project (CSV provides variance tier counts, not budget figures)",
+        "i4 - Recorded actual costs and committed expenditures by cost category or activity for a specific project (CSV provides variance tier counts, not actual cost dollar amounts)",
+        "i5 - Reported completion status, percent complete, and actual milestone dates for a specific project (CSV provides aggregate Met/Not Met counts)",
+        "i6 - Applicable organizational cost-control, budget-allocation, or variance-reporting standards",
+        "Investment-level or project-level data is not available from these feeds; all three CSVs are agency-aggregated statistics with no project names, identifiers, or dollar amounts. The IT Dashboard's investment-level cost/schedule feeds were noted as potentially offline by third-party observers. Individual investment detail pages require interactive agency selection and did not render project data in static fetches."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "Government-wide rollup of DCOI and portfolio cost savings with no project-level, agency-level, or investment-level data. All rows are 'All Agencies' aggregate totals across fiscal years.",
+      "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/cost_savings/cumulativeCombinedCostSavings?agencies=000"
+    },
+    {
+      "reason": "Every row contains amount=0 for FY2025; this is a placeholder or early-stage file with no usable spending data.",
+      "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-spending"
+    },
+    {
+      "reason": "GAO report on VA Electronic Health Record modernization contains cost estimates and schedule milestones in narrative form but no downloadable data tables, no cost/schedule variance figures, and no CSV/Excel files. Not a network project.",
+      "url": "https://www.gao.gov/products/gao-25-108091"
+    },
+    {
+      "reason": "Returned HTTP 404 Not Found. Multiple NTIA grantee directory URL variants also returned 404 or redirects to 404 pages.",
+      "url": "https://www2.ntia.doc.gov/sites/files/grantees"
+    },
+    {
+      "reason": "VA Program Management Accountability Dashboard dataset page returned only header/navigation content; no schema, field names, download links, or project data were visible.",
+      "url": "https://www.datahub.va.gov/dataset/taai-bxn5"
+    },
+    {
+      "reason": "Data feeds page lists selectable feeds (Projects, Performance Metrics, etc.) but exposes no direct download URLs in static content; the Download Data button requires interactive form submission.",
+      "url": "https://itdashboard.gov/data-feeds"
+    },
+    {
+      "reason": "Filter/search interface only; no specific investments, budget figures, or variance data rendered in static content.",
+      "url": "https://itdashboard.gov/investment-details"
+    },
+    {
+      "reason": "Refine Search panel only; no actual document listings or download links visible.",
+      "url": "https://itdashboard.gov/document-search"
+    }
+  ],
+  "stop_reason": "The session exhausted its web search budget (8/8 calls) and web fetch budget (10/10 calls) without locating a single network project with complete investment-level planned schedule, approved budget, actual costs, and completion status data. The IT Dashboard's agency-analysis CSVs provide aggregate cost/schedule variance counts but lack project-level detail, and investment-level feeds appear partially offline. NTIA broadband grantee reports exist (476 documents visible) but the grantee directory URLs returned 404, and only one individual report page was successfully fetched with a confirmed PDF attachment. No case has verified file contents; all PDF contents remain unverified."
+}

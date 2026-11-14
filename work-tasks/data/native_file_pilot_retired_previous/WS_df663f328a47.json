@@ -1,0 +1,10 @@
+{
+  "data_provenance": "grounded_workspace",
+  "model_calls": [],
+  "reasons": [
+    "html_not_allowed_in_workspace"
+  ],
+  "seed_id": "raw_31_0_21828",
+  "status": "blocked_upstream",
+  "workspace_id": "WS_df663f328a47"
+}

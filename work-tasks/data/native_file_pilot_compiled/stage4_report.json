@@ -1,0 +1,107 @@
+{
+  "blocked_upstream": 0,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 1,
+  "rejected": 1,
+  "stage": "all",
+  "workspaces": [
+    {
+      "artifact_checks_compiled": true,
+      "data_provenance": "grounded_workspace",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:24:04.352040+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "ZhipuAI/GLM-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-joint-v10",
+          "request_sha256": "42ea4be1999ee48defa5755c702492e64429e79d0ec884f37cb65e0f76d0c4a0"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:29:32.271967+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-reverse-audit-v8",
+          "request_sha256": "cbc190c7860fd0da31c2793e6f01c55419fba8ec0c5e80f5f2d9ae3473853145"
+        }
+      ],
+      "reasons": [
+        {
+          "check": "task_rubric_alignment",
+          "reason": "Instruction (3) requires evaluating timeliness of the candidate data. Req_3 covers completeness, accuracy, consistency, and validity but not timeliness; req_4/rub_4 cover timeliness only for severity adjustment data. The general candidate-data timeliness obligation is therefore unresolved. Separately, the instruction says the report may be PDF, DOCX, or Markdown, while the deliverable path and artifact_d1 require a file that parses as PDF; DOCX or Markdown at that path would fail. Other requirements map one-to-one to rubrics and the substantive weights are not dominated by the one-point presence check."
+        },
+        {
+          "check": "verification_soundness",
+          "reason": "Rub_1's requirement explicitly includes units, but its full_credit and common_errors test variables, coverage, granularity, and quality criteria without requiring units, so a report could omit units and still pass. Rub_2's requirement explicitly includes validating the collision_index join key, but its full_credit only identifies the documented key and describes mapping and population scope; it does not test referential validation of the join. The artifact check is correctly limited to file presence and PDF parseability and is weighted 1, with semantic quality left to separate rubrics, but the two semantic gaps remain."
+        },
+        {
+          "check": "rub_1",
+          "reason": "The requirement explicitly includes units, but the full_credit bullets require only specific variables, 2024 coverage, record-level granularity, and justified quality criteria; the common_errors also do not mention units. A report could omit units and still satisfy the stated full-credit test. fact_001/fact_003/fact_007 show fields and code formats, but the verification specification does not test the units component of the requirement."
+        },
+        {
+          "check": "rub_2",
+          "reason": "The requirement explicitly includes validating the collision_index join key, but the full_credit bullets only require identifying collision_index, describing the mapping process, and noting population scope. They do not require checking that the join key actually links records consistently across the three tables. fact_013 documents the key, but the rubric does not test validation of the join."
+        }
+      ],
+      "seed_id": "raw_31_0_7382",
+      "semantic_checks": {
+        "failures": [
+          {
+            "check": "task_rubric_alignment",
+            "reason": "Instruction (3) requires evaluating timeliness of the candidate data. Req_3 covers completeness, accuracy, consistency, and validity but not timeliness; req_4/rub_4 cover timeliness only for severity adjustment data. The general candidate-data timeliness obligation is therefore unresolved. Separately, the instruction says the report may be PDF, DOCX, or Markdown, while the deliverable path and artifact_d1 require a file that parses as PDF; DOCX or Markdown at that path would fail. Other requirements map one-to-one to rubrics and the substantive weights are not dominated by the one-point presence check."
+          },
+          {
+            "check": "verification_soundness",
+            "reason": "Rub_1's requirement explicitly includes units, but its full_credit and common_errors test variables, coverage, granularity, and quality criteria without requiring units, so a report could omit units and still pass. Rub_2's requirement explicitly includes validating the collision_index join key, but its full_credit only identifies the documented key and describes mapping and population scope; it does not test referential validation of the join. The artifact check is correctly limited to file presence and PDF parseability and is weighted 1, with semantic quality left to separate rubrics, but the two semantic gaps remain."
+          },
+          {
+            "check": "rub_1",
+            "reason": "The requirement explicitly includes units, but the full_credit bullets require only specific variables, 2024 coverage, record-level granularity, and justified quality criteria; the common_errors also do not mention units. A report could omit units and still satisfy the stated full-credit test. fact_001/fact_003/fact_007 show fields and code formats, but the verification specification does not test the units component of the requirement."
+          },
+          {
+            "check": "rub_2",
+            "reason": "The requirement explicitly includes validating the collision_index join key, but the full_credit bullets only require identifying collision_index, describing the mapping process, and noting population scope. They do not require checking that the join key actually links records consistently across the three tables. fact_013 documents the key, but the rubric does not test validation of the join."
+          }
+        ],
+        "passed": false,
+        "qualification": "Independent model call, not independent expert certification; execution not tested."
+      },
+      "status": "rejected",
+      "structural_checks": {
+        "passed": true,
+        "requirements": 8,
+        "rubrics": 8,
+        "source_facts": 25
+      },
+      "workspace_id": "WS_e3babe3a48a1"
+    }
+  ]
+}

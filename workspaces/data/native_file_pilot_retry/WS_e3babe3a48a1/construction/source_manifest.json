@@ -1,0 +1,152 @@
+{
+  "sources": {
+    "f_1a60f65f07a44454bc03c63b": {
+      "bytes": 20296911,
+      "discovery": {
+        "method": "actual_html_href",
+        "source_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+        "source_sha256": "5114f6f31ee906a8738d171085102ccbcb4a2d57bd59c2b06394de84bb7114e6"
+      },
+      "file_id": "f_1a60f65f07a44454bc03c63b",
+      "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv",
+      "license_status": "unknown",
+      "mime": "text/csv",
+      "origin": "real_original",
+      "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv",
+      "prior_errors": [],
+      "reason": "Vehicle-level STATS19 records for 2024 (exact URL observed on the same gov.uk release page). ~20.3 MB, exceeds in-tool read limit, so format confirmed only by the verified sibling table; supplies vehicle-level records joinable via collision_index + vehicle_reference. Needs independent download to confirm.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:42:52.213430+00:00",
+      "sha256": "1a60f65f07a44454bc03c63b35d6741f41c9dfbb05a26753406aef8bff4ae6cd",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i2"
+      ],
+      "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv",
+      "workspace_path": "tables/f_1a60f65f07a44454bc03c63b_dft-road-casualty-statistics-vehicle-2024.csv"
+    },
+    "f_23fc55d06693fda26a6ddb2a": {
+      "bytes": 2343524,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-8c226320-1365-4e0a-83d4-97e01f76d4bb"
+      },
+      "file_id": "f_23fc55d06693fda26a6ddb2a",
+      "final_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+      "license_status": "redistributable",
+      "mime": "application/pdf",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+      "prior_errors": [
+        "SSLEOFError"
+      ],
+      "reason": "STATS19 review final report (native PDF, valid %PDF-1.6, 2.2 MB, downloaded). Independently published review enumerating coverage, under-reporting and quality limitations of the STATS19 collection — an authoritative reference for quality criteria and known-invalidity considerations. Text is Flate-compressed; requires independent extraction.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:36:26.401920+00:00",
+      "sha256": "23fc55d06693fda26a6ddb2a1fea965f26a2cc6edc0c1204c784d955fef1b3b1",
+      "source_page": "https://www.gov.uk/guidance/road-accident-and-safety-statistics-guidance",
+      "target_node_ids": [
+        "i4"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+      "workspace_path": "materials/f_23fc55d06693fda26a6ddb2a_stats-19-review-final-report.pdf"
+    },
+    "f_32a78f4662e309160f37b1ea": {
+      "bytes": 19208488,
+      "discovery": {
+        "method": "actual_html_href",
+        "source_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+        "source_sha256": "5114f6f31ee906a8738d171085102ccbcb4a2d57bd59c2b06394de84bb7114e6"
+      },
+      "file_id": "f_32a78f4662e309160f37b1ea",
+      "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv",
+      "license_status": "unknown",
+      "mime": "text/csv",
+      "origin": "real_original",
+      "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv",
+      "prior_errors": [],
+      "reason": "Collision-level STATS19 records for 2024 (exact URL observed on the gov.uk Road Safety Data release page). ~18.6 MB, exceeds WebFetch's 10 MB read limit so contents were not summarized in-tool, but the sibling casualty CSV of the same release downloaded and parsed as valid CSV with a 24-column header; this collision table supplies the primary record table with collision_index and observed values/identifiers. Independent download/parse required to confirm header and row count.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:41:04.270420+00:00",
+      "sha256": "32a78f4662e309160f37b1ea2b82017e85e07b62a022d680da7140e88706a17c",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i2"
+      ],
+      "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv",
+      "workspace_path": "tables/f_32a78f4662e309160f37b1ea_dft-road-casualty-statistics-collision-2024.csv"
+    },
+    "f_51b08606ef3dad1ae5d4c872": {
+      "bytes": 85112,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-827dbc1b-bec5-4415-83a6-0287e65cda1a"
+      },
+      "file_id": "f_51b08606ef3dad1ae5d4c872",
+      "final_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+      "license_status": "unknown",
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+      "prior_errors": [],
+      "reason": "Official DfT Road Safety Open Dataset Data Guide 2025 (native XLSX, 83.1 KB, downloaded successfully; ZIP/OOXML structure with >=2 worksheets confirmed). This is the field-definitions and value-label document accompanying the 2024 CSVs, giving variable names, codes/units and collection notes needed to interpret records. Sheet text not legible via WebFetch binary; requires independent parse.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:33:59.833199+00:00",
+      "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+      "workspace_path": "tables/f_51b08606ef3dad1ae5d4c872_dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx"
+    },
+    "f_838aad605a6ac638973f0924": {
+      "bytes": 10439101,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-570f84a5-7a93-4a52-81d1-95925fccd30a"
+      },
+      "file_id": "f_838aad605a6ac638973f0924",
+      "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv",
+      "license_status": "unknown",
+      "mime": "text/csv",
+      "origin": "real_original",
+      "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv",
+      "prior_errors": [],
+      "reason": "Casualty-level records for 2024; verified directly. Header observed: collision_index, collision_year, collision_ref_no, vehicle_reference, casualty_reference, casualty_class, sex_of_casualty, age_of_casualty, age_band_of_casualty, casualty_severity, pedestrian_location, pedestrian_movement, car_passenger, bus_or_coach_passenger, pedestrian_road_maintenance_worker, casualty_type, casualty_imd_decile, lsoa_of_casualty, enhanced_casualty_severity, casualty_injury_based, casualty_adjusted_severity_serious, casualty_adjusted_severity_slight, casualty_distance_banding, escooter_flag. Provides observed values and record-level identifiers for validation.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:43:41.441008+00:00",
+      "sha256": "838aad605a6ac638973f09248ef3a730dbd1de30ac8fc79dfd536e7d4a47b0f8",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i2"
+      ],
+      "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv",
+      "workspace_path": "tables/f_838aad605a6ac638973f0924_dft-road-casualty-statistics-casualty-2024.csv"
+    },
+    "f_9a0db9e666e696a8c4e61dd6": {
+      "bytes": 18111,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-7d743f5d-5451-442b-9bec-c8d218c49f35"
+      },
+      "file_id": "f_9a0db9e666e696a8c4e61dd6",
+      "final_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+      "license_status": "unknown",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+      "prior_errors": [],
+      "reason": "DfT severity-adjustment figure guidance (native DOCX, downloaded; valid OOXML container confirmed). Documents the methodology DfT applies to correct reported-injury-severity misclassification — a directly applicable statistical/quality criterion for judging fitness of casualty_severity fields. Text not legible via WebFetch binary; requires independent extraction.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:33:58.519181+00:00",
+      "sha256": "9a0db9e666e696a8c4e61dd6c1eccd0d957e0a5871cd7c4439d43b63893bced8",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i4"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+      "workspace_path": "materials/f_9a0db9e666e696a8c4e61dd6_dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+    }
+  }
+}

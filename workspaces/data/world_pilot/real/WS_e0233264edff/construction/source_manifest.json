@@ -1,0 +1,35 @@
+{
+  "sources": {
+    "f_2dd5629ecfc75177a3348da2": {
+      "bytes": 255073,
+      "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+      "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+      "file_id": "f_2dd5629ecfc75177a3348da2",
+      "final_url": "https://mercury-training.com/public-courses.html",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://mercury-training.com/pdfb",
+      "prior_errors": [],
+      "redirects": [
+        {
+          "from": "https://mercury-training.com/pdfb",
+          "status": 301,
+          "to": "https://mercury-training.com/pdfb/course.php"
+        },
+        {
+          "from": "https://mercury-training.com/pdfb/course.php",
+          "status": 301,
+          "to": "https://mercury-training.com/public-courses.html"
+        }
+      ],
+      "retrieved_at": "2026-11-13T07:12:32.258558+00:00",
+      "selection_reason": "Covers budget preparation and operational cost control, addressing the critical external-reference node i6 (applicable budget-allocation/cost-control/variance-reporting standards). Plausibly applicable as a standards reference for the cost-control actions in node i11 and the out1 workbook, even though it is not from the same publishing organization.",
+      "sha256": "2dd5629ecfc75177a3348da251354ef7aabdd4863099f00af0f1120f1c9bd605",
+      "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+      "source_page": "https://mercury-training.com/pdfb",
+      "title": "Budget Preparation, Operational Cost Control, and ...",
+      "url": "https://mercury-training.com/pdfb"
+    }
+  }
+}

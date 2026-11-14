@@ -1,0 +1,245 @@
+{
+  "agent_model_usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 21908,
+    "fallback_credit": null,
+    "inference_geo": "",
+    "input_tokens": 187815,
+    "iterations": [],
+    "output_tokens": 12525,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_fetch_requests": 0,
+      "web_search_requests": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "blueprint_sha256": "869a1bd6a8ab77dffacd350ebf963fd2b0f8564ae52e5cbfce53e5224a04e815",
+  "config_sha256": "a71565650425bf06eb9af3e0fca6265402b119cde7106477dedd6f014902d746",
+  "counts": {
+    "actual_search_requests": 13,
+    "actual_webfetch_calls": 20,
+    "critical_coverage": 1.0,
+    "critical_external_nodes": 1,
+    "download_attempts": 20,
+    "downloaded_urls": 14,
+    "independently_verified_visual_evidence": 0,
+    "parsed_unique_files": 5,
+    "retained_files": 5,
+    "supported_critical_nodes": 1,
+    "synthetic_files": 0
+  },
+  "cross_file_coherence": {
+    "evidence": [
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_cc395387892011662af5fd86",
+        "locator": "row:1",
+        "quote": "REF_DATE | GEO | DGUID | Labour force characteristics | Gender | Age group | Statistics | Data type | UOM | UOM_ID | SCALAR_FACTOR | SCALAR_ID | VECTOR | COORDINATE | VALUE | STATUS | SYMBOL | TERMINATED | DECIMALS",
+        "segment_id": "seg_20628c77bcf07504cab39975",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_e393b688c4f32bf0fa4171f8",
+        "locator": "line:237",
+        "quote": "thousands (except rates)thousands (except rates)thousands (except rates)",
+        "segment_id": "seg_c5c10096f892462cd06bd921",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_a115fd96a75c45745f5cda4a",
+        "locator": "line:237",
+        "quote": "thousands (except rates)thousands (except rates)thousands (except rates)",
+        "segment_id": "seg_5f1654ceb4a002c5c7c9a06e",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_28dafec1b2678aa91c7ef101",
+        "locator": "line:237",
+        "quote": "thousandsthousandsthousands",
+        "segment_id": "seg_e1e6c044743cedafb3fe0d6a",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_cdba9c6f28c957b9ae555ffb",
+        "locator": "line:8",
+        "quote": "Average usual hours and wages of employees by selected characteristics, unadjusted for seasonality",
+        "segment_id": "seg_c09c5cba60bb5a916a47440b",
+        "verification_status": "source_located"
+      },
+      {
+        "evidence_method": "programmatic_extraction",
+        "file_id": "f_cdba9c6f28c957b9ae555ffb",
+        "locator": "line:226",
+        "quote": "current dollarscurrent dollars",
+        "segment_id": "seg_6b03f7ed9c7a06f358d0672e",
+        "verification_status": "source_located"
+      }
+    ],
+    "reason": "All five retained files are Statistics Canada labour force statistics from the same October 2026 release (2026-11-06) and describe the same case. They are, however, not uniform and the differences must be preserved rather than flattened: Tables 1-3 and the CSV are seasonally adjusted, while Table 11 is explicitly unadjusted for seasonality; units differ across sources (persons in thousands, percent, and current dollars); and time scope differs (CSV 2026-06 to 2026-10; Tables 1-3 compare September 2026 and October 2026 with MoM/YoY changes; Table 11 is October 2026 only). These are explicit, compatible bases that must be labeled distinctly when charting, not treated as identical.",
+    "status": "coherent",
+    "unverified_assumptions": []
+  },
+  "failure_reasons": [
+    {
+      "reason": "download_failed:download_too_large|download_too_large",
+      "stage": "download_or_profile",
+      "url": "https://www150.statcan.gc.ca/n1/tbl/csv/14100287-eng.zip"
+    },
+    {
+      "reason": "file_parse_rejected:invalid_csv",
+      "stage": "download_or_profile",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.csv"
+    },
+    {
+      "reason": "file_parse_rejected:invalid_csv",
+      "stage": "download_or_profile",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.csv"
+    },
+    {
+      "reason": "file_parse_rejected:invalid_csv",
+      "stage": "download_or_profile",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.csv"
+    },
+    {
+      "reason": "file_parse_rejected:invalid_csv",
+      "stage": "download_or_profile",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.csv"
+    }
+  ],
+  "interface": "grounded-workspace-v2",
+  "limitations": [
+    "Agent final narrative is provisional, not file evidence.",
+    "WebFetch is a summarized view; Python independently downloads selected materials and discovery pages.",
+    "This is Claude Code with GLM-5.2, not a Claude-model capability evaluation.",
+    "Context, tool workflow, prompts and larger budget differ from the query-only baseline; this is not a controlled causal test.",
+    "No explicit turn/search/fetch count limit; wall-clock timeout and materialization limits still apply."
+  ],
+  "limits": {
+    "discovery_pages": 10,
+    "download_bytes": 20000000,
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100,
+    "redirects": 4,
+    "retries": 1,
+    "selected_files": 6,
+    "timeout_seconds": 30,
+    "trusted_proxy_env": "HTTPS_PROXY"
+  },
+  "missing_nodes": [],
+  "modality_evidence": [],
+  "mode": "claude_code_agent",
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T08:31:18.121023+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "7b70582c85855ce2a73793d99cf8495a58f2f6d8429098a8c76551de51623f40",
+      "prompt_version": "evidence_auditor.v3",
+      "request_sha256": "f5d1b9754c39974e62cb9bd742ad504e2d5276f787511197e003ec397540b99c",
+      "usage": {
+        "completion_tokens": 10350,
+        "prompt_tokens": 37605,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 47955
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 10350,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 37605,
+    "unique_model_requests": 1
+  },
+  "public_distribution_eligible": false,
+  "retrieved_files": [
+    "f_e393b688c4f32bf0fa4171f8",
+    "f_a115fd96a75c45745f5cda4a",
+    "f_28dafec1b2678aa91c7ef101",
+    "f_cdba9c6f28c957b9ae555ffb",
+    "f_cc395387892011662af5fd86"
+  ],
+  "search_cost": {
+    "billed_cost": null,
+    "cli_estimate_usd": 2.1306682,
+    "note": "Client estimate is not a LLMCenter invoice. Calls count observed tools, not backend requests."
+  },
+  "search_queries": [
+    "public data analysis results CSV dataset government statistics 2025",
+    "BLS employment data analysis results CSV download",
+    "ONS statistical bulletin reference tables xlsx download latest release",
+    "NHS England statistics release Excel tables A&E attendances 2025",
+    "ONS labour market statistics bulletin datasets reference tables",
+    "A&E attendances emergency admissions monthly statistics excel",
+    "\"A&E Attendances and Emergency Admissions\" October 2025 statistical press notice excel time series",
+    "data.gov.uk dataset CSV analysis results table \"statistics\" download direct file",
+    "CDC NCHS data brief excel table download death rates by cause 2024 csv",
+    "site:cdc.gov nchs data briefs 2025 pdf excel table",
+    "Statistics Canada \"Labour Force Survey, October 2026\" The Daily",
+    "statcan.gc.ca daily Labour Force Survey October 2026 employment unemployment rate",
+    "statcan table 14100287-eng.zip full table download labour force"
+  ],
+  "search_state": "agent_completed",
+  "seed_id": "raw_31_0_21828",
+  "seed_sha256": "e381d6fcc9172fb989f024246a278b6f40bf5d7ce4910274fe863a8507b949ca",
+  "selected_anchor": {
+    "evidence": [
+      {
+        "file_id": "f_cc395387892011662af5fd86",
+        "segment_id": "seg_20628c77bcf07504cab39975"
+      },
+      {
+        "file_id": "f_cc395387892011662af5fd86",
+        "segment_id": "seg_09b401cdb91b588185be838f"
+      },
+      {
+        "file_id": "f_cc395387892011662af5fd86",
+        "segment_id": "seg_145e74b897b7886d19d477d2"
+      }
+    ],
+    "file_ids": [
+      "f_cc395387892011662af5fd86"
+    ],
+    "identity": "Statistics Canada labour force characteristics, monthly, seasonally adjusted — Table 14-10-0287-01 CSV export (October 2026 reference period)",
+    "scope": "Canada, Total - Gender, 15 years and over, monthly 2026-06 to 2026-10, seasonally adjusted; levels stated as persons in thousands and rate statistics as percent."
+  },
+  "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+  "status": "ready",
+  "supported_nodes": [
+    "i1"
+  ],
+  "work_objective_sha256": "f56d91f8d829f5a9f0939e6fdcd3592f7f940eaed550dd43d831d633decda538",
+  "workspace_files": {
+    "materials/f_28dafec1b2678aa91c7ef101_t002a-eng.htm": "28dafec1b2678aa91c7ef101f52b9c9ecfd0c071fa00435fcc081716efd86210",
+    "materials/f_a115fd96a75c45745f5cda4a_t003a-eng.htm": "a115fd96a75c45745f5cda4adddeab6dabd5987dcb6ea68f072c2266d04b92af",
+    "materials/f_cdba9c6f28c957b9ae555ffb_t011a-eng.htm": "cdba9c6f28c957b9ae555ffbbb380e6957fb0541b35fa9af45409be5751a505f",
+    "materials/f_e393b688c4f32bf0fa4171f8_t001a-eng.htm": "e393b688c4f32bf0fa4171f8d5e16f712ac89d1c8345ac41f8ba30a17eedd3ab",
+    "tables/f_cc395387892011662af5fd86_dtl_downloadDbLoadingData-nonTraduit.action": "cc395387892011662af5fd8654607927272889cc753ae72ef53d291223bfe5ea"
+  }
+}

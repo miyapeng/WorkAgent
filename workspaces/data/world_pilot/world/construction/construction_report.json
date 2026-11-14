@@ -1,0 +1,127 @@
+{
+  "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+  "config_sha256": "9038cc82e9bcfe2f952ceb57b333d7b31c4c6a34f5d15ff89a1194c40bd741e8",
+  "engineering_checks": {
+    "duplicate_id_rejected": true,
+    "independent_agent_probe_run": false,
+    "kind": "engineering_reference_and_mutations_not_agent_probe",
+    "missing_id_rejected": true,
+    "multimodal_ablation_run": false,
+    "mutations_rejected": 30,
+    "numeric_and_unit_mutations": 30,
+    "semantic_quality_evaluated": false,
+    "visible_only_numeric_reference_passed": true
+  },
+  "external_inputs_materialized": 6,
+  "failure_reasons": [],
+  "family": "project_cost_schedule_v1",
+  "implementation_sha256": "6cf3a0d4f8622f75950dea1124de0ed50f7f1d9a0d8520245e23fa502f4eace0",
+  "limitations": [
+    "One task-family prototype, not generalized world synthesis.",
+    "A hidden world is a synthetic reference, not external factual truth.",
+    "Narrative quality, independent Agent execution and multimodal necessity remain untested."
+  ],
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T07:13:40.746449+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "5298da0560e985286f4b5977e9be19dda6c2d643f71575bad243ee81ab899c13",
+      "prompt_version": "world_generator.v1",
+      "request_sha256": "26bbe1a2b4bcc48334b14545063e281b65438aef0684f39b34a84321b59940d3",
+      "usage": {
+        "completion_tokens": 2267,
+        "prompt_tokens": 3283,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 5550
+      }
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T07:14:20.568924+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_sha256": "78655871e5c7164f8874cc5d128b3559807e5920c44a1c42e773b70070a1943c",
+      "prompt_version": "world_reviewer.v1",
+      "request_sha256": "5581f1ffa7efa95e57622525b8d774c2df849a9a3ebbf3e581b2b9cf215f0875",
+      "usage": {
+        "completion_tokens": 8517,
+        "prompt_tokens": 5130,
+        "prompt_tokens_details": {
+          "cached_tokens": 51
+        },
+        "total_tokens": 13647
+      }
+    }
+  ],
+  "model_usage": {
+    "billed_cost": null,
+    "completion_tokens": 10784,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 8413,
+    "unique_model_requests": 2
+  },
+  "parsed_files": 5,
+  "real_anchor_count": 0,
+  "route": "controlled_synthesis",
+  "seed_id": "raw_31_0_18983",
+  "seed_sha256": "1692647c02de6d181b3373e0fd48cf984290d627ad84338a2d596079bfe4bd2e",
+  "semantic_review": {
+    "accepted": true,
+    "checks": {
+      "cross_file_coherence": true,
+      "information_sufficiency": true,
+      "intent_preservation": true,
+      "no_answer_leakage": true,
+      "professional_plausibility": true,
+      "synthetic_disclosure": true,
+      "task_verifier_alignment": true
+    },
+    "issues": [],
+    "limitations": [
+      "The forecast is a single deterministic remaining-hours model with fixed rates and nonlabor commitments; it does not provide probabilistic ranges, productivity changes, escalation, or contingency-balance treatment.",
+      "The cost variance metric compares total actual cost to total baseline budget, so it is a remaining-budget indicator rather than a classic earned-value cost variance to date.",
+      "The data are notably rounded and tidy: WP1 and WP2 exactly consume baseline effort, and completed effort values are round numbers. This reduces occupational realism even though the calculations remain coherent.",
+      "The baseline lacks a cost-category breakdown, explicit dependency network, and stated contingency balance, which limits precision in downstream date-change approval analysis and contingency recommendations.",
+      "The project brief says approximately the first third of baseline effort has been consumed, while supplied effort totals imply 1,700 of 4,000 hours completed (42.5%) and 1,936 planned (48.4%); this is loose but not fatal.",
+      "The numeric verifier covers only the assessment CSV; narrative report quality is declared for semantic review but not executed here.",
+      "This is a same-model review, not independent expert certification or an Agent Probe."
+    ]
+  },
+  "stage4_eligible": false,
+  "status": "experimental_draft",
+  "supported_synthetic_nodes": 6,
+  "synthetic_files": 5,
+  "training_admitted": false,
+  "workspace_files": {
+    "context/monitoring_policy.md": "4af68104f8ca78da2446b90c994f86ae96ca4486da1c401f0a99b1a49a2070e9",
+    "context/project_brief.md": "927b916cd87d449c80539981e49372217aa8bd7a7b9e55aaf987c837770ea4fa",
+    "records/actuals.csv": "444c763b8bb3d72e8252b2daabaa14e2259453486f47f3d3dd8ed515ccfe20fa",
+    "records/baseline.csv": "41eac6a5eb6a6f00de4c62763dad7f0704bf40883499eecbf78837f928382dea",
+    "records/remaining_estimates.csv": "13b1c0a6fdc215990bba07d1213913e1af991a0ae411950679ff566265c956e0"
+  }
+}

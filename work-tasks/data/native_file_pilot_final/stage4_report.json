@@ -1,0 +1,71 @@
+{
+  "blocked_upstream": 0,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 1,
+  "rejected": 1,
+  "stage": "all",
+  "workspaces": [
+    {
+      "data_provenance": "grounded_workspace",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "format_retry": true,
+          "generated_at": "2026-11-13T10:08:55.159829+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "previous_failure": "llm_response_not_json",
+          "prompt_version": "task-rubric-joint-v8",
+          "request_sha256": "95db9d3f5177d5a612adba4fe121cc8b65cde07bf053d5ac242b712e19ef7ca9"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:10:06.231475+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-reverse-audit-v6",
+          "request_sha256": "6caaa1b4169c7231bda2c180169f7bd69cd0c32aae4f62ccefc59eab00de79f3"
+        }
+      ],
+      "reasons": [
+        "audit_missing_source_evidence"
+      ],
+      "seed_id": "raw_31_0_7382",
+      "status": "rejected",
+      "structural_checks": {
+        "passed": true,
+        "requirements": 8,
+        "rubrics": 9,
+        "source_facts": 25
+      },
+      "workspace_id": "WS_e3babe3a48a1"
+    }
+  ]
+}

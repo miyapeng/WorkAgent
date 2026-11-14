@@ -55,4 +55,4 @@ HIDDEN=re.compile(r'(?:evaluation|construction)/|(?:rubric|verifier_spec|evidenc
 
 def visible_text(value):
     text=json.dumps(value, ensure_ascii=False)
-    require(not HIDDEN.search(text) and not re.search(r'\be_[a-f0-9]{24}\b',text), 'hidden_metadata_reference')
+    require(not HIDDEN.search(text) and not re.search(r'\b(?:e_[a-f0-9]{24}|fact_\d{3,})\b',text), 'hidden_metadata_reference')

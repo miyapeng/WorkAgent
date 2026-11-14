@@ -79,6 +79,28 @@ class NetworkTests(unittest.TestCase):
                 with self.assertRaisesRegex(DataError,'http_status:404'): acquire.download('https://example.com/missing',cache,limits,offline=True)
             self.assertFalse((cache/'blobs').exists())
 
+    def test_explicit_download_retry_preserves_failure_and_offline_stays_offline(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache=Path(tmp);url='https://example.com/data.csv'
+            limits={'download_bytes':1000,'timeout_seconds':1,'redirects':2,'retries':0}
+            with patch.object(acquire,'https_request',side_effect=TimeoutError):
+                with self.assertRaisesRegex(DataError,'TimeoutError'):acquire.download(url,cache,limits)
+            receipt=cache/'downloads'/(sha256(url.encode())+'.json');failed=receipt.read_bytes()
+            retry={**limits,'retry_failed_downloads':True}
+            with patch.object(acquire,'https_request',side_effect=AssertionError('No network')):
+                with self.assertRaisesRegex(DataError,'TimeoutError'):acquire.download(url,cache,limits)
+                with self.assertRaisesRegex(DataError,'TimeoutError'):acquire.download(url,cache,retry,offline=True)
+            record={'original_url':url,'final_url':url,'sha256':sha256(CSV),'bytes':len(CSV),'mime':'text/csv'}
+            with patch.object(acquire,'https_request',return_value=(CSV,record)) as request:
+                data,_=acquire.download(url,cache,retry)
+                request.assert_called_once()
+            self.assertEqual(data,CSV)
+            archived=list((cache/'download_failures').glob('*.json'))
+            self.assertEqual(len(archived),1)
+            self.assertEqual(json.loads(archived[0].read_bytes()),json.loads(failed))
+            with patch.object(acquire,'https_request',side_effect=AssertionError('No network')):
+                self.assertEqual(acquire.download(url,cache,retry,offline=True)[0],CSV)
+
 
 class ProfileTests(unittest.TestCase):
     def test_parser_subprocess_failure_retains_identity(self):

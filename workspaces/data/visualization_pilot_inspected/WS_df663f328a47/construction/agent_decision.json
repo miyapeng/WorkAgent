@@ -1,0 +1,89 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "Data-bearing results table 'Labour force characteristics by age group and gender, seasonally adjusted'. Reports Sep-2026 vs Oct-2026 levels (population 34,883.2k; labour force 22,607.7k; employment 21,100.1k; unemployment 1,507.7k) plus participation rate 64.8%, unemployment rate 6.7%, employment rate 60.5%, with MoM/YoY changes and standard errors. Directly supports i1 as quantitative analysis output; structured for grouped bar/line charts by age and gender.",
+          "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm"
+        },
+        {
+          "reason": "Data-bearing table 'Labour force characteristics by province, seasonally adjusted' with Oct-2026 employment and unemployment/participation/employment rates for all 10 provinces (e.g., Ontario employment 8,277.9k, unemployment 7.3%; Quebec 4,546.8k/5.7%; Alberta 2,659.9k/7.3%; B.C. 2,941.3k/6.3%). Provides the geographic comparison dimension needed for provincial charts.",
+          "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm"
+        },
+        {
+          "reason": "Data-bearing table 'Employment by class of worker and industry, seasonally adjusted' (Oct-2026: total employed 21,100.1k; employees 18,361.0k; public sector 4,497.5k; private sector 13,863.5k; self-employed 2,739.1k; goods-producing 4,202.4k; services-producing 16,897.7k). Supports categorical/stacked composition charts of the same analysis.",
+          "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm"
+        },
+        {
+          "reason": "Data-bearing table 'Average usual hours and wages by selected characteristics, unadjusted' — supplies the wage/hours variables of the same release (release text cites average hourly wage $37.89, +2.2% YoY). Enables wage-trend and hours visualizations complementary to the rate measures.",
+          "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm"
+        },
+        {
+          "reason": "Verified readable native CSV export of Table 14-10-0287-01 (last 5 periods, Canada, all labour-force characteristics). Header confirmed: REF_DATE, GEO, DGUID, Labour force characteristics, Gender, Age group, Statistics, Data type, UOM, SCALAR_FACTOR, VECTOR, COORDINATE, VALUE, STATUS/DECIMALS. Units are 'Persons in thousands' for levels and 'Percent' for rates; reference rows begin 2026-06 through 2026-09+. This is the machine-readable spine for the time-series charts.",
+          "source_page": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels="
+        },
+        {
+          "reason": "Observed 'Entire table (CSV zip)' download link on the table page. WebFetch returned a max-content-length error (>10MB), indicating a real archive exists but could not be summarized here; Python should download and parse it. Contains the full monthly series (1976-01 to 2026-10) across geography, gender, age, statistics and data type — the complete analysis dataset for multi-period charts. Attachment accessibility confirmed; coverage not fully inspected by tool.",
+          "source_page": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+          "target_node_ids": [
+            "i1"
+          ],
+          "url": "https://www150.statcan.gc.ca/n1/tbl/csv/14100287-eng.zip"
+        }
+      ],
+      "identity": "Statistics Canada Labour Force Survey, October 2026 release (published 2026-11-06) — completed monthly analysis results (employment, unemployment, participation and wage estimates by age, gender, province, industry) suitable for charting, sourced from Table 14-10-0287-01",
+      "missing_information": [
+        "The exact analytical framing (which comparisons and key message to emphasize) is not in i1; it belongs to i2/task_instruction and must be supplied, not retrieved.",
+        "The full-table ZIP exceeded WebFetch's size limit, so its internal column layout and completeness were not directly inspected; independent download/parse required.",
+        "Wage values in table t011a are unadjusted and should not be mixed on the same axis as seasonally adjusted levels without explicit labeling."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "Page returned empty content behind a JavaScript/bot check; no verifiable download links or observable data.",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
+    },
+    {
+      "reason": "HTTP 403 Forbidden to automated fetch; no data-bearing content retrievable.",
+      "url": "https://digital.nhs.uk/publications/statistical"
+    },
+    {
+      "reason": "HTTP 404 Not Found — guessed path did not resolve; ONS searches returned no live bulletin links.",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthcaresystem/bulletins/accidentandemergencywaittimesinengland/2024"
+    },
+    {
+      "reason": "Index page only; table area rendered 'Loading...' with no downloadable Excel/CSV links exposed, so no case-bearing artifact could be observed.",
+      "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+    },
+    {
+      "reason": "HTTP 404; repository archived and README directs to newer APIs, no per-dataset file confirmed.",
+      "url": "https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/README.md"
+    },
+    {
+      "reason": "Blocked by JavaScript verification; no usable dataset content or file links.",
+      "url": "https://data.humdata.org/dataset"
+    }
+  ],
+  "stop_reason": "A defensible, coherent case is established: Statistics Canada's Labour Force Survey October 2026 release, with 4 data-bearing HTML results tables, a verified machine-readable CSV export, and the observed full-table ZIP (exists, >10MB, parse pending). All originate from the same organization, reference period and version, and provide the quantitative results (i1) a data scientist would visualize. The only unresolved inputs (i2 purpose/audience, i3–i5 judgment) are professional-judgment or task-instruction nodes, not retrievable documents."
+}

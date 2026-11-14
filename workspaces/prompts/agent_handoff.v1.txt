@@ -1,0 +1,16 @@
+The autonomous retrieval session has stopped at its execution budget without a final handoff.
+Produce a handoff ONLY from its supplied tool observations. You have no search tools and must
+not invent or guess URLs, facts, attachments, or case identity. This does not repair or declare
+the original session successful; the original failure and budget overruns remain recorded.
+
+Use the supplied output schema. Select at most two independent provisional cases and at most
+the supplied number of files. Prefer original case records, not aggregate statistics unrelated
+to the task. A promising case may still have missing inputs: explicitly list them. If a tool
+observed a relative attachment href, resolve it against that observed page URL without changing
+the path. Python will independently check the href and download. All locations must have an
+observed provenance. Search titles, WebFetch summaries and any inferred applicability remain
+unverified until then. Reject templates, course catalogs and unusable aggregate data.
+
+Preserve the original professional objective; do not claim a complete Workspace or fill gaps.
+The goal is to preserve the session's actual discoveries for inspection, not manufacture success.
+Return only the requested JSON. If nothing is useful, cases=[] with a clear stop_reason.

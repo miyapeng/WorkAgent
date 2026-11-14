@@ -1,0 +1,281 @@
+[
+  {
+    "bytes": 70810,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-3e7495d0-828e-4fb6-96c4-9c0c66015308"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:26:51.634826+00:00",
+    "role": "discovery_page",
+    "sha256": "4d63e1a96c79b77043bbbd3e5825b09b119ccccc8aedc64b1457b1ced48c8156",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm"
+  },
+  {
+    "bytes": 89940,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-9ff70e42-af75-444f-844e-5d3c0a0aa4dc"
+    },
+    "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:26:53.577903+00:00",
+    "role": "discovery_page",
+    "sha256": "503f74bc8e8d5c91ff8a04b0cdc98010f912dd34a0c38643583ec37e05599f65",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701"
+  },
+  {
+    "reason": "download_failed:http_status:202|http_status:202",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
+  },
+  {
+    "reason": "download_failed:http_status:202|http_status:202",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://www.england.nhs.uk/sites/2025/11"
+  },
+  {
+    "reason": "download_failed:http_status:403|http_status:403",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://digital.nhs.uk/publications/statistical"
+  },
+  {
+    "reason": "download_failed:http_status:403|http_status:403",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+  },
+  {
+    "bytes": 191464,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-ae6420f3-3359-4ad3-8061-dff6b88242a6"
+    },
+    "final_url": "https://github.com/owid/owid-datasets",
+    "mime": "text/html",
+    "original_url": "https://github.com/owid/owid-datasets",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:27:00.233132+00:00",
+    "role": "discovery_page",
+    "sha256": "def1e6bb16951dcc957d1ffbd7ee297053080bead0a7bf7410df7c86119f8a13",
+    "status": "downloaded",
+    "url": "https://github.com/owid/owid-datasets"
+  },
+  {
+    "reason": "download_failed:TimeoutError|TimeoutError",
+    "role": "discovery_page",
+    "status": "failed",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE"
+  },
+  {
+    "bytes": 15057,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-fa20bb1d-182e-4325-8612-b7fdb2fcaa94"
+    },
+    "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadCubeMetaData-nonTraduit.action?pid=1410028701&csvLocale=en",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadCubeMetaData-nonTraduit.action?pid=1410028701&csvLocale=en",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:01.905882+00:00",
+    "role": "discovery_page",
+    "sha256": "ef15ef07bb57b04923dd9addbdb09d8b7df58fddf6b07dfab7f0f8268c640c3f",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadCubeMetaData-nonTraduit.action?pid=1410028701&csvLocale=en"
+  },
+  {
+    "bytes": 72505,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-2857c6c3-9c2d-491a-8c06-7c33ea74a05d"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/251107/dq251107a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/251107/dq251107a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:03.466196+00:00",
+    "role": "discovery_page",
+    "sha256": "0f276ce4ec742b3336befff4be50e46663200bbba9917b6d7939f1dd470b2896",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/251107/dq251107a-eng.htm"
+  },
+  {
+    "bytes": 81811,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-7127f32e-561b-472c-bd26-7bfdf820024f"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:05.066604+00:00",
+    "role": "selected_material",
+    "sha256": "e393b688c4f32bf0fa4171f8d5e16f712ac89d1c8345ac41f8ba30a17eedd3ab",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm"
+  },
+  {
+    "bytes": 81015,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-273b98c5-d283-467e-8884-fda9cb35b5bc"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:06.520748+00:00",
+    "role": "selected_material",
+    "sha256": "a115fd96a75c45745f5cda4adddeab6dabd5987dcb6ea68f072c2266d04b92af",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm"
+  },
+  {
+    "bytes": 32467,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-b4071740-d275-4648-bf84-1c1931d3b291"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:07.879691+00:00",
+    "role": "selected_material",
+    "sha256": "28dafec1b2678aa91c7ef101f52b9c9ecfd0c071fa00435fcc081716efd86210",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm"
+  },
+  {
+    "bytes": 59941,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+      "source_sha256": "4d63e1a96c79b77043bbbd3e5825b09b119ccccc8aedc64b1457b1ced48c8156"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm",
+    "mime": "text/html",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:09.636169+00:00",
+    "role": "selected_material",
+    "sha256": "cdba9c6f28c957b9ae555ffbbb380e6957fb0541b35fa9af45409be5751a505f",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm"
+  },
+  {
+    "bytes": 10697,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-07b3c6c2-26b8-463f-9e2b-1234caf50d1b"
+    },
+    "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels=",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels=",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:11.079957+00:00",
+    "role": "selected_material",
+    "sha256": "cc395387892011662af5fd8654607927272889cc753ae72ef53d291223bfe5ea",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels="
+  },
+  {
+    "reason": "download_failed:download_too_large|download_too_large",
+    "role": "selected_material",
+    "status": "failed",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/14100287-eng.zip"
+  },
+  {
+    "bytes": 7981,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm",
+      "source_sha256": "e393b688c4f32bf0fa4171f8d5e16f712ac89d1c8345ac41f8ba30a17eedd3ab"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.csv",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:15.215510+00:00",
+    "role": "selected_material",
+    "sha256": "4dd324d1e760c410223213b6711f78e69e5360eb7769864eb7e75fd483fa8dd6",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.csv"
+  },
+  {
+    "bytes": 7379,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm",
+      "source_sha256": "a115fd96a75c45745f5cda4adddeab6dabd5987dcb6ea68f072c2266d04b92af"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.csv",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:16.523540+00:00",
+    "role": "selected_material",
+    "sha256": "9464bf5f4a818ce1884fd9134edc9aa729872dca90ec3ab68d68d271b861b568",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.csv"
+  },
+  {
+    "bytes": 2796,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm",
+      "source_sha256": "28dafec1b2678aa91c7ef101f52b9c9ecfd0c071fa00435fcc081716efd86210"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.csv",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:17.852342+00:00",
+    "role": "selected_material",
+    "sha256": "5815588b8b8bdd354c5dc4f2a0fddf77508683ae11bc76098f6a4557d81131c6",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.csv"
+  },
+  {
+    "bytes": 6341,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm",
+      "source_sha256": "cdba9c6f28c957b9ae555ffbbb380e6957fb0541b35fa9af45409be5751a505f"
+    },
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.csv",
+    "mime": "text/csv",
+    "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T08:28:19.205460+00:00",
+    "role": "selected_material",
+    "sha256": "3351b5105293aadd39c06f574a40517001a2a01d6576e1a3dd537a1cac08c525",
+    "status": "downloaded",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.csv"
+  }
+]

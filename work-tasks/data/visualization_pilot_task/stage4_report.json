@@ -1,0 +1,90 @@
+{
+  "blocked_upstream": 0,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 1,
+  "rejected": 1,
+  "stage": "all",
+  "workspaces": [
+    {
+      "data_provenance": "grounded_workspace",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T08:37:12.454074+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-joint-v3",
+          "request_sha256": "bb09e3c0e86b905201baae4209d35b953a03364673b2007e8e420d0b88ecb170"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T08:38:25.633696+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-reverse-audit-v3",
+          "request_sha256": "7746f248fb32ca37fd6defbc0ca95dc5ffdf390d4796621c3d1cad14b8a75eaf"
+        }
+      ],
+      "reasons": [
+        {
+          "check": "verification_soundness",
+          "reason": "REVERSE REVIEW of rubric r2 finds an operand/unit misidentification. The full_credit line calls 37.89 'the average usual hours value of 37.89 where hours are shown', but 37.89 is the average HOURLY WAGES in current dollars for 15 years and over (e_7d2c40486c9a6e67c1a0edfd), while Table 11's average weekly hours is 35.4. The semantic guide therefore anchors the wrong quantity to hours, which could reject a correct chart that plots 37.89 as wages and 35.4 as hours, or pass a chart mislabeling 37.89 as hours. Remaining rubrics are sound: r1/r3/r4/r5 are correctly semantic, r6 is an explicit future file-existence check separate from visual accuracy, and no trace-only constraint is claimed tested by final hashes. This single mistyped operand fails soundness."
+        },
+        {
+          "check": "r2",
+          "reason": "REVERSE REVIEW fails on operand/unit semantics. The full_credit line requires 'the average usual hours value of 37.89 where hours are shown', but 37.89 is the average hourly WAGES in current dollars for 15 years and over (e_7d2c40486c9a6e67c1a0edfd); the actual average weekly hours value in Table 11 is 35.4. As written, a correct chart plotting 37.89 as hourly wages would fail, and a chart mislabeling 37.89 as hours would pass. The Table 11 basis (e_041da00420e4887c5e546b96) is otherwise adequate, but this concrete unit error must be corrected."
+        }
+      ],
+      "seed_id": "raw_31_0_21828",
+      "semantic_checks": {
+        "failures": [
+          {
+            "check": "verification_soundness",
+            "reason": "REVERSE REVIEW of rubric r2 finds an operand/unit misidentification. The full_credit line calls 37.89 'the average usual hours value of 37.89 where hours are shown', but 37.89 is the average HOURLY WAGES in current dollars for 15 years and over (e_7d2c40486c9a6e67c1a0edfd), while Table 11's average weekly hours is 35.4. The semantic guide therefore anchors the wrong quantity to hours, which could reject a correct chart that plots 37.89 as wages and 35.4 as hours, or pass a chart mislabeling 37.89 as hours. Remaining rubrics are sound: r1/r3/r4/r5 are correctly semantic, r6 is an explicit future file-existence check separate from visual accuracy, and no trace-only constraint is claimed tested by final hashes. This single mistyped operand fails soundness."
+          },
+          {
+            "check": "r2",
+            "reason": "REVERSE REVIEW fails on operand/unit semantics. The full_credit line requires 'the average usual hours value of 37.89 where hours are shown', but 37.89 is the average hourly WAGES in current dollars for 15 years and over (e_7d2c40486c9a6e67c1a0edfd); the actual average weekly hours value in Table 11 is 35.4. As written, a correct chart plotting 37.89 as hourly wages would fail, and a chart mislabeling 37.89 as hours would pass. The Table 11 basis (e_041da00420e4887c5e546b96) is otherwise adequate, but this concrete unit error must be corrected."
+          }
+        ],
+        "passed": false,
+        "qualification": "Independent model call, not independent expert certification; execution not tested."
+      },
+      "status": "rejected",
+      "structural_checks": {
+        "passed": true,
+        "requirements": 6,
+        "rubrics": 6,
+        "source_facts": 11
+      },
+      "workspace_id": "WS_df663f328a47"
+    }
+  ]
+}

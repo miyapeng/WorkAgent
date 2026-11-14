@@ -1,0 +1,137 @@
+{
+  "artifact": "work-tasks/data/probes/stats19_v4/submission/outputs/stats19_2024_data_fitness_report.md",
+  "assessment_status": "validated",
+  "claim_check_status": "validated",
+  "confirmed_billed_cost": null,
+  "development_observation": {
+    "actual_encoding": "Both adjustment fields are literal zero on fatal rows.",
+    "claim": "Fatal adjustment fields are blank.",
+    "report_lines": [
+      161,
+      162,
+      239,
+      375
+    ],
+    "scope": "Developer explanation of an automatically flagged example; not a hand-written acceptance decision.",
+    "source_counts": {
+      "empty_adjustment_fields_on_fatal_rows": 0,
+      "fatal_casualty_rows": 1602,
+      "fatal_collision_rows": 1502
+    }
+  },
+  "elapsed_seconds": 348.29,
+  "engineering_tests": {
+    "passed": 68,
+    "synthetic_tests_are_not_pilot_data": true
+  },
+  "evaluation_recipe_usage": {
+    "billed_cost": null,
+    "completion_tokens": 29666,
+    "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+    "currency": null,
+    "prompt_tokens": 504318,
+    "unique_model_requests": 12
+  },
+  "execution_completed": true,
+  "full_credit_candidate": false,
+  "html_inputs": 0,
+  "input_files": 6,
+  "judge_full_credit_candidate": true,
+  "limitations": [
+    "One solver and one same-model independent Judge are not expert certification.",
+    "Mutation detection on a failed baseline is diagnostic, not a validated true/false-positive benchmark.",
+    "Numerical mismatches include possible claim-to-metric mapping errors; they are review flags, not confirmed factual-error counts.",
+    "Only the explicit STATS19 reference adapter is implemented; no automatic arbitrary-domain oracle.",
+    "No reliable process audit beyond sandbox-enforced restrictions and final hashes."
+  ],
+  "multimodal_ablation": "not_applicable_no_established_visual_dependency",
+  "mutations": [
+    {
+      "assessment_status": "validated",
+      "detected": true,
+      "edit": "Replace observed collision total with total + 1000.",
+      "explicit_issue_on_changed_lines": false,
+      "mutation_id": "wrong_collision_count",
+      "numeric_mismatch": true,
+      "positive_control_passed": false,
+      "score_decreased": false,
+      "semantic_score": 1.0
+    },
+    {
+      "assessment_status": "validated",
+      "detected": false,
+      "edit": "Remove largest numeric headed section.",
+      "explicit_issue_on_changed_lines": false,
+      "mutation_id": "missing_analysis_section",
+      "numeric_mismatch": true,
+      "positive_control_passed": false,
+      "score_decreased": false,
+      "semantic_score": 1.0
+    },
+    {
+      "assessment_status": "validated",
+      "detected": true,
+      "edit": "Append explicitly incorrect interpretation contradicting supplied guidance.",
+      "explicit_issue_on_changed_lines": true,
+      "mutation_id": "probability_as_count",
+      "numeric_mismatch": false,
+      "positive_control_passed": false,
+      "score_decreased": false,
+      "semantic_score": 1.0
+    },
+    {
+      "assessment_status": "validated",
+      "detected": true,
+      "edit": "Append unsupported absolute accuracy and population-coverage claims.",
+      "explicit_issue_on_changed_lines": true,
+      "mutation_id": "unsupported_clean_claim",
+      "numeric_mismatch": false,
+      "positive_control_passed": false,
+      "score_decreased": false,
+      "semantic_score": 1.0
+    }
+  ],
+  "mutations_detected": 3,
+  "mutations_run": 4,
+  "numeric_checks": 66,
+  "numeric_mismatch_note": "15 are repeated comparison flags, not 15 independently confirmed errors; mapping mistakes are possible.",
+  "numeric_mismatches": 15,
+  "origin": "real_solver_execution_not_synthetic_fixture",
+  "programmatic_score": 1.0,
+  "replay": {
+    "network_and_subprocess_blocked": true,
+    "report_bytes_identical": true,
+    "report_sha256": "8684619b092f506df2558e8c5a0c8d6ab2c4a77b1e87fefa197b8c8f7356e47d"
+  },
+  "semantic_score": 1.0,
+  "solver_cli_cost_estimate_usd": 7.2936407999999995,
+  "solver_model": "GLM_ka48dn",
+  "solver_tool_errors": 6,
+  "solver_usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 373004,
+    "fallback_credit": null,
+    "inference_geo": "",
+    "input_tokens": 1665390,
+    "iterations": [],
+    "output_tokens": 27874,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_fetch_requests": 0,
+      "web_search_requests": 0
+    },
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "stage": "stage5_pilot",
+  "status": "needs_review",
+  "task_id": "TASK_1d5ee1c33b451d320937aaa8",
+  "tool_calls": 38,
+  "training_admitted": false
+}

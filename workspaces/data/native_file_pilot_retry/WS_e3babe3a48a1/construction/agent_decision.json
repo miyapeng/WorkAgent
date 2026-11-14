@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "files": [
+        {
+          "reason": "Collision-level STATS19 records for 2024 (exact URL observed on the gov.uk Road Safety Data release page). ~18.6 MB, exceeds WebFetch's 10 MB read limit so contents were not summarized in-tool, but the sibling casualty CSV of the same release downloaded and parsed as valid CSV with a 24-column header; this collision table supplies the primary record table with collision_index and observed values/identifiers. Independent download/parse required to confirm header and row count.",
+          "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv"
+        },
+        {
+          "reason": "Vehicle-level STATS19 records for 2024 (exact URL observed on the same gov.uk release page). ~20.3 MB, exceeds in-tool read limit, so format confirmed only by the verified sibling table; supplies vehicle-level records joinable via collision_index + vehicle_reference. Needs independent download to confirm.",
+          "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv"
+        },
+        {
+          "reason": "Casualty-level records for 2024; verified directly. Header observed: collision_index, collision_year, collision_ref_no, vehicle_reference, casualty_reference, casualty_class, sex_of_casualty, age_of_casualty, age_band_of_casualty, casualty_severity, pedestrian_location, pedestrian_movement, car_passenger, bus_or_coach_passenger, pedestrian_road_maintenance_worker, casualty_type, casualty_imd_decile, lsoa_of_casualty, enhanced_casualty_severity, casualty_injury_based, casualty_adjusted_severity_serious, casualty_adjusted_severity_slight, casualty_distance_banding, escooter_flag. Provides observed values and record-level identifiers for validation.",
+          "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+          "target_node_ids": [
+            "i2"
+          ],
+          "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv"
+        },
+        {
+          "reason": "Official DfT Road Safety Open Dataset Data Guide 2025 (native XLSX, 83.1 KB, downloaded successfully; ZIP/OOXML structure with >=2 worksheets confirmed). This is the field-definitions and value-label document accompanying the 2024 CSVs, giving variable names, codes/units and collection notes needed to interpret records. Sheet text not legible via WebFetch binary; requires independent parse.",
+          "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+          "target_node_ids": [
+            "i3"
+          ],
+          "url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx"
+        },
+        {
+          "reason": "DfT severity-adjustment figure guidance (native DOCX, downloaded; valid OOXML container confirmed). Documents the methodology DfT applies to correct reported-injury-severity misclassification — a directly applicable statistical/quality criterion for judging fitness of casualty_severity fields. Text not legible via WebFetch binary; requires independent extraction.",
+          "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+          "target_node_ids": [
+            "i4"
+          ],
+          "url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+        },
+        {
+          "reason": "STATS19 review final report (native PDF, valid %PDF-1.6, 2.2 MB, downloaded). Independently published review enumerating coverage, under-reporting and quality limitations of the STATS19 collection — an authoritative reference for quality criteria and known-invalidity considerations. Text is Flate-compressed; requires independent extraction.",
+          "source_page": "https://www.gov.uk/guidance/road-accident-and-safety-statistics-guidance",
+          "target_node_ids": [
+            "i4"
+          ],
+          "url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf"
+        }
+      ],
+      "identity": "DfT STATS19 Road Safety Open Data (Great Britain reported road casualties) — linked collision / vehicle / casualty tables with companion data guide and severity-adjustment methodology, for 2024 data year, published September 2025 by the UK Department for Transport on gov.uk",
+      "missing_information": [
+        "No native (non-HTML) consolidated background quality report: the DfT 'Reported road casualty statistics: background quality report' and 'Known data issues' pages exist only as HTML on gov.uk, so i4 is anchored on the severity-adjustment DOCX and the STATS19 review PDF instead of a single native quality statement.",
+        "2024 collision and vehicle CSVs (~19-20 MB) exceeded WebFetch's read limit, so their headers/row counts were not confirmed in-tool; only the casualty CSV was directly parsed. Independent download is required to confirm all three headers and that the 2024 year is complete.",
+        "The 2024 data guide variables, units and value codes could not be read in-tool (binary XLSX); the mapping of guide fields to the observed CSV headers and the specific statistical-testing conventions used by DfT remain to be confirmed on extraction."
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reason": "US BTS airline on-time dataset is a JavaScript/form-based field-selection interface with no directly downloadable native file URL observed, so no stable native artifact could be captured; dropped in favor of a case with directly downloadable native CSVs plus a codebook.",
+      "url": "https://www.transtats.bts.gov/DL_SelectFields"
+    },
+    {
+      "reason": "Truncated/opaque URL that returned HTTP 500 (and earlier a generic redirect); it is not an observed complete attachment path and content could not be established, so it was not treatable as a native i3 document.",
+      "url": "https://doc.ukdataservice.ac.uk/doc/mrdoc/pdf"
+    },
+    {
+      "reason": "This data.dft.gov.uk copy returned HTTP 404; the working severity-adjustment DOCX is only the assets.publishing.service.gov.uk copy, which was retained instead.",
+      "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+    },
+    {
+      "reason": "Generic repository landing pages returned by broad queries; blocked by JavaScript verification and contained no identifiable case-bearing dataset or native artifact.",
+      "url": "https://mldata.opendata.ai/dataset/resource"
+    },
+    {
+      "reason": "Generic HDX resource pages surfaced by concatenated keyword queries; no specific dataset, file, or content could be verified against the blueprint nodes, so not a defensible case anchor.",
+      "url": "https://data.humdata.org/dataset/resource"
+    }
+  ],
+  "stop_reason": "A coherent, real case is defensible: a single DfT collection where raw record tables (i2), a field-definitions data guide (i3) and applicable quality/methodology references (i4) all exist as directly downloadable native files from observed, non-guessed URLs. Two of three 2024 CSVs exceed in-tool read limits and the XLSX/DOCX/PDF require independent extraction, but all URLs are exact observed attachments with verified content types, and file accessibility is distinguished from information coverage. The selected set (3 CSVs + 1 XLSX guide + 1 DOCX + 1 PDF) is within the 6-file materialization limit, uses only retrievable node IDs i2/i3/i4, and leaves only explicitly stated acquisition/verification gaps rather than invented facts."
+}

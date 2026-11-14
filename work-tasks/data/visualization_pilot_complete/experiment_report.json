@@ -1,0 +1,58 @@
+{
+  "seed_id": "raw_31_0_21828",
+  "task_id": "TASK_242543866a170e54e3edc6d1",
+  "status": "draft",
+  "stage2_accepted": 1,
+  "stage3": {
+    "workspace_id": "WS_df663f328a47",
+    "status": "ready",
+    "counts": {
+      "actual_search_requests": 13,
+      "actual_webfetch_calls": 20,
+      "critical_coverage": 1.0,
+      "critical_external_nodes": 1,
+      "download_attempts": 20,
+      "downloaded_urls": 14,
+      "independently_verified_visual_evidence": 0,
+      "parsed_unique_files": 5,
+      "retained_files": 5,
+      "supported_critical_nodes": 1,
+      "synthetic_files": 0
+    }
+  },
+  "stage4": {
+    "requirements": 7,
+    "rubrics": 7,
+    "verification_types": {
+      "semantic": 6,
+      "programmatic": 1
+    },
+    "structural_checks": {
+      "passed": true,
+      "requirements": 7,
+      "rubrics": 7,
+      "source_facts": 11
+    },
+    "semantic_checks": {
+      "failures": [],
+      "passed": true,
+      "qualification": "Independent model call, not independent expert certification; execution not tested."
+    }
+  },
+  "replay": {
+    "passed": true,
+    "identical_files": 30,
+    "network_and_subprocess_disabled": true
+  },
+  "tests": {
+    "work_plans": 21,
+    "workspaces": 66,
+    "work_tasks": 37
+  },
+  "search_session_reused_across_debug_replays": true,
+  "synthetic_files": 0,
+  "probe_performed": false,
+  "multimodal_input_necessity_verified": false,
+  "public_redistribution_allowed": false,
+  "qualification": "Development pilot, not an unattended batch success-rate estimate. All rejected attempts and raw model responses retained. One unique live search session; replay counts must not be added as new searches."
+}

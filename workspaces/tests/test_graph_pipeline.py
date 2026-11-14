@@ -38,6 +38,40 @@ def sources(profiles):return {fid:{'origin':'real_original','sha256':p['sha256']
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
         p=parse_bytes(b'item,value\nfixture,10\n','https://example.org/data.csv','text/csv');self.profiles={p['file_id']:p};self.audit=auditor(self.profiles)
+    def test_html_cannot_support_coverage_even_if_renamed(self):
+        for name in ('page.html','page.txt','page'):
+            p=parse_bytes(b'<html><body><table><tr><td>10</td></tr></table></body></html>','https://example.org/'+name,'text/plain')
+            ps={p['file_id']:p}
+            with self.assertRaisesRegex(DataError,'html_not_allowed_in_workspace'):
+                check_audit(auditor(ps),plan(),ps,sources(ps))
+    def test_html_fragment_with_comment_cannot_masquerade_as_text(self):
+        p=parse_bytes(b'<!-- exported table -->\n<table><tr><td>10</td></tr></table>','https://example.org/notes.txt','text/plain')
+        self.assertEqual(p['type'],'html')
+        with self.assertRaisesRegex(DataError,'html_not_allowed_in_workspace'):
+            check_audit(auditor({p['file_id']:p}),plan(),{p['file_id']:p},sources({p['file_id']:p}))
+    def test_html_cannot_be_assembled_even_with_a_ready_coverage_claim(self):
+        from construct_workspace import assemble
+        p=parse_bytes(b'<html><body>Fixture source</body></html>','https://example.org/page','text/html')
+        fid=p['file_id']
+        with tempfile.TemporaryDirectory() as t:
+            with self.assertRaisesRegex(DataError,'html_not_allowed_in_workspace'):
+                assemble(Path(t)/'ws',{fid:{'origin':'real_original'}},{fid:p},{'retained_file_ids':[fid]},Path(t)/'cache')
+
+    def test_large_csv_parses_all_rows_with_bounded_evidence_index(self):
+        raw=('id,value\n'+''.join(f'{i},{i*2}\n' for i in range(1050))).encode()
+        p=parse_bytes(raw,'https://example.org/records.csv','text/csv')
+        self.assertEqual(p['structure']['rows'],1050)
+        self.assertEqual(p['structure']['parsed_data_rows'],1050)
+        self.assertEqual(p['structure']['indexed_data_rows'],1024)
+        self.assertEqual(p['structure']['numeric_ranges'][1],[0,2098])
+        self.assertFalse(p['structure']['content_fully_segmented'])
+        self.assertEqual(p['sha256'],sha256(raw))
+        # Invalid rows after the index boundary still reject the whole file.
+        with self.assertRaisesRegex(DataError,'ragged'):
+            parse_bytes(raw+b'bad,row,extra\n','https://example.org/records.csv','text/csv')
+        late_identifier=parse_bytes(raw+b'contact,fixture@example.org\n','https://example.org/records.csv','text/csv')
+        self.assertIn('potential_personal_identifiers',late_identifier['risk_signals'])
+
     def test_exact_source_recovered_by_id_no_llm_quote(self):
         value=check_audit(self.audit,plan(),self.profiles,sources(self.profiles))
         self.assertEqual(value['status'],'ready');self.assertEqual(value['nodes'][0]['evidence'][0]['quote'],'item | value')

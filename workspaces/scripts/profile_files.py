@@ -13,7 +13,7 @@ from xml.etree import ElementTree as ET
 
 from common import DataError, require, normalized, sha256, save
 
-VERSION = 'native-profiles-v3-text-doc-table-image-code'
+VERSION = 'native-profiles-v5-streaming-csv'
 MAX_SEGMENTS = 100000
 
 
@@ -47,7 +47,8 @@ def detect(data, url, mime):
     else:
         text = data.decode('utf-8-sig')
         require('\x00' not in text, 'binary_or_invalid_text')
-        if re.search(r'<(?:!doctype\s+html|html|head|body)\b', text[:2000], re.I):
+        leading=re.sub(r'^(?:\s|<!--.*?-->|<\?xml.*?\?>)*','',text,flags=re.S)
+        if re.search(r'<(?:!doctype\s+html|html|head|body)\b', text[:2000], re.I) or re.match(r'<(?:table|div|main|article|section|p|h[1-6]|script|style|form|iframe|span)\b',leading,re.I):
             kind = 'html'
         elif suffix == '.svg' or mime == 'image/svg+xml' or re.search(r'<svg\b',text[:2000],re.I):
             kind = 'svg'
@@ -142,20 +143,30 @@ def parse_bytes(data, url, mime):
                 'formula_cells':formulas,'formulas_executed':False})
         book.close()
     elif kind == 'csv':
-        text=data.decode('utf-8-sig'); dialect = csv.Sniffer().sniff(text[:8192],delimiters=',;\t|')
-        rows=list(csv.reader(io.StringIO(text),dialect)); require(rows and len(rows[0])>1, 'invalid_csv')
-        require(len(rows)<=100000 and all(not r or len(r)==len(rows[0]) for r in rows), 'ragged_or_oversized_csv')
-        types=[set() for _ in rows[0]]; ranges=[[] for _ in rows[0]]
-        for ri,row in enumerate(rows,1):
-            if not row: continue
+        text=data.decode('utf-8-sig'); dialect=csv.Sniffer().sniff(text[:8192],delimiters=',;\t|')
+        reader=csv.reader(io.StringIO(text),dialect,strict=True)
+        columns=next(reader,[]); require(len(columns)>1,'invalid_csv')
+        types=[set() for _ in columns]; ranges=[None for _ in columns]
+        count=0;blanks=0;stored=0;add('row:1',' | '.join(columns))
+        for ri,row in enumerate(reader,2):
+            require(ri<=1_000_001,'oversized_csv')
+            if not row:blanks+=1;continue
+            require(len(row)==len(columns),'ragged_or_oversized_csv')
             require(not any(v.lstrip().startswith(('=','@')) for v in row),'csv_formula_injection')
-            add(f'row:{ri}', ' | '.join(row))
-            if ri>1:
-                for j,v in enumerate(row):
-                    try: n=float(v); types[j].add('number'); ranges[j].append(n)
-                    except ValueError: types[j].add('missing' if not v else 'text')
-        structure={'rows':sum(bool(r) for r in rows)-1,'blank_rows':sum(not r for r in rows),'columns':rows[0], 'types':[sorted(t) for t in types],
-                   'numeric_ranges':[[min(v),max(v)] if v else None for v in ranges], 'delimiter':dialect.delimiter}
+            count+=1
+            # Only the private evidence index is bounded. Every source record is parsed,
+            # and the original file bytes delivered to the Agent remain complete.
+            if stored<1024:add(f'row:{ri}',' | '.join(row));stored+=1
+            for j,v in enumerate(row):
+                try:
+                    n=float(v)
+                    import math
+                    if not math.isfinite(n):types[j].add('nonfinite_number');continue
+                    types[j].add('number');ranges[j]=[n,n] if ranges[j] is None else [min(ranges[j][0],n),max(ranges[j][1],n)]
+                except ValueError:types[j].add('missing' if not v else 'text')
+        structure={'rows':count,'blank_rows':blanks,'columns':columns,'types':[sorted(t) for t in types],
+                   'numeric_ranges':ranges,'delimiter':dialect.delimiter,
+                   'parsed_data_rows':count,'indexed_data_rows':stored,'content_fully_segmented':stored==count}
     elif kind in ('docx','pptx'):
         with checked_zip(data) as z:
             names=['word/document.xml'] if kind=='docx' else sorted(n for n in z.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml',n))
@@ -227,7 +238,8 @@ def parse_bytes(data, url, mime):
     if suffix in ('tex','py','js') and kind=='text':actual_format=suffix;structure['executed_or_compiled']=False
     if suffix=='ipynb' and kind=='json':actual_format='ipynb'
     if kind=='text' and actual_format=='text':actual_format='txt'
-    full='\n'.join(s['text'] for s in segments)
+    # A bounded evidence index must not narrow the scan for risk indicators.
+    full=data.decode('utf-8-sig') if kind=='csv' else '\n'.join(s['text'] for s in segments)
     signals=[]
     if re.search(r'\b\d{3}-\d{2}-\d{4}\b|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',full): signals.append('potential_personal_identifiers')
     if re.search(r'\b(?:variance|over budget|under budget|recommendations?|RAG rating)\b',full,re.I): signals.append('possible_precomputed_analysis')

@@ -1,0 +1,120 @@
+{
+  "sources": {
+    "f_28dafec1b2678aa91c7ef101": {
+      "bytes": 32467,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-b4071740-d275-4648-bf84-1c1931d3b291"
+      },
+      "file_id": "f_28dafec1b2678aa91c7ef101",
+      "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm",
+      "prior_errors": [],
+      "reason": "Data-bearing table 'Employment by class of worker and industry, seasonally adjusted' (Oct-2026: total employed 21,100.1k; employees 18,361.0k; public sector 4,497.5k; private sector 13,863.5k; self-employed 2,739.1k; goods-producing 4,202.4k; services-producing 16,897.7k). Supports categorical/stacked composition charts of the same analysis.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T08:28:07.879691+00:00",
+      "sha256": "28dafec1b2678aa91c7ef101f52b9c9ecfd0c071fa00435fcc081716efd86210",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t002a-eng.htm"
+    },
+    "f_a115fd96a75c45745f5cda4a": {
+      "bytes": 81015,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-273b98c5-d283-467e-8884-fda9cb35b5bc"
+      },
+      "file_id": "f_a115fd96a75c45745f5cda4a",
+      "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm",
+      "prior_errors": [],
+      "reason": "Data-bearing table 'Labour force characteristics by province, seasonally adjusted' with Oct-2026 employment and unemployment/participation/employment rates for all 10 provinces (e.g., Ontario employment 8,277.9k, unemployment 7.3%; Quebec 4,546.8k/5.7%; Alberta 2,659.9k/7.3%; B.C. 2,941.3k/6.3%). Provides the geographic comparison dimension needed for provincial charts.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T08:28:06.520748+00:00",
+      "sha256": "a115fd96a75c45745f5cda4adddeab6dabd5987dcb6ea68f072c2266d04b92af",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t003a-eng.htm"
+    },
+    "f_cc395387892011662af5fd86": {
+      "bytes": 10697,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-07b3c6c2-26b8-463f-9e2b-1234caf50d1b"
+      },
+      "file_id": "f_cc395387892011662af5fd86",
+      "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels=",
+      "license_status": "unknown",
+      "mime": "text/csv",
+      "origin": "real_original",
+      "original_url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels=",
+      "prior_errors": [],
+      "reason": "Verified readable native CSV export of Table 14-10-0287-01 (last 5 periods, Canada, all labour-force characteristics). Header confirmed: REF_DATE, GEO, DGUID, Labour force characteristics, Gender, Age group, Statistics, Data type, UOM, SCALAR_FACTOR, VECTOR, COORDINATE, VALUE, STATUS/DECIMALS. Units are 'Persons in thousands' for levels and 'Percent' for rates; reference rows begin 2026-06 through 2026-09+. This is the machine-readable spine for the time-series charts.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T08:28:11.079957+00:00",
+      "sha256": "cc395387892011662af5fd8654607927272889cc753ae72ef53d291223bfe5ea",
+      "source_page": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1410028701&latestN=5&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B1%5D%2C%5B1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%5D%2C%5B1%2C3%5D%5D&checkedLevels="
+    },
+    "f_cdba9c6f28c957b9ae555ffb": {
+      "bytes": 59941,
+      "discovery": {
+        "method": "actual_html_href",
+        "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+        "source_sha256": "4d63e1a96c79b77043bbbd3e5825b09b119ccccc8aedc64b1457b1ced48c8156"
+      },
+      "file_id": "f_cdba9c6f28c957b9ae555ffb",
+      "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm",
+      "prior_errors": [],
+      "reason": "Data-bearing table 'Average usual hours and wages by selected characteristics, unadjusted' — supplies the wage/hours variables of the same release (release text cites average hourly wage $37.89, +2.2% YoY). Enables wage-trend and hours visualizations complementary to the rate measures.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T08:28:09.636169+00:00",
+      "sha256": "cdba9c6f28c957b9ae555ffbbb380e6957fb0541b35fa9af45409be5751a505f",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t011a-eng.htm"
+    },
+    "f_e393b688c4f32bf0fa4171f8": {
+      "bytes": 81811,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-7127f32e-561b-472c-bd26-7bfdf820024f"
+      },
+      "file_id": "f_e393b688c4f32bf0fa4171f8",
+      "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm",
+      "prior_errors": [],
+      "reason": "Data-bearing results table 'Labour force characteristics by age group and gender, seasonally adjusted'. Reports Sep-2026 vs Oct-2026 levels (population 34,883.2k; labour force 22,607.7k; employment 21,100.1k; unemployment 1,507.7k) plus participation rate 64.8%, unemployment rate 6.7%, employment rate 60.5%, with MoM/YoY changes and standard errors. Directly supports i1 as quantitative analysis output; structured for grouped bar/line charts by age and gender.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T08:28:05.066604+00:00",
+      "sha256": "e393b688c4f32bf0fa4171f8d5e16f712ac89d1c8345ac41f8ba30a17eedd3ab",
+      "source_page": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/dq261106a-eng.htm",
+      "target_node_ids": [
+        "i1"
+      ],
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261106/t001a-eng.htm"
+    }
+  }
+}

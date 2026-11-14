@@ -22,11 +22,33 @@ Stage 4 把**已经 ready 的 Stage 3 Workspace**编译成 `Draft Work Task Pack
   → 自动接受为 draft 或拒绝为 rejected
 ```
 
-运行时没有开发者挑文件、抄数字、补引文、写答案、选择通过或手工改任务的步骤。程序处理精确事实和边界；模型处理语义设计与审核。**模型判断仍是判断，不等于专家认证**，同一模型的独立调用也不等于独立来源。审核不通过就是拒绝，不自动修复、降级 Intent 或增加解释制造成功。
+运行时没有开发者挑文件、抄数字、补引文、写答案、选择通过或手工改任务的步骤。程序处理精确事实和边界；模型处理语义设计与审核。**模型判断仍是判断，不等于专家认证**，同一模型的独立调用也不等于独立来源。结构或语义审核不通过就是拒绝，不自动修复、降级 Intent 或增加解释制造成功。仅 JSON 语法错误允许最多一次格式重生成，仍使用相同证据与要求，并保存原始无效响应；新响应必须重新经过全部校验。
 
-Stage 4 自主运行不表示上游全部已自动化：Stage 3 当前真实 Pilot 使用外部搜索导入的 URL Manifest。要让 Stage 1–4 从检索开始无人介入，需配置上游已有的真实 Search Provider；本次没有把人工导入 Manifest 说成自动搜索，也没有改变 Stage 3 准入状态。
+当前默认接口已迁移到 `raw-blueprint-v2` / `grounded-workspace-v2`：输入为官方 Raw Seed、Python 编译并审核的 Blueprint，以及真实 Search Agent 获取的 Workspace。Stage 4 不再把历史 LLM `work_demand` 当作官方种子。`--seed-file` 接受 JSONL 文件，替代旧 `--seed-dir`。
 
-## 当前实际结果
+v2 不使用旧版 `stage4_eligible` 布尔字段；入口根据 `ready`、已审核 Blueprint/Seed 哈希、实际文件字节、片段 ID、信息覆盖及案例一致性重新计算准入。旧接口和 incomplete/rejected 输入均阻断，不迁移为 ready。
+
+`task_instruction` 是待具体化的用户委托要求，不需要伪造来源文件。Evidence Graph 用 `instruction_requirement` 单独表示，最终 Task 必须明确满足；它不能作为 `source_fact` 或数值 Oracle。真实文件中的事实仍经独立重解析验证。
+
+新实验命令（沿用本机 llmctl 凭证；不在参数中传 Key）：
+
+```bash
+.venv/bin/python work-tasks/scripts/construct_tasks.py \
+  --plan-dir work-plans/data/native_file_pilot \
+  --seed-file work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl \
+  --config work-tasks/config/native_file_pilot.json \
+  --workspace-dir workspaces/data/native_file_pilot_retry \
+  --report-dir work-tasks/data/native_file_pilot_admission
+# 相同输入、代码和缓存：追加 --offline。阶段可用 --stage eligibility/evidence/all。
+```
+
+以下两个 WS001/WS002 的报告是历史实验；新实验单独保存，不覆盖它们。
+
+[历史可视化任务](VISUALIZATION_PILOT.md) 含 HTML，已停止准入。当前入口与 Agent 导出均拒绝原始 HTML（包含改名后仍被内容解析识别的 HTML），不会把历史 draft 状态当作新政策下的准入证明。
+
+新的 [原生文件实验](NATIVE_FILE_PILOT.md) 使用不同 Raw Seed，记录完整下载、解析、构造与拒绝历史。大 CSV 原件保持完整；构造模型上下文使用明示的记录摘录、字典引用行上下文和已定位证据，不能把摘录当作全表质量结论。
+
+## 历史真实输入阻断结果
 
 正式入口已读取现有两个 Workspace：
 
@@ -68,23 +90,29 @@ Stage 4 自主运行不表示上游全部已自动化：Stage 3 当前真实 Pil
 
 ## 运行与断点复现
 
-在仓库根目录运行当前真实输入，不需要 API Key，入口就会阻断：
+在仓库根目录重放已缓存的真实实验（尚无缓存时会记录缺失）：
 
 ```bash
-.venv/bin/python work-tasks/scripts/construct_tasks.py --offline
+.venv/bin/python work-tasks/scripts/construct_tasks.py \
+  --config work-tasks/config/native_file_pilot.json \
+  --plan-dir work-plans/data/native_file_pilot \
+  --workspace-dir workspaces/data/native_file_pilot_retry \
+  --report-dir work-tasks/data/native_file_pilot_admission --offline
 ```
 
-未来 Stage 3 有真正 ready 的 Workspace 时：
+对另一组已准入 Blueprint 和 Workspace：
 
 ```bash
 # accessKey 由 WORK_SEEDS_API_KEY 或隐藏输入提供
 .venv/bin/python work-tasks/scripts/construct_tasks.py \
+  --plan-dir work-plans/data/new_pilot \
+  --seed-file work-seeds/data/raw_work_seeds/sampled_raw_seeds.jsonl \
   --workspace-dir workspaces/data/new_pilot \
   --report-dir work-tasks/data/new_stage4 \
   --output-dir work-tasks/generated --limit 2 --prompt-api-key
 ```
 
-可通过 `--plan-dir`、`--seed-dir`、`--config` 和 `--cache-dir` 替换输入及配置。`--stage eligibility|evidence|generate|audit|assemble|all` 按阶段停止；后续阶段仍重做入口校验，已执行的模型调用从缓存恢复，不跳过前置条件。只有组装成功才标记 draft。没有必要的模型缓存时，`--offline` 记录失败，不偷偷访问网络。
+可通过 `--plan-dir`、`--seed-file`、`--config` 和 `--cache-dir` 替换输入及配置。`--stage eligibility|evidence|generate|audit|assemble|all` 按阶段停止；后续阶段仍重做入口校验，已执行的模型调用从缓存恢复，不跳过前置条件。只有组装成功才标记 draft。没有必要的模型缓存时，`--offline` 记录失败，不偷偷访问网络。
 
 输出报告目录绑定代码、Schema、配置和上游哈希；输入或实现变化时使用新目录。相同代码、输入及缓存下可以重复运行；已存在包若字节不一致则拒绝覆盖。`data/stage4_cache/` 保存原始模型响应、请求失败、证据图、中间方案和审核；缓存与文件一起归档才能跨机器重放。
 
@@ -108,15 +136,15 @@ Stage 4 自主运行不表示上游全部已自动化：Stage 3 当前真实 Pil
 
 正式入口复用 Stage 3 的 `load_inputs`，将 Stage 2 Plan 绑定到其已准入检查点；再核对 Stage 3 的原始输入哈希、seed_id、Plan Hash、工作目标哈希和可见文件清单。所有必需 external_input 必须 supported，不能有未解决假设、口径冲突、位置错误、被排除的证据文件或不合格来源。
 
-对候选 ready 输入，除 Stage 3 独立检查外，再从 Workspace 字节调用已有解析器；旧 Profile 中的片段不能覆盖实际文件内容。来源、覆盖及案例引用都必须在新解析位置找到。路径不能越界或使用软链接。真实 Anchor 必须仍为 `real_original`；合成文件保持原有身份及 Anchor 关联。
+对候选 ready 输入，除 Stage 3 独立检查外，再从 Workspace 字节调用已有解析器；旧 Profile 中的片段不能覆盖实际文件内容。来源、覆盖及案例引用都必须在新解析位置找到。路径不能越界或使用软链接。当前 v2 正式入口只接受 `real_original`；受控适配/合成接入尚未实现。
 
 Evidence ID 由来源文件、实际位置、引文和 Information Node 派生。`source_fact.description` 直接取已经定位的原文，不让模型改写事实。派生及判断节点只复用 Stage 2 的计算/决策要求，不计算答案。`supports` 连到 Stage 2 的 `information:<id>` 外部引用；`requires` 表示一个派生/判断要求依赖哪些事实或前置要求，不复制全部抽象信息图和职业字段。
 
-本版保守使用可重新解析的文字/表格位置。扫描件、图像或尚需视觉检查的文件不会因已有格式或未验证描述而变成 source_fact；当前会阻断这些输入。完整图像事实接入仍需把 Stage 3 的实际视觉检查记录与像素/区域绑定，并在 Stage 4 校验。没有声称本轮已生产多模态任务或证明多模态必要性。
+本版保守使用可重新解析的文字/表格位置。图表交付支持 PNG/JPG/SVG 等格式，文件检查仅验证格式和可读性，视觉表达正确性由具体语义评分要求评估。扫描件、图像或尚需视觉检查的文件不会因已有格式或未验证描述而变成 source_fact；当前会阻断这些输入。完整图像事实接入仍需把 Stage 3 的实际视觉检查记录与像素/区域绑定，并在 Stage 4 校验。没有声称本轮已生产多模态任务或证明多模态必要性。
 
 ## Task、Rubric 与验证器
 
-同一模型调用联合生成 `task`、私有 `grounding` 和 `rubric`。Task 有自然语言委托、交付物和逐项要求；路径位于 `outputs/`。私有 grounding 关联要求与已有 Evidence ID。检查所有派生/判断工作都被保留，每项要求有评分或明确的不评分原因，每条 Rubric 必须指向 Task 中的要求和实际 source_fact。
+同一模型调用联合生成 `task`、私有 `grounding` 和语义 `rubric`。当前配置启用 `compile_artifact_checks`：模型使用短证据句柄，Python 恢复原始证据 ID；任务要求全文由程序纳入对应满分条件，避免模型重复书写时漏掉义务；文件存在/格式可读检查由交付物声明编译，权重为1，与内容评分分开。缺失的文件扩展名按模型已选择的格式补齐并同步路径引用，已有但冲突的扩展名仍报错。原始模型方案另存，不手改专业要求或来源事实。Task 有自然语言委托、交付物和逐项要求；路径位于 `outputs/`。私有 grounding 关联要求与已有 Evidence ID。检查所有派生/判断工作都被保留，每项要求有评分或明确的不评分原因，每条 Rubric 必须指向 Task 中的要求和实际 source_fact。
 
 重复 ID、完全重复的 Rubric/检查规格、无依据单位、未知列、无效路径和不支持的运算会由程序拒绝。语义近重复、任务是否偏题、真实专业含义和复杂度由独立模型审核；这类错误无法仅靠 ID 检查证明不存在。
 
@@ -173,3 +201,7 @@ Manifest 保存上游版本、来源许可、文件哈希、provenance 和 draft
 - [WorkFactory §3.3–3.4](https://arxiv.org/html/2610.37161#S3.SS3)：通过信息依赖支持工作目标，并在修复时维护原始意图。本项目固定已准入 Plan，以引用关系和独立审核约束任务，不实现其 Probe/Repair。
 
 入口契约、JSON Schema、有限运算 DSL、目录导出和状态设计均为本项目工程选择，不声称论文公开过相同实现。
+
+## Stage 5 最小执行实验
+
+新增独立 Solver 执行、真实 Markdown 产物检查和错误产物测试。详见 [STAGE5.md](STAGE5.md)。当前只对 STATS19 Pilot 实现独立统计参考；不自动将 Draft 升级为 Verified，也不改动 Stage 1–4 数据。

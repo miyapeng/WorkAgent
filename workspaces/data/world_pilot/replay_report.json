@@ -1,0 +1,9 @@
+{
+  "byte_identical": true,
+  "changed_files": [],
+  "files_checked": 22,
+  "network_and_subprocess_blocked": true,
+  "note": "Cached engineering replay, not a new model/search run or independent Agent Probe.",
+  "real_ready": 0,
+  "world_status": "experimental_draft"
+}

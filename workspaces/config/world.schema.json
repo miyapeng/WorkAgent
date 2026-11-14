@@ -1,0 +1,141 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provenance",
+    "project_name",
+    "project_brief",
+    "snapshot_date",
+    "currency",
+    "monitoring_policy",
+    "work_packages"
+  ],
+  "properties": {
+    "provenance": {
+      "const": "synthetic"
+    },
+    "project_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "project_brief": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "snapshot_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "monitoring_policy": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "work_packages": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "work_package_id",
+          "name",
+          "baseline_start",
+          "baseline_due",
+          "actual_finish",
+          "baseline_budget_usd",
+          "baseline_effort_hours",
+          "hourly_rate_usd",
+          "planned_completed_effort_hours",
+          "completed_effort_hours",
+          "actual_cost_usd",
+          "estimated_remaining_hours",
+          "committed_remaining_nonlabor_usd",
+          "available_remaining_hours"
+        ],
+        "properties": {
+          "work_package_id": {
+            "type": "string",
+            "pattern": "^WP[0-9]{1,2}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          },
+          "baseline_start": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "baseline_due": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "actual_finish": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "baseline_budget_usd": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000000
+          },
+          "baseline_effort_hours": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000000
+          },
+          "hourly_rate_usd": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000000
+          },
+          "planned_completed_effort_hours": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "completed_effort_hours": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "actual_cost_usd": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "estimated_remaining_hours": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "committed_remaining_nonlabor_usd": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "available_remaining_hours": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

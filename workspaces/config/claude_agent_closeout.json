@@ -1,0 +1,40 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "search": {
+    "provider": "claude_code_agent",
+    "binary": "claude",
+    "model": "GLM_ka48dn",
+    "api_base": "https://llm-center.modelbest.co",
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "max_search_calls": 8,
+    "max_fetch_calls": 10,
+    "max_turns": 24,
+    "timeout_seconds": 600
+  },
+  "limits": {
+    "selected_files": 6,
+    "discovery_pages": 10,
+    "download_bytes": 20000000,
+    "timeout_seconds": 30,
+    "redirects": 4,
+    "retries": 1,
+    "trusted_proxy_env": "HTTPS_PROXY",
+    "max_profile_chars": 50000,
+    "max_segments_per_file": 100
+  },
+  "closeout_after_incomplete": true
+}

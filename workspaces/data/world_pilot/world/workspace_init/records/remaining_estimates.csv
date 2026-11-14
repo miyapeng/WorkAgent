@@ -1,0 +1,6 @@
+work_package_id,estimated_remaining_hours,hourly_rate_usd,committed_remaining_nonlabor_usd,available_remaining_hours
+WP3,1050,88,42000,760
+WP4,900,92,68000,620
+WP5,620,100,14500,540
+WP1,0,95,0,0
+WP2,0,105,0,0

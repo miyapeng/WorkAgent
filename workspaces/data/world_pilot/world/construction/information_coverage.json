@@ -1,0 +1,338 @@
+[
+  {
+    "evidence": [
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:1",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_33b0ecb7fafe8c4d59d9ee92",
+        "text": "# Fictional project monitoring case"
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:3",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_9154e8cd7b6bce6b81342340",
+        "text": "All case records and governance rules are synthetic research materials, not real business records."
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:5",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_2f1bf73f9f12177064665bd8",
+        "text": "Project: Northgate Campus Network Modernization"
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:6",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_b3990933dc680d2ed71923a7",
+        "text": "Snapshot: 2025-06-30"
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:7",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_205ff081da3e141d054c75d8",
+        "text": "Currency: USD"
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:9",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_d33f62ad5d86e52e39cdc583",
+        "text": "The Northgate Campus Network Modernization project replaces the aging switching, cabling, and wireless infrastructure across three buildings on a single campus. Scope covers a requirements and site survey phase, design of the core and distribution layers, installation of a fiber backbone and structured cabling, deployment of wireless access points and intermediate distribution frame switches, and integration of network monitoring tooling followed by validated cutover. Work is performed by an internal network engineering team supported by contracted cabling crews. The snapshot reflects the reporting point at which approximately the first third of the baseline effort has been consumed, with design work closed out and physical installation underway. Baseline dates, budgets, and effort reflect the approved plan; actual costs and progress reflect records posted through the snapshot date."
+      },
+      {
+        "file_id": "f_927b916cd87d449c80539981",
+        "locator": "line:11",
+        "path": "context/project_brief.md",
+        "segment_id": "seg_44811d632035f3b683460c85",
+        "text": "Review scope: Monitor the fictional network project at the supplied snapshot. Compare planned and actual progress and costs, forecast the cost outcome under the stated assumptions, assess budget and resource allocation, and recommend justified cost-control actions. Do not execute changes."
+      }
+    ],
+    "node_id": "i1",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  },
+  {
+    "evidence": [
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:1",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_a7c631460cce822a2fcba235",
+        "text": "work_package_id | name | baseline_start | baseline_due | baseline_budget_usd | baseline_effort_hours | planned_completed_effort_hours"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:2",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_f2ea24cbb3fe947d10cdd965",
+        "text": "WP1 | Site survey and requirements definition | 2025-01-06 | 2025-02-14 | 38000 | 320 | 320"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:3",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_cbcfb8d30129b360a61ecc77",
+        "text": "WP2 | Core and distribution switch design | 2025-02-03 | 2025-04-11 | 62000 | 480 | 480"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:4",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_da5e892d4edcb09fc8b9760f",
+        "text": "WP3 | Fiber backbone and structured cabling installation | 2025-04-14 | 2025-08-22 | 210000 | 1600 | 900"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:5",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_438ea44a228c7067d5500ecd",
+        "text": "WP4 | Wireless access point and IDF switch deployment | 2025-05-19 | 2025-09-26 | 124000 | 960 | 140"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:6",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_88c6ccd356f60188e99dce1c",
+        "text": "WP5 | Monitoring integration and cutover validation | 2025-06-02 | 2025-10-31 | 78000 | 640 | 96"
+      }
+    ],
+    "node_id": "i2",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  },
+  {
+    "evidence": [
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:1",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_a7c631460cce822a2fcba235",
+        "text": "work_package_id | name | baseline_start | baseline_due | baseline_budget_usd | baseline_effort_hours | planned_completed_effort_hours"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:2",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_f2ea24cbb3fe947d10cdd965",
+        "text": "WP1 | Site survey and requirements definition | 2025-01-06 | 2025-02-14 | 38000 | 320 | 320"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:3",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_cbcfb8d30129b360a61ecc77",
+        "text": "WP2 | Core and distribution switch design | 2025-02-03 | 2025-04-11 | 62000 | 480 | 480"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:4",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_da5e892d4edcb09fc8b9760f",
+        "text": "WP3 | Fiber backbone and structured cabling installation | 2025-04-14 | 2025-08-22 | 210000 | 1600 | 900"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:5",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_438ea44a228c7067d5500ecd",
+        "text": "WP4 | Wireless access point and IDF switch deployment | 2025-05-19 | 2025-09-26 | 124000 | 960 | 140"
+      },
+      {
+        "file_id": "f_41eac6a5eb6a6f00de4c6276",
+        "locator": "row:6",
+        "path": "records/baseline.csv",
+        "segment_id": "seg_88c6ccd356f60188e99dce1c",
+        "text": "WP5 | Monitoring integration and cutover validation | 2025-06-02 | 2025-10-31 | 78000 | 640 | 96"
+      }
+    ],
+    "node_id": "i3",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  },
+  {
+    "evidence": [
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:1",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_39c3a8be12ade726e148744a",
+        "text": "work_package_id | completed_effort_hours | actual_cost_usd | actual_finish"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:2",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_bd4284e54a894ad183d0727b",
+        "text": "WP2 | 480 | 64800 | 2025-04-18"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:3",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_d05ee69c413ac3908cac4bb4",
+        "text": "WP3 | 720 | 98400 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:4",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_8ee285e6bc6fc837adee4fe2",
+        "text": "WP4 | 120 | 17040 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:5",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_0b4c1ecfaaac9922454eee61",
+        "text": "WP5 | 60 | 7800 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:6",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_cc683a0170c1f27085808fd1",
+        "text": "WP1 | 320 | 36500 | 2025-02-12"
+      }
+    ],
+    "node_id": "i4",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  },
+  {
+    "evidence": [
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:1",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_39c3a8be12ade726e148744a",
+        "text": "work_package_id | completed_effort_hours | actual_cost_usd | actual_finish"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:2",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_bd4284e54a894ad183d0727b",
+        "text": "WP2 | 480 | 64800 | 2025-04-18"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:3",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_d05ee69c413ac3908cac4bb4",
+        "text": "WP3 | 720 | 98400 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:4",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_8ee285e6bc6fc837adee4fe2",
+        "text": "WP4 | 120 | 17040 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:5",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_0b4c1ecfaaac9922454eee61",
+        "text": "WP5 | 60 | 7800 |"
+      },
+      {
+        "file_id": "f_444c763b8bb3d72e8252b2da",
+        "locator": "row:6",
+        "path": "records/actuals.csv",
+        "segment_id": "seg_cc683a0170c1f27085808fd1",
+        "text": "WP1 | 320 | 36500 | 2025-02-12"
+      }
+    ],
+    "node_id": "i5",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  },
+  {
+    "evidence": [
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:1",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_dc52d687c1014cab9fa70446",
+        "text": "# Fictional internal monitoring policy"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:3",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_8c488ac4c5451fd7e13482b5",
+        "text": "Internal cost-control governance for this pilot: the project manager may approve reallocations within a single work package up to 5 percent of that package's baseline budget and may commit contingency up to 3 percent of total baseline budget without escalation. Reallocations between work packages, any change exceeding 10 percent of a work package baseline, and any baseline date change affecting a downstream dependency require approval by the Network Infrastructure Steering Group. Resource-hour transfers between work-package pools must be documented as an explicit recommendation and approved by the resource owner before being reflected in reporting. Status reporting occurs at each monthly snapshot using baseline-equivalent effort; variances are reported before any corrective action is proposed, and no scope change may be executed on the basis of a forecast alone."
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:5",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_494e299fb3b363913c89c54b",
+        "text": "This is a simplified experimental policy, not real law or a claimed industry standard."
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:6",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_7ad60633d0ce663430a00796",
+        "text": "All three tables belong to the project and snapshot in project_brief.md; join them by work_package_id. Blank actual_finish means not completed at the snapshot. Dates are calendar dates. planned_completed_effort_hours and completed_effort_hours measure baseline-equivalent work, not actual labor consumed. baseline_budget_usd is the approved total budget per work package. actual_cost_usd includes all incurred expenses through the snapshot, including incurred unpaid items. Remaining commitments are future nonlabor only: exclude incurred expenses and future labor. Remaining labor hours and rates are project-manager estimates, not known future outcomes. Forecasts assume these estimates and rates remain applicable; no additional taxes, overhead or currency conversions. Available remaining hours refer to the same package-specific resource pool and planning horizon as estimated remaining hours. Do not assume spare resources can transfer between packages without approval."
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:8",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_ae7b262f8d9b26ca874c11ce",
+        "text": "Calculate these per-work-package metrics (USD for *_usd, hours for *_hours):"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:9",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_bf9c9dfcf45fd4eab51ee942",
+        "text": "- cost_variance_to_date_usd: actual_cost_usd - baseline_budget_usd; negative is remaining budget, not proof of savings"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:10",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_ffd5ce6e1f058874fb8ed005",
+        "text": "- schedule_effort_gap_hours: planned_completed_effort_hours - completed_effort_hours; positive is behind planned effort"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:11",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_4062805843e1e50162b865d5",
+        "text": "- forecast_total_cost_usd: actual_cost_usd + estimated_remaining_hours * hourly_rate_usd + committed_remaining_nonlabor_usd"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:12",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_1d7fc123efdddeec6d0636f1",
+        "text": "- forecast_budget_variance_usd: forecast_total_cost_usd - baseline_budget_usd; positive is forecast overrun"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:13",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_61fb471311b944bbda790709",
+        "text": "- resource_gap_hours: max(0, estimated_remaining_hours - available_remaining_hours)"
+      },
+      {
+        "file_id": "f_4af68104f8ca78da2446b90c",
+        "locator": "line:15",
+        "path": "context/monitoring_policy.md",
+        "segment_id": "seg_b2ca7323171b14932c984ad4",
+        "text": "Discuss overdue incomplete milestones and early/late completed milestones using baseline_due, actual_finish and the snapshot. Explain forecast uncertainty, budget/resource pressures and possible controls. Recommend actions; do not treat a recommendation as already approved."
+      }
+    ],
+    "node_id": "i6",
+    "origin": "synthetic",
+    "status": "supported_synthetic"
+  }
+]

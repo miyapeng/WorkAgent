@@ -105,16 +105,21 @@ def run_session(prompt, config, cache, offline=False):
     model = config['model']
     cmd = [config.get('binary', 'claude'), '-p', '--safe-mode', '--setting-sources', '', '--strict-mcp-config',
            '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch', '--permission-mode', 'dontAsk',
-           '--no-session-persistence', '--model', model, '--max-turns', str(config.get('max_turns', 6)),
+           '--no-session-persistence', '--model', model,
            '--output-format', 'stream-json', '--verbose']
+    if config.get('max_turns') is not None:
+        require(type(config['max_turns']) is int and config['max_turns']>0,'invalid_max_turns')
+        cmd.extend(['--max-turns',str(config['max_turns'])])
     started = now(); clock = time.monotonic()
     with tempfile.TemporaryDirectory(prefix='workagent-search-') as temp:
         env = {k: v for k, v in os.environ.items() if not k.startswith(('ANTHROPIC_', 'CLAUDE_'))}
         env.update(ANTHROPIC_BASE_URL=base, ANTHROPIC_AUTH_TOKEN=token, CLAUDE_CONFIG_DIR=temp,
                    CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS='1', CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC='1',
-                   CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION=str(config.get('max_search_calls', 1)),
                    ANTHROPIC_SMALL_FAST_MODEL=model, ANTHROPIC_DEFAULT_HAIKU_MODEL=model,
                    CLAUDE_CODE_MAX_OUTPUT_TOKENS='4096', API_TIMEOUT_MS='60000')
+        if config.get('max_search_calls') is not None:
+            require(type(config['max_search_calls']) is int and config['max_search_calls']>0,'invalid_max_search_calls')
+            env['CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION']=str(config['max_search_calls'])
         process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                    text=True, cwd=temp, env=env, start_new_session=True)
         timed_out = False

@@ -3,5 +3,19 @@
   "max_tokens": 10000,
   "timeout_seconds": 180,
   "retries": 1,
-  "max_model_input_bytes": 180000
+  "max_model_input_bytes": 180000,
+  "profile_context_chars": 30000,
+  "compile_artifact_checks": true,
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "parameters": {
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  }
 }

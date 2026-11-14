@@ -1,0 +1,128 @@
+{
+  "sources": {
+    "f_19cee86cc11d10630e6f6e3e": {
+      "bytes": 3325,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call_ccaba2ad841d4b2091d8f05f"
+      },
+      "file_id": "f_19cee86cc11d10630e6f6e3e",
+      "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics",
+      "prior_errors": [],
+      "reason": "Observed CSV file with columns agencyCode, agencyName, targetMet, count, percent, fiscalYear, DataAsOf. Contains FY2025 agency performance metrics showing Met vs Not Met targets with counts and percentages for 24 federal agencies. Provides completion status/performance data, though aggregate rather than project-level.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T07:50:09.927172+00:00",
+      "sha256": "19cee86cc11d10630e6f6e3e8ccb19430fecff5d8318304c6e70498386e0b113",
+      "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+      "target_node_ids": [
+        "i5"
+      ],
+      "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics"
+    },
+    "f_3fe407f4caa691f01e7040db": {
+      "bytes": 36022,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call_db07e27fb67e4ad3a8233d8f"
+      },
+      "file_id": "f_3fe407f4caa691f01e7040db",
+      "final_url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+      "prior_errors": [],
+      "reason": "This is a grantee annual performance report page for a broadband deployment project. The page metadata confirms it is an Annual Report for the Comanche Nation TBCP Round 1, and it links to a PDF (Comanche_Nation_Annual_Report_FY24_Q3.pdf at relative path /sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf) which likely contains planned milestones, budget allocation, actual expenditures, and completion status. The reporting page also shows 476 similar reports across multiple grantees and document types (Annual Report, Financial Report, Semi-Annual Technical Report, Baseline Report, CD-450, CD-451), indicating a structured grantee reporting system with cost and schedule data.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T07:49:26.097093+00:00",
+      "sha256": "3fe407f4caa691f01e7040db2529f2c018a9baa265f294781df1d8f60904e65f",
+      "source_page": "https://broadbandusa.ntia.gov/funding-programs/reporting",
+      "target_node_ids": [
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i"
+    },
+    "f_4c16fad96d556d915b6d00de": {
+      "bytes": 4772,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call_77f710df3a684f4a9ed917b0"
+      },
+      "file_id": "f_4c16fad96d556d915b6d00de",
+      "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance",
+      "prior_errors": [],
+      "reason": "Observed CSV file with columns agencyCode, agencyName, fiscalYear, costVariance, numberOfProjects, DataAsOf. Contains FY2025 data as of 09/11/2024 for 26 federal agencies with project counts grouped by cost variance tier (Low/Medium/High). Provides agency-level budget vs actual cost variance classification, though it is aggregate counts rather than investment-level dollar variances.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T07:50:06.018249+00:00",
+      "sha256": "4c16fad96d556d915b6d00de297b16560657324e39a953cdd0abc16c1726c7a2",
+      "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+      "target_node_ids": [
+        "i3",
+        "i4"
+      ],
+      "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance"
+    },
+    "f_959a2f0605f981d4bc654741": {
+      "bytes": 4775,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call_9847e61462ea4f7683b4a813"
+      },
+      "file_id": "f_959a2f0605f981d4bc654741",
+      "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance",
+      "license_status": "unknown",
+      "mime": "text/html",
+      "origin": "real_original",
+      "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance",
+      "prior_errors": [],
+      "reason": "Observed CSV file with columns agencyCode, agencyName, fiscalYear, scheduleVariance, numberOfProjects, DataAsOf. Contains FY2025 data as of 09/11/2024 for 26 federal agencies with project counts grouped by schedule variance tier (Low/Medium/High). Provides agency-level schedule variance classification, though aggregate rather than investment-level milestone data.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T07:50:08.080399+00:00",
+      "sha256": "959a2f0605f981d4bc654741a6de5504d880407b34fc14fd79a9dd40c7826108",
+      "source_page": "https://itdashboard.gov/index.php/agency-analysis",
+      "target_node_ids": [
+        "i2",
+        "i5"
+      ],
+      "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance"
+    },
+    "f_d6d89d3bef1925ab89c52770": {
+      "bytes": 149731,
+      "discovery": {
+        "method": "actual_html_href",
+        "source_page": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+        "source_sha256": "3fe407f4caa691f01e7040db2529f2c018a9baa265f294781df1d8f60904e65f"
+      },
+      "file_id": "f_d6d89d3bef1925ab89c52770",
+      "final_url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf",
+      "license_status": "unknown",
+      "mime": "application/pdf",
+      "origin": "real_original",
+      "original_url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf",
+      "prior_errors": [],
+      "reason": "Unique native attachment href in the independently downloaded landing page; content not yet verified.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T07:49:27.494965+00:00",
+      "sha256": "d6d89d3bef1925ab89c527703599073c9fa95383d240b82215a85ab7f07dcc92",
+      "source_page": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+      "target_node_ids": [
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf"
+    }
+  }
+}

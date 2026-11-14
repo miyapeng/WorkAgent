@@ -1,12 +1,13 @@
 """Synthetic tool transcripts only; no API calls or search success claims."""
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from claude_search import analyze_trace
+from claude_search import analyze_trace, run_session
 from search_provider import search
 
 
@@ -22,6 +23,20 @@ def transcript(result, name='WebSearch', is_error=False):
 
 
 class ClaudeTraceTests(unittest.TestCase):
+    def test_runtime_omits_limits_when_unset_and_preserves_explicit_limits(self):
+        for bounded in (False,True):
+            config={'model':'fixture','max_turns':6 if bounded else None,
+                    'max_search_calls':2 if bounded else None,'timeout_seconds':30}
+            process=MagicMock();process.communicate.return_value=('','');process.returncode=0
+            with tempfile.TemporaryDirectory() as temp, patch('claude_search.subprocess.run',return_value=MagicMock(stdout='fixture-cli')), patch('claude_search.credentials',return_value=('https://example.org','fixture-not-a-real-key')), patch('claude_search.subprocess.Popen',return_value=process) as launch, patch.dict(os.environ,{'CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION':'1'}):
+                run_session('fixture prompt',config,Path(temp))
+                command=launch.call_args.args[0];env=launch.call_args.kwargs['env']
+                self.assertEqual('--max-turns' in command,bounded)
+                self.assertEqual('CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION' in env,bounded)
+                if bounded:
+                    self.assertEqual(command[command.index('--max-turns')+1],'6')
+                    self.assertEqual(env['CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION'],'2')
+
     def test_only_actual_tool_links_become_candidates(self):
         text = 'Web search results\n\nLinks: [{"title":"Fixture","url":"https://example.org/data.csv"}]\n\nsummary'
         r = analyze_trace(transcript(text))

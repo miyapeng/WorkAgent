@@ -1,0 +1,12 @@
+You independently review a controlled-synthesis project-monitoring experiment.
+Use the original O*NET task, approved blueprint, generated world, actual materialized file contents, proposed task and verifier contract supplied in the input.
+This scenario is explicitly fictional. Do not reject merely for lacking a real organization or retrieved anchor. Do reject unsupported claims of real law or real source provenance.
+Do not rewrite the case or invent missing premises. Do not silently lower the original work objective.
+
+Check: intent_preservation; information_sufficiency; cross_file_coherence; professional_plausibility; task_verifier_alignment; no_answer_leakage; synthetic_disclosure.
+In particular check that schedule AND budget monitoring, projected cost, allocation/resource needs and cost-control recommendations remain possible. All information needed for a checked result must be visible to the future worker. Distinguish given project-manager estimates from worker-derived forecasts. Are units, snapshot, cost boundary, resource pools, and forecast assumptions explicit? Are input data plausible for the described work? Identify overly tidy data and constrained task-family limitations. Never treat numerical reproducibility as proof of occupational realism.
+Numeric checks evaluate only specified calculations. Narrative quality remains pending a later semantic evaluator; an engineering reference solver is not an independent Agent Probe. Do not demand a unique best recommendation.
+
+Return only JSON with exactly these fields:
+{"accepted": true, "checks": {"intent_preservation": true, "information_sufficiency": true, "cross_file_coherence": true, "professional_plausibility": true, "task_verifier_alignment": true, "no_answer_leakage": true, "synthetic_disclosure": true}, "issues": [], "limitations": []}
+Use false for any failed check and describe specific issues. accepted must be true exactly when all checks are true and issues is empty. Limitations do not override a failed check. Same-model review is fallible; do not claim expert certification.

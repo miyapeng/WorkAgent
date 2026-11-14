@@ -1,0 +1,1020 @@
+{
+  "events": [
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.061168799999999995,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 51,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 4470,
+        "iterations": [],
+        "output_tokens": 711,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "public sector network infrastructure project monthly progress report schedule baseline budget actual cost percent complete PDF",
+      "results": [
+        {
+          "candidate_id": "c_5db553b72f2ee27cd7dbc38b",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/Project-Management",
+          "title": "Given the project network and baseline information below, ...",
+          "url": "https://www.coursehero.com/Project-Management"
+        },
+        {
+          "candidate_id": "c_3ec6536e6b13b050f72fa25d",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://assets.performance.gov/action_plans",
+          "title": "Improving Business, Financial and Acquisition Outcomes ...",
+          "url": "https://assets.performance.gov/action_plans"
+        },
+        {
+          "candidate_id": "c_53ca59b9ff05dd5350a64b6b",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://experience.arcgis.com/experience/page/Page",
+          "title": "Experience",
+          "url": "https://experience.arcgis.com/experience/page/Page"
+        },
+        {
+          "candidate_id": "c_4817f0f0df3eda6538e4ef63",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ones.com/blog",
+          "title": "Project Cost Management Plan Example: PDF ...",
+          "url": "https://ones.com/blog"
+        },
+        {
+          "candidate_id": "c_8e62e39fdc0c2542f72382bb",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.chegg.com/",
+          "title": "Solved Given the following project network, baseline, and",
+          "url": "https://www.chegg.com/"
+        },
+        {
+          "candidate_id": "c_d1b6868d16df463324cf2839",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://performance.envisio.com/Activity-319630",
+          "title": "Home",
+          "url": "https://performance.envisio.com/Activity-319630"
+        },
+        {
+          "candidate_id": "c_832cd5fa1e3b3e31b41fd3a3",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://apps.apsc.arkansas.gov/viewdoc/pdfview",
+          "title": "https://apps.apsc.arkansas.gov/olsv2/viewdoc/pdfvi...",
+          "url": "https://apps.apsc.arkansas.gov/viewdoc/pdfview"
+        },
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project Budget Summary | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_f0d7fe694d03d642e91aebae",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/",
+          "title": "Chap13Solutions.pdf - 4. Given the following project...",
+          "url": "https://www.coursehero.com/"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 37.73,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "6844fbc9a92e6677b20584384012acfd645693122266ce50a8b99f38241f2ce7",
+        "returncode": 0,
+        "started_at": "2026-11-13T07:09:43.233150+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "731bdf280bc712a05aa77ead215df47818919b6aa36caf1d65a87db5db76a70b"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "public sector network infrastructure project monthly progress report schedule baseline budget actual cost percent complete PDF"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "public sector network infrastructure project monthly progress report schedule baseline budget actual cost percent complete PDF"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Given the project network and baseline information below, ...",
+              "url": "https://www.coursehero.com/Project-Management"
+            },
+            {
+              "title": "Improving Business, Financial and Acquisition Outcomes ...",
+              "url": "https://assets.performance.gov/action_plans"
+            },
+            {
+              "title": "Experience",
+              "url": "https://experience.arcgis.com/experience/page/Page"
+            },
+            {
+              "title": "Project Cost Management Plan Example: PDF ...",
+              "url": "https://ones.com/blog"
+            },
+            {
+              "title": "Solved Given the following project network, baseline, and",
+              "url": "https://www.chegg.com/"
+            },
+            {
+              "title": "Home",
+              "url": "https://performance.envisio.com/Activity-319630"
+            },
+            {
+              "title": "https://apps.apsc.arkansas.gov/olsv2/viewdoc/pdfvi...",
+              "url": "https://apps.apsc.arkansas.gov/viewdoc/pdfview"
+            },
+            {
+              "title": "Project Budget Summary | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "Chap13Solutions.pdf - 4. Given the following project...",
+              "url": "https://www.coursehero.com/"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3122,
+          "result_sha256": "4f8b6e6d437bf111941e9aa07396ed005667e06849fdf9f3f95e4154a82532f3",
+          "tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.054066199999999995,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 1638,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 2994,
+        "iterations": [],
+        "output_tokens": 572,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "project cost control variance reporting standard budget allocation forecast PDF",
+      "results": [
+        {
+          "candidate_id": "c_0aaeba24bf63d66c3faea2d3",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/Project-Cost-Group-Assighment",
+          "title": "Project Cost Control and Monitoring Guide | PDF",
+          "url": "https://www.scribd.com/Project-Cost-Group-Assighment"
+        },
+        {
+          "candidate_id": "c_8dc6958b28565bca0e0e7eb1",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://pressbooks.atlanticoer-relatlantique.ca/",
+          "title": "Chapter 11: Budget Planning – NSCC Project Management",
+          "url": "https://pressbooks.atlanticoer-relatlantique.ca/"
+        },
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project ABC Cost Control Summary | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_a2f4251bd74f34fcb94b605a",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/presentation",
+          "title": "Variance Analysis in Cost Control | PDF",
+          "url": "https://www.scribd.com/presentation"
+        },
+        {
+          "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/Explore",
+          "title": "Project Budget Variance Report Template",
+          "url": "https://www.pinterest.com/Explore"
+        },
+        {
+          "candidate_id": "c_afce5963a9c216076c67432a",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/",
+          "title": "(PDF) \" Flexible Budgets , Direct – cost Variances , and ...",
+          "url": "https://www.researchgate.net/"
+        },
+        {
+          "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://mercury-training.com/pdfb",
+          "title": "Budget Preparation, Operational Cost Control, and ...",
+          "url": "https://mercury-training.com/pdfb"
+        },
+        {
+          "candidate_id": "c_12b7bb23dce974593b131137",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://fr.scribd.com/document",
+          "title": "Standard Costing vs Budgetary Control | PDF | Budget",
+          "url": "https://fr.scribd.com/document"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 29.61,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "81bcd4def53f97cc836c26f08fc9f7abc963a39e6897565c7b227c4097f90535",
+        "returncode": 0,
+        "started_at": "2026-11-13T07:10:20.976272+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "4dba78f268c527ddf0cc5bb5e4cdf8c4805b9566672596d8db04a6ec4b8ec71c"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "project cost control variance reporting standard budget allocation forecast PDF"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_55991fd4945d49cba10b406a"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "project cost control variance reporting standard budget allocation forecast PDF"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Project Cost Control and Monitoring Guide | PDF",
+              "url": "https://www.scribd.com/Project-Cost-Group-Assighment"
+            },
+            {
+              "title": "Chapter 11: Budget Planning – NSCC Project Management",
+              "url": "https://pressbooks.atlanticoer-relatlantique.ca/"
+            },
+            {
+              "title": "Project ABC Cost Control Summary | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "Variance Analysis in Cost Control | PDF",
+              "url": "https://www.scribd.com/presentation"
+            },
+            {
+              "title": "Project Budget Variance Report Template",
+              "url": "https://www.pinterest.com/Explore"
+            },
+            {
+              "title": "(PDF) \" Flexible Budgets , Direct – cost Variances , and ...",
+              "url": "https://www.researchgate.net/"
+            },
+            {
+              "title": "Budget Preparation, Operational Cost Control, and ...",
+              "url": "https://mercury-training.com/pdfb"
+            },
+            {
+              "title": "Standard Costing vs Budgetary Control | PDF | Budget",
+              "url": "https://fr.scribd.com/document"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3673,
+          "result_sha256": "ffd4f51094adc5d40bb3ce33c42fa6c9b2275e082b5498870092c0f7b9ead6df",
+          "tool_use_id": "call_55991fd4945d49cba10b406a"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.0523334,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 51,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 4421,
+        "iterations": [],
+        "output_tokens": 564,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "government IT network infrastructure project monthly cost and schedule report baseline budget actual committed costs percent complete xlsx csv",
+      "results": [
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project Cost Baseline and Analysis | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_a835fe02c2756824955e04e4",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.mastt.com/resources",
+          "title": "Project Budget Template (Word, Excel)",
+          "url": "https://www.mastt.com/resources"
+        },
+        {
+          "candidate_id": "c_f0d7fe694d03d642e91aebae",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/",
+          "title": "Given the following project network, baseline, and status ...",
+          "url": "https://www.coursehero.com/"
+        },
+        {
+          "candidate_id": "c_08c70e3998887165b813ab06",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://performance.envisio.com/Strategy-111317",
+          "title": "Home",
+          "url": "https://performance.envisio.com/Strategy-111317"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 30.92,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "78d1477705df1c18c0e69c063163703c7920538446ff7510eada6070606995dc",
+        "returncode": 0,
+        "started_at": "2026-11-13T07:11:21.784484+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "d702c8ab7a0ea05b54a61c9c8d8072d9647650cf8a682e7a145970bcb241ade1"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "government IT network infrastructure project monthly cost and schedule report baseline budget actual committed costs percent complete xlsx csv"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call_dee4933ae00844d78d0eef5c"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "government IT network infrastructure project monthly cost and schedule report baseline budget actual committed costs percent complete xlsx csv"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Project Cost Baseline and Analysis | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "Project Budget Template (Word, Excel)",
+              "url": "https://www.mastt.com/resources"
+            },
+            {
+              "title": "Given the following project network, baseline, and status ...",
+              "url": "https://www.coursehero.com/"
+            },
+            {
+              "title": "Home",
+              "url": "https://performance.envisio.com/Strategy-111317"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 2662,
+          "result_sha256": "642a819b1a2ea4303d83b56f2a3383511945b4184a609f49abd7507cf236644d",
+          "tool_use_id": "call_dee4933ae00844d78d0eef5c"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    },
+    {
+      "billed_cost": null,
+      "cli_cost_estimate_usd": 0.058239,
+      "model_usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 153,
+        "fallback_credit": null,
+        "inference_geo": "",
+        "input_tokens": 4861,
+        "iterations": [],
+        "output_tokens": 535,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      },
+      "provider": "claude_code",
+      "query": "project cost control standard variance reporting budget allocation cost forecast procedure PDF",
+      "results": [
+        {
+          "candidate_id": "c_74ebcdd75d5c5b859465f3a3",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/Costing-Chapter-3",
+          "title": "Cost Control Techniques: Standard Costing | PDF | Budget",
+          "url": "https://www.scribd.com/document/Costing-Chapter-3"
+        },
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project Cost Control Essentials | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_690ca9142524b17beb354ee7",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://pt.slideshare.net/slideshow",
+          "title": "COST MANAGEMENT REPORT | PDF",
+          "url": "https://pt.slideshare.net/slideshow"
+        },
+        {
+          "candidate_id": "c_f17ef60e794e0e013db5706d",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/publication",
+          "title": "(PDF) Schedule and Cost Control",
+          "url": "https://www.researchgate.net/publication"
+        },
+        {
+          "candidate_id": "c_558c2635d789e7658de5a975",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.irbnet.de/daten/iconda/CIB6062",
+          "title": "Cost variance of construction activities with multiple tasks",
+          "url": "https://www.irbnet.de/daten/iconda/CIB6062"
+        },
+        {
+          "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/Explore",
+          "title": "Project Budget Variance Report Template",
+          "url": "https://www.pinterest.com/Explore"
+        },
+        {
+          "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://mercury-training.com/pdfb",
+          "title": "Budget Preparation, Operational Cost Control, and ...",
+          "url": "https://mercury-training.com/pdfb"
+        }
+      ],
+      "run": {
+        "api_base": "https://llm-center.modelbest.co",
+        "billed_cost": null,
+        "claude_version": "2.1.299 (Claude Code)",
+        "cost_note": "CLI total_cost_usd is a client estimate, not a confirmed LLMCenter bill.",
+        "elapsed_seconds": 13.55,
+        "model_requested": "GLM_ka48dn",
+        "request_sha256": "0dfb7ca900f9fc33126efa9700a60c9aee3d71fea0250c673fb33a1b2c0b2083",
+        "returncode": 0,
+        "started_at": "2026-11-13T07:11:52.718497+00:00",
+        "stderr_excerpt": "[claude-code:unrecognized_model] {\"model\":\"GLM_ka48dn\",\"query_source\":\"sdk\"}\n",
+        "timed_out": false,
+        "transcript_sha256": "9038157731f9b841a1c54afd596aa7ee0099212678be9a6765cc268157e1187c"
+      },
+      "search_api_called": true,
+      "search_count_note": "Calls observed in Claude Code tool logs; underlying search backend and backend request count are not independently observable.",
+      "status": "searched",
+      "tool_calls": [
+        {
+          "input": {
+            "query": "project cost control standard variance reporting budget allocation cost forecast procedure PDF"
+          },
+          "name": "WebSearch",
+          "tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e"
+        }
+      ],
+      "tool_results": [
+        {
+          "input": {
+            "query": "project cost control standard variance reporting budget allocation cost forecast procedure PDF"
+          },
+          "is_error": false,
+          "links": [
+            {
+              "title": "Cost Control Techniques: Standard Costing | PDF | Budget",
+              "url": "https://www.scribd.com/document/Costing-Chapter-3"
+            },
+            {
+              "title": "Project Cost Control Essentials | PDF",
+              "url": "https://www.scribd.com/document"
+            },
+            {
+              "title": "COST MANAGEMENT REPORT | PDF",
+              "url": "https://pt.slideshare.net/slideshow"
+            },
+            {
+              "title": "(PDF) Schedule and Cost Control",
+              "url": "https://www.researchgate.net/publication"
+            },
+            {
+              "title": "Cost variance of construction activities with multiple tasks",
+              "url": "https://www.irbnet.de/daten/iconda/CIB6062"
+            },
+            {
+              "title": "Project Budget Variance Report Template",
+              "url": "https://www.pinterest.com/Explore"
+            },
+            {
+              "title": "Budget Preparation, Operational Cost Control, and ...",
+              "url": "https://mercury-training.com/pdfb"
+            }
+          ],
+          "name": "WebSearch",
+          "result_characters": 3085,
+          "result_sha256": "2b541c05f702344711c86635d43758dbe376d1f43a9d7e9de23ddde2efdd7515",
+          "tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e"
+        }
+      ],
+      "tool_webfetch_calls": 0,
+      "tool_websearch_calls": 1
+    }
+  ],
+  "mode": "graph",
+  "rounds": [
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "Project progress reports, project controls dashboards, or budget/schedule tracking workbooks from a real network or IT infrastructure project",
+            "query": "public sector network infrastructure project monthly progress report schedule baseline budget actual cost percent complete PDF",
+            "reason": "Find a coherent anchor project that provides planned milestones, approved budget, actual costs, and reported completion status for the same project and reporting period.",
+            "target_node_ids": [
+              "i2",
+              "i3",
+              "i4",
+              "i5"
+            ]
+          },
+          {
+            "desired_source_type": "Organizational or authoritative cost-control, budget-allocation, or variance-reporting standard",
+            "query": "project cost control variance reporting standard budget allocation forecast PDF",
+            "reason": "Locate applicable cost-control and variance-reporting guidance that can support later professional judgments and recommendations without relying on invented standards.",
+            "target_node_ids": [
+              "i6"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 0
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "c_5db553b72f2ee27cd7dbc38b",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/Project-Management",
+          "title": "Given the project network and baseline information below, ...",
+          "url": "https://www.coursehero.com/Project-Management"
+        },
+        {
+          "candidate_id": "c_3ec6536e6b13b050f72fa25d",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://assets.performance.gov/action_plans",
+          "title": "Improving Business, Financial and Acquisition Outcomes ...",
+          "url": "https://assets.performance.gov/action_plans"
+        },
+        {
+          "candidate_id": "c_53ca59b9ff05dd5350a64b6b",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://experience.arcgis.com/experience/page/Page",
+          "title": "Experience",
+          "url": "https://experience.arcgis.com/experience/page/Page"
+        },
+        {
+          "candidate_id": "c_4817f0f0df3eda6538e4ef63",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://ones.com/blog",
+          "title": "Project Cost Management Plan Example: PDF ...",
+          "url": "https://ones.com/blog"
+        },
+        {
+          "candidate_id": "c_8e62e39fdc0c2542f72382bb",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.chegg.com/",
+          "title": "Solved Given the following project network, baseline, and",
+          "url": "https://www.chegg.com/"
+        },
+        {
+          "candidate_id": "c_d1b6868d16df463324cf2839",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://performance.envisio.com/Activity-319630",
+          "title": "Home",
+          "url": "https://performance.envisio.com/Activity-319630"
+        },
+        {
+          "candidate_id": "c_832cd5fa1e3b3e31b41fd3a3",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://apps.apsc.arkansas.gov/viewdoc/pdfview",
+          "title": "https://apps.apsc.arkansas.gov/olsv2/viewdoc/pdfvi...",
+          "url": "https://apps.apsc.arkansas.gov/viewdoc/pdfview"
+        },
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project ABC Cost Control Summary | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_f0d7fe694d03d642e91aebae",
+          "discovered_by_tool_use_id": "call-e5c6cb36-3aaf-4c91-8f44-7659807dca15",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/",
+          "title": "Chap13Solutions.pdf - 4. Given the following project...",
+          "url": "https://www.coursehero.com/"
+        },
+        {
+          "candidate_id": "c_0aaeba24bf63d66c3faea2d3",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/Project-Cost-Group-Assighment",
+          "title": "Project Cost Control and Monitoring Guide | PDF",
+          "url": "https://www.scribd.com/Project-Cost-Group-Assighment"
+        },
+        {
+          "candidate_id": "c_8dc6958b28565bca0e0e7eb1",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://pressbooks.atlanticoer-relatlantique.ca/",
+          "title": "Chapter 11: Budget Planning – NSCC Project Management",
+          "url": "https://pressbooks.atlanticoer-relatlantique.ca/"
+        },
+        {
+          "candidate_id": "c_a2f4251bd74f34fcb94b605a",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/presentation",
+          "title": "Variance Analysis in Cost Control | PDF",
+          "url": "https://www.scribd.com/presentation"
+        },
+        {
+          "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/Explore",
+          "title": "Project Budget Variance Report Template",
+          "url": "https://www.pinterest.com/Explore"
+        },
+        {
+          "candidate_id": "c_afce5963a9c216076c67432a",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/",
+          "title": "(PDF) \" Flexible Budgets , Direct – cost Variances , and ...",
+          "url": "https://www.researchgate.net/"
+        },
+        {
+          "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://mercury-training.com/pdfb",
+          "title": "Budget Preparation, Operational Cost Control, and ...",
+          "url": "https://mercury-training.com/pdfb"
+        },
+        {
+          "candidate_id": "c_12b7bb23dce974593b131137",
+          "discovered_by_tool_use_id": "call_55991fd4945d49cba10b406a",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://fr.scribd.com/document",
+          "title": "Standard Costing vs Budgetary Control | PDF | Budget",
+          "url": "https://fr.scribd.com/document"
+        }
+      ],
+      "round": 0,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_5db553b72f2ee27cd7dbc38b",
+            "reason": "Coursehero category/search page for a generic project-network exercise, not a specific authoritative native document; title indicates an already-solved problem rather than same-case source data for baseline, budget, or actuals."
+          },
+          {
+            "candidate_id": "c_3ec6536e6b13b050f72fa25d",
+            "reason": "Generic performance.gov action-plans landing page; no identifiable cost-control or variance-reporting standard document, so it cannot supply node i6 or case data."
+          },
+          {
+            "candidate_id": "c_53ca59b9ff05dd5350a64b6b",
+            "reason": "Generic ArcGIS experience page titled 'Experience' with no visible relation to project schedule, budget, or cost-control monitoring."
+          },
+          {
+            "candidate_id": "c_4817f0f0df3eda6538e4ef63",
+            "reason": "Vendor blog 'Project Cost Management Plan Example' is a generic educational description, not a data-bearing project file or authoritative standard."
+          },
+          {
+            "candidate_id": "c_8e62e39fdc0c2542f72382bb",
+            "reason": "Chegg solved-exercise search page; an already-completed answer/problem rather than a native project data file usable as an inspection anchor."
+          },
+          {
+            "candidate_id": "c_d1b6868d16df463324cf2839",
+            "reason": "Envisio 'Home' activity page is a non-descript landing page with no verifiable budget/schedule dataset for this network project."
+          },
+          {
+            "candidate_id": "c_832cd5fa1e3b3e31b41fd3a3",
+            "reason": "Arkansas APSC bare PDF-viewer URL with no identifying title or content; cannot confirm it contains applicable cost-control standards or project financial data."
+          },
+          {
+            "candidate_id": "c_be4cc789de706e7842824494",
+            "reason": "Scribd 'Project ABC Cost Control Summary' is a completed example summary for another project, not an authoritative native spreadsheet/source dataset matching this case."
+          },
+          {
+            "candidate_id": "c_f0d7fe694d03d642e91aebae",
+            "reason": "Coursehero 'Chap13Solutions.pdf' is an already-completed answer/solution page, explicitly not a useful anchor for inspection."
+          },
+          {
+            "candidate_id": "c_0aaeba24bf63d66c3faea2d3",
+            "reason": "Scribd 'Project Cost Control and Monitoring Guide' is a generic educational guide, not a data-bearing project page or authoritative organizational standard."
+          },
+          {
+            "candidate_id": "c_8dc6958b28565bca0e0e7eb1",
+            "reason": "Pressbooks textbook chapter on budget planning is generic educational reference material, not a native file or same-case dataset."
+          },
+          {
+            "candidate_id": "c_a2f4251bd74f34fcb94b605a",
+            "reason": "Scribd variance-analysis presentation is generic instructional content, not an authoritative standard or actual project financial data."
+          },
+          {
+            "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+            "reason": "Pinterest template/explore page is a generic template listing, not an actual data-bearing project artifact or native file."
+          },
+          {
+            "candidate_id": "c_afce5963a9c216076c67432a",
+            "reason": "ResearchGate academic paper on flexible budgets is educational/theoretical and unrelated to the specific network project's schedule and cost data."
+          },
+          {
+            "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+            "reason": "Mercury Training PDF is a promotional/educational training brochure, not an authoritative standard document or project dataset."
+          },
+          {
+            "candidate_id": "c_12b7bb23dce974593b131137",
+            "reason": "Scribd 'Standard Costing vs Budgetary Control' is generic accounting education, not applicable organization-specific standards or same-case data."
+          }
+        ],
+        "selected": []
+      }
+    },
+    {
+      "retrieval_plan": {
+        "queries": [
+          {
+            "desired_source_type": "publicly published project controls report or dataset with schedule baseline, budget, actual costs, and progress status",
+            "query": "government IT network infrastructure project monthly cost and schedule report baseline budget actual committed costs percent complete xlsx csv",
+            "reason": "Anchor discovery query seeking a coherent real-world network infrastructure project that can supply the core planned-versus-actual schedule and cost inputs from one compatible case.",
+            "target_node_ids": [
+              "i2",
+              "i3",
+              "i4",
+              "i5"
+            ]
+          },
+          {
+            "desired_source_type": "published organizational or government project cost-control standard, procedure, or guidance document",
+            "query": "project cost control standard variance reporting budget allocation cost forecast procedure PDF",
+            "reason": "Gap-filling query for the applicable cost-control and variance-reporting standards needed to justify forecast and recommended cost-control actions.",
+            "target_node_ids": [
+              "i6"
+            ]
+          }
+        ],
+        "stop_reason": null,
+        "strategy": "anchor_search"
+      },
+      "round": 1
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "c_be4cc789de706e7842824494",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document",
+          "title": "Project Cost Control Essentials | PDF",
+          "url": "https://www.scribd.com/document"
+        },
+        {
+          "candidate_id": "c_a835fe02c2756824955e04e4",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.mastt.com/resources",
+          "title": "Project Budget Template (Word, Excel)",
+          "url": "https://www.mastt.com/resources"
+        },
+        {
+          "candidate_id": "c_f0d7fe694d03d642e91aebae",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.coursehero.com/",
+          "title": "Given the following project network, baseline, and status ...",
+          "url": "https://www.coursehero.com/"
+        },
+        {
+          "candidate_id": "c_08c70e3998887165b813ab06",
+          "discovered_by_tool_use_id": "call_dee4933ae00844d78d0eef5c",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://performance.envisio.com/Strategy-111317",
+          "title": "Home",
+          "url": "https://performance.envisio.com/Strategy-111317"
+        },
+        {
+          "candidate_id": "c_74ebcdd75d5c5b859465f3a3",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.scribd.com/document/Costing-Chapter-3",
+          "title": "Cost Control Techniques: Standard Costing | PDF | Budget",
+          "url": "https://www.scribd.com/document/Costing-Chapter-3"
+        },
+        {
+          "candidate_id": "c_690ca9142524b17beb354ee7",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://pt.slideshare.net/slideshow",
+          "title": "COST MANAGEMENT REPORT | PDF",
+          "url": "https://pt.slideshare.net/slideshow"
+        },
+        {
+          "candidate_id": "c_f17ef60e794e0e013db5706d",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.researchgate.net/publication",
+          "title": "(PDF) Schedule and Cost Control",
+          "url": "https://www.researchgate.net/publication"
+        },
+        {
+          "candidate_id": "c_558c2635d789e7658de5a975",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.irbnet.de/daten/iconda/CIB6062",
+          "title": "Cost variance of construction activities with multiple tasks",
+          "url": "https://www.irbnet.de/daten/iconda/CIB6062"
+        },
+        {
+          "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://www.pinterest.com/Explore",
+          "title": "Project Budget Variance Report Template",
+          "url": "https://www.pinterest.com/Explore"
+        },
+        {
+          "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+          "discovered_by_tool_use_id": "call-8ef3e786-c7b0-4cea-b709-910c2f88309e",
+          "snippet": "Returned by WebSearch; page content is not yet independently verified.",
+          "source_page": "https://mercury-training.com/pdfb",
+          "title": "Budget Preparation, Operational Cost Control, and ...",
+          "url": "https://mercury-training.com/pdfb"
+        }
+      ],
+      "round": 1,
+      "selection": {
+        "rejected": [
+          {
+            "candidate_id": "c_be4cc789de706e7842824494",
+            "reason": "Scribd landing page for a generic 'Project Cost Control Essentials' PDF; not an authoritative native file and not an inspected data-bearing project page, so it adds no verifiable anchor value."
+          },
+          {
+            "candidate_id": "c_f0d7fe694d03d642e91aebae",
+            "reason": "CourseHero educational exercise page ('Given the following project network, baseline, and status...'); it is a completed answer/worked exercise, not an inspected data-bearing project page or authoritative source, and is explicitly unsuitable as an anchor."
+          },
+          {
+            "candidate_id": "c_08c70e3998887165b813ab06",
+            "reason": "Titled 'Home' with no discernible budget/schedule/cost-control content or native file; provides no usable information for any critical information node."
+          },
+          {
+            "candidate_id": "c_74ebcdd75d5c5b859465f3a3",
+            "reason": "Scribd page on generic standard-costing techniques; a broad educational description rather than a native standard or data-bearing artifact relevant to the network project's cost-control scope."
+          },
+          {
+            "candidate_id": "c_690ca9142524b17beb354ee7",
+            "reason": "SlideShare presentation page for a generic 'Cost Management Report'; slide-deck landing page, not an authoritative native file or inspected project artifact."
+          },
+          {
+            "candidate_id": "c_f17ef60e794e0e013db5706d",
+            "reason": "ResearchGate publication listing for a generic 'Schedule and Cost Control' PDF; academic overview without a concrete data-bearing project instance or native standard applicable to this workbook."
+          },
+          {
+            "candidate_id": "c_558c2635d789e7658de5a975",
+            "reason": "Construction-domain research paper on cost variance with multiple tasks; methodology-focused and not the network project's scope, and not a same-case or authoritative native standards document."
+          },
+          {
+            "candidate_id": "c_f7c713a8ebc1f8f7565a0cc7",
+            "reason": "Pinterest Explore page for a 'Project Budget Variance Report Template'; a discovery/aggregator page rather than a native downloadable file or data-bearing project artifact."
+          }
+        ],
+        "selected": [
+          {
+            "candidate_id": "c_a835fe02c2756824955e04e4",
+            "reason": "Native downloadable Project Budget Template in Word/Excel format, directly aligned with the out1 spreadsheet deliverable (xlsx/csv). As a data-bearing template in the required native format, it is a useful anchor for inspecting budget/schedule structure and cost-category layout needed for the workbook, rather than a generic description."
+          },
+          {
+            "candidate_id": "c_d5117f5d275dba7dd3cd26d5",
+            "reason": "Covers budget preparation and operational cost control, addressing the critical external-reference node i6 (applicable budget-allocation/cost-control/variance-reporting standards). Plausibly applicable as a standards reference for the cost-control actions in node i11 and the out1 workbook, even though it is not from the same publishing organization."
+          }
+        ]
+      }
+    }
+  ]
+}

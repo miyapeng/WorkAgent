@@ -1,0 +1,162 @@
+{
+  "blocked_upstream": 0,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 1,
+  "rejected": 1,
+  "stage": "all",
+  "workspaces": [
+    {
+      "data_provenance": "grounded_workspace",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:16:37.834887+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-joint-v9",
+          "request_sha256": "ce7f7682b10e4fefcefa2e17d4654572f9d34a5e803a6812454f2a30b966248e"
+        },
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:18:33.538536+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "glm-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-reverse-audit-v7",
+          "request_sha256": "b755775f6fd10291977df6a4e3ed71070b91e48d00587194fa6dc635d18bb7a7"
+        }
+      ],
+      "reasons": [
+        {
+          "check": "evidence_support",
+          "reason": "Several asserted requirements are not fully grounded. R1 is supported only by general statements that collision data are essential, IBRS uncertainty, and back-series revision; its cited facts do not establish 2024 coverage, units/formats, collision-vehicle-casualty granularity, or missing/out-of-range code definitions. R3 cites one -1 code row and a 2004 adjustment caveat but no source fact establishing 2024 timeliness or collection variation. Rb3 also demands STATS19 review context on collection variation without citing the PDF collection-variation fact."
+        },
+        {
+          "check": "task_rubric_alignment",
+          "reason": "Weights are mostly reasonable, with the file-existence check at weight 1. But rb3 and rb4 add STATS19 review 'collection variation' requirements not explicit in the corresponding task requirements, and rb3 does not cite the PDF fact that collection varies across local authority and police force areas. R7's rubric also reduces a stated content/structure requirement to file existence."
+        },
+        {
+          "check": "verification_soundness",
+          "reason": "Rb7 only checks that outputs/fitness_assessment_report.md exists and parses as Markdown, while R7 claims a well-structured report containing all stages; that semantic structure is not tested. Rb3's full credit expects timeliness and review-context collection variation not supported by its cited facts. Rb4 expects adjustment probabilities interpreted as model probabilities, but its cited facts do not define that; the defining DOCX paragraph is not in rb4 evidence."
+        },
+        {
+          "check": "unnecessary_complexity",
+          "reason": "Most requirements track the professional task, but rb3/rb4 add STATS19 review 'collection variation' criteria that are not explicit in the corresponding task requirements, and rb3 does not cite the relevant PDF fact. This creates extra scored obligations beyond the visible task; the core join and validation work itself is justified."
+        },
+        {
+          "check": "R1",
+          "reason": "R1 requires target variables, units/code formats, 2024 coverage, collision-vehicle-casualty granularity, and quality criteria including missing codes. The cited facts only establish general importance of collision data, IBRS uncertainty, and back-series revision; they do not establish 2024 coverage, table granularity, units/formats, or missing-code definitions."
+        },
+        {
+          "check": "R3",
+          "reason": "R3 requires evaluating completeness, accuracy, consistency, validity, and timeliness. The cited code-list rows support one -1 code and historic/new fields, and the DOCX supports IBRS uncertainty and a 2004 caveat. But no cited fact establishes timeliness for the 2024 data or the STATS19 review collection-variation context; the evidence is insufficient for the full requirement as written."
+        },
+        {
+          "check": "R7",
+          "reason": "The file-existence part is explicit, but R7 is written as a well-structured report containing all stages. Its cited evidence does not support structure or completeness, and its only planned verification checks path existence and Markdown parseability. As written, the requirement is broader than the check and is not fully verifiable."
+        },
+        {
+          "check": "rb1",
+          "reason": "Rb1 full credit demands target variables, units/code formats, 2024 coverage, granularity, and quality criteria including missing codes. Its cited facts only show general importance, IBRS uncertainty, and back-series revision; they do not establish the required coverage, granularity, units/formats, or missing-code definitions."
+        },
+        {
+          "check": "rb3",
+          "reason": "Rb3 full credit requires STATS19 review context on collection variation and timeliness of the 2024 data. Its evidence supports -1 missing codes, historic/new fields, IBRS uncertainty, fatal exclusion, and a 2004 caveat, but it cites no review-context fact and no fact establishing 2024 timeliness. The verification spec overreaches its evidence."
+        },
+        {
+          "check": "rb4",
+          "reason": "Rb4 full credit requires accounting for the hierarchical collision-vehicle-casualty structure and interpreting adjustment probabilities as model probabilities for serious or slight under IBRS. Its cited facts support IBRS uncertainty, adjustment trends, back-series revision, and collection variation, but not the explicit probability-definition claim or hierarchical-table evidence."
+        },
+        {
+          "check": "rb7",
+          "reason": "Rb7 is a file-existence/parseability check, but R7 claims a well-structured report containing all stages. The cited fact does not support content or structure, and final bytes cannot prove semantic completeness. This is a semantic requirement disguised as a file check; weight 1 is appropriate only for pure existence."
+        }
+      ],
+      "seed_id": "raw_31_0_7382",
+      "semantic_checks": {
+        "failures": [
+          {
+            "check": "evidence_support",
+            "reason": "Several asserted requirements are not fully grounded. R1 is supported only by general statements that collision data are essential, IBRS uncertainty, and back-series revision; its cited facts do not establish 2024 coverage, units/formats, collision-vehicle-casualty granularity, or missing/out-of-range code definitions. R3 cites one -1 code row and a 2004 adjustment caveat but no source fact establishing 2024 timeliness or collection variation. Rb3 also demands STATS19 review context on collection variation without citing the PDF collection-variation fact."
+          },
+          {
+            "check": "task_rubric_alignment",
+            "reason": "Weights are mostly reasonable, with the file-existence check at weight 1. But rb3 and rb4 add STATS19 review 'collection variation' requirements not explicit in the corresponding task requirements, and rb3 does not cite the PDF fact that collection varies across local authority and police force areas. R7's rubric also reduces a stated content/structure requirement to file existence."
+          },
+          {
+            "check": "verification_soundness",
+            "reason": "Rb7 only checks that outputs/fitness_assessment_report.md exists and parses as Markdown, while R7 claims a well-structured report containing all stages; that semantic structure is not tested. Rb3's full credit expects timeliness and review-context collection variation not supported by its cited facts. Rb4 expects adjustment probabilities interpreted as model probabilities, but its cited facts do not define that; the defining DOCX paragraph is not in rb4 evidence."
+          },
+          {
+            "check": "unnecessary_complexity",
+            "reason": "Most requirements track the professional task, but rb3/rb4 add STATS19 review 'collection variation' criteria that are not explicit in the corresponding task requirements, and rb3 does not cite the relevant PDF fact. This creates extra scored obligations beyond the visible task; the core join and validation work itself is justified."
+          },
+          {
+            "check": "R1",
+            "reason": "R1 requires target variables, units/code formats, 2024 coverage, collision-vehicle-casualty granularity, and quality criteria including missing codes. The cited facts only establish general importance of collision data, IBRS uncertainty, and back-series revision; they do not establish 2024 coverage, table granularity, units/formats, or missing-code definitions."
+          },
+          {
+            "check": "R3",
+            "reason": "R3 requires evaluating completeness, accuracy, consistency, validity, and timeliness. The cited code-list rows support one -1 code and historic/new fields, and the DOCX supports IBRS uncertainty and a 2004 caveat. But no cited fact establishes timeliness for the 2024 data or the STATS19 review collection-variation context; the evidence is insufficient for the full requirement as written."
+          },
+          {
+            "check": "R7",
+            "reason": "The file-existence part is explicit, but R7 is written as a well-structured report containing all stages. Its cited evidence does not support structure or completeness, and its only planned verification checks path existence and Markdown parseability. As written, the requirement is broader than the check and is not fully verifiable."
+          },
+          {
+            "check": "rb1",
+            "reason": "Rb1 full credit demands target variables, units/code formats, 2024 coverage, granularity, and quality criteria including missing codes. Its cited facts only show general importance, IBRS uncertainty, and back-series revision; they do not establish the required coverage, granularity, units/formats, or missing-code definitions."
+          },
+          {
+            "check": "rb3",
+            "reason": "Rb3 full credit requires STATS19 review context on collection variation and timeliness of the 2024 data. Its evidence supports -1 missing codes, historic/new fields, IBRS uncertainty, fatal exclusion, and a 2004 caveat, but it cites no review-context fact and no fact establishing 2024 timeliness. The verification spec overreaches its evidence."
+          },
+          {
+            "check": "rb4",
+            "reason": "Rb4 full credit requires accounting for the hierarchical collision-vehicle-casualty structure and interpreting adjustment probabilities as model probabilities for serious or slight under IBRS. Its cited facts support IBRS uncertainty, adjustment trends, back-series revision, and collection variation, but not the explicit probability-definition claim or hierarchical-table evidence."
+          },
+          {
+            "check": "rb7",
+            "reason": "Rb7 is a file-existence/parseability check, but R7 claims a well-structured report containing all stages. The cited fact does not support content or structure, and final bytes cannot prove semantic completeness. This is a semantic requirement disguised as a file check; weight 1 is appropriate only for pure existence."
+          }
+        ],
+        "passed": false,
+        "qualification": "Independent model call, not independent expert certification; execution not tested."
+      },
+      "status": "rejected",
+      "structural_checks": {
+        "passed": true,
+        "requirements": 7,
+        "rubrics": 7,
+        "source_facts": 25
+      },
+      "workspace_id": "WS_e3babe3a48a1"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+  "controlled_synthesis": {
+    "engineering_checks": {
+      "duplicate_id_rejected": true,
+      "independent_agent_probe_run": false,
+      "kind": "engineering_reference_and_mutations_not_agent_probe",
+      "missing_id_rejected": true,
+      "multimodal_ablation_run": false,
+      "mutations_rejected": 30,
+      "numeric_and_unit_mutations": 30,
+      "semantic_quality_evaluated": false,
+      "visible_only_numeric_reference_passed": true
+    },
+    "failure_reasons": [],
+    "model_usage": {
+      "billed_cost": null,
+      "completion_tokens": 10784,
+      "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+      "currency": null,
+      "prompt_tokens": 8413,
+      "unique_model_requests": 2
+    },
+    "semantic_review": {
+      "accepted": true,
+      "checks": {
+        "cross_file_coherence": true,
+        "information_sufficiency": true,
+        "intent_preservation": true,
+        "no_answer_leakage": true,
+        "professional_plausibility": true,
+        "synthetic_disclosure": true,
+        "task_verifier_alignment": true
+      },
+      "issues": [],
+      "limitations": [
+        "The forecast is a single deterministic remaining-hours model with fixed rates and nonlabor commitments; it does not provide probabilistic ranges, productivity changes, escalation, or contingency-balance treatment.",
+        "The cost variance metric compares total actual cost to total baseline budget, so it is a remaining-budget indicator rather than a classic earned-value cost variance to date.",
+        "The data are notably rounded and tidy: WP1 and WP2 exactly consume baseline effort, and completed effort values are round numbers. This reduces occupational realism even though the calculations remain coherent.",
+        "The baseline lacks a cost-category breakdown, explicit dependency network, and stated contingency balance, which limits precision in downstream date-change approval analysis and contingency recommendations.",
+        "The project brief says approximately the first third of baseline effort has been consumed, while supplied effort totals imply 1,700 of 4,000 hours completed (42.5%) and 1,936 planned (48.4%); this is loose but not fatal.",
+        "The numeric verifier covers only the assessment CSV; narrative report quality is declared for semantic review but not executed here.",
+        "This is a same-model review, not independent expert certification or an Agent Probe."
+      ]
+    },
+    "status": "experimental_draft",
+    "supported_synthetic_nodes": 6,
+    "synthetic_files": 5
+  },
+  "interpretation": "One paired feasibility experiment. Routes have different provenance and admission criteria; no success-rate or realism superiority claim. No independent Agent Probe on either route.",
+  "real_evidence": {
+    "counts": {
+      "actual_search_requests": 4,
+      "critical_coverage": 0.0,
+      "critical_external_nodes": 5,
+      "download_attempts": 2,
+      "download_or_profile_failures": 1,
+      "downloaded_urls": 1,
+      "duplicate_files": 0,
+      "independently_verified_visual_evidence": 0,
+      "parsed_unique_files": 1,
+      "planned_queries": 4,
+      "retained_files": 0,
+      "supported_critical_nodes": 0,
+      "synthetic_files": 0
+    },
+    "failure_reasons": [
+      {
+        "reason": "download_failed:http_status:404|http_status:404",
+        "stage": "download_or_profile",
+        "url": "https://www.mastt.com/resources"
+      },
+      {
+        "reason": "node_coverage_mismatch",
+        "stage": "evidence_audit"
+      },
+      {
+        "reason": "no_grounded_anchor",
+        "stage": "anchor_discovery"
+      }
+    ],
+    "model_usage": {
+      "billed_cost": null,
+      "completion_tokens": 10226,
+      "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+      "currency": null,
+      "prompt_tokens": 22879,
+      "unique_model_requests": 5
+    },
+    "search_cost": {
+      "billed_cost": null,
+      "currency": null,
+      "note": "Exact cost unknown without provider billing receipt; zero requests means zero search API charges."
+    },
+    "status": "incomplete"
+  },
+  "seed_id": "raw_31_0_18983"
+}

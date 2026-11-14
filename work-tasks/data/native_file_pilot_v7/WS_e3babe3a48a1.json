@@ -1,0 +1,14 @@
+{
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": true,
+    "reasons": []
+  },
+  "model_calls": [],
+  "reasons": [
+    "TimeoutError"
+  ],
+  "seed_id": "raw_31_0_7382",
+  "status": "rejected",
+  "workspace_id": "WS_e3babe3a48a1"
+}

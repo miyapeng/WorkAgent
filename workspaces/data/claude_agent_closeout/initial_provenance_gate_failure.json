@@ -1,0 +1,188 @@
+{
+  "construction_report": {
+    "agent_model_usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 321024,
+      "fallback_credit": null,
+      "inference_geo": "",
+      "input_tokens": 36459,
+      "iterations": [],
+      "output_tokens": 6335,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+    "config_sha256": "20ae8e93fce3cf3b7cea5038226aad946411a23b48ac903cbde1872208f647be",
+    "counts": {
+      "actual_search_requests": 10,
+      "actual_webfetch_calls": 31,
+      "critical_coverage": 0.0,
+      "critical_external_nodes": 5,
+      "download_attempts": 3,
+      "downloaded_urls": 0,
+      "independently_verified_visual_evidence": 0,
+      "parsed_unique_files": 0,
+      "retained_files": 0,
+      "supported_critical_nodes": 0,
+      "synthetic_files": 0
+    },
+    "cross_file_coherence": {
+      "evidence": [],
+      "reason": "agent_not_completed",
+      "status": "unverified",
+      "unverified_assumptions": []
+    },
+    "failure_reasons": [
+      {
+        "reason": "original_session_incomplete_handoff_for_inspection_only",
+        "stage": "agent_retrieval"
+      },
+      {
+        "reason": "url_not_observed_in_search_or_actual_href",
+        "stage": "download_or_profile",
+        "url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i"
+      },
+      {
+        "reason": "url_not_observed_in_search_or_actual_href",
+        "stage": "download_or_profile",
+        "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance"
+      },
+      {
+        "reason": "url_not_observed_in_search_or_actual_href",
+        "stage": "download_or_profile",
+        "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance"
+      },
+      {
+        "reason": "url_not_observed_in_search_or_actual_href",
+        "stage": "download_or_profile",
+        "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics"
+      },
+      {
+        "reason": "no_grounded_anchor",
+        "stage": "anchor_discovery"
+      }
+    ],
+    "interface": "grounded-workspace-v2",
+    "limitations": [
+      "Agent final narrative is provisional, not file evidence.",
+      "WebFetch is a summarized view; Python independently downloads selected materials and discovery pages.",
+      "This is Claude Code with GLM-5.2, not a Claude-model capability evaluation.",
+      "Context, tool workflow, prompts and larger budget differ from the query-only baseline; this is not a controlled causal test.",
+      "Per-tool fetch budget is prompt-enforced and checked after execution; wall time and turn count bound the process."
+    ],
+    "limits": {
+      "discovery_pages": 10,
+      "download_bytes": 20000000,
+      "max_profile_chars": 50000,
+      "max_segments_per_file": 100,
+      "redirects": 4,
+      "retries": 1,
+      "selected_files": 6,
+      "timeout_seconds": 30,
+      "trusted_proxy_env": "HTTPS_PROXY"
+    },
+    "missing_nodes": [
+      "i2",
+      "i3",
+      "i4",
+      "i5",
+      "i6"
+    ],
+    "modality_evidence": [],
+    "mode": "claude_code_agent",
+    "model_calls": [
+      {
+        "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+        "generated_at": "2026-11-13T07:47:10.116028+00:00",
+        "model_requested": "GLM_ka48dn",
+        "model_returned": "glm-5.2",
+        "parameters": {
+          "max_tokens": 8192,
+          "response_format": {
+            "type": "json_object"
+          },
+          "temperature": 0,
+          "thinking": {
+            "type": "disabled"
+          }
+        },
+        "prompt_sha256": "bd363f37e5f79fe0f6a93bc5aa7e9da1daaaf884a4df33a37486e638424bde6c",
+        "prompt_version": "agent_handoff.v1",
+        "request_sha256": "2fa667338069e3f288c6606d3b15a1520ea0d2a9cce5ec52642941014e242255",
+        "usage": {
+          "completion_tokens": 1713,
+          "prompt_tokens": 26480,
+          "total_tokens": 28193
+        }
+      }
+    ],
+    "model_usage": {
+      "billed_cost": null,
+      "completion_tokens": 1713,
+      "cost_note": "Gateway token usage retained. No confirmed billing tariff/receipt; money cost unknown. Cache replay is not a new billed call.",
+      "currency": null,
+      "prompt_tokens": 26480,
+      "unique_model_requests": 1
+    },
+    "public_distribution_eligible": false,
+    "retrieved_files": [],
+    "search_cost": {
+      "billed_cost": null,
+      "cli_estimate_usd": 1.290299,
+      "note": "Client estimate is not a LLMCenter invoice. Calls count observed tools, not backend requests."
+    },
+    "search_queries": [
+      "network infrastructure project budget schedule variance report xlsx data",
+      "state broadband network project earned value management budget schedule report 2024 2025",
+      "federal IT dashboard network investment schedule cost variance CSV download itdashboard.gov",
+      "state government network modernization project monthly status report budget actual cost spreadsheet",
+      "itdashboard.gov data feed CSV download investment schedule cost variance",
+      "data.va.gov \"project management accountability\" dashboard CSV export schedule cost budget",
+      "GAO report network modernization project cost schedule variance data table 2023 2024",
+      "NTIA broadband grant project performance report budget actual cost schedule milestone data download",
+      "site:ntia.doc.gov BTOP quarterly performance progress report budget schedule milestones filetype:pdf",
+      "state CIO IT project dashboard network infrastructure budget schedule actual cost CSV download 2024"
+    ],
+    "search_state": "agent_stopped_with_handoff",
+    "seed_id": "raw_31_0_18983",
+    "seed_sha256": "1692647c02de6d181b3373e0fd48cf984290d627ad84338a2d596079bfe4bd2e",
+    "selected_anchor": null,
+    "stage4_interface": "requires_new_adapter_not_legacy_eligible",
+    "status": "incomplete",
+    "supported_nodes": [],
+    "work_objective_sha256": "02fc07c45d32b59e8af18e23cef038a92adb4577757c8085e6eb04552be23673",
+    "workspace_files": {}
+  },
+  "acquisition_trace": [
+    {
+      "reason": "download_failed:gaierror|gaierror",
+      "role": "discovery_page",
+      "status": "failed",
+      "url": "https://www.datahub.va.gov/dataset/taai-bxn5"
+    },
+    {
+      "reason": "download_failed:http_status:404|http_status:404",
+      "role": "discovery_page",
+      "status": "failed",
+      "url": "https://www2.ntia.doc.gov/sites/files/grantees"
+    },
+    {
+      "reason": "download_failed:http_status:404|http_status:404",
+      "role": "discovery_page",
+      "status": "failed",
+      "url": "https://www2.ntia.doc.gov/files/grantees"
+    }
+  ],
+  "note": "Preserved before fixing discovery support for actually attempted WebFetch URLs; no successful files were discarded."
+}

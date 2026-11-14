@@ -1,0 +1,47 @@
+[
+  {
+    "cost_variance_to_date_usd": -1500,
+    "currency": "USD",
+    "forecast_budget_variance_usd": -1500,
+    "forecast_total_cost_usd": 36500,
+    "resource_gap_hours": 0,
+    "schedule_effort_gap_hours": 0,
+    "work_package_id": "WP1"
+  },
+  {
+    "cost_variance_to_date_usd": 2800,
+    "currency": "USD",
+    "forecast_budget_variance_usd": 2800,
+    "forecast_total_cost_usd": 64800,
+    "resource_gap_hours": 0,
+    "schedule_effort_gap_hours": 0,
+    "work_package_id": "WP2"
+  },
+  {
+    "cost_variance_to_date_usd": -111600,
+    "currency": "USD",
+    "forecast_budget_variance_usd": 22800,
+    "forecast_total_cost_usd": 232800,
+    "resource_gap_hours": 290,
+    "schedule_effort_gap_hours": 180,
+    "work_package_id": "WP3"
+  },
+  {
+    "cost_variance_to_date_usd": -106960,
+    "currency": "USD",
+    "forecast_budget_variance_usd": 43840,
+    "forecast_total_cost_usd": 167840,
+    "resource_gap_hours": 280,
+    "schedule_effort_gap_hours": 20,
+    "work_package_id": "WP4"
+  },
+  {
+    "cost_variance_to_date_usd": -70200,
+    "currency": "USD",
+    "forecast_budget_variance_usd": 6300,
+    "forecast_total_cost_usd": 84300,
+    "resource_gap_hours": 80,
+    "schedule_effort_gap_hours": 36,
+    "work_package_id": "WP5"
+  }
+]

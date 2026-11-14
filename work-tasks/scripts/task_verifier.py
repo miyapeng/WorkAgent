@@ -7,6 +7,8 @@ from task_common import *
 from profile_files import parse_bytes, profile
 
 MIME={'csv':'text/csv','json':'application/json','xlsx':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'png':'image/png','jpg':'image/jpeg','svg':'image/svg+xml','tex':'application/x-tex',
+      'py':'application/x-python','js':'application/javascript','ipynb':'application/x-ipynb+json',
       'md':'text/markdown','txt':'text/plain','pdf':'application/pdf',
       'docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
       'pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation'}
@@ -149,6 +151,7 @@ def run_check(spec,package,run,graph,manifest,cache):
     fmt=spec.get('format') or spec.get('target',{}).get('format') or ('csv' if kind=='csv_columns' else 'json')
     parsed=profile(file,'https://submission.invalid/file.'+fmt,MIME[fmt],cache)
     require(parsed['parse_status']=='parsed','deliverable_not_readable_as_declared_type')
+    if fmt in ('png','jpg'):require(parsed['format']==('jpeg' if fmt=='jpg' else fmt),'image_format_mismatch')
     if kind=='file_exists':return
     if kind=='csv_columns':require(set(spec['columns'])<=set(csv_rows(file)[0]),'missing_csv_columns')
     elif kind=='json_fields':

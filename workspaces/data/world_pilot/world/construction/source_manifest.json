@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "file_id": "f_41eac6a5eb6a6f00de4c6276",
+      "generator": "project_cost_schedule_v1",
+      "origin": "synthetic",
+      "path": "records/baseline.csv",
+      "redistribution_note": "Generated fictional research material; not a downloaded real source.",
+      "sha256": "41eac6a5eb6a6f00de4c62763dad7f0704bf40883499eecbf78837f928382dea",
+      "world_sha256": "96275289c4e76907d88626c58f792068b408a7322bfe0923d8baaccdd897f2cb"
+    },
+    {
+      "file_id": "f_444c763b8bb3d72e8252b2da",
+      "generator": "project_cost_schedule_v1",
+      "origin": "synthetic",
+      "path": "records/actuals.csv",
+      "redistribution_note": "Generated fictional research material; not a downloaded real source.",
+      "sha256": "444c763b8bb3d72e8252b2daabaa14e2259453486f47f3d3dd8ed515ccfe20fa",
+      "world_sha256": "96275289c4e76907d88626c58f792068b408a7322bfe0923d8baaccdd897f2cb"
+    },
+    {
+      "file_id": "f_13b1c0a6fdc215990bba07d1",
+      "generator": "project_cost_schedule_v1",
+      "origin": "synthetic",
+      "path": "records/remaining_estimates.csv",
+      "redistribution_note": "Generated fictional research material; not a downloaded real source.",
+      "sha256": "13b1c0a6fdc215990bba07d1213913e1af991a0ae411950679ff566265c956e0",
+      "world_sha256": "96275289c4e76907d88626c58f792068b408a7322bfe0923d8baaccdd897f2cb"
+    },
+    {
+      "file_id": "f_927b916cd87d449c80539981",
+      "generator": "project_cost_schedule_v1",
+      "origin": "synthetic",
+      "path": "context/project_brief.md",
+      "redistribution_note": "Generated fictional research material; not a downloaded real source.",
+      "sha256": "927b916cd87d449c80539981e49372217aa8bd7a7b9e55aaf987c837770ea4fa",
+      "world_sha256": "96275289c4e76907d88626c58f792068b408a7322bfe0923d8baaccdd897f2cb"
+    },
+    {
+      "file_id": "f_4af68104f8ca78da2446b90c",
+      "generator": "project_cost_schedule_v1",
+      "origin": "synthetic",
+      "path": "context/monitoring_policy.md",
+      "redistribution_note": "Generated fictional research material; not a downloaded real source.",
+      "sha256": "4af68104f8ca78da2446b90c994f86ae96ca4486da1c401f0a99b1a49a2070e9",
+      "world_sha256": "96275289c4e76907d88626c58f792068b408a7322bfe0923d8baaccdd897f2cb"
+    }
+  ],
+  "origin": "synthetic",
+  "real_sources": []
+}

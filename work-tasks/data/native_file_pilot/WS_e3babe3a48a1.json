@@ -1,0 +1,33 @@
+{
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": true,
+    "reasons": []
+  },
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T09:49:38.850657+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "task-rubric-joint-v5",
+      "request_sha256": "9c2e9346d07174047ac4920939ddf345465e9cd3cad2c676b2b0121f4f4f110a"
+    }
+  ],
+  "reasons": [
+    "requirement_evidence_unrelated_to_information"
+  ],
+  "seed_id": "raw_31_0_7382",
+  "status": "rejected",
+  "workspace_id": "WS_e3babe3a48a1"
+}

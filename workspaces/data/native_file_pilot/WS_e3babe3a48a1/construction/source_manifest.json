@@ -1,0 +1,75 @@
+{
+  "sources": {
+    "f_23fc55d06693fda26a6ddb2a": {
+      "bytes": 2343524,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-8c226320-1365-4e0a-83d4-97e01f76d4bb"
+      },
+      "file_id": "f_23fc55d06693fda26a6ddb2a",
+      "final_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+      "license_status": "unknown",
+      "mime": "application/pdf",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+      "prior_errors": [
+        "SSLEOFError"
+      ],
+      "reason": "STATS19 review final report (native PDF, valid %PDF-1.6, 2.2 MB, downloaded). Independently published review enumerating coverage, under-reporting and quality limitations of the STATS19 collection — an authoritative reference for quality criteria and known-invalidity considerations. Text is Flate-compressed; requires independent extraction.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:36:26.401920+00:00",
+      "sha256": "23fc55d06693fda26a6ddb2a1fea965f26a2cc6edc0c1204c784d955fef1b3b1",
+      "source_page": "https://www.gov.uk/guidance/road-accident-and-safety-statistics-guidance",
+      "target_node_ids": [
+        "i4"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf"
+    },
+    "f_51b08606ef3dad1ae5d4c872": {
+      "bytes": 85112,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-827dbc1b-bec5-4415-83a6-0287e65cda1a"
+      },
+      "file_id": "f_51b08606ef3dad1ae5d4c872",
+      "final_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+      "license_status": "unknown",
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+      "prior_errors": [],
+      "reason": "Official DfT Road Safety Open Dataset Data Guide 2025 (native XLSX, 83.1 KB, downloaded successfully; ZIP/OOXML structure with >=2 worksheets confirmed). This is the field-definitions and value-label document accompanying the 2024 CSVs, giving variable names, codes/units and collection notes needed to interpret records. Sheet text not legible via WebFetch binary; requires independent parse.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:33:59.833199+00:00",
+      "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i3"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx"
+    },
+    "f_9a0db9e666e696a8c4e61dd6": {
+      "bytes": 18111,
+      "discovery": {
+        "method": "WebFetch_attempt_requires_independent_http_verification",
+        "tool_use_id": "call-7d743f5d-5451-442b-9bec-c8d218c49f35"
+      },
+      "file_id": "f_9a0db9e666e696a8c4e61dd6",
+      "final_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+      "license_status": "unknown",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "origin": "real_original",
+      "original_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+      "prior_errors": [],
+      "reason": "DfT severity-adjustment figure guidance (native DOCX, downloaded; valid OOXML container confirmed). Documents the methodology DfT applies to correct reported-injury-severity misclassification — a directly applicable statistical/quality criterion for judging fitness of casualty_severity fields. Text not legible via WebFetch binary; requires independent extraction.",
+      "redirects": [],
+      "retrieved_at": "2026-11-13T09:33:58.519181+00:00",
+      "sha256": "9a0db9e666e696a8c4e61dd6c1eccd0d957e0a5871cd7c4439d43b63893bced8",
+      "source_page": "https://www.gov.uk/government/statistics/road-safety-data",
+      "target_node_ids": [
+        "i4"
+      ],
+      "url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+    }
+  }
+}

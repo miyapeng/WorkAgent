@@ -25,7 +25,14 @@
             "txt",
             "pdf",
             "docx",
-            "pptx"
+            "pptx",
+            "png",
+            "jpg",
+            "svg",
+            "tex",
+            "py",
+            "js",
+            "ipynb"
           ]
         }
       },

@@ -6,6 +6,8 @@
 
 历史记录：原直接 Graph Pilot 为 10 条 Seed → 2 条准入 → 0 ready，保存在 `data/generated/`。后续 [Claude Code + LLMCenter 搜索试验](CLAUDE_SEARCH.md) 实际下载解析 1 个网页，但仍为 0 Anchor / 0 ready；其独立记录保留，不与本轮新 Blueprint 混用。
 
+新增一个**独立可选实验**：[Controlled World Pilot](WORLD_PILOT.md)。对当前项目监控 Blueprint 同时运行真实检索和“模型生成隐藏世界 → Python 渲染 → 实验任务与数值检查”。真实侧仍 incomplete；合成侧得到 5 份文件和一个 experimental_draft，保留模型审核指出的叙述/规则缺口，未通过独立 Agent Probe、未进入训练集。它不修改本文 real-only 准入条件，也不代表正式 Stage 4 已迁移。
+
 ## 命令
 
 在仓库根目录执行：
@@ -41,6 +43,43 @@ CLI 支持 `--plan-dir --seed-file --output-dir --config --cache-dir --limit --o
 这里展示的只是配置片段；保留完整配置中的模型与检索预算。凭证不要写入 JSON。未配置时保留 `awaiting_search`，不接入未经验证的公共搜索抓取。`disabled` 或 `url_manifest` 也不执行自动检索；本版本支持缓存离线重放，没有把旧人工 URL 清单作为新 Pipeline 的默认路径。
 
 上述 Tavily/Brave/Serper 后端已实现 HTTP 协议并通过模拟契约测试，尚未有凭证完成实时集成测试；Claude Code 后端的真实试验单独记录。默认预算：Anchor 最多 5 个查询、选择最多 3 个候选；最多 2 轮缺口搜索，每轮最多 3 查询/3 文件。预算放在配置，不写死在 Prompt 中。缺少 Key、查询非法、搜索空结果、下载/解析失败分别记录。
+
+### Claude Code 自主检索模式
+
+原 `claude_code` provider 是每次一个 WebSearch 的查询适配器，不是完整检索 Agent。新增 `claude_code_agent` 在一个会话中提供完整 Raw Seed、已准入 Blueprint 和信息缺口，由 GLM-5.2 自主规划查询、使用 WebSearch/WebFetch、记住拒绝来源、追踪附件与选择案例。Python 不再逐查询调用外部选择模型；会话结束后独立下载、解析和执行原有覆盖准入检查。
+
+**后续自主检索使用 `claude_agent_autonomous.json`：不设置轮数、WebSearch 或 WebFetch 次数上限。** 运行器不传 `--max-turns`，不设置搜索次数环境变量，也不因工具调用次数拒绝结果。Prompt v2 按具体职业、所需事实、案例关系与剩余缺口引导 Agent 自主继续/停止，允许提交仍有缺口的真实案例，不要求搜索到绝对完整才收尾。保留 1,800 秒总超时、单次下载保护和本轮最多 6 个材料文件的组装规模；这些不等于无限制运行。本次完成代码测试，尚未用该新配置重新联网检索。
+
+```bash
+.venv/bin/python workspaces/scripts/construct_workspace.py \
+  --config workspaces/config/claude_agent_autonomous.json \
+  --output-dir workspaces/data/claude_agent_autonomous \
+  --cache-dir workspaces/data/cache_claude_agent --limit 1
+```
+
+下方命令和次数配置保留用于复现先前有限轮数实验，不要用它启动新的自主检索：
+
+```bash
+.venv/bin/python workspaces/scripts/construct_workspace.py \
+  --config workspaces/config/claude_agent_pilot.json \
+  --output-dir workspaces/data/claude_agent_pilot \
+  --cache-dir workspaces/data/cache_claude_agent --limit 1
+# 已有完整本机缓存时追加 --offline，无网络或 Claude 进程调用
+```
+
+入口仍为相同的新 Blueprint。历史 Pilot 配置为 8 次搜索、10 次 WebFetch、24 轮、600 秒、6 个候选文件；WebFetch 次数通过 Prompt 限定并在完成后检查，进程由轮数/超时限制，不将其描述为逐请求硬配额。工具限 WebSearch/WebFetch，不给模型凭证文件、Shell 或任意代码执行。它是 Claude Code + GLM-5.2，不是 Claude 模型本身的能力评估。
+
+实际文件 URL 必须来自工具搜索结果、匹配到的实际 WebFetch 访问，或者能在 Python 重新下载的页面中找到真实 href。WebFetch 访问仅提供待独立获取的地址，不证明内容存在；Python 必须重新下载真实字节。允许无扩展名的下载接口及带参数的地址；不从模型描述猜下载链接。网页中发现的链接继承页面 URL 和 SHA-256；若落地页只有一个原生附件，自动追踪该真实 href 并解析，多个附件不任意挑选。WebFetch 摘要和最终 Agent 宣称的覆盖仍不算证据；模型输出错误、断链、未实际找到的链接分别记录失败，不自动降级准入。
+
+可选 `config/claude_agent_closeout.json` 允许耗尽轮数/时间后的**一次无工具收尾调用**，仅整理已发生的工具观察。原失败状态、实际调用次数和超限事实保留；Python 可以检查已发现的文件，但该次运行即使材料齐全也不准入 ready。不会重复搜索、补造链接或把收尾描述当作文件事实。
+
+该模式支持 `--stage all` 和独立 `--stage verify`，不支持仅生成查询的 `--stage plan` 或不传 Graph 的 direct 对照。代码入口为 `scripts/agent_retrieval.py`，版本化提示为 `prompts/claude_retrieval_agent.v1.txt`。旧数据和查询适配器保留，禁止用新增模式的测试夹具冒充真实联网成功。
+
+实际实验见 [AGENT_SEARCH.md](AGENT_SEARCH.md)：10 次 WebSearch、31 次 WebFetch 后耗尽轮数；无工具收尾并独立获取到 1 个项目网页、1 个 PDF 和 3 份 CSV 内容。没有 ready，停止条件、信息粒度和审核输出仍有问题。调用次数以日志为准，不能把配置预算当作实际调用数。
+
+## 原生工作文件政策
+
+HTML/HTM/XHTML 只用于导航、附件发现和来源追踪，不进入 Agent 可见 Workspace，也不能作为必需输入的覆盖证据。无条件程序检查覆盖审核、材料组装、实际字节复查及 Stage 4 准入；修改后缀不能绕过。Search Agent 必须寻找实际原生附件和元数据文件，不允许把网页改名为 TXT/PDF 代替。缺少原生资料时记录缺口。当前自主模式默认使用 `claude_retrieval_agent.v3.txt` 与 `evidence_auditor.v4.txt`。历史 HTML 样例保留，但不再准入。
 
 ## 信息覆盖怎么验证
 
@@ -97,4 +136,4 @@ workspaces/data/semantic_workspaces/
 
 ## 迁移与后续入口
 
-旧脚本、配置、测试及 Pilot 在 `archive/`，仅供历史审阅；完整旧环境请检出 `5e61eae`。新 Stage 2 接口 `raw-blueprint-v2`，Stage 3 接口 `grounded-workspace-v2`。现有 Stage 4 仍依赖旧数据/函数，**不能直接运行新流水线的结果**，本次未增加兼容层。后续需迁移其入口、哈希关联与 segment_id 定位，并继续强制 ready 准入；不得将本轮 incomplete 改名为成功。方法与论文差异见 [METHODS.md](METHODS.md)。
+旧脚本、配置、测试及 Pilot 在 `archive/`，仅供历史审阅；完整旧环境请检出 `5e61eae`。新 Stage 2 接口为 `raw-blueprint-v2`，Stage 3 为 `grounded-workspace-v2`。当前 Stage 4 已接入这两个接口，重新核验 ready 状态、Seed/Blueprint 哈希、实际文件和 segment_id；旧 incomplete/rejected 记录仍被阻断。[原生文件实验](../work-tasks/NATIVE_FILE_PILOT.md) 已从新 Seed 构造一份无 HTML 的 ready Workspace 和一个 Draft Task Package；后续 [Stage 5 Probe](../work-tasks/STAGE5.md) 已执行，当前结果为 `needs_review`。方法与论文差异见 [METHODS.md](METHODS.md)。

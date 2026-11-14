@@ -1,6 +1,11 @@
 data/cache/
 data/cache_graph/
 data/cache_claude_search/
+data/cache_claude_agent/
+data/**/review_materials/
+data/**/construction/coverage_audits.json
+data/cache_world/
+data/cache_world_real/
 data/**/construction/file_profiles.json
 archive/data/**/workspace_init/
 archive/data/**/construction/file_profiles.jsonl
@@ -12,3 +17,9 @@ data/**/construction/information_coverage.json
 data/**/construction/model_audit*.json
 config/*.local.json
 __pycache__/
+
+# Only this explicitly synthetic experiment's inputs are reproducible public examples.
+!data/world_pilot/world/workspace_init/
+!data/world_pilot/world/workspace_init/**
+!data/world_pilot/world/construction/file_profiles.json
+!data/world_pilot/world/construction/information_coverage.json

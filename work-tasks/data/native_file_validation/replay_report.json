@@ -1,0 +1,24 @@
+{
+  "offline_network_and_subprocess_disabled": true,
+  "stage2_accepted": 1,
+  "blueprints_identical": true,
+  "stage3_ready": 1,
+  "stage3_files_compared": 15,
+  "stage3_differences": [],
+  "final_parser_sha256": "b53f0e38ae8d2b06b2e0b5d8e9042dc625b95a141183bd44c0368cb2001eaa27",
+  "stage4_task_id": "TASK_1d5ee1c33b451d320937aaa8",
+  "stage4_status": "draft",
+  "stage4_files_compared": 12,
+  "stage4_differences": [],
+  "agent_export": "work-tasks/generated/agent-visible/TASK_1d5ee1c33b451d320937aaa8",
+  "agent_export_check": {
+    "exported_files": 7,
+    "private_directories_exported": false
+  },
+  "visible_html_files": 0,
+  "tests": {
+    "workspaces": 71,
+    "work_tasks": 49,
+    "failures": 0
+  }
+}

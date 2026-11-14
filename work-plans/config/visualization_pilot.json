@@ -1,0 +1,23 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 8192,
+      "thinking": {
+        "type": "disabled"
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  },
+  "pilot_seeds": [
+    {
+      "seed_id": "raw_31_0_21828",
+      "selection_reason": "New pilot: data scientists creating visualizations; distinct from prior project monitoring cases."
+    }
+  ]
+}

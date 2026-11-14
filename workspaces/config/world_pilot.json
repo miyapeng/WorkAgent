@@ -1,0 +1,12 @@
+{
+  "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+  "credential_source": "llmctl",
+  "llm_overrides": {
+    "timeout_seconds": 180,
+    "parameters": {"temperature": 0, "max_tokens": 8192, "thinking": {"type": "disabled"}, "response_format": {"type": "json_object"}}
+  },
+  "family": "project_cost_schedule_v1",
+  "seed_id": "raw_31_0_18983",
+  "blueprint_sha256": "e693824764c1ed4f83b58854811ae35456b90490189416d2f3f0918b3c5c23d4",
+  "scenario_number": 1
+}

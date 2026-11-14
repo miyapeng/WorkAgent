@@ -1,0 +1,59 @@
+{
+  "code_sha256": {
+    "construct_tasks.py": "81551171014a23104b9a343867f829c67efe7e706e8212d3dc255a13991277d1",
+    "run_synthetic_fixture.py": "989b8e2e5dde3792faaa88b366573a0de1b9fd86f9665456cc97b6bcb179b6da",
+    "task_common.py": "91292fc4d3ba3be893be673dd10447c20b71e57858997e53de44bf7dd9e18ca1",
+    "task_evidence.py": "3b6ddcba3b86f3a0d2de3c5de2fdaa1c0332b7515a0ea92a3126326f6be85bcf",
+    "task_prompts.py": "8b1491cc112a238fa71d095eb2ce6bbcb0a57f42572522533127a36deb841958",
+    "task_validation.py": "f91694138b5adc119504ef0ac76e31beb2eeeef871a10395a1263f6e5f882324",
+    "task_verifier.py": "8e842cae7714ecedcad99cfd9bcca96b0a5c6c5fc81afb4302f30aa4762a4d78"
+  },
+  "config": {
+    "credential_source": "llmctl",
+    "llm_config": "../../work-seeds/config/seed_pipeline.llmcenter.json",
+    "llm_overrides": {
+      "parameters": {
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    },
+    "max_model_input_bytes": 180000,
+    "max_tokens": 10000,
+    "retries": 1,
+    "timeout_seconds": 180
+  },
+  "limit": 2,
+  "llm": {
+    "api_key_env": "WORK_SEEDS_API_KEY",
+    "candidates_per_pair": 2,
+    "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+    "model": "GLM_ka48dn",
+    "model_name": "glm-5.2",
+    "model_resolution": "LLMCenter /v1/models, 2026-11-10; model is the gateway accessId, not the upstream name.",
+    "parameters": {
+      "max_tokens": 10000,
+      "response_format": {
+        "type": "json_object"
+      },
+      "temperature": 0,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_seconds": 180
+  },
+  "schema_sha256": "4423778604c36ff49b7b97af495c0f599c6c8b23c6bb99f7ed9882939ea99ffb",
+  "upstream_hashes": {
+    "blueprints": "9867965722bea73f17a6880e476953400aa4681054c7191ae6d35243cc3a1d9b",
+    "planning_report": "fded809ede66071fd4d5cbed858737a79ff8f0ff4bde6879631c6fb4e73dbb43",
+    "seed_file": "6bafac8662dbea9aab9ed920bad703aa0bd67b4eec07e27c21e23f1cf54a031c"
+  },
+  "workspaces": {
+    "WS_df663f328a47": "f50fe0d6807e86cb2c642523e54a6140ba905162c1beb7590300df195f0bcaad"
+  }
+}

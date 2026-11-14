@@ -1,0 +1,131 @@
+[
+  {
+    "bytes": 88236,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-ab19b61a-6613-48c8-a0cd-1a9537ac155f"
+    },
+    "final_url": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+    "mime": "text/html",
+    "original_url": "https://www.gov.uk/government/statistics/road-safety-data",
+    "prior_errors": [],
+    "redirects": [
+      {
+        "from": "https://www.gov.uk/government/statistics/road-safety-data",
+        "status": 301,
+        "to": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data"
+      }
+    ],
+    "retrieved_at": "2026-11-13T09:33:53.318350+00:00",
+    "role": "discovery_page",
+    "sha256": "5114f6f31ee906a8738d171085102ccbcb4a2d57bd59c2b06394de84bb7114e6",
+    "status": "downloaded",
+    "url": "https://www.gov.uk/government/statistics/road-safety-data"
+  },
+  {
+    "bytes": 19208488,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+      "source_sha256": "5114f6f31ee906a8738d171085102ccbcb4a2d57bd59c2b06394de84bb7114e6"
+    },
+    "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv",
+    "mime": "text/csv",
+    "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:41:04.270420+00:00",
+    "role": "selected_material",
+    "sha256": "32a78f4662e309160f37b1ea2b82017e85e07b62a022d680da7140e88706a17c",
+    "status": "downloaded",
+    "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2024.csv"
+  },
+  {
+    "bytes": 20296911,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://www.gov.uk/government/statistical-data-sets/road-safety-open-data",
+      "source_sha256": "5114f6f31ee906a8738d171085102ccbcb4a2d57bd59c2b06394de84bb7114e6"
+    },
+    "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv",
+    "mime": "text/csv",
+    "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:42:52.213430+00:00",
+    "role": "selected_material",
+    "sha256": "1a60f65f07a44454bc03c63b35d6741f41c9dfbb05a26753406aef8bff4ae6cd",
+    "status": "downloaded",
+    "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-vehicle-2024.csv"
+  },
+  {
+    "bytes": 10439101,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-570f84a5-7a93-4a52-81d1-95925fccd30a"
+    },
+    "final_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv",
+    "mime": "text/csv",
+    "original_url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:43:41.441008+00:00",
+    "role": "selected_material",
+    "sha256": "838aad605a6ac638973f09248ef3a730dbd1de30ac8fc79dfd536e7d4a47b0f8",
+    "status": "downloaded",
+    "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-casualty-2024.csv"
+  },
+  {
+    "bytes": 85112,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-827dbc1b-bec5-4415-83a6-0287e65cda1a"
+    },
+    "final_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+    "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "original_url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:33:59.833199+00:00",
+    "role": "selected_material",
+    "sha256": "51b08606ef3dad1ae5d4c8726241b022fc8e4bbdc910ef0e5cc2fb92b054fc12",
+    "status": "downloaded",
+    "url": "https://assets.publishing.service.gov.uk/media/6ab2a71d997a4b2950cced58/dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx"
+  },
+  {
+    "bytes": 18111,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-7d743f5d-5451-442b-9bec-c8d218c49f35"
+    },
+    "final_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+    "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "original_url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:33:58.519181+00:00",
+    "role": "selected_material",
+    "sha256": "9a0db9e666e696a8c4e61dd6c1eccd0d957e0a5871cd7c4439d43b63893bced8",
+    "status": "downloaded",
+    "url": "https://assets.publishing.service.gov.uk/media/691c644021ef5aaa6543eef0/dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+  },
+  {
+    "bytes": 2343524,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call-8c226320-1365-4e0a-83d4-97e01f76d4bb"
+    },
+    "final_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+    "mime": "application/pdf",
+    "original_url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf",
+    "prior_errors": [
+      "SSLEOFError"
+    ],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T09:36:26.401920+00:00",
+    "role": "selected_material",
+    "sha256": "23fc55d06693fda26a6ddb2a1fea965f26a2cc6edc0c1204c784d955fef1b3b1",
+    "status": "downloaded",
+    "url": "https://assets.publishing.service.gov.uk/media/60ec379ae90e0764c59382bc/stats-19-review-final-report.pdf"
+  }
+]

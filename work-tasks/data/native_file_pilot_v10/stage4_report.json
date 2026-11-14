@@ -1,0 +1,46 @@
+{
+  "blocked_upstream": 0,
+  "data_provenance": "real_stage3_pilot",
+  "draft_packages": 0,
+  "execution_probe_performed": false,
+  "human_runtime_decisions_required": false,
+  "input_workspaces": 1,
+  "rejected": 1,
+  "stage": "all",
+  "workspaces": [
+    {
+      "artifact_checks_compiled": true,
+      "data_provenance": "grounded_workspace",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "model_calls": [
+        {
+          "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+          "generated_at": "2026-11-13T10:24:04.352040+00:00",
+          "model_requested": "GLM_ka48dn",
+          "model_returned": "ZhipuAI/GLM-5.2",
+          "parameters": {
+            "max_tokens": 10000,
+            "response_format": {
+              "type": "json_object"
+            },
+            "temperature": 0,
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "prompt_version": "task-rubric-joint-v10",
+          "request_sha256": "42ea4be1999ee48defa5755c702492e64429e79d0ec884f37cb65e0f76d0c4a0"
+        }
+      ],
+      "reasons": [
+        "deliverable_extension_mismatch"
+      ],
+      "seed_id": "raw_31_0_7382",
+      "status": "rejected",
+      "workspace_id": "WS_e3babe3a48a1"
+    }
+  ]
+}

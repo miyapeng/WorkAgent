@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workagent.local/probe_claims.schema.json",
+  "type": "object",
+  "properties": {
+    "numeric_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "report_number_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "metric_id",
+          "report_number_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "numeric_claims"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,110 @@
+{
+  "data_provenance": "grounded_workspace",
+  "eligibility": {
+    "eligible": true,
+    "reasons": []
+  },
+  "model_calls": [
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T09:52:00.864292+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "task-rubric-joint-v6",
+      "request_sha256": "2a2e763c3ca7831164013749c14052bd86a7dad838d4a95dfc96028a22878709"
+    },
+    {
+      "endpoint": "https://llm-center.modelbest.co/v1/chat/completions",
+      "generated_at": "2026-11-13T09:53:01.868037+00:00",
+      "model_requested": "GLM_ka48dn",
+      "model_returned": "glm-5.2",
+      "parameters": {
+        "max_tokens": 10000,
+        "response_format": {
+          "type": "json_object"
+        },
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "prompt_version": "task-rubric-reverse-audit-v5",
+      "request_sha256": "1e669962d37708fde11f0021769cf08cf61c7e33e48fe5cd5c9b9af2f6d3f648"
+    }
+  ],
+  "reasons": [
+    {
+      "check": "evidence_support",
+      "reason": "Most requirements are grounded, but R3 and R3-MAP require documenting that vehicle_reference links casualty to vehicle. The cited facts only show a vehicle_reference column in the vehicle and casualty headers and a collision_index join note; no cited source fact explicitly states the casualty-to-vehicle linkage via vehicle_reference. That part is therefore unsupported in the evidence graph."
+    },
+    {
+      "check": "task_rubric_alignment",
+      "reason": "All eight requirements are linked to at least one rubric item, but R2-REQS imports R8's summing/not-averaging rule into R2, creating overlapping scoring, and its full-credit text does not explicitly enumerate all R2 variables such as collision_year, the two injury_based flags, vehicle_reference, and casualty_reference. This weakens alignment between R2 and its rubric."
+    },
+    {
+      "check": "verification_soundness",
+      "reason": "R3-MAP's full-credit requires an unsupported vehicle_reference casualty-to-vehicle join claim; the cited evidence only establishes field presence and the collision_index join. R2-REQS also double-counts the R8 summing/not-averaging rule and does not explicitly test all R2 variables. The R1-FILE existence check is acceptable because content is separately scored by R1-SCOPE."
+    },
+    {
+      "check": "R3",
+      "reason": "R3 requires documenting both collision_index and vehicle_reference relationships. The cited code-list fact explicitly supports collision_index as the join to Vehicle and Casualty, and the vehicle and casualty headers show a vehicle_reference column. However, no cited source fact explicitly states that vehicle_reference links casualty to vehicle, so the full R3 mapping is not fully evidenced."
+    },
+    {
+      "check": "R2-REQS",
+      "reason": "R2-REQS overreaches by making the R8 summing/not-averaging rule part of R2 full credit, so the same property is scored under both R2 and R8. Its full-credit text also does not explicitly enumerate all required R2 variables, including collision_year, collision_injury_based, casualty_injury_based, vehicle_reference, and casualty_reference."
+    },
+    {
+      "check": "R3-MAP",
+      "reason": "R3-MAP full credit requires documenting that vehicle_reference links casualty to vehicle, but the cited evidence only shows vehicle_reference as a column in the vehicle and casualty headers and explicitly supports collision_index as the join key. No cited source fact establishes the casualty-to-vehicle relationship, so the rubric tests an unsupported claim."
+    }
+  ],
+  "seed_id": "raw_31_0_7382",
+  "semantic_checks": {
+    "failures": [
+      {
+        "check": "evidence_support",
+        "reason": "Most requirements are grounded, but R3 and R3-MAP require documenting that vehicle_reference links casualty to vehicle. The cited facts only show a vehicle_reference column in the vehicle and casualty headers and a collision_index join note; no cited source fact explicitly states the casualty-to-vehicle linkage via vehicle_reference. That part is therefore unsupported in the evidence graph."
+      },
+      {
+        "check": "task_rubric_alignment",
+        "reason": "All eight requirements are linked to at least one rubric item, but R2-REQS imports R8's summing/not-averaging rule into R2, creating overlapping scoring, and its full-credit text does not explicitly enumerate all R2 variables such as collision_year, the two injury_based flags, vehicle_reference, and casualty_reference. This weakens alignment between R2 and its rubric."
+      },
+      {
+        "check": "verification_soundness",
+        "reason": "R3-MAP's full-credit requires an unsupported vehicle_reference casualty-to-vehicle join claim; the cited evidence only establishes field presence and the collision_index join. R2-REQS also double-counts the R8 summing/not-averaging rule and does not explicitly test all R2 variables. The R1-FILE existence check is acceptable because content is separately scored by R1-SCOPE."
+      },
+      {
+        "check": "R3",
+        "reason": "R3 requires documenting both collision_index and vehicle_reference relationships. The cited code-list fact explicitly supports collision_index as the join to Vehicle and Casualty, and the vehicle and casualty headers show a vehicle_reference column. However, no cited source fact explicitly states that vehicle_reference links casualty to vehicle, so the full R3 mapping is not fully evidenced."
+      },
+      {
+        "check": "R2-REQS",
+        "reason": "R2-REQS overreaches by making the R8 summing/not-averaging rule part of R2 full credit, so the same property is scored under both R2 and R8. Its full-credit text also does not explicitly enumerate all required R2 variables, including collision_year, collision_injury_based, casualty_injury_based, vehicle_reference, and casualty_reference."
+      },
+      {
+        "check": "R3-MAP",
+        "reason": "R3-MAP full credit requires documenting that vehicle_reference links casualty to vehicle, but the cited evidence only shows vehicle_reference as a column in the vehicle and casualty headers and explicitly supports collision_index as the join key. No cited source fact establishes the casualty-to-vehicle relationship, so the rubric tests an unsupported claim."
+      }
+    ],
+    "passed": false,
+    "qualification": "Independent model call, not independent expert certification; execution not tested."
+  },
+  "status": "rejected",
+  "structural_checks": {
+    "passed": true,
+    "requirements": 8,
+    "rubrics": 9,
+    "source_facts": 25
+  },
+  "workspace_id": "WS_e3babe3a48a1"
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "bytes": 36022,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call_db07e27fb67e4ad3a8233d8f"
+    },
+    "final_url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+    "mime": "text/html",
+    "original_url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T07:49:26.097093+00:00",
+    "role": "selected_material",
+    "sha256": "3fe407f4caa691f01e7040db2529f2c018a9baa265f294781df1d8f60904e65f",
+    "status": "downloaded",
+    "url": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i"
+  },
+  {
+    "bytes": 149731,
+    "discovery": {
+      "method": "actual_html_href",
+      "source_page": "https://broadbandusa.ntia.gov/funding-programs/documentation-and-reporting/annual-report-fy24-q3-comanche-nation-tbcp-i",
+      "source_sha256": "3fe407f4caa691f01e7040db2529f2c018a9baa265f294781df1d8f60904e65f"
+    },
+    "final_url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf",
+    "mime": "application/pdf",
+    "original_url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T07:49:27.494965+00:00",
+    "role": "selected_material",
+    "sha256": "d6d89d3bef1925ab89c527703599073c9fa95383d240b82215a85ab7f07dcc92",
+    "status": "downloaded",
+    "url": "https://broadbandusa.ntia.gov/sites/default/files/awardee_documentation/files/Comanche_Nation_Annual_Report_FY24_Q3.pdf"
+  },
+  {
+    "bytes": 4772,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call_77f710df3a684f4a9ed917b0"
+    },
+    "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance",
+    "mime": "text/html",
+    "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T07:50:06.018249+00:00",
+    "role": "selected_material",
+    "sha256": "4c16fad96d556d915b6d00de297b16560657324e39a953cdd0abc16c1726c7a2",
+    "status": "downloaded",
+    "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-cost-variance"
+  },
+  {
+    "bytes": 4775,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call_9847e61462ea4f7683b4a813"
+    },
+    "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance",
+    "mime": "text/html",
+    "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T07:50:08.080399+00:00",
+    "role": "selected_material",
+    "sha256": "959a2f0605f981d4bc654741a6de5504d880407b34fc14fd79a9dd40c7826108",
+    "status": "downloaded",
+    "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-schedule-variance"
+  },
+  {
+    "bytes": 3325,
+    "discovery": {
+      "method": "WebFetch_attempt_requires_independent_http_verification",
+      "tool_use_id": "call_ccaba2ad841d4b2091d8f05f"
+    },
+    "final_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics",
+    "mime": "text/html",
+    "original_url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics",
+    "prior_errors": [],
+    "redirects": [],
+    "retrieved_at": "2026-11-13T07:50:09.927172+00:00",
+    "role": "selected_material",
+    "sha256": "19cee86cc11d10630e6f6e3e8ccb19430fecff5d8318304c6e70498386e0b113",
+    "status": "downloaded",
+    "url": "https://itdashboard.gov/index.php/ogpvp_download/csv/agency_analysis/agency-analysis-performance-metrics"
+  }
+]
